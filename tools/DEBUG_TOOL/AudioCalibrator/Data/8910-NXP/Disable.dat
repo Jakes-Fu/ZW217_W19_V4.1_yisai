@@ -1,0 +1,1618 @@
+// ------------------------------------------------------------------------------------
+// 
+// 定义平台下禁用的AT列表
+// 
+// <APMode:ITF>
+//    AT_Name
+// </>
+// 
+// ------------------------------------------------------------------------------------
+
+
+/// NB call mode
+<Voice Call NB:0>
+   // Audio Codec AT>
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain    
+     
+     // Audio ZSP Pre-Processing Calibration
+     
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+<Voice Call NB:1>
+   // Audio Codec AT>
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+<Voice Call NB:2>
+   // Audio Codec AT>
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+<Voice Call NB:3>
+   // Audio Codec AT>
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>   
+
+
+<Voice Call NB:4>
+   // Audio Codec AT>
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+   
+</>
+
+
+<Voice Call NB:5>
+   // Audio Codec AT>
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+       
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+
+
+/// Music Play mode
+<Music Play:0>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+     
+</>
+
+
+
+<Music Play:1>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+     
+</>
+
+
+
+<Music Play:2>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+
+<Music Play:3>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+     
+</>
+
+
+
+
+<Music Play:4>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+     
+</>
+
+
+
+<Music Play:5>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+    
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+
+
+/// Record mode
+<Music Record:0>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+    
+    
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+
+</>
+
+
+<Music Record:1>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_set_outgain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+    
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+</>
+
+
+
+<Music Record:2>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_set_outgain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+    
+    
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+</>
+
+
+<Music Record:3>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_set_outgain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+    
+    
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+</>
+
+
+
+<Music Record:4>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+    
+    
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+
+</>
+
+
+<Music Record:5>
+     // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+    
+    
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+     
+</>
+
+
+
+// FM Play mode
+<FM Play:0>
+     // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+<FM Play:1>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+<FM Play:2>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+         
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+<FM Play:3>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+        
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+
+</>
+
+
+
+
+<FM Play:4>
+    // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+<FM Play:5>
+     // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+
+/// FM Record mode
+<FM Record:0>
+    // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+<FM Record:1>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_set_outgain      
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+    
+    
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+
+</>
+
+
+
+<FM Record:2>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_set_outgain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+    
+
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+
+</>
+
+
+
+<FM Record:3>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_set_outgain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+    
+
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+
+</>
+
+
+
+<FM Record:4>
+    // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+<FM Record:5>
+    // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+
+/// WB call mode
+<Voice Call WB:0>
+   // Audio Codec AT>
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+          atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+<Voice Call WB:1>
+   // Audio Codec AT>
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+          atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+<Voice Call WB:2>
+   // Audio Codec AT>
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+          atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+<Voice Call WB:3>
+   // Audio Codec AT>
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+          atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>   
+
+
+<Voice Call WB:4>
+   // Audio Codec AT>
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+   
+</>
+
+
+<Voice Call WB:5>
+   // Audio Codec AT>
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain  
+       
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+          atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+</>
+
+
+
+
+/// Tone Play mode
+<Tone Play:0>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+          atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+
+</>
+
+
+<Tone Play:1>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+       
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+         
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+          atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+
+</>
+
+
+<Tone Play:2>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain 
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+        
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+
+</>
+
+
+<Tone Play:3>
+   // Audio Codec AT>
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_set_sidetonegain  
+     atctst_aud_codec_get_recordergain
+     atctst_aud_codec_set_recordergain 
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+          
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+
+</>
+
+
+<Tone Play:4>
+     // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+        
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+
+</>
+
+
+
+<Tone Play:5>
+     // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     // Audio NXP VOC Calibration>
+     atctst_aud_nxp_get_ControlParams_Rx
+     atctst_aud_nxp_get_RxEqCoefs
+     atctst_aud_nx_get_ControlParams_Tx
+     atctst_aud_nxp_get_TxEqCoefs
+    
+     atctst_aud_nxp_set_ControlParams_Rx
+     atctst_aud_nxp_set_RxEqCoefs
+     atctst_aud_nx_set_ControlParams_Tx
+     atctst_aud_nxp_set_TxEqCoefs
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+     
+     atctst_aud_zsp_post_get_diggain
+     atctst_aud_zsp_post_set_diggain
+     
+     atctst_aud_zsp_pre_get_diggain
+     atctst_aud_zsp_pre_set_diggain
+
+</>
+
+
+
+
+
+
+
+

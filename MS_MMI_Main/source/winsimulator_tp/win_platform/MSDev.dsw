@@ -1,0 +1,273 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "ControlPanel"=.\ControlPanel\ConPan.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    ControlPanel
+    .\ControlPanel
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name MSDevKernel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SIMControlPad
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "DevPS"=..\..\..\..\MS_Code\PS\Source\DevPS\DevPS.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    DevPS
+    ..\..\..\..\MS_Code\PS\Source\DevPS
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MSDev"=.\GUI\MSDevGUI.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    MSDev
+    .\GUI
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ControlPanel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MSDevKernel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SIMControlPad
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "MSDevBridge"=.\MSKernel\MSBridge\MSDevBridge.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    MSDevBridge
+    .\MSKernel\MSBridge
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MSDevKernel"=.\MSKernel\MSKernelAPI\MSDevKernel.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    MSDevKernel
+    .\MSKernel\MSKernelAPI
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name MSDevBridge
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name RTOS
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ref_base_win
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name driver_windows
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name driver_common_win
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DevPS
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name img
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mmi
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "RTOS"=..\..\..\..\MS_Code\RTOS\Source\lib\win\rtos_win\rtos_win.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    RTOS
+    ..\..\..\..\MS_Code\RTOS\Source
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SIMControlPad"=..\..\..\..\MS_Code\PS\Source\SIM\test\SIMConPad\SIMConPad.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    SIMControlPad
+    ..\..\..\..\MS_Code\PS\Source\SIM\test
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name RTOS
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name driver_common_win
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name driver_windows
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MSDevKernel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ref_base_win
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DevPS
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MSDevBridge
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "driver_common_win"=..\..\..\..\MS_Code\Ref\Source\driver\Common\driver_common_win.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    driver_common_win
+    ..\..\..\..\MS_Code\Ref\Source\driver\Common
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "driver_windows"=..\..\..\..\MS_Code\Ref\Source\driver\windows\driver_windows.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    driver_windows
+    ..\..\..\..\MS_Code\Ref\Source\driver\windows
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "img"=..\..\..\..\MS_Code\Ref\Source\img\prj\img.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    img
+    ..\..\..\..\MS_Code\Ref\Source\img
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "mmi"=..\..\..\..\MS_APP\BMMI\Source\bmmi.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    gmmi
+    ..\..\..\..\MS_APP\BMMI\Source
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ref_base_win"=..\..\..\..\MS_Code\Ref\Source\base\prj\ref_base_win.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    ref_base_win
+    ..\..\..\..\MS_Code\Ref\Source\base\prj
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    MSDev
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

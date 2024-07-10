@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChannelServer", "ChannelServer\ChannelServer.vcproj", "{C619167F-CD81-4450-B81A-DB33C4CB0DE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Cust Debug|Win32 = Cust Debug|Win32
+		Cust Release|Win32 = Cust Release|Win32
+		Debug Static|Win32 = Debug Static|Win32
+		Debug|Win32 = Debug|Win32
+		Release Static|Win32 = Release Static|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C619167F-CD81-4450-B81A-DB33C4CB0DE4}.Cust Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{C619167F-CD81-4450-B81A-DB33C4CB0DE4}.Cust Debug|Win32.Build.0 = Cust Debug|Win32
+		{C619167F-CD81-4450-B81A-DB33C4CB0DE4}.Cust Release|Win32.ActiveCfg = Cust Release|Win32
+		{C619167F-CD81-4450-B81A-DB33C4CB0DE4}.Cust Release|Win32.Build.0 = Cust Release|Win32
+		{C619167F-CD81-4450-B81A-DB33C4CB0DE4}.Debug Static|Win32.ActiveCfg = Debug|Win32
+		{C619167F-CD81-4450-B81A-DB33C4CB0DE4}.Debug Static|Win32.Build.0 = Debug|Win32
+		{C619167F-CD81-4450-B81A-DB33C4CB0DE4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C619167F-CD81-4450-B81A-DB33C4CB0DE4}.Debug|Win32.Build.0 = Debug|Win32
+		{C619167F-CD81-4450-B81A-DB33C4CB0DE4}.Release Static|Win32.ActiveCfg = Release|Win32
+		{C619167F-CD81-4450-B81A-DB33C4CB0DE4}.Release Static|Win32.Build.0 = Release|Win32
+		{C619167F-CD81-4450-B81A-DB33C4CB0DE4}.Release|Win32.ActiveCfg = Release|Win32
+		{C619167F-CD81-4450-B81A-DB33C4CB0DE4}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

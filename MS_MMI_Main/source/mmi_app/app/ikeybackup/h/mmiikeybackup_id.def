@@ -1,0 +1,31 @@
+
+WIN_ID_DEF(MMIIKB_MAIN_WIN_ID),							// 1-key backup main window id
+
+WIN_ID_DEF(MMIIKB_BACKUP_CHILD_WIN_ID),			// 1-key backup child window id
+WIN_ID_DEF(MMIIKB_RESTORE_CHILD_WIN_ID),			// 1-key restore child window id
+WIN_ID_DEF(MMIIKB_SETTING_CHILD_WIN_ID),			// 1-key setting child window id
+
+WIN_ID_DEF(MMIIKB_BACKUP_POS_WIN_ID),				// 1-key backup position window id
+WIN_ID_DEF(MMIIKB_ENCRYPT_DATA_WIN_ID),			// 1-key setting encrypt data window id
+
+WIN_ID_DEF(MMIIKB_RESTORE_ITEM_SEL_WIN_ID),	// 1-key select restore items window id
+
+WIN_ID_DEF(MMIIKB_WAIT_WIN_ID),							// 1-key load all pack waiting win
+
+WIN_ID_DEF(MMIIKB_BACKUP_PRG_WAIT_WIN_ID),		// 1-key backup progress bar waiting win
+WIN_ID_DEF(MMIIKB_RESTORE_PRG_WAIT_WIN_ID),	// 1-key restore progress bar waiting win
+WIN_ID_DEF(MMIIKB_CANCEL_WAIT_WIN_ID),				// 1-key user cancel waiting waiting win
+
+WIN_ID_DEF(MMIIKB_ENTER_PSW_WIN_ID),					// 1-key user enter password win
+WIN_ID_DEF(MMIIKB_ENTER_RES_PSW_WIN_ID),			// 1-key user enter restore password win
+WIN_ID_DEF(MMIIKB_RES_RESULT_DETAIL_WIN_ID),	// 1-key restore result detail win
+
+#ifdef MMI_PDA_SUPPORT
+WIN_ID_DEF(MMIIKB_RESTORE_LIST_LONGOK_POPMENU_WIN_ID),	// 1-key restore long click popmenu win
+#endif
+
+WIN_ID_DEF(MMIIKB_RESTORE_LIST_OPT_POPMENU_WIN_ID),	// 1-key restore left option click popmenu win
+WIN_ID_DEF(MMIIKB_DEL_QUERY_WIN_ID),					//del pack query win
+WIN_ID_DEF(MMIIKB_DEL_WAIT_WIN_ID),					//del pack wait win
+
+

@@ -1,0 +1,7 @@
+; SciPortU.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SciPortU"
+DESCRIPTION  'SciPortU Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

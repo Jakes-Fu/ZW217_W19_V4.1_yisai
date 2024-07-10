@@ -1,0 +1,12 @@
+imei = {0x3a,0x23,0x91,0x70,0x00,0x79,0x62,0x05};	# 33219070097265,8 bytes,must be HEX
+imeisv = {0x33,0x23,0x91,0x70,0x00,0x79,0x62,0x05,0xf0};# 9 bytes,must be HEX
+plmn_sel_mode = 1;     # uint8, 0=MANUAL, 1=AUTO
+user_service_type = 1; # NV_USER_GSM_SUPPORT 1,NV_USER_GPRS_SUPPORT 2,NV_USER_GSM_GPRS_BOTH 3
+roaming_mode = 1;      # uint8, 0=DISABLE, 1=ENABLE
+band_select = 2;       # uint8, 0=GSM, 1=DCS, 2=DUALBAND, 3=PCS
+bearer_capability.speech_is_support = 1;		# uint8, 0=FALSE, 1=TRUE
+bearer_capability.unrestricted_digit_is_support = 0;	# uint8, 0=FALSE, 1=TRUE
+bearer_capability.audio_is_support = 0;			# uint8, 0=FALSE, 1=TRUE
+bearer_capability.facsimile_group3_is_support = 0;	# uint8, 0=FALSE, 1=TRUE
+bearer_capability.other_ITC_is_support = 0;		# uint8, 0=FALSE, 1=TRUE
+replace_sms_support = 1;# uint8, 0=not support, 1=support

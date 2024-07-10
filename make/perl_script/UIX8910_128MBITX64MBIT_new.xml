@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  FlashTypeID: 0, means Nor Flash;1, means Nand Flash       -->
+<!--  File-Flag: 0, means this file need not  input file path   -->
+<!--             1, means this file need input file path        -->
+<!--  File-CheckFlag: 0, this file is optional                  -->
+<!--                  1, must select this file                  -->
+<!--                  2, means not check this file in pack      -->
+<!--  Mode: 0, means single mode; 1, means DualMode             -->
+<!--  File-Type: MasterImage,means it will add BOOT_PARAM       -->
+<!--             and OS_INFO information to file                -->
+<!--  File-ID: Can not be changed,it is used by tools           -->
+<!--  File-IDAlias: This is  for GUI display can be changed     -->
+<BMAConfig>
+	<ProductList>			
+		<Product name="NOR_FLASH_UIX8910">
+			<SchemeName>NOR_FLASH_UIX8910</SchemeName>
+			<FlashTypeID>1</FlashTypeID>
+			<Mode>0</Mode>						
+			<NVBackup backup="1">
+				<NVItem name="Calibration" backup="1">
+					<ID>0xFFFFFFFF</ID>
+					<BackupFlag use="1">
+						<NVFlag name ="Replace" check ="0"></NVFlag>
+						<NVFlag name ="Continue" check ="0"></NVFlag>
+					</BackupFlag>
+				</NVItem>
+				<NVItem name="IMEI" backup="1">
+					<ID>0xFFFFFFFF</ID>
+					<BackupFlag use="1">
+						<NVFlag name ="Continue" check ="0"></NVFlag>
+					</BackupFlag>
+				</NVItem>				
+				<NVItem name="BlueTooth" backup="1">
+					<ID>0x191</ID>
+					<BackupFlag use="1">
+						<NVFlag name ="Continue" check ="0"></NVFlag>
+					</BackupFlag>
+				</NVItem>
+				<NVItem name="BandSelect" backup="1">
+					<ID>0xD</ID>
+					<BackupFlag use="1">
+						<NVFlag name ="Continue" check ="0"></NVFlag>
+					</BackupFlag>
+				</NVItem>	
+				<NVItem name="MMITest" backup="1">
+					<ID>0x19A</ID>
+					<BackupFlag use="1">
+						<NVFlag name ="Continue" check ="1"></NVFlag>
+					</BackupFlag>
+				</NVItem>
+				<NVItem name="WIFI" backup="1">
+					<ID>0x199</ID>
+					<BackupFlag use="1">
+						<NVFlag name ="Continue" check ="1"></NVFlag>
+					</BackupFlag>
+				</NVItem>
+				<NVItem name="SIMLOCK_USER_DATA" backup="1">
+					<ID>0x1F1</ID>
+					<BackupFlag use="1">
+						<NVFlag name ="Continue" check ="1"></NVFlag>
+					</BackupFlag>
+				</NVItem>
+				<NVItem name="RF_Cali_GSM" backup="1">
+					<ID>0x26D</ID>
+					<BackupFlag use="1">
+						<NVFlag name ="Continue" check ="0"></NVFlag>
+					</BackupFlag>
+				</NVItem>
+				<NVItem name="RF_Cali_LTE" backup="1">
+					<ID>0x26E</ID>
+					<BackupFlag use="1">
+						<NVFlag name ="Continue" check ="0"></NVFlag>
+					</BackupFlag>
+				</NVItem>
+				<NVItem name="golden_board" backup="1">
+					<ID>0x26F</ID>
+					<BackupFlag use="1">
+						<NVFlag name ="Continue" check ="0"></NVFlag>
+					</BackupFlag>
+				</NVItem>
+				<NVItem name="license" backup="1">
+				<ID>0x1BF</ID>
+				<BackupFlag use="1">
+					<NVFlag name ="Continue" check ="0"></NVFlag>
+				</BackupFlag>
+				</NVItem>
+				<NVItem name="eng_test_result" backup="1">
+				<ID>0x1AF</ID>
+				<BackupFlag use="1">
+					<NVFlag name ="Continue" check ="0"></NVFlag>
+				</BackupFlag>
+				</NVItem>
+			</NVBackup>					
+			<ProductComment/>
+			<Chips enable="0">
+			    <ChipItem id="0x2222" name="L2"/>
+			    <ChipItem id="0x7777" name="L7"/>
+			</Chips>	
+		</Product>															
+	</ProductList>
+	<SchemeList>		
+		<Scheme name="NOR_FLASH_UIX8910">
+			<File>
+				<ID>FDL</ID>
+				<IDAlias>NOR_FDL1</IDAlias>
+				<Type>HOST_FDL</Type>
+				<Block>
+					<Base>0x008000C0</Base>
+					<Size>0x0</Size>
+				</Block>
+				<Flag>1</Flag>
+				<CheckFlag>1</CheckFlag>
+				<Description>First nor flash download image file</Description>
+			</File>
+			<File>
+				<ID>FDL2</ID>
+				<IDAlias>NOR_FDL</IDAlias>				
+				<Type>NAND_FDL</Type>
+				<Block>
+					<Base>0x80008000</Base>
+					<Size>0x0</Size>
+				</Block>
+				<Flag>1</Flag>
+				<CheckFlag>1</CheckFlag>
+				<Description>second nor flash download image file</Description>
+			</File>
+			<File>
+				<ID>BOOTLOADER</ID>
+				<IDAlias>BOOTLOADER</IDAlias>
+				<Type>CODE</Type>
+				<Block>
+					<Base>0x80000000</Base>
+					<Size>0x0</Size>
+				</Block>
+				<Flag>1</Flag>
+				<CheckFlag>2</CheckFlag>
+				<Description>NOR Bootloader file</Description>
+			</File>		
+			<File>
+				<ID>PS</ID>
+				<IDAlias>PS</IDAlias>
+				<Type>CODE</Type>
+				<Block>
+					<Base>0x80000003</Base>
+					<Size>0x0</Size>
+				</Block>
+				<Flag>1</Flag>
+				<CheckFlag>0</CheckFlag>
+				<Description>Protocol station image file</Description>
+			</File>		
+			<File>
+				<ID>FOTA_BOOTLOADER</ID>
+				<IDAlias>FOTA_BOOTLOADER</IDAlias>
+				<Type>CODE</Type>
+				<Block>
+					<Base>0x80000002</Base>
+					<Size>0x0</Size>
+				</Block>
+				<Flag>1</Flag>
+				<CheckFlag>2</CheckFlag>
+				<Description>FOTA Bootloader file</Description>
+			</File>	
+			<File>
+				<ID>CP</ID>
+				<IDAlias>CP</IDAlias>
+				<Type>CODE</Type>
+				<Block>
+					<Base>0x90000101</Base>
+					<Size>0x0</Size>
+				</Block>
+				<Flag>1</Flag>
+				<CheckFlag>0</CheckFlag>
+				<Description>CP code image file</Description>
+			</File>
+			<File>
+				<ID>MMIRes</ID>
+				<IDAlias>MMIRES</IDAlias>
+				<Type>CODE</Type>
+				<Block>
+					<Base>0x90000004</Base>
+					<Size>0x0</Size>
+				</Block>
+				<Flag>1</Flag>
+				<CheckFlag>0</CheckFlag>
+				<Description>MMI resource image file</Description>
+			</File>			
+			<File>
+				<ID>IMS_TOGGLE</ID>
+				<IDAlias>IMS_TOGGLE</IDAlias>
+				<Type>EraseFlash</Type>
+				<Block>
+					<Base>0x90000112</Base>
+					<Size>0x10000</Size>
+				</Block>
+				<Flag>0</Flag>
+				<CheckFlag>0</CheckFlag>
+				<Description>Erase IMS_Toggle section </Description>
+			</File>
+			<File>
+				<ID>CONFIG_NV</ID>
+				<IDAlias>CONFIG_NV</IDAlias>
+				<Type>EraseFlash</Type>
+				<Block>
+					<Base>0x90000113</Base>
+					<Size>0x10000</Size>
+				</Block>
+				<Flag>0</Flag>
+				<CheckFlag>0</CheckFlag>
+				<Description>Erase Config NV section </Description>
+			</File>							
+			<File>
+				<ID>OperatorData</ID>
+				<IDAlias>OperatorData</IDAlias>
+				<Type>CODE</Type>
+				<Block>
+					<Base>0x90000100</Base>					
+					<Size>0x0</Size>
+				</Block>
+				<Flag>1</Flag>
+				<CheckFlag>2</CheckFlag>
+				<Description>OperatorData file, depended on costomer's need</Description>
+			</File>		
+			<File>
+				<ID>NV</ID>
+				<IDAlias>NV</IDAlias>
+				<Type>NV</Type>
+				<Block>
+					<Base>0x90000001</Base>
+					<Size>0x20000</Size>
+				</Block>							
+				<Flag>1</Flag>
+				<CheckFlag>0</CheckFlag>
+				<Description>Download-NV image file</Description>
+			</File>				
+			<File>
+				<ID>TFBOOT</ID>
+				<IDAlias>TFBOOT</IDAlias>
+				<Type>CODE</Type>
+				<Block>
+					<Base>0x90000110</Base>					
+					<Size>0x0</Size>
+				</Block>
+				<Flag>1</Flag>
+				<CheckFlag>2</CheckFlag>
+				<Description>TF image file, depended on costomer's need</Description>
+			</File>			
+			<File>
+				<ID>FLASH</ID>
+				<IDAlias>FLASH</IDAlias>
+				<Type>EraseFlash</Type>
+				<Block>
+					<Base>0x90000003</Base>
+					<Size>0xC0000</Size>
+				</Block>
+				<Flag>0</Flag>
+				<CheckFlag>0</CheckFlag>
+				<Description>Erase running-NV section operation</Description>
+			</File>
+			<File>
+				<ID>EraseUdisk</ID>
+				<IDAlias>ERASE_UDISK</IDAlias>
+				<Type>EraseFlash</Type>
+				<Block>
+					<Base>0x90000005</Base>
+					<!-- Need not set size,fdl will calc it in real time-->
+					<Size>0x0</Size>
+				</Block>
+				<Flag>0</Flag>
+				<CheckFlag>2</CheckFlag>
+				<Description>Erase NOR-UDisk section, depended on costomer's need</Description>
+			</File>				
+			<File>
+				<ID>PhaseCheck</ID>
+				<IDAlias>PHASE_CHECK</IDAlias>
+				<Type>CODE</Type>
+				<Block>
+					<Base>0x90000002</Base>
+					<Size>0x1000</Size>
+				</Block>
+				<Flag>0</Flag>
+				<CheckFlag>0</CheckFlag>
+				<Description>Producing phases information section</Description>
+			</File>
+		</Scheme>		
+	</SchemeList>
+</BMAConfig>

@@ -1,0 +1,26 @@
+// Audio Codec Calibration
+atctst_aud_codec_set_ingain
+atctst_aud_codec_set_outgain
+atctst_aud_codec_set_sidetonegain
+atctst_aud_codec_set_recordergain
+
+// RDA Audio ZSP VQE Calibration
+atctst_aud_rda_vqe_set_diggain
+atctst_aud_rda_vqe_set_aec
+atctst_aud_rda_vqe_set_ns_rx
+atctst_aud_rda_vqe_set_agc_tx
+atctst_aud_rda_vqe_set_agc_rx
+atctst_aud_rda_vqe_set_eq_tx
+atctst_aud_rda_vqe_set_eq_rx
+atctst_aud_rda_vqe_set_SpeechMode
+
+
+// Audio ZSP Pre-Processing Calibration
+atctst_aud_zsp_pre_set_drc
+atctst_aud_zsp_pre_set_eq
+
+// Audio ZSP Post-Processing Calibration
+atctst_aud_zsp_post_set_drc
+atctst_aud_zsp_post_set_eq
+
+

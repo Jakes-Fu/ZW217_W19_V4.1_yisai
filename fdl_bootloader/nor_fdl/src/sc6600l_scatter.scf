@@ -1,0 +1,30 @@
+ROM_LOAD 0x34000000 0x100000
+{
+
+    ROM_EXEC 0x34000000 0x100000
+	{
+      init.o (Init, +First)
+ 	    packet.o(+ZI)
+ 	    ;drv_usb.o(+RO,+RW,+ZI)
+ 	    .ANY(+RO)
+  	  .ANY(+RW,+ZI)       
+  	}
+   IRAM_FIXED 0x40000000 0x37ff
+   {  
+	   fdl_crc.o(+RO,+RW,+ZI)
+	   virtual_com.o(+RO,+RW,+ZI)
+	   fdl_main.o(CHIP_SETTING)	   
+	   packet.o(+RO, +RW)
+	   dl_engine.o(+RO,+RW,+ZI)
+	   fdl_channel.o(+RO,+RW,+ZI)
+	   drv_usb.o(+RO,+RW,+ZI)
+	   usb_boot.o(+RO,+RW,+ZI)
+	   fdl_main.o(+RW,+ZI)
+	   flash_drv.o(+RO,+RW,+ZI)
+	   fdl_stdio.o(+RO,+RW,+ZI)
+	   flash_cfg.o(+RO,+RW,+ZI)
+	   sio_drv.o(+RO,+RW,+ZI)
+	   fdl_flash_cfg.o(+RO,+RW,+ZI)
+   }
+}
+

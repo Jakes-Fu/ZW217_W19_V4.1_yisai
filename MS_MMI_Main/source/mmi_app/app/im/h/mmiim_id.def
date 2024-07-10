@@ -1,0 +1,20 @@
+
+
+WIN_ID_DEF(MMIIM_SET_WIN_ID),							//im set win id
+WIN_ID_DEF(MMIIM_SET_PY_FUZZY_WIN_ID),			//im set pinyin fuzzy win id
+WIN_ID_DEF(MMIIM_SET_HW_SPEED_WIN_ID),			//im set handwriting speed win id
+WIN_ID_DEF(MMIIM_SET_HW_THICKNESS_WIN_ID),	//im set handwriting thickness win id
+WIN_ID_DEF(MMIIM_SET_HW_COLOR_WIN_ID),			//im set handwriting color win id
+WIN_ID_DEF(MMIIM_SET_KEYBOARD_SIZE_WIN_ID),			//im set handwriting color win id
+WIN_ID_DEF(MMIIM_SP_SYMB_WIN_ID),
+WIN_ID_DEF(MMIIM_SP_TP_SETTING_WIN_ID),
+WIN_ID_DEF(MMIIM_SP_SETTING_WIN_ID),
+
+WIN_ID_DEF(MMIIM_SWITCH_IM_WIN_ID),				//im switch method win
+WIN_ID_DEF(MMIIM_SET_INPUT_LANG_WIN_ID),		//im set current input language win
+
+#if defined(MMI_IM_PDA_SUPPORT)
+WIN_ID_DEF(MMIIM_TOUCH_SETTING_WIN_ID),
+#endif
+WIN_ID_DEF(MMIIM_ADD_WORD_WIN_ID),       			// add new word win
+

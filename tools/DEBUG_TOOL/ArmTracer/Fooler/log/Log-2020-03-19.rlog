@@ -1,0 +1,187 @@
+
+
+2020-03-19 14:01:09 Initialize the Fooler Tool
+2020-03-19 14:01:09 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:01:09 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:01:09 Decode Command Line: Name: armtracer, Param: start
+2020-03-19 14:01:09 Full Path: F:\Tool_release\ArmTracer\V6.1.8\armtracer.exe, Param: start
+2020-03-19 14:01:09 Traverse the process list
+2020-03-19 14:01:09 Start up ArmTracer
+2020-03-19 14:01:11 Find Proc 0, ID-->10228, HWND-->397102, pWnd: 54015324: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:01:11 Find Proc 0, ID-->10228, HWND-->397102, pWnd: 54015324: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:01:11      Proc ID: 10228, HWnd: 397102, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:01:11 Send Message: WM_ARMTRACER_START
+
+
+2020-03-19 14:01:36 Initialize the Fooler Tool
+2020-03-19 14:01:36 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:01:36 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:01:36 Decode Command Line: Name: arm, Param: test
+2020-03-19 14:01:36 Find Proc 0, ID-->10228, HWND-->267974, pWnd: 52101196: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:01:36 TestCase 
+    Find Proc ID: 10228, HWnd: 267974, pWnd: 52101196, Path: F:\Tool_release\ArmTracer\V6.1.8\
+
+
+2020-03-19 14:01:51 Initialize the Fooler Tool
+2020-03-19 14:01:52 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:01:52 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:01:52 Decode Command Line: Name: test, Param: start
+2020-03-19 14:01:52 Find Proc 0, ID-->10228, HWND-->267974, pWnd: 53411916: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:01:52 TestCase 
+    Find Proc ID: 10228, HWnd: 267974, pWnd: 53411916, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:01:52 TestCase: test start 
+
+
+
+2020-03-19 14:02:07 Initialize the Fooler Tool
+2020-03-19 14:02:07 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:02:07 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:02:07 Decode Command Line: Name: test, Param: stop
+2020-03-19 14:02:07 Find Proc 0, ID-->10228, HWND-->267974, pWnd: 53018700: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:02:07 TestCase 
+    Find Proc ID: 10228, HWnd: 267974, pWnd: 53018700, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:02:07 TestCase: test stop
+
+
+
+2020-03-19 14:02:15 Initialize the Fooler Tool
+2020-03-19 14:02:15 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:02:16 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:02:16 Decode Command Line: Name: armtracer, Param: close
+2020-03-19 14:02:16 Full Path: F:\Tool_release\ArmTracer\V6.1.8\armtracer.exe, Param: close
+2020-03-19 14:02:16 Find Proc 0, ID-->10228, HWND-->267974, pWnd: 53870668: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:02:16 Find Proc ID: 10228, HWnd: 267974, pWnd: 53870668, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:02:16 Send Message: WM_ARMTRACER_CLOSE
+
+
+2020-03-19 14:02:45 Initialize the Fooler Tool
+2020-03-19 14:02:45 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:02:46 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:02:46 Decode Command Line: Name: armtracer, Param: start
+2020-03-19 14:02:46 Full Path: F:\Tool_release\ArmTracer\V6.1.8\armtracer.exe, Param: start
+2020-03-19 14:02:46 Traverse the process list
+2020-03-19 14:02:46 Start up ArmTracer
+2020-03-19 14:02:47 Find Proc 0, ID-->9960, HWND-->1576970, pWnd: 53556572: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:02:47 Find Proc 0, ID-->9960, HWND-->1576970, pWnd: 53556572: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:02:47      Proc ID: 9960, HWnd: 1576970, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:02:47 Send Message: WM_ARMTRACER_START
+
+
+2020-03-19 14:03:24 Initialize the Fooler Tool
+2020-03-19 14:03:25 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:03:25 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:03:25 Decode Command Line: Name: test, Param: start
+2020-03-19 14:03:25 Find Proc 0, ID-->9960, HWND-->856178, pWnd: 51773516: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:03:25 TestCase 
+    Find Proc ID: 9960, HWnd: 856178, pWnd: 51773516, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:03:25 TestCase: test start 
+
+
+
+2020-03-19 14:03:51 Initialize the Fooler Tool
+2020-03-19 14:03:52 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:03:52 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:03:52 Decode Command Line: Name: test, Param: stop
+2020-03-19 14:03:52 Find Proc 0, ID-->9960, HWND-->856178, pWnd: 52691020: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:03:52 TestCase 
+    Find Proc ID: 9960, HWnd: 856178, pWnd: 52691020, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:03:52 TestCase: test stop
+
+
+
+2020-03-19 14:04:09 Initialize the Fooler Tool
+2020-03-19 14:04:09 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:04:09 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:04:09 Decode Command Line: Name: armtracer, Param: close
+2020-03-19 14:04:09 Full Path: F:\Tool_release\ArmTracer\V6.1.8\armtracer.exe, Param: close
+2020-03-19 14:04:09 Find Proc 0, ID-->9960, HWND-->856178, pWnd: 53280844: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:04:09 Find Proc ID: 9960, HWnd: 856178, pWnd: 53280844, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:04:09 Send Message: WM_ARMTRACER_CLOSE
+
+
+2020-03-19 14:04:57 Initialize the Fooler Tool
+2020-03-19 14:04:57 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:04:57 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:04:57 Decode Command Line: Name: armtracer, Param: start
+2020-03-19 14:04:57 Full Path: F:\Tool_release\ArmTracer\V6.1.8\armtracer.exe, Param: start
+2020-03-19 14:04:57 Traverse the process list
+2020-03-19 14:04:57 Start up ArmTracer
+2020-03-19 14:04:58 Find Proc 0, ID-->11728, HWND-->661262, pWnd: 54277468: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:04:58 Find Proc 0, ID-->11728, HWND-->661262, pWnd: 54277468: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:04:58      Proc ID: 11728, HWnd: 661262, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:04:58 Send Message: WM_ARMTRACER_START
+
+
+2020-03-19 14:05:13 Initialize the Fooler Tool
+2020-03-19 14:05:13 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:05:14 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:05:14 Decode Command Line: Name: test, Param: start
+2020-03-19 14:05:14 Find Proc 0, ID-->11728, HWND-->135196, pWnd: 53149772: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:05:14 TestCase 
+    Find Proc ID: 11728, HWnd: 135196, pWnd: 53149772, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:05:14 TestCase: test start 
+
+
+
+2020-03-19 14:06:14 Initialize the Fooler Tool
+2020-03-19 14:06:14 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:06:14 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:06:14 Decode Command Line: Name: test, Param: stop
+2020-03-19 14:06:14 Find Proc 0, ID-->11728, HWND-->135196, pWnd: 52494412: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:06:14 TestCase 
+    Find Proc ID: 11728, HWnd: 135196, pWnd: 52494412, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:06:14 TestCase: test stop
+
+
+
+2020-03-19 14:06:23 Initialize the Fooler Tool
+2020-03-19 14:06:23 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:06:23 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:06:23 Decode Command Line: Name: test1, Param: start
+2020-03-19 14:06:23 Find Proc 0, ID-->11728, HWND-->135196, pWnd: 55246924: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:06:23 TestCase 
+    Find Proc ID: 11728, HWnd: 135196, pWnd: 55246924, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:06:23 TestCase: test1 start 
+
+
+
+2020-03-19 14:06:37 Initialize the Fooler Tool
+2020-03-19 14:06:37 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:06:37 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:06:37 Decode Command Line: Name: test1, Param: stop
+2020-03-19 14:06:37 Find Proc 0, ID-->11728, HWND-->135196, pWnd: 52625484: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:06:37 TestCase 
+    Find Proc ID: 11728, HWnd: 135196, pWnd: 52625484, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:06:37 TestCase: test1 stop
+
+
+
+2020-03-19 14:06:46 Initialize the Fooler Tool
+2020-03-19 14:06:46 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:06:46 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:06:46 Decode Command Line: Name: armtracer, Param: close
+2020-03-19 14:06:46 Full Path: F:\Tool_release\ArmTracer\V6.1.8\armtracer.exe, Param: close
+2020-03-19 14:06:46 Find Proc 0, ID-->11728, HWND-->135196, pWnd: 53018700: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:06:46 Find Proc ID: 11728, HWnd: 135196, pWnd: 53018700, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:06:46 Send Message: WM_ARMTRACER_CLOSE
+
+
+2020-03-19 14:34:29 Initialize the Fooler Tool
+2020-03-19 14:34:29 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:34:29 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:34:29 Decode Command Line: Name: armtracer, Param: close
+2020-03-19 14:34:29 Full Path: F:\Tool_release\ArmTracer\V6.1.8\armtracer.exe, Param: close
+2020-03-19 14:34:29 Proc not found
+
+
+2020-03-19 14:37:09 Initialize the Fooler Tool
+2020-03-19 14:37:09 Ini File Path: F:\Tool_release\ArmTracer\V6.1.8\Fooler\Fooler.ini
+2020-03-19 14:37:09 Ini Proc Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:37:09 Decode Command Line: Name: armtracer, Param: start
+2020-03-19 14:37:09 Full Path: F:\Tool_release\ArmTracer\V6.1.8\armtracer.exe, Param: start
+2020-03-19 14:37:09 Traverse the process list
+2020-03-19 14:37:09 Start up ArmTracer
+2020-03-19 14:37:10 Find Proc 0, ID-->12184, HWND-->1185456, pWnd: 53294428: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:37:10 Find Proc 0, ID-->12184, HWND-->1185456, pWnd: 53294428: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:37:11      Proc ID: 12184, HWnd: 1185456, Path: F:\Tool_release\ArmTracer\V6.1.8\
+2020-03-19 14:37:11 Send Message: WM_ARMTRACER_START

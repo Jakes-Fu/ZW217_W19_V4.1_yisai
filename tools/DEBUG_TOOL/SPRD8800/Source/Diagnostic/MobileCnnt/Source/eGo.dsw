@@ -1,0 +1,179 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "Etion"=.\Etion\Etion.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Etion
+    .\Etion
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MobileCnnt"=.\GUI\MobileCnnt.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    MobileCnnt
+    .\GUI
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Etion
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ResEn
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SCIPBGroup
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SCIShortMsg
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SCIMemo
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SCIMMIPB
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ResEn"=.\ResDll\ResEn\ResEn.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    ResEn
+    .\ResDll\ResEn
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SCIMMIPB"=.\SCIMMIPB\SCIMMIPB.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    SCIMMIPB
+    .\SCIMMIPB
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SCIMemo"=.\SCIMemo\SCIMemo.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    SCIMemo
+    .\SCIMemo
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SCIPB"=.\SCIPB\SCIPB_7550.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    SCIPB
+    .\SCIPB
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SCIPBGroup"=.\SCIPBGroup\SCIPBGroup.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    SCIPBGroup
+    .\SCIPBGroup
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SCIShortMsg"=.\SCIShortMsg\SCIShortMsg_7550.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    SCIShortMsg
+    .\SCIShortMsg
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SciPort"=.\SciPort\SciPort.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    SciPort
+    .\SciPort
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

@@ -1,0 +1,10 @@
+1、预置应用用户无法删除、但可以升级。
+2、IA 制作预置应用的向导：
+(1)进入工程模式(eng mode->App set->Hidden Partition Visible)，设置为true
+(2)此时进入JAVA AMS手动安装应用时会看到多出一个隐藏C盘选项，把需预置的N个应用安装到隐藏C盘。（若某应用要安装到特定Domain域，则需对应证书）
+(3)之后手机连上U盘，在PC上可看到多出了一个隐藏分区盘，把JAVA系统目录/Java/拷贝一份->Java_backup
+(4)用免费的磁盘编辑软件工具，如Runtime DiskExplorer将整个隐藏分区盘生成镜像
+(5)进入工程模式(eng mode->App set->Hidden Partition Visible)，设置为false。（这样最终用户就无法把其他应用安装到隐藏C盘）
+(6)预置应用工作完成
+ 
+注意：步骤(3)中，制作Java_backup的目的是为了将来用户恢复出场设置时，可以把预置应用恢复到出场时的状态。（因为用户在使用应用的过程中，会修改应用的RMS数据、Permission信息等）

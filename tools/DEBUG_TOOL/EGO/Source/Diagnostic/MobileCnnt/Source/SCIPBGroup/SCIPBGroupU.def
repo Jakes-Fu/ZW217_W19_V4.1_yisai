@@ -1,0 +1,7 @@
+; SCIPBGroupU.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SCIPBGroupU"
+DESCRIPTION  'SCIPBGroupU Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

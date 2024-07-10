@@ -1,0 +1,39 @@
+生成java预置文件preload.img的说明：
+1)进入工程模式(eng mode->App set->Hidden Partition Visible)，设置隐藏分区可见，之后手机连上U盘，在PC上可以看到多出了一个隐藏分区盘；在PC上清空隐藏分区盘里边javahome/adddb文件夹，手机退出U盘。手动操作进下ams(即娱乐-JAVA),以在隐藏分区下生成javahome路径
+
+2)配置文件tck.cfg中修改为install_mode=0，并将该文件copy到隐藏分区\javahome\appdb目录下；重启手机（重启手机的时候会去读tck.cfg中的install_mode，如果是0的话，安装java应用时生成的文件都会到javahome目录下；如果是1则会生成到java目录下）
+
+3)手动安装预制的4个java应用(也可以通过jad在线安装，这样在之后更新时就能找到url网址，进行在线更新),然后你就会发现安装生成的文件都在隐藏分区\javahome\appdb目录下
+
+4)删除tck.cfg文件
+
+5)java预置应用的默认网络设置需要与浏览器的网络设置区分独立出来的方法：
+原理：每一个java应用对应有自己的网络设置，如果对该应用手动操作保存过网络设置，就会在\javahome\appdb目录下生成对应的0000000xnetwork.cfg文件，下次该应用开始网络操作时会读取该配置文件中的网络设置。
+
+问题：但如果手机刚下完版本初始的情况下，java应用没有网络配置文件时，默认的网络设置取的是浏览器的网络设置,导致有可能应用取到的不是自己默认支持的网络设置。 
+
+解决方法：如果客户需要将一些预置应用的网络初始配置与浏览器分开独立出来，则需要在预置这些应用时，手动保存下其需要的默认网络设置，生成对应的.cfg文件即可。
+
+6)用免费的磁盘编辑软件工具，如Runtime DiskExplorer将整个隐藏分区盘生成镜像
+
+注：
+1)需要从主菜单直接进入java应用功能的，制作预置应用时安装的顺序需与preload00_gen.c中数组中的顺序一致，且该数组项中的第二个参数，如"com.fetion.ui.FetionMIDlet"需要和该应用jad文件中MIDlet-1:属性中的最后一项要一致，否则会运行不起来；该数组项中的第三个参数，如"Fetion"，客户可按照自己需要起任意的名字，但该名字需与调用主菜单中直接打开应用接口时的入参要一致，MMIJAVA_LAUNCH_PRELOAD_MIDLET("Fetion");
+static PRELOAD_RUNTIME_T preload_rt_static[] =
+{
+	{ 2, "com.fetion.ui.FetionMIDlet", "Fetion" },
+	{ 3, "com.TeleNavMidlet", "Map" },
+	{ 4, "main.NTG2MIDlet", "Paper" },
+	{ 5, "com.fumobile.Client", "Music" },	
+	{0, NULL, NULL}
+};
+
+2)关于客户配置下载Java程序的URL链接的问题：
+1、客户可按需要将str_table.xls中字符串资源
+TXT_JAVA_URL_GAME
+TXT_JAVA_URL_EBOOK
+TXT_JAVA_URL_OTHER的内容修改为自己想要的网址，重新编译资源.bin，并下载即可。若编辑内容为"NOSHOW",这个链接就不会在“下载Java程序”界面中显示，使得客户可按自己的情况配置显示1~3条链接。
+2、另外在下载重新编译好的资源时，还需要重新下载preload_img.bin(由于用户编辑了下载Java程序中的URL链接地址后，会在\javahome\appdb生成URLB_ookmarks.db文件，并将编辑过的url保存到该文件中，下次显示链接会从该文件中获取而不是用字符串资源中的默认值),重新下载preload_img.bin的目的就是要清除这个URLB_ookmarks.db文件，使能取到默认的URL链接
+
+
+javahome\appdb目录下增加了可配置jvm虚拟机部分内存和java其他部分内存（优化，画屏buffer）的功能配置文件：jwc_properties.ini
+jvm在运行时，需要读预置包中的该文件jwc_properties.ini，如果没有该文件，java就会跑不起来。请客户注意。

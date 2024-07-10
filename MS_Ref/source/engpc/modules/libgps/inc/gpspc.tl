@@ -1,0 +1,27 @@
+
+AT_REG("AT+SPGPSTEST=", gnss_at_test)
+
+DIAG_REG_FULL(0x3A, 0, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 1, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 2, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 3, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 5, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 7, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 8, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 10, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 11, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 12, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 13, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 20, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 21, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 23, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 24, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x3A, 25, 0xFF, 0, gnss_diag_test, set_report_ptr, NULL)
+
+DIAG_REG_FULL(0x38, 0x16, 1, 0, gnss_bbat_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x38, 0x16, 2, 0, gnss_bbat_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x38, 0x16, 3, 0, gnss_bbat_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x38, 0x16, 4, 0, gnss_bbat_test, set_report_ptr, NULL)
+DIAG_REG_FULL(0x38, 0x16, 5, 0, gnss_bbat_test, set_report_ptr, NULL)
+
+DIAG_REG(0x5, 0x0a, eng_diag_gps_assert_func)

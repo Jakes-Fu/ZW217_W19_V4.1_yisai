@@ -1,0 +1,46 @@
+    WIN_ID_DEF(MMIWWW_MAINMENU_WIN_ID),		//  The window id of WWW browser main menu
+    WIN_ID_DEF(MMIWWW_MAINMENU_OPT_WIN_ID),		//  The window id of main menu opt
+    WIN_ID_DEF(MMIWWW_SETMENU_WIN_ID),		//  The window id of WWW browser set menu
+    WIN_ID_DEF(MMIWWW_SET_WIN_ID),		//  The window id of WWW browser set
+    WIN_ID_DEF(MMIWWW_BROWSER_WIN_ID),		//  The window id of WWW browser Win
+    WIN_ID_DEF(MMIWWW_INLINE_IME_WIN_ID),		//  The window id of WWW browser Inline IME win
+    WIN_ID_DEF(MMIWWW_HISTORY_WIN_ID),		//  The window id of history Win
+    WIN_ID_DEF(MMIWWW_PAGEMEMO_WIN_ID),		//  The window id of pagememo Win
+    WIN_ID_DEF(MMIWWW_CERTIFICATE_WIN_ID),		//  The window id of certificate Win
+    WIN_ID_DEF(MMIWWW_HISTORY_OPT_WIN_ID),     //  The window id of history option 
+    WIN_ID_DEF(MMIWWW_PAGEMEMO_OPT_WIN_ID),     //  The window id of pagememo option 
+    WIN_ID_DEF(MMIWWW_HISTORY_ATTRIBUTE_WIN_ID),     //  The window id of history item attribute
+    WIN_ID_DEF(MMIWWW_CERTIFICATE_ATTRIBUTE_WIN_ID),     //  The window id of certificate item attribute
+    WIN_ID_DEF(MMIWWW_BOOKMARK_WIN_ID),    //  The window id of WWW bookmark
+    WIN_ID_DEF(MMIWWW_INPUT_BOOKMARK_WIN_ID),    //  The window id of WWW bookmark
+    WIN_ID_DEF(MMIWWW_SHOW_BOOKMARK_WIN_ID),    //  The window id of adding, editing and showing bookmark 
+    WIN_ID_DEF(MMIWWW_BOOKMARK_OPT_WIN_ID),		//  The window id of WWW bookmark sub menu
+    WIN_ID_DEF(MMIWWW_BOOKMARK_DETAIL_SUBMENU_WIN_ID),		//  The window id of  sub menu of bookmark detail
+    WIN_ID_DEF(MMIWWW_MATCHKEY_WIN_ID),  //The window id of WWW match key 
+    WIN_ID_DEF(MMIWWW_MATCHURL_WIN_ID),  //The window id of WWW match key 
+    WIN_ID_DEF(MMIWWW_COMMON_EDIT_WIN_ID),		//  The window id of WWW Common Edit
+    WIN_ID_DEF(MMIWWW_ALERT_WIN_ID),		//  The window id of WWW Alert win
+    WIN_ID_DEF(MMIWWW_PAGE_OPT_WIN_ID),		//  The window id of WWW page option menu win
+    WIN_ID_DEF(MMIWWW_PAGE_SEARCH_WIN_ID),   //The window for www page search    
+    WIN_ID_DEF(MMIWWW_FULL_DISPLAY_WIN_ID), //The window for www full display
+    WIN_ID_DEF(MMIWWW_PAGE_PROPERTY_WIN_ID), //The window for www page property
+    WIN_ID_DEF(MMIWWW_PAGE_SAVE_AS_WIN_ID),   //The window for www page save as
+    WIN_ID_DEF(MMIWWW_PAGE_SAVE_AS_EDIT_WIN_ID),   //The window for www page save as edit win
+    WIN_ID_DEF(MMIWWW_JSCONFIRM_WIN_ID),   //The window for JavaScript confirmation win  
+    WIN_ID_DEF(MMIWWW_JSPROMPT_WIN_ID),   //The window for JavaScript prompt win  
+    WIN_ID_DEF(MMIWWW_JSPROMPT_EDIT_WIN_ID),   //The window for JavaScript prompt edit win  
+    WIN_ID_DEF(MMIWWW_LINKLIST_WIN_ID),    //  The window id of connecting list
+    WIN_ID_DEF(MMIWWW_CHARSETLIST_WIN_ID),    //  The window id of char set list
+    WIN_ID_DEF(MMIWWW_WMLSCONFIRM_WIN_ID),    //  The window id for WMLS confire
+    WIN_ID_DEF(MMIWWW_WMLSPROMPT_WIN_ID),     //   The window id for WMLS prompt 
+    WIN_ID_DEF(MMIWWW_WMLSPROMPT_EDIT_WIN_ID),     //   The window id for WMLS edit   
+    WIN_ID_DEF(MMIWWW_AUTH_WIN_ID),     //   The window id for WWW AUTH   
+    WIN_ID_DEF(MMIWWW_AUTH_INPUT_WIN_ID),     //   The window id for WWW AUTH Input
+    WIN_ID_DEF(MMIWWW_POINTERMODE_WIN_ID),     //   The window id for Pointer Mode
+    WIN_ID_DEF(MMIWWW_BOOKMARK_MOVE_WIN_ID),		//  The window id of WWW browser Win
+    //WIN_ID_DEF(MMIWWW_CC_SELECT_WIN_ID),		//  The window id of CC select
+    WIN_ID_DEF(MMIWWW_HOMEPAGE_SET_WIN_ID),		//  The window id of Homepage Setting
+    WIN_ID_DEF(MMIWWW_SELECTSIM_WIN_ID),		//  The window id of sim select
+    WIN_ID_DEF(MMIWWW_WINDOW_MANAGER_WIN_ID),    //  The window id of WWW bookmark
+    WIN_ID_DEF(MMIWWW_WINDOW_MANAGER_OPTION_WIN_ID),
+    WIN_ID_DEF(MMIWLAN_QUERY_GPRS_WIN_ID),

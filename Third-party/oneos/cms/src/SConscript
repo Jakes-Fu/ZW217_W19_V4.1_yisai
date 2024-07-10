@@ -1,0 +1,35 @@
+from build_tools import *
+
+pwd = PresentDir()
+src = []
+CPPPATH = []
+LIBPATH = []
+LIBS    = []
+
+src = Glob('source/cms_config.c')
+CPPPATH = [pwd + '/include']
+CPPPATH += [pwd + '/source']
+LIBPATH = [pwd + '/library/']
+
+if IsDefined('ARCH_ARM_CORTEX_M0'):
+   LIBS += ['arm_cortex-m0_cms_core']
+
+elif IsDefined('ARCH_ARM_CORTEX_M0plus'):
+     LIBS += ['arm_cortex-m0plus_cms_core']
+
+elif IsDefined('ARCH_ARM_CORTEX_M3'):
+     LIBS += ['arm_cortex-m3_cms_core']
+
+elif IsDefined('ARCH_ARM_CORTEX_M4'):
+     LIBS += ['arm_cortex-m4_cms_core']
+     
+elif IsDefined('ARCH_ARM_CORTEX_M7'):
+     LIBS += ['arm_cortex-m7_cms_core']
+
+elif IsDefined('ARCH_ARM_CORTEX_M33_TZ'):
+     LIBS += ['arm_cortex-m33_cms_core']
+
+group = AddCodeGroup('cms_core', src, depend = ['USING_CMS_CONNECT' or 'CMS_USING_ID'], CPPPATH = CPPPATH)
+group += AddCodeGroup('cms_core_lib', [], depend = ['USING_CMS_CONNECT' or 'CMS_USING_ID'], LIBS=LIBS, LIBPATH = LIBPATH)
+
+Return('group')

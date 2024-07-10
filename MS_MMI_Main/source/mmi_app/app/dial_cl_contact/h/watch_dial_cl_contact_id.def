@@ -1,0 +1,3 @@
+//watch dial_cl_contact win id
+	WIN_ID_DEF(WATCH_DIAL_CL_CONTACT_WIN_ID),//拨号盘 通话记录 联系人 三合一窗口 WIN_ID
+

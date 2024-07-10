@@ -1,0 +1,13 @@
+
+
+//[[define image infomation
+//RES_ADD_IMG(IMAGE_CLASS_MAIN_MENU,"\\MMI_RES_##\\IMAG\\class\\class_menu.png",IMG_CMP_PNG_ARGB_RLE,0)
+
+
+//[[define string infomation
+RES_ADD_STRING(TXT_WLDT_TEST,"WLDT TEST")
+RES_ADD_STRING(TXT_WLDT_SEND_OK,"Send OK")
+RES_ADD_STRING(TXT_WLDT_SEND_FAIL,"Send Fail")
+RES_ADD_STRING(TXT_WLDT_NO_SIM,"No Sim")
+RES_ADD_STRING(TXT_WLDT_NO_NET,"No Network")
+

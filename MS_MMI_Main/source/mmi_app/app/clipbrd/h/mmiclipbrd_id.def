@@ -1,0 +1,3 @@
+
+    WIN_ID_DEF(MMICLIPBRD_MENU_WIN_ID),					// window for clipboard
+

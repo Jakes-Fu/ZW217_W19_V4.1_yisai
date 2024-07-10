@@ -1,0 +1,628 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Ownership.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ADD                 BITMAP  DISCARDABLE     "res\\Add.bmp"
+IDB_DEL                 BITMAP  DISCARDABLE     "res\\del.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_CONV_SETTING DIALOG DISCARDABLE  0, 0, 177, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Convert City Quhao Data File To Text File"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,73,81,39,14
+    PUSHBUTTON      "Cancel",IDCANCEL,131,81,39,14
+    GROUPBOX        "Source (City Quhao Data File)",IDC_STATIC,7,7,163,32
+    EDITTEXT        IDC_CS_EDT_QUHAO_CITY_MID_FILE,14,19,126,12,
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_CS_EDT_QUHAO_CITY_TXT_FILE,14,55,126,12,
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_CS_BTN_QCM_BROW,144,19,19,12
+    PUSHBUTTON      "...",IDC_CS_BTN_QCT_BROW,145,55,19,12
+    GROUPBOX        "Target (City Quhao Text File)",IDC_STATIC,7,43,163,30
+END
+
+IDD_DLG_CITY_EDIT DIALOGEX 0, 0, 187, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit city file"
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Exit",IDCANCEL,118,168,58,14
+    GROUPBOX        "City list",IDC_STATIC,7,7,104,180
+    CONTROL         "List1",IDC_ECF_LST_CITY,"SysListView32",LVS_REPORT | 
+                    LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,14,16,90,164,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Export Text File",IDC_ECF_BTN_SAVE_AS,118,51,58,14
+    PUSHBUTTON      "Save Data File",IDC_ECF_BTN_SAVE,118,88,58,14
+    PUSHBUTTON      "Import Data File",IDC_ECF_BTN_IMPORT,118,17,58,14
+    PUSHBUTTON      "Import Text File",IDC_ECF_BTN_IMPORT_TEXT,118,34,58,14
+    GROUPBOX        "",IDC_STATIC,113,7,67,180
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DLG_CONV_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 170
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_DLG_CITY_EDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 187
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 285, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Ownership"
+FONT 9, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Ownership",IDC_STATIC,43,15,119,8,SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,228,7,50,14,WS_GROUP
+END
+
+IDD_EDT_BTN_DLG DIALOGEX 0, 0, 187, 13
+STYLE WS_CHILD
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDT_TEXT,0,0,137,13,ES_AUTOHSCROLL | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "...",IDC_BTN_SEL,137,0,50,13
+END
+
+IDD_DLG_UPDATE_OWNERSHIP DIALOG DISCARDABLE  0, 0, 189, 109
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Update Number Ownership"
+FONT 10, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,92,90,40,12
+    PUSHBUTTON      "Cancel",IDCANCEL,142,90,40,12
+    GROUPBOX        "",IDC_STATIC,7,7,175,77
+    LTEXT           "Start Number:",IDC_STATIC,15,20,53,8
+    LTEXT           "End Number:",IDC_STATIC,15,36,47,8
+    LTEXT           "City Name:",IDC_STATIC,15,51,47,8
+    LTEXT           "City ID:",IDC_STATIC,15,67,47,8
+    EDITTEXT        IDC_EDT_START_NUMBER,70,19,103,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDT_END_NUMBER,70,34,103,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_CITY_ID,70,65,103,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    COMBOBOX        IDC_CMB_CITY,70,49,103,245,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_DLG_LOAD_TEXT DIALOG DISCARDABLE  0, 0, 199, 139
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Load Phone Number Text Files"
+FONT 10, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,106,118,39,14
+    PUSHBUTTON      "Cancel",IDCANCEL,153,118,39,14
+    GROUPBOX        "Phone Number Files",IDC_STATIC,7,7,185,73
+    GROUPBOX        "City File",IDC_STATIC,7,83,185,29
+    EDITTEXT        IDC_DLT_EDT_CITY_FILE,14,93,154,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_DLT_SEL,171,93,16,13
+    CONTROL         "List1",IDC_DLT_LST_PHONE_NUMBER_FILES,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,14,18,154,56
+    PUSHBUTTON      "Add",IDC_DLT_BTN_ADD,171,18,16,16,BS_BITMAP
+    PUSHBUTTON      "Del",IDC_DLT_BTN_DEL,171,37,16,16,BS_BITMAP
+END
+
+IDD_DLG_LOAD_MID DIALOG DISCARDABLE  0, 0, 207, 175
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Load number ownership files"
+FONT 10, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,116,154,39,14
+    PUSHBUTTON      "Cancel",IDCANCEL,161,154,39,14
+    GROUPBOX        "Number Ownership Data Files",IDC_STATIC,7,7,193,97
+    CONTROL         "List1",IDC_DSS_LST_DST_FILES,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,14,20,177,74
+    GROUPBOX        "City File",IDC_STATIC,7,107,193,41
+    EDITTEXT        IDC_DLC_EDT_CITY,15,123,153,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_DLC_BTN_SEL_CITY,173,123,18,14
+END
+
+IDD_DLG_GEN_SETTING DIALOG DISCARDABLE  0, 0, 202, 119
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Generate setting"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,109,98,39,14
+    PUSHBUTTON      "Cancel",IDCANCEL,156,98,39,14
+    GROUPBOX        "Target Files",IDC_STATIC,7,7,188,88
+    CONTROL         "List1",IDC_DGS_LST_CITY_MAP_FILES,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,14,18,175,71
+END
+
+IDD_DLG_QUHAO DIALOG DISCARDABLE  0, 0, 243, 133
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Generate quhao files"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,122,112,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,186,112,50,14
+    GROUPBOX        "",IDC_STATIC,7,7,229,44
+    LTEXT           "City Quhao Data File",IDC_STATIC,14,20,68,8
+    LTEXT           "Quhao Data File",IDC_STATIC,14,67,53,8
+    LTEXT           "Quhao City Data File",IDC_STATIC,14,35,68,8
+    GROUPBOX        "",IDC_STATIC,7,57,229,40
+    LTEXT           "City Data File[out]",IDC_STATIC,14,81,59,8
+    EDITTEXT        IDC_EDT_CITY_QUHAO,84,18,116,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_QUHAO_CITY,84,34,116,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_QUHAO,84,66,116,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DQ_EDT_CITY_OUT,84,80,116,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_CQ_BROW,207,18,19,12
+    PUSHBUTTON      "...",IDC_BTN_QC_BROW,207,34,19,12
+    PUSHBUTTON      "...",IDC_BTN_Q_BROW,207,66,19,12
+    PUSHBUTTON      "...",IDC_BTN_C_BROW,206,108,19,12,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    GROUPBOX        "",IDC_STATIC,7,99,229,25,NOT WS_VISIBLE | WS_DISABLED
+    LTEXT           "City Data File[in]",IDC_STATIC,14,109,55,8,NOT 
+                    WS_VISIBLE | WS_DISABLED
+    EDITTEXT        IDC_DQ_EDT_CITY,74,108,126,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE | WS_DISABLED
+    PUSHBUTTON      "...",IDC_BTN_C_OUT_BROW,207,80,19,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 278
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_DLG_UPDATE_OWNERSHIP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 182
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 102
+    END
+
+    IDD_DLG_LOAD_TEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 192
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 132
+    END
+
+    IDD_DLG_LOAD_MID, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 168
+    END
+
+    IDD_DLG_GEN_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+
+    IDD_DLG_QUHAO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 126
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Ownership.ico"
+IDR_CITYMATYPE          ICON    DISCARDABLE     "res\\OwnershipDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_LOAD_TEXT_FILES
+    BUTTON      ID_LOAD_MID_FILES
+    BUTTON      ID_GEN_CITY_MAP
+    BUTTON      ID_EXPORT_TEXT
+    BUTTON      ID_CLEAR
+    SEPARATOR
+    BUTTON      ID_LOAD_CITY_QUHAO
+    BUTTON      ID_GEN_CITY_QUHAO
+    BUTTON      ID_CONV_CITY_QUHAO_MID_TO_TXT
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Load number text files",      ID_LOAD_TEXT_FILES
+        MENUITEM "Load number data files",      ID_LOAD_MID_FILES
+        MENUITEM "Generate",                    ID_GEN_CITY_MAP
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "Tools"
+    BEGIN
+        MENUITEM "Edit city file",              ID_EDIT_CITY
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Ownership...",         ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,2,1
+ PRODUCTVERSION 1,1,2,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Ownership MFC Application\0"
+            VALUE "FileVersion", "1, 1, 2, 1\0"
+            VALUE "InternalName", "Ownership\0"
+            VALUE "LegalCopyright", "Copyright (C) 2008-2011 Spreadtrum Communications INC.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Ownership.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Ownership\0"
+            VALUE "ProductVersion", "1, 1, 2, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Ownership\n\nCityMa\n\n\nOwnership.Document\nCityMa Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Ownership"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_LOAD_MID_FILES       "Load number data files\nLoad number data files"
+    ID_LOAD_TEXT_FILES      "Load number text files\nLoad number text files"
+    ID_GEN_CITY_MAP         "Generate number data file\nGenerate"
+    ID_CLEAR                "Clear the content\nClear"
+    ID_LOAD_CITY_QUHAO      "Load City Quhao Text File\nLoad City Quhao Text File"
+    ID_GEN_CITY_QUHAO       "Generate City Quhao Mid File\nGenerate City Quhao Mid File"
+    ID_CONV_CITY_QUHAO_MID_TO_TXT 
+                            "Convert City Quhao Mid File To Text File\nConvert City Quhao Mid File To Text File"
+    ID_EDIT_CITY            "Edit city file\nEdit city file"
+    ID_EXPORT_TEXT          "Export to text\nExport to text"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Ownership.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

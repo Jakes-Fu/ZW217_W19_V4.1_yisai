@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MediaCore", "mccore\mccore.vcproj", "{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mp4 Express", "mcgui\mediacoder.vcproj", "{AF1EEC05-31B8-498C-BDD4-C3405F047284}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34} = {4164D09A-23F1-4B1E-B9E0-FB1585C18E34}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_static|Win32 = Debug_static|Win32
+		Debug|Win32 = Debug|Win32
+		Release_static|Win32 = Release_static|Win32
+		Release_win9x|Win32 = Release_win9x|Win32
+		Release_zh|Win32 = Release_zh|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}.Debug_static|Win32.ActiveCfg = Debug_static|Win32
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}.Debug_static|Win32.Build.0 = Debug_static|Win32
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}.Debug|Win32.ActiveCfg = Debug_static|Win32
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}.Debug|Win32.Build.0 = Debug_static|Win32
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}.Release_static|Win32.ActiveCfg = Release_static|Win32
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}.Release_static|Win32.Build.0 = Release_static|Win32
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}.Release_win9x|Win32.ActiveCfg = Release_zh|Win32
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}.Release_win9x|Win32.Build.0 = Release_zh|Win32
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}.Release_zh|Win32.ActiveCfg = Release_zh|Win32
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}.Release_zh|Win32.Build.0 = Release_zh|Win32
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}.Release|Win32.ActiveCfg = Release_static|Win32
+		{4164D09A-23F1-4B1E-B9E0-FB1585C18E34}.Release|Win32.Build.0 = Release_static|Win32
+		{AF1EEC05-31B8-498C-BDD4-C3405F047284}.Debug_static|Win32.ActiveCfg = Debug_static|Win32
+		{AF1EEC05-31B8-498C-BDD4-C3405F047284}.Debug_static|Win32.Build.0 = Debug_static|Win32
+		{AF1EEC05-31B8-498C-BDD4-C3405F047284}.Debug|Win32.ActiveCfg = Debug_static|Win32
+		{AF1EEC05-31B8-498C-BDD4-C3405F047284}.Debug|Win32.Build.0 = Debug_static|Win32
+		{AF1EEC05-31B8-498C-BDD4-C3405F047284}.Release_static|Win32.ActiveCfg = Release_static|Win32
+		{AF1EEC05-31B8-498C-BDD4-C3405F047284}.Release_static|Win32.Build.0 = Release_static|Win32
+		{AF1EEC05-31B8-498C-BDD4-C3405F047284}.Release_win9x|Win32.ActiveCfg = Release_win9x|Win32
+		{AF1EEC05-31B8-498C-BDD4-C3405F047284}.Release_win9x|Win32.Build.0 = Release_win9x|Win32
+		{AF1EEC05-31B8-498C-BDD4-C3405F047284}.Release_zh|Win32.ActiveCfg = Release_zh|Win32
+		{AF1EEC05-31B8-498C-BDD4-C3405F047284}.Release_zh|Win32.Build.0 = Release_zh|Win32
+		{AF1EEC05-31B8-498C-BDD4-C3405F047284}.Release|Win32.ActiveCfg = Release_static|Win32
+		{AF1EEC05-31B8-498C-BDD4-C3405F047284}.Release|Win32.Build.0 = Release_static|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

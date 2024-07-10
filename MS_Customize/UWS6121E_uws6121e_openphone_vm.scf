@@ -1,0 +1,7 @@
+#include "UWS6121E.def"
+#include "mem_cfg.h"
+
+#define SIMAGE_HEAD  0x100
+
+#include "UWS6121E_normal.scf"
+

@@ -1,0 +1,413 @@
+#
+#	Valid File Type Definitions
+#
+.SUFFIXES:
+.SUFFIXES: .o .c .s .cpp .dat
+
+#
+# Pre-defined Make Rules and Modules Specific Compiler Options
+#
+
+include Makefile.rules
+include ./project_$(PROJECT).mk
+include Makefile.verify
+include Makefile.rules
+
+#filtrated the trace which TRACE_CFG included
+ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE)
+TRACE_CFG_FILE = ./trace_config_$(PROJECT).cfg
+ifeq ($(TRACE_CFG_FILE), $(wildcard $(TRACE_CFG_FILE)))
+include ./trace_config_$(PROJECT).cfg
+TRACE_INFO_SUPPORT = $(if $(findstring "$(COMPONENT)",$(TRACE_CFG)),FALSE,TRUE)
+ifeq ($(strip $(TRACE_INFO_SUPPORT)), FALSE)
+C_MACRO := $(subst -DTRACE_INFO_SUPPORT,,$(C_MACRO))
+A_MACRO := $(subst -DTRACE_INFO_SUPPORT,,$(A_MACRO))
+SPRD_MACRO_LIST := $(subst -DTRACE_INFO_SUPPORT,,$(SPRD_MACRO_LIST))
+SPRD_MACRO := $(subst -DTRACE_INFO_SUPPORT,,$(SPRD_MACRO))
+ALL_MACRO_LIST := $(subst -DTRACE_INFO_SUPPORT,,$(ALL_MACRO_LIST))
+endif
+endif
+endif
+
+include $(call GETMAKEPATH,$(COMPONENT))
+
+CFLAGS += $(strip $(CUSTOM_CFLAG))
+AFLAGS += $(strip $(CUSTOM_CFLAG))
+
+#
+# Var Used For Specific Modules
+#
+CCOMPLAN	=	$(CC)
+
+ifeq ($(COMPONENT),chip_base)
+CCOMPLAN		= $(ARMCC)
+endif
+ifeq ($(COMPONENT),utility_performance)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),spml)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),mpeg4_codec)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),mplapi_threadx_8801h)
+CCOMPLAN		= $(CPP)
+endif
+
+ifeq ($(strip $(COMPILER)),RVCT)
+ifeq ($(COMPONENT),dm_2g_ps)
+CCOMPLAN      = $(ARMCC)
+endif
+endif
+
+ifeq ($(COMPONENT),athr_iperf)
+CCOMPLAN		= $(CPP)
+endif
+
+#ifeq ($(COMPONENT),innofidei)
+#CCOMPLAN		= $(CPP)
+#endif
+
+ifeq ($(COMPONENT),mplapi_intg_8801h)
+CCOMPLAN		= $(CPP)
+endif
+
+ifeq ($(COMPONENT),h264_codec)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),rv_codec)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),video_security)
+CCOMPLAN		= $(ARMCC)
+endif
+
+
+ifeq ($(COMPONENT),midi)
+ifeq ($(strip $(SOUNDBANK_MODE)),COMPACT)
+CCOMPLAN		= $(CC)
+else
+CCOMPLAN		= $(ARMCC)
+endif
+endif
+
+ifeq ($(COMPONENT),midi_opt)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),audproc_exp)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),ubot)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),dc)
+ifeq ($(strip $(PLATFORM)),SC6600L)
+CCOMPLAN		= $(ARMCC)
+endif
+endif
+
+ifeq ($(COMPONENT),isp_service)
+ifeq ($(NANDBOOT_SUPPORT),TRUE)
+CCOMPLAN		= $(ARMCC)
+endif
+endif
+
+ifeq ($(COMPONENT),amr_arm)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),img_proc)
+ifeq ($(NANDBOOT_SUPPORT),TRUE)
+CCOMPLAN		= $(ARMCC)
+endif
+endif
+
+ifeq ($(COMPONENT),img_proc_core)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),ucom)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),display)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),display_core)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),s3d)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),lcd)
+#ifeq ($(NANDBOOT_SUPPORT),TRUE)
+CCOMPLAN		= $(ARMCC)
+#endif
+endif
+
+ifeq ($(COMPONENT),upcc)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),aac)
+ifeq ($(strip $(PLATFORM)),SC8800H)
+CCOMPLAN		= $(ARMCC)
+endif
+ifeq ($(strip $(PLATFORM)),SC8800G)
+CCOMPLAN		= $(ARMCC)
+endif
+endif
+
+ifeq ($(strip $(COMPONENT)), mp3_dsp)
+ifeq ($(strip $(PLATFORM)),SC8800H)
+CCOMPLAN		= $(ARMCC)
+endif
+ifeq ($(strip $(PLATFORM)),SC8800G)
+CCOMPLAN		= $(ARMCC)
+endif
+endif
+
+ifeq ($(strip $(COMPONENT)), mp3_new)
+ifeq ($(strip $(PLATFORM)),SC8800H)
+CCOMPLAN		= $(ARMCC)
+endif
+ifeq ($(strip $(PLATFORM)),SC8800G)
+CCOMPLAN		= $(ARMCC)
+endif
+endif
+
+ifeq ($(strip $(COMPONENT)), record)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT), dra)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT), ra8lbr)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),agc_exp)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT), iperf) 
+CCOMPLAN =$(CPP) 
+endif 
+ifeq ($(COMPONENT),fdl1_nf)
+endif
+
+ifeq ($(COMPONENT),xsr_port_fdl)
+ifeq ($(strip $(PLATFORM)),SC8800H)
+CCOMPLAN		= $(ARMCC)
+endif
+endif
+
+ifeq ($(COMPONENT),video_security_hmv)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(COMPONENT),nes)
+CCOMPLAN		= $(ARMCC)
+endif
+
+ifeq ($(strip $(COMPILER)), RVCT)
+ifeq ($(strip $(CCOMPLAN)),ARMCC)
+ifneq ($(findstring "--thumb",$(CFLAGS)),)
+CFLAGS = $(subst --thumb,--arm,$(CFLAGS))
+else
+CFLAGS += --arm
+endif
+else
+	ifneq ($(findstring "--arm",$(CFLAGS)),)
+	CFLAGS = $(subst --arm,--thumb,$(CFLAGS))
+	else
+	CFLAGS += --thumb
+	endif
+endif
+CCOMPLAN		= $(CC)
+endif
+
+ifeq ($(strip $(COMPILER)),	RVCT)
+CFLAGS      += --feedback $(BUILD_DIR)/$(PROJECT)_feedback.txt
+endif
+
+# for AMR_ENC_calc_en.c in module record, the O3 will cause AMR_ENC_norm_l function lost
+ifeq ($(strip $(COMPONENT)),record)
+CFLAGS	:= $(subst -O3,-O2,$(CFLAGS))
+endif
+# o3 RVCT569 always show "table overflow" for midi_soundbank.c
+ifeq ($(strip $(COMPONENT)),midi)
+CFLAGS	:= $(subst -O3,-O2,$(CFLAGS))
+endif
+
+
+
+empty:=
+
+space:=$(empty) $(empty)
+
+
+#
+# Vars For Building Target
+#
+TARGET				= $(COMPONENT).a
+INCPATH 			= $(addprefix -I, $(COMMON_INCPATH))
+INCPATH				+=$(addprefix -I, $(MINCPATH))
+ifeq ($(strip $(COMPILER)),	RVCT)
+MCFLAG_OPT		:= $(subst -zc,--signed_chars,$(MCFLAG_OPT))
+MCFLAG_OPT		:= $(subst -zo,--split_sections,$(MCFLAG_OPT))
+#MCFLAG_OPT		:= $(subst -16,--thumb,$(MCFLAG_OPT))
+MCFLAG_OPT		:= $(subst -g+,--debug,$(MCFLAG_OPT))
+MCFLAG_OPT		:= $(subst -g,--debug,$(MCFLAG_OPT))
+MCFLAG_OPT		:= $(subst -fy,--enum_is_int,$(MCFLAG_OPT))
+MCFLAG_OPT		:= $(subst /shlclient/interwork,/interwork,$(MCFLAG_OPT))
+MCFLAG_OPT		:= $(subst -Ec,--loose_implicit_cast,$(MCFLAG_OPT))
+MCFLAG_OPT		:= $(subst -Wx+u,--diag_suppress=177 --diag_warning=40,$(MCFLAG_OPT))
+MCFLAG_OPT		:= $(subst -fx,,$(MCFLAG_OPT))
+MCFLAGS			= $(MCFLAG_OPT)
+MASMFLAG_OPT	:= $(subst -pd,--pd,$(MASMFLAG_OPT))
+MASMFLAG_OPT	:= $(subst -PD,--pd,$(MASMFLAG_OPT))
+MASMFLAG_OPT	:= $(subst -zo,,$(MASMFLAG_OPT))
+#MASMFLAG_OPT	:= $(subst -16,--thumb,$(MASMFLAG_OPT))
+#-g+ should be placed before -g, and there may be g-
+MASMFLAG_OPT	:= $(subst -g+,--debug,$(MASMFLAG_OPT))
+MASMFLAG_OPT	:= $(subst -g,--debug,$(MASMFLAG_OPT))
+MASMFLAG_OPT	:= $(subst /shlclient/interwork,/interwork,$(MASMFLAG_OPT))
+MASMFLAG			= $(MASMFLAG_OPT)
+else
+MCFLAGS				= $(MCFLAG_OPT)
+MASMFLAG			= $(MASMFLAG_OPT)
+endif
+
+ifneq ($(strip $(IB)),)
+  ifeq ($(strip $(IB)),1)
+    include  make/perl_script/modules.pl 
+  else
+    include  make/perl_script/modules_ib2.pl 
+endif
+else
+
+SRCPATH 			= $(MSRCPATH)
+MOBJPATH			= $(BUILD_DIR)/obj/$(COMPONENT)
+DEPPATH				= $(BUILD_DIR)/dep/$(COMPONENT)
+
+OBJECTS1 			= $(patsubst %.c, %.o, $(SOURCES))
+OBJECTS2 			+= $(patsubst %.cpp, %.o, $(OBJECTS1))
+OBJECTS3 			+= $(patsubst %.cxx, %.o, $(OBJECTS2))
+OBJECTS 			+= $(patsubst %.s, %.o, $(OBJECTS3))
+
+CheckDep := $(shell $(PERL) ./make/perl_script/filecheck.pl $(DEPPATH))
+
+OPEN_MODULE_SUPPORT = $(if $(findstring "$(COMPONENT)",$(OPEN_MODULES)),TRUE,FALSE)
+
+$(call CO_OPTION_TO_FILE,$(OBJECTS),$(MOBJPATH)/objectlist.txt)
+$(call CO_OPTION_TO_FILE,$(C_MACRO) $(MCFLAGS)	,$(BUILD_DIR)/dep/$(COMPONENT)_C_MACRO_INC.txt)
+$(call A_OPTION_TO_FILE, $(A_MACRO),$(BUILD_DIR)/dep/$(COMPONENT)_A_MACRO_INC.txt)
+
+OPTION_TO_FILE := $(shell $(ECHO) $(INCPATH) >>$(BUILD_DIR)/dep/$(COMPONENT)_C_MACRO_INC.txt)
+OPTION_TO_FILE := $(shell $(ECHO) $(INCPATH) >>$(BUILD_DIR)/dep/$(COMPONENT)_A_MACRO_INC.txt)
+
+
+ifeq ($(strip $(OUTPUTPATH)),)
+ifeq ($(strip $(OPEN_MODULE_SUPPORT)),TRUE)
+TARGET_PATH = $(BUILD_DIR)/lib
+else
+TARGET_PATH = ./lib/$(strip $(PRODUCT_BASELIB_DIR))
+endif
+else
+TARGET_PATH = $(strip $(OUTPUTPATH))
+endif
+
+#
+# VPATH Settings For The Specific Modules
+#
+vpath
+vpath %.h        $(subst \,/,$(INCPATH))
+vpath %.cpp      $(subst \,/,$(SRCPATH))
+vpath %.cxx      $(subst \,/,$(SRCPATH))
+vpath %.c        $(subst \,/,$(SRCPATH))
+vpath %.dat      $(subst \,/,$(SRCPATH))
+vpath %.s        $(subst \,/,$(SRCPATH))
+vpath %.o        $(BUILD_DIR)/obj/$(COMPONENT)
+vpath %.d        $(BUILD_DIR)/dep/$(COMPONENT)
+vpath %.dep      $(BUILD_DIR)/dep
+
+vpath %.a        $(TARGET_PATH)
+
+
+# Common Commands for Building Libs, C and Assemly Language
+
+
+$(TARGET) : $(OBJECTS)
+	@$(PERL) make/perl_script/rm_file.pl $(TARGET) $(TARGET_PATH)/
+	cd $(MOBJPATH) && $(AR) $(ARFLAGS) ../../../../$(TARGET_PATH)/$(TARGET)  $(VIA) ./objectlist.txt
+	@$(PERL) make/perl_script/rm_file.pl *.d.tmp ./$(DEPPATH)/
+
+-include $(OBJECTS:.o=.d)
+
+%.o %.d :%.c $(COMPONENT).dep
+	@$(ECHO)
+	@$(ECHO) Compiling Source File $<...
+ifeq ($(strip $(OPEN_MODULE_SUPPORT)),TRUE)
+	@-$(PERL) make/perl_script/rm_file.pl $(TARGET) $(BUILD_DIR)/lib/
+else
+	@-$(PERL) make/perl_script/rm_file.pl $(TARGET) lib/$(PROJECT)/
+endif
+	@-$(PERL) make/perl_script/rm_file.pl $*.o $(MOBJPATH)/
+#	$(ECHO) $(CCOMPLAN) $(CFLAGS)  $(VIA) $(BUILD_DIR)/dep/$(COMPONENT)_C_MACRO_INC.txt -c   -I$(ARMINC)  $<  $(MDFLAGS) $(DEPPATH)/$*.d.tmp -o $(MOBJPATH)/$*.o
+	$(CCOMPLAN) $(CFLAGS)  $(VIA) $(BUILD_DIR)/dep/$(COMPONENT)_C_MACRO_INC.txt -c   -I$(ARMINC)  $<  $(MDFLAGS) $(DEPPATH)/$*.d.tmp -o $(MOBJPATH)/$*.o  \
+             $(if $(findstring 0,$(STOP)),, || $(ECHO) && $(ECHO) !!! Error !!! You can terminate batch job by Control+C !  && $(ECHO) && pause)
+	@$(PERL) ./make/perl_script/path_process.pl ./$(DEPPATH)/$*.d.tmp  $(BUILD_DIR)/dep/$(COMPONENT).dep "$(MAKESHELL)" > ./$(DEPPATH)/$*.d
+
+
+%.o %.d :%.cpp  $(COMPONENT).dep
+	@$(ECHO)
+	@$(ECHO) Compiling Source File $<...
+ifeq ($(strip $(OPEN_MODULE_SUPPORT)),TRUE)
+	@-$(PERL) make/perl_script/rm_file.pl $(TARGET) $(BUILD_DIR)/lib/
+else
+	@-$(PERL) make/perl_script/rm_file.pl $(TARGET) lib/$(PROJECT)/
+endif
+	@-$(PERL) make/perl_script/rm_file.pl $*.o $(MOBJPATH)/
+	$(CCOMPLAN) $(CFLAGS)  $(VIA) $(BUILD_DIR)/dep/$(COMPONENT)_C_MACRO_INC.txt -c   -I$(ARMINC)  $<  $(MDFLAGS) $(DEPPATH)/$*.d.tmp -o $(MOBJPATH)/$*.o  \
+             $(if $(findstring 0,$(STOP)),, || $(ECHO) && $(ECHO) !!! Error !!! You can terminate batch job by Control+C !  && $(ECHO) && pause)
+	@$(PERL) ./make/perl_script/path_process.pl ./$(DEPPATH)/$*.d.tmp  $(BUILD_DIR)/dep/$(COMPONENT).dep "$(MAKESHELL)" > ./$(DEPPATH)/$*.d
+
+%.o %.d :%.cxx  $(COMPONENT).dep
+	@$(ECHO)
+	@$(ECHO) Compiling Source File $<...
+ifeq ($(strip $(OPEN_MODULE_SUPPORT)),TRUE)
+	@-$(PERL) make/perl_script/rm_file.pl $(TARGET) $(BUILD_DIR)/lib/
+else
+	@-$(PERL) make/perl_script/rm_file.pl $(TARGET) lib/$(PROJECT)/
+endif
+	@-$(PERL) make/perl_script/rm_file.pl $*.o $(MOBJPATH)/
+	$(CCOMPLAN) $(CFLAGS)  $(VIA) $(BUILD_DIR)/dep/$(COMPONENT)_C_MACRO_INC.txt -c  -I$(ARMINC)  $<  $(MDFLAGS) $(DEPPATH)/$*.d.tmp -o $(MOBJPATH)/$*.o  \
+             $(if $(findstring 0,$(STOP)),, || $(ECHO) && $(ECHO) !!! Error !!! You can terminate batch job by Control+C !  && $(ECHO) && pause)
+	@$(PERL) ./make/perl_script/path_process.pl ./$(DEPPATH)/$*.d.tmp  $(BUILD_DIR)/dep/$(COMPONENT).dep "$(MAKESHELL)" > ./$(DEPPATH)/$*.d
+
+%.o %.d:%.s $(COMPONENT).dep
+	@$(ECHO) Compiling Source File $<...
+ifeq ($(strip $(OPEN_MODULE_SUPPORT)),TRUE)
+	@-$(PERL) make/perl_script/rm_file.pl $(TARGET) $(BUILD_DIR)/lib/
+else
+	@-$(PERL) make/perl_script/rm_file.pl $(TARGET) lib/$(PROJECT)/
+endif
+	@-$(PERL) make/perl_script/rm_file.pl $*.o $(MOBJPATH)/
+	$(ASM) $(AFLAGS) $(MASMFLAG)   $(VIA) $(BUILD_DIR)/dep/$(COMPONENT)_A_MACRO_INC.txt -I$(ARMINC) $<  $(MDFLAGS) $(DEPPATH)/$*.d.tmp -o $(MOBJPATH)/$*.o
+	@$(PERL) ./make/perl_script/path_process.pl ./$(DEPPATH)/$*.d.tmp  $(BUILD_DIR)/dep/$(COMPONENT).dep "$(MAKESHELL)" > ./$(DEPPATH)/$*.d 
+endif

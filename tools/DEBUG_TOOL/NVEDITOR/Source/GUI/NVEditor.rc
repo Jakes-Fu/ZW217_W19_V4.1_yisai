@@ -1,0 +1,1238 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\NVEditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_FOLDERS             BITMAP  DISCARDABLE     "res\\folders.bmp"
+IDB_SUBITEMS            BITMAP  DISCARDABLE     "res\\subitems.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_PASTE_SETTINGS DIALOG DISCARDABLE  0, 0, 245, 86
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Paste settings"
+FONT 10, "Courier"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,188,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,188,24,50,14
+    CONTROL         "Use original name",IDC_CHECK_KEEP_NAME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,24,158,12
+    LTEXT           "Input new name",IDC_STATIC,7,7,89,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_NEW_NAME,104,7,77,12,ES_AUTOHSCROLL
+    LTEXT           "Input new id",IDC_STATIC,7,43,78,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_NEW_ID,103,43,78,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Use original id",IDC_CHECK_KEEP_ID,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,7,59,87,12
+END
+
+IDD_CHANGID_DLG DIALOG DISCARDABLE  0, 0, 187, 83
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit ItemID"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,21,62,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,113,62,50,14
+    LTEXT           "ItemName:",IDC_STATIC,7,10,60,11
+    LTEXT           "Original ItemID:",IDC_STATIC,7,27,58,10
+    LTEXT           "New ItemID:",IDC_STATIC,8,44,58,10
+    EDITTEXT        IDC_IT_NAME,86,10,82,10,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_OLDITEM_ID,86,27,82,10,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_NEWITEM_ID,86,44,81,10,ES_AUTOHSCROLL
+END
+
+IDD_PACKET_DLG DIALOGEX 0, 0, 187, 115
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Delta NV Bin"
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,24,94,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,117,94,50,14
+    EDITTEXT        IDC_PACKET_NV,80,18,68,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_PACKETNV_BROWSE,156,18,15,12
+    GROUPBOX        "",IDC_STATIC,7,6,173,33
+    LTEXT           "DeltaNV File Path:",IDC_STATIC,13,21,60,8,0,0,
+                    IDC_STATIC
+    EDITTEXT        IDC_PAKET_MODERM,80,65,68,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_PACKETM_BROWSE,156,65,15,12
+    GROUPBOX        "",IDC_STATIC,7,44,173,42
+    LTEXT           "Input Moderm Bin File:",IDC_STATIC,13,68,60,8
+    CONTROL         "Merge to Moderm.bin",IDC_MODERM_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,53,85,10
+END
+
+IDD_DIALOG1 DIALOG DISCARDABLE  0, 0, 187, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+END
+
+IDD_DIALOG2 DIALOG DISCARDABLE  0, 0, 187, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG_PASTE_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 79
+    END
+
+    IDD_CHANGID_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 76
+    END
+
+    IDD_PACKET_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 108
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 89
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 89
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_ERROR          ICON    DISCARDABLE     "res\\error.ico"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_MSG DIALOG DISCARDABLE  0, 0, 278, 190
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "NVEidtor Error"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,221,169,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,157,169,50,14,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    ICON            IDI_ICON_ERROR,IDC_STC_ICON,14,13,20,20
+    LTEXT           "",IDC_STC_TITLE,38,15,232,19
+    EDITTEXT        IDC_EDT_ERROR_CONTENT,7,42,264,121,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_DIALOG_PROMPT_TEXT DIALOG DISCARDABLE  0, 0, 373, 166
+STYLE WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Prompt Info"
+FONT 10, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDT_PROMPT_TEXT,3,3,367,159,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_DIALOG_DLSETTING DIALOGEX 0, 0, 187, 117
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Save To Phone Settings"
+FONT 10, "Courier", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_DSPFILE,78,22,78,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_DSPBROWSE,162,21,14,14
+    DEFPUSHBUTTON   "OK",IDOK,65,96,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,96,50,14
+    LTEXT           "Input DSP File:",IDC_STATIC,13,24,63,8
+    GROUPBOX        "",IDC_STATIC,7,6,173,38
+    CONTROL         "Write DSP",IDC_CHECK_WRITEDSP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,6,48,10
+    EDITTEXT        IDC_EDT_NOTICE,7,47,173,40,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+END
+
+IDD_PORT_SETTINGS DIALOG DISCARDABLE  0, 0, 240, 205
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Port Settings"
+FONT 10, "Courier"
+BEGIN
+    COMBOBOX        IDC_COMBO_PORT,79,9,131,102,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_BAUDRATE,79,26,131,71,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_FDL,79,43,131,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_FDL_BROWSE,212,43,16,14
+    DEFPUSHBUTTON   "OK",IDOK,7,184,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,183,184,50,14
+    LTEXT           "Port:",IDC_STATIC,7,13,36,8
+    LTEXT           "Baudrate:",IDC_STATIC,7,28,37,8
+    LTEXT           "FDL File:",IDC_STATIC,7,46,37,8
+    LTEXT           "NV Base Address:",IDC_STATIC,7,117,65,8
+    EDITTEXT        IDC_EDIT_NV_BASE,79,115,131,14,ES_AUTOHSCROLL
+    LTEXT           "Product Type:",IDC_STATIC,7,100,72,12
+    COMBOBOX        IDC_PRODUCT_COMBO,79,98,131,51,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "New FDL File",IDC_NEW_FDL_CHK,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,79,81,131,10
+    LTEXT           "Second fdl:",IDC_STATIC,7,136,59,11
+    EDITTEXT        IDC_EDIT_FDL2,79,135,131,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_FDL2_BROWSE,213,135,16,14
+    LTEXT           "FDL Base:",IDC_STATIC,7,64,37,8
+    EDITTEXT        IDC_EDIT_FDL_BASE,79,62,131,14,ES_AUTOHSCROLL
+    LTEXT           "Second fdl base:",IDC_STATIC,7,155,68,11
+    EDITTEXT        IDC_EDIT_FDL2_BASE,79,153,131,14,ES_AUTOHSCROLL
+END
+
+IDD_LFP_FEEDBACK DIALOGEX 0, 0, 247, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Load From Phone"
+FONT 10, "Courier", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,190,26,50,14
+    LTEXT           "",IDC_INFO,7,8,233,9
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,7,
+                    27,179,12
+    CONTROL         "List1",IDC_LIST_LOG,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | 
+                    LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,7,48,233,51,
+                    WS_EX_CLIENTEDGE
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 263, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Spreadtrum NVEditor"
+FONT 10, "Courier"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,7,20,20
+    LTEXT           "Spreadtrum NVEditor",IDC_STATIC,31,7,119,8,SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,206,7,50,14,WS_GROUP
+    LTEXT           "Version:",IDC_STATIC,31,22,41,8
+    LTEXT           "Build:",IDC_STATIC,31,34,41,8
+    LTEXT           "Copyright (C) 2003-2009 Spreadtrum Communications Inc.",
+                    IDC_STATIC,31,49,217,8
+    LTEXT           "All rights reserved",IDC_STATIC,31,61,91,8
+    LTEXT           "Unknown",IDC_STATIC_VERSION,81,22,72,8,SS_CENTERIMAGE
+    LTEXT           "Unknown",IDC_STATIC_BUILD,81,34,77,8,SS_CENTERIMAGE
+END
+
+IDD_EDIT_ITEM DIALOG DISCARDABLE  0, 0, 291, 252
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Item"
+FONT 10, "Courier"
+BEGIN
+    EDITTEXT        IDC_ITEM_NAME,59,7,82,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_ITEM_ID,200,7,82,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER
+    COMBOBOX        IDC_ITEM_TYPE,59,23,83,47,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_ITEM_PARENT,200,23,83,47,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_ITEM_LENGTH,59,41,82,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER
+    EDITTEXT        IDC_ITEM_CONTENT,59,60,224,77,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_NUMBER | WS_VSCROLL | 
+                    WS_HSCROLL
+    EDITTEXT        IDC_ITEM_DESCRIPTION,59,142,224,77,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_VSCROLL | WS_HSCROLL
+    PUSHBUTTON      "OK",IDOK,60,231,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,178,231,50,14
+    LTEXT           "Item Name:",IDC_STATIC,7,7,49,12
+    LTEXT           "Content:",IDC_STATIC,7,59,49,12
+    LTEXT           "Item ID:",IDC_STATIC,148,7,49,12
+    LTEXT           "Item Type:",IDC_STATIC,7,23,49,12
+    LTEXT           "Item Parent:",IDC_STATIC,148,24,49,12
+    LTEXT           "Description:",IDC_STATIC,7,142,49,12
+    LTEXT           "Item Length:",IDC_STATIC,7,41,49,12
+END
+
+IDD_NEW_ITEM DIALOG DISCARDABLE  0, 0, 291, 193
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Item"
+FONT 10, "Courier"
+BEGIN
+    EDITTEXT        IDC_ITEM_NAME,65,7,82,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ITEM_ID,202,7,82,12,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_ITEM_TYPE,65,23,83,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_ITEM_PARENT,202,23,82,47,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Array Size:",IDC_STATIC,151,55,47,8
+    EDITTEXT        IDC_ITEM_ARRAY_SIZE,202,52,82,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ITEM_DESCRIPTION,65,73,219,77,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | WS_VSCROLL | 
+                    WS_HSCROLL
+    PUSHBUTTON      "OK",IDOK,24,163,50,14
+    PUSHBUTTON      "Last",IDC_BTN_LAST,89,163,50,14
+    PUSHBUTTON      "Next",ID_BTN_NEXT,154,163,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,219,163,50,14
+    CONTROL         "Item is array",IDC_CHECK_ARRAY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,56,134,8
+    LTEXT           "Item Name:",IDC_STATIC,7,8,49,8
+    LTEXT           "Description:",IDC_STATIC,7,72,49,8
+    LTEXT           "Item ID:",IDC_STATIC,151,8,48,8
+    LTEXT           "Item Type:",IDC_STATIC,7,24,49,8
+    LTEXT           "Item Parent:",IDC_STATIC,150,24,48,8
+    LTEXT           "String Length:",IDC_STATIC,7,41,57,8
+    EDITTEXT        IDC_EDIT_STR_LENGTH,65,40,83,12,ES_AUTOHSCROLL
+END
+
+IDD_NEW_MODULE_DLG DIALOG DISCARDABLE  0, 0, 291, 157
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Module"
+FONT 10, "Courier"
+BEGIN
+    EDITTEXT        IDC_MODULE_NAME,62,7,218,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FILE_LOCATION,62,24,204,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_BROWSE_FOLDER,270,23,10,12
+    EDITTEXT        IDC_MODULE_DESCRIPTION,62,40,218,77,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | WS_VSCROLL | 
+                    WS_HSCROLL
+    PUSHBUTTON      "Ok",IDOK,19,133,50,14
+    PUSHBUTTON      "Last",IDC_BTN_LAST,85,133,50,14
+    PUSHBUTTON      "Next",ID_BTN_NEXT,151,133,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,217,133,50,14
+    LTEXT           "Module Name:",IDC_STATIC,10,7,49,12
+    LTEXT           "Location:",IDC_STATIC,10,24,49,12
+    LTEXT           "Description:",IDC_STATIC,10,40,49,12
+END
+
+IDD_NEW_PROJECT DIALOG DISCARDABLE  0, 0, 291, 157
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Project"
+FONT 10, "Courier"
+BEGIN
+    EDITTEXT        IDC_PROJECT_NAME,59,7,218,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FILE_NAME,59,23,200,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_BROWSE_FOLDER,263,23,14,12
+    EDITTEXT        IDC_TARGET_FILE_NAME,59,40,200,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_BROWSE_FOLDER2,263,40,14,12
+    EDITTEXT        IDC_PROJECT_DESCRIPTION,59,56,219,69,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | WS_VSCROLL | 
+                    WS_HSCROLL
+    PUSHBUTTON      "OK",IDOK,75,136,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,180,136,50,14
+    LTEXT           "File:",IDC_STATIC,7,7,49,12
+    LTEXT           "Location:",IDC_STATIC,7,23,49,12
+    LTEXT           "Description:",IDC_STATIC,7,57,49,12
+    LTEXT           "Target:",IDC_STATIC,7,40,49,12
+END
+
+IDD_NEW_ITEM_INFO DIALOG DISCARDABLE  0, 0, 293, 164
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Input new item information"
+FONT 10, "Courier"
+BEGIN
+    EDITTEXT        IDC_EDIT_NAME,65,14,70,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ID,194,14,92,12,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_COMBO_TYPE,65,33,71,62,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDIT_VALUE,194,33,92,12,ES_AUTOHSCROLL
+    CONTROL         "Element As Array",IDC_CHECK_ARRAY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,72,127,10
+    EDITTEXT        IDC_EDIT_ARRAY_SIZE,194,70,92,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DES,65,93,221,42,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,144,143,64,14
+    PUSHBUTTON      "Cancel",IDCANCEL,222,143,64,14
+    LTEXT           "Name:",IDC_STATIC,7,15,32,8
+    LTEXT           "ID:",IDC_STATIC,144,15,30,8
+    LTEXT           "Type:",IDC_STATIC,7,35,21,9
+    LTEXT           "Value:",IDC_STATIC,144,36,24,8
+    LTEXT           "Description:",IDC_STATIC,7,93,49,13
+    LTEXT           "Array Size:",IDC_STATIC,144,72,45,8
+    LTEXT           "String Length:",IDC_STATIC,7,52,57,8
+    EDITTEXT        IDC_EDIT_STR_LEN,65,51,70,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_FLASH DIALOG DISCARDABLE  0, 0, 151, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Flash settings"
+FONT 10, "Courier"
+BEGIN
+    EDITTEXT        IDC_EDIT_FLASH_ADDRESS,81,12,61,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FLASH_SIZE,82,32,61,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,12,58,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,90,58,50,14
+    LTEXT           "Start address:",IDC_STATIC,7,12,60,13
+    LTEXT           "Block size:",IDC_STATIC,7,33,58,12
+END
+
+IDD_STI_SETTING DIALOG DISCARDABLE  0, 0, 187, 294
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Save To Image Setting"
+FONT 10, "Courier"
+BEGIN
+    EDITTEXT        IDC_STI_DSPFILE,80,48,68,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_STI_BROWSE,156,48,15,14
+    DEFPUSHBUTTON   "OK",IDOK,26,273,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,115,273,50,14
+    GROUPBOX        "",IDC_STATIC,7,33,173,40
+    LTEXT           "Input DSP file:",IDC_STATIC,13,51,60,8
+    CONTROL         "Write DSP",IDC_STI_WRITEDSP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,36,52,10
+    GROUPBOX        "",IDC_STATIC,7,128,173,131
+    PUSHBUTTON      "clear",IDC_CLEAR_BUT,140,135,31,12
+    CONTROL         "Active Write Files",IDC_MUL_FILE_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,137,88,10
+    CONTROL         "List1",IDC_FILE_LIST,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,12,151,164,105
+    EDITTEXT        IDC_STI_FIXBIN,81,96,68,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_STI_BROWSE2,157,96,15,14
+    GROUPBOX        "",IDC_STATIC,8,80,173,40
+    LTEXT           "Input FixNV bin:",IDC_STATIC,14,99,67,8
+    CONTROL         "Write FixNV Bin",IDC_STI_WRITEFIX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,84,76,10
+    GROUPBOX        "",IDC_STATIC,7,5,173,26
+    CONTROL         "add NV version Info for Image",IDC_VERSION_FLAG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,14,152,10
+END
+
+IDD_READ_FLASH DIALOG DISCARDABLE  0, 0, 205, 103
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "Courier"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,82,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,148,82,50,14
+    LTEXT           "Start Address:",IDC_STATIC,7,17,57,8
+    EDITTEXT        IDC_EDIT_ADDRESS,67,14,109,14,ES_AUTOHSCROLL
+    LTEXT           "Block Size:",IDC_STATIC,7,40,53,8
+    EDITTEXT        IDC_EDIT_SIZE,67,36,110,14,ES_AUTOHSCROLL
+    LTEXT           "File Path:",IDC_STATIC,7,62,41,8
+    EDITTEXT        IDC_EDIT_FILE,67,59,111,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE,185,59,13,14
+END
+
+IDD_DIALOG_FUCTIONS DIALOGEX 0, 0, 251, 190
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Modify NV item value functions"
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Excute",IDOK,136,169,50,14
+    PUSHBUTTON      "Exit",IDCANCEL,194,169,50,14
+    CONTROL         "List1",IDC_DMF_LST_FUNS,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,7,237,154,WS_EX_CLIENTEDGE
+    CONTROL         "Select all",IDC_DMF_CHK_ALL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,171,46,10
+END
+
+IDD_DIALOG_FIND DIALOG DISCARDABLE  0, 0, 229, 52
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Find"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_DF_EDT_TARGET,54,7,111,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Find Next",IDOK,172,7,50,12
+    PUSHBUTTON      "Cancel",IDCANCEL,172,26,50,12
+    CONTROL         "Item",IDC_DF_CHK_ITEM,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_DISABLED | WS_TABSTOP,130,30,25,10
+    CONTROL         "Value",IDC_DF_CHK_VALUE,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_DISABLED | WS_TABSTOP,133,30,30,10
+    CONTROL         "Full Character Match",IDC_DF_CHK_FULL_MATCH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,31,83,10
+    LTEXT           "Find Target:",IDC_STATIC,7,9,40,8
+    GROUPBOX        "Options",IDC_STATIC,7,22,158,23
+    CONTROL         "Changed",IDC_DF_CHK_CHANGED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,99,31,45,10
+END
+
+IDD_DIALOG_EXPORT DIALOG DISCARDABLE  0, 0, 226, 127
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Export"
+FONT 10, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,103,106,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,169,106,50,14
+    LTEXT           "File:",IDC_STATIC,7,9,21,8
+    EDITTEXT        IDC_ED_FILE,33,7,152,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_ED_BTN_BROW,194,7,25,14
+    GROUPBOX        "Option",IDC_STATIC,7,29,212,67
+    CONTROL         "Readonly Items",IDC_ED_CHK_READONLY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,23,46,72,10
+    CONTROL         "Changed Items",IDC_ED_CHK_CHANGED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,106,46,68,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,67,212,1
+    CONTROL         "Append",IDC_CHECK_APPEND_NV,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,106,75,57,10
+END
+
+IDD_DIALOG_BMDOWNLOAD DIALOGEX 0, 0, 251, 74
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Stop",IDC_BTN_STOP,7,7,237,22,0,WS_EX_STATICEDGE
+    CONTROL         "Progress1",IDC_PRG_PROGRESS,"msctls_progress32",
+                    WS_BORDER,7,53,237,14
+    LTEXT           "",IDC_STC_STATE,112,34,132,14,SS_SUNKEN
+    LTEXT           "",IDC_STC_PROG,7,53,237,14,SS_SUNKEN
+    LTEXT           "",IDC_STC_STEP,7,34,98,14,SS_SUNKEN
+END
+
+IDD_EDT_BTN_DLG DIALOG DISCARDABLE  0, 0, 149, 14
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDT_TEXT,0,0,124,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "....",IDC_BTN_SEL,125,0,23,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG_MSG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+    END
+
+    IDD_DIALOG_PROMPT_TEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 370
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 162
+    END
+
+    IDD_DIALOG_DLSETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 6
+    END
+
+    IDD_PORT_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        VERTGUIDE, 79
+        VERTGUIDE, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 198
+    END
+
+    IDD_LFP_FEEDBACK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 99
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 256
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 71
+    END
+
+    IDD_EDIT_ITEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 284
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 245
+    END
+
+    IDD_NEW_ITEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 284
+        VERTGUIDE, 65
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_NEW_MODULE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 284
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_NEW_PROJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 284
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_NEW_ITEM_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 286
+        VERTGUIDE, 65
+        VERTGUIDE, 144
+        VERTGUIDE, 194
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 157
+        HORZGUIDE, 14
+        HORZGUIDE, 33
+        HORZGUIDE, 51
+        HORZGUIDE, 70
+        HORZGUIDE, 93
+    END
+
+    IDD_DIALOG_FLASH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 144
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_STI_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 287
+    END
+
+    IDD_READ_FLASH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 198
+        VERTGUIDE, 66
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_DIALOG_FUCTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+    END
+
+    IDD_DIALOG_FIND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 45
+    END
+
+    IDD_DIALOG_EXPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 219
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_DIALOG_BMDOWNLOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_EDT_BTN_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 148
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\NVEditor.ico"
+IDR_NVEDITTYPE          ICON    DISCARDABLE     "res\\NVEditorDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PORT_SETTINGS DLGINIT
+BEGIN
+    IDC_COMBO_BAUDRATE, 0x403, 7, 0
+0x3131, 0x3235, 0x3030, "\000" 
+    IDC_COMBO_BAUDRATE, 0x403, 7, 0
+0x3332, 0x3430, 0x3030, "\000" 
+    IDC_COMBO_BAUDRATE, 0x403, 7, 0
+0x3634, 0x3830, 0x3030, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_OPEN_PROJECT
+    SEPARATOR
+    BUTTON      ID_SAVE_PROJECT
+    BUTTON      ID_SAVE_TO_PHONE
+    SEPARATOR
+    BUTTON      ID_DISPLAY_HEX
+    SEPARATOR
+    BUTTON      ID_BTN_LOAD_CUSTOMERNV
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        POPUP "New"
+        BEGIN
+            MENUITEM "&New Project    Ctrl+N",      ID_NEW_PROJECT
+            MENUITEM "New &Module",                 ID_NEW_MODULE
+            MENUITEM "New &Item",                   ID_NEW_ITEM
+            MENUITEM SEPARATOR
+            MENUITEM "I&nsert Module",              ID_INSERT_MODULE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Open Project...    Ctrl+O",  ID_OPEN_PROJECT
+        MENUITEM "&Save Project         Ctrl+S", ID_SAVE_PROJECT
+        MENUITEM "Save Project &As...    F12",  ID_SAVE_PROJECT_AS
+        MENUITEM "&Close Project",              ID_CLOSE_PROJECT
+        MENUITEM SEPARATOR
+        MENUITEM "&Port Settings ...    Ctrl+P", ID_PORT_SETTINGS
+        MENUITEM SEPARATOR
+        MENUITEM "&Load Image",                 ID_LOAD_IMAGE
+        MENUITEM "Load From Phone( Boot Mode )   F4", 
+                                                ID_LOAD_FROM_PHONE_BOOT
+        MENUITEM "Load &From Phone( Normal Mode )   F7", ID_LOAD_FROM_PHONE
+        MENUITEM SEPARATOR
+        MENUITEM "S&ave Image",                 ID_SAVE_IMAGE
+        MENUITEM "Sa&ve To Phone( Boot Mode )", ID_SAVE_TO_PHONE_BOOT
+        MENUITEM "Save To Phone( Normal Mode )", ID_SAVE_TO_PHONE
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Facility"
+    BEGIN
+        MENUITEM "&Read Flash...",              ID_READ_FLASH
+        MENUITEM "&Erase flash...",             ID_FLASH_MEMORY
+        MENUITEM SEPARATOR
+        MENUITEM "&Load NV Values",             ID_LOAD_NVVALUE
+        MENUITEM "Import...",                   ID_IMPORT_ITEM
+        MENUITEM "Export Static NV",            ID_EXPORT_STATIC
+        MENUITEM "Export Calibration NV",       ID_CALIBRATION_NV
+        MENUITEM "Merge Delta NV to .h",        ID_MERGE_NV
+        MENUITEM "Merge Delta NV to Bin",       IDC_PACKET_MODERM
+        MENUITEM SEPARATOR
+        MENUITEM "Modify Functions...",         ID_MENU_FUNCITIONS
+        MENUITEM SEPARATOR
+        MENUITEM "Find(&F)...        Ctrl+F",   ID_MENU_FIND
+        MENUITEM "Find Next        F3",         ID_MENU_FIND_NEXT
+        MENUITEM "Generate NV Statistics Info", ID_GENER_STATISTICAL
+        MENUITEM "Mark modified NV value",      ID_SHOW_MODIFY
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Load NV Failed Log",          ID_FAIL_NVINFO
+        MENUITEM "&About NVEditor...",          ID_APP_ABOUT
+    END
+END
+
+IDM_INSERT_POP MENU DISCARDABLE 
+BEGIN
+    POPUP "_pop"
+    BEGIN
+        MENUITEM "Insert Before...",            ID_INSERT_BEFORE
+        MENUITEM "Insert after...",             ID_INSERT_AFTER
+        MENUITEM SEPARATOR
+        MENUITEM "Insert a child item...",      ID_INSERT_AS_CHILD
+        MENUITEM SEPARATOR
+        MENUITEM "Remove an item",              ID_REMOVE_ITEM
+        MENUITEM SEPARATOR
+        MENUITEM "Cut",                         ID_CUT_ITEM
+        MENUITEM "Copy",                        ID_COPY_ITEM
+        MENUITEM "Paste as child...",           ID_PASTE_AS_CHILD
+        MENUITEM "Paste after...",              ID_PASTE_AFTER
+        MENUITEM SEPARATOR
+        MENUITEM "Export...",                   ID_EXPORT_ITEM
+        MENUITEM "Modify ItemID",               ID_MODIFY_ITEMID
+        MENUITEM SEPARATOR
+        MENUITEM "Mark as customer NV",         ID_MARK_AS_CUSTNV
+        MENUITEM "Unmark as customer NV",       ID_UNMARK_AS_CUSTNV
+        MENUITEM "Unmark all as customer NV",   ID_UNMARK_ALL_CUSTNV
+        MENUITEM SEPARATOR
+        MENUITEM "Mark all change as customer NV", 
+                                                ID_MARK_ALL_CHANGE_AS_CUSTNV
+        MENUITEM "Unmark all change as customer NV", 
+                                                ID_UNMARK_ALL_CHANGE_AS_CUSTNV
+
+        MENUITEM SEPARATOR
+        MENUITEM "Mark as customer base NV",    ID_MARK_AS_CUSTBASE
+        MENUITEM "Unmark as customer base NV",  ID_UNMARK_AS_CUSTBASE
+    END
+END
+
+IDR_MODULE_POP MENU DISCARDABLE 
+BEGIN
+    POPUP "_pop"
+    BEGIN
+        MENUITEM "Set Appendable",              ID_SET_APPENDABLE
+        MENUITEM "Erase Appendable",            ID_ERASE_APPENDABLE
+        MENUITEM SEPARATOR
+        MENUITEM "Set Read-Only",               ID_MODULE_SET_READONLY
+        MENUITEM "Erase Read-Only",             ID_MODULE_ERASEREADONLY
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "E",            ID_FLASH_MEMORY,        VIRTKEY, CONTROL, NOINVERT
+    "F",            ID_MENU_FIND,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_NEW_PROJECT,         VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_OPEN_PROJECT,        VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_PORT_SETTINGS,       VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_SAVE_PROJECT,        VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F12,         ID_SAVE_PROJECT_AS,     VIRTKEY, NOINVERT
+    VK_F3,          ID_MENU_FIND_NEXT,      VIRTKEY, NOINVERT
+    VK_F4,          ID_LOAD_FROM_PHONE_BOOT, VIRTKEY, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_F7,          ID_LOAD_FROM_PHONE,     VIRTKEY, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,17,19,1
+ PRODUCTVERSION 2,17,19,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Spreadtrum Communications Inc.\0"
+            VALUE "FileDescription", "NV Editor\0"
+            VALUE "FileVersion", "2, 17, 19, 1\0"
+            VALUE "InternalName", "NVEditor\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003-2017 Spreadtrum Communications Inc.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "NVEditor.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "NVEditor\0"
+            VALUE "ProductVersion", "2, 17, 19, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "NVEditor\n\nNVEdit\n\n\nNVEditor.Document\nNVEdit Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDS_BMOPR_NOTREG        "The BootModeOperation object is not registered. "
+    IDS_CREATE_BM_FAIL      "Create boot mode object fail."
+    IDS_NEWOPR_FAIL         "Insufficient memory."
+    IDS_CREATETHREAD_FAIL   "Create download  thread fail."
+    IDS_FILEINFO_ERROR      "The  using file( FDL, NV ,etc ) is error.  "
+    IDS_START_FAIL          "The start operate fail."
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "NVEditor"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing project"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+    IDS_REMOVE_ITEM         "Do you want to remove item?"
+    IDS_OPEN_PRJ_FAIL       "Can't open project file.Maybe it is not a valid project file."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEW_PROJECT          "Create a new project"
+    ID_NEW_MODULE           "Add a new module into project"
+    ID_NEW_ITEM             "Added a new item into selected module"
+    ID_INSERT_MODULE        "Insert a module into project"
+    ID_CLOSE_PROJECT        "Close current project"
+    ID_OPEN_PROJECT         "Open an existing project\nOpen Project"
+    ID_OPEN_IMAGE           "Open an existing NVitem image"
+    ID_SAVE_PROJECT         "Save project\nSave Project"
+    ID_SAVE_PROJECT_AS      "Save project  as another project"
+    ID_SAVE_TO_PHONE        "Save all item to phone\nSave all item to phone"
+    ID_SAVE_CHANGED_TO_PHONE "Save changed item to phone"
+    ID_FILL_DEFAULT         "Fill all item with default value"
+    ID_LOAD_FROM_PHONE      "Load all item from phone in normal mode"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_PROJECT         "Change project setting or item structure"
+    ID_LOAD_IMAGE           "Load an existing image"
+    ID_SAVE_IMAGE           "Save to image"
+    ID_INSERT_BEFORE        "Insert an item right before current item\nInsert an item right before current item"
+    ID_INSERT_AFTER         "Insert an item right after current item\nInsert an item right after current item"
+    ID_INSERT_AS_CHILD      "Insert an item as child\nInsert an item as child"
+    ID_REMOVE_ITEM          "Remove current item and all sub items\nRemove current item and all sub items"
+    ID_FLASH_MEMORY         "Flash a memory block\nFlash a memory block"
+    ID_LOAD_FROM_PHONE_BOOT "Load data from phone in boot mode"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_BM_NOTREG           "Boot Mode Platfrom is not register."
+    IDS_CHANNEL_ERROR       "The channel occurs error. "
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_COPY_ITEM            "Copy an item and all sub items\nCopy an item and all sub items"
+    ID_PASTE_AS_CHILD       "Paste an item as the first child of current item.\nPaste an item as the first child of current item."
+    ID_PASTE_AFTER          "Paste an item as a sibling of current item.\nPaste an item as a sibling of current item."
+    ID_CUT_ITEM             "Cut the itme.\nCut the itme."
+    ID_EXPORT_ITEM          "Export this item and sub items\nExport this item and sub items"
+    ID_IMPORT_ITEM          "Import from nv file...\nImport from nv file..."
+    ID_MENU_FUNCITIONS      "Modify functions\nModify functions"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_DISPLAY_HEX          "Display hex"
+    ID_SAVE_TO_PHONE_BOOT   "Save all item to phone at bootmode\nSave all item to phone at bootmode"
+    ID_MERGE_NV             "Update NV Configure File to HeaderFile"
+    ID_BTN_LOAD_CUSTOMERNV  "Load Customer NV"
+    ID_MARK_AS_CUSTNV       "Mark  this item and sub items as customer NV"
+    ID_UNMARK_AS_CUSTNV     "UnMark  this item and sub items as customer NV"
+    ID_MARK_ALL_CHANGE_AS_CUSTNV "Mark  all changed items as customer NV"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_UNMARK_ALL_CHANGE_AS_CUSTNV "UnMark  all changed items as customer NV"
+    ID_UNMARK_ALL_CUSTNV    "UnMark  all items as customer NV"
+    ID_MARK_AS_CUSTBASE     "Mark  this item and sub items as customer base NV"
+    ID_UNMARK_AS_CUSTBASE   "UnMark  this item and sub items as customer base NV"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\NVEditor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,306 @@
+/*****************************************************************************
+** File Name:      mmibrowser_menutable.c                                    *
+** Author:          li.li                                                    *
+** Date:           23/06/2009                                                *
+** Copyright:      2007 Spreadtrum, Incorporated. All Rights Reserved.       *
+** Description:    This file is used to describe the browser menu table      *
+*****************************************************************************/
+
+/**--------------------------------------------------------------------------*
+ **                         Include Files                                    *
+ **--------------------------------------------------------------------------*/
+#include "mmibrowser_menutable.h"
+#include "guimenu.h"
+#include "mmibrowser_id.h"
+#include "browser_text.h"
+#include "mmi_text.h"
+#include "mmi_modu_main.h"
+#include "mmi_common.h"
+#include "mmi_nv.h"
+#include "mmi_image.h"
+#include "mmibrowser_wintable.h"
+//#include "mmi_appmsg.h"
+#include "mmi_mainmenu_export.h"
+
+/**--------------------------------------------------------------------------*
+ **                         Compiler Flag                                    *
+ **--------------------------------------------------------------------------*/
+#ifdef __cplusplus
+    extern   "C"
+    {
+#endif
+
+/**-------------------------------------------------------------------------*
+**                         MACRO DEFINITION                                 *
+**--------------------------------------------------------------------------*/
+
+/**--------------------------------------------------------------------------*
+ **                         GLOBAL DEFINITION                                *
+ **--------------------------------------------------------------------------*/
+
+#if 0
+const GUIMENU_ITEM_T menu_brw_tool_submenu_table[] =
+{
+    {ID_POPUP_MENU_SUB_FILEINFO,    0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_FILEINFO, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SUB_DISCONNECT,  0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_COMM_DISCONNECT, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SUB_CLEARCACHE,  0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_CLEARCACHE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SUB_CLEARCOOKIE, 0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_CLEARCOOKIE, 0, 0, 0, 0}
+};
+const GUIMENU_ITEM_T menu_brw_popupmenu_table[] =
+{
+    {ID_POPUP_MENU_INPUTADD,            0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_INPUTADD, 0, 0, 0, 0},
+    {ID_POPUP_MENU_OPEN_HOMEPAGE,       0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_COMM_OPEN, 0, 0,0, 0},
+    {ID_POPUP_MENU_SET_MAIN,            0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_SET_MAIN, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SAVE_BOOKMARK,       0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_SAVE_BOOKMARK, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SAVE_INTERNET_FILE,  0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_SAVE_INTERNET_FILE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_TOOL,                0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_TOOL, 0, 0, 0, MENU_BRW_TOOL_SUBMENU_TABLE},
+    {ID_POPUP_MENU_HISTORY,             0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_HISTORY, 0, 0, 0, 0},
+    {ID_POPUP_MENU_HAS_SAVE_FILE,       0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_HAS_SAVE_FILE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SUB_SETTING,         0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_SETTING, 0, 0, 0, 0}
+};
+#endif
+#if 0
+const GUIMENU_ITEM_T menu_brw_tool_submenu_table[] =
+{
+    {ID_POPUP_MENU_SUB_DISCONNECT,  0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_COMM_DISCONNECT, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SUB_CLEARCACHE,  0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_CLEARCACHE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SUB_CLEARCOOKIE, 0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_CLEARCOOKIE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SUB_SETTING,     0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_SETTING, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SUB_HELP,        0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_HELP, 0, 0, 0, 0}
+};
+const GUIMENU_ITEM_T menu_brw_popupmenu_table[] =
+{
+    {ID_POPUP_MENU_OPEN,                0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_COMM_OPEN, 0, 0,0, MENU_BRW_OPEN_POPUPMENU_TABLE},
+    {ID_POPUP_MENU_CURR_PAGE,           0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_CURR_PAGE, 0, 0, 0, MENU_BRW_CURR_PAGE_POPUPMENU_TABLE},
+    {ID_POPUP_MENU_BOOKMARK_LIST,       0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_BOOKMARK_LIST, 0, 0, 0, 0},
+    {ID_POPUP_MENU_HISTORY,             0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_HISTORY, 0, 0, 0, 0},
+    {ID_POPUP_MENU_HAS_SAVE_FILE,       0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_HAS_SAVE_FILE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_TOOL,                0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_TOOL, 0, 0, 0, MENU_BRW_TOOL_SUBMENU_TABLE},
+    {ID_POPUP_MENU_EXIT,                0,{STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_EXIT, 0, 0, 0, 0}
+};
+const GUIMENU_ITEM_T menu_brw_open_popupmenu_table[] =
+{
+    {ID_POPUP_MENU_INPUTADD,            0,{TXT_COMMON_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_INPUTADD, 0, 0, 0, 0},
+    {ID_POPUP_MENU_OPEN_HOMEPAGE,       0,{TXT_COMMON_OK,TXT_NULL,STXT_RETURN},TXT_COMMON_HOMEPAGE, 0, 0,0, 0}
+};
+const GUIMENU_ITEM_T menu_brw_curr_page_popupmenu_table[] =
+{
+    {ID_POPUP_MENU_STOP_OR_REFRESH,     0,{TXT_COMMON_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_STOP, 0, 0, 0, 0},
+    {ID_POPUP_MENU_FORWARD,             0,{TXT_COMMON_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_FORWARD_ONE_PAGE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SET_MAIN,            0,{TXT_COMMON_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_SET_MAIN, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SAVE_BOOKMARK,       0,{TXT_COMMON_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_SAVE_BOOKMARK, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SAVE_INTERNET_FILE,  0,{TXT_COMMON_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_SAVE_INTERNET_FILE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SUB_FILEINFO,        0,{TXT_COMMON_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_FILEINFO, 0, 0, 0, 0}
+};
+#endif
+
+const GUIMENU_ITEM_T menu_brw_history[] =
+{
+#ifdef MMI_PDA_SUPPORT
+    {ID_POPUP_MENU_HISTORY_DELETEALL,   0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_DELALL, IMAGE_COMMON_OPTMENU_DELETE, 0, 0, 0},
+#else
+    {ID_POPUP_MENU_HISTORY_ENTER,       0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_BOOKMARK_OPEN, 0, 0, 0, 0},
+    {ID_POPUP_MENU_HISTORY_DETAIL,      0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_COMM_DETAIL, 0, 0, 0, 0}, 
+    {ID_POPUP_MENU_HISTORY_DELETE,      0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_DELETE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_HISTORY_SEND_URL,      0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_WWW_SEND_LINK, 0, 0, 0, 0},
+#ifndef CMCC_UI_STYLE
+    {ID_POPUP_MENU_HISTORY_AS_HOMEPAGE, 0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_PDA_SAVE_AS_HOMEPAGE, 0, 0, 0, 0},
+#endif
+#ifdef MMIDORADO_MY_NAV_SUPPORT
+    {ID_POPUP_MENU_HISTORY_ADD2MYNAV, 0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_ADD_TO_NAV, 0, 0, 0, 0},
+#endif
+    {ID_POPUP_MENU_HISTORY_DELETEALL,   0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_DELALL, 0, 0, 0, 0},
+#endif /* MMI_PDA_SUPPORT */
+};
+#if 0
+const GUIMENU_ITEM_T menu_brw_nav_his[] =
+{
+    {ID_POPUP_MENU_NAV_HIS_FORWARD, 0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_COMMON_COMMON_FORWARD, 0, 0, 0, 0},
+    {ID_POPUP_MENU_NAV_HIS_BACKWARD,0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_COMMON_COMMON_BACK, 0, 0, 0, 0}, 
+    {ID_POPUP_MENU_NAV_HIS_REFRESH, 0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_REFRESH, 0, 0, 0, 0},
+    {ID_POPUP_MENU_NAV_HIS_CLEAN,   0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_DELALL, 0, 0, 0, 0},
+    {ID_POPUP_MENU_NAV_HIS_ADD,     0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_NEWADDRESS, 0, 0, 0, 0},
+};
+#endif
+
+#ifndef MMIDORADO_BOOKMARK_BY_NV
+const GUIMENU_ITEM_T menu_brw_bookmark[] =
+{
+#ifdef MMI_PDA_SUPPORT
+    {ID_POPUP_MENU_BOOKMARK_ADD_FILE,         0, {STXT_OK,TXT_NULL,STXT_RETURN},TXT_ADD_BOOKMARK, IMAGE_COMMON_OPTMENU_ADD, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_ADD_FOLDER,       0, {STXT_OK,TXT_NULL,STXT_RETURN},TXT_BROWSER_PDA_ADD_FOLDER, IMAGE_COMMON_OPTMENU_ADD, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_MARK,   0, {STXT_OK, TXT_NULL, STXT_RETURN},STXT_MARK, IMAGE_COMMON_OPTMENU_MARK, 0, 0, 0},
+#else
+    {ID_POPUP_MENU_BOOKMARK_OPEN,   0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_BOOKMARK_OPEN, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_EDIT,   0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_EDIT, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_EDIT_FOLDER,   0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_BOOKMARK_EDIT_FOLDER, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_DELETE_FOLDER, 0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_BOOKMARK_DELETE_FOLDER, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_ADD,    0, {STXT_OK, TXT_NULL, STXT_RETURN},STXT_ADD, 0, 0, 0, MENU_BRW_BOOKMARK_ADD}, 
+    {ID_POPUP_MENU_BOOKMARK_DELETE, 0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_DELETE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_MARK,   0, {STXT_OK, TXT_NULL, STXT_RETURN},STXT_MARK, 0, 0, 0, MENU_BRW_BOOKMARK_MARK},
+    {ID_POPUP_MENU_BOOKMARK_MOVE_TO,   0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_WWW_BOOKMARK_MANAGE_MOVE_TO, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_SEND_URL, 0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_WWW_SEND_LINK, 0, 0, 0, 0},
+#ifdef SNS_SUPPORT
+#if (defined(WRE_WEIBO_SUPPORT)) || (defined(WRE_FACEBOOK_SUPPORT)) || (defined(WRE_TWITTER_SUPPORT))
+    {ID_POPUP_MENU_BOOKMARK_SHARE2SNS, 0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_SHARE_TO_SNS, 0, 0, 0, MENU_BRW_SNS_OPT},
+#endif
+#endif
+#ifndef CMCC_UI_STYLE
+    {ID_POPUP_MENU_BOOKMARK_AS_HOMEPAGE, 0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_PDA_SAVE_AS_HOMEPAGE, 0, 0, 0, 0},
+#endif
+#ifdef MMIDORADO_MY_NAV_SUPPORT
+    {ID_POPUP_MENU_BOOKMARK_ADD2MYNAV, 0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_ADD_TO_NAV, 0, 0, 0, 0},
+#endif
+    {ID_POPUP_MENU_BOOKMARK_DETAIL, 0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_COMM_DETAIL, 0, 0, 0, 0},
+#endif /* MMI_PDA_SUPPORT */
+};
+
+const GUIMENU_ITEM_T menu_brw_bookmark_detail_opt[] =
+{
+    {ID_POPUP_MENU_BOOKMARK_EDIT,   0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_EDIT, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_MOVE_TO,   0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_WWW_BOOKMARK_MANAGE_MOVE_TO, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_SEND_URL, 0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_WWW_SEND_LINK, 0, 0, 0, 0},
+#ifdef MMI_PDA_SUPPORT
+    {ID_POPUP_MENU_BOOKMARK_OPEN, 0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_BOOKMARK_OPEN, 0, 0, 0, 0},
+#endif
+};
+
+const GUIMENU_ITEM_T menu_brw_bookmark_add[] =
+{
+    {ID_POPUP_MENU_BOOKMARK_ADD_FILE,         0, {TXT_COMMON_OK,TXT_NULL,STXT_RETURN},TXT_COMMON_BOOKMARKS, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_ADD_FOLDER,       0, {TXT_COMMON_OK,TXT_NULL,STXT_RETURN},TXT_WWW_BOOKMARK_ADD_DIR, 0, 0, 0, 0},
+};
+
+#else/*MMIDORADO_BOOKMARK_BY_NV*/
+const GUIMENU_ITEM_T menu_brw_bookmark[] =
+{
+#ifdef MMI_PDA_SUPPORT
+    {ID_POPUP_MENU_BOOKMARK_ADD,    0, {STXT_OK, TXT_NULL, STXT_RETURN},STXT_ADD, 0, 0, 0, 0}, 
+    {ID_POPUP_MENU_BOOKMARK_MARK,   0, {STXT_OK, TXT_NULL, STXT_RETURN},STXT_MARK, IMAGE_COMMON_OPTMENU_MARK, 0, 0, 0},
+#else    
+    {ID_POPUP_MENU_BOOKMARK_OPEN,   0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_BOOKMARK_OPEN, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_EDIT,   0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_EDIT, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_ADD,    0, {STXT_OK, TXT_NULL, STXT_RETURN},STXT_ADD, 0, 0, 0, 0}, 
+    {ID_POPUP_MENU_BOOKMARK_DELETE, 0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_DELETE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_MARK,   0, {STXT_OK, TXT_NULL, STXT_RETURN},STXT_MARK, 0, 0, 0, MENU_BRW_BOOKMARK_MARK},
+    {ID_POPUP_MENU_BOOKMARK_SEND_URL,0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_WWW_SEND_LINK, 0, 0, 0, 0}, 
+#ifdef SNS_SUPPORT
+#if (defined(WRE_WEIBO_SUPPORT)) || (defined(WRE_FACEBOOK_SUPPORT)) || (defined(WRE_TWITTER_SUPPORT))
+    {ID_POPUP_MENU_BOOKMARK_SHARE2SNS, 0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_SHARE_TO_SNS, 0, 0, 0, MENU_BRW_SNS_OPT},
+#endif
+#endif
+#ifndef CMCC_UI_STYLE
+    {ID_POPUP_MENU_BOOKMARK_AS_HOMEPAGE, 0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_PDA_SAVE_AS_HOMEPAGE, 0, 0, 0, 0},
+#endif
+#ifdef MMIDORADO_MY_NAV_SUPPORT
+    {ID_POPUP_MENU_BOOKMARK_ADD2MYNAV, 0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_ADD_TO_NAV, 0, 0, 0, 0},
+#endif
+    {ID_POPUP_MENU_BOOKMARK_DETAIL, 0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_COMM_DETAIL, 0, 0, 0, 0},
+#endif
+};
+
+const GUIMENU_ITEM_T menu_brw_bookmark_detail_opt[] =
+{
+    {ID_POPUP_MENU_BOOKMARK_EDIT,   0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_EDIT, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_SEND_URL, 0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_WWW_SEND_LINK, 0, 0, 0, 0},
+#ifdef MMI_PDA_SUPPORT
+    {ID_POPUP_MENU_BOOKMARK_OPEN, 0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_BROWSER_BOOKMARK_OPEN, 0, 0, 0, 0},
+#endif
+};
+
+#endif/*MMIDORADO_BOOKMARK_BY_NV*/
+
+const GUIMENU_ITEM_T menu_brw_bookmark_mark[] =
+{
+	{ID_POPUP_MENU_BOOKMARK_MARKED,         0, {STXT_OK,TXT_NULL,STXT_RETURN},STXT_MARK, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_UNMARKED,       0, {STXT_OK,TXT_NULL,STXT_RETURN},TXT_CANCEL_MARK, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_MARKED_ALL,     0, {STXT_OK,TXT_NULL,STXT_RETURN},TXT_MARK_ALL, 0, 0, 0, 0},
+    {ID_POPUP_MENU_BOOKMARK_UNMARKED_ALL,   0, {STXT_OK,TXT_NULL,STXT_RETURN},TXT_CANCEL_MARK_ALL, 0, 0, 0, 0},
+};
+const GUIMENU_ITEM_T menu_brw_snapshot[] =
+{
+#ifdef MMI_PDA_SUPPORT
+    {ID_POPUP_MENU_SNAPSHOT_MARK,   0, {STXT_OK,TXT_NULL,STXT_RETURN},STXT_MARK, IMAGE_COMMON_OPTMENU_MARK, 0, 0, 0},
+#else
+	{ID_POPUP_MENU_SNAPSHOT_OPEN,   0, {STXT_OK,TXT_NULL,STXT_RETURN},TXT_COMM_OPEN, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SNAPSHOT_DELETE, 0, {STXT_OK,TXT_NULL,STXT_RETURN},TXT_DELETE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SNAPSHOT_DETAIL, 0, {STXT_OK,TXT_NULL,STXT_RETURN},TXT_COMM_DETAIL, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SNAPSHOT_RENAME, 0, {TXT_COMMON_OK,TXT_NULL,STXT_RETURN},TXT_COMMON_RENAME, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SNAPSHOT_MARK,   0, {STXT_OK,TXT_NULL,STXT_RETURN},STXT_MARK, 0, 0, 0, MENU_BRW_SNAPSHOT_MARK},
+#endif /* MMI_PDA_SUPPORT */
+};
+const GUIMENU_ITEM_T menu_brw_snapshot_mark[] =
+{
+	{ID_POPUP_MENU_SNAPSHOT_MARKED,         0, {STXT_OK,TXT_NULL,STXT_RETURN},STXT_MARK,              0, 0, 0, 0},
+    {ID_POPUP_MENU_SNAPSHOT_UNMARKED,       0, {STXT_OK,TXT_NULL,STXT_RETURN},TXT_CANCEL_MARK,       0, 0, 0, 0},
+    {ID_POPUP_MENU_SNAPSHOT_MARKED_ALL,     0, {STXT_OK,TXT_NULL,STXT_RETURN},TXT_MARK_ALL,          0, 0, 0, 0},
+    {ID_POPUP_MENU_SNAPSHOT_UNMARKED_ALL,   0, {STXT_OK,TXT_NULL,STXT_RETURN},TXT_CANCEL_MARK_ALL,   0, 0, 0, 0},
+};
+
+#ifdef MMIDORADO_MY_NAV_SUPPORT
+const GUIMENU_ITEM_T menu_brw_my_nav_opt[] =
+{
+    {ID_POPUP_MENU_MY_NAV_DELETE,   0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_DELETE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_MY_NAV_EDIT,   0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_EDIT, 0, 0, 0, 0},
+    {ID_POPUP_MENU_MY_NAV_DETAIL,   0, {STXT_OK, TXT_NULL, STXT_RETURN},TXT_COMM_DETAIL, 0, 0, 0, 0},
+};
+#endif
+
+#ifdef SNS_SUPPORT
+#if (defined(WRE_WEIBO_SUPPORT)) || (defined(WRE_FACEBOOK_SUPPORT)) || (defined(WRE_TWITTER_SUPPORT))
+const GUIMENU_ITEM_T menu_brw_sns_opt[] =
+{
+#ifdef WRE_WEIBO_SUPPORT
+    {ID_POPUP_MENU_BRW_SHARE_TO_SINA, 0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_SHARE_TO_SINA, 0, 0, 0, 0},   
+#endif    
+#ifdef WRE_FACEBOOK_SUPPORT
+    {ID_POPUP_MENU_BRW_SHARE_TO_FACEBOOK, 0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_SHARE_TO_FACEBOOK, 0, 0, 0, 0},   
+#endif
+#ifdef WRE_TWITTER_SUPPORT
+   {ID_POPUP_MENU_BRW_SHARE_TO_TWITTER, 0, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},TXT_SHARE_TO_TWITTER, 0, 0, 0, 0},   
+#endif    
+};
+#endif
+#endif
+
+const GUIMENU_ITEM_T menu_brw_save_image[] =
+{
+    {ID_POPUP_MENU_SAVE_IMAGE_VIEW,   0, {STXT_OK,TXT_NULL,STXT_RETURN},STXT_PREVIEW, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SAVE_IMAGE_SAVE,   0, {STXT_OK,TXT_NULL,STXT_RETURN},STXT_SAVE, 0, 0, 0, 0},
+    {ID_POPUP_MENU_SAVE_IMAGE_DETAIL,   0, {STXT_OK,TXT_NULL,STXT_RETURN},TXT_COMM_DETAIL, 0, 0, 0, 0},
+};
+
+
+#define MENU_DEF(_TABLEID, _ITEMPTR, _STYLE, _TITLESTR, _TITLE_ICON, _TITLE_NUMICON, _TITLE_BACKGROUND, \
+	_ITEMCOUNT) \
+     _ITEMPTR, _STYLE, _TITLESTR, _TITLE_ICON, _TITLE_NUMICON, _TITLE_BACKGROUND, _ITEMCOUNT, 
+
+const GUIMENU_GROUP_T brw_menu_table[] = 
+{
+    {0},   
+    #include "mmibrowser_menutable.def"
+};
+
+#undef MENU_DEF
+
+/**--------------------------------------------------------------------------*
+ **                         FUNCTION DEFINITION                              *
+ **--------------------------------------------------------------------------*/
+
+/*****************************************************************************/
+//  Description : browser reg menu group
+//  Global resource dependence : 
+//  Author: li.li
+//  Note: 
+/*****************************************************************************/
+PUBLIC void MMIBROWSER_RegMenuGroup(void)
+{
+    MMI_RegMenuGroup(MMI_MODULE_MMIBROWSER, brw_menu_table);
+}
+
+/**--------------------------------------------------------------------------*
+ **                         Compiler Flag                                    *
+ **--------------------------------------------------------------------------*/
+#ifdef   __cplusplus
+    }
+#endif

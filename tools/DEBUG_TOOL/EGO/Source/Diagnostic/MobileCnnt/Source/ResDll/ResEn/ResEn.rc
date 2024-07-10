@@ -1,0 +1,2579 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MobileCnnt.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#include ""l.chs\\afxprint.rc""        // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MobileCnnt.ico"
+IDR_MOBILETYPE          ICON    DISCARDABLE     "res\\MobileCnntDoc.ico"
+IDR_SMS                 ICON    DISCARDABLE     "res\\idr_icon.ico"
+IDI_HIGH                ICON    DISCARDABLE     "res\\high.ico"
+IDI_HIGHER              ICON    DISCARDABLE     "res\\higher.ico"
+IDI_ICON_SIGNAL0        ICON    DISCARDABLE     "res\\icon_sig0.ico"
+IDI_ICON_SIGNAL1        ICON    DISCARDABLE     "res\\icon_sig1.ico"
+IDI_ICON_SIGNAL2        ICON    DISCARDABLE     "res\\icon_sig2.ico"
+IDI_ICON_SIGNAL3        ICON    DISCARDABLE     "res\\icon_sig3.ico"
+IDI_ICON_SIGNAL4        ICON    DISCARDABLE     "res\\icon_sig4.ico"
+IDI_ICON_SIGNAL5        ICON    DISCARDABLE     "res\\icon_sig5.ico"
+IDI_COMING_CALL         ICON    DISCARDABLE     "res\\coming_c.ico"
+IDI_ICON_SIGNAL00       ICON    DISCARDABLE     "res\\icon1.ico"
+IDI_ICON_SIGNAL01       ICON    DISCARDABLE     "res\\ico00001.ico"
+IDI_ICON_SIGNAL02       ICON    DISCARDABLE     "res\\ico00002.ico"
+IDI_ICON_SIGNAL03       ICON    DISCARDABLE     "res\\ico00003.ico"
+IDI_ICON_SIGNAL05       ICON    DISCARDABLE     "res\\ico00004.ico"
+IDI_ICON_SIGNAL04       ICON    DISCARDABLE     "res\\ico00005.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDR_SMS                 BITMAP  DISCARDABLE     "res\\bmp00001.bmp"
+IDB_BMP_CATEGORY        BITMAP  DISCARDABLE     "res\\bmp_category.bmp"
+IDR_MAIN_USED           BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+IDB_TB_ONE              BITMAP  DISCARDABLE     "res\\tb1.bmp"
+IDB_TB_TWO              BITMAP  DISCARDABLE     "res\\tb2.bmp"
+IDB_TB_THREE            BITMAP  DISCARDABLE     "res\\tb3.bmp"
+IDB_BMP_TM              BITMAP  DISCARDABLE     "res\\trademark.bmp"
+IDB_BMP_CMP             BITMAP  DISCARDABLE     "res\\cmp.bmp"
+IDR_TOOLBAR             BITMAP  DISCARDABLE     "res\\bmp00002.bmp"
+IDB_START               BITMAP  DISCARDABLE     "res\\new_start.bmp"
+IDB_BMP_START           BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDR_TOOLBAR_V1          BITMAP  DISCARDABLE     "res\\bmp00003.bmp"
+IDB_DIS_START           BITMAP  DISCARDABLE     "res\\dis_start.bmp"
+IDB_DLG_BACKGRND        BITMAP  DISCARDABLE     "res\\bmp00004.bmp"
+IDR_SMS_EGO             BITMAP  DISCARDABLE     "res\\sms_ego.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_SMS TOOLBAR DISCARDABLE  20, 20
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_VIEW_CATEG_BAR
+    SEPARATOR
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_DELETE
+    BUTTON      ID_EDIT_NEW
+    BUTTON      ID_OPTION_LOAD_SMS
+    BUTTON      ID_OPTION_LOAD_PB
+END
+
+IDR_MAIN_USED TOOLBAR DISCARDABLE  32, 32
+BEGIN
+    BUTTON      ID_HOME
+    BUTTON      IDC_DIAL_UP
+    BUTTON      IDC_LOAD_SMS
+    BUTTON      IDC_LOAD_CALL
+    BUTTON      IDC_LOAD_ENGENEERING
+    BUTTON      IDC_LOAD_CONFIG
+    BUTTON      IDC_LOAD_HELP
+    BUTTON      ID_STATIC_LOGO
+END
+
+IDR_TOOLBAR TOOLBAR DISCARDABLE  32, 32
+BEGIN
+    BUTTON      ID_HOME
+    BUTTON      IDC_DIAL_UP
+    BUTTON      IDC_LOAD_CALL
+    BUTTON      IDC_LOAD_ENGENEERING
+    BUTTON      IDC_LOAD_CONFIG
+    BUTTON      IDC_LOAD_HELP
+    BUTTON      ID_STATIC_LOGO
+END
+
+IDR_TOOLBAR_V1 TOOLBAR DISCARDABLE  32, 32
+BEGIN
+    BUTTON      ID_HOME
+    BUTTON      IDC_DIAL_UP
+    BUTTON      IDC_LOAD_CONFIG
+    BUTTON      IDC_LOAD_HELP
+    BUTTON      ID_STATIC_LOGO
+END
+
+IDR_SMS_EGO TOOLBAR DISCARDABLE  20, 20
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_VIEW_CATEG_BAR
+    SEPARATOR
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_DELETE
+    BUTTON      ID_EDIT_NEW
+    SEPARATOR
+    BUTTON      ID_OPTION_LOAD_MS_ALL
+    SEPARATOR
+    BUTTON      ID_OPTION_LOAD_SMS
+    BUTTON      ID_OPTION_LOAD_PB
+    BUTTON      ID_OPTION_LOAD_MEMO
+    BUTTON      ID_OPTION_LOAD_PBG
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "System(&F)"
+    BEGIN
+        MENUITEM "Configuration(&C)",           IDC_LOAD_CONFIG
+        MENUITEM "Exit(&X)",                    ID_APP_EXIT
+    END
+    POPUP "Service(&S)"
+    BEGIN
+        MENUITEM "System Infomation",           ID_HOME
+        MENUITEM "Dial_up",                     IDC_DIAL_UP
+        MENUITEM "Sync Information",            IDC_LOAD_SMS
+        MENUITEM "Call",                        IDC_LOAD_CALL
+        MENUITEM "Engineering",                 IDC_LOAD_ENGENEERING
+        MENUITEM "Power_off",                   IDC_POWER_OFF
+    END
+    POPUP "Help(&H)"
+    BEGIN
+        MENUITEM "Help_topic",                  IDC_LOAD_HELP
+        MENUITEM "About(&A)...",                ID_APP_ABOUT
+        MENUITEM "About Software Version",      ID_LOAD_HSDPA_VERSION
+    END
+END
+
+IDR_TOOL MENU DISCARDABLE 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "Open(&O)",                    ID_TOOL_OPEN
+        MENUITEM "Disconnect Dialup",           ID_DIS_DIAL_UP
+        MENUITEM "Exit(&X)",                    ID_APP_EXIT
+    END
+END
+
+IDR_SMS MENU DISCARDABLE 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Open(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "Save(&S)\tCtrl+S",            ID_FILE_SAVE
+        MENUITEM "Save as(&A)...",              ID_FILE_SAVE_AS
+    END
+    POPUP "Operation"
+    BEGIN
+        POPUP "New(&N)"
+        BEGIN
+            MENUITEM "SMS(&S)...",                  ID_EDIT_NEW_SMS
+            MENUITEM "PB(&P)...",                   ID_EDIT_NEW_PB
+            MENUITEM "Memo(&M)...",                 ID_EDIT_NEW_MEMO
+        END
+        MENUITEM "Edit(&E)...",                 ID_EDIT_EDIT
+        MENUITEM "Copy(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "Delete(&D)\tCtrl+D",          ID_EDIT_DELETE
+        MENUITEM "Select All(&A)\tCtrl+A",      ID_EDIT_SELECT_ALL
+    END
+    POPUP "Option(&O)"
+    BEGIN
+        POPUP "Load(&L)"
+        BEGIN
+            MENUITEM "All(&A)",                     ID_OPTION_LOAD_MS_ALL
+            MENUITEM "SMS(&S)",                     ID_OPTION_LOAD_SMS
+            MENUITEM "PhoneBook(&P)",               ID_OPTION_LOAD_PB
+            MENUITEM "Memo(&R)",                    ID_OPTION_LOAD_MEMO
+            MENUITEM "PhoneBook Group(&G)",         ID_OPTION_LOAD_PBG
+        END
+        POPUP "SMS(&M)"
+        BEGIN
+            MENUITEM "Center number(&N)...",        ID_OPTION_SMS_CENTER
+            MENUITEM "Preset SMS(&P)...",           ID_OPTION_SMS_PRESET
+            MENUITEM "Send mode(&S)...",            ID_OPTION_SMS_SEND_MODE
+            MENUITEM "Store place(&C)...",          ID_OPTION_SMS_STORE
+        END
+        POPUP "PhoneBook(B)"
+        BEGIN
+            MENUITEM "PhoneBook Type(&T)...",       ID_OPTION_PB_TYPE
+        END
+    END
+END
+
+IDR_MNU_INFOLIST MENU DISCARDABLE 
+BEGIN
+    POPUP "infolist_menu"
+    BEGIN
+        MENUITEM "New(&N)",                     ID_EDIT_NEW
+        MENUITEM "Edit(&E)\t",                  ID_EDIT_EDIT
+        MENUITEM SEPARATOR
+        MENUITEM "Copy(&C)",                    ID_EDIT_COPY
+        MENUITEM SEPARATOR
+        MENUITEM "Delete(&D)",                  ID_EDIT_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Select All(&A)",              ID_EDIT_SELECT_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "Send(&S)",                    ID_ILM_SMS_SEND
+        MENUITEM "Reply(&N)",                   ID_ILM_SMS_ANSWER
+        MENUITEM "Forward(&F)",                 ID_ILM_SMS_FORWARD
+        MENUITEM "Pick-up Number(&T)",          ID_EXTRACT_NUMBER
+        MENUITEM "Preset SMS(&R)",              ID_OPTION_SMS_PRESET
+        MENUITEM SEPARATOR
+        MENUITEM "Export VCard(&X)",            ID_EXPORT_TO_VCARD
+        MENUITEM "Import VCard(&I)",            ID_IMPORT_VCARD
+        MENUITEM "Sync PB(&Y)",                 ID_SYNC_PB
+        MENUITEM SEPARATOR
+        MENUITEM "Export VCalendar(&L)",        ID_EXPORT_TO_VCALENDAR
+        MENUITEM "Import VCalendar(&p)",        ID_IMPORT_VCALENDAR
+        MENUITEM "Sync Memo(&M)",               ID_SYNC_MEMO
+        MENUITEM SEPARATOR
+        POPUP "Copy to..."
+        BEGIN
+            MENUITEM "PC",                          ID_COPY_MOVE_TO_PC
+            MENUITEM "Phone Memory",                ID_COPY_MOVE_TO_MS
+            MENUITEM "SIM1",                        ID_COPY_MOVE_TO_SIM
+            MENUITEM "SIM2",                        ID_COPY_MOVE_TO_SIM2
+            MENUITEM "SIM3",                        ID_COPY_MOVE_TO_SIM3
+            MENUITEM "SIM4",                        ID_COPY_MOVE_TO_SIM4
+        END
+        POPUP "Split Group to..."
+        BEGIN
+            MENUITEM "ONE",                         ID_GROUP_ONE
+            MENUITEM "TWO",                         ID_GROUP_TWO
+            MENUITEM "THREE",                       ID_GROUP_THREE
+            MENUITEM "FOUR",                        ID_GROUP_FOUR
+            MENUITEM "FIVE",                        ID_GROUP_FIVE
+            MENUITEM "SIX",                         ID_GROUP_SIX
+            MENUITEM "SEVEN",                       ID_GROUP_SEVEN
+            MENUITEM "EIGHT",                       ID_GROUP_EIGHT
+            MENUITEM "NINE",                        ID_GROUP_NINE
+            MENUITEM "TEN",                         ID_GROUP_TEN
+            MENUITEM "ELEVEN",                      ID_GROUP_ELEVEN
+            MENUITEM "TWELVE",                      ID_GROUP_TWELVE
+            MENUITEM "THIRTEEN",                    ID_GROUP_THIRTEEN
+            MENUITEM "FOURTEEN",                    ID_GROUP_FOURTEEN
+            MENUITEM "FIFTEEN",                     ID_GROUP_FIFTEEN
+            MENUITEM "SIXTEEN",                     ID_GROUP_SIXTEEN
+            MENUITEM "SEVENTEEN",                   ID_GROUP_SEVENTEEN
+            MENUITEM "EIGHTTEEN",                   ID_GROUP_EIGHTTEEN
+            MENUITEM "NINETEEN",                    ID_GROUP_NINETEEN
+            MENUITEM "TWENTY",                      ID_GROUP_TWENTY
+        END
+        MENUITEM "Call",                        ID_CALL_FROM_PB
+        MENUITEM "Send SMS",                    ID_SEND_SMS_FROM_PB
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "A",            ID_EDIT_SELECT_ALL,     VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "D",            ID_EDIT_DELETE,         VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 237, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About SPRD8800"
+FONT 10, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,8,20,20
+    LTEXT           "SPRD8800",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Version:",IDC_STATIC,40,25,38,8
+    DEFPUSHBUTTON   "OK",IDOK,180,7,50,14,WS_GROUP
+    LTEXT           "Build:",IDC_STATIC,40,42,38,8
+    LTEXT           "Copyright(C)2008 Spreadtrum",IDC_STATIC,40,59,190,8
+    LTEXT           "",IDC_STATIC_VERSION,84,25,95,8
+    LTEXT           "",IDC_STATIC_BUILD,84,41,95,8
+END
+
+IDD_FORMVIEW_MSINFO DIALOGEX 0, 0, 335, 195
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Signal Strength",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,11,39,66,10,WS_EX_TRANSPARENT
+    CONTROL         "Network Type",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    11,66,66,10,WS_EX_TRANSPARENT
+    CONTROL         "Network Provider",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,11,92,66,10,WS_EX_TRANSPARENT
+    CONTROL         "Srv_Status",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,11,
+                    120,66,10,WS_EX_TRANSPARENT
+    CONTROL         "Roam_Status",IDC_STATIC,"Static",SS_SIMPLE,174,39,44,9,
+                    WS_EX_TRANSPARENT,HIDC_STATIC
+    CONTROL         "Sim_State",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,174,
+                    147,44,9,WS_EX_TRANSPARENT
+    CONTROL         "Srv_Domain",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    174,66,44,9,WS_EX_TRANSPARENT
+    CONTROL         "Sys_Mode",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,174,
+                    92,44,9,WS_EX_TRANSPARENT
+    GROUPBOX        "",IDC_STATIC,8,14,158,164
+    GROUPBOX        "",IDC_STATIC,169,14,159,164
+    GROUPBOX        "",IDC_STATIC,82,30,78,20
+    LTEXT           "",IDC_STC_SIGNAL,83,38,75,10
+    GROUPBOX        "",IDC_STATIC,82,57,78,20
+    GROUPBOX        "",IDC_STATIC,82,84,78,20
+    LTEXT           "",IDC_STC_NETWORK_TYPE,83,65,75,10
+    LTEXT           "",IDC_STC_NETWORK_PROVIDER,83,92,75,10
+    GROUPBOX        "",IDC_STATIC,82,112,78,20
+    GROUPBOX        "",IDC_STATIC,221,30,102,20
+    GROUPBOX        "",IDC_STATIC,221,57,102,20
+    GROUPBOX        "",IDC_STATIC,221,84,102,20
+    GROUPBOX        "",IDC_STATIC,221,136,102,27
+    LTEXT           "",IDC_STC_ROAM,222,38,100,10
+    LTEXT           "",IDC_STC_SYSTEM_DOMAIN,222,65,100,10
+    LTEXT           "",IDC_STC_SYSTEM_MODE,222,92,100,10
+    LTEXT           "",IDC_STC_SIM,222,144,100,17
+    LTEXT           "",IDC_STC_SYSTEM_SRV,83,120,76,10
+    LTEXT           "IMEI",IDC_STATIC,11,147,66,10
+    GROUPBOX        "",IDC_STATIC,82,139,78,20
+    LTEXT           "",IDC_STC_IMEI,83,147,76,10
+    LTEXT           "Cell Info",IDC_STATIC,176,120,45,12,0,WS_EX_TRANSPARENT
+    GROUPBOX        "",IDC_STATIC,221,112,102,20
+    LTEXT           "",IDC_STC_CELL_SIGN,223,120,98,10
+END
+
+IDD_DLG_PROGRESS DIALOG DISCARDABLE  0, 0, 193, 46
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 10, "MS Sans Serif"
+BEGIN
+    CONTROL         "Progress1",IDC_PROG,"msctls_progress32",PBS_SMOOTH,7,30,
+                    179,9
+    LTEXT           "Static",IDC_STC_TITLE,7,13,179,10
+END
+
+IDD_FORMVIEW_DIALUP DIALOGEX 0, 0, 327, 200
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Connected-Speed(kbps):",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,28,80,90,10,WS_EX_TRANSPARENT
+    CONTROL         "Connected-Time:",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,28,17,90,10,WS_EX_TRANSPARENT
+    CONTROL         "Send(byte):",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    28,38,90,10,WS_EX_TRANSPARENT
+    CONTROL         "Receive(byte):",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,28,59,90,10,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STC_CONN_TIME,120,17,115,11
+    GROUPBOX        "",IDC_STATIC,17,7,303,109
+    LTEXT           "",IDC_STC_SEND_DATA,120,38,115,11
+    LTEXT           "",IDC_STC_CONN_SPEED,120,80,115,11
+    LTEXT           "",IDC_STC_RCV_DATA,120,59,115,11
+    GROUPBOX        "DialUp",IDC_STATIC,16,125,307,42
+    PUSHBUTTON      "Connect",IDC_BTN_HAND_DIAL,247,140,49,15,BS_FLAT
+    CONTROL         "Modem:",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,28,101,
+                    90,10,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STC_CONN_MODEM,120,101,115,11
+    LTEXT           "Select SIM",IDC_FDU_STC_SIM,27,134,41,8
+    COMBOBOX        IDC_FDU_CMB_SIM,75,132,74,54,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITERECT | SS_SUNKEN,164,134,
+                    1,24
+    LTEXT           "",IDC_STATIC_PROMPT,17,169,303,24
+    LTEXT           "APN:",IDC_STATIC_APN,27,150,35,10
+    EDITTEXT        IDC_EDT_APN,75,148,50,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "OK",IDC_BUTTON_SET,128,147,21,14
+END
+
+IDD_FORMVIEW_CALL DIALOG DISCARDABLE  0, 0, 325, 196
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "1",IDC_BTN_NUM_1,22,71,31,17
+    PUSHBUTTON      "2",IDC_BTN_NUM_2,57,71,31,17
+    PUSHBUTTON      "3",IDC_BTN_NUM_3,92,71,31,17
+    PUSHBUTTON      "4",IDC_BTN_NUM_4,22,97,31,17
+    PUSHBUTTON      "5",IDC_BTN_NUM_5,57,97,31,17
+    PUSHBUTTON      "6",IDC_BTN_NUM_6,92,97,31,17
+    PUSHBUTTON      "7",IDC_BTN_NUM_7,22,123,31,17
+    PUSHBUTTON      "8",IDC_BTN_NUM_8,57,123,31,17
+    PUSHBUTTON      "9",IDC_BTN_NUM_9,92,123,31,17
+    PUSHBUTTON      "*",IDC_BTN_NUM_10,22,149,31,17
+    PUSHBUTTON      "0",IDC_BTN_NUM_0,57,149,31,17
+    PUSHBUTTON      "#",IDC_BTN_NUM_11,92,149,31,17
+    PUSHBUTTON      "Voice",IDC_BTN_CALL_AUDIO,127,71,31,17
+    PUSHBUTTON      "Urgency",IDC_BTN_CALL_URGENCY,127,97,31,17
+    PUSHBUTTON      "HangUp",IDC_BTN_CALL_OFF,127,123,31,17
+    CONTROL         "All",IDC_CHECK_ALL,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,174,33,35,16
+    CONTROL         "Missed",IDC_CHECK_UNANSWER,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,210,33,35,16
+    CONTROL         "Received",IDC_CHECK_ANSWERED,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,246,33,35,16
+    CONTROL         "Dialed",IDC_CHECK_DIALED,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,282,33,35,16
+    CONTROL         "List1",IDC_LST_CALL_REPORT,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,179,56,132,72
+    GROUPBOX        "Report",IDC_STATIC,170,23,148,151
+    GROUPBOX        "Call",IDC_STATIC,15,23,148,151
+    EDITTEXT        IDC_EDT_CALL_NUM,23,41,133,19,ES_AUTOHSCROLL
+    LTEXT           "",IDC_STC_CALL_PROMPT,15,177,303,18
+    GROUPBOX        "SIM Option",IDC_STATIC,172,147,145,21
+    COMBOBOX        IDC_FORMCALL_CMB_SIM,233,153,80,40,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select SIM:",IDC_STATIC,181,155,45,8
+    PUSHBUTTON      "Clear",IDC_BTN_CLEAR_REPORT,172,132,145,12,BS_FLAT
+END
+
+IDD_FORMVIEW_ENGINEERING DIALOG DISCARDABLE  0, 0, 331, 201
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LST_ITEM,11,13,62,176,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_PAGE_FRAME,76,26,248,162
+    LTEXT           "",IDC_CAPTION_BAR,75,14,249,14
+END
+
+IDD_FORMVIEW_CONFIG DIALOG DISCARDABLE  0, 0, 335, 200
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tab1",IDC_TAB_CFG,"SysTabControl32",0x0,3,0,328,193
+END
+
+IDD_FORMVIEW_CONNECT DIALOG DISCARDABLE  0, 0, 335, 200
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_STATIC_BITMAP,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,16,25,304,150
+END
+
+IDD_DLG_SELECT_NETWORK DIALOGEX 0, 0, 300, 165
+STYLE WS_CHILD | WS_BORDER
+EXSTYLE WS_EX_TRANSPARENT
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Modify Mode",IDC_CHECK_MODIFY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,65,28,64,15
+    COMBOBOX        IDC_COMBO_MODE,114,49,106,60,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST_PLMN,114,72,106,37,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Apply",IDC_BTD_SEL_NET_APPLY,124,141,50,14
+    LTEXT           "Current SelectNetwork Mode:",IDC_STATIC,41,9,117,12
+    GROUPBOX        "",IDC_STATIC,161,0,97,23
+    LTEXT           "",IDC_STC_NETWORK_MODE,163,9,93,13
+    GROUPBOX        "",IDC_STATIC,40,20,218,97
+    LTEXT           "Mode:",IDC_STATIC,69,51,40,11
+    LTEXT           "PLMN:",IDC_STATIC,69,87,40,11
+    GROUPBOX        "",IDC_STATIC,40,115,218,24
+    LTEXT           "",IDC_STATIC_INFO,42,124,215,12
+END
+
+IDD_DLG_DIAL_NETWORK DIALOGEX 0, 0, 300, 169
+STYLE WS_CHILD | WS_BORDER
+EXSTYLE WS_EX_TRANSPARENT
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "DialUp",IDC_STATIC,16,0,269,38
+    LTEXT           "After",IDC_STATIC,23,18,21,12
+    EDITTEXT        IDC_EDT_DIAL_SECOND,47,16,25,13,ES_AUTOHSCROLL
+    LTEXT           "seconds to dial_up again",IDC_STATIC,73,18,101,11
+    LTEXT           "try",IDC_STATIC,182,18,13,12
+    EDITTEXT        IDC_EDT_DIAL_NUM,198,16,25,13,ES_AUTOHSCROLL
+    LTEXT           "time as most",IDC_STATIC,235,18,48,12,0,
+                    WS_EX_TRANSPARENT
+    GROUPBOX        "Business",IDC_STATIC,16,48,269,83
+    LTEXT           "Type:",IDC_STATIC,67,60,38,11
+    LTEXT           "APN:",IDC_STATIC,67,79,38,11
+    LTEXT           "UL:",IDC_STATIC,67,97,38,11
+    LTEXT           "DL:",IDC_STATIC,67,114,38,11
+    COMBOBOX        IDC_COMBO_DIAL_TYPE,112,59,98,80,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_CNNT_IN,112,77,98,12,ES_AUTOHSCROLL
+    LTEXT           "(Kbps)",IDC_STATIC,215,96,35,10
+    LTEXT           "(Kbps)",IDC_STATIC,216,112,35,10
+    PUSHBUTTON      "Apply",IDC_BTN_NETWORK_APPLY,116,138,66,16
+    COMBOBOX        IDC_COMBO_UP_SPEED,112,94,98,80,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_DOWN_SPEED,112,111,98,80,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_STC_SPEED_UP,214,96,26,13
+    LTEXT           "",IDC_STC_SPEED_DOWN,214,113,26,13
+END
+
+IDD_DLG_SECURITY DIALOG DISCARDABLE  0, 0, 302, 167
+STYLE WS_CHILD | WS_BORDER
+FONT 10, "MS Sans Serif"
+BEGIN
+    CONTROL         "On",IDC_RADIO_PIN_ON,"Button",BS_AUTORADIOBUTTON,21,21,
+                    37,12
+    CONTROL         "Off",IDC_RADIO_PIN_OFF,"Button",BS_AUTORADIOBUTTON,21,
+                    43,37,12
+    EDITTEXT        IDC_EDT_PIN,52,60,66,14,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "",IDC_STC_PIN1_REMAIN,105,84,32,12
+    PUSHBUTTON      "Unlock ",IDC_BTN_UNLOCK_PIN1,15,109,37,15
+    PUSHBUTTON      "Apply",IDC_BTN_PIN1_APPLY,61,109,37,15
+    PUSHBUTTON      "Modify",IDC_BTN_MODIFY_PIN1,107,108,37,15
+    CONTROL         "FDN On",IDC_RADIO_OPEN_FDN,"Button",BS_AUTORADIOBUTTON,
+                    165,21,54,13
+    CONTROL         "FDN Off",IDC_RADIO_CLOSE_FDN,"Button",
+                    BS_AUTORADIOBUTTON,165,43,54,13
+    EDITTEXT        IDC_EDT_PIN2,196,60,66,14,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "",IDC_STC_PIN2_REMAIN,251,84,32,12
+    PUSHBUTTON      "Unlock",IDC_BTN_UNLOCK_PIN2,161,108,37,15
+    PUSHBUTTON      "Apply",IDC_BTN_PIN2_APPLY,206,108,37,15
+    PUSHBUTTON      "Modify",IDC_BTN_PIN2_MODIFY,251,108,37,15
+    GROUPBOX        "PIN1",IDC_STATIC,12,3,136,146
+    GROUPBOX        "PIN2",IDC_STATIC,156,3,136,146
+    CONTROL         "PIN1:",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,22,63,
+                    24,9
+    CONTROL         "PIN2:",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,166,63,
+                    24,9
+    CONTROL         "(4-8)",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,119,63,
+                    30,12
+    CONTROL         "(4-8)",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,263,63,
+                    30,12
+    CONTROL         "PIN2 Remaining_num:",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,166,85,81,9
+    GROUPBOX        "",IDC_STATIC,250,76,34,21
+    CONTROL         "PIN1 Remaining_num:",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,22,85,77,9
+    GROUPBOX        "",IDC_STATIC,104,76,34,21
+END
+
+IDD_DLG_OTHERS DIALOG DISCARDABLE  0, 0, 300, 167
+STYLE WS_CHILD | WS_BORDER
+FONT 10, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "UPLMN",IDC_STATIC,10,1,136,153
+    GROUPBOX        "AOC",IDC_STATIC,152,1,136,75
+    LTEXT           "UPLMN List:",IDC_STATIC,16,14,45,10
+    CONTROL         "List1",IDC_LIST_UPLMN,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,15,25,127,47
+    GROUPBOX        "Add Or Modify",IDC_STATIC,14,74,127,61
+    LTEXT           "Index:",IDC_STATIC,25,85,28,11
+    LTEXT           "Uplmn:",IDC_STATIC,25,100,28,11
+    LTEXT           "Type:",IDC_STATIC,25,117,28,11
+    COMBOBOX        IDC_COMBO_INDEX,55,83,72,100,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_TYPE,55,117,72,77,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Apply",IDC_BTN_UPLMN_APPLY,54,137,48,14
+    CONTROL         "On",IDC_RADIO_AOC_ON,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,168,18,92,10
+    CONTROL         "Off",IDC_RADIO_AOC_OFF,"Button",BS_AUTORADIOBUTTON,168,
+                    35,92,10
+    PUSHBUTTON      "Apply",IDC_BTN_AOC_APPLY,198,52,48,14
+    EDITTEXT        IDC_EDT_UPLMN,55,100,72,12,ES_AUTOHSCROLL
+    GROUPBOX        "Version",IDC_STATIC,152,79,136,75
+    CONTROL         "R4",IDC_RADIO_R4,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    168,95,29,10
+    CONTROL         "R5",IDC_RADIO_R5,"Button",BS_AUTORADIOBUTTON,168,111,92,
+                    10
+    PUSHBUTTON      "Apply",IDC_BTN_VERSION_APPLY,198,130,48,14
+    CONTROL         "R7",IDC_RADIO_R7,"Button",BS_AUTORADIOBUTTON,231,94,39,
+                    10
+END
+
+IDD_MODIFY_PIN DIALOG DISCARDABLE  0, 0, 214, 117
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PIN"
+FONT 10, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,36,96,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,96,50,14
+    CONTROL         "Old PIN:",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,12,
+                    16,64,10
+    CONTROL         "New PIN:",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,12,
+                    36,64,10
+    CONTROL         "Confirm New PIN:",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,12,56,64,10
+    EDITTEXT        IDC_EDT_OLD_PIN,80,14,88,13,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_NEW_PIN,80,33,88,13,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_NEW_PIN_CONFIM,80,53,88,13,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "(4-8)",IDC_STATIC,172,16,33,13
+    LTEXT           "(4-8)",IDC_STATIC,172,35,33,13
+    LTEXT           "(4-8)",IDC_STATIC,172,56,33,13
+    LTEXT           "Remian_num:",IDC_STATIC,12,74,64,10
+    LTEXT           "",IDC_STC_PIN_REMAIN,80,73,88,12
+END
+
+IDD_UNLOCK_PIN2 DIALOG DISCARDABLE  0, 0, 195, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PIN2"
+FONT 10, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,28,100,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,117,100,50,14
+    CONTROL         "Remaining_num:",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,7,15,54,10
+    GROUPBOX        "",IDC_STATIC,79,7,74,22
+    LTEXT           "",IDC_STC_REMAIN_PUK2,80,15,68,12
+    LTEXT           "New PIN2:",IDC_STATIC,7,39,54,10
+    LTEXT           "PUK2:",IDC_STATIC,7,79,54,10
+    EDITTEXT        IDC_EDT_PIN2_UNLOCK,79,37,74,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PUK2_UNLOCK,79,78,74,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "(4-8)",IDC_STATIC,156,38,32,12
+    LTEXT           "8",IDC_STATIC,156,79,33,11
+    CONTROL         "Confirm New PIN2:",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,7,60,72,10
+    EDITTEXT        IDC_EDT_PIN2_UNLOCK_CONFIRM,79,58,74,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "(4-8)",IDC_STATIC,156,59,32,12
+END
+
+IDD_PAGE_CGDCONT DIALOG DISCARDABLE  0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LST_CGDCONT_READ,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,114,70
+    PUSHBUTTON      "Read",IDC_BTN_READ_CGDCONT,39,81,54,12
+    PUSHBUTTON      "Test",IDC_BTN_TEST_CGDCONT,39,141,54,12
+    GROUPBOX        "Set",IDC_STATIC,123,3,115,131
+    PUSHBUTTON      "Set",IDC_BTN_SET_CGDCONT,156,141,54,12
+    CONTROL         "List2",IDC_LST_CGDCONT_TEST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,102,114,32
+    CONTROL         "ID",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,133,17,20,
+                    10
+    COMBOBOX        IDC_COMBO_CGDCONT_ID,158,16,74,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Type",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,133,37,
+                    19,10
+    COMBOBOX        IDC_COMBO_CGDCONT_TYPE,158,35,38,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "APN",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,133,56,19,
+                    10
+    COMBOBOX        IDC_COMBO_CGDCONT_CNNT_IN,158,54,38,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "PDP Address",IDC_CHECK_CGDCONT_ADDR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,133,72,55,8
+    CONTROL         "Addr",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,133,88,
+                    20,10
+    EDITTEXT        IDC_EDT_CGDCONT_ADDR,158,86,74,12,ES_AUTOHSCROLL
+    CONTROL         "D_Comp",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,133,
+                    104,36,10
+    CONTROL         "H_Comp",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,133,
+                    118,52,10
+    COMBOBOX        IDC_COMBO_CGDCONT_DATA_COMP,185,103,47,64,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CGDCONT_HEAD_COMP,185,118,47,64,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_CGDCONT_TYPE,199,35,39,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_CGDCONT_CNNTIN,199,54,39,12,ES_AUTOHSCROLL
+END
+
+IDD_PAGE_SPPSRATE DIALOGEX 0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_LST_SRATE_READ,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,114,70
+    PUSHBUTTON      "Read",IDC_BTN_READ_SRATE,39,84,54,12
+    PUSHBUTTON      "Test",IDC_BTN_TEST_SRATE,39,141,54,12
+    CONTROL         "List2",IDC_LST_SRATE_TEST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,102,114,32
+    GROUPBOX        "Set",IDC_STATIC,123,3,115,131
+    CONTROL         "Type",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,128,17,
+                    31,10
+    COMBOBOX        IDC_COMBO_SRATE_TYPE,158,16,74,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "UL",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,128,45,31,
+                    10
+    PUSHBUTTON      "Set",IDC_BTN_SET_SRATE,156,141,54,12
+    CONTROL         "DL",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,128,72,31,
+                    10
+    EDITTEXT        IDC_EDT_SRATE_UP_SPEED,158,43,52,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_SRATE_DOWN_SPEED,158,70,52,12,ES_AUTOHSCROLL
+    LTEXT           "(Kbps)",IDC_STATIC,210,44,24,10,0,WS_EX_TRANSPARENT
+    LTEXT           "(Kbps)",IDC_STATIC,210,72,24,10
+END
+
+IDD_PAGE_SPFRQ DIALOG DISCARDABLE  0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LST_SPFRQ_READ,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,114,70
+    PUSHBUTTON      "Read",IDC_BTN_READ_SPFRQ,33,83,61,12
+    PUSHBUTTON      "Test",IDC_BTN_TEST_SPFRQ,33,141,61,12
+    GROUPBOX        "Set",IDC_STATIC,124,3,119,131
+    PUSHBUTTON      "Set",IDC_BTN_SET_SPFRQ,149,141,61,12
+    CONTROL         "List2",IDC_LST_SPFRQ_TEST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,103,114,32
+    CONTROL         "Operation",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,126,
+                    17,38,10
+    COMBOBOX        IDC_COMBO_SPFRQ_OPR,164,16,74,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Index",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,37,
+                    31,10
+    COMBOBOX        IDC_COMBO_SPFRQ_ID,164,35,74,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Frequence",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,
+                    56,37,10
+    EDITTEXT        IDC_EDT_SPFRQ_FREQN,164,54,40,12,ES_AUTOHSCROLL
+    CONTROL         "Cell ID1",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,
+                    76,37,10
+    EDITTEXT        IDC_EDT_SPFRQ_CELL1,164,74,40,12,ES_AUTOHSCROLL
+    CONTROL         "Cell ID2",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,
+                    94,37,10
+    EDITTEXT        IDC_EDT_SPFRQ_CELL2,164,92,40,12,ES_AUTOHSCROLL
+    CONTROL         "Cell ID3",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,
+                    114,37,10
+    EDITTEXT        IDC_EDT_SPFRQ_CELL3,164,112,40,12,ES_AUTOHSCROLL
+    CONTROL         "(0-0xffff)",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    202,55,40,11
+    CONTROL         "(0-255)",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,208,
+                    75,28,11
+    CONTROL         "(0-255)",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,208,
+                    94,28,11
+    CONTROL         "(0-255)",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,208,
+                    113,28,11
+END
+
+IDD_PAGE_SAUTOATT DIALOG DISCARDABLE  0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Read",IDC_STATIC,7,7,231,64
+    LTEXT           "Current Attach",IDC_STATIC,31,28,59,11
+    GROUPBOX        "",IDC_STATIC,94,21,101,17
+    LTEXT           "",IDC_STC_CUR_ATT,95,28,98,8
+    PUSHBUTTON      "Read",IDC_BTN_AUTOATT_READ,94,47,57,12
+    GROUPBOX        "Set",IDC_STATIC,7,81,231,61
+    LTEXT           "Modify Attach",IDC_STATIC,31,102,59,11
+    COMBOBOX        IDC_COMBO_AUTOATT_MODE,96,99,101,54,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Set",IDC_BTN_AUTOATT_SET,96,121,57,12
+END
+
+IDD_PAGE_SPTEST DIALOG DISCARDABLE  0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LST_SPTEST_READ,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,114,127
+    PUSHBUTTON      "Read",IDC_BTN_READ_SPTEST,33,141,59,12
+    GROUPBOX        "Set",IDC_STATIC,123,3,115,131
+    CONTROL         "Type",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,19,
+                    38,11,WS_EX_TRANSPARENT
+    CONTROL         "Item",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,48,
+                    38,11,WS_EX_TRANSPARENT
+    COMBOBOX        IDC_COMBO_SPTEST_TYPE,163,17,69,74,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SPTEST_ITEM,162,47,69,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Set",IDC_BTN_SET_SPTEST,153,141,59,12
+END
+
+IDD_PAGE_SPID DIALOG DISCARDABLE  0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Read",IDC_STATIC,7,7,231,93
+    LTEXT           "tmsi",IDC_STATIC,55,26,30,9
+    LTEXT           "ptmsi",IDC_STATIC,55,49,30,9
+    LTEXT           "imeisv",IDC_STATIC,55,73,30,9
+    GROUPBOX        "",IDC_STATIC,85,19,103,20
+    GROUPBOX        "",IDC_STATIC,85,42,103,20
+    GROUPBOX        "",IDC_STATIC,85,65,103,20
+    LTEXT           "",IDC_STC_TMSI,86,27,100,11
+    LTEXT           "",IDC_STC_PTMSI,86,50,100,11
+    LTEXT           "",IDC_STC_IMEISY,86,73,100,11
+    PUSHBUTTON      "Read",IDC_BTN_SPID_REAR,82,129,79,14
+END
+
+IDD_PAGE_SPUPLMN DIALOG DISCARDABLE  0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LST_UPLMN_READ,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,114,127
+    PUSHBUTTON      "Read",IDC_BTN_READ_UPLMN,35,141,54,12
+    GROUPBOX        "Set",IDC_STATIC,123,3,115,131
+    CONTROL         "Index",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,19,
+                    31,11
+    CONTROL         "PLMN",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,43,
+                    31,11
+    CONTROL         "Type",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,66,
+                    31,11
+    COMBOBOX        IDC_COMBO_UPLMN_INDEX,159,18,73,63,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_UPLMN_TYPE,159,64,73,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Set",IDC_BTN_SET_UPLMN,151,141,54,12
+    EDITTEXT        IDC_EDT_UPLMN_PLMN,159,41,72,12,ES_AUTOHSCROLL
+END
+
+IDD_DLG_INPUT_PIN1 DIALOG DISCARDABLE  0, 0, 187, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PIN1"
+FONT 10, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,22,79,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,115,79,50,14
+    CONTROL         "Remaining_num:",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,17,15,54,10
+    GROUPBOX        "",IDC_STATIC,79,7,85,22
+    LTEXT           "",IDC_STC_REMAIN_PIN1,81,15,78,12
+    LTEXT           "PIN1:",IDC_STATIC,18,47,34,10
+    EDITTEXT        IDC_EDT_PIN1,79,45,85,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "(4-8)",IDC_STATIC,162,47,21,12
+END
+
+IDD_DLG_INPUT_PUK1 DIALOG DISCARDABLE  0, 0, 191, 127
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PUK1"
+FONT 10, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,26,106,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,112,106,50,14
+    CONTROL         "Remaining_num:",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,11,15,62,10
+    GROUPBOX        "",IDC_STATIC,82,7,85,22
+    LTEXT           "",IDC_STC_REMAIN_PUK1,86,15,78,12
+    CONTROL         "New PIN1:",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,11,
+                    39,39,10
+    LTEXT           "PUK1:",IDC_STATIC,11,84,38,12
+    EDITTEXT        IDC_EDT_PUK_PIN1,82,37,85,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PUK1,82,83,85,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "(4-8)",IDC_STATIC,169,39,21,12
+    LTEXT           "8",IDC_STATIC,171,84,16,11
+    CONTROL         "Confirm New PIN1:",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,11,62,69,10
+    EDITTEXT        IDC_EDT_PUK_PIN1_CONFIRM,82,60,85,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "(4-8)",IDC_STATIC,169,62,21,12
+END
+
+IDD_DLG_DIALUP DIALOG DISCARDABLE  0, 0, 187, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Connecting..."
+FONT 10, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,72,43,42,15
+    CONTROL         178,IDC_STATIC,"Static",SS_BITMAP,29,12,30,24
+    LTEXT           "",IDC_STATIC_DIAL_UP,74,16,89,22
+END
+
+IDD_DLG_SEND_SMS_PROC DIALOG DISCARDABLE  0, 0, 208, 64
+STYLE WS_POPUP | WS_BORDER
+FONT 10, "MS Sans Serif"
+BEGIN
+    LTEXT           "Sending...",IDC_STATIC,80,16,46,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,29,
+                    194,1
+    LTEXT           "Send to:",IDC_STATIC,7,34,35,10
+    LTEXT           "",IDC_STC_TO,46,34,53,10
+    LTEXT           "Sent:",IDC_STATIC,118,34,46,10
+    LTEXT           "",IDC_STC_SEND_ITEM,169,34,32,10
+    CONTROL         "Progress1",IDC_PRG_SENDING,"msctls_progress32",
+                    WS_BORDER,7,47,194,9
+END
+
+IDD_DLG_SYNC_PB DIALOG DISCARDABLE  0, 0, 299, 255
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Export/Import Phonebook"
+FONT 10, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,54,234,38,15
+    PUSHBUTTON      "Cancel",IDCANCEL,207,234,38,15
+    GROUPBOX        "PC",IDC_STATIC,7,7,138,123
+    GROUPBOX        "Phone",IDC_STATIC,154,7,138,123
+    CONTROL         "List1",IDC_LST_SYNC_PC,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,
+                    12,17,128,107
+    CONTROL         "List2",IDC_LST_SYNC_MS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,
+                    159,17,128,107
+    GROUPBOX        "Result",IDC_STATIC,7,156,285,74
+    CONTROL         "List3",IDC_LST_SYNC_RST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,
+                    13,166,273,57
+    PUSHBUTTON      "Import",IDC_BTN_DOWN,54,137,38,15
+    PUSHBUTTON      "Export",IDC_BTN_UP,207,137,38,15
+END
+
+IDD_DLG_PB DIALOGEX 0, 0, 235, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Phone Book"
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_PB_CMB_STORE,51,30,62,71,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_NAME,51,51,62,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PERSON_PHONE,167,51,62,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_HOME_PHONE,51,73,62,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_OFFICE_PHONE,167,73,62,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_EMAIL,51,95,62,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_FAX,167,94,62,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CMB_GROUP,51,114,62,85,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "OK",IDOK,135,138,41,14
+    PUSHBUTTON      "Cancel",IDCANCEL,184,138,41,14
+    CONTROL         "PC",IDC_RDO_PC,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED | WS_GROUP,113,28,23,15
+    CONTROL         "Phone",IDC_RDO_PHONE,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,135,28,36,15
+    CONTROL         "SIM1",IDC_RDO_SIM,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,173,28,27,15
+    CONTROL         "SIM2",IDC_RDO_SIM2,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,202,28,26,15
+    LTEXT           "PB",IDC_STATIC,11,11,62,11
+    LTEXT           "pb store place",IDC_STC_PLACE,121,11,101,11,0,
+                    WS_EX_RIGHT
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,7,25,221,
+                    1
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,7,132,221,
+                    1
+    LTEXT           "Place:",IDC_STATIC,11,32,32,10
+    LTEXT           "Name:",IDC_STATIC,11,52,39,11
+    LTEXT           "HomeTel:",IDC_STC_HOME_PHONE,11,75,39,11
+    LTEXT           "Email:",IDC_STC_EMAIL,11,96,33,11
+    LTEXT           "Group",IDC_STC_GROUP,11,117,39,11
+    LTEXT           "Office Tel:",IDC_STC_OFFICE_PHONE,119,75,44,11
+    LTEXT           "Mobile Tel:",IDC_STATIC,119,52,48,11
+    LTEXT           "Fax:",IDC_STC_FAX,119,96,17,11
+END
+
+IDD_DLG_MEMO DIALOGEX 0, 0, 243, 178
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Memo"
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "PC",IDC_RDO_PC,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    52,29,24,11
+    CONTROL         "Phone",IDC_RDO_PHONE,"Button",BS_AUTORADIOBUTTON,79,29,
+                    33,11
+    COMBOBOX        IDC_CMB_MODE,181,28,55,66,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "DateTimePicker1",IDC_DTP_DATE,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,53,47,56,15
+    CONTROL         "DateTimePicker2",IDC_DTP_TIME,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,53,83,55,
+                    15
+    EDITTEXT        IDC_EDT_CONTENT,53,103,183,40,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "OK",IDOK,146,157,38,14
+    PUSHBUTTON      "Cancel",IDCANCEL,198,157,38,14
+    LTEXT           "Memo",IDC_STATIC,11,11,62,11
+    LTEXT           "memo store place",IDC_STC_PLACE,150,11,72,11,0,
+                    WS_EX_RIGHT
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,7,25,229,
+                    1
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,7,149,229,
+                    1
+    LTEXT           "Place",IDC_STATIC,7,29,23,11
+    LTEXT           "Remind Cycle",IDC_STATIC,123,30,50,10
+    LTEXT           "Start Date",IDC_STATIC,7,49,40,11
+    LTEXT           "Remind Time",IDC_STATIC,7,85,47,11
+    LTEXT           "Title",IDC_STATIC,7,103,28,9
+    CONTROL         "DateTimePicker1",IDC_DTP_DATE_END,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,53,65,56,15
+    LTEXT           "End Date",IDC_STATIC,7,67,36,11
+    CONTROL         "Sun.",IDC_CHK_SUN,"Button",BS_AUTOCHECKBOX | WS_GROUP | 
+                    WS_TABSTOP,123,49,32,10
+    CONTROL         "Mon.",IDC_CHK_MON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    159,49,32,10
+    CONTROL         "Tue.",IDC_CHK_TUE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    198,49,30,10
+    CONTROL         "Wed.",IDC_CHK_WED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    123,64,30,10
+    CONTROL         "Thurs.",IDC_CHK_THURS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,159,64,37,10
+    CONTROL         "Fri.",IDC_CHK_FRI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    198,64,30,10
+    CONTROL         "Sat.",IDC_CHK_SAT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    123,79,30,10
+END
+
+IDD_DLG_SMS DIALOGEX 0, 0, 303, 242
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SMS"
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDT_PHONENUM,58,29,175,29,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "Select",IDC_BTN_PHONENUM,243,28,44,13
+    PUSHBUTTON      "Group",IDC_BTN_GROUP,243,45,44,13
+    COMBOBOX        IDC_CMB_SMS_SIM_SEL,58,75,90,87,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_SENDSAVE,58,106,90,87,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMB_SEND_VALID_DATE,201,106,90,87,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Auto Split",IDC_CHK_AUTOSPLISH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,82,123,52,11
+    CONTROL         "Status Report",IDC_CHK_STATEREPORT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,123,63,11
+    LTEXT           "Store place:",IDC_STATIC,150,124,50,10
+    COMBOBOX        IDC_SMS_CMB_STORE,201,121,90,56,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_CONTENT,11,150,213,65,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "Preset",IDC_BTN_PRESETSMS,236,148,50,14
+    PUSHBUTTON      "OK",IDC_BTN_OK,236,169,50,14
+    PUSHBUTTON      "Exit",IDCANCEL,236,190,50,14
+    LTEXT           "SMS",IDC_STATIC,7,7,49,8
+    LTEXT           "sms place",IDC_STC_PLACE,170,7,122,8,0,WS_EX_RIGHT
+    GROUPBOX        "Receiver",IDC_STATIC,8,19,288,44
+    GROUPBOX        "Sender",IDC_STATIC,8,66,288,27
+    GROUPBOX        "Option",IDC_STATIC,8,96,288,42
+    GROUPBOX        "",IDC_STATIC,8,142,220,79
+    LTEXT           "Tel Number",IDC_STC_PHONENUM,12,39,44,9
+    LTEXT           "SIM:",IDC_STATIC,14,78,44,8
+    LTEXT           "Send/Save:",IDC_STATIC,13,110,44,8
+    LTEXT           "Time Limit:",IDC_STATIC,154,108,45,8
+    CONTROL         "PC",IDC_RDO_STORE,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED | WS_GROUP,157,73,24,15
+    CONTROL         "SIM2",IDC_RDO_SIM3,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,262,74,33,15
+    CONTROL         "SIM1",IDC_RDO_SIM,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,222,74,33,15
+    CONTROL         "Phone",IDC_RDO_MS,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,184,73,34,15
+    LTEXT           "Split",IDC_STATIC,10,224,22,11
+    LTEXT           "",IDC_STC_SMSNUM,36,224,13,11
+    LTEXT           "Num",IDC_STATIC,54,224,15,11
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITEFRAME | SS_SUNKEN,72,224,
+                    1,10
+    LTEXT           "Input",IDC_STATIC,76,224,20,11,0,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STC_INPUT_NUM,99,224,20,11
+    LTEXT           "Words",IDC_STATIC,122,224,20,11,0,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITEFRAME | SS_SUNKEN,145,223,
+                    1,10
+    LTEXT           "Left",IDC_STATIC,151,224,18,11,0,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STC_LEAVE_NUM,171,224,20,11
+    LTEXT           "Words",IDC_STATIC,196,224,23,11
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITEFRAME | SS_SUNKEN,228,223,
+                    1,10
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITERECT | SS_SUNKEN,7,236,
+                    288,1
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITEFRAME | SS_SUNKEN,7,224,1,
+                    10
+    LTEXT           "",IDC_STC_SENDING,240,224,51,8
+END
+
+IDD_DLG_PBG DIALOGEX 0, 0, 215, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PB Group"
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_PBG_CMB_STORE,59,30,149,30,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_PBG_NAME,60,51,58,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "OK",IDOK,121,84,38,14
+    PUSHBUTTON      "Cancel",IDCANCEL,166,84,38,14
+    EDITTEXT        IDC_EDT_PBG_MEMNUM,174,51,34,13,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER
+    LTEXT           "PB Group",IDC_STATIC,11,11,62,11
+    LTEXT           "pbg store place",IDC_STC_PLACE,144,11,62,11,0,
+                    WS_EX_RIGHT
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,8,25,199,
+                    1
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,8,75,199,
+                    1
+    LTEXT           "Place:",IDC_STATIC,11,32,36,10,0,WS_EX_TRANSPARENT
+    LTEXT           "Group Name:",IDC_STATIC,9,53,45,11
+    LTEXT           "Member Num:",IDC_STATIC,124,53,46,9
+END
+
+IDD_DLG_SMSCENTER DIALOG DISCARDABLE  0, 0, 187, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SMS Center"
+FONT 10, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDT_SMS_CENTER,38,41,133,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_SMS_CENTER2,38,60,133,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_SMS_CENTER3,38,79,133,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDC_BTN_SET,101,125,35,14
+    PUSHBUTTON      "Cancel",IDC_BTN_CANCEL,143,125,35,14
+    LTEXT           "SMS Center Number",IDC_STATIC,11,11,87,11
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,9,25,171,
+                    1
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,9,118,171,
+                    1
+    LTEXT           "SIM1:",IDC_STATIC,12,43,25,11
+    LTEXT           "SIM2:",IDC_STATIC,12,61,25,11
+    LTEXT           "[1 - 20]",IDC_STATIC,38,30,52,9
+    LTEXT           "SIM3:",IDC_STATIC,12,80,25,11
+    EDITTEXT        IDC_EDT_SMS_CENTER4,38,98,133,13,ES_AUTOHSCROLL
+    LTEXT           "SIM4:",IDC_STATIC,12,99,25,11
+END
+
+IDD_DLG_SMSPRESET DIALOG DISCARDABLE  0, 0, 283, 214
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Preset SMS"
+FONT 10, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LST_CAPTION,12,43,133,70,LBS_NOINTEGRALHEIGHT | 
+                    LBS_EXTENDEDSEL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_CONTENT_VIEW,153,43,123,70,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | 
+                    WS_VSCROLL
+    PUSHBUTTON      "Select",IDC_BTN_SELECT,13,119,39,12
+    DEFPUSHBUTTON   "New",IDC_BTN_NEW,72,119,39,12
+    PUSHBUTTON      "Edit",IDC_BTN_EDIT,124,119,39,12
+    PUSHBUTTON      "Delete",IDC_BTN_DELETE,176,119,39,12
+    PUSHBUTTON      "Exit",IDC_BTN_EXIT,227,119,39,12
+    EDITTEXT        IDC_EDT_CAPTION,12,156,133,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_CONTENT,153,155,123,52,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "OK",IDOK,14,193,39,14
+    PUSHBUTTON      "Cancel",IDCANCEL,89,193,39,14
+    LTEXT           "Preset SMS",IDC_STATIC,11,11,62,11
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,7,25,269,
+                    1
+    CONTROL         "",IDC_EDITWND_POS,"Static",SS_GRAYRECT | SS_SUNKEN,7,
+                    137,269,1
+    LTEXT           "Name:",IDC_STATIC,12,30,21,8
+    LTEXT           "Content:",IDC_STATIC,149,32,33,8
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME | SS_SUNKEN,184,32,1,
+                    10
+    LTEXT           "",IDC_STC_CONTENT_NUM,194,32,13,8
+    LTEXT           "words",IDC_STATIC,212,32,22,8
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME | SS_SUNKEN,183,144,
+                    1,10
+    LTEXT           "",IDC_STC_LEFT_NUM_E,258,144,17,8
+    LTEXT           "Left:",IDC_STATIC,234,144,21,8
+    LTEXT           "Name:",IDC_STC_NAME,12,144,21,8
+    LTEXT           "Content:",IDC_STC_CONTENT,149,144,33,8
+    LTEXT           "Input:",IDC_STATIC,186,144,25,8
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME | SS_SUNKEN,230,144,
+                    1,10
+    LTEXT           "",IDC_STC_INPUT_NUM_E,211,144,17,8
+END
+
+IDD_DLG_SMS_SEND_MODE DIALOG DISCARDABLE  0, 0, 187, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SMS Send Mode"
+FONT 10, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_COMBO_SMS_MODE,84,28,84,71,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_CUR_SMS_MODE,84,9,84,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "OK",IDOK,27,58,46,14
+    PUSHBUTTON      "Cancel",IDCANCEL,112,58,46,14
+    LTEXT           "Current Mode:",IDC_STATIC,19,11,54,12
+    LTEXT           "Send Mode:",IDC_STATIC,19,30,40,12
+END
+
+IDD_DLG_TOOLTIP DIALOG DISCARDABLE  0, 0, 215, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Prompt"
+FONT 10, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,168,114,40,14
+    EDITTEXT        IDC_EDT_TOOLTIP,7,17,201,90,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | 
+                    WS_VSCROLL
+END
+
+IDD_DLG_SEL_GROUP DIALOG DISCARDABLE  0, 0, 187, 162
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Group"
+FONT 10, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_CMB_GROUP,54,120,118,73,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List1",IDC_LST_GMEMBER,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,173,102
+    PUSHBUTTON      "OK",IDOK,98,142,38,14
+    PUSHBUTTON      "Cancel",IDCANCEL,142,142,38,14
+    GROUPBOX        "",IDC_STATIC,7,112,173,26
+    LTEXT           "Group:",IDC_STATIC,10,122,39,13
+END
+
+IDD_DLG_SEL_NUM DIALOG DISCARDABLE  0, 0, 187, 156
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Num"
+FONT 10, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDT_NAME,47,112,62,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Find",IDC_BTN_FIND,134,112,38,14
+    CONTROL         "List1",IDC_LST_NAMENUM,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,0,173,102
+    PUSHBUTTON      "OK",IDOK,98,135,38,14
+    PUSHBUTTON      "Cancel",IDCANCEL,142,135,38,14
+    GROUPBOX        "",IDC_STATIC,7,105,173,26
+    LTEXT           "Name:",IDC_STATIC,10,115,28,13
+END
+
+IDD_DLG_SEL_SIM DIALOG DISCARDABLE  0, 0, 187, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select SIM"
+FONT 10, "MS Sans Serif"
+BEGIN
+    CONTROL         "SIM1",IDC_SELSIM_RDO_SIM1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,36,30,46,10
+    CONTROL         "SIM2",IDC_SELSIM_RDO_SIM2,"Button",BS_AUTORADIOBUTTON,
+                    36,44,46,10
+    CONTROL         "SIM3",IDC_SELSIM_RDO_SIM3,"Button",BS_AUTORADIOBUTTON,
+                    36,58,46,10
+    CONTROL         "SIM4",IDC_SELSIM_RDO_SIM4,"Button",BS_AUTORADIOBUTTON,
+                    36,71,46,10
+    PUSHBUTTON      "OK",ID_SELSIM_BTN_OK,88,73,41,14
+    PUSHBUTTON      "Cancel",ID_SELSIM_BTN_CANCEL,138,73,41,14
+    LTEXT           "Select SIM Card",IDC_STATIC,11,11,62,11
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,10,25,168,
+                    1
+END
+
+IDD_DLG_FILENAME DIALOGEX 0, 0, 187, 70
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "File Name"
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDT_FILENAME,78,20,102,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "OK",IDOK,34,49,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,110,49,50,14
+    LTEXT           "Input new file name:",IDC_STATIC,11,23,65,10,0,
+                    WS_EX_TRANSPARENT
+END
+
+IDD_DLG_SMS_STORE DIALOG DISCARDABLE  0, 0, 207, 130
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SMS Store Place"
+FONT 10, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_COMBO_RD,48,26,47,36,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDT_RD_USED,48,55,47,12,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDT_RD_MAX,48,85,47,12,ES_AUTOHSCROLL | WS_DISABLED
+    COMBOBOX        IDC_COMBO_WS,147,26,47,36,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDT_WS_USED,147,55,47,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDT_WS_MAX,147,85,47,12,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "OK",IDOK,114,110,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,160,110,40,14
+    LTEXT           "Used",IDC_STATIC,15,59,16,11
+    LTEXT           "Max Num",IDC_STATIC,15,89,31,11
+    LTEXT           "Used",IDC_STATIC,115,59,16,11
+    LTEXT           "Max Num",IDC_STATIC,115,89,31,11
+    GROUPBOX        "Read/Delete",IDC_STATIC,11,7,88,99
+    GROUPBOX        "Write/Send",IDC_STATIC,109,7,88,99
+    LTEXT           "Place",IDC_STATIC,15,28,28,12
+    LTEXT           "Place",IDC_STATIC,112,28,28,12
+END
+
+IDD_DLG_PB_TYPE DIALOG DISCARDABLE  0, 0, 203, 113
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Phonebook Type"
+FONT 10, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_COMBO_PB_TYPE,89,18,86,98,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_STC_PB_USED,89,41,86,12
+    LTEXT           "",IDC_STC_PB_MAX,89,63,86,12
+    PUSHBUTTON      "OK",IDOK,118,92,37,14
+    PUSHBUTTON      "Cancel",IDCANCEL,159,92,37,14
+    LTEXT           "Phonebook type:",IDC_STATIC,17,19,64,11
+    LTEXT           "Used:",IDC_STATIC,17,40,45,11
+    LTEXT           "Max Num",IDC_STATIC,17,63,45,11
+    GROUPBOX        "",IDC_STATIC,7,3,189,77
+END
+
+IDD_DLG_HSDPA_VERSION DIALOG DISCARDABLE  0, 0, 222, 126
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Software Version"
+FONT 10, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,92,105,36,14
+    LTEXT           "",IDC_STC_HSDPA_VERSION,7,7,208,91
+END
+
+IDD_PAGE_SYSCONFIG DIALOGEX 0, 0, 247, 157
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_LST_SYSCONFIG_READ,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,0,7,
+                    114,127
+    PUSHBUTTON      "Read",IDC_BTN_READ_SYSCONFIG,26,141,59,12
+    GROUPBOX        "Set",IDC_STATIC,124,3,115,131
+    CONTROL         "System Mode",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    128,19,49,11
+    CONTROL         "Network access seqence",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,128,47,58,21,WS_EX_TRANSPARENT
+    COMBOBOX        IDC_COMBO_SYSCONFIG_MODE,185,17,47,74,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SYSCONFIG_APN,185,46,47,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Apply",IDC_BTN_SET_SYSCONFIG,151,141,59,12
+    CONTROL         "Roam Surpport",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    128,77,56,11,WS_EX_TRANSPARENT
+    CONTROL         "Field Setting",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    128,106,53,11
+    COMBOBOX        IDC_COMBO_SYSCONFIG_DOMAIN,185,104,47,69,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SYSCONFIG_ROAM,185,75,47,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_TDGSM DIALOG DISCARDABLE  0, 0, 303, 168
+STYLE WS_CHILD | WS_BORDER
+FONT 10, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Apply",IDC_BTN_APPLY_SYSCONFIG,126,135,50,14
+    GROUPBOX        "TD/GSM",IDC_STATIC,10,1,286,153
+    CONTROL         "System Mode",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    17,22,49,11
+    CONTROL         "Network Access Sequence",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,14,51,94,10
+    COMBOBOX        IDC_COMBO_TDGSM_MODE,110,20,68,74,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_TDGSM_ORDER,110,49,68,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PAGE_CLIENT DIALOGEX 0, 0, 222, 161
+STYLE WS_CHILD
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDT_AT,40,30,182,14,ES_AUTOHSCROLL
+    LTEXT           "AT Cmd:",IDC_STATIC,10,33,29,10
+    LISTBOX         IDC_LIST_RESULT,5,62,217,79,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Send",IDC_BTN_SEND,81,48,50,11,BS_FLAT
+    LTEXT           "Send file:",IDC_STATIC,10,12,42,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_EDIT_SCRIPT,54,10,141,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_CMD_BROWSE,200,10,22,15
+    CONTROL         "",IDC_RADIO_SCRIPT,"Button",BS_AUTORADIOBUTTON,0,13,8,8,
+                    WS_EX_TRANSPARENT
+    CONTROL         "",IDC_RADIO_LINE,"Button",BS_AUTORADIOBUTTON,0,34,9,8,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "Clear",IDC_BTN_CLEAR,187,143,35,11
+    PUSHBUTTON      "Stop Check",IDC_BTN_STOP_CHECK,5,143,58,11
+END
+
+IDD_PAGE_DSP DIALOG DISCARDABLE  0, 0, 245, 157
+STYLE WS_CHILD | WS_BORDER
+FONT 10, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,7,231,98
+    LTEXT           "Param1:",IDC_STATIC,46,25,34,11
+    LTEXT           "Param2:",IDC_STATIC,46,44,34,11
+    LTEXT           "Param3:",IDC_STATIC,46,63,34,11
+    LTEXT           "Param4:",IDC_STATIC,46,82,34,11
+    EDITTEXT        IDC_EDT_PARAM1,81,23,81,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PARAM2,81,42,81,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PARAM3,81,61,81,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PARAM4,81,80,81,12,ES_AUTOHSCROLL
+    LTEXT           "(0 - 65535)",IDC_STATIC,169,25,44,10
+    LTEXT           "(0 - 65535)",IDC_STATIC,169,44,44,10
+    LTEXT           "(0 - 65535)",IDC_STATIC,169,63,44,10
+    LTEXT           "(0 - 65535)",IDC_STATIC,169,82,44,10
+    PUSHBUTTON      "Apply",IDC_BTN_APPLY,89,129,65,13
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,4,1
+ PRODUCTVERSION 1,2,4,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x9L
+#else
+ FILEFLAGS 0x8L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Spreadtrum Communications INC.\0"
+            VALUE "FileDescription", "SPRD8800\0"
+            VALUE "FileVersion", "1, 2, 4, 1\0"
+            VALUE "InternalName", "SPRD8800\0"
+            VALUE "LegalCopyright", "Copyright(C)2008-2012 Spreadtrum Communications INC.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SPRD8800.EXE\0"
+            VALUE "PrivateBuild", "BL0006\0"
+            VALUE "ProductName", "SPRD8800\0"
+            VALUE "ProductVersion", "1, 2, 4, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_FORMVIEW_MSINFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 188
+    END
+
+    IDD_DLG_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 186
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_FORMVIEW_DIALUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 320
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_FORMVIEW_CALL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 318
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 189
+    END
+
+    IDD_FORMVIEW_ENGINEERING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 324
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_FORMVIEW_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_FORMVIEW_CONNECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_DLG_SELECT_NETWORK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 158
+    END
+
+    IDD_DLG_DIAL_NETWORK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 162
+    END
+
+    IDD_DLG_SECURITY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_DLG_OTHERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_MODIFY_PIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 110
+    END
+
+    IDD_UNLOCK_PIN2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_PAGE_CGDCONT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SPPSRATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SPFRQ, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SAUTOATT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SPTEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SPID, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SPUPLMN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_DLG_INPUT_PIN1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+
+    IDD_DLG_INPUT_PUK1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 184
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_DLG_DIALUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+    END
+
+    IDD_DLG_SEND_SMS_PROC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_DLG_SYNC_PB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 292
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 248
+    END
+
+    IDD_DLG_PB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_DLG_MEMO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_DLG_SMS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 296
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 235
+    END
+
+    IDD_DLG_PBG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_DLG_SMSCENTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_DLG_SMSPRESET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 276
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+
+    IDD_DLG_SMS_SEND_MODE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_DLG_TOOLTIP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_DLG_SEL_GROUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_DLG_SEL_NUM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_DLG_SEL_SIM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DLG_FILENAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+
+    IDD_DLG_SMS_STORE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_DLG_PB_TYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 196
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 106
+    END
+
+    IDD_DLG_HSDPA_VERSION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 119
+    END
+
+    IDD_PAGE_SYSCONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_DLG_TDGSM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 296
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 161
+    END
+
+    IDD_PAGE_CLIENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_PAGE_DSP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CUR_HORZ            CURSOR  DISCARDABLE     "res\\cur_horz.cur"
+IDC_CUR_VERT            CURSOR  DISCARDABLE     "res\\cur_vert.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_FORMVIEW_CALL DLGINIT
+BEGIN
+    IDC_FORMCALL_CMB_SIM, 0x403, 5, 0
+0x4953, 0x314d, "\000" 
+    IDC_FORMCALL_CMB_SIM, 0x403, 5, 0
+0x4953, 0x324d, "\000" 
+    IDC_FORMCALL_CMB_SIM, 0x403, 5, 0
+0x4953, 0x334d, "\000" 
+    IDC_FORMCALL_CMB_SIM, 0x403, 5, 0
+0x4953, 0x344d, "\000" 
+    0
+END
+
+IDD_FORMVIEW_DIALUP DLGINIT
+BEGIN
+    IDC_FDU_CMB_SIM, 0x403, 5, 0
+0x4953, 0x314d, "\000" 
+    IDC_FDU_CMB_SIM, 0x403, 5, 0
+0x4953, 0x324d, "\000" 
+    IDC_FDU_CMB_SIM, 0x403, 5, 0
+0x4953, 0x334d, "\000" 
+    IDC_FDU_CMB_SIM, 0x403, 5, 0
+0x4953, 0x344d, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "SPRD8800\n\nMobile\n\n\nMobileCnnt.Document\nMobile Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "SPRD8800"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CPAS"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "New\nNew"
+    ID_FILE_OPEN            "Open\nOpen"
+    ID_FILE_CLOSE           "Close\nClose"
+    ID_FILE_SAVE            "Save\nSave"
+    ID_FILE_SAVE_AS         "Save as\nSave as"
+    ID_FILE_PAGE_SETUP      "Change print option\nPage setting"
+    ID_FILE_PRINT_SETUP     "Change printer and print option\nPrinter setting"
+    ID_FILE_PRINT           "Print active file\nPrint"
+    ID_FILE_PRINT_PREVIEW   "View page\nPrint preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, verison and copyright\nAbout"
+    ID_APP_EXIT             "Exit; Prompt to save\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to next pane\nNext pane"
+    ID_PREV_PANE            "Switch to previous pane\nPrevious  Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split window\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Delete items\nDelete"
+    ID_EDIT_CLEAR_ALL       "Delete all\nDelete all"
+    ID_EDIT_COPY            "Copy selected item to clipboard\nCopy"
+    ID_EDIT_CUT             "Cut selected items to clipboard\nCut"
+    ID_EDIT_FIND            "Search\nSearch"
+    ID_EDIT_PASTE           "Insert cutted content\nPaste"
+    ID_EDIT_REPEAT          "Repeat \nRepeat"
+    ID_EDIT_REPLACE         "Relace\nRelace"
+    ID_EDIT_SELECT_ALL      "Select all\nSelect all"
+    ID_EDIT_UNDO            "Undo\nUndo"
+    ID_EDIT_REDO            "Redo\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Display or hide toolbar\nDisplay or hide toolbar"
+    ID_VIEW_STATUS_BAR      "Display or hide statusbar\nDisplay or hide statusbar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change window size"
+    AFX_IDS_SCMOVE          "Change window position"
+    AFX_IDS_SCMINIMIZE      "Minimize to icon"
+    AFX_IDS_SCMAXIMIZE      "Maximize window size"
+    AFX_IDS_SCNEXTWINDOW    "Change to next window"
+    AFX_IDS_SCPREVWINDOW    "Change to previous window"
+    AFX_IDS_SCCLOSE         "Close all active windows and prompt to save all files"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore"
+    AFX_IDS_SCTASKLIST      "Activate task list"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel preview"
+    IDS_CATEG_SMS           "Short Message"
+    IDS_STORE_SIM           "SIM1"
+    IDS_STORE_SIM2          "SIM2"
+    IDS_STORE_INBOX         "Inbox"
+    IDS_STORE_OUTBOX        "Outbox"
+    IDS_STORE_SENDS         "Sended"
+    IDS_STORE_DRAFTS        "Drafts"
+    IDS_SMS_COLUMN          "Place,Status,Name,Tel,Date,Content"
+    IDS_DEL_CONFIRM         "Are you sure to delete?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SEL_ITEM_NUM        "Selected items:"
+    IDS_DIAL_DISCONNECTING  "Disconnecting dial_up...maybe need a minute"
+    IDS_ADMIN_PROMPT        "Sorry, this tool need admin privilege!"
+    IDS_CATEG_PB            "Phone Book"
+    IDS_PB_COLUMN           "Place,Name,Personal Tel,Office Tel,Home Tel,Fax,Email,Group"
+    ID_EXPORT_TO_VCARD      "Export VCard\nExport VCard"
+    IDS_WARN_EXTRACT_PB_NUM_CANCEL 
+                            "Do you want to cancel extracting the following numbers?"
+    IDS_ERR_NOT_CONNECT     "Mobile device not response!\nPlease be sure that the device has been connected to the computer!"
+    IDS_ERR_DELETE          "Delete fail!"
+    IDS_ERR_SYN_PHONE_FULL  "Mobile storage is full, sync stop!"
+    IDS_SYNC_MEMO_SUCCESS   "Sync memo success!"
+    IDS_CATEG_MEMO          "Memo"
+    IDS_CATEG_PBG           "Phone Groups"
+    IDS_MEMO_COLUMN         "Place,Title,Start Date,End Date,Remind Time,Remind Mode,Remind Frequence"
+    IDS_PBGM_COLUMN         "Place,Name,Personal Tel,Office Tel,Home Tel,Fax,Email"
+    IDS_PBG_COLUMN          "Place,Name,Members"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_DIAL_UP             "Dial_up\nDial_up"
+    IDC_LOAD_SMS            "Sync Information\nSync Information"
+    IDC_LOAD_CALL           "Call\nCall"
+    IDC_LOAD_NET            "Select Network\nSelect Network"
+    IDC_LOAD_ENGENEERING    "Engineering\nEngineering"
+    IDC_LOAD_CONFIG         "Configuration\nConfiguration"
+    IDC_POWER_OFF           "Power_off\nPower_off"
+    IDC_LOAD_HELP           "Help\nHelp"
+    ID_TOOL_OPEN            "Open\nOpen"
+    ID_ILM_SMS_SEND         "Send\nSend"
+    ID_ILM_SMS_FORWARD      "Forward\nForward"
+    ID_ILM_SMS_ANSWER       "Reply\nReply"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_NEW             "New\nNew"
+    ID_OPTION_LOAD_SMS      "Load SMS\nLoad SMS"
+    ID_EDIT_DELETE          "Delete\nDelete"
+    ID_OPTION_SMS_CENTER    "SMS service center number\nSMS service center number"
+    ID_OPTION_SMS_PRESET    "Preset short message\nPreset short message"
+    ID_OPTION_SMS_SEND_MODE "Send Mode\nSend Mode"
+    ID_VIEW_CONTENT_BAR     "Display or hide contentbar\nDisplay or hide contentbar"
+    ID_VIEW_CATEG_BAR       "Display or hide categorybar\nDisplay or hide categorybar"
+    ID_HOME                 "System Infomation\nSystem Infomation"
+    ID_CONNECT              "Connect Device\nConnect Device"
+    ID_DISCONNECT           "Disconnect Device\nDisconnect Device"
+    ID_DIS_DIAL_UP          "Disconnect Dial_up\nDisconnect Dial_up"
+    ID_DIS_DEVICE           "Disconnect Device\nDisconnect Device"
+    ID_OPTION_LOAD_ALL      "Initial Setting\nInitial Setting"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OPTION_PICTURE       "look over image  in phone\nlook over image"
+    ID_OPTION_MUSIC         "look over music information\nlook over music"
+    ID_OPTION_RING          "look over ring in phone\nlook over ring"
+    ID_OPTION_LOAD_MS_ALL   "load all from phone\nload all"
+    ID_OPTION_LOAD_PB       "load pb\nload pb"
+    ID_OPTION_LOAD_MEMO     "load memo\nload memo"
+    ID_OPTION_LOAD_PBG      "load pb group\nload pb group"
+    ID_IMPORT_VCALENDAR     "import vcalendar\nimport vcalendar"
+    ID_SYNC_MEMO            "sync memo\nsync memo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STORE_PC            "PC"
+    IDS_REC_READ            "Read"
+    IDS_REC_UNREAD          "Unread"
+    IDS_STO_SEND            "Sended"
+    IDS_STO_UNSEND          "Unsend"
+    IDS_CONTENT_NAME        "Content"
+    IDS_CATEG_NAME          "Category"
+    IDS_RESOURCE_NOT_ENOUGHT "Resource not enough"
+    IDS_MODULE_NAME         "Short Message"
+    IDS_LINKMAN             "Linkman"
+    IDS_CALL_TIME           "Call Time"
+    IDS_CALL_LONG           "Call Long"
+    IDS_SELECTNETWORK       "Select Network"
+    IDS_CONNECT_DIAL        "Dial Up"
+    IDS_SECURITY            "Security"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SRATE_DOWN_LINK     "DL"
+    IDS_SPFRQ_LOCK          "Lock Frequency"
+    IDS_SPFRQ_UNLOCK        "Unlock Frequency"
+    IDS_SPFRQ_OPERATE       "Operation"
+    IDS_SPFRQ_INDEX         "Index"
+    IDS_SPFRQ_FREQUENCE     "Frequency"
+    IDS_SPFRQ_CELL1         "Cell1"
+    IDS_SPFRQ_CELL2         "Cell2"
+    IDS_SPFRQ_CELL3         "Cell3"
+    IDS_AUTOATT_AUTO        "Attach Automatically"
+    IDS_STORE_PHONE         "Phone"
+    IDS_UPLMN_TYPE          "type"
+    IDS_OTHERS              "Others"
+    IDS_UPLMN_INDEX         "index"
+    IDS_UPLMN_UPLMN         "uplmn"
+    IDS_DISCONNECTED        "DISCONN"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CONNECTED           "CONNECT"
+    IDS_CMCC                "CMCC"
+    IDS_CMCC_TD             "(TD-SCDMA)"
+    IDS_CUC                 "CUC"
+    IDS_PLEASE_SELECT       "Please Select"
+    IDS_HAND_SELECT_NET     "Select Automatically"
+    IDS_AUTO_SELECT_NET     "Select Manually"
+    IDS_UPLINK              "UL"
+    IDS_DOWNLINK            "DL"
+    IDS_CONNECT_DEVICE      "Connect"
+    IDS_DISCONNECT_DEVICE   "Disconnect"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CONNT_FAILED        "Connect failed! SIM card is in the phone?"
+    IDS_CGDCONT             "PDP Context"
+    IDS_SPPSRATE            "Business Rate"
+    IDS_SPFRQ               "Lock/Unlock Frequency"
+    IDS_SAUTOATT            "PS Attach Setting"
+    IDS_SPTEST              "Item Setting"
+    IDS_SPID                "UE Identity"
+    IDS_SPUPLMN             "UPLMN"
+    IDS_CGDCONT_ID          "ID"
+    IDS_CGDCONT_TYPE        "Type"
+    IDS_CGDCONT_CNNT_IN     "APN"
+    IDS_CGDCONT_ADDR        "Address"
+    IDS_CGDCONT_DCOMP       "D_Comp"
+    IDS_CGDCONT_HCOMP       "H_Comp"
+    IDS_SRATE_TYPE          "Type"
+    IDS_SRATE_UP_LINK       "UL"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_AUTOATT_HAND        "Attach Manually"
+    IDS_SPTEST_FTA          "FTA"
+    IDS_SPTEST_PROTECT      "Integrality Protect"
+    IDS_SPTEST_NETWORK      "Reality Network"
+    IDS_SPTEST_AOC          "AOC"
+    IDS_SPTEST_GSM_SIM      "Support GSM SIM"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SPTEST_VERSION      "Protocol Version"
+    IDS_SPTEST_PS           "PS Data Type"
+    IDS_SPTEST_UE           "UE Service Type"
+    IDS_FTA_0               "Normal"
+    IDS_FTA_1               "PS Fta Test"
+    IDS_FTA_2               "USIM Fta Test"
+    IDS_PROTECT_0           "Off"
+    IDS_PROTECT_1           "On"
+    IDS_NETWORK_0           "Simulate Network"
+    IDS_NETWORK_1           "Reality Network"
+    IDS_AOC_0               "Off"
+    IDS_AOC_1               "On"
+    IDS_GSM_SIM_0           "Not Support"
+    IDS_GSM_SIM_1           "Support"
+    IDS_VERSION_0           "Version: R4"
+    IDS_VERSION_1           "Version: R5"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PS_0                "Conversational"
+    IDS_PS_1                "Streaming"
+    IDS_PS_2                "Interactive"
+    IDS_PS_3                "Background"
+    IDS_UE_0                "CS"
+    IDS_UE_1                "PS"
+    IDS_UE_2                "CS and PS"
+    IDS_INIT                "Initializing... ..."
+    IDS_INIT_SUCCESS        "Initializtion finished"
+    IDS_INIT_FAILED         "Initializtion failed"
+    IDS_CMEE_FAILED         "Setting auto-report error value failed"
+    IDS_SYS_PROMT_FAILED    "Setting auto prompt failed"
+    IDS_SET_SUCCESS         "Setting Success"
+    IDS_SET_FAILED          "Setting Failed"
+    IDS_PWD_ERROR           "Password error! Please input again!"
+    IDS_PUK_NEED            "PIN1 only can input 3 times! Please Unlock PIN1!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PIN_PROMT           "PIN's length can not less than 4!"
+    IDS_PUK_INVALID         "PUK only can input 10 times! This SIM card is invalid!"
+    IDS_PUK_PROMT           "PUK's lenth must be 8"
+    IDS_SYSTEM_SERVICE_0    "No Network"
+    IDS_SYSTEM_SERVICE_1    "Full Service"
+    IDS_SYSTEM_SERVICE_2    "Network Searching"
+    IDS_SYSTEM_SERVICE_3    "Urgency calling"
+    IDS_SYSTEM_SERVICE_4    "Unkown Status"
+    IDS_SYSTEM_DOMAIN_0     "No Service"
+    IDS_SYSTEM_DOMAIN_1     "Only CS Service"
+    IDS_SYSTEM_DOMAIN_2     "Only PS Service"
+    IDS_SYSTEM_DOMAIN_3     "PS+CS Services"
+    IDS_SYSTEM_ROAM_0       "Not Roaming"
+    IDS_SYSTEM_ROAM_1       "Roaming"
+    IDS_SYSTEM_MODE_0       "No Service"
+    IDS_SYSTEM_MODE_1       "Reserve"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SYSTEM_MODE_2       "Reserve"
+    IDS_SYSTEM_MODE_3       "GSM/GPRS Mode"
+    IDS_SYSTEM_MODE_4       "TD-SCDMA Mode"
+    IDS_SYSTEM_MODE_5       "WCDMA Mode"
+    IDS_SIM_STATUES_0       "USIM Card Invalid"
+    IDS_SIM_STATUES_1       "USIM Card Valid"
+    IDS_SIM_STATUES_2       "USIM Card Not Exist"
+    IDS_MOBILE_ROAM         "Roaming"
+    IDS_EMPTY               " "
+    IDS_SYSTEM_CHECK_FAILED "Reading system information failed!"
+    IDS_DISENABLE_DIAL      "PS domain not registered, Dial_up is forbidden!"
+    IDS_DISENABLE_CALL      "CS domain not registered, Calling is forbidden!"
+    IDS_PIN_ERROR           "Old PIN and New PIN are not identical, Please input Again!"
+    IDS_SELECT_MODEM        "Modem has not been installed!"
+    IDS_DIAL_OPEN_PORT      "Opening port..."
+    IDS_DIAL_PORT_OPENED    "Opening port success..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DIAL_CONNECT_DEVICE "Connecting device..."
+    IDS_DIAL_DEVICE_CONNECTED "Connecting device success..."
+    IDS_DIAL_AUTHENTICATE   "Validating standing..."
+    IDS_DIAL_AUTHENTICATED  "Passed standing validating..."
+    IDS_DIAL_CONNECTED      "Dial_up success!"
+    IDS_DIAL_DISCONNECTED   "Dial_up has been disconnected!"
+    IDS_DIAL_START          "Connecting...Please wait..."
+    IDS_PHONEBOOK_ENTRYNAME "Spreadtrum Modem connect"
+    IDS_DIALUP_FAILED       "Dial_up failed!"
+    IDS_DIALUP_AGAIN        "second(s) dial_up again!"
+    IDS_DIALUP_DISCONNECT   "Disconnect"
+    IDS_DIALUP_HAND         "Connect"
+    IDS_PHONE_NUMBER_EMPTY  "Phone number is empty!"
+    IDS_CALL_FAILED         "Calling failed!"
+    IDS_CALL_SUCCESS        "Calling success!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_HANGUP_SUCCESS      "Hang Up"
+    IDS_HANGUP_FAILED       "Hang up failed!"
+    IDS_HOLDON_FAILED       "Answer failed!"
+    IDS_HOLDON_SUCCESS      "Answer success!"
+    IDS_CALLING_PHONENUM    "Call from:"
+    IDS_SEARCHING_PLMN      "Searching PLMN...Please wait..."
+    IDS_SEARCH_PLMN_FAIELD  "Searching failed!"
+    IDS_NETWORK_MODE_2      "Retract register network"
+    IDS_NETWORK_MODE_3      "Only used to set format"
+    IDS_NETWORK_MODE_4      "Auto/Manual"
+    IDS_PLEASE_SELECT_MODE  "Please select network mode"
+    IDS_DOING_SELECT_NET    "Selecting ...please wait..."
+    IDS_NO_PLMN             "No PLMN, operation forbidden"
+    IDS_SELECTNET_SUCCESS   "Set Success!"
+    IDS_SELECTNET_FAILED    "Set Failed!"
+    IDS_SEARCH_FINISH       "Selecting finished!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    DIAL_TYPE_0             "Conversational"
+    DIAL_TYPE_1             "Streaming"
+    DIAL_TYPE_2             "Interactive"
+    DIAL_TYPE_3             "Background"
+    IDS_DIAL_TYPE_FAILED    "Type Setting Failed!"
+    IDS_CONNIN_FAILED       "APN Setting Failed!"
+    IDS_SPEED_FAILED        "UL/DL Setting Failed!"
+    IDS_PIN_EMPTY           "PIN can not be empty, Please input!"
+    IDS_UNLOCK_PIN2         "PIN2 only can input 3 times, please unlock PIN2!"
+    IDS_CMCC_GSM            "(GSM)"
+    IDS_PLMN_PROMPT         "PLMN's length can not be less 5, please input again!"
+    IDS_CALLING             "Calling... ..."
+    IDS_ANOTHER_HOLD_DOWN   "Another has hang up!"
+    IDS_AT_NO_RESPOND       "Not Support AT Command!"
+    IDS_CONFIRM_EXIT        "Are you sure exit?"
+    IDS_PLEASE_CONFIRM_DEVICE "Please connect the device to the PC!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MEMO_MODE           "Once,Every Day,Every Week,Every Month,Every Year,Not Remind"
+    IDS_DLG_CAP_PB          "Phone Group"
+    IDS_SMS_PLACE           "Used%d/Unuse%d"
+    IDS_ERR_PHONE_NUMBER    "Phone number formation is not right!|r\nPlease input again!"
+    IDS_PLACE_FULL          "Mobile storage is full, please delete some items!"
+    IDS_ERR_PB_NUM_EMPTY    "Please input phone number!"
+    IDS_ERR_RES_NOENOUGH    "Resource not enough!"
+    IDS_ERR_ADD_FAIL        "Add fail! \nMaybe some item(s) should not be empty."
+    IDS_ERR_MODIFY_FAIL     "Modify fail!"
+    IDS_WARN_FIXED_NOT_EDIT "Fixed group can not be edited!"
+    IDS_UNKNOWN             "Unknown%d"
+    IDS_MEM_SCHDL_STATUS    "Usded  Unused  =="
+    IDS_ERR_FN_BUFFER_TOO_SMALL 
+                            "Selected file is too much, please select fewer files to import!"
+    IDS_ERR_IMPORT_FAIL_BELLOW "Import below file fail:\r\n%s"
+    IDS_ERR_SET_MS_PLACE_FAIL "Set store place fail!"
+    IDS_ERR_MEMO_GET_PHONE_INFO_FAIL "Get memo information from mobile fail!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_PB_MS_FULL      "Mobile storage for phone book is full!"
+    IDS_ERR_MEMO_MODIFY_FAIL "Modify memo fail!"
+    IDS_ERR_MEMO_MS_FULL    "Mobile storage for memo is full!"
+    IDS_ERR_PB_GET_PHONE_INFO_FAIL 
+                            "Get phone book information from mobile fail!"
+    IDS_SYNC_PB_SUCCESS     "Sync phone book success!"
+    IDS_ERR_PB_GET_SIM_INFO_FAIL 
+                            "Get phone book information from SIM card fail!"
+    IDS_ERR_PB_SIM_FULL     "SIM card storage for phone book is full!"
+    IDS_ERR_PB_MODIFY_FAIL  "Modify phone book fail!"
+    IDS_WARN_CHANGE_SIM_GROUP 
+                            "Operation will change store palce (SIM card or Mobile storage) of phone book, please first move them to related place and then group them!"
+    IDS_ERR_OPENFILE        "File not exit or open with exclusive way by other program!"
+    IDS_DLG_CAP_MEMO        "Memo"
+    IDS_ERR_OUT_OF_DATE     "Time is invalidate! "
+    IDS_DLG_CAP_PRESETSMS   "Preset Short Message"
+    IDS_EXIST               """%s""  is existing!"
+    IDS_SMS_SEND_MODE       "Send Mode"
+    IDS_ERR_UNKNOWN         "Unknow error occur!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_FILE_NAME_EMPTY "File name can't be empty!"
+    IDS_ERR_EXT_NAME_VCS    "Extention File name must be "".vcs""!"
+    IDS_ERR_OPEN_FILE_FAIL  "Open file failed!"
+    IDS_ERR_EXT_NAME_VCF    "Extention File name must be "".vcf ""!"
+    IDS_ERR_FILTTYPE        "File type is not right or file formation is damaged!"
+    IDS_SELNUM_CLMN         "Index,Name,Tel"
+    IDS_ERR_PB_NAME_EMPTY   """Name"" can not be empty!"
+    IDS_NO_RECORD_FOUND     "Not find this record!"
+    IDS_ERR_PBG_NAME_EMPTY  "Group name can not be empty!"
+    IDS_ERR_CENTER_NUM_EMPTY "SMS center number can not be empty!"
+    IDS_ERR_CENTER_NUM      "SMS center number can not be empty!"
+    IDS_DLG_CAP_SMS_CENTER  "SMS center"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_COPY_MOVE_TO_PC      "copy to pc\ncopy to pc"
+    ID_COPY_MOVE_TO_MS      "copy to ms\n copy to ms"
+    ID_COPY_MOVE_TO_SIM     "copy to SIM1\ncopy to SIM1"
+    ID_COPY_MOVE_TO_SIM2    "copy to SIM2\ncopy to SIM2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_COPY_MOVE_TO_SIM3    "copy to SIM3\ncopy to SIM3"
+    ID_COPY_MOVE_TO_SIM4    "copy to SIM4\ncopy to SIM4"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_NEW_SMS         "new SMS\nnew SMS"
+    ID_EDIT_NEW_PB          "new PB\nnew PB"
+    ID_EDIT_NEW_MEMO        "new memo\nnew memo"
+    ID_OPTION_LOAD_SCHDL    "load schedule\nload schedule"
+    ID_OPTION_SMS_STORE     "SMS store place\nSMS store place"
+    ID_OPTION_PB_TYPE       "PB type\nPB type"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SMS_E_SET_ACTIVE_SIM "Setting active SIM failed!"
+    IDS_SENDSMS_OK          "Sending SMS success!"
+    IDS_SENDSMS_FAIL        "Sending SMS Failed!"
+    IDS_INVALIDATE          """%s"" invalid!"
+    IDS_SMS_OPTION          "Send,Save,Send and Save"
+    IDS_SMS_VALID_DATE      "1 hour,6 hours,24 hours,72 hours,1 week"
+    IDS_SMS_SEND_SIM_SEL    "SIM1,SIM2,SIM3,SIM4"
+    IDS_SMS_LEN_INVALID     "The length of SMS is too long, splited it?"
+    IDS_WARN_SPLISH         """Auto Split"" not be selected, the content will be splited!"
+    IDS_ERR_SEND_FAIL       "Sending failed, are you sure to save it?"
+    IDS_SMS_EXIST_IN_PC     """Receiver"" and ""Content"" already exist, raplace them?"
+    IDS_DLG_CAP_SMS         "SMS"
+    IDS_LOAD_COMPLETE       "Loading complete!\n%s"
+    IDS_STATUS_SMS_START    "Loading SMS..."
+    IDS_ERR_SMSMODE         "Set the mode of phone failed!"
+    IDS_PROG_TITLE_SMS      "Loading SMS from %s ..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SMS_SRP_RECEIVED_BY_SME "Status Report: Received"
+    IDS_PROG_TITLE_SMS_COMPLETE "Load SMS from %s complete!"
+    IDS_STATUS_SMS_END      "Load SMS Complete!"
+    IDS_EMPTY_RECORD        "No record in phone"
+    IDS_STATUS_PB_START     "Loading PB ..."
+    IDS_PROG_TITLE_PB       "Load PB from %s ..."
+    IDS_PROG_TITLE_PB_COMPLETE "Load PB from %s complete!"
+    IDS_STATUS_PB_END       "Load PB Complete"
+    IDS_STATUS_MEMO_START   "Loading memo ..."
+    IDS_PROG_TITLE_MEMO     "Loading memo ..."
+    IDS_STATUS_MEMO_END     "Load memo complete"
+    IDS_STATUS_PBG_START    "Loading PB Group ..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROG_TITLE_PBG      "Loading PB Group ..."
+    IDS_PROG_TITLE_PBG_COMPLETE "Load PB Group complete!"
+    IDS_STATUS_PBG_END      "Load PB Group complete!"
+    IDS_SAVE_PROMPT         "Do you need to save all current information?"
+    IDS_PROMPT_EMPTY        """%s"" is empty!"
+    IDS_COMING_SMS          "Received SMS"
+    IDS_SIM_SIND            "SIM is not exist!"
+    IDS_TDGSM               "Dual-Mode"
+    IDS_SYSCONFIG_MODE_0    "Auto Select"
+    IDS_SYSCONFIG_MODE_1    "GSM Only"
+    IDS_SYSCONFIG_MODE_2    "WCDMA Only"
+    IDS_SYSCONFIG_MODE_3    "TDSCDMA Only"
+    IDS_SYSCONFIG_MODE_4    "No change"
+    IDS_SYSCONFIG_ORDER_0   "Auto"
+    IDS_SYSCONFIG_ORDER_1   "First GSM then UTRAN"
+    IDS_SYSCONFIG_ORDER_2   "Firt UTRAN then GSM"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SYSCONFIG_ORDER_3   "No change"
+    IDS_SYSCONFIG_ORDER_4   "Not Surport"
+    IDS_SYSCONFIG_ROAM_1    "Roam"
+    IDS_SYSCONFIG_ROAM_2    "No change"
+    IDS_SYSCONFIG_DOMAIN_0  "CS_ONLY"
+    IDS_SYSCONFIG_DOMAIN_1  "PS_ONLY"
+    IDS_SYSCONFIG_DOMAIN_2  "CS_PS"
+    IDS_SYSCONFIG_DOMAIN_3  "ANY"
+    IDS_SYSCONFIG_DOMAIN_4  "No change"
+    IDS_ONLY_URGENCY        "Sorry, only surport urgency number!"
+    IDS_SMS_TITLE           "Sync Information"
+    IDS_CHECK_MUX_DRIVER    "please ensure MUX driver is already set up!"
+    IDS_ERGENCE_CALLING     "Urgency Calling..."
+    IDS_WCDMA               "(WCDMA)"
+    IDS_LOAD_FAILED         "Load %s from ""%s"" failed! \nPlease try again!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CALL_RETURN_ERROR   "Unkown Status"
+    IDS_AT_CMD              "AT Cmd"
+    IDS_NO_CARRIER          "Calling, but phone is busy and no respond!"
+    IDS_UNKNOWN_NUMBER      "Unkown number"
+    IDS_DSP                 "DSP"
+    IDS_CONNECT_EXIST       """Spreadtrum Modem Connect"" is also connected, please disconnect it and try again!"
+    IDS_REMOVE_SIM_CARD     "SIM card is not exist, related business will be forbidden!"
+    IDS_LOAD_PB_FAILED      "Load PB from ""%s"" failed! \nPlease try again!"
+    IDS_EGO_APP_TITLE       "eGo"
+    IDS_SYSTEM_MODE_6       "TD-SCDMA"
+    IDS_SYSTEM_CELL_SIGN_0  "No Service"
+    IDS_SYSTEM_CELL_SIGN_1  "GSM"
+    IDS_SYSTEM_CELL_SIGN_2  "GPRS"
+    IDS_SYSTEM_CELL_SIGN_3  "EDGE"
+    IDS_SYSTEM_CELL_SIGN_4  "WCDMA"
+    IDS_SYSTEM_CELL_SIGN_5  "HSDPA"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SYSTEM_CELL_SIGN_6  "HSUPA"
+    IDS_SYSTEM_CELL_SIGN_7  "HSUPA and HSDPA"
+    IDS_SYSTEM_CELL_SIGN_8  "TD-SCDMA"
+    IDS_CUC_FORBIDDEN       "Select network failed!"
+    IDS_SMS_SUCCESS         "Sent to:"
+    IDS_SMS_FAILED          "Not send to:"
+    IDS_DISCONNECTED_CHECKMODEM "Connect to medem failed!"
+    IDS_SMS_FULL            "Full"
+    IDS_FULL_SMS_PROMPT     "SMS has already full, please clear it immediately !"
+    IDS_SEARCH_PLMN_REJECT  "Current operation is forbiddened!"
+    IDS_STORE_PLACE         "PC,Phone,SIM1,SIM2,SIM3,SIM4"
+    IDS_STORE_SIM3          "SIM3"
+    IDS_WARN_ALREAY_OPEN    "Program is already opened!"
+    IDS_STORE_SIM4          "SIM4"
+    IDS_MEMO_FRE            "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday"
+    IDS_ERR_MEMO_END_DATE   "End date can not be later than start date!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WARN_CLOSE_SMS_FIRST "Please close sync info window first!"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\MobileCnnt.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#include "l.chs\afxprint.rc"        // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

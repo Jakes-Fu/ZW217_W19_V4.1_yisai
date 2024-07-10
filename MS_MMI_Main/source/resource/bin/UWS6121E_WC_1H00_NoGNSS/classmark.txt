@@ -1,0 +1,20 @@
+revision_level = ;		# int 8, 0 = phase 1; 1 = phase 2
+support_early_classmark = ;	# BOOLEAN, 1 = support Controlled early classmark sending
+a51_supported = ;		# BOOLEAN, 1 = support encription algorism a51
+a52_supported = 1;
+a53_supported = ;
+pseudo_sync_handover_supported = 1; # BOOLEAN, 1 = support pseudo_sync handover see spec4.08 sec 3.4.4.2
+e_gsm_pwr_class = 1;		# 0 = class1; 1 = class2 ... maxim value = 4
+dcs_pwr_class = 1;		# 0 = class1; 1 = class2 ... maxim value =2
+pcs_pwr_class = 0;		# 0 = class1; 1 = class2 ... maxim value = 2
+p_gsm_supported = 0;		# BOOLEAN, 1 = TRUE
+e_gsm_supported = 1;		# BOOLEAN, 1 = TRUE
+dcs_supported = 1;		# BOOLEAN, 1 = TRUE
+pcs_supported = 0;		# BOOLEAN, 1 = TRUE
+full_rate_v1_supported = 1;      # BOOLEAN
+full_rate_v2_supported = 1;      # BOOLEAN
+data_12k_supported = 1;          # BOOLEAN
+data_6k_supported = 1;           # BOOLEAN
+data_3k_supported = 1;           # BOOLEAN
+channel_type_flag = 0;	 # 0 = FULL_RATE_ONLY,1 = DUAL_RATE
+gprs_multislot_class = 12

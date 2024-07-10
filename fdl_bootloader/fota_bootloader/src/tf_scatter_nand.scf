@@ -1,0 +1,24 @@
+ROM_LOAD 0x10000 0x100000
+{
+    ROM_EXEC 0x010000 0x2000
+    {
+        tf_init.o (Init, +First)
+       	*_version.o(+RO)    
+    }
+    ROM_EXEC1 +0x0
+    {
+    	.ANY(+RO)
+    }
+    RAM_RW +0x0
+    {   
+    	.ANY(+RW)
+    } 
+    RAM_ZI +0x0
+    {   
+    	.ANY(+ZI)
+    }
+    IRAM_FIXED 0x40000800 0x2800
+    {
+     	 tf_drv_nand.o(+RO,+RW,+ZI)
+    }
+}

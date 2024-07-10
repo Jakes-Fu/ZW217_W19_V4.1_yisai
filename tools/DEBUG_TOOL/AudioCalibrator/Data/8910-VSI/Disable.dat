@@ -1,0 +1,1622 @@
+// ------------------------------------------------------------------------------------
+// 
+// 定义平台下禁用的AT列表
+// 
+// <APMode:ITF>
+//    AT_Name
+// </>
+// 
+// ------------------------------------------------------------------------------------
+
+
+/// call mode
+<call:0>
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+<call:1>
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+<call:2>
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+<call:3>
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>   
+
+
+<call:4>
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+   
+</>
+
+
+<call:5>  
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+
+
+/// Music Play mode
+<Music Play:0>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+</>
+
+
+
+<Music Play:1>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+</>
+
+
+
+<Music Play:2>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+</>
+
+
+
+
+<Music Play:3>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+</>
+
+
+
+
+<Music Play:4>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+</>
+
+
+
+<Music Play:5>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+</>
+
+
+
+
+
+/// Record mode
+<Record:0>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+<Record:1>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+<Record:2>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+<Record:3>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+<Record:4>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+<Record:5>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+// FM Play mode
+<FM Play:0>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+</>
+
+
+<FM Play:1>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+</>
+
+
+<FM Play:2>
+     // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+<FM Play:3>
+     // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+
+<FM Play:4>
+     // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+<FM Play:5>
+     // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+
+/// FM Record mode
+<FM Record:0>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+<FM Record:1>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+<FM Record:2>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+<FM Record:3>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+<FM Record:4>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+<FM Record:5>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+
+/// LoopBack mode
+<LoopBack:0>
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+<LoopBack:1>
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+<LoopBack:2>
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+<LoopBack:3>
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+<LoopBack:4>
+     // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+<LoopBack:5>
+     // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+</>
+
+
+
+
+/// Tone Play mode
+<Tone Play:0>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+
+</>
+
+
+<Tone Play:1>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+
+</>
+
+
+<Tone Play:2>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+
+</>
+
+
+<Tone Play:3>
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+
+</>
+
+
+<Tone Play:4>
+     // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+
+</>
+
+
+
+<Tone Play:5>
+     // Audio Codec Calibration
+     atctst_aud_codec_get_ingain
+     atctst_aud_codec_get_outgain
+     atctst_aud_codec_get_sidetonegain
+     atctst_aud_codec_get_recordergain
+     
+     atctst_aud_codec_set_ingain
+     atctst_aud_codec_set_outgain
+     atctst_aud_codec_set_sidetonegain
+     atctst_aud_codec_set_recordergain
+     
+     
+     // Audio ZSP VQE Calibration
+     // CALIB_AUDIO_VSI_DigGain_T
+     atctst_aud_vsi_vqe_get_DigGain
+     atctst_aud_vsi_vqe_get_aec
+     atctst_aud_vsi_vqe_get_ns_tx
+     atctst_aud_vsi_vqe_get_ns_rx
+     atctst_aud_vsi_vqe_get_agc_tx
+     atctst_aud_vsi_vqe_get_agc_rx
+     atctst_aud_vsi_vqe_get_eq_tx
+     atctst_aud_vsi_vqe_get_eq_rx
+     atctst_aud_vsi_vqe_get_avc
+     atctst_aud_vsi_vqe_get_SamplingRate
+     
+     
+     atctst_aud_vsi_vqe_set_DigGain
+     atctst_aud_vsi_vqe_set_aec
+     atctst_aud_vsi_vqe_set_ns_tx
+     atctst_aud_vsi_vqe_set_ns_rx
+     atctst_aud_vsi_vqe_set_agc_tx
+     atctst_aud_vsi_vqe_set_agc_rx
+     atctst_aud_vsi_vqe_set_eq_tx
+     atctst_aud_vsi_vqe_set_eq_rx
+     atctst_aud_vsi_vqe_set_avc
+     atctst_aud_vsi_vqe_set_SamplingRate
+     
+     
+     
+     // Audio ZSP Pre-Processing Calibration
+     atctst_aud_zsp_pre_get_drc
+     atctst_aud_zsp_pre_get_eq
+     
+     atctst_aud_zsp_pre_set_drc
+     atctst_aud_zsp_pre_set_eq
+     
+     
+     
+     // Audio ZSP Post-Processing Calibration
+     atctst_aud_zsp_post_get_drc
+     atctst_aud_zsp_post_get_eq
+     
+     atctst_aud_zsp_post_set_drc
+     atctst_aud_zsp_post_set_eq
+
+</>
+
+
+
+
+
+
+
+

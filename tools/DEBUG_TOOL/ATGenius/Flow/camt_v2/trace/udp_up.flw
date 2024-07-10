@@ -1,0 +1,14 @@
+//udp灌包
+
+//step1:pdp激活
+
+at+cgdcont=1,IP,CMWAP 
+AT+CGACT=1,1
+
+//step2：服务地址
+AT+CIPSTART=UDP,192.168.1.6,8080
+
+//step3：单次发数
+AT+CIPtest=90
+
+//step4：如果要多宝灌数请使用sscom

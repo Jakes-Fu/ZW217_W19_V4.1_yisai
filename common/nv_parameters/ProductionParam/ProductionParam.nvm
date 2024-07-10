@@ -1,0 +1,4079 @@
+# SpreadTrum NVEditor NV Module File, Format Version 1.0
+# WARNING: DO NOT EDIT OR DELETE THIS NV Module FILE!
+
+###############################################################################
+  MODULE      = ProductionParam
+  DESCRIPTION = 
+
+################################################################################
+
+# Begin Module Item
+  BEGIN_ITEM
+    ITEM_NAME    = production_param_T
+    ITEM_ID      = 400
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 128
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 0
+    ITEM_PARENT  = -1
+    ITEM_DESC    = refer to Nv_productionparam_type.h, PROD_PARAM_T structure.
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CHR_PARAM_T
+    ITEM_ID      = 400
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 96
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 1
+    ITEM_PARENT  = 0
+    ITEM_DESC    = charging parameter
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = voltage_warning
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3440
+    ITEM_INDEX   = 2
+    ITEM_PARENT  = 1
+    ITEM_DESC    = the warning voltage
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = voltage_shutdown
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3380
+    ITEM_INDEX   = 3
+    ITEM_PARENT  = 1
+    ITEM_DESC    = the shutdown voltage
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = voltage_deadline
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 3000
+    ITEM_INDEX   = 4
+    ITEM_PARENT  = 1
+    ITEM_DESC    = voltage_deadline
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = warning_count
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 24
+    ITEM_INDEX   = 5
+    ITEM_PARENT  = 1
+    ITEM_DESC    = the interval of warning
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = recharge_voltage
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 4160
+    ITEM_INDEX   = 6
+    ITEM_PARENT  = 1
+    ITEM_DESC    = 4.16V
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = charge_end_voltage
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 4210
+    ITEM_INDEX   = 7
+    ITEM_PARENT  = 1
+    ITEM_DESC    = 4.21V
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = bat_safety_vol
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 4300
+    ITEM_INDEX   = 8
+    ITEM_PARENT  = 1
+    ITEM_DESC    = safety battery voltage when charging
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = standard_current_type
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 600
+    ITEM_INDEX   = 9
+    ITEM_PARENT  = 1
+    ITEM_DESC    = standard adapter charge current,400mA,600mA,800mA,1000mA Please be very careful to use 800mA and 1000mA
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = usb_current_type
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 300
+    ITEM_INDEX   = 10
+    ITEM_PARENT  = 1
+    ITEM_DESC    = pc charge current, 300mA 400mA 500mA
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = nonstandard_current_type
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 400
+    ITEM_INDEX   = 11
+    ITEM_PARENT  = 1
+    ITEM_DESC    = only sc8800g support this item
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_timeout
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 18000
+    ITEM_INDEX   = 12
+    ITEM_PARENT  = 1
+    ITEM_DESC    = charging timeout, 18000S
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ovp_type
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 13
+    ITEM_PARENT  = 1
+    ITEM_DESC    = charger over voltage protect, normal charger:0, nokia charger 1
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ovp_over_vol
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 6500
+    ITEM_INDEX   = 14
+    ITEM_PARENT  = 1
+    ITEM_DESC    = ovp over voltage,6.5V
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ovp_resume_vol
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 6000
+    ITEM_INDEX   = 15
+    ITEM_PARENT  = 1
+    ITEM_DESC    = ovp resume voltage,6.0V
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = otp_type
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 16
+    ITEM_PARENT  = 1
+    ITEM_DESC    = over temperature protect,0:don't support otp 1:environment temperature 2:vbat temperature
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = otp_over_low
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 995
+    ITEM_INDEX   = 17
+    ITEM_PARENT  = 1
+    ITEM_DESC    = -5C,otp_over_low = 1000 + temperatue,low limit temperature
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = otp_over_high
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 1063
+    ITEM_INDEX   = 18
+    ITEM_PARENT  = 1
+    ITEM_DESC    = 63C,otp_over_high = 1000 + temperatue,high limit temperature
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = otp_resume_low
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 1000
+    ITEM_INDEX   = 19
+    ITEM_PARENT  = 1
+    ITEM_DESC    = 0C,otp_resume_low = 1000 + temperatue,low resume temperatue after over temperature occur
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = otp_resume_high
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 1058
+    ITEM_INDEX   = 20
+    ITEM_PARENT  = 1
+    ITEM_DESC    = 58C,otp_resume_high = 1000 + temperatue,high resume temperatue after over temperature occur
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = hw_switch_point
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 16
+    ITEM_INDEX   = 21
+    ITEM_PARENT  = 1
+    ITEM_DESC    = CHG_SWITPOINT_MIDDLE
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab
+    ITEM_ID      = 400
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 13
+    ITEM_LENGTH  = 66
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 22
+    ITEM_PARENT  = 1
+    ITEM_DESC    = battery capacity table
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[0]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 4145
+    ITEM_INDEX   = 23
+    ITEM_PARENT  = 22
+    ITEM_DESC    = 4.120V capacity 100%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[1]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 4060
+    ITEM_INDEX   = 24
+    ITEM_PARENT  = 22
+    ITEM_DESC    = 4.060V capacity 90%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[2]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3980
+    ITEM_INDEX   = 25
+    ITEM_PARENT  = 22
+    ITEM_DESC    = 3.980V capacity 80%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[3]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3900
+    ITEM_INDEX   = 26
+    ITEM_PARENT  = 22
+    ITEM_DESC    = 3.900V capacity 70%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[4]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3840
+    ITEM_INDEX   = 27
+    ITEM_PARENT  = 22
+    ITEM_DESC    = 3.840V capacity 60%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[5]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3800
+    ITEM_INDEX   = 28
+    ITEM_PARENT  = 22
+    ITEM_DESC    = 3.800V capacity 50%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[6]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3760
+    ITEM_INDEX   = 29
+    ITEM_PARENT  = 22
+    ITEM_DESC    = 3.760V capacity 40%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[7]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3730
+    ITEM_INDEX   = 30
+    ITEM_PARENT  = 22
+    ITEM_DESC    = 3.730V capacity 30%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[8]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3700
+    ITEM_INDEX   = 31
+    ITEM_PARENT  = 22
+    ITEM_DESC    = 3.700V capacity 20%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[9]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3650
+    ITEM_INDEX   = 32
+    ITEM_PARENT  = 22
+    ITEM_DESC    = 3.650V capacity 15%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[10]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3600
+    ITEM_INDEX   = 33
+    ITEM_PARENT  = 22
+    ITEM_DESC    = 3.600V capacity 5%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[11]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3500
+    ITEM_INDEX   = 34
+    ITEM_PARENT  = 22
+    ITEM_DESC    = 3.500V capacity 0%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dischg_bat_tab[12]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xFFFF
+    ITEM_INDEX   = 35
+    ITEM_PARENT  = 22
+    ITEM_DESC    = end flag
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab
+    ITEM_ID      = 400
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 13
+    ITEM_LENGTH  = 92
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 36
+    ITEM_PARENT  = 1
+    ITEM_DESC    = battery capacity table when charging
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[0]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 4190
+    ITEM_INDEX   = 37
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 4.200V 100%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[1]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 4120
+    ITEM_INDEX   = 38
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 4.180V 90%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[2]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 4040
+    ITEM_INDEX   = 39
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 4.120V 80%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[3]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3960
+    ITEM_INDEX   = 40
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 4.080V 70%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[4]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3900
+    ITEM_INDEX   = 41
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 4.020V 60%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[5]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3860
+    ITEM_INDEX   = 42
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 3.970V 50%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[6]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3820
+    ITEM_INDEX   = 43
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 3.920V 40%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[7]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3790
+    ITEM_INDEX   = 44
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 3.880V 30%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[8]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3760
+    ITEM_INDEX   = 45
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 3.860V 20%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[9]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3710
+    ITEM_INDEX   = 46
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 3.830V 15%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[10]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3660
+    ITEM_INDEX   = 47
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 3.730V 5%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[11]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 3250
+    ITEM_INDEX   = 48
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 3.250V 0%
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = chg_bat_tab[12]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xFFFF
+    ITEM_INDEX   = 49
+    ITEM_PARENT  = 36
+    ITEM_DESC    = end flag
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reseved
+    ITEM_ID      = 400
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 2
+    ITEM_LENGTH  = 96
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 50
+    ITEM_PARENT  = 1
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reseved[0]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 51
+    ITEM_PARENT  = 50
+    ITEM_DESC    = no useful now
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reseved[1]
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 52
+    ITEM_PARENT  = 50
+    ITEM_DESC    = no useful now
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = PROD_PERIPHERIAL_T
+    ITEM_ID      = 400
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 112
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 53
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = main_lcd_index
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0xFD
+    ITEM_INDEX   = 54
+    ITEM_PARENT  = 53
+    ITEM_DESC    = 0xFE:ADC auto identify
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sub_lcd_index
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0xFF
+    ITEM_INDEX   = 55
+    ITEM_PARENT  = 53
+    ITEM_DESC    = 0xFF:no sub lcd
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = main_sensor_index
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 56
+    ITEM_PARENT  = 53
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sub_sensor_index
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0xFF
+    ITEM_INDEX   = 57
+    ITEM_PARENT  = 53
+    ITEM_DESC    = 0xFF:no sub sensor
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = fm_index
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X0
+    ITEM_INDEX   = 58
+    ITEM_PARENT  = 53
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = af_index
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X0
+    ITEM_INDEX   = 59
+    ITEM_PARENT  = 53
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = memory_card
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0X1
+    ITEM_INDEX   = 60
+    ITEM_PARENT  = 53
+    ITEM_DESC    = 0:T Flash;1:mini SD;2 Standard SD or MMC; 0xFX("X"表示SPI2的CS 号)
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gps_flag
+    ITEM_ID      = 400
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 00
+    ITEM_INDEX   = 61
+    ITEM_PARENT  = 53
+    ITEM_DESC    = BIT_0 1:have download SIRF firmware, other: not downloaded.
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = LCM_KPD_ONOFF_TUNING_PARAM_T
+    ITEM_ID      = 400
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 128
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 62
+    ITEM_PARENT  = 0
+    ITEM_DESC    = LCM_KPD_ONOFF_TUNING_PARAM_T
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = lcm_step
+    ITEM_ID      = 400
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 63
+    ITEM_PARENT  = 62
+    ITEM_DESC    = lcm_step
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = lcm_step_invterval
+    ITEM_ID      = 400
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0xA
+    ITEM_INDEX   = 64
+    ITEM_PARENT  = 62
+    ITEM_DESC    = lcm_step_invterval
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = kpd_step
+    ITEM_ID      = 400
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 65
+    ITEM_PARENT  = 62
+    ITEM_DESC    = kpd_step
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = kpd_step_invterval
+    ITEM_ID      = 400
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0xA
+    ITEM_INDEX   = 66
+    ITEM_PARENT  = 62
+    ITEM_DESC    = kpd_step_invterval
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = bt_config
+    ITEM_ID      = 401
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 8
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 67
+    ITEM_PARENT  = -1
+    ITEM_DESC    = bluetooth config parameter
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = bd_addr
+    ITEM_ID      = 401
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 6
+    ITEM_LENGTH  = 6
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 68
+    ITEM_PARENT  = 67
+    ITEM_DESC    = default address of bluetooth
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = bd_addr[0]
+    ITEM_ID      = 401
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0xFF
+    ITEM_INDEX   = 69
+    ITEM_PARENT  = 68
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = bd_addr[1]
+    ITEM_ID      = 401
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0xFF
+    ITEM_INDEX   = 70
+    ITEM_PARENT  = 68
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = bd_addr[2]
+    ITEM_ID      = 401
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0xFF
+    ITEM_INDEX   = 71
+    ITEM_PARENT  = 68
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = bd_addr[3]
+    ITEM_ID      = 401
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0xFF
+    ITEM_INDEX   = 72
+    ITEM_PARENT  = 68
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = bd_addr[4]
+    ITEM_ID      = 401
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0xFF
+    ITEM_INDEX   = 73
+    ITEM_PARENT  = 68
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = bd_addr[5]
+    ITEM_ID      = 401
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0xFF
+    ITEM_INDEX   = 74
+    ITEM_PARENT  = 68
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = xtal_dac
+    ITEM_ID      = 401
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0025
+    ITEM_INDEX   = 75
+    ITEM_PARENT  = 67
+    ITEM_DESC    = Carrier Frequency Offset of bt (crstal trim)value =0~63 //载波频率偏差
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gps_config
+    ITEM_ID      = 403
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 44
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 76
+    ITEM_PARENT  = -1
+    ITEM_DESC    = save serial number, activate code and version
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn
+    ITEM_ID      = 403
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 24
+    ITEM_LENGTH  = 24
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 77
+    ITEM_PARENT  = 76
+    ITEM_DESC    = serial number
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[0]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 78
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[1]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 79
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[2]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 80
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[3]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 81
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[4]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 82
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[5]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 83
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[6]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 84
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[7]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 85
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[8]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 86
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[9]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 87
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[10]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 88
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[11]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 89
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[12]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 90
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[13]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 91
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[14]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 92
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[15]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 93
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[16]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 94
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[17]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 95
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[18]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 96
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[19]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 97
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[20]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 98
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[21]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 99
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[22]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 100
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sn[23]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 101
+    ITEM_PARENT  = 77
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = version
+    ITEM_ID      = 403
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 4
+    ITEM_LENGTH  = 28
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 102
+    ITEM_PARENT  = 76
+    ITEM_DESC    = version number
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = version[0]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 103
+    ITEM_PARENT  = 102
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = version[1]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 104
+    ITEM_PARENT  = 102
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = version[2]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 105
+    ITEM_PARENT  = 102
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = version[3]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 106
+    ITEM_PARENT  = 102
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code
+    ITEM_ID      = 403
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 16
+    ITEM_LENGTH  = 44
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 107
+    ITEM_PARENT  = 76
+    ITEM_DESC    = activate code
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[0]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 108
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[1]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 109
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[2]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 110
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[3]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 111
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[4]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 112
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[5]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 113
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[6]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 114
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[7]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 115
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[8]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 116
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[9]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 117
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[10]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 118
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[11]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 119
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[12]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 120
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[13]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 121
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[14]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 122
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ac_code[15]
+    ITEM_ID      = 403
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 123
+    ITEM_PARENT  = 107
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = tv_rssi_comp
+    ITEM_ID      = 404
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 20
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 124
+    ITEM_PARENT  = -1
+    ITEM_DESC    = cmmb rx Rssi compensation of frequency. only used in SC6600V
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = nU498M
+    ITEM_ID      = 404
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 125
+    ITEM_PARENT  = 124
+    ITEM_DESC    = only used in SC6600V,on usefull in SC880xG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = nU554M
+    ITEM_ID      = 404
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 126
+    ITEM_PARENT  = 124
+    ITEM_DESC    = only used in SC6600V,on usefull in SC880xG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = nU610M
+    ITEM_ID      = 404
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 127
+    ITEM_PARENT  = 124
+    ITEM_DESC    = only used in SC6600V,on usefull in SC880xG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = nU666M
+    ITEM_ID      = 404
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 128
+    ITEM_PARENT  = 124
+    ITEM_DESC    = only used in SC6600V,on usefull in SC880xG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = nU722M
+    ITEM_ID      = 404
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 129
+    ITEM_PARENT  = 124
+    ITEM_DESC    = only used in SC6600V,on usefull in SC880xG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = nU770M
+    ITEM_ID      = 404
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 130
+    ITEM_PARENT  = 124
+    ITEM_DESC    = only used in SC6600V,on usefull in SC880xG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = nSLow
+    ITEM_ID      = 404
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 131
+    ITEM_PARENT  = 124
+    ITEM_DESC    = only used in SC6600V,on usefull in SC880xG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = nSMid
+    ITEM_ID      = 404
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 132
+    ITEM_PARENT  = 124
+    ITEM_DESC    = only used in SC6600V,on usefull in SC880xG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = nSHigh
+    ITEM_ID      = 404
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 133
+    ITEM_PARENT  = 124
+    ITEM_DESC    = only used in SC6600V,on usefull in SC880xG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dummy
+    ITEM_ID      = 404
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 134
+    ITEM_PARENT  = 124
+    ITEM_DESC    = only used in SC6600V,on usefull in SC880xG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = multi_langue_cfg
+    ITEM_ID      = 405
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 112
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 135
+    ITEM_PARENT  = -1
+    ITEM_DESC    = multi_language valid flag,not useful SC880XG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag
+    ITEM_ID      = 405
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 100
+    ITEM_LENGTH  = 100
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 136
+    ITEM_PARENT  = 135
+    ITEM_DESC    = refer to MMISET_LANGUAGE_TYPE_E; 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[0]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 137
+    ITEM_PARENT  = 136
+    ITEM_DESC    = English
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[1]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x5
+    ITEM_INDEX   = 138
+    ITEM_PARENT  = 136
+    ITEM_DESC    = simply chinese
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[2]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x7
+    ITEM_INDEX   = 139
+    ITEM_PARENT  = 136
+    ITEM_DESC    = trandional chinese
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[3]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x7
+    ITEM_INDEX   = 140
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Arabic
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[4]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x7
+    ITEM_INDEX   = 141
+    ITEM_PARENT  = 136
+    ITEM_DESC    = french
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[5]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 142
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Hindi
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[6]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 143
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Hungarian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[7]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 144
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Indonesian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[8]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 145
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Malay
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[9]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 146
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Portuguese
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[10]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x7
+    ITEM_INDEX   = 147
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Russian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[11]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 148
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Spanish
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[12]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 149
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Tagalog
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[13]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 150
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Thai
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[14]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x7
+    ITEM_INDEX   = 151
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Vietnamese
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[15]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x7
+    ITEM_INDEX   = 152
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Urdu
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[16]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 153
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Italian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[17]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 154
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Persian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[18]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 155
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Turkish
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[19]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 156
+    ITEM_PARENT  = 136
+    ITEM_DESC    = German
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[20]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 157
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Greek
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[21]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 158
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Hebrew
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[22]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 159
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Bengali
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[23]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x7
+    ITEM_INDEX   = 160
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Czech
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[24]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 161
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Slovenian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[25]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 162
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Romanian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[26]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 163
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Telugu
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[27]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 164
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Marathi
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[28]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 165
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Tamil
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[29]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 166
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Gujarati
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[30]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 167
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Kannada
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[31]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 168
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Malayalam
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[32]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 169
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Oriya
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[33]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 170
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Punjabi
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[34]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 171
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Afrikanns
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[35]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 172
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Albanian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[36]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 173
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Armenian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[37]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 174
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Azerbaijani
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[38]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 175
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Basque
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[39]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 176
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Bulgarian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[40]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 177
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Catalan
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[41]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 178
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Croatian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[42]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 179
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Danish
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[43]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 180
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Dutch
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[44]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 181
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Estonian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[45]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 182
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Filipino
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[46]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 183
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Finnish
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[47]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 184
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Galician
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[48]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 185
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Georgian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[49]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 186
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Hausa
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[50]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 187
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Icelandic
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[51]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 188
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Igbo
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[52]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 189
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Irish
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[53]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 190
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Kazakh
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[54]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 191
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Latvian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[55]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 192
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Lithuanian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[56]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 193
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Macedonian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[57]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 194
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Moldovan
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[58]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 195
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Norwegian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[59]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 196
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Polish
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[60]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 197
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Serbian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[61]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 198
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Sesotho
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[62]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 199
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Slovak
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[63]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 200
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Swedish
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[64]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 201
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Ukrainian
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[65]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 202
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Yoruba
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[66]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 203
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Xhosa
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[67]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 204
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Zulu
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[68]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 205
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Assamese
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[69]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 206
+    ITEM_PARENT  = 136
+    ITEM_DESC    = Swahil
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[70]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 207
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[71]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 208
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[72]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 209
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[73]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 210
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[74]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 211
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[75]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 212
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[76]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 213
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[77]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 214
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[78]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 215
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[79]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 216
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[80]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 217
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[81]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 218
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[82]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 219
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[83]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 220
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[84]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 221
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[85]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 222
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[86]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 223
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[87]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 224
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[88]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 225
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[89]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 226
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[90]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 227
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[91]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 228
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[92]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 229
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[93]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 230
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[94]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 231
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[95]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 232
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[96]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 233
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[97]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 234
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[98]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 235
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = flag[99]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 236
+    ITEM_PARENT  = 136
+    ITEM_DESC    = reserved 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved
+    ITEM_ID      = 405
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 12
+    ITEM_LENGTH  = 112
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 237
+    ITEM_PARENT  = 135
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[0]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 238
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[1]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 239
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[2]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 240
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[3]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 241
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[4]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 242
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[5]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 243
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[6]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 244
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[7]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 245
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[8]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 246
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[9]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 247
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[10]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 248
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[11]
+    ITEM_ID      = 405
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 249
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = wifi_config
+    ITEM_ID      = 409
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 20
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 250
+    ITEM_PARENT  = -1
+    ITEM_DESC    = wifi mac address and tx factor
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = mac_addr
+    ITEM_ID      = 409
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 6
+    ITEM_LENGTH  = 6
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 251
+    ITEM_PARENT  = 250
+    ITEM_DESC    = wifi mac address
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = mac_addr[0]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0xff
+    ITEM_INDEX   = 252
+    ITEM_PARENT  = 251
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = mac_addr[1]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0xff
+    ITEM_INDEX   = 253
+    ITEM_PARENT  = 251
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = mac_addr[2]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0xff
+    ITEM_INDEX   = 254
+    ITEM_PARENT  = 251
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = mac_addr[3]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0xff
+    ITEM_INDEX   = 255
+    ITEM_PARENT  = 251
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = mac_addr[4]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0xff
+    ITEM_INDEX   = 256
+    ITEM_PARENT  = 251
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = mac_addr[5]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0xff
+    ITEM_INDEX   = 257
+    ITEM_PARENT  = 251
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = tx_factor
+    ITEM_ID      = 409
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 5
+    ITEM_LENGTH  = 11
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 258
+    ITEM_PARENT  = 250
+    ITEM_DESC    = wifi tx factor, five level,not useful SC880XG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = tx_factor[0]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 259
+    ITEM_PARENT  = 258
+    ITEM_DESC    = not useful SC880XG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = tx_factor[1]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 260
+    ITEM_PARENT  = 258
+    ITEM_DESC    = not useful SC880XG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = tx_factor[2]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 261
+    ITEM_PARENT  = 258
+    ITEM_DESC    = not useful SC880XG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = tx_factor[3]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 262
+    ITEM_PARENT  = 258
+    ITEM_DESC    = not useful SC880XG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = tx_factor[4]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 263
+    ITEM_PARENT  = 258
+    ITEM_DESC    = not useful SC880XG
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved
+    ITEM_ID      = 409
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 9
+    ITEM_LENGTH  = 20
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 264
+    ITEM_PARENT  = 250
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[0]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 265
+    ITEM_PARENT  = 264
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[1]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 266
+    ITEM_PARENT  = 264
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[2]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 267
+    ITEM_PARENT  = 264
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[3]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 268
+    ITEM_PARENT  = 264
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[4]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 269
+    ITEM_PARENT  = 264
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[5]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 270
+    ITEM_PARENT  = 264
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[6]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 271
+    ITEM_PARENT  = 264
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[7]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 272
+    ITEM_PARENT  = 264
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserved[8]
+    ITEM_ID      = 409
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 273
+    ITEM_PARENT  = 264
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result
+    ITEM_ID      = 431
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 64
+    ITEM_LENGTH  = 64
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 274
+    ITEM_PARENT  = -1
+    ITEM_DESC    = to save the testing result of the enginering mode for #*8378#0#
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[0]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 275
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[1]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 276
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[2]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 277
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[3]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 278
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[4]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 279
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[5]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 280
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[6]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 281
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[7]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 282
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[8]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 283
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[9]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 284
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[10]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 285
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[11]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 286
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[12]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 287
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[13]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 288
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[14]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 289
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[15]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 290
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[16]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 291
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[17]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 292
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[18]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 293
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[19]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 294
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[20]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 295
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[21]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 296
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[22]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 297
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[23]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 298
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[24]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 299
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[25]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 300
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[26]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 301
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[27]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 302
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[28]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 303
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[29]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 304
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[30]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 305
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[31]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 306
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[32]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 307
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[33]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 308
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[34]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 309
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[35]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 310
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[36]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 311
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[37]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 312
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[38]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 313
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[39]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 314
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[40]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 315
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[41]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 316
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[42]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 317
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[43]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 318
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[44]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 319
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[45]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 320
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[46]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 321
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[47]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 322
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[48]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 323
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[49]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 324
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[50]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 325
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[51]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 326
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[52]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 327
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[53]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 328
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[54]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 329
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[55]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 330
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[56]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 331
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[57]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 332
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[58]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 333
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[59]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 334
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[60]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 335
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[61]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 336
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[62]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 337
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = engine_test_result[63]
+    ITEM_ID      = 431
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 338
+    ITEM_PARENT  = 274
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = bt_sprd
+    ITEM_ID      = 442
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 96
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 339
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Blue Tooth config for SPRD
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = host_reserved
+    ITEM_ID      = 442
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 2
+    ITEM_LENGTH  = 8
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 340
+    ITEM_PARENT  = 339
+    ITEM_DESC    = host_reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = host_reserved[0]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x53
+    ITEM_INDEX   = 341
+    ITEM_PARENT  = 340
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = host_reserved[1]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 342
+    ITEM_PARENT  = 340
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = config0
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1006e
+    ITEM_INDEX   = 343
+    ITEM_PARENT  = 339
+    ITEM_DESC    = BT_PSKEY_CONFIG_INFO_SUB_T0
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = device_class
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x001f00
+    ITEM_INDEX   = 344
+    ITEM_PARENT  = 339
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = win_ext
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1E
+    ITEM_INDEX   = 345
+    ITEM_PARENT  = 339
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aGainValue
+    ITEM_ID      = 442
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 6
+    ITEM_LENGTH  = 44
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 346
+    ITEM_PARENT  = 339
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aGainValue[0]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x7A00
+    ITEM_INDEX   = 347
+    ITEM_PARENT  = 346
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aGainValue[1]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x7600
+    ITEM_INDEX   = 348
+    ITEM_PARENT  = 346
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aGainValue[2]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x7200
+    ITEM_INDEX   = 349
+    ITEM_PARENT  = 346
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aGainValue[3]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x5200
+    ITEM_INDEX   = 350
+    ITEM_PARENT  = 346
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aGainValue[4]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x2300
+    ITEM_INDEX   = 351
+    ITEM_PARENT  = 346
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aGainValue[5]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x300
+    ITEM_INDEX   = 352
+    ITEM_PARENT  = 346
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aPowerValue
+    ITEM_ID      = 442
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 5
+    ITEM_LENGTH  = 64
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 353
+    ITEM_PARENT  = 339
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aPowerValue[0]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0xCE418CFE
+    ITEM_INDEX   = 354
+    ITEM_PARENT  = 353
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aPowerValue[1]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0xD2438CFE
+    ITEM_INDEX   = 355
+    ITEM_PARENT  = 353
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aPowerValue[2]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0xD6438CFE
+    ITEM_INDEX   = 356
+    ITEM_PARENT  = 353
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aPowerValue[3]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0xD9888CFE
+    ITEM_INDEX   = 357
+    ITEM_PARENT  = 353
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_aPowerValue[4]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0xDC0D8CF6
+    ITEM_INDEX   = 358
+    ITEM_PARENT  = 353
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = feature_set
+    ITEM_ID      = 442
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 4
+    ITEM_LENGTH  = 80
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 359
+    ITEM_PARENT  = 339
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = feature_set[0]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0xFE8DFFFF
+    ITEM_INDEX   = 360
+    ITEM_PARENT  = 359
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = feature_set[1]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x8379BF9B
+    ITEM_INDEX   = 361
+    ITEM_PARENT  = 359
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = feature_set[2]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x7FFFA7FF
+    ITEM_INDEX   = 362
+    ITEM_PARENT  = 359
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = feature_set[3]
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x3EF7E000
+    ITEM_INDEX   = 363
+    ITEM_PARENT  = 359
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = config1
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x3F300E05
+    ITEM_INDEX   = 364
+    ITEM_PARENT  = 339
+    ITEM_DESC    = uint8 edr_tx_edr_delay; :0x5,uint8 edr_rx_edr_delay;	 :0xe, uint8 uart_rx_watermark;:0x30, uint8 uart_flow_control_thld;:0x3F
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = g_PrintLevel
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0xFFFFFFFF
+    ITEM_INDEX   = 365
+    ITEM_PARENT  = 339
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = config2
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0xDC0D8CF6
+    ITEM_INDEX   = 366
+    ITEM_PARENT  = 339
+    ITEM_DESC    = uint16 debug_bb_gain; 0x8CFB ;uint16 debug_tx_power;0xDC19
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = config3
+    ITEM_ID      = 442
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x88888888
+    ITEM_INDEX   = 367
+    ITEM_PARENT  = 339
+    ITEM_DESC    = 
+  END_ITEM
+
+
+# End Module Item
+
+################################################################################

@@ -1,0 +1,10 @@
+; FileSystem.def : Declares the module parameters for the DLL.
+
+LIBRARY      "FileSystem"
+DESCRIPTION  'FileSystem Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+	CP_AddControlPage
+	CP_CloseControlPage
+	CP_RegisterFuns

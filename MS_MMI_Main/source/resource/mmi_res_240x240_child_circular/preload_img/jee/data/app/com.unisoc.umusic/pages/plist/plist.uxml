@@ -1,0 +1,5 @@
+    <Label   value="{{$t('strings.title')}}" font-size=24 color=0x8000 text-align=center ></Label>
+    <List   item-max=15 background-color=0x0   fontColor=0xffff isScroll=1  value="{{songs}}" fontSize=20 on:click=listClicked />
+
+
+

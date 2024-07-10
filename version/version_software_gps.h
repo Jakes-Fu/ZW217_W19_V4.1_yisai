@@ -1,0 +1,2 @@
+
+#define _MOCOR_GE2_VERSION_ "GE2_W17.43.2"

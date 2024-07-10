@@ -1,0 +1,1090 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// 描述：消息数据结构定义文件
+// 作者：LaoTan
+// 日期：2017-12-25 14:24:38
+// 版本：V0.0.1
+// 版权：CopyRight(c) By RDA
+// 
+// 消息定义格
+//    <MsgID MsgName>
+//         参数名      参数类型      参数基类型        参数含义         参数选项
+//    </MsgID MsgName>
+//
+// 子结构定义
+//    <Sub T_Temp>
+//         参数名      参数类型      参数基类型        参数含义         参数选项
+//    </Sub T_Temp>
+//
+//  一个参数的bit位定义
+//    <Bit T_Var>
+//         成员名      在参数中的Bit位起始位置         成员长度(Bit数)         成员含义       成员选项
+//    </Bit T_Var>
+//
+//  指针类型参数定义
+//     参数名          Ptr           参数基类型         参数含义
+//  e.g:
+//      u16  *pPdschPointer;             ===> pPdschPointer      Ptr   u16             pPdschPointer 
+//      T_PDSCH_MEM  *pPdschMapPointer;  ===> pPdschMapPointer   Ptr   T_PDSCH_MEM     pPdschMapPointer
+//
+//
+// 选项定义：
+//    |input;|                       参数值允许输入
+//    |nochange;|                    参数值不允许改变
+//    |select;值1:含义;值2:含义;|    参数值只能选择
+//    |dismember;名称;|              参数bit定义
+//    |multiedit;|                   数组输入
+//         
+//  注意：
+//      1. 不支持union类型
+//      2. ..:取值范围定义,e.g: 1..5,表示1到5范围
+//      3. 空格符作为各列间的分隔符，如内容中有空格符，使用Tab符代替.
+//      4. 参数基类型，支持u8、u16、u32，s8，s16，s32，自定义子结构、数组、指针类型(Ptr)
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+#define  CFWADPCSM_TRACE_CSM_INPUT_MSG  0x0
+#define  CFWADPCSM_TRACE_CSM_OUTPUT_MSG  0x0
+#define  OP_CSM_OUTPUT_MSG_ID  0xabcd
+#define  CSM_OUTPUT_INVALID_ID  0xffffffff
+#define  CSM_EVENT_STRING_SZ  0x80
+#define  CSM_EVENT_LONG_STRING_SZ  0x1ff
+#define  CSM_EVENT_MAX_CALL_LIST_SIZE  0x6
+#define  CSM_AUDIO_CODER_NUM  0x2
+#define  CSM_VIDEO_CODER_NUM  0x2
+#define  CSM_CODER_NUM  0x4
+#define  CSM_CODER_STRING_SZ  0x1f
+#define  CSM_CODER_DESCRIPTION_STRING_SZ  0xff
+#define  CSM_PROFILE_DESCRIPTION_STRING_SZ  0xff
+#define  CSM_NUMBER_STRING_SZ  0x50
+#define  CSM_UNMATCHED_NUM_COUNT  0x1
+#define  CSM_ALPHA_STRING_SZ  0x80
+#define  CSM_SMS_STRING_SZ  0x200
+#define  CSM_SMS_SMSC_NUM_SZ  0xc
+#define  CSM_SMS_CALL_ID_SZ  0x100
+#define  CSM_FQDN_STRING_SZ  0xff
+#define  CSM_SUPSRV_PARAM_STRING_SZ  0x10
+#define  CSM_CGI_STRING_SZ  0x40
+#define  CSM_LOCATION_STRING_SZ  0x14
+#define  CSM_PLMN_STRING_SZ  0x6
+#define  CSM_LAC_STRING_SZ  0x4
+#define  CSM_TAC_STRING_SZ  0x4
+#define  CSM_CI_STRING_SZ  0x4
+#define  CSM_UMTS_CID_STRING_SZ  0x7
+#define  CSM_ECI_STRING_SZ  0x7
+#define  CSM_URI_STRING_SZ  0x80
+#define  CSM_USSD_STRING_SZ  0x400
+#define  CSM_USSD_ERROR_CODE_SZ  0x8
+#define  CSM_USSD_LANGUAGE_SZ  0x20
+#define  CSM_AKA_RAND_STRING_SZ  0x10
+#define  CSM_AKA_AUTN_STRING_SZ  0x10
+#define  CSM_AKA_RESP_STRING_SZ  0x10
+#define  CSM_AKA_IK_STRING_SZ  0x10
+#define  CSM_AKA_CK_STRING_SZ  0x10
+#define  CSM_AKA_AUTS_STRING_SZ  0xe
+#define  CSM_MAX_MEDIA_NUM  0x2
+#define  CSM_MAX_IP_FLOW_NUM  0x2
+#define  CSM_IP_ADDRESS_STRING_SZ  0x80
+#define  CSM_HISTORY_INDEX_STRING_SZ  0x8
+#define  CSM_HISTORY_MAX_LIST_SIZE  0x3
+#define  CSM_INSTANCE_STRING_SZ  0x40
+#define  CSM_ERROR_CODE_SIP_START  0x12c
+#define  CSM_ERROR_CODE_SIP_UNAUTH  0x191
+#define  CSM_ERROR_CODE_SIP_SERVICE_UNAVAILABLE  0x1f7
+#define  CSM_ERROR_CODE_SIP_END  0x2bb
+#define  CSM_SUPSRV_MAX_QUERY_RESULT  0x5
+#define  CSM_SUPSRV_MEDIA_TYPE_NUM  0x2
+#define  CSM_INPUT_EVENT_QUEUE_NAME  0x0
+#define  CSM_OUTPUT_EVENT_QUEUE_NAME  0x0
+#define  CSM_OUTPUT_ISIM_EVENT_QUEUE_NAME  0x0
+#define  CSM_INPUT_EVENT_QUEUE_NAME  0x0
+#define  CSM_OUTPUT_EVENT_QUEUE_NAME  0x0
+#define  CSM_OUTPUT_ISIM_EVENT_QUEUE_NAME  0x0
+#define  CSM_INPUT_EVENT_MSGQ_LEN  0x10
+#define  CSM_OUTPUT_EVENT_MSGQ_LEN  0x8
+#define  CSM_OUTPUT_ISIM_EVENT_MSGQ_LEN  0x8
+#define  IR92_DEBUG_TAG  0x0
+#define  MN_IMS_CALL_REASON_DESC_TCALL  0x0
+
+
+
+<sub CSM_InputCallGain>
+    tx  s32  s32  tx  |input;|
+    rx  s32  s32  rx  |input;|
+</sub CSM_InputCallGain>
+
+
+<sub CSM_ResourceStatus_Ipc>
+    callId         s32    s32    callId         |input;|
+    audioReady     s32    s32    audioReady     |input;|
+    videoReady     s32    s32    videoReady     |input;|
+    mbr_ul         u32    u32    mbr_ul         |input;|
+    mbr_dl         u32    u32    mbr_dl         |input;|
+    gbr_ul         u32    u32    gbr_ul         |input;|
+    gbr_dl         u32    u32    gbr_dl         |input;|
+    is_final_rslt  s8     s8     is_final_rslt  |input;|
+    reserved_1[3]  array  s8     reserved_1     |multiedit;|
+</sub CSM_ResourceStatus_Ipc>
+
+
+<sub CSM_InputCallMix>
+    call_index     s32    s32    call_index     |input;|
+    callmix_type   u8     u8     callmix_type   |input;|
+    reserved_1[3]  array  u8     reserved_1     |multiedit;|
+</sub CSM_InputCallMix>
+
+
+<union CSM_InputCallUnion>
+    remoteAddress[CSM_ALPHA_STRING_SZ+1]          array                   s8                      remoteAddress                                 |multiedit;|
+    remoteParticipants[CSM_EVENT_LONG_STRING_SZ]  array                   s8                      remoteParticipants                            |multiedit;|
+    errorCode                                     s32                     s32                     errorCode                                     |input;|
+    digit                                         s8                      s8                      digit                                         |input;|
+    callIndex                                     s32                     s32                     callIndex                                     |input;|
+    aecEnable                                     s32                     s32                     aecEnable                                     |input;|
+    gain                                          struct                  CSM_InputCallGain       
+    resourceStatus                                struct                  CSM_ResourceStatus_Ipc  
+    ho_type                                       u8                      u8                      ho_type                                       |input;|
+    is_SrvccSupport                               s32                     s32                     is_SrvccSupport                               |input;|
+    call_mix                                      struct                  CSM_InputCallMix        
+    reserved_1[CSM_EVENT_LONG_STRING_SZ+1]        array                   s8                      reserved_1                                    |multiedit;|
+</union CSM_InputCallUnion>
+
+
+<sub CSM_InputCall_Ipc>
+    type                               u8                  u8                  type                               |input;|
+    reason                             u8                  u8                  reason                             |input;|
+    reasonDesc[CSM_EVENT_STRING_SZ+1]  array               s8                  reasonDesc                         |multiedit;|
+    reserved_1                         u8                  u8                  reserved_1                         |input;|
+    extraArgument                      s32                 s32                 extraArgument                      |input;|
+    isEmergency                        s32                 s32                 isEmergency                        |input;|
+    emergencyType                      u8                  u8                  emergencyType                      |input;|
+    cidType                            u8                  u8                  cidType                            |input;|
+    reserved_2[2]                      array               u8                  reserved_2                         |multiedit;|
+    isRsrcReady                        s32                 s32                 isRsrcReady                        |input;|
+    negStatus                          u8                  u8                  negStatus                          |input;|
+    callSessionType                    u8                  u8                  callSessionType                    |input;|
+    reserved_3[2]                      array               u8                  reserved_3                         |multiedit;|
+    unionType                          u32                 u32                 unionType                          |input;|
+    u                                  union               CSM_InputCallUnion  
+    isEncrypted                        s32                 s32                 isEncrypted                        |input;|
+    latitude[CSM_LOCATION_STRING_SZ]   array               s8                  latitude                           |multiedit;|
+    longitude[CSM_LOCATION_STRING_SZ]  array               s8                  longitude                          |multiedit;|
+    islocalhold                        s32                 s32                 islocalhold                        |input;|
+</sub CSM_InputCall_Ipc>
+
+
+<sub CSM_InputSms_Ipc>
+    reason                                u8     u8     reason                                |input;|
+    type                                  u8     u8     type                                  |input;|
+    reasonDesc[CSM_EVENT_STRING_SZ+1]     array  s8     reasonDesc                            |multiedit;|
+    remoteAddress[CSM_ALPHA_STRING_SZ+1]  array  s8     remoteAddress                         |multiedit;|
+    message[CSM_SMS_STRING_SZ+1]          array  s8     message                               |multiedit;|
+    pdu[CSM_SMS_STRING_SZ+1]              array  s8     pdu                                   |multiedit;|
+    reserved_1[2]                         array  s8     reserved_1                            |multiedit;|
+    msgLen                                s32    s32    msgLen                                |input;|
+    smsc[CSM_ALPHA_STRING_SZ+1]           array  s8     smsc                                  |multiedit;|
+    reserved_2[3]                         array  s8     reserved_2                            |multiedit;|
+    mr                                    u16    u16    mr                                    |input;|
+    error_cause                           s8     s8     error_cause                           |input;|
+    isEmergSms                            s8     s8     isEmergSms                            |input;|
+</sub CSM_InputSms_Ipc>
+
+
+<sub CSM_InputServiceUnionCgi>
+    type                     u8     u8     type                     |input;|
+    reserved_1[3]            array  u8     reserved_1               |multiedit;|
+    is_handover              s32    s32    is_handover              |input;|
+    id[CSM_CGI_STRING_SZ+1]  array  s8     id                       |multiedit;|
+    reserved_2[3]            array  s8     reserved_2               |multiedit;|
+</sub CSM_InputServiceUnionCgi>
+
+
+<sub CSM_InputServiceUnionAka>
+    response[CSM_AKA_RESP_STRING_SZ]  array  s8     response                          |multiedit;|
+    resLength                         s32    s32    resLength                         |input;|
+    auts[CSM_AKA_AUTS_STRING_SZ]      array  s8     auts                              |multiedit;|
+    ik[CSM_AKA_IK_STRING_SZ]          array  s8     ik                                |multiedit;|
+    ck[CSM_AKA_CK_STRING_SZ]          array  s8     ck                                |multiedit;|
+    reserved_1[2]                     array  s8     reserved_1                        |multiedit;|
+</sub CSM_InputServiceUnionAka>
+
+
+<sub CSM_InputServiceUnionIpsec>
+    protectedPort        s32  s32  protectedPort        |input;|
+    protectedPortPoolSz  s32  s32  protectedPortPoolSz  |input;|
+    spi                  s32  s32  spi                  |input;|
+    spiPoolSz            s32  s32  spiPoolSz            |input;|
+</sub CSM_InputServiceUnionIpsec>
+
+
+<sub CSM_InputServiceUnionPort>
+    sip            s32  s32  sip            |input;|
+    audio          s32  s32  audio          |input;|
+    audioPoolSize  s32  s32  audioPoolSize  |input;|
+    video          s32  s32  video          |input;|
+    videoPoolSize  s32  s32  videoPoolSize  |input;|
+</sub CSM_InputServiceUnionPort>
+
+
+<sub CSM_InputServiceUnionCoder>
+    coderNum                                                            s32                                                                 s32                                                                 coderNum                                                            |input;|
+    coderPayloadType[CSM_CODER_NUM]                                     array                                                               s32                                                                 coderPayloadType                                                    |multiedit;|
+    coderName[CSM_CODER_NUM]                                            array                                                               T_coderName                                                         coderName                                                           |multiedit;|
+    coderDescription[CSM_CODER_NUM]                                     array                                                               T_coderDescription                                                  coderDescription                                                    |multiedit;|
+</sub CSM_InputServiceUnionCoder>
+
+
+<sub T_coderName
+    coderName[CSM_CODER_STRING_SZ+1]                                    array                                                               s8                                                                  coderName                                                           |multiedit;|
+</sub T_coderName
+
+
+<sub T_coderDescription
+    coderDescription[CSM_CODER_DESCRIPTION_STRING_SZ+1]                 array                                                               s8                                                                  coderDescription                                                    |multiedit;|
+</sub T_coderDescription
+
+
+<sub CSM_InputServiceUnionMediaProfile>
+    profile_id                                         s32    s32    profile_id                                         |input;|
+    profile_desc[CSM_PROFILE_DESCRIPTION_STRING_SZ+1]  array  s8     profile_desc                                       |multiedit;|
+</sub CSM_InputServiceUnionMediaProfile>
+
+
+<sub CSM_InputServiceUnionSsac>
+    voice_barring_factor  s32  s32  voice_barring_factor  |input;|
+    voice_barring_time    s32  s32  voice_barring_time    |input;|
+    video_barring_factor  s32  s32  video_barring_factor  |input;|
+    video_barring_time    s32  s32  video_barring_time    |input;|
+</sub CSM_InputServiceUnionSsac>
+
+
+<sub CSM_ServiceAppObj_Ipc>
+    appName[CSM_EVENT_STRING_SZ]        array  s8     appName                             |multiedit;|
+    appUri[CSM_FQDN_STRING_SZ]          array  s8     appUri                              |multiedit;|
+    appAuthType                         u8     u8     appAuthType                         |input;|
+    appAuthName[CSM_EVENT_STRING_SZ]    array  s8     appAuthName                         |multiedit;|
+    appAuthSecret[CSM_EVENT_STRING_SZ]  array  s8     appAuthSecret                       |multiedit;|
+    appAuthSecretLength                 s32    s32    appAuthSecretLength                 |input;|
+</sub CSM_ServiceAppObj_Ipc>
+
+
+<sub CSM_ServiceAppsProvision_Ipc>
+    bsf[CSM_FQDN_STRING_SZ]  array                  s8                     bsf                      |multiedit;|
+    reserved_1               s8                     s8                     reserved_1               |input;|
+    xcapAppInfo              struct                 CSM_ServiceAppObj_Ipc  
+</sub CSM_ServiceAppsProvision_Ipc>
+
+
+<union CSM_InputServiceUnion>
+    cgi                                     struct                             CSM_InputServiceUnionCgi           
+    aka                                     struct                             CSM_InputServiceUnionAka           
+    ipsec                                   struct                             CSM_InputServiceUnionIpsec         
+    port                                    struct                             CSM_InputServiceUnionPort          
+    coder                                   struct                             CSM_InputServiceUnionCoder         
+    media_profile                           struct                             CSM_InputServiceUnionMediaProfile  
+    ssac                                    struct                             CSM_InputServiceUnionSsac          
+    pcscf[CSM_EVENT_LONG_STRING_SZ+1]       array                              s8                                 pcscf                                   |multiedit;|
+    domain[CSM_EVENT_STRING_SZ+1]           array                              s8                                 domain                                  |multiedit;|
+    impi[CSM_EVENT_STRING_SZ+1]             array                              s8                                 impi                                    |multiedit;|
+    impu[CSM_EVENT_STRING_SZ+1]             array                              s8                                 impu                                    |multiedit;|
+    password[CSM_EVENT_STRING_SZ+1]         array                              s8                                 password                                |multiedit;|
+    imeiUri[CSM_EVENT_STRING_SZ+1]          array                              s8                                 imeiUri                                 |multiedit;|
+    instanceId[CSM_INSTANCE_STRING_SZ+1]    array                              s8                                 instanceId                              |multiedit;|
+    audioConfServer[CSM_EVENT_STRING_SZ+1]  array                              s8                                 audioConfServer                         |multiedit;|
+    videoConfServer[CSM_EVENT_STRING_SZ+1]  array                              s8                                 videoConfServer                         |multiedit;|
+    appsProvision                           struct                             CSM_ServiceAppsProvision_Ipc       
+    volteService                            s32                                s32                                volteService                            |input;|
+    extraArgument                           s32                                s32                                extraArgument                           |input;|
+    is_smsoverip                            s32                                s32                                is_smsoverip                            |input;|
+    serviceType                             s32                                s32                                serviceType                             |input;|
+    userAgent[CSM_EVENT_STRING_SZ+1]        array                              s8                                 userAgent                               |multiedit;|
+</union CSM_InputServiceUnion>
+
+
+<sub CSM_InputService_Ipc>
+    reason                             u8                     u8                     reason                             |input;|
+    reasonDesc[CSM_EVENT_STRING_SZ+1]  array                  s8                     reasonDesc                         |multiedit;|
+    reserved_1[2]                      array                  s8                     reserved_1                         |multiedit;|
+    isEmergency                        s32                    s32                    isEmergency                        |input;|
+    unionType                          u32                    u32                    unionType                          |input;|
+    u                                  union                  CSM_InputServiceUnion  
+</sub CSM_InputService_Ipc>
+
+
+<sub CSM_InputRadio_Ipc>
+    reason                             u8     u8     reason                             |input;|
+    networkType                        u8     u8     networkType                        |input;|
+    ipAddrType                         u8     u8     ipAddrType                         |input;|
+    reserved_1                         u8     u8     reserved_1                         |input;|
+    address[CSM_IP_ADDRESS_STRING_SZ]  array  s8     address                            |multiedit;|
+    nsapi                              s32    s32    nsapi                              |input;|
+    infcName[CSM_EVENT_STRING_SZ+1]    array  s8     infcName                           |multiedit;|
+    reserved_2[3]                      array  s8     reserved_2                         |multiedit;|
+    isEmergencyFailoverToCs            s32    s32    isEmergencyFailoverToCs            |input;|
+    isEmergencyRegRequired             s32    s32    isEmergencyRegRequired             |input;|
+</sub CSM_InputRadio_Ipc>
+
+
+<union CSM_SupSrvMode_Ipc>
+    cbMode         u8     u8     cbMode         |input;|
+    cfMode         u8     u8     cfMode         |input;|
+    reserved_1[4]  array  u8     reserved_1     |multiedit;|
+</union CSM_SupSrvMode_Ipc>
+
+
+<union CSM_SupSrvReqStatus_Ipc>
+    oirReqStatus   u8     u8     oirReqStatus   |input;|
+    genReqStatus   u8     u8     genReqStatus   |input;|
+    reserved_1[4]  array  u8     reserved_1     |multiedit;|
+</union CSM_SupSrvReqStatus_Ipc>
+
+
+<sub CSM_Address_Ipc>
+    type                            u8     u8     type                            |input;|
+    numberType                      u8     u8     numberType                      |input;|
+    number[CSM_NUMBER_STRING_SZ+1]  array  s8     number                          |multiedit;|
+    alpha[CSM_ALPHA_STRING_SZ+1]    array  s8     alpha                           |multiedit;|
+</sub CSM_Address_Ipc>
+
+
+<sub CSM_SupSrvRuleParams_Ipc>
+    noReplyTimer                                   s32              s32              noReplyTimer                                   |input;|
+    mediaType[CSM_SUPSRV_PARAM_STRING_SZ]          array            s8               mediaType                                      |multiedit;|
+    timeRangeOfTheDay[CSM_SUPSRV_PARAM_STRING_SZ]  array            s8               timeRangeOfTheDay                              |multiedit;|
+    cfwTarget                                      struct           CSM_Address_Ipc  
+</sub CSM_SupSrvRuleParams_Ipc>
+
+
+<sub CSM_InputSupSrv_Ipc>
+    reason                             u8                        u8                        reason                             |input;|
+    reasonDesc[CSM_EVENT_STRING_SZ+1]  array                     s8                        reasonDesc                         |multiedit;|
+    reserved_1[2]                      array                     s8                        reserved_1                         |multiedit;|
+    unionType_1                        u32                       u32                       unionType_1                        |input;|
+    mode                               union                     CSM_SupSrvMode_Ipc        
+    unionType_2                        u32                       u32                       unionType_2                        |input;|
+    status                             union                     CSM_SupSrvReqStatus_Ipc   
+    unionType_3                        u32                       u32                       unionType_3                        |input;|
+    ruleParams                         struct                    CSM_SupSrvRuleParams_Ipc  
+    updateStyle                        u8                        u8                        updateStyle                        |input;|
+    reserved_2[3]                      array                     u8                        reserved_2                         |multiedit;|
+</sub CSM_InputSupSrv_Ipc>
+
+
+<sub CSM_InputUssd_Ipc>
+    reason                             u8     u8     reason                             |input;|
+    reasonDesc[CSM_EVENT_STRING_SZ+1]  array  s8     reasonDesc                         |multiedit;|
+    encType                            u8     u8     encType                            |input;|
+    message[CSM_USSD_STRING_SZ+1]      array  s8     message                            |multiedit;|
+</sub CSM_InputUssd_Ipc>
+
+
+<union CSM_InputEventUnion>
+    call     struct                CSM_InputCall_Ipc     
+    sms      struct                CSM_InputSms_Ipc      
+    service  struct                CSM_InputService_Ipc  
+    radio    struct                CSM_InputRadio_Ipc    
+    supSrv   struct                CSM_InputSupSrv_Ipc   
+    ussd     struct                CSM_InputUssd_Ipc     
+</union CSM_InputEventUnion>
+
+
+<0x1502 OP_CSM_InputEvent>
+    ref_count      u8                   u8                   ref_count      |input;|
+    type           u8                   u8                   type           |input;|
+    reserved_1[2]  array                u8                   reserved_1     |multiedit;|
+    unionType      u32                  u32                  unionType      |input;|
+    evt            union                CSM_InputEventUnion  
+</0x1502 OP_CSM_InputEvent>
+
+
+<sub CSM_CallSummary_Ipc>
+    idx                                            s32    s32    idx                                            |input;|
+    direction                                      u8     u8     direction                                      |input;|
+    negStatus                                      u8     u8     negStatus                                      |input;|
+    status                                         u8     u8     status                                         |input;|
+    reserved_1                                     u8     u8     reserved_1                                     |input;|
+    state                                          s32    s32    state                                          |input;|
+    mode                                           u8     u8     mode                                           |input;|
+    isMultiParty                                   u8     u8     isMultiParty                                   |input;|
+    numberType                                     u8     u8     numberType                                     |input;|
+    number[CSM_NUMBER_STRING_SZ+1]                 array  s8     number                                         |multiedit;|
+    normalizedAddress[CSM_ALPHA_STRING_SZ+1]       array  s8     normalizedAddress                              |multiedit;|
+    type                                           u8     u8     type                                           |input;|
+    alpha[CSM_ALPHA_STRING_SZ+1]                   array  s8     alpha                                          |multiedit;|
+    reserved_2                                     s8     s8     reserved_2                                     |input;|
+    callSessionType                                s32    s32    callSessionType                                |input;|
+    coderSdpMd[CSM_CODER_DESCRIPTION_STRING_SZ+1]  array  s8     coderSdpMd                                     |multiedit;|
+    is_srvcc_alerting_support                      s32    s32    is_srvcc_alerting_support                      |input;|
+    is_mid_call_support                            s32    s32    is_mid_call_support                            |input;|
+    is_srvcc_orig_pre_alerting_support             s32    s32    is_srvcc_orig_pre_alerting_support             |input;|
+    is_video_support                               s32    s32    is_video_support                               |input;|
+</sub CSM_CallSummary_Ipc>
+
+
+<sub CSM_CallReport_Ipc>
+    numCalls                             s32                  s32                  numCalls                             |input;|
+    calls[CSM_EVENT_MAX_CALL_LIST_SIZE]  array                CSM_CallSummary_Ipc  calls                                |multiedit;|
+</sub CSM_CallReport_Ipc>
+
+
+<sub CSM_CallClip_Ipc>
+    number[CSM_NUMBER_STRING_SZ+1]            array  s8     number                                    |multiedit;|
+    type                                      u8     u8     type                                      |input;|
+    alpha[CSM_ALPHA_STRING_SZ+1]              array  s8     alpha                                     |multiedit;|
+    reserved_1                                s8     s8     reserved_1                                |input;|
+    callSessionType                           s32    s32    callSessionType                           |input;|
+    direction                                 u8     u8     direction                                 |input;|
+    normalizedAddress[CSM_ALPHA_STRING_SZ+1]  array  s8     normalizedAddress                         |multiedit;|
+    reserved_2[2]                             array  s8     reserved_2                                |multiedit;|
+</sub CSM_CallClip_Ipc>
+
+
+<sub CSM_CallSrvcc_Ipc>
+    result         u8     u8     result         |input;|
+    reserved_1[3]  array  u8     reserved_1     |multiedit;|
+    callId         s32    s32    callId         |input;|
+</sub CSM_CallSrvcc_Ipc>
+
+
+<sub CSM_CallHistory_Ipc>
+    cause                                     s32    s32    cause                                     |input;|
+    hiIndex[CSM_HISTORY_INDEX_STRING_SZ]      array  s8     hiIndex                                   |multiedit;|
+    number[CSM_NUMBER_STRING_SZ+1]            array  s8     number                                    |multiedit;|
+    type                                      u8     u8     type                                      |input;|
+    alpha[CSM_ALPHA_STRING_SZ+1]              array  s8     alpha                                     |multiedit;|
+    normalizedAddress[CSM_ALPHA_STRING_SZ+1]  array  s8     normalizedAddress                         |multiedit;|
+</sub CSM_CallHistory_Ipc>
+
+
+<sub CSM_CallSupsrvInfoParticipant>
+    status                          u8     u8     status                          |input;|
+    number[CSM_NUMBER_STRING_SZ+1]  array  s8     number                          |multiedit;|
+    reserved_1[2]                   array  s8     reserved_1                      |multiedit;|
+</sub CSM_CallSupsrvInfoParticipant>
+
+
+<sub CSM_CallSupsrvInfo_Ipc>
+    idx                                       s32                            s32                            idx                                       |input;|
+    supsrvNotification                        s32                            s32                            supsrvNotification                        |input;|
+    numHistories                              s32                            s32                            numHistories                              |input;|
+    callHistories[CSM_HISTORY_MAX_LIST_SIZE]  array                          CSM_CallHistory_Ipc            callHistories                             |multiedit;|
+    uniVideoStatus                            u8                             u8                             uniVideoStatus                            |input;|
+    reserved_1[3]                             array                          u8                             reserved_1                                |multiedit;|
+    participant                               struct                         CSM_CallSupsrvInfoParticipant  
+</sub CSM_CallSupsrvInfo_Ipc>
+
+
+<sub CSM_RadioResourceMedia_Ipc>
+    callId        s32  s32  callId        |input;|
+    audioRtpPort  s32  s32  audioRtpPort  |input;|
+    videoRtpPort  s32  s32  videoRtpPort  |input;|
+</sub CSM_RadioResourceMedia_Ipc>
+
+
+<sub CSM_CallMediaDir_Ipc>
+    audioDir  s32  s32  audioDir  |input;|
+    videoDir  s32  s32  videoDir  |input;|
+</sub CSM_CallMediaDir_Ipc>
+
+
+<sub CSM_MediaQuality>
+    latency      s32  s32  latency      |input;|
+    loss         s32  s32  loss         |input;|
+    jitter       s32  s32  jitter       |input;|
+    rtp_timeout  s32  s32  rtp_timeout  |input;|
+</sub CSM_MediaQuality>
+
+
+<union CSM_OutputCallUnion>
+    address[CSM_NUMBER_STRING_SZ+1]  array                       s8                          address                          |multiedit;|
+    report                           struct                      CSM_CallReport_Ipc          
+    errorCode                        s32                         s32                         errorCode                        |input;|
+    clipReport                       struct                      CSM_CallClip_Ipc            
+    srvcc                            struct                      CSM_CallSrvcc_Ipc           
+    digit                            s8                          s8                          digit                            |input;|
+    supsrvInfo                       struct                      CSM_CallSupsrvInfo_Ipc      
+    resourceMedia                    struct                      CSM_RadioResourceMedia_Ipc  
+    isEarlyMedia                     s32                         s32                         isEarlyMedia                     |input;|
+    isVoiceHD                        s32                         s32                         isVoiceHD                        |input;|
+    mediaDir                         struct                      CSM_CallMediaDir_Ipc        
+    evtResult                        s32                         s32                         evtResult                        |input;|
+    mediaQuality                     struct                      CSM_MediaQuality            
+</union CSM_OutputCallUnion>
+
+
+<sub CSM_OutputCall_Ipc>
+    reason                             u8                   u8                   reason                             |input;|
+    reasonDesc[CSM_EVENT_STRING_SZ+1]  array                s8                   reasonDesc                         |multiedit;|
+    reserved_1[2]                      array                s8                   reserved_1                         |multiedit;|
+    unionType                          u32                  u32                  unionType                          |input;|
+    u                                  union                CSM_OutputCallUnion  
+    isConferenceIncoming               s32                  s32                  isConferenceIncoming               |input;|
+    callid_Bitmap                      s8                   s8                   callid_Bitmap                      |input;|
+    reserved_2[3]                      array                s8                   reserved_2                         |multiedit;|
+    callIdx                            s32                  s32                  callIdx                            |input;|
+    profile_id                         s8                   s8                   profile_id                         |input;|
+    reserved_3[3]                      array                s8                   reserved_3                         |multiedit;|
+    isEncrypted                        s32                  s32                  isEncrypted                        |input;|
+</sub CSM_OutputCall_Ipc>
+
+
+<sub CSM_OutputSmsMsg>
+    body[CSM_SMS_STRING_SZ+1]    array  s8     body                         |multiedit;|
+    reserved_1[3]                array  s8     reserved_1                   |multiedit;|
+    len                          s32    s32    len                          |input;|
+    numOfMessage                 s32    s32    numOfMessage                 |input;|
+    scts[CSM_ALPHA_STRING_SZ+1]  array  s8     scts                         |multiedit;|
+    dcs                          u8     u8     dcs                          |input;|
+    smsc[CSM_SMS_SMSC_NUM_SZ]    array  s8     smsc                         |multiedit;|
+    smsc_len                     s8     s8     smsc_len                     |input;|
+    reserved_2                   s8     s8     reserved_2                   |input;|
+</sub CSM_OutputSmsMsg>
+
+
+<union CSM_OutputSmsUnion>
+    msg         struct            CSM_OutputSmsMsg  
+    reportType  u8                u8                reportType  |input;|
+</union CSM_OutputSmsUnion>
+
+
+<sub CSM_OutputSms_Ipc>
+    reason                             u8                  u8                  reason                             |input;|
+    reasonDesc[CSM_EVENT_STRING_SZ+1]  array               s8                  reasonDesc                         |multiedit;|
+    address[CSM_ALPHA_STRING_SZ+1]     array               s8                  address                            |multiedit;|
+    reserved_1                         u8                  u8                  reserved_1                         |input;|
+    mr                                 u16                 u16                 mr                                 |input;|
+    errorCode                          u16                 u16                 errorCode                          |input;|
+    unionType                          u32                 u32                 unionType                          |input;|
+    u                                  union               CSM_OutputSmsUnion  
+    isEmergSms                         s8                  s8                  isEmergSms                         |input;|
+    reserved_2[3]                      array               u8                  reserved_2                         |multiedit;|
+</sub CSM_OutputSms_Ipc>
+
+
+<sub CSM_OutputServiceAka>
+    akaRand[CSM_AKA_RAND_STRING_SZ]  array  s8     akaRand                          |multiedit;|
+    akaAutn[CSM_AKA_AUTN_STRING_SZ]  array  s8     akaAutn                          |multiedit;|
+</sub CSM_OutputServiceAka>
+
+
+<sub CSM_OutputServiceIpsec>
+    localIpAddress[CSM_IP_ADDRESS_STRING_SZ+1]   array  s8     localIpAddress                               |multiedit;|
+    remoteIpAddress[CSM_IP_ADDRESS_STRING_SZ+1]  array  s8     remoteIpAddress                              |multiedit;|
+    reserved_1[2]                                array  s8     reserved_1                                   |multiedit;|
+    portUc                                       s32    s32    portUc                                       |input;|
+    portUs                                       s32    s32    portUs                                       |input;|
+    portPc                                       s32    s32    portPc                                       |input;|
+    portPs                                       s32    s32    portPs                                       |input;|
+    spiUc                                        s32    s32    spiUc                                        |input;|
+    spiUs                                        s32    s32    spiUs                                        |input;|
+    spiPc                                        s32    s32    spiPc                                        |input;|
+    spiPs                                        s32    s32    spiPs                                        |input;|
+</sub CSM_OutputServiceIpsec>
+
+
+<sub CSM_OutputServiceNotify>
+    type           u8     u8     type           |input;|
+    reserved_1[3]  array  u8     reserved_1     |multiedit;|
+</sub CSM_OutputServiceNotify>
+
+
+<sub CSM_OutputServiceLocalIpAddr>
+    address[CSM_IP_ADDRESS_STRING_SZ+1]  array  s8     address                              |multiedit;|
+    reserved_1[3]                        array  s8     reserved_1                           |multiedit;|
+</sub CSM_OutputServiceLocalIpAddr>
+
+
+<union CSM_OutputServiceUnion>
+    aka             struct                        CSM_OutputServiceAka          
+    ipsec           struct                        CSM_OutputServiceIpsec        
+    notify          struct                        CSM_OutputServiceNotify       
+    localIpAddress  struct                        CSM_OutputServiceLocalIpAddr  
+</union CSM_OutputServiceUnion>
+
+
+<sub CSM_OutputService_Ipc>
+    reason                             u8                      u8                      reason                             |input;|
+    reasonDesc[CSM_EVENT_STRING_SZ+1]  array                   s8                      reasonDesc                         |multiedit;|
+    state                              u8                      u8                      state                              |input;|
+    reserved_1                         s8                      s8                      reserved_1                         |input;|
+    errorCode                          s32                     s32                     errorCode                          |input;|
+    isEmergency                        s32                     s32                     isEmergency                        |input;|
+    unionType                          u32                     u32                     unionType                          |input;|
+    u                                  union                   CSM_OutputServiceUnion  
+</sub CSM_OutputService_Ipc>
+
+
+<union CSM_SupSrvResStatus_Ipc>
+    oirResStatus   u8     u8     oirResStatus   |input;|
+    genResStatus   u8     u8     genResStatus   |input;|
+    reserved_1[4]  array  u8     reserved_1     |multiedit;|
+</union CSM_SupSrvResStatus_Ipc>
+
+
+<union CSM_SupSrvProvision_Ipc>
+    oirProv        u8     u8     oirProv        |input;|
+    tirProv        u8     u8     tirProv        |input;|
+    genProv        u8     u8     genProv        |input;|
+    reserved_1[4]  array  u8     reserved_1     |multiedit;|
+</union CSM_SupSrvProvision_Ipc>
+
+
+<union CSM_OutputSupSrvUnion>
+    ruleParams[CSM_SUPSRV_MEDIA_TYPE_NUM]                               array                                                               T_ruleParams                                                        ruleParams                                                          |multiedit;|
+</union CSM_OutputSupSrvUnion>
+
+
+<sub T_ruleParams
+    ruleParams[CSM_SUPSRV_MAX_QUERY_RESULT]                             array                                                               CSM_SupSrvRuleParams_Ipc                                            ruleParams                                                          |multiedit;|
+</sub T_ruleParams
+
+
+<sub CSM_OutputSupSrv_Ipc>
+    reason                                                            u8                                                                u8                                                                reason                                                            |input;|
+    reasonDesc[CSM_EVENT_STRING_SZ+1]                                 array                                                             s8                                                                reasonDesc                                                        |multiedit;|
+    cmdType                                                           u8                                                                u8                                                                cmdType                                                           |input;|
+    reserved_1                                                        u8                                                                u8                                                                reserved_1                                                        |input;|
+    unionType_1                                                       u32                                                               u32                                                               unionType_1                                                       |input;|
+    mode                                                              union                                                             CSM_SupSrvMode_Ipc                                                
+    unionType_2                                                       u32                                                               u32                                                               unionType_2                                                       |input;|
+    queryEnb[CSM_SUPSRV_MEDIA_TYPE_NUM]                               array                                                             T_queryEnb                                                        queryEnb                                                          |multiedit;|
+    unionType_3                                                       u32                                                               u32                                                               unionType_3                                                       |input;|
+    prov                                                              union                                                             CSM_SupSrvProvision_Ipc                                           
+    errorCode                                                         u16                                                               u16                                                               errorCode                                                         |input;|
+    reserved_2[2]                                                     array                                                             u8                                                                reserved_2                                                        |multiedit;|
+    unionType_4                                                       u32                                                               u32                                                               unionType_4                                                       |input;|
+    u                                                                 union                                                             CSM_OutputSupSrvUnion                                             
+</sub CSM_OutputSupSrv_Ipc>
+
+
+<sub T_queryEnb
+    queryEnb[CSM_SUPSRV_MAX_QUERY_RESULT]                             array                                                             CSM_SupSrvResStatus_Ipc                                           queryEnb                                                          |multiedit;|
+</sub T_queryEnb
+
+
+<sub CSM_OutputUssd_Ipc>
+    reason                             u8     u8     reason                             |input;|
+    reasonDesc[CSM_EVENT_STRING_SZ+1]  array  s8     reasonDesc                         |multiedit;|
+    encType                            u8     u8     encType                            |input;|
+    message[CSM_USSD_STRING_SZ+1]      array  s8     message                            |multiedit;|
+    errorCode                          u16    u16    errorCode                          |input;|
+    reserved_1[2]                      array  u8     reserved_1                         |multiedit;|
+</sub CSM_OutputUssd_Ipc>
+
+
+<union CSM_OutputEventUnion>
+    call     struct                 CSM_OutputCall_Ipc     
+    sms      struct                 CSM_OutputSms_Ipc      
+    service  struct                 CSM_OutputService_Ipc  
+    supSrv   struct                 CSM_OutputSupSrv_Ipc   
+    ussd     struct                 CSM_OutputUssd_Ipc     
+</union CSM_OutputEventUnion>
+
+
+<0x1501 OP_CSM_OutputEvent>
+    ref_count      u8                    u8                    ref_count      |input;|
+    type           s8                    s8                    type           |input;|
+    reserved_1[2]  array                 s8                    reserved_1     |multiedit;|
+    unionType      u32                   u32                   unionType      |input;|
+    evt            union                 CSM_OutputEventUnion  
+</0x1501 OP_CSM_OutputEvent>
+
+
+<sub CSM_Call_DtmfInfo>
+    DtmfCount        struct              int                 
+    DtmfBufferIndex  struct              int                 
+    KeyPressed[128]  array               int                 KeyPressed       |multiedit;|
+    DtmfType         struct              CSM_Call_DtmfType   
+    DtmfState        struct              CSM_Call_DtmfState  
+</sub CSM_Call_DtmfInfo>
+
+
+<union CSM_SupSrvReqStatus>
+    oirReqStatus  struct                    CSM_SupSrvOirEventStatus  
+    genReqStatus  struct                    CSM_SupSrvGenReqStatus    
+</union CSM_SupSrvReqStatus>
+
+
+<union CSM_SupSrvMode>
+    cbMode  struct            CSM_SupSrvCbMode  
+    cfMode  struct            CSM_SupSrvCFMode  
+</union CSM_SupSrvMode>
+
+
+<union CSM_SupSrvResStatus>
+    oirResStatus  struct                    CSM_SupSrvOirEventStatus  
+    genResStatus  struct                    CSM_SupSrvGenResStatus    
+</union CSM_SupSrvResStatus>
+
+
+<union CSM_SupSrvProvision>
+    oirProv  struct                  CSM_SupSrvOirProvision  
+    tirProv  struct                  CSM_SupSrvTirProvision  
+    genProv  struct                  CSM_SupSrvGenProvision  
+</union CSM_SupSrvProvision>
+
+
+<sub CSM_CallMediaDir>
+    audioDir  struct                CSM_SessionDirection  
+    videoDir  struct                CSM_SessionDirection  
+</sub CSM_CallMediaDir>
+
+
+<sub CSM_Address>
+    type                            struct               CSM_CallAddressType  
+    numberType                      struct               CSM_CallNumberType   
+    number[CSM_NUMBER_STRING_SZ+1]  array                char                 number                          |multiedit;|
+    alpha[CSM_ALPHA_STRING_SZ+1]    array                char                 alpha                           |multiedit;|
+</sub CSM_Address>
+
+
+<sub CSM_RadioResourceMedia>
+    callId        structint  
+    audioRtpPort  structint  
+    videoRtpPort  structint  
+</sub CSM_RadioResourceMedia>
+
+
+<sub CSM_ResourceStatus>
+    callId         struct    int       
+    audioReady     struct    int       
+    videoReady     struct    int       
+    mbr_ul         struct    unsigned  
+    mbr_dl         struct    unsigned  
+    gbr_ul         struct    unsigned  
+    gbr_dl         struct    unsigned  
+    is_final_rslt  struct    char      
+</sub CSM_ResourceStatus>
+
+
+<union gain>
+    remoteAddress[CSM_ALPHA_STRING_SZ+1]          array   char    remoteAddress                                 |multiedit;|
+    remoteParticipants[CSM_EVENT_LONG_STRING_SZ]  array   char    remoteParticipants                            |multiedit;|
+    errorCode                                     struct  int     
+    digit                                         struct  char    
+    callIndex                                     struct  int     
+    aecEnable                                     struct  int     
+    {                                             u32     u32     {                                             |input;|
+    tx                                            struct  int     
+    rx                                            struct  int     
+</union gain>
+
+
+<sub call_mix>
+    resourceStatus   struct              CSM_ResourceStatus  
+    ho_type          struct              CSM_CallHoType      
+    is_SrvccSupport  struct              int                 
+    {                u32                 u32                 {                |input;|
+    call_index       struct              int                 
+    callmix_type     struct              CSM_CallMixType     
+</sub call_mix>
+
+
+<sub CSM_InputSms>
+    reason                                struct         CSM_SmsReason  
+    type                                  struct         CSM_SmsType    
+    reasonDesc[CSM_EVENT_STRING_SZ+1]     array          char           reasonDesc                            |multiedit;|
+    remoteAddress[CSM_ALPHA_STRING_SZ+1]  array          char           remoteAddress                         |multiedit;|
+    message[CSM_SMS_STRING_SZ+1]          array          char           message                               |multiedit;|
+    pdu[CSM_SMS_STRING_SZ+1]              array          char           pdu                                   |multiedit;|
+    msgLen                                struct         int            
+    smsc[CSM_ALPHA_STRING_SZ+1]           array          char           smsc                                  |multiedit;|
+    shortmr                               struct         unsigned       
+    error_cause                           struct         char           
+    isEmergSms                            struct         char           
+</sub CSM_InputSms>
+
+
+<sub CSM_ServiceAppObj>
+    appName[CSM_EVENT_STRING_SZ]        array                   char                    appName                             |multiedit;|
+    appUri[CSM_FQDN_STRING_SZ]          array                   char                    appUri                              |multiedit;|
+    appAuthType                         struct                  CSM_ServiceAppAuthType  
+    appAuthName[CSM_EVENT_STRING_SZ]    array                   char                    appAuthName                         |multiedit;|
+    appAuthSecret[CSM_EVENT_STRING_SZ]  array                   char                    appAuthSecret                       |multiedit;|
+    appAuthSecretLength                 struct                  int                     
+</sub CSM_ServiceAppObj>
+
+
+<sub CSM_ServiceAppsProvision>
+    bsf[CSM_FQDN_STRING_SZ]  array              char               bsf                      |multiedit;|
+    xcapAppInfo              struct             CSM_ServiceAppObj  
+</sub CSM_ServiceAppsProvision>
+
+
+<union cgi>
+    {                        u32                           u32                           {                        |input;|
+    type                     struct                        CSM_ServiceNetworkAccessType  
+    is_handover              struct                        int                           
+    id[CSM_CGI_STRING_SZ+1]  array                         char                          id                       |multiedit;|
+</union cgi>
+
+
+<sub aka>
+    {                                 u32     u32     {                                 |input;|
+    response[CSM_AKA_RESP_STRING_SZ]  array   char    response                          |multiedit;|
+    resLength                         struct  int     
+    auts[CSM_AKA_AUTS_STRING_SZ]      array   char    auts                              |multiedit;|
+    ik[CSM_AKA_IK_STRING_SZ]          array   char    ik                                |multiedit;|
+    ck[CSM_AKA_CK_STRING_SZ]          array   char    ck                                |multiedit;|
+</sub aka>
+
+
+<sub ipsec>
+    protectedPort        structint  
+    protectedPortPoolSz  structint  
+    spi                  structint  
+    spiPoolSz            structint  
+</sub ipsec>
+
+
+<sub port>
+    sip            structint  
+    audio          structint  
+    audioPoolSize  structint  
+    video          structint  
+    videoPoolSize  structint  
+</sub port>
+
+
+<sub coder>
+    coderNum                                         struct                                           int                                              
+    coderPayloadType[CSM_CODER_NUM]                  array                                            int                                              coderPayloadType                                 |multiedit;|
+    coderName[CSM_CODER_NUM]                         array                                            T_coderName                                      coderName                                        |multiedit;|
+    coderDescription[CSM_CODER_NUM]                  array                                            char                                             coderDescription                                 |multiedit;|
+    +1]                                              struct                                           [CSM_CODER_DESCRIPTION_STRING_SZ                 
+</sub coder>
+
+
+<sub T_coderName
+    coderName[CSM_CODER_STRING_SZ+1]                 array                                            char                                             coderName                                        |multiedit;|
+</sub T_coderName
+
+
+<sub media_profile>
+    profile_id                                         structint   
+    profile_desc[CSM_PROFILE_DESCRIPTION_STRING_SZ+1]  array char  profile_desc                                       |multiedit;|
+</sub media_profile>
+
+
+<sub ssac>
+    voice_barring_factor  structint  
+    voice_barring_time    structint  
+    video_barring_factor  structint  
+    video_barring_time    structint  
+</sub ssac>
+
+
+<sub CSM_InputRadio>
+    reason                             struct                CSM_RadioReason       
+    networkType                        struct                CSM_RadioNetworkType  
+    ipAddrType                         struct                CSM_RadioIPAddrType   
+    address[CSM_IP_ADDRESS_STRING_SZ]  array                 char                  address                            |multiedit;|
+    nsapi                              struct                int                   
+    infcName[CSM_EVENT_STRING_SZ+1]    array                 char                  infcName                           |multiedit;|
+    isEmergencyFailoverToCs            struct                int                   
+    isEmergencyRegRequired             struct                int                   
+</sub CSM_InputRadio>
+
+
+<sub CSM_SupSrvRuleParams>
+    noReplyTimer                                   struct       int          
+    mediaType[CSM_SUPSRV_PARAM_STRING_SZ]          array        char         mediaType                                      |multiedit;|
+    timeRangeOfTheDay[CSM_SUPSRV_PARAM_STRING_SZ]  array        char         timeRangeOfTheDay                              |multiedit;|
+    cfwTarget                                      struct       CSM_Address  
+</sub CSM_SupSrvRuleParams>
+
+
+<sub CSM_InputSupSrv>
+    reason                             struct                 CSM_SupSrvReason       
+    reasonDesc[CSM_EVENT_STRING_SZ+1]  array                  char                   reasonDesc                         |multiedit;|
+    mode                               union                  CSM_SupSrvMode         
+    status                             union                  CSM_SupSrvReqStatus    
+    ruleParams                         struct                 CSM_SupSrvRuleParams   
+    updateStyle                        struct                 CSM_SupSrvUpdateStyle  
+</sub CSM_InputSupSrv>
+
+
+<sub CSM_InputUssd>
+    reason                             struct           CSM_UssdReason   
+    reasonDesc[CSM_EVENT_STRING_SZ+1]  array            char             reasonDesc                         |multiedit;|
+    encType                            struct           CSM_UssdEncType  
+    message[CSM_USSD_STRING_SZ+1]      array            char             message                            |multiedit;|
+</sub CSM_InputUssd>
+
+
+<union evt>
+    call     struct            CSM_InputCall     
+    sms      struct            CSM_InputSms      
+    service  struct            CSM_InputService  
+    radio    struct            CSM_InputRadio    
+    supSrv   struct            CSM_InputSupSrv   
+    ussd     struct            CSM_InputUssd     
+</union evt>
+
+
+<sub CSM_CallSummary>
+    idx                                            struct               int                  
+    direction                                      struct               CSM_CallDirection    
+    negStatus                                      struct               CSM_CallNegStatus    
+    status                                         struct               CSM_CallStatus       
+    state                                          struct               CSM_CallState        
+    mode                                           struct               CSM_CallMode         
+    isMultiParty                                   struct               CSM_CallMultiParty   
+    numberType                                     struct               CSM_CallNumberType   
+    number[CSM_NUMBER_STRING_SZ+1]                 array                char                 number                                         |multiedit;|
+    normalizedAddress[CSM_ALPHA_STRING_SZ+1]       array                char                 normalizedAddress                              |multiedit;|
+    type                                           struct               CSM_CallAddressType  
+    alpha[CSM_ALPHA_STRING_SZ+1]                   array                char                 alpha                                          |multiedit;|
+    callSessionType                                struct               int                  
+    coderSdpMd[CSM_CODER_DESCRIPTION_STRING_SZ+1]  array                char                 coderSdpMd                                     |multiedit;|
+    is_srvcc_alerting_support                      struct               int                  
+    is_mid_call_support                            struct               int                  
+    is_srvcc_orig_pre_alerting_support             struct               int                  
+    is_video_support                               struct               int                  
+</sub CSM_CallSummary>
+
+
+<sub CSM_CallReport>
+    numCalls                             struct           int              
+    calls[CSM_EVENT_MAX_CALL_LIST_SIZE]  array            CSM_CallSummary  calls                                |multiedit;|
+</sub CSM_CallReport>
+
+
+<sub CSM_CallClip>
+    number[CSM_NUMBER_STRING_SZ+1]            array                char                 number                                    |multiedit;|
+    type                                      struct               CSM_CallAddressType  
+    alpha[CSM_ALPHA_STRING_SZ+1]              array                char                 alpha                                     |multiedit;|
+    callSessionType                           struct               int                  
+    direction                                 struct               CSM_CallDirection    
+    normalizedAddress[CSM_ALPHA_STRING_SZ+1]  array                char                 normalizedAddress                         |multiedit;|
+</sub CSM_CallClip>
+
+
+<sub CSM_CallSrvcc>
+    result  struct           CSM_SrvccResult  
+    callId  struct           int              
+</sub CSM_CallSrvcc>
+
+
+<sub CSM_CallHistory>
+    cause                                     struct               CSM_CallCauseCode    
+    hiIndex[CSM_HISTORY_INDEX_STRING_SZ]      array                char                 hiIndex                                   |multiedit;|
+    number[CSM_NUMBER_STRING_SZ+1]            array                char                 number                                    |multiedit;|
+    type                                      struct               CSM_CallAddressType  
+    alpha[CSM_ALPHA_STRING_SZ+1]              array                char                 alpha                                     |multiedit;|
+    normalizedAddress[CSM_ALPHA_STRING_SZ+1]  array                char                 normalizedAddress                         |multiedit;|
+</sub CSM_CallHistory>
+
+
+<sub participant>
+    idx                                       struct                    int                       
+    supsrvNotification                        struct                    int                       
+    numHistories                              struct                    int                       
+    callHistories[CSM_HISTORY_MAX_LIST_SIZE]  array                     CSM_CallHistory           callHistories                             |multiedit;|
+    uniVideoStatus                            struct                    CSM_SupSrvUniVideoStatus  
+    {                                         u32                       u32                       {                                         |input;|
+    status                                    struct                    CSM_ParticipantStatus     
+    number[CSM_NUMBER_STRING_SZ+1]            array                     char                      number                                    |multiedit;|
+</sub participant>
+
+
+<union mediaQuality>
+    address[CSM_NUMBER_STRING_SZ+1]  array                   char                    address                          |multiedit;|
+    report                           struct                  CSM_CallReport          
+    errorCode                        struct                  int                     
+    clipReport                       struct                  CSM_CallClip            
+    srvcc                            struct                  CSM_CallSrvcc           
+    digit                            struct                  char                    
+    supsrvInfo                       struct                  CSM_CallSupsrvInfo      
+    resourceMedia                    struct                  CSM_RadioResourceMedia  
+    isEarlyMedia                     struct                  int                     
+    isVoiceHD                        struct                  int                     
+    mediaDir                         struct                  CSM_CallMediaDir        
+    evtResult                        struct                  int                     
+    {                                u32                     u32                     {                                |input;|
+    latency                          struct                  int                     
+    loss                             struct                  int                     
+    jitter                           struct                  int                     
+    rtp_timeout                      struct                  int                     
+</union mediaQuality>
+
+
+<union msg>
+    {                            u32         u32         {                            |input;|
+    body[CSM_SMS_STRING_SZ+1]    array       char        body                         |multiedit;|
+    len                          struct      int         
+    numOfMessage                 struct      int         
+    scts[CSM_ALPHA_STRING_SZ+1]  array       char        scts                         |multiedit;|
+    dcs                          struct      CSM_SmsDcs  
+    smsc[CSM_SMS_SMSC_NUM_SZ]    array       char        smsc                         |multiedit;|
+    smsc_len                     struct      char        
+</union msg>
+
+
+<sub u>
+    reportType  struct             CSM_SmsReportType  
+</sub u>
+
+
+<union aka>
+    {                                u32     u32     {                                |input;|
+    akaRand[CSM_AKA_RAND_STRING_SZ]  array   char    akaRand                          |multiedit;|
+    akaAutn[CSM_AKA_AUTN_STRING_SZ]  array   char    akaAutn                          |multiedit;|
+</union aka>
+
+
+<sub ipsec>
+    {                                            u32     u32     {                                            |input;|
+    localIpAddress[CSM_IP_ADDRESS_STRING_SZ+1]   array   char    localIpAddress                               |multiedit;|
+    remoteIpAddress[CSM_IP_ADDRESS_STRING_SZ+1]  array   char    remoteIpAddress                              |multiedit;|
+    portUc                                       struct  int     
+    portUs                                       struct  int     
+    portPc                                       struct  int     
+    portPs                                       struct  int     
+    spiUc                                        struct  int     
+    spiUs                                        struct  int     
+    spiPc                                        struct  int     
+    spiPs                                        struct  int     
+</sub ipsec>
+
+
+<sub notify>
+    type  struct                 CSM_ServiceNotifyType  
+</sub notify>
+
+
+<sub localIpAddress>
+    address[CSM_IP_ADDRESS_STRING_SZ+1]  array char  address                              |multiedit;|
+</sub localIpAddress>
+
+
+<union u>
+    ruleParams[CSM_SUPSRV_MEDIA_TYPE_NUM]                               array                                                               T_ruleParams                                                        ruleParams                                                          |multiedit;|
+</union u>
+
+
+<sub T_ruleParams
+    ruleParams[CSM_SUPSRV_MAX_QUERY_RESULT]                             array                                                               CSM_SupSrvRuleParams                                                ruleParams                                                          |multiedit;|
+</sub T_ruleParams
+
+
+<sub CSM_OutputUssd>
+    reason                             struct             CSM_OutputReason   
+    reasonDesc[CSM_EVENT_STRING_SZ+1]  array              char               reasonDesc                         |multiedit;|
+    encType                            struct             CSM_UssdEncType    
+    message[CSM_USSD_STRING_SZ+1]      array              char               message                            |multiedit;|
+    errorCode                          struct             CSM_UssdErrorCode  
+</sub CSM_OutputUssd>
+
+
+<union evt>
+    call     struct             CSM_OutputCall     
+    sms      struct             CSM_OutputSms      
+    service  struct             CSM_OutputService  
+    supSrv   struct             CSM_OutputSupSrv   
+    ussd     struct             CSM_OutputUssd     
+</union evt>
+
+

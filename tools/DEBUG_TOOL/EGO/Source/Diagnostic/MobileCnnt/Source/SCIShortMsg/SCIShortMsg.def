@@ -1,0 +1,7 @@
+; SCIShortMsg.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SCIShortMsg"
+DESCRIPTION  'SCIShortMsg Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

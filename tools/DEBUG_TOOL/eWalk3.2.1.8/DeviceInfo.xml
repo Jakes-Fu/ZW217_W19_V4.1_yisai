@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<DeviceInfo>
+  <DeviceReg>
+      <PCUI>
+        <element name="HUAWEI Mobile Connect - 3G PC UI Interface"/>
+        <element name="HUAWEI Mobile CMCC AT Interface"/>
+        <element name="NexperiaTM TD-SCDMA AT Interface"/>
+        <element name="DTMobile CMCC AT Interface"/>
+        <element name="Postcom CMCC AT Interface"/>
+        <element name="Haier CMCC AT Interface"/>
+        <element name="Skyworth CMCC AT Interface"/>
+        <element name="Popular CMCC AT Interface"/>
+        <element name="Aspire CMCC AT Interface"/>
+        <element name="AD CMCC AT Interface"/>
+        <element name="CYIT CMCC AT Interface"/>
+        <element name="Vtion CMCC AT Interface"/>
+        <element name="ZTE CMCC AT Interface"/>
+        <element name="SAMSUNG CMCC AT Interface"/>
+        <element name="SRT CMCC AT Interface"/>
+        <element name="AirCard CMCC AT Interface"/>
+        <element name="LeadCore CMCC AT Interface"/>
+        <element name="Uniscope CMCC AT Interface"/>
+        <element name="AMOI CMCC AT Interface"/>
+        <element name="Bird CMCC AT Interface"/>
+        <element name="C-TOP CMCC AT Interface"/>
+        <element name="TCL CMCC AT Interface"/>
+        <element name="Lenovo CMCC AT Interface"/>
+        <element name="CGMobile CMCC AT Interface"/>
+        <element name="CMCC AT Interface"/>
+      </PCUI>
+      <Diag>
+        <element name="HUAWEI Mobile Connect - 3G Application Interface"/>
+        <element name="HUAWEI Mobile TAT Interface"/>
+        <element name="NexperiaTM TD-SCDMA TAT Port (WDM)"/>
+        <element name="LeadCore CMCC Diagnoses"/>
+      </Diag>
+      <Modem>
+        <element name="HUAWEI Mobile Connect - 3G Modem"/>
+        <element name="HUAWEI Mobile CMCC Modem"/>
+        <element name="NexperiaTM TD-SCDMA Modem I"/>
+        <element name="Postcom CMCC Modem"/>
+        <element name="Haier CMCC Modem"/>
+        <element name="Skyworth CMCC Modem"/>
+        <element name="Popular CMCC Modem"/>
+        <element name="Aspire CMCC Modem"/>
+        <element name="AD CMCC Modem"/>
+        <element name="DTMobile CMCC Modem"/>
+        <element name="CYIT CMCC MODEM"/>
+        <element name="Vtion CMCC Modem"/>
+        <element name="ZTE CMCC MODEM"/>
+        <element name="SAMSUNG CMCC Modem"/>
+        <element name="SRT CMCC Modem"/>
+        <element name="AirCard CMCC Modem"/>
+        <element name="LeadCore CMCC MODEM"/>
+        <element name="Uniscope CMCC Modem"/>
+        <element name="AMOI CMCC Modem"/>
+        <element name="Bird CMCC Modem"/>
+        <element name="C-TOP CMCC Modem"/>
+        <element name="TCL CMCC Modem"/>
+        <element name="Lenovo CMCC Modem"/>
+        <element name="CGMobile CMCC Modem"/>
+        <element name="CMCC Modem"/>
+      </Modem>
+      <MMSModem>
+        <element name="HUAWEI CMCC MMS"/>
+        <element name="HUAWEI Mobile CMCC MMS"/>
+        <element name="NexperiaTM TD-SCDMA Modem II"/>
+        <element name="DTMobile CMCC MMS"/>
+        <element name="Postcom CMCC MMS"/>
+        <element name="Haier CMCC MMS"/>
+        <element name="Skyworth CMCC MMS"/>
+        <element name="Popular CMCC MMS"/>
+        <element name="Aspire CMCC MMS"/>
+        <element name="AD CMCC MMS"/>
+        <element name="CYIT CMCC MMS"/>
+        <element name="Vtion CMCC MMS"/>
+        <element name="ZTE CMCC MMS"/>
+        <element name="SAMSUNG CMCC MMS"/>
+        <element name="SRT CMCC MMS"/>
+        <element name="AirCard CMCC MMS"/>
+        <element name="LeadCore CMCC MMS"/>
+        <element name="Uniscope CMCC MMS"/>
+        <element name="AMOI CMCC MMS"/>
+        <element name="Bird CMCC MMS"/>
+        <element name="C-TOP CMCC MMS"/>
+        <element name="TCL CMCC MMS"/>
+        <element name="Lenovo CMCC MMS"/>
+        <element name="CGMobile CMCC MMS"/>
+        <element name="CMCC MMS"/>
+      </MMSModem>
+      <PCVOICE>
+        <element name="HUAWEI Mobile Connect - 3G PCVOICE Interface"/>
+      </PCVOICE>
+  </DeviceReg>
+  
+  <DeviceConfigDefault>    
+    <item name="TD-SCDMA" Alias="" SMMode="PDU" ProductNet="TD-SCDMA" SimUnlock="Y">
+      <PhonebookMemory>
+        <Memory name="SM">
+          <field name="name"/>
+          <field name="mobile"/>
+        </Memory>      
+      </PhonebookMemory>
+      <ShortMessageMemory> 
+        <Memory name="SM"/>
+      </ShortMessageMemory>
+    </item>
+  </DeviceConfigDefault>  
+</DeviceInfo>

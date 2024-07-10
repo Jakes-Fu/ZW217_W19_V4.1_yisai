@@ -1,0 +1,80 @@
+ROM_LOAD 0x00000000 0x20000
+{
+	ROM_EXEC0 0x00000000 0x64+0x39C	;;0x39C is the Header added on bootloader for secure boot
+	{
+		init.o (Init, +First)
+	}    
+	
+	ROM_EXEC1 +0 FIXED
+	{
+		spiflash_cfg.o(SPIFLASH_CFG_TABLE)
+		spiflash_cfg.o(SPIFLASH_CFG_TABLE_DETAIL)
+	}
+	
+	ROM_EXEC_SPIFLASH_TYPE +0x0
+	{
+		spiflash_cfg.o(SPIFLASH_TYPE_CFG)
+	}
+	
+	ROM_EXEC2 +0x0 0x1FF00
+	{
+		.ANY (+RO)
+	}
+	
+	RAM_ZI_UNINIT 0x04100000  UNINIT 
+	{
+		bdl_packet.o(ZIDATA_AREA_1)
+		detect_error.o(ZIDATA_AREA_2)
+		dl_engine.o(ZIDATA_AREA_3)
+		fdl_main.o(ZIDATA_AREA_4) 	        
+#ifdef FOTA_SUPPORT_REDSTONE
+		rs_ua_fota_porting.o(ZIDATA_AREA_5)
+#endif
+#ifdef FOTA_SUPPORT_ADUPS
+		adups_bl_main.o(ZIDATA_AREA_6)
+#endif
+	}
+	RAM_RW +0 0x300000
+	{            
+		drv_usb.o(+RO,+RW,+ZI)
+		virtual_com.o(+RO,+RW,+ZI)               
+		hash_drv.o(+RO)
+		sha1_32.o(+RO)
+		rsa_sub.o(+RO)
+		rsa_multidw.o(+RO)
+		rsa.o(+RO)
+		.ANY (+RW, +ZI)
+	
+	}
+	
+	IRAM_FIXED_F 0x40000000 0x3000
+	{       
+		fdl_main.o(VLR_DATA)
+		fdl_main.o(ZIDATA_AREA_0)
+		usb_boot.o(+RO,+RW,+ZI)
+		uart_boot.o(+RO,+RW,+ZI)
+	}    
+	
+	IRAM_FIXED 0x40003000 0xA000
+	{       
+		fdl_crc.o(+RO)
+		bdl_packet.o(+RO)
+		bdl_customif.o(+RO)
+		fdl_update_fixnv.o(+RO)
+		detect_error.o(+RO)
+		gpio_drv.o(+RO)
+		fdl_sys.o(+RO)
+		fdl_main.o(CHIP_SETTING)
+		fdl_main.o(+RW,+ZI)
+		fdl_stdio.o(+RO,+RW,+ZI)
+		sfc_phy_v5.o(+RO,+RW,+ZI)
+		spiflash_cfg.o(+RO,+RW,+ZI)
+		spiflash.o(+RO,+RW,+ZI)	   
+		sio_drv.o(+RO,+RW,+ZI)
+		mmu.o(+RO,+RW,+ZI)
+		boot.o(JUMP)    
+		smc_phy_sc6531efm.o (+RW,+ZI)
+	
+	}   
+}
+

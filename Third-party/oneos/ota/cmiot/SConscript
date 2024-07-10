@@ -1,0 +1,47 @@
+from build_tools import *
+
+pwd = PresentDir()
+src = []
+CPPPATH = []
+LIBPATH = []
+LIBS    = []
+DEV_TYPE=''
+CON_TYPE=''
+
+if IsDefined(['FOTA_USING_CMIOT']):
+    src = Glob('src/*.c')
+    CPPPATH = [pwd + '/inc']
+
+if IsDefined(['CMIOT_USING_SINGLE']):
+    DEV_TYPE = 'single'
+elif IsDefined('CMIOT_USING_MULTI_MASTER'):
+    DEV_TYPE = 'multi_master'
+elif IsDefined('CMIOT_USING_MULTI_SLAVE'):
+    DEV_TYPE = 'multi_slave'
+
+if IsDefined(['CMIOT_USING_GEN']):
+    CON_TYPE = 'gen'
+elif IsDefined('CMIOT_USING_CMS'):
+    CON_TYPE = 'cms'
+elif IsDefined('CMIOT_USING_CTW'):
+    CON_TYPE = 'ctw'
+
+LIBPATH = [pwd + '/lib/' + DEV_TYPE + '/' + CON_TYPE + '/']
+
+if IsDefined('ARCH_ARM_CORTEX_M0'):
+    LIBS += ['arm_cortex-m0_cmiot_fota']
+elif IsDefined('ARCH_ARM_CORTEX_M0_PLUS'):
+    LIBS += ['arm_cortex-m0plus_cmiot_fota']
+elif IsDefined('ARCH_ARM_CORTEX_M3'):
+    LIBS += ['arm_cortex-m3_cmiot_fota']
+elif IsDefined('ARCH_ARM_CORTEX_M4'):
+    LIBS += ['arm_cortex-m4_cmiot_fota']
+elif IsDefined('ARCH_ARM_CORTEX_M7'):
+    LIBS += ['arm_cortex-m7_cmiot_fota']
+elif IsDefined('ARCH_ARM_CORTEX_M33_TZ'):
+    LIBS += ['arm_cortex-m33_cmiot_fota']
+
+group = AddCodeGroup('cmiot', src, depend = ['FOTA_USING_CMIOT'], CPPPATH = CPPPATH)
+group += AddCodeGroup('cmiotlib', [], depend = ['FOTA_USING_CMIOT'], LIBS=LIBS, LIBPATH = LIBPATH)
+
+Return('group')

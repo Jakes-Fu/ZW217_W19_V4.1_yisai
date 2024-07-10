@@ -1,0 +1,5 @@
+<Div background-color="0x0000" align-items="center" padding="20">
+    <Image  id="max" width=36 height=36  src="{{$r('img:res_aw_music_vol_3.png')}}" ></Image>
+    <Progressbar id="prgbar"  width=60 height=113 step=11 is_slide=true type='VERTICAL' prg_bg_color=21130  prg_fg_color=65535  on:Change=prgChange></Progressbar>
+    <Image id="min" width=36 height=36  src="{{$r('img:res_aw_music_vol_1.png')}}" ></Image>
+</Div>

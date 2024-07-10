@@ -1,0 +1,1 @@
+make p=UWS6121E_WC_1H00_NoGNSS m=nor_bootloader update job=8

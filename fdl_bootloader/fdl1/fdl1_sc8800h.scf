@@ -1,0 +1,13 @@
+ROM_LOAD 0x40000000 0x3000
+{
+     ROM_EXEC  0x40000000 0x3000
+     {
+          init.o (Init, +First)
+          *.o (+RO)
+     }
+     RAM_EXEC  +0 0x9000
+     {
+          *.o (+RW,+ZI)
+     }
+}
+

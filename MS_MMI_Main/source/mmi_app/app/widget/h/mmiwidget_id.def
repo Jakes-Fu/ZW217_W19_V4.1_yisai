@@ -1,0 +1,93 @@
+
+    WIN_ID_DEF(WIDGET_MP3_WIN_ID),     //widget mp3
+    WIN_ID_DEF(WIDGET_CLOCK_WIN_ID),     //widget clock
+    WIN_ID_DEF(WIDGET_ACLOCK_WIN_ID),     //widget aclock    
+    WIN_ID_DEF(WIDGET_ACLOCK_WIN_ID2),     //widget aclock2  
+    WIN_ID_DEF(WIDGET_ACLOCK_WIN_ID3),     //widget aclock3   
+
+    WIN_ID_DEF(WIDGET_GAME_WIN_ID),     //widget game
+    WIN_ID_DEF(WIDGET_PB_WIN_ID),     //widget pb
+    WIN_ID_DEF(WIDGET_PB_FAVORITE_LIST_WIN_ID),//Jonathan widget pb favorite list 
+    WIN_ID_DEF(WIDGET_PB_MAKECALL_WIN_ID),//Jonathan widget make call 
+    WIN_ID_DEF(WIDGET_PB_SEND_MESSAGE_WIN_ID),//Jonathan widget pb send message  
+    WIN_ID_DEF(WIDGET_PB_FAVORITE_LIST_MENU_WIN_ID),//Jonathan widget pb FAVORITE LIST  option
+    WIN_ID_DEF(WIDGET_PB_FAVORITE_LIST_DETAIIL_WIN_ID),//Jonathan widget pb FAVORITE LIST  detail
+    WIN_ID_DEF(WIDGET_MEMO_WIN_ID),     //widget memo
+    WIN_ID_DEF(WIDGET_MEMO_WIN_ID0),     //widget memo
+    WIN_ID_DEF(WIDGET_MEMO_WIN_ID1),     //widget memo
+    WIN_ID_DEF(WIDGET_MEMO_WIN_ID2),     //widget memo
+    WIN_ID_DEF(WIDGET_MEMO_WIN_ID3),     //widget memo
+    WIN_ID_DEF(WIDGET_MEMO_WIN_ID4),     //widget memo
+
+    WIN_ID_DEF(WIDGET_MEMO_EDIT_WIN_ID),     //widget memo edit
+    WIN_ID_DEF(WIDGET_SHORTCUT_MENU_WIN_ID),     //widget shortcut menu
+    WIN_ID_DEF(WIDGET_CALENDAR_WIN_ID),     //widget calendar
+    WIN_ID_DEF(WIDGET_SCHEDULE_WIN_ID),     //widget schedule
+    WIN_ID_DEF(WIDGET_NETWORK_WIN_ID),     //widget network name
+    WIN_ID_DEF(WIDGET_CUSTOM_WORD_WIN_ID),     //widget custom word
+    WIN_ID_DEF(WIDGET_NEWSMS_WIN_ID),     //widget new sms
+    WIN_ID_DEF(WIDGET_CALLLOG_WIN_ID),     //widget calllog
+    WIN_ID_DEF(WIDGET_AUTOANSWER_LOG_WIN_ID),     //widget antoanswer log
+    WIN_ID_DEF(WIDGET_FM_WIN_ID),     //widget fm
+    WIN_ID_DEF(WIDGET_ALARM_WIN_ID),     //widget fm
+    WIN_ID_DEF(WIDGET_SHORTCUT_SET_WIN_ID),     //widget shortcut set
+    WIN_ID_DEF(WIDGET_ELVE_WIN_ID),     //widget elve
+    WIN_ID_DEF(WIDGET_SEARCH_WIN_ID),     //widget search
+    
+    #ifdef MMI_ENABLE_DCD
+    WIN_ID_DEF(WIDGET_DCD_WIN_ID),//widget dcd
+    #endif
+    WIN_ID_DEF(WIDGET_DUAL_CLOCK_WIN_ID),     //widget dual clock
+    WIN_ID_DEF(WIDGET_DUAL_ACLOCK_WIN_ID),     //widget dual aclock
+	
+#ifdef WEATHER_SUPPORT
+	WIN_ID_DEF(WIDGET_WEATHER_WIN_ID),     //widget weather
+	WIN_ID_DEF(WIDGET_WEATHER_SET_HIT_FUNC_WIN_ID),    //widget weather set hit func
+	WIN_ID_DEF(WIDGET_WEATHER_SET_BG_TEXTCOLOUR_WIN_ID),    //widget weather set bg&textcolour
+#endif
+ 
+#ifdef MMI_GRID_IDLE_SUPPORT
+    WIN_ID_DEF(MMI_GRID_IMGVIEWER_WIN_ID), //widget image viewer.
+    WIN_ID_DEF(WIDGET_CONTACT_ADD_WIN_ID), //widget contact
+    WIN_ID_DEF(WIDGET_CONTACT_0_WIN_ID),     //widget contact0
+    WIN_ID_DEF(WIDGET_CONTACT_1_WIN_ID),     //widget contact1
+    WIN_ID_DEF(WIDGET_CONTACT_2_WIN_ID),     //widget contact2
+    WIN_ID_DEF(WIDGET_CONTACT_3_WIN_ID),     //widget contact3
+    WIN_ID_DEF(WIDGET_CONTACT_4_WIN_ID),     //widget contact4    
+    WIN_ID_DEF(WIDGET_CONTACT_5_WIN_ID),     //widget contact5
+    WIN_ID_DEF(WIDGET_CONTACT_6_WIN_ID),     //widget contact6
+    WIN_ID_DEF(WIDGET_CONTACT_7_WIN_ID),     //widget contact7
+    WIN_ID_DEF(WIDGET_CONTACT_8_WIN_ID),     //widget contact8
+    WIN_ID_DEF(WIDGET_CONTACT_9_WIN_ID),     //widget contact9
+    WIN_ID_DEF(WIDGET_NET_SEARCH_WIN_ID),     //widget net search
+    WIN_ID_DEF(WIDGET_COUNTEDTIME_WIN_ID),     //widget countedtime clock
+    WIN_ID_DEF(WIDGET_COUNTEDTIME_EDIT_WIN_ID),     //widget countedtime clock
+    WIN_ID_DEF(WIDGET_COUNTEDTIME_TIMEEND_WIN_ID),
+    WIN_ID_DEF(MMI_GRID_ALARM_WIN_ID),         //grid idle alarm win id.
+#endif
+       
+    WIN_ID_DEF(MMIMEMO_LIST_WIN_ID),
+
+#ifdef MMI_WIDGET_SPEED_DIAL
+	WIN_ID_DEF(WIDGET_SPEED_DIAL_WIN_ID),     //widget speed dial
+#endif
+	WIN_ID_DEF(WIDGET_WEATHER_TWO_WIN_ID),     //widget weather two
+
+    WIN_ID_DEF(WIDGET_TIME_WIN_ID),     //widget schedule
+
+#ifdef SNS_SUPPORT
+    WIN_ID_DEF(WIDGET_SNS_SINA_WIN_ID),     //widget SNS
+    WIN_ID_DEF(WIDGET_SNS_FACEBOOK_WIN_ID),     //widget SNS
+    WIN_ID_DEF(WIDGET_SNS_TIWTTER_WIN_ID),     //widget SNS
+#endif
+    WIN_ID_DEF(WIDGET_PWRSAVING_WIN_ID),     //widget power saving
+
+#ifdef SNS_PULLING_SUPPORT
+    WIN_ID_DEF(WIDGET_SNS_SETTING_WIN_ID),   //widget SNS
+    WIN_ID_DEF(WIDGET_SNS_ALERT_WIN_ID),     //widget SNS    
+#endif
+
+    WIN_ID_DEF(MMI_GRID_IDLE_MENU_WIN_ID), //grid idle menu win id.
+    WIN_ID_DEF(MMI_GRID_IDLE_ADD_WIN_ID),   //grid idle to add widget/shortcut/wallpaper.
+    WIN_ID_DEF(MMIQBTHEME_ADD_SHORTCUT_WIN_ID),
+    WIN_ID_DEF(MMIQBTHEME_ADD_WIDGET_WIN_ID),

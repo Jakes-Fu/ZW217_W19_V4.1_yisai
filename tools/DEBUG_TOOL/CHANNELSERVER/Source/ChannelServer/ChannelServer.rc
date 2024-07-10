@@ -1,0 +1,358 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ChannelServer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\ChannelServer.ico"
+IDI_LOWER               ICON                    "res\\Lower.ico"
+IDI_LOW                 ICON                    "res\\Low.ico"
+IDI_DOWN                ICON                    "res\\Middle.ico"
+IDI_UP                  ICON                    "res\\High.ico"
+IDI_UPDOWN              ICON                    "res\\Higher.ico"
+IDI_ASSERT              ICON                    "res\\Highest.ico"
+IDI_ACTIVE              ICON                    "res\\Lowest.ico"
+IDI_INACTIVE            ICON                    "res\\inactive.ico"
+IDI_UP_ALERT            ICON                    "res\\upalert.ico"
+IDI_UPDOWN_ALERT        ICON                    "res\\updownalert.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "Configure(&C)",               ID_CHANSVR_CONFIG
+        MENUITEM SEPARATOR
+        MENUITEM "Connect MSSim",               ID_CONNECT_MSSIM
+        MENUITEM "Disconnect MSSim",            ID_DISCONNECT_MSSIM
+        MENUITEM SEPARATOR
+        MENUITEM "Log Data",                    ID_LOG_DATA
+        MENUITEM SEPARATOR
+        MENUITEM "About(&A)",                   ID_APP_ABOUT
+        MENUITEM "Exit(&X)",                    ID_APP_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,15,53,1
+ PRODUCTVERSION 1,15,53,1
+ FILEFLAGSMASK 0x1fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Spreadtrum Communications Inc."
+            VALUE "FileDescription", "ChannelServer"
+            VALUE "FileVersion", "1, 15, 53, 1"
+            VALUE "InternalName", "ChannelServer"
+            VALUE "LegalCopyright", "Copyright (C) 2003-2015 Spreadtrum Communications Inc."
+            VALUE "OriginalFilename", "ChannelServer"
+            VALUE "ProductName", "ChannelServer"
+            VALUE "ProductVersion", "1, 15, 53, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "Spreadtrum ChannelServer\n\nChanne\n\n\nChannelServer.Document\nChanne Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Spreadtrum ChannelServer"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Displays the program infomation and copyright\nAbout"
+    ID_APP_EXIT             "Quits the application\nExit"
+    ID_HELP                 "Displays the online documentation\nHelp"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_CHANSVR_CONFIG       "Configures the Channel Server parameters \n Configure"
+    ID_CONNECT_MSSIM        "Connect to MS"
+    ID_DISCONNECT_MSSIM     "Disconnect from MS"
+    ID_LOG_DATA             "Save Data to file"
+    ID_ASSERT               "Enter Assert Mode"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 278, 85
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Spreadtrum ChannelServer"
+FONT 9, "Courier"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,7,20,20
+    DEFPUSHBUTTON   "OK",IDOK,231,7,40,14,WS_GROUP
+    LTEXT           "Spreadtrum ChannelServer",IDC_STATIC,41,9,108,10
+    LTEXT           "Copyright(c)2003 - 2009 Spreadtrum Communications Inc.\nAll Rights Reserved.",IDC_STATIC,40,54,231,21
+END
+
+IDD_CLIENT_INFO DIALOGEX 0, 0, 275, 187
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Client_Info"
+FONT 9, "Arial", 400, 0, 0x0
+BEGIN
+    LTEXT           "Client Counts:",IDC_STATIC,6,5,60,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_CLIENT_COUNTS,72,5,65,12,ES_AUTOHSCROLL | ES_READONLY,WS_EX_CLIENTEDGE
+    CONTROL         "List1",IDC_CLIENT_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,6,21,258,160,WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "Refresh",IDC_BTN_REFRESH,223,4,41,12,BS_CENTER | BS_VCENTER
+END
+
+IDD_LOG_CONFIGURE DIALOGEX 0, 0, 275, 187
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Configure"
+FONT 9, "Arial", 400, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_MSSIM_TYPE,79,16,182,120,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_STC_CONFIG,11,37,252,106
+    EDITTEXT        IDC_CHANSVR_PORT,57,163,53,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_MSG_TIMEOUT,158,163,64,12,ES_AUTOHSCROLL | ES_NUMBER
+    GROUPBOX        "WinSocket Server",IDC_STATIC,6,152,121,28
+    LTEXT           "Port:",IDC_STATIC,17,164,36,11
+    GROUPBOX        "Channel",IDC_STATIC,6,6,261,142
+    LTEXT           "Type:",IDC_STC_TYPE,11,17,66,12
+    GROUPBOX        "Timeout",IDC_STATIC,134,152,133,28
+    LTEXT           "(S)",IDC_STATIC,226,164,12,8
+END
+
+IDD_UART_CONFIG DIALOGEX 0, 0, 214, 84
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "Arial", 400, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_UC_CMB_DIAG_PORT,56,1,158,142,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_UC_EDT_DIAG_BAUD,56,17,158,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_UC_CMB_LOG_PORT,56,34,158,150,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_UC_EDIT_LOG_BAUD,56,50,158,12,ES_AUTOHSCROLL
+    CONTROL         "Reset port when assert",IDC_UC_CHK_PORT_RESET,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,0,70,97,8
+    CONTROL         "Using port name match",IDC_UC_CHK_NAME_MATCH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,99,70,111,8
+    LTEXT           "Diag Port:",IDC_UC_STC_DIAG_PORT,0,2,54,12
+    LTEXT           "Diag Baudrate:",IDC_UC_STC_DIAG_BAUD,0,18,54,12
+    LTEXT           "Log Port:",IDC_UC_STC_LOG_PORT,0,35,54,9
+    LTEXT           "Log Baudrate:",IDC_UC_STC_LOG_BAUD,0,51,54,9
+END
+
+IDD_SOCKET_CONFIG DIALOGEX 0, 0, 214, 84
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "Arial", 400, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_SC_EDT_PORT,56,0,158,13,ES_AUTOHSCROLL
+    CONTROL         "IPAddress1",IDC_SC_IPADDRESS,"SysIPAddress32",WS_TABSTOP,56,26,158,12
+    CONTROL         "Diag Format",IDC_SC_RDO_DIAG,"Button",BS_AUTORADIOBUTTON | WS_GROUP,0,49,60,10
+    CONTROL         "Log Format",IDC_SC_RDO_LOG,"Button",BS_AUTORADIOBUTTON,63,49,60,10
+    LTEXT           "Port:",IDC_SC_STC_PORT,1,2,41,12
+    LTEXT           "IP:",IDC_SC_STC_IP,1,27,30,12
+END
+
+IDD_FILE_CONFIG DIALOGEX 0, 0, 214, 84
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "Arial", 400, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_FC_EDT_FILE,55,0,139,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_FC_BTN_BRW,196,0,17,12
+    CONTROL         "Diag Format",IDC_FC_RDO_DIAG,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,0,49,60,8
+    CONTROL         "Log Format",IDC_FC_RDO_LOG,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,61,49,60,8
+    LTEXT           "FILE:",IDC_FC_STC_FILE,1,2,30,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_LOG_CONFIGURE DLGINIT
+BEGIN
+    IDC_MSSIM_TYPE, 0x403, 10, 0
+0x6957, 0x536e, 0x636f, 0x656b, 0x0074, 
+    IDC_MSSIM_TYPE, 0x403, 5, 0
+0x4155, 0x5452, "\000" 
+    IDC_MSSIM_TYPE, 0x403, 5, 0
+0x6946, 0x656c, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SOCKET_CONFIG, DIALOG
+    BEGIN
+        VERTGUIDE, 60
+        HORZGUIDE, 49
+    END
+
+    IDD_FILE_CONFIG, DIALOG
+    BEGIN
+        VERTGUIDE, 60
+        HORZGUIDE, 49
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\ChannelServer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

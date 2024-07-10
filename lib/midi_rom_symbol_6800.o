@@ -1,0 +1,3 @@
+#<SYMDEFS># ARM Linker, ADS1.2 [Build 848]: Last Updated: Wed Jul 12 20:50:40 2006
+0x4000c030 D busy_flag
+0x4000c032 D free_flag

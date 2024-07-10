@@ -1,0 +1,96 @@
+simulator说明
+
+功能说明：
+
+通过对 MOCOR 平台 makefile 工程文件分析，取得要编译的文件列表，宏，搜索路径等信息后自动生成对应的 VC dsp 工程文件和一个 simulator.dsw 的工作空间文件，执行simulator.dsw 就可以编译出模拟器使用的.dll文件.
+
+simulator.mk (make/simulator/simulator.mk) 
+指示模拟器需要使用的模块列表，及完成生成模拟器的所有工作
+
+simulator.ini (make/simulator/simulator.ini)
+配置文件,用来指示 模拟器工程与make工程在 文件，宏，搜索路径的差异。其中msdevkernel 为总dsp文件，模拟器工程需要的所有lib文件如第三方.lib文件等都要加到这个工程中。
+该文件支持代码宏的形式，示例如下：
+#ifdef PLATFORM_SC6600L
+chip_drv += chip_drv/source/c/ivsp_drv_6600l.c
+#endif
+
+
+simulator.ini 项说明：
+
+[ADD_INC_PATH]
+用来指示除makefile对应工程的搜索路径外，dsp工程中还需要增加的搜索路径
+
+[DEL_INC_PATH]
+用来指示在makefile对应工程的搜索路径中需要删除的搜索路径
+
+[ADD_OPTION]
+用来指示除makefile对应工程的搜索路径外，dsp工程中还需要增加的编译宏
+注意：宏列表需要用""来引起来，如  app = "USB_WEBCAMERA_SUPPORT USB_LOG"
+
+[DEL_OPTION]
+用来指示在makefile对应工程的编译宏中需要删除的宏
+注意：宏列表需要用""来引起来，如 rtos="_RTOS WIN32 _DEBUG _MBCS _LIB  _RTOS _ENABLE_LOG_TOOL"
+
+[ADD_FILE]
+用来指示除makefile对应工程的文件外，dsp工程中还需要增加的文件
+
+[DEL_FILE]
+用来指示在makefile对应工程的文件中需要删除的文件，如果具体某个模块的值为 * 则表示这个模块的所有文件都删除
+
+[REPLACE_FILE]
+用来指示在makefile对应工程的文件中路径的替换
+
+
+生成模拟器
+
+使用类似如下的命令可在该工程的build 临时文件夹 的win 下生成对应的所有.dsp ,dsw 文件
+
+make PROJECT=rocky_3201_qs518 MODULES=simulator          (标准版模拟器工程，可正确识别SPRD内部版本还是客户版本)
+
+make PROJECT=rocky_3201_qs518 MODULES=simulator  lite=1  (精简版模拟器工程，即强制指定为 客户版本，适合SPRD内部使用)
+
+技巧：
+
+1. 6600L 平台ARM 端JPG 为硬解码，模拟器上怎么办？：
+
+   simulator.mk 中 对 macro_set 赋值
+        ifeq ($(strip $(JPG_DEC_SUPPORT)), JPG_HW)
+              macro_set += JPG_DEC_SUPPORT=JPG_SW
+        endif
+        ifeq ($(strip $(JPG_ENC_SUPPORT)), JPG_HW)
+             macro_set += JPG_ENC_SUPPORT=JPG_SW
+        endif
+
+   simulator.ini 修改如下：
+       [DEL_OPTION]
+       global = ""
+       #if defined(JPG_DEC_SUPPORT_JPG_HW)
+           global += "JPG_DEC_SUPPORT_JPG_HW"
+       #endif
+       #if defined(JPG_ENC_SUPPORT_JPG_HW)
+           global += "JPG_ENC_SUPPORT_JPG_HW"
+       #endif
+
+       [ADD_OPTION]
+       global = "WIN32 _DEBUG _MBCS _LIB THREADX_OS _RTOS"
+       #if defined(JPG_DEC_SUPPORT_JPG_HW)
+            global += "JPG_DEC_SUPPORT_JPG_SW"
+       #endif
+       #if defined(JPG_ENC_SUPPORT_JPG_HW)
+           global += "JPG_ENC_SUPPORT_JPG_SW"
+       #endif
+
+2. 6600L 平台CMMB在模拟器上还没有调好，怎么先禁掉该功能办？
+
+   simulator.mk 中 对 macro_set 赋值
+   ifeq ($(strip $(CMMB_SUPPORT)), TRUE)
+        macro_set += CMMB_SUPPORT=FALSE
+   endif
+
+   simulator.ini 修改如下
+   [DEL_OPTION]
+   global = ""
+   #if defined(CMMB_SUPPORT)
+        global += "CMMB_SUPPORT"
+   #endif
+

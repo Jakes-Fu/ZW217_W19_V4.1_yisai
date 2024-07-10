@@ -1,0 +1,2065 @@
+/******************************************************************************
+ ** File Name:      mt9d112.c                                         
+ ** Author:         frank.yang                                                
+ ** Date:               02/01/2007                                                
+ ** Copyright:          2007 Spreadtrum, Incoporated. All Rights Reserved.        
+ ** Description:     implementation of digital camera register interface       
+ ******************************************************************************/
+#ifndef _MT9D112_C_
+#define _MT9D112_C_
+
+#include "ms_customize_trc.h"
+#include "sensor_cfg.h"
+#include "sensor_drv.h"
+#include "os_api.h"
+#include "chip.h"
+#include "dal_dcamera.h"
+
+#define MT9D112_I2C_ADDR_W              0x78
+#define MT9D112_I2C_ADDR_R              0x79 
+#define MT9D112_I2C_ACK                 0x0
+
+#define MT9D112_CMD_SEQ_NUM             2
+#define MT9D112_CMD_LEN                 2
+#define MT9D112_DAT_LEN                 2
+
+
+/**---------------------------------------------------------------------------*
+ **                     Local Function Prototypes                             *
+ **---------------------------------------------------------------------------*/
+LOCAL uint32 MT9D112_Identify(void);
+LOCAL uint32 Sensor_Mt9d112_Write_Regs( uint16 reg, uint16 value );
+
+extern ERR_I2C_E I2C_WriteCmdArrNoStop(uint8 addr, uint8 *pCmd, uint32 len, BOOLEAN ack_en);
+PUBLIC uint32 mt9d112_after_snapshot(void );
+
+LOCAL uint32 s_preview_mode;
+
+const SENSOR_REG_T mt9d112_YUV_COMMON[] =
+{//Tim.zhu@20080509 for cr115516 modify sensor setting
+    {0x301A, 0x0ACC},
+    //{SENSOR_WRITE_DELAY, 0xff},
+    {0x3202, 0x0008},
+    {0x341E, 0x8F09},
+    {0x341C, 0x0020},
+    {0x341E, 0x8F09},
+    //{SENSOR_WRITE_DELAY, 0xff},
+    {0x341E, 0x8F08},
+    {0x3044, 0x0542},
+    {0x3216, 0x82DF},
+    {0x321C, 0x0006},
+    {0x3212, 0x0002},
+    {0x338C, 0x2703},
+    {0x3390, 0x0280},
+    {0x338C, 0x2705},
+    {0x3390, 0x01e1},
+    
+    {0x338C, 0x2707},
+    {0x3390, 0x0640},
+    {0x338C, 0x2709},
+    {0x3390, 0x04b0},
+    
+    {0x338C, 0x270D},
+    {0x3390, 0x0000},
+    {0x338C, 0x270F},
+    {0x3390, 0x0000},
+    
+    {0x338C, 0x2711},
+     {0x3390, 0x04BD},
+    {0x338C, 0x2713},
+    {0x3390, 0x064D},
+    
+    {0x338C, 0x2715},
+    {0x3390, 0x0056},
+    {0x338C, 0x2717},
+    {0x3390, 0x2112},
+    {0x338C, 0x2719},
+    {0x3390, 0x046C},
+    {0x338C, 0x271B},
+    {0x3390, 0x0122},
+    {0x338C, 0x271D},
+    {0x3390, 0x007B},
+    {0x338C, 0x271F},
+    {0x3390, 0x013F},
+    {0x338C, 0x2721},
+    {0x3390, 0x00AB},
+    {0x338C, 0x2723},
+    {0x3390, 0x0296},
+    {0x338C, 0x2725},
+    {0x3390, 0x04E2},
+    {0x338C, 0x2727},
+    {0x3390, 0x1010},
+    {0x338C, 0x2729},
+    {0x3390, 0x2010},
+    {0x338C, 0x272B},
+    {0x3390, 0x1010},
+    {0x338C, 0x272D},
+    {0x3390, 0x1007},
+    {0x338C, 0x272F},
+    {0x3390, 0x0004},
+    {0x338C, 0x2731},
+    {0x3390, 0x0004},
+    {0x338C, 0x2733},
+    {0x3390, 0x04BB},
+    {0x338C, 0x2735},
+    {0x3390, 0x064B},
+    {0x338C, 0x2737},
+    {0x3390, 0x018A},
+    {0x338C, 0x2739},
+    {0x3390, 0x2112},
+    {0x338C, 0x273B},
+    {0x3390, 0x0024},
+    {0x338C, 0x273D},
+    {0x3390, 0x0120},
+    {0x338C, 0x2741},
+    {0x3390, 0x0169},
+    {0x338C, 0x2745},
+    {0x3390, 0x04EF},
+    {0x338C, 0x2747},
+    {0x3390, 0x09C4},
+    {0x338C, 0x2751},
+    {0x3390, 0x0000},
+    {0x338C, 0x2753},
+    {0x3390, 0x0320},
+    {0x338C, 0x2755},
+    {0x3390, 0x0000},
+    {0x338C, 0x2757},
+    {0x3390, 0x0258},
+    {0x338C, 0x275F},
+    {0x3390, 0x0000},
+    {0x338C, 0x2761},
+    {0x3390, 0x0640},
+    {0x338C, 0x2763},
+    {0x3390, 0x0000},
+    {0x338C, 0x2765},
+    {0x3390, 0x04B0},
+    {0x338C, 0x222E},
+    {0x3390, 0x0050},
+    {0x338C, 0xA408},
+    {0x3390, 0x000E},
+    {0x338C, 0xA409},
+    {0x3390, 0x0011},
+    {0x338C, 0xA40A},
+    {0x3390, 0x0011},
+    {0x338C, 0xA40B},
+    {0x3390, 0x0014},
+    {0x338C, 0x2411},
+    {0x3390, 0x0050},
+    {0x338C, 0x2413},
+    {0x3390, 0x0060},
+    {0x338C, 0x2415},
+    {0x3390, 0x0050},
+    {0x338C, 0x2417},
+    {0x3390, 0x0060},
+    {0x338C, 0xA40D},
+    {0x3390, 0x0002},
+    {0x338C, 0xA410},
+    {0x3390, 0x0001},
+    {0x338C, 0xA130},
+    {0x3390, 0x0000},
+    {0x338C, 0x2795},
+    {0x3390, 0x0002},
+    {0x338C, 0x2797},
+    {0x3390, 0x0002},
+    {0x34CE, 0x01A8},
+    {0x34D0, 0x6633},
+    {0x34D2, 0x319A},
+    {0x34D4, 0x9463},
+    {0x34D6, 0x4B25},
+    {0x34D8, 0x2670},
+    {0x34DA, 0x724C},
+    {0x34DC, 0xFF04},
+    {0x34DE, 0x018B},
+    {0x34E6, 0x0135},
+    {0x34EE, 0x092C},
+    {0x34F6, 0x0AFA},
+    {0x3500, 0xFC14},
+    {0x3508, 0x0644},
+    {0x3510, 0x3542},
+    {0x3518, 0x335C},
+    {0x3520, 0x3F5A},
+    {0x3528, 0x3E6F},
+    {0x3530, 0x4B10},
+    {0x3538, 0x0F9F},
+    {0x354C, 0x0000},
+    {0x3544, 0x0000},
+    {0x355C, 0x0000},
+    {0x3554, 0x0000},
+    {0x34E0, 0x0166},
+    {0x34E8, 0x00F9},
+    {0x34F0, 0x0D44},
+    {0x34F8, 0x0BE2},
+    {0x3502, 0x04A5},
+    {0x350A, 0xFCEB},
+    {0x3512, 0x2B44},
+    {0x351A, 0x2F55},
+    {0x3522, 0x3549},
+    {0x352A, 0x3147},
+    {0x3532, 0x3E49},
+    {0x353A, 0x0458},
+    {0x354E, 0x0000},
+    {0x3546, 0x0000},
+    {0x355E, 0x0000},
+    {0x3556, 0x0000},
+    {0x34E4, 0x0139},
+    {0x34EC, 0x00D2},
+    {0x34F4, 0x0C5F},
+    {0x34FC, 0x0B4B},
+    {0x3506, 0x21E2},
+    {0x350E, 0x01FF},
+    {0x3516, 0x3037},
+    {0x351E, 0x2A44},
+    {0x3526, 0x2B38},
+    {0x352E, 0x2138},
+    {0x3536, 0x3E46},
+    {0x353E, 0xE514},
+    {0x3552, 0x0000},
+    {0x354A, 0x0000},
+    {0x3562, 0x0000},
+    {0x355A, 0x0000},
+    {0x34E2, 0x0177},
+    {0x34EA, 0x00F1},
+    {0x34F2, 0x094A},
+    {0x34FA, 0x0A75},
+    {0x3504, 0x2520},
+    {0x350C, 0x0C42},
+    {0x3514, 0x303A},
+    {0x351C, 0x3357},
+    {0x3524, 0x314B},
+    {0x352C, 0x2E4D},
+    {0x3534, 0x2D0C},
+    {0x353C, 0xFEF2},
+    {0x3550, 0x0000},
+    {0x3548, 0x0000},
+    {0x3560, 0x0000},
+    {0x3558, 0x0000},
+    {0x3540, 0x0004},
+    {0x3542, 0x0000},
+    {0x3210, 0x01fc},
+    {0x338C, 0xA34D},
+    {0x3390, 0x0084},
+    {0x338C, 0xA206},
+    {0x3390, 0x0058},
+
+    //{0x338C, 0xA103},
+    //{0x3390, 0x0006},
+    //{0x338C, 0xA103},
+    //{0x3390, 0x0006},
+    //{SENSOR_WRITE_DELAY, 0xff},
+
+    {0x338C, 0xA103},
+    {0x3390, 0x0005},
+    {0x338C, 0xA404},
+    {0x3390, 0x00C2},
+    {0x338C, 0xA103},
+    {0x3390, 0x0006},
+    {0x338C, 0xA115},
+    {0x3390, 0x00ED},
+    {0x338C, 0xA352},
+    {0x3390, 0x0080},
+    {0x338C, 0xA20C},
+    {0x3390, 0x0006},
+    {0x338C, 0xA215},
+    {0x3390, 0x0006},
+    {0x336C, 0x1400},
+    {0x338C, 0xA115},
+    {0x3390, 0x00FF},
+    {0x338C, 0xA11C},
+    {0x3390, 0x0002},
+    {0x338C, 0xA11E},
+    {0x3390, 0x0000},
+    {0x338C, 0xA20E},
+    {0x3390, 0x0064},
+    {0x338C, 0x2212},
+    {0x3390, 0x0064},
+    {0x338c, 0xA361},
+    {0x3390, 0x00B4},
+    {0x338c, 0xA362},
+    {0x3390, 0x00EB},
+    {0x338C, 0xA103},
+    {0x3390, 0x0005},
+    {SENSOR_WRITE_DELAY, 0x64},
+    {0x338C, 0xA103},
+    {0x3390, 0x0006},
+    {SENSOR_WRITE_DELAY, 0x64},
+    //{0x338C, 0xA120},
+    //{0x3390, 0x0000},
+    //{0x338C, 0xA103},
+    //{0x3390, 0x0001},
+    //{SENSOR_WRITE_DELAY, 0xff},
+    //{SENSOR_WRITE_DELAY, 0xff}
+};   
+const SENSOR_REG_T mt9d112_YUV_640X480_NIGHT[] =
+{//Tim.zhu@20080509 for cr115516 modify sensor setting
+    {0x301A, 0x0ACC},
+   //{SENSOR_WRITE_DELAY, 0xff},
+    {0x3202, 0x0008},
+    {0x341E, 0x8F09},
+    {0x341C, 0x0020},
+    {0x341E, 0x8F09},
+   // {SENSOR_WRITE_DELAY, 0xff},
+    {0x341E, 0x8F08},
+    {0x3044, 0x0542},
+    {0x3216, 0x82DF},
+    {0x321C, 0x0006},
+    {0x3212, 0x0002},
+    {0x338C, 0x2703},
+    {0x3390, 0x0280},
+    {0x338C, 0x2705},
+    {0x3390, 0x01e1},
+    {0x338C, 0x2707},
+    {0x3390, 0x0640},
+    {0x338C, 0x2709},
+    {0x3390, 0x04b0},
+    {0x338C, 0x270D},
+    {0x3390, 0x0000},
+    {0x338C, 0x270F},
+    {0x3390, 0x0000},
+    {0x338C, 0x2711},
+    {0x3390, 0x04BD},
+    {0x338C, 0x2713},
+    {0x3390, 0x064D},
+    {0x338C, 0x2715},
+    {0x3390, 0x0056},
+    {0x338C, 0x2717},
+    {0x3390, 0x2112},
+    {0x338C, 0x2719},
+    {0x3390, 0x046C},
+    {0x338C, 0x271B},
+    {0x3390, 0x0122},
+    {0x338C, 0x271D},
+    {0x3390, 0x007B},
+    {0x338C, 0x271F},
+    {0x3390, 0x013F},
+    {0x338C, 0x2721},
+    {0x3390, 0x00AB},
+    {0x338C, 0x2723},
+    {0x3390, 0x0296},
+    {0x338C, 0x2725},
+    {0x3390, 0x04E2},
+    {0x338C, 0x2727},
+    {0x3390, 0x1010},
+    {0x338C, 0x2729},
+    {0x3390, 0x2010},
+    {0x338C, 0x272B},
+    {0x3390, 0x1010},
+    {0x338C, 0x272D},
+    {0x3390, 0x1007},
+    {0x338C, 0x272F},
+    {0x3390, 0x0004},
+    {0x338C, 0x2731},
+    {0x3390, 0x0004},
+    {0x338C, 0x2733},
+    {0x3390, 0x04BB},
+    {0x338C, 0x2735},
+    {0x3390, 0x064B},
+    {0x338C, 0x2737},
+    {0x3390, 0x018A},
+    {0x338C, 0x2739},
+    {0x3390, 0x2112},
+    {0x338C, 0x273B},
+    {0x3390, 0x0024},
+    {0x338C, 0x273D},
+    {0x3390, 0x0120},
+    {0x338C, 0x2741},
+    {0x3390, 0x0169},
+    {0x338C, 0x2745},
+    {0x3390, 0x04EF},
+    {0x338C, 0x2747},
+    {0x3390, 0x09C4},
+    {0x338C, 0x2751},
+    {0x3390, 0x0000},
+    {0x338C, 0x2753},
+    {0x3390, 0x0320},
+    {0x338C, 0x2755},
+    {0x3390, 0x0000},
+    {0x338C, 0x2757},
+    {0x3390, 0x0258},
+    {0x338C, 0x275F},
+    {0x3390, 0x0000},
+    {0x338C, 0x2761},
+    {0x3390, 0x0640},
+    {0x338C, 0x2763},
+    {0x3390, 0x0000},
+    {0x338C, 0x2765},
+    {0x3390, 0x04B0},
+    {0x338C, 0x222E},
+    {0x3390, 0x0050},
+    {0x338C, 0xA408},
+    {0x3390, 0x000E},
+    {0x338C, 0xA409},
+    {0x3390, 0x0011},
+    {0x338C, 0xA40A},
+    {0x3390, 0x0011},
+    {0x338C, 0xA40B},
+    {0x3390, 0x0014},
+    {0x338C, 0x2411},
+    {0x3390, 0x0050},
+    {0x338C, 0x2413},
+    {0x3390, 0x0060},
+    {0x338C, 0x2415},
+    {0x3390, 0x0050},
+    {0x338C, 0x2417},
+    {0x3390, 0x0060},
+    {0x338C, 0xA40D},
+    {0x3390, 0x0002},
+    {0x338C, 0xA410},
+    {0x3390, 0x0001},
+    {0x338C, 0xA130},
+    {0x3390, 0x0000},
+    {0x338C, 0xA20C},
+    {0x3390, 0x0018},
+    {0x338C, 0xA215},
+    {0x3390, 0x0008},
+    {0x338C, 0x2795},
+    {0x3390, 0x0002},
+    {0x338C, 0x2797},
+    {0x3390, 0x0002},
+    {0x34CE, 0x01A8},
+    {0x34D0, 0x6633},
+    {0x34D2, 0x319A},
+    {0x34D4, 0x9463},
+    {0x34D6, 0x4B25},
+    {0x34D8, 0x2670},
+    {0x34DA, 0x724C},
+    {0x34DC, 0xFF04},
+    {0x34DE, 0x018B},
+    {0x34E6, 0x0135},
+    {0x34EE, 0x092C},
+    {0x34F6, 0x0AFA},
+    {0x3500, 0xFC14},
+    {0x3508, 0x0644},
+    {0x3510, 0x3542},
+    {0x3518, 0x335C},
+    {0x3520, 0x3F5A},
+    {0x3528, 0x3E6F},
+    {0x3530, 0x4B10},
+    {0x3538, 0x0F9F},
+    {0x354C, 0x0000},
+    {0x3544, 0x0000},
+    {0x355C, 0x0000},
+    {0x3554, 0x0000},
+    {0x34E0, 0x0166},
+    {0x34E8, 0x00F9},
+    {0x34F0, 0x0D44},
+    {0x34F8, 0x0BE2},
+    {0x3502, 0x04A5},
+    {0x350A, 0xFCEB},
+    {0x3512, 0x2B44},
+    {0x351A, 0x2F55},
+    {0x3522, 0x3549},
+    {0x352A, 0x3147},
+    {0x3532, 0x3E49},
+    {0x353A, 0x0458},
+    {0x354E, 0x0000},
+    {0x3546, 0x0000},
+    {0x355E, 0x0000},
+    {0x3556, 0x0000},
+    {0x34E4, 0x0139},
+    {0x34EC, 0x00D2},
+    {0x34F4, 0x0C5F},
+    {0x34FC, 0x0B4B},
+    {0x3506, 0x21E2},
+    {0x350E, 0x01FF},
+    {0x3516, 0x3037},
+    {0x351E, 0x2A44},
+    {0x3526, 0x2B38},
+    {0x352E, 0x2138},
+    {0x3536, 0x3E46},
+    {0x353E, 0xE514},
+    {0x3552, 0x0000},
+    {0x354A, 0x0000},
+    {0x3562, 0x0000},
+    {0x355A, 0x0000},
+    {0x34E2, 0x0177},
+    {0x34EA, 0x00F1},
+    {0x34F2, 0x094A},
+    {0x34FA, 0x0A75},
+    {0x3504, 0x2520},
+    {0x350C, 0x0C42},
+    {0x3514, 0x303A},
+    {0x351C, 0x3357},
+    {0x3524, 0x314B},
+    {0x352C, 0x2E4D},
+    {0x3534, 0x2D0C},
+    {0x353C, 0xFEF2},
+    {0x3550, 0x0000},
+    {0x3548, 0x0000},
+    {0x3560, 0x0000},
+    {0x3558, 0x0000},
+    {0x3540, 0x0004},
+    {0x3542, 0x0000},
+    {0x3210, 0x01fc},
+    {0x338C, 0xA34D},
+    {0x3390, 0x0084},
+    {0x338C, 0xA206},
+    {0x3390, 0x0058},
+
+    //{0x338C, 0xA103},
+    //{0x3390, 0x0006},
+    //{0x338C, 0xA103},
+    //{0x3390, 0x0006},
+    //{SENSOR_WRITE_DELAY, 0xff},
+
+    {0x338C, 0xA103},
+    {0x3390, 0x0005},
+    {0x338C, 0xA404},
+    {0x3390, 0x00C2},
+    {0x338C, 0xA103},
+    {0x3390, 0x0006},
+    {0x338C, 0xA115},
+    {0x3390, 0x00ED},
+    {0x338C, 0xA352},
+    {0x3390, 0x0080},
+    {0x338C, 0xA103},
+    {0x3390, 0x0005},
+    {SENSOR_WRITE_DELAY, 0x64},
+    {0x338C, 0xA103},
+    {0x3390, 0x0006},
+    {SENSOR_WRITE_DELAY, 0x64},
+  //  {0x338C, 0xA120},
+   // {0x3390, 0x0000},
+    //{0x338C, 0xA103},
+    //{0x3390, 0x0001},
+    //{SENSOR_WRITE_DELAY, 0x64}
+};
+
+__align(4) const SENSOR_REG_T mt9d112_mode_tab[][7]=
+{
+    {
+
+	{0x338C, 0xA20C}, 	// MCU_ADDRESS [AE_MAX_INDEX]
+	{0x3390, 0x0008}, 	// MCU_DATA_0
+	{0x338C, 0xA215}, 	// MCU_ADDRESS [AE_INDEX_TH23]
+	{0x3390, 0x0006}, 	// MCU_DATA_0
+
+	{0x338C, 0xA103}, 	// MCU_ADDRESS [SEQ_CMD]
+	{0x3390, 0x0005}, 	// MCU_DATA_0
+       {0xff, 0xff}
+    },
+    
+    {
+	{0x338C, 0xA20C},// MCU_ADDRESS [AE_MAX_INDEX]
+	{0x3390, 0x0018},// MCU_DATA_0
+	{0x338C, 0xA215},// MCU_ADDRESS [AE_INDEX_TH23]
+	{0x3390, 0x0006},// MCU_DATA_0
+
+	{0x338C, 0xA103},// MCU_ADDRESS [SEQ_CMD]
+	{0x3390, 0x0005},	// MCU_DATA_0
+	
+       {0xff, 0xff}
+    }
+
+};
+
+LOCAL uint32 set_mt9d112_mode(uint32 preview_mode)
+{
+    uint32 i;
+    
+    SENSOR_REG_T* sensor_reg_ptr = (SENSOR_REG_T*)mt9d112_mode_tab[preview_mode];
+
+    SCI_ASSERT(PNULL != sensor_reg_ptr);
+
+    s_preview_mode = preview_mode;
+    
+    for(i = 0; (0xFF!=sensor_reg_ptr[i].reg_addr) && (0xFF!=sensor_reg_ptr[i].reg_value) ; i++)
+    {
+        Sensor_Mt9d112_Write_Regs(sensor_reg_ptr[i].reg_addr, sensor_reg_ptr[i].reg_value);
+    }
+    
+    //SCI_TRACE_LOW:"set_mt9d112_mode: level = %d"
+    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_567_112_2_18_0_31_3_871,(uint8*)"d", preview_mode);
+    
+    return 0;
+}
+
+__align(4) const SENSOR_REG_T mt9d112_brightness_tab[][3]=
+{
+    { // level 0
+        { 0x338C, 0xA206}, // MCU_ADDRESS
+        { 0x3390, 0x0020}, //(7) AE_TARGET
+        {0xff, 0xff}
+    },
+    { // level 1
+        { 0x338C, 0xA206}, // MCU_ADDRESS
+        { 0x3390, 0x0040}, //(96) AE_TARGET
+        {0xff, 0xff}
+    },
+    { // level 2
+        { 0x338C, 0xA206}, // MCU_ADDRESS
+        { 0x3390, 0x0050}, //(7) AE_TARGET
+        {0xff, 0xff}
+    },
+    { // level 3
+        { 0x338C, 0xA206}, // MCU_ADDRESS
+        { 0x3390, 0x0060}, //(7) AE_TARGET
+        {0xff, 0xff}
+    },
+    // Following is same as level 3
+    { // level 4
+        { 0x338C, 0xA206}, // MCU_ADDRESS
+        { 0x3390, 0x0080}, //(7) AE_TARGET
+        {0xff, 0xff}
+    },
+    { // level 5
+        { 0x338C, 0xA206}, // MCU_ADDRESS
+        { 0x3390, 0x00a0}, //(7) AE_TARGET
+        {0xff, 0xff}
+    },
+    { // level 6
+        { 0x338C, 0xA206}, // MCU_ADDRESS
+        { 0x3390, 0x00c0}, //(7) AE_TARGET
+        {0xff, 0xff}
+    },
+        
+};
+
+LOCAL uint32 set_mt9d112_brightness(uint32 level)
+{
+    uint32 i;
+
+    SENSOR_REG_T* sensor_reg_ptr = (SENSOR_REG_T*)mt9d112_brightness_tab[level];
+
+    SCI_ASSERT(PNULL != sensor_reg_ptr);
+    
+    for(i = 0; (0xFF!=sensor_reg_ptr[i].reg_addr) && (0xFF!=sensor_reg_ptr[i].reg_value) ; i++)
+    {
+        Sensor_Mt9d112_Write_Regs(sensor_reg_ptr[i].reg_addr, sensor_reg_ptr[i].reg_value);
+       
+    }
+    
+    //SCI_TRACE_LOW:"set_brightness: level = %d"
+    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_627_112_2_18_0_31_3_872,(uint8*)"d", level);
+    
+    return 0;
+}
+
+
+__align(4) const SENSOR_REG_T mt9d112_contrast_tab[][83]=
+{
+    { // level -3
+       {0x338C, 0xA76D},	// MCU_ADDRESS [MODE_GAM_CONT_A]
+	{0x3390, 0x0003},	// MCU_DATA_0
+	{0x338C, 0xA76E},	// MCU_ADDRESS [MODE_GAM_CONT_B]
+	{0x3390, 0x0003},	// MCU_DATA_0
+	{0x338C, 0xA76F},	// MCU_ADDRESS [MODE_GAM_TABLE_A_0]
+	{0x3390, 0x0000},	// MCU_DATA_0
+	{0x338C, 0xA770},	// MCU_ADDRESS [MODE_GAM_TABLE_A_1]
+	{0x3390, 0x006F},	// MCU_DATA_0
+	{0x338C, 0xA771},	// MCU_ADDRESS [MODE_GAM_TABLE_A_2]
+	{0x3390, 0x0080},	// MCU_DATA_0
+	{0x338C, 0xA772},	// MCU_ADDRESS [MODE_GAM_TABLE_A_3]
+	{0x3390, 0x0092},	// MCU_DATA_0
+	{0x338C, 0xA773},	// MCU_ADDRESS [MODE_GAM_TABLE_A_4]
+	{0x3390, 0x00A8},	// MCU_DATA_0
+	{0x338C, 0xA774},	// MCU_ADDRESS [MODE_GAM_TABLE_A_5]
+	{0x3390, 0x00B6},	// MCU_DATA_0
+	{0x338C, 0xA775},	// MCU_ADDRESS [MODE_GAM_TABLE_A_6]
+	{0x3390, 0x00C1},	// MCU_DATA_0
+	{0x338C, 0xA776},	// MCU_ADDRESS [MODE_GAM_TABLE_A_7]
+	{0x3390, 0x00CA},	// MCU_DATA_0
+	{0x338C, 0xA777},	// MCU_ADDRESS [MODE_GAM_TABLE_A_8]
+	{0x3390, 0x00D2},	// MCU_DATA_0
+	{0x338C, 0xA778},	// MCU_ADDRESS [MODE_GAM_TABLE_A_9]
+	{0x3390, 0x00D8},	// MCU_DATA_0
+	{0x338C, 0xA779},	// MCU_ADDRESS [MODE_GAM_TABLE_A_10]
+	{0x3390, 0x00DE},	// MCU_DATA_0
+	{0x338C, 0xA77A},	// MCU_ADDRESS [MODE_GAM_TABLE_A_11]
+	{0x3390, 0x00E3},	// MCU_DATA_0
+	{0x338C, 0xA77B},	// MCU_ADDRESS [MODE_GAM_TABLE_A_12]
+	{0x3390, 0x00E8},	// MCU_DATA_0
+	{0x338C, 0xA77C},	// MCU_ADDRESS [MODE_GAM_TABLE_A_13]
+	{0x3390, 0x00ED},	// MCU_DATA_0
+	{0x338C, 0xA77D},	// MCU_ADDRESS [MODE_GAM_TABLE_A_14]
+	{0x3390, 0x00F1},	// MCU_DATA_0
+	{0x338C, 0xA77E},	// MCU_ADDRESS [MODE_GAM_TABLE_A_15]
+	{0x3390, 0x00F5},	// MCU_DATA_0
+	{0x338C, 0xA77F},	// MCU_ADDRESS [MODE_GAM_TABLE_A_16]
+	{0x3390, 0x00F8},	// MCU_DATA_0
+	{0x338C, 0xA780},	// MCU_ADDRESS [MODE_GAM_TABLE_A_17]
+	{0x3390, 0x00FC},	// MCU_DATA_0
+	{0x338C, 0xA781},	// MCU_ADDRESS [MODE_GAM_TABLE_A_18]
+	{0x3390, 0x00FF},	// MCU_DATA_0
+	{0x338C, 0xA782},	// MCU_ADDRESS [MODE_GAM_TABLE_B_0]
+	{0x3390, 0x0000},	// MCU_DATA_0
+	{0x338C, 0xA783},	// MCU_ADDRESS [MODE_GAM_TABLE_B_1]
+	{0x3390, 0x006F},	// MCU_DATA_0
+	{0x338C, 0xA784},	// MCU_ADDRESS [MODE_GAM_TABLE_B_2]
+	{0x3390, 0x0080},	// MCU_DATA_0
+	{0x338C, 0xA785},	// MCU_ADDRESS [MODE_GAM_TABLE_B_3]
+	{0x3390, 0x0092},	// MCU_DATA_0
+	{0x338C, 0xA786},	// MCU_ADDRESS [MODE_GAM_TABLE_B_4]
+	{0x3390, 0x00A8},	// MCU_DATA_0
+	{0x338C, 0xA787},	// MCU_ADDRESS [MODE_GAM_TABLE_B_5]
+	{0x3390, 0x00B6},	// MCU_DATA_0
+	{0x338C, 0xA788},	// MCU_ADDRESS [MODE_GAM_TABLE_B_6]
+	{0x3390, 0x00C1},	// MCU_DATA_0
+	{0x338C, 0xA789},	// MCU_ADDRESS [MODE_GAM_TABLE_B_7]
+	{0x3390, 0x00CA},	// MCU_DATA_0
+	{0x338C, 0xA78A},	// MCU_ADDRESS [MODE_GAM_TABLE_B_8]
+	{0x3390, 0x00D2},	// MCU_DATA_0
+	{0x338C, 0xA78B},	// MCU_ADDRESS [MODE_GAM_TABLE_B_9]
+	{0x3390, 0x00D8},	// MCU_DATA_0
+	{0x338C, 0xA78C},	// MCU_ADDRESS [MODE_GAM_TABLE_B_10]
+	{0x3390, 0x00DE},	// MCU_DATA_0
+	{0x338C, 0xA78D},	// MCU_ADDRESS [MODE_GAM_TABLE_B_11]
+	{0x3390, 0x00E3},	// MCU_DATA_0
+	{0x338C, 0xA78E},	// MCU_ADDRESS [MODE_GAM_TABLE_B_12]
+	{0x3390, 0x00E8},	// MCU_DATA_0
+	{0x338C, 0xA78F},	// MCU_ADDRESS [MODE_GAM_TABLE_B_13]
+	{0x3390, 0x00ED},	// MCU_DATA_0
+	{0x338C, 0xA790},	// MCU_ADDRESS [MODE_GAM_TABLE_B_14]
+	{0x3390, 0x00F1},	// MCU_DATA_0
+	{0x338C, 0xA791},	// MCU_ADDRESS [MODE_GAM_TABLE_B_15]
+	{0x3390, 0x00F5},	// MCU_DATA_0
+	{0x338C, 0xA792},	// MCU_ADDRESS [MODE_GAM_TABLE_B_16]
+	{0x3390, 0x00F8},	// MCU_DATA_0
+	{0x338C, 0xA793},	// MCU_ADDRESS [MODE_GAM_TABLE_B_17]
+	{0x3390, 0x00FC},	// MCU_DATA_0
+	{0x338C, 0xA794},	// MCU_ADDRESS [MODE_GAM_TABLE_B_18]
+	{0x3390, 0x00FF},	// MCU_DATA_0
+
+
+	{0x338C, 0xA103},	// MCU_ADDRESS [SEQ_CMD]
+	{0x3390, 0x0005},	// MCU_DATA_0
+        {0xff, 0xff}
+    },
+    {  //-2
+       {0x338C, 0xA76D}, 	// MCU_ADDRESS [MODE_GAM_CONT_A]
+	{0x3390, 0x0003}, 	// MCU_DATA_0
+	{0x338C, 0xA76E}, 	// MCU_ADDRESS [MODE_GAM_CONT_B]
+	{0x3390, 0x0003}, 	// MCU_DATA_0
+	{0x338C, 0xA76F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_0]
+	{0x3390, 0x0000}, 	// MCU_DATA_0
+	{0x338C, 0xA770}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_1]
+	{0x3390, 0x001E}, 	// MCU_DATA_0
+	{0x338C, 0xA771}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_2]
+	{0x3390, 0x0050}, 	// MCU_DATA_0
+	{0x338C, 0xA772}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_3]
+	{0x3390, 0x0075}, 	// MCU_DATA_0
+	{0x338C, 0xA773}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_4]
+	{0x3390, 0x0092}, 	// MCU_DATA_0
+	{0x338C, 0xA774}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_5]
+	{0x3390, 0x00A4}, 	// MCU_DATA_0
+	{0x338C, 0xA775}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_6]
+	{0x3390, 0x00B2}, 	// MCU_DATA_0
+	{0x338C, 0xA776}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_7]
+	{0x3390, 0x00BD}, 	// MCU_DATA_0
+	{0x338C, 0xA777}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_8]
+	{0x3390, 0x00C6}, 	// MCU_DATA_0
+	{0x338C, 0xA778}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_9]
+	{0x3390, 0x00CE}, 	// MCU_DATA_0
+	{0x338C, 0xA779}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_10]
+	{0x3390, 0x00D5}, 	// MCU_DATA_0
+	{0x338C, 0xA77A}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_11]
+	{0x3390, 0x00DC}, 	// MCU_DATA_0
+	{0x338C, 0xA77B}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_12]
+	{0x3390, 0x00E2}, 	// MCU_DATA_0
+	{0x338C, 0xA77C}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_13]
+	{0x3390, 0x00E8}, 	// MCU_DATA_0
+	{0x338C, 0xA77D}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_14]
+	{0x3390, 0x00ED}, 	// MCU_DATA_0
+	{0x338C, 0xA77E}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_15]
+	{0x3390, 0x00F2}, 	// MCU_DATA_0
+	{0x338C, 0xA77F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_16]
+	{0x3390, 0x00F6}, 	// MCU_DATA_0
+	{0x338C, 0xA780}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_17]
+	{0x3390, 0x00FB}, 	// MCU_DATA_0
+	{0x338C, 0xA781}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_18]
+	{0x3390, 0x00FF}, 	// MCU_DATA_0
+	{0x338C, 0xA782}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_0]
+	{0x3390, 0x0000}, 	// MCU_DATA_0
+	{0x338C, 0xA783}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_1]
+	{0x3390, 0x001E}, 	// MCU_DATA_0
+	{0x338C, 0xA784}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_2]
+	{0x3390, 0x0050}, 	// MCU_DATA_0
+	{0x338C, 0xA785}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_3]
+	{0x3390, 0x0075}, 	// MCU_DATA_0
+	{0x338C, 0xA786}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_4]
+	{0x3390, 0x0092}, 	// MCU_DATA_0
+	{0x338C, 0xA787}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_5]
+	{0x3390, 0x00A4}, 	// MCU_DATA_0
+	{0x338C, 0xA788}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_6]
+	{0x3390, 0x00B2}, 	// MCU_DATA_0
+	{0x338C, 0xA789}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_7]
+	{0x3390, 0x00BD}, 	// MCU_DATA_0
+	{0x338C, 0xA78A}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_8]
+	{0x3390, 0x00C6}, 	// MCU_DATA_0
+	{0x338C, 0xA78B}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_9]
+	{0x3390, 0x00CE}, 	// MCU_DATA_0
+	{0x338C, 0xA78C}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_10]
+	{0x3390, 0x00D5}, 	// MCU_DATA_0
+	{0x338C, 0xA78D}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_11]
+	{0x3390, 0x00DC}, 	// MCU_DATA_0
+	{0x338C, 0xA78E}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_12]
+	{0x3390, 0x00E2}, 	// MCU_DATA_0
+	{0x338C, 0xA78F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_13]
+	{0x3390, 0x00E8}, 	// MCU_DATA_0
+	{0x338C, 0xA790}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_14]
+	{0x3390, 0x00ED}, 	// MCU_DATA_0
+	{0x338C, 0xA791}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_15]
+	{0x3390, 0x00F2}, 	// MCU_DATA_0
+	{0x338C, 0xA792}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_16]
+	{0x3390, 0x00F6}, 	// MCU_DATA_0
+	{0x338C, 0xA793}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_17]
+	{0x3390, 0x00FB}, 	// MCU_DATA_0
+	{0x338C, 0xA794}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_18]
+	{0x3390, 0x00FF}, 	// MCU_DATA_0
+
+	{0x338C, 0xA103},	// MCU_ADDRESS [SEQ_CMD]
+	{0x3390, 0x0005 }, 	// MCU_DATA_0
+        {0xff, 0xff}
+    },
+    
+        
+    { // -1
+       {0x338C, 0xA76D}, 	// MCU_ADDRESS [MODE_GAM_CONT_A]
+	{0x3390, 0x0003}, 	// MCU_DATA_0
+	{0x338C, 0xA76E}, 	// MCU_ADDRESS [MODE_GAM_CONT_B]
+	{0x3390, 0x0003}, 	// MCU_DATA_0
+	{0x338C, 0xA76F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_0]
+	{0x3390, 0x0000}, 	// MCU_DATA_0
+	{0x338C, 0xA770}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_1]
+	{0x3390, 0x0013}, 	// MCU_DATA_0
+	{0x338C, 0xA771}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_2]
+	{0x3390, 0x0034}, 	// MCU_DATA_0
+	{0x338C, 0xA772}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_3]
+	{0x3390, 0x0055}, 	// MCU_DATA_0
+	{0x338C, 0xA773}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_4]
+	{0x3390, 0x0075}, 	// MCU_DATA_0
+	{0x338C, 0xA774}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_5]
+	{0x3390, 0x008A}, 	// MCU_DATA_0
+	{0x338C, 0xA775}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_6]
+	{0x3390, 0x009A}, 	// MCU_DATA_0
+	{0x338C, 0xA776}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_7]
+	{0x3390, 0x00A7}, 	// MCU_DATA_0
+	{0x338C, 0xA777}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_8]
+	{0x3390, 0x00B3}, 	// MCU_DATA_0
+	{0x338C, 0xA778}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_9]
+	{0x3390, 0x00BD}, 	// MCU_DATA_0
+	{0x338C, 0xA779}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_10]
+	{0x3390, 0x00C7}, 	// MCU_DATA_0
+	{0x338C, 0xA77A}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_11]
+	{0x3390, 0x00CF}, 	// MCU_DATA_0
+	{0x338C, 0xA77B}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_12]
+	{0x3390, 0x00D7}, 	// MCU_DATA_0
+	{0x338C, 0xA77C}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_13]
+	{0x3390, 0x00DF}, 	// MCU_DATA_0
+	{0x338C, 0xA77D}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_14]
+	{0x3390, 0x00E6}, 	// MCU_DATA_0
+	{0x338C, 0xA77E}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_15]
+	{0x3390, 0x00ED}, 	// MCU_DATA_0
+	{0x338C, 0xA77F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_16]
+	{0x3390, 0x00F3}, 	// MCU_DATA_0
+	{0x338C, 0xA780}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_17]
+	{0x3390, 0x00F9}, 	// MCU_DATA_0
+	{0x338C, 0xA781}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_18]
+	{0x3390, 0x00FF}, 	// MCU_DATA_0
+	{0x338C, 0xA782}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_0]
+	{0x3390, 0x0000}, 	// MCU_DATA_0
+	{0x338C, 0xA783}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_1]
+	{0x3390, 0x0013}, 	// MCU_DATA_0
+	{0x338C, 0xA784}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_2]
+	{0x3390, 0x0034}, 	// MCU_DATA_0
+	{0x338C, 0xA785}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_3]
+	{0x3390, 0x0055}, 	// MCU_DATA_0
+	{0x338C, 0xA786}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_4]
+	{0x3390, 0x0075}, 	// MCU_DATA_0
+	{0x338C, 0xA787}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_5]
+	{0x3390, 0x008A}, 	// MCU_DATA_0
+	{0x338C, 0xA788}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_6]
+	{0x3390, 0x009A}, 	// MCU_DATA_0
+	{0x338C, 0xA789}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_7]
+	{0x3390, 0x00A7}, 	// MCU_DATA_0
+	{0x338C, 0xA78A}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_8]
+	{0x3390, 0x00B3}, 	// MCU_DATA_0
+	{0x338C, 0xA78B}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_9]
+	{0x3390, 0x00BD}, 	// MCU_DATA_0
+	{0x338C, 0xA78C}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_10]
+	{0x3390, 0x00C7}, 	// MCU_DATA_0
+	{0x338C, 0xA78D}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_11]
+	{0x3390, 0x00CF}, 	// MCU_DATA_0
+	{0x338C, 0xA78E}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_12]
+	{0x3390, 0x00D7}, 	// MCU_DATA_0
+	{0x338C, 0xA78F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_13]
+	{0x3390, 0x00DF}, 	// MCU_DATA_0
+	{0x338C, 0xA790}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_14]
+	{0x3390, 0x00E6}, 	// MCU_DATA_0
+	{0x338C, 0xA791}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_15]
+	{0x3390, 0x00ED}, 	// MCU_DATA_0
+	{0x338C, 0xA792}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_16]
+	{0x3390, 0x00F3}, 	// MCU_DATA_0
+	{0x338C, 0xA793}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_17]
+	{0x3390, 0x00F9}, 	// MCU_DATA_0
+	{0x338C, 0xA794}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_18]
+	{0x3390, 0x00FF}, 	// MCU_DATA_0
+
+	{0x338C, 0xA103}, 	// MCU_ADDRESS [SEQ_CMD]
+	{0x3390, 0x0005}, 	// MCU_DATA_0
+        {0xff, 0xff}
+    },
+
+    { // 0
+       {0x338C, 0xA76D}, 	// MCU_ADDRESS [MODE_GAM_CONT_A]
+	{0x3390, 0x0003}, 	// MCU_DATA_0
+	{0x338C, 0xA76E}, 	// MCU_ADDRESS [MODE_GAM_CONT_B]
+	{0x3390, 0x0003}, 	// MCU_DATA_0
+	{0x338C, 0xA76F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_0]
+	{0x3390, 0x0000}, 	// MCU_DATA_0
+	{0x338C, 0xA770}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_1]
+	{0x3390, 0x000A}, 	// MCU_DATA_0
+	{0x338C, 0xA771}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_2]
+	{0x3390, 0x001D}, 	// MCU_DATA_0
+	{0x338C, 0xA772}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_3]
+	{0x3390, 0x0037}, 	// MCU_DATA_0
+	{0x338C, 0xA773}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_4]
+	{0x3390, 0x0058}, 	// MCU_DATA_0
+	{0x338C, 0xA774}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_5]
+	{0x3390, 0x0071}, 	// MCU_DATA_0
+	{0x338C, 0xA775}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_6]
+	{0x3390, 0x0086}, 	// MCU_DATA_0
+	{0x338C, 0xA776}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_7]
+	{0x3390, 0x0098}, 	// MCU_DATA_0
+	{0x338C, 0xA777}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_8]
+	{0x3390, 0x00A7}, 	// MCU_DATA_0
+	{0x338C, 0xA778}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_9]
+	{0x3390, 0x00B5}, 	// MCU_DATA_0
+	{0x338C, 0xA779}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_10]
+	{0x3390, 0x00C0}, 	// MCU_DATA_0
+	{0x338C, 0xA77A}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_11]
+	{0x3390, 0x00CB}, 	// MCU_DATA_0
+	{0x338C, 0xA77B}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_12]
+	{0x3390, 0x00D4}, 	// MCU_DATA_0
+	{0x338C, 0xA77C}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_13]
+	{0x3390, 0x00DD}, 	// MCU_DATA_0
+	{0x338C, 0xA77D}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_14]
+	{0x3390, 0x00E4}, 	// MCU_DATA_0
+	{0x338C, 0xA77E}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_15]
+	{0x3390, 0x00EC}, 	// MCU_DATA_0
+	{0x338C, 0xA77F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_16]
+	{0x3390, 0x00F3}, 	// MCU_DATA_0
+	{0x338C, 0xA780}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_17]
+	{0x3390, 0x00F9}, 	// MCU_DATA_0
+	{0x338C, 0xA781}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_18]
+	{0x3390, 0x00FF}, 	// MCU_DATA_0
+	{0x338C, 0xA782}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_0]
+	{0x3390, 0x0000}, 	// MCU_DATA_0
+	{0x338C, 0xA783}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_1]
+	{0x3390, 0x000A}, 	// MCU_DATA_0
+	{0x338C, 0xA784}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_2]
+	{0x3390, 0x001D}, 	// MCU_DATA_0
+	{0x338C, 0xA785}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_3]
+	{0x3390, 0x0037}, 	// MCU_DATA_0
+	{0x338C, 0xA786}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_4]
+	{0x3390, 0x0058}, 	// MCU_DATA_0
+	{0x338C, 0xA787}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_5]
+	{0x3390, 0x0071}, 	// MCU_DATA_0
+	{0x338C, 0xA788}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_6]
+	{0x3390, 0x0086}, 	// MCU_DATA_0
+	{0x338C, 0xA789}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_7]
+	{0x3390, 0x0098}, 	// MCU_DATA_0
+	{0x338C, 0xA78A}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_8]
+	{0x3390, 0x00A7}, 	// MCU_DATA_0
+	{0x338C, 0xA78B}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_9]
+	{0x3390, 0x00B5}, 	// MCU_DATA_0
+	{0x338C, 0xA78C}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_10]
+	{0x3390, 0x00C0}, 	// MCU_DATA_0
+	{0x338C, 0xA78D}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_11]
+	{0x3390, 0x00CB}, 	// MCU_DATA_0
+	{0x338C, 0xA78E}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_12]
+	{0x3390, 0x00D4}, 	// MCU_DATA_0
+	{0x338C, 0xA78F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_13]
+	{0x3390, 0x00DD}, 	// MCU_DATA_0
+	{0x338C, 0xA790}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_14]
+	{0x3390, 0x00E4}, 	// MCU_DATA_0
+	{0x338C, 0xA791}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_15]
+	{0x3390, 0x00EC}, 	// MCU_DATA_0
+	{0x338C, 0xA792}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_16]
+	{0x3390, 0x00F3}, 	// MCU_DATA_0
+	{0x338C, 0xA793}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_17]
+	{0x3390, 0x00F9}, 	// MCU_DATA_0
+	{0x338C, 0xA794}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_18]
+	{0x3390, 0x00FF}, 	// MCU_DATA_0
+
+	{0x338C, 0xA103}, 	// MCU_ADDRESS [SEQ_CMD]
+	{0x3390, 0x0005}, 	// MCU_DATA_0
+        {0xff, 0xff}
+    },
+    { // +1
+       {0x338C, 0xA76D}, 	// MCU_ADDRESS [MODE_GAM_CONT_A]
+	{0x3390, 0x0003}, 	// MCU_DATA_0
+	{0x338C, 0xA76E}, 	// MCU_ADDRESS [MODE_GAM_CONT_B]
+	{0x3390, 0x0003}, 	// MCU_DATA_0
+	{0x338C, 0xA76F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_0]
+	{0x3390, 0x0000}, 	// MCU_DATA_0
+	{0x338C, 0xA770}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_1]
+	{0x3390, 0x0006}, 	// MCU_DATA_0
+	{0x338C, 0xA771}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_2]
+	{0x3390, 0x0011}, 	// MCU_DATA_0
+	{0x338C, 0xA772}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_3]
+	{0x3390, 0x0025}, 	// MCU_DATA_0
+	{0x338C, 0xA773}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_4]
+	{0x3390, 0x0041}, 	// MCU_DATA_0
+	{0x338C, 0xA774}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_5]
+	{0x3390, 0x0059}, 	// MCU_DATA_0
+	{0x338C, 0xA775}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_6]
+	{0x3390, 0x006F}, 	// MCU_DATA_0
+	{0x338C, 0xA776}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_7]
+	{0x3390, 0x0084}, 	// MCU_DATA_0
+	{0x338C, 0xA777}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_8]
+	{0x3390, 0x0097}, 	// MCU_DATA_0
+	{0x338C, 0xA778}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_9]
+	{0x3390, 0x00A7}, 	// MCU_DATA_0
+	{0x338C, 0xA779}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_10]
+	{0x3390, 0x00B5}, 	// MCU_DATA_0
+	{0x338C, 0xA77A}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_11]
+	{0x3390, 0x00C2}, 	// MCU_DATA_0
+	{0x338C, 0xA77B}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_12]
+	{0x3390, 0x00CD}, 	// MCU_DATA_0
+	{0x338C, 0xA77C}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_13]
+	{0x3390, 0x00D7}, 	// MCU_DATA_0
+	{0x338C, 0xA77D}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_14]
+	{0x3390, 0x00E1}, 	// MCU_DATA_0
+	{0x338C, 0xA77E}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_15]
+	{0x3390, 0x00E9}, 	// MCU_DATA_0
+	{0x338C, 0xA77F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_16]
+	{0x3390, 0x00F1}, 	// MCU_DATA_0
+	{0x338C, 0xA780}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_17]
+	{0x3390, 0x00F8}, 	// MCU_DATA_0
+	{0x338C, 0xA781}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_18]
+	{0x3390, 0x00FF}, 	// MCU_DATA_0
+	{0x338C, 0xA782}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_0]
+	{0x3390, 0x0000}, 	// MCU_DATA_0
+	{0x338C, 0xA783}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_1]
+	{0x3390, 0x0006}, 	// MCU_DATA_0
+	{0x338C, 0xA784}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_2]
+	{0x3390, 0x0011}, 	// MCU_DATA_0
+	{0x338C, 0xA785}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_3]
+	{0x3390, 0x0025}, 	// MCU_DATA_0
+	{0x338C, 0xA786}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_4]
+	{0x3390, 0x0041}, 	// MCU_DATA_0
+	{0x338C, 0xA787}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_5]
+	{0x3390, 0x0059}, 	// MCU_DATA_0
+	{0x338C, 0xA788}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_6]
+	{0x3390, 0x006F}, 	// MCU_DATA_0
+	{0x338C, 0xA789}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_7]
+	{0x3390, 0x0084}, 	// MCU_DATA_0
+	{0x338C, 0xA78A}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_8]
+	{0x3390, 0x0097}, 	// MCU_DATA_0
+	{0x338C, 0xA78B}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_9]
+	{0x3390, 0x00A7}, 	// MCU_DATA_0
+	{0x338C, 0xA78C}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_10]
+	{0x3390, 0x00B5}, 	// MCU_DATA_0
+	{0x338C, 0xA78D}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_11]
+	{0x3390, 0x00C2}, 	// MCU_DATA_0
+	{0x338C, 0xA78E}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_12]
+	{0x3390, 0x00CD}, 	// MCU_DATA_0
+	{0x338C, 0xA78F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_13]
+	{0x3390, 0x00D7}, 	// MCU_DATA_0
+	{0x338C, 0xA790}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_14]
+	{0x3390, 0x00E1}, 	// MCU_DATA_0
+	{0x338C, 0xA791}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_15]
+	{0x3390, 0x00E9}, 	// MCU_DATA_0
+	{0x338C, 0xA792}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_16]
+	{0x3390, 0x00F1}, 	// MCU_DATA_0
+	{0x338C, 0xA793}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_17]
+	{0x3390, 0x00F8}, 	// MCU_DATA_0
+	{0x338C, 0xA794}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_18]
+	{0x3390, 0x00FF}, 	// MCU_DATA_0
+
+	{0x338C, 0xA103}, 	// MCU_ADDRESS [SEQ_CMD]
+	{0x3390, 0x0005}, 	// MCU_DATA_0
+        {0xff, 0xff}
+    },
+    
+    { // +2
+       {0x338C, 0xA76D}, 	// MCU_ADDRESS [MODE_GAM_CONT_A]
+	{0x3390, 0x0003}, 	// MCU_DATA_0
+	{0x338C, 0xA76E}, 	// MCU_ADDRESS [MODE_GAM_CONT_B]
+	{0x3390, 0x0003}, 	// MCU_DATA_0
+	{0x338C, 0xA76F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_0]
+	{0x3390, 0x0000}, 	// MCU_DATA_0
+	{0x338C, 0xA770}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_1]
+	{0x3390, 0x0005}, 	// MCU_DATA_0
+	{0x338C, 0xA771}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_2]
+	{0x3390, 0x000F}, 	// MCU_DATA_0
+	{0x338C, 0xA772}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_3]
+	{0x3390, 0x0020}, 	// MCU_DATA_0
+	{0x338C, 0xA773}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_4]
+	{0x3390, 0x003B}, 	// MCU_DATA_0
+	{0x338C, 0xA774}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_5]
+	{0x3390, 0x0054}, 	// MCU_DATA_0
+	{0x338C, 0xA775}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_6]
+	{0x3390, 0x006C}, 	// MCU_DATA_0
+	{0x338C, 0xA776}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_7]
+	{0x3390, 0x0085}, 	// MCU_DATA_0
+	{0x338C, 0xA777}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_8]
+	{0x3390, 0x009B}, 	// MCU_DATA_0
+	{0x338C, 0xA778}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_9]
+	{0x3390, 0x00AD}, 	// MCU_DATA_0
+	{0x338C, 0xA779}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_10]
+	{0x3390, 0x00BB}, 	// MCU_DATA_0
+	{0x338C, 0xA77A}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_11]
+	{0x3390, 0x00C8}, 	// MCU_DATA_0
+	{0x338C, 0xA77B}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_12]
+	{0x3390, 0x00D3}, 	// MCU_DATA_0
+	{0x338C, 0xA77C}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_13]
+	{0x3390, 0x00DC}, 	// MCU_DATA_0
+	{0x338C, 0xA77D}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_14]
+	{0x3390, 0x00E5}, 	// MCU_DATA_0
+	{0x338C, 0xA77E}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_15]
+	{0x3390, 0x00EC}, 	// MCU_DATA_0
+	{0x338C, 0xA77F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_16]
+	{0x3390, 0x00F3}, 	// MCU_DATA_0
+	{0x338C, 0xA780}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_17]
+	{0x3390, 0x00F9}, 	// MCU_DATA_0
+	{0x338C, 0xA781}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_18]
+	{0x3390, 0x00FF}, 	// MCU_DATA_0
+	{0x338C, 0xA782}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_0]
+	{0x3390, 0x0000}, 	// MCU_DATA_0
+	{0x338C, 0xA783}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_1]
+	{0x3390, 0x0005}, 	// MCU_DATA_0
+	{0x338C, 0xA784}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_2]
+	{0x3390, 0x000F}, 	// MCU_DATA_0
+	{0x338C, 0xA785}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_3]
+	{0x3390, 0x0020}, 	// MCU_DATA_0
+	{0x338C, 0xA786}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_4]
+	{0x3390, 0x003B}, 	// MCU_DATA_0
+	{0x338C, 0xA787}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_5]
+	{0x3390, 0x0054}, 	// MCU_DATA_0
+	{0x338C, 0xA788}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_6]
+	{0x3390, 0x006C}, 	// MCU_DATA_0
+	{0x338C, 0xA789}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_7]
+	{0x3390, 0x0085}, 	// MCU_DATA_0
+	{0x338C, 0xA78A}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_8]
+	{0x3390, 0x009B}, 	// MCU_DATA_0
+	{0x338C, 0xA78B}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_9]
+	{0x3390, 0x00AD}, 	// MCU_DATA_0
+	{0x338C, 0xA78C}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_10]
+	{0x3390, 0x00BB}, 	// MCU_DATA_0
+	{0x338C, 0xA78D}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_11]
+	{0x3390, 0x00C8}, 	// MCU_DATA_0
+	{0x338C, 0xA78E}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_12]
+	{0x3390, 0x00D3}, 	// MCU_DATA_0
+	{0x338C, 0xA78F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_13]
+	{0x3390, 0x00DC}, 	// MCU_DATA_0
+	{0x338C, 0xA790}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_14]
+	{0x3390, 0x00E5}, 	// MCU_DATA_0
+	{0x338C, 0xA791}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_15]
+	{0x3390, 0x00EC}, 	// MCU_DATA_0
+	{0x338C, 0xA792}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_16]
+	{0x3390, 0x00F3}, 	// MCU_DATA_0
+	{0x338C, 0xA793}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_17]
+	{0x3390, 0x00F9}, 	// MCU_DATA_0
+	{0x338C, 0xA794}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_18]
+	{0x3390, 0x00FF}, 	// MCU_DATA_0
+
+	{0x338C, 0xA103}, 	// MCU_ADDRESS [SEQ_CMD]
+	{0x3390, 0x0005}, 	// MCU_DATA_0
+
+        {0xff, 0xff}
+    },   
+
+    {
+	//+3
+	{0x338C, 0xA76D}, 	// MCU_ADDRESS [MODE_GAM_CONT_A]
+	{0x3390, 0x0003}, 	// MCU_DATA_0
+	{0x338C, 0xA76E}, 	// MCU_ADDRESS [MODE_GAM_CONT_B]
+	{0x3390, 0x0003}, 	// MCU_DATA_0
+	{0x338C, 0xA76F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_0]
+	{0x3390, 0x0000}, 	// MCU_DATA_0
+	{0x338C, 0xA770}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_1]
+	{0x3390, 0x0004}, 	// MCU_DATA_0
+	{0x338C, 0xA771}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_2]
+	{0x3390, 0x000C}, 	// MCU_DATA_0
+	{0x338C, 0xA772}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_3]
+	{0x3390, 0x001A}, 	// MCU_DATA_0
+	{0x338C, 0xA773}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_4]
+	{0x3390, 0x0032}, 	// MCU_DATA_0
+	{0x338C, 0xA774}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_5]
+	{0x3390, 0x004C}, 	// MCU_DATA_0
+	{0x338C, 0xA775}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_6]
+	{0x3390, 0x0068}, 	// MCU_DATA_0
+	{0x338C, 0xA776}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_7]
+	{0x3390, 0x0087}, 	// MCU_DATA_0
+	{0x338C, 0xA777}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_8]
+	{0x3390, 0x00A1}, 	// MCU_DATA_0
+	{0x338C, 0xA778}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_9]
+	{0x3390, 0x00B5}, 	// MCU_DATA_0
+	{0x338C, 0xA779}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_10]
+	{0x3390, 0x00C4}, 	// MCU_DATA_0
+	{0x338C, 0xA77A}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_11]
+	{0x3390, 0x00D1}, 	// MCU_DATA_0
+	{0x338C, 0xA77B}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_12]
+	{0x3390, 0x00DB}, 	// MCU_DATA_0
+	{0x338C, 0xA77C}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_13]
+	{0x3390, 0x00E3}, 	// MCU_DATA_0
+	{0x338C, 0xA77D}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_14]
+	{0x3390, 0x00EA}, 	// MCU_DATA_0
+	{0x338C, 0xA77E}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_15]
+	{0x3390, 0x00F0}, 	// MCU_DATA_0
+	{0x338C, 0xA77F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_16]
+	{0x3390, 0x00F6}, 	// MCU_DATA_0
+	{0x338C, 0xA780}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_17]
+	{0x3390, 0x00FA}, 	// MCU_DATA_0
+	{0x338C, 0xA781}, 	// MCU_ADDRESS [MODE_GAM_TABLE_A_18]
+	{0x3390, 0x00FF}, 	// MCU_DATA_0
+	{0x338C, 0xA782}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_0]
+	{0x3390, 0x0000}, 	// MCU_DATA_0
+	{0x338C, 0xA783}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_1]
+	{0x3390, 0x0004}, 	// MCU_DATA_0
+	{0x338C, 0xA784}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_2]
+	{0x3390, 0x000C}, 	// MCU_DATA_0
+	{0x338C, 0xA785}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_3]
+	{0x3390, 0x001A}, 	// MCU_DATA_0
+	{0x338C, 0xA786}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_4]
+	{0x3390, 0x0032}, 	// MCU_DATA_0
+	{0x338C, 0xA787}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_5]
+	{0x3390, 0x004C}, 	// MCU_DATA_0
+	{0x338C, 0xA788}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_6]
+	{0x3390, 0x0068}, 	// MCU_DATA_0
+	{0x338C, 0xA789}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_7]
+	{0x3390, 0x0087}, 	// MCU_DATA_0
+	{0x338C, 0xA78A}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_8]
+	{0x3390, 0x00A1}, 	// MCU_DATA_0
+	{0x338C, 0xA78B}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_9]
+	{0x3390, 0x00B5}, 	// MCU_DATA_0
+	{0x338C, 0xA78C}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_10]
+	{0x3390, 0x00C4}, 	// MCU_DATA_0
+	{0x338C, 0xA78D}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_11]
+	{0x3390, 0x00D1}, 	// MCU_DATA_0
+	{0x338C, 0xA78E}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_12]
+	{0x3390, 0x00DB}, 	// MCU_DATA_0
+	{0x338C, 0xA78F}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_13]
+	{0x3390, 0x00E3}, 	// MCU_DATA_0
+	{0x338C, 0xA790}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_14]
+	{0x3390, 0x00EA}, 	// MCU_DATA_0
+	{0x338C, 0xA791}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_15]
+	{0x3390, 0x00F0}, 	// MCU_DATA_0
+	{0x338C, 0xA792}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_16]
+	{0x3390, 0x00F6}, 	// MCU_DATA_0
+	{0x338C, 0xA793}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_17]
+	{0x3390, 0x00FA}, 	// MCU_DATA_0
+	{0x338C, 0xA794}, 	// MCU_ADDRESS [MODE_GAM_TABLE_B_18]
+	{0x3390, 0x00FF}, 	// MCU_DATA_0
+
+	{0x338C, 0xA103}, 	// MCU_ADDRESS [SEQ_CMD]
+	{0x3390, 0x0005}, 	// MCU_DATA_0
+	{0xff, 0xff}
+    }
+};
+
+LOCAL uint32 set_mt9d112_contrast(uint32 level)
+{
+    uint32 i;
+    
+    SENSOR_REG_T* sensor_reg_ptr = (SENSOR_REG_T*)mt9d112_contrast_tab[level];
+    
+    SCI_ASSERT(PNULL != sensor_reg_ptr);
+    
+    for(i = 0; !((0xFF==sensor_reg_ptr[i].reg_addr) && (0xFF==sensor_reg_ptr[i].reg_value)) ; i++)
+    {
+        Sensor_Mt9d112_Write_Regs(sensor_reg_ptr[i].reg_addr, sensor_reg_ptr[i].reg_value);
+    }
+   
+    //SCI_TRACE_LOW:"set_mt9d112_contrast: level = %d"
+    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1260_112_2_18_0_31_5_873,(uint8*)"d", level);
+    
+    return 0;
+}
+
+
+
+__align(4) const SENSOR_REG_T mt9d112_SENSOR_effect_tab[][8]=
+{
+    {   // NORMAL
+        { 0x338C, 0x2799}, // MCU_ADDRESS
+        { 0x3390, 0x6408}, //(5) MODE_SPEC_EFFECTS_A
+        { 0x338C, 0x279B}, // MCU_ADDRESS
+        { 0x3390, 0x6408}, //(5) MODE_SPEC_EFFECTS_B
+        { 0x338C, 0xA103}, // MCU_ADDRESS
+        { 0x3390, 0x0005}, //(1) SEQ_CMD
+        {0xff, 0xff},
+        {0xff, 0xff}            
+    },
+    
+    {   // BLACKWHITE
+        { 0x338C, 0x2799}, // MCU_ADDRESS
+        { 0x3390, 0x6409}, //(1) MODE_SPEC_EFFECTS_A
+        { 0x338C, 0x279B}, // MCU_ADDRESS
+        { 0x3390, 0x6409}, //(1) MODE_SPEC_EFFECTS_B
+        { 0x338C, 0xA103}, // MCU_ADDRESS
+        { 0x3390, 0x0005}, //(1) SEQ_CMD
+        {0xff, 0xff},
+        {0xff, 0xff}            
+    },
+  
+    {   // RED
+        { 0x338C, 0x2799}, // MCU_ADDRESS
+        { 0x3390, 0x640A}, //(1) MODE_SPEC_EFFECTS_A
+        { 0x338C, 0x279B}, // MCU_ADDRESS
+        { 0x3390, 0x640A}, //(1) MODE_SPEC_EFFECTS_B
+        { 0x334A, 0xF361}, //(135) SEPIA_CONSTANTS
+        { 0x338C, 0xA103}, // MCU_ADDRESS
+        { 0x3390, 0x0005}, //(1) SEQ_CMD    
+        {0xff, 0xff}
+    },
+    
+    {   // GREEN    
+        { 0x338C, 0x2799}, // MCU_ADDRESS
+        { 0x3390, 0x640A}, //(1) MODE_SPEC_EFFECTS_A
+        { 0x338C, 0x279B}, // MCU_ADDRESS
+        { 0x3390, 0x640A}, //(1) MODE_SPEC_EFFECTS_B
+        { 0x334A, 0xB1DB}, //(28) SEPIA_CONSTANTS
+        { 0x338C, 0xA103}, // MCU_ADDRESS
+        { 0x3390, 0x0005}, //(1) SEQ_CMD
+        {0xff, 0xff}
+    },
+    
+    {   // BLUE     
+        { 0x338C, 0x2799}, // MCU_ADDRESS
+        { 0x3390, 0x640A}, //(1) MODE_SPEC_EFFECTS_A
+        { 0x338C, 0x279B}, // MCU_ADDRESS
+        { 0x3390, 0x640A}, //(1) MODE_SPEC_EFFECTS_B
+        { 0x334a, 0x34db},
+        { 0x338C, 0xA103}, // MCU_ADDRESS
+        { 0x3390, 0x0005}, //(1) SEQ_CMD
+        {0xff, 0xff}
+    }, 
+
+    {   // YELLOW
+        {0x338C, 0x2799},	// MCU_ADDRESS
+        {0x3390, 0x640A},	//(1) MODE_SPEC_EFFECTS_A
+        {0x338C, 0x279B},	// MCU_ADDRESS
+        {0x3390, 0x640A},	//(1) MODE_SPEC_EFFECTS_B   
+        {0x334A, 0xb000}, //(28) SEPIA_CONSTANTS     
+        {0x338C, 0xA103},	// MCU_ADDRESS
+        {0x3390, 0x0005},	//(1) SEQ_CMD    
+        {0xff, 0xff}
+    },
+    
+    {   // NEGATIVE    
+        {0x338C, 0x2799},	// MCU_ADDRESS
+        {0x3390, 0x640B},	//(1) MODE_SPEC_EFFECTS_A
+        {0x338C, 0x279B},	// MCU_ADDRESS
+        {0x3390, 0x640B},	//(1) MODE_SPEC_EFFECTS_B
+        {0x338C, 0xA103},	// MCU_ADDRESS
+        {0x3390, 0x0005},	//(1) SEQ_CMD
+        {0xff, 0xff},
+        {0xff, 0xff}            
+    }, 
+
+    {   // ANTIQUE
+        {0x338C, 0x2799},	// MCU_ADDRESS
+        {0x3390, 0x640A},	//(1) MODE_SPEC_EFFECTS_A
+        {0x338C, 0x279B},	// MCU_ADDRESS
+        {0x3390, 0x640A},	//(1) MODE_SPEC_EFFECTS_B   
+        {0x334A, 0xB040},//(28) SEPIA_CONSTANTS     
+        {0x338C, 0xA103},	// MCU_ADDRESS
+        {0x3390, 0x0005},	//(1) SEQ_CMD    
+        {0xff, 0xff}
+     },
+};
+
+
+
+LOCAL uint32 set_mt9d112_image_effect(uint32 effect_type) // Kept
+{
+    uint32 i;
+    
+    SENSOR_REG_T* sensor_reg_ptr = (SENSOR_REG_T*)mt9d112_SENSOR_effect_tab[effect_type];
+ 
+    SCI_ASSERT(PNULL != sensor_reg_ptr);    
+    
+    for(i = 0; (0xFF!=sensor_reg_ptr[i].reg_addr) && (0xFF!=sensor_reg_ptr[i].reg_value) ; i++)
+    {
+        Sensor_Mt9d112_Write_Regs(sensor_reg_ptr[i].reg_addr, sensor_reg_ptr[i].reg_value);
+    }
+
+    //SCI_TRACE_LOW:"set_mt9d112_image_effect: effect_type = %d"
+    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1373_112_2_18_0_31_5_874,(uint8*)"d", effect_type);
+    return 0;
+   
+}
+
+PUBLIC uint32 mt9d112_before_snapshot(uint32 param)
+{
+	uint8 reg_val[MT9D112_DAT_LEN] = {0, 0};
+	uint8 reg_adr[MT9D112_CMD_LEN] = {0x30, 0x12};
+	
+	uint8 reg_adr_gain1[MT9D112_CMD_LEN] = {0x30,0x56};
+	uint8 reg_adr_gain2[MT9D112_CMD_LEN] = {0x30,0x58};
+	uint8 reg_adr_gain3[MT9D112_CMD_LEN] = {0x30,0x5a};
+	uint8 reg_adr_gain4[MT9D112_CMD_LEN] = {0x30,0x5c};
+
+    uint8 reg_val_gain1[2]={0,0};
+    uint8 reg_val_gain2[2]={0,0};
+    uint8 reg_val_gain3[2]={0,0};
+    uint8 reg_val_gain4[2]={0,0};
+
+    uint32 exposure_val = 0;
+
+    if(SENSOR_MODE_PREVIEW_ONE == param)
+        return SCI_SUCCESS;
+        
+    I2C_WriteCmdArrNoStop(  MT9D112_I2C_ADDR_W,
+	                    (uint8*)reg_adr,
+	                    MT9D112_CMD_LEN,
+	                    MT9D112_I2C_ACK
+	                 );
+	
+	I2C_ReadCmdArr( MT9D112_I2C_ADDR_R,
+	                reg_val,
+	                MT9D112_DAT_LEN,
+	                MT9D112_I2C_ACK
+	              );
+	
+	exposure_val = reg_val[0]<<8 | reg_val[1];
+
+
+    I2C_WriteCmdArrNoStop(  MT9D112_I2C_ADDR_W,
+	                    (uint8*)reg_adr_gain1,
+	                    MT9D112_CMD_LEN,
+	                    MT9D112_I2C_ACK
+	                 );
+	
+	I2C_ReadCmdArr( MT9D112_I2C_ADDR_R,
+	                reg_val_gain1,
+	                MT9D112_DAT_LEN,
+	                MT9D112_I2C_ACK
+	              );
+
+    I2C_WriteCmdArrNoStop(  MT9D112_I2C_ADDR_W,
+	                    (uint8*)reg_adr_gain2,
+	                    MT9D112_CMD_LEN,
+	                    MT9D112_I2C_ACK
+	                 );
+	
+	I2C_ReadCmdArr( MT9D112_I2C_ADDR_R,
+	                reg_val_gain2,
+	                MT9D112_DAT_LEN,
+	                MT9D112_I2C_ACK
+	              );
+	              
+	I2C_WriteCmdArrNoStop(  MT9D112_I2C_ADDR_W,
+	                    (uint8*)reg_adr_gain3,
+	                    MT9D112_CMD_LEN,
+	                    MT9D112_I2C_ACK
+	                 );
+	
+	I2C_ReadCmdArr( MT9D112_I2C_ADDR_R,
+	                reg_val_gain3,
+	                MT9D112_DAT_LEN,
+	                MT9D112_I2C_ACK
+	              );
+	I2C_WriteCmdArrNoStop(  MT9D112_I2C_ADDR_W,
+	                    (uint8*)reg_adr_gain4,
+	                    MT9D112_CMD_LEN,
+	                    MT9D112_I2C_ACK
+	                 );
+	
+	I2C_ReadCmdArr( MT9D112_I2C_ADDR_R,
+	                reg_val_gain4,
+	                MT9D112_DAT_LEN,
+	                MT9D112_I2C_ACK
+	              );
+	//SCI_TRACE_LOW:"DCAM: sensor exposure value: 0x%x"
+	SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1459_112_2_18_0_31_5_875,(uint8*)"d", exposure_val);
+    //SCI_TRACE_LOW:"DCAM: sensor reg_val_gain1 value: 0x%x, 0x%x"
+    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1460_112_2_18_0_31_5_876,(uint8*)"dd", reg_val_gain1[0],reg_val_gain1[1]);
+    //SCI_TRACE_LOW:"DCAM: sensor reg_val_gain2 value: 0x%x, 0x%x"
+    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1461_112_2_18_0_31_5_877,(uint8*)"dd", reg_val_gain2[0],reg_val_gain2[1]);
+    //SCI_TRACE_LOW:"DCAM: sensor reg_val_gain3 value: 0x%x, 0x%x"
+    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1462_112_2_18_0_31_5_878,(uint8*)"dd", reg_val_gain3[0],reg_val_gain3[1]);
+    //SCI_TRACE_LOW:"DCAM: sensor reg_val_gain4 value: 0x%x, 0x%x"
+    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1463_112_2_18_0_31_5_879,(uint8*)"dd", reg_val_gain4[0],reg_val_gain4[1]);
+{
+	uint8 cap_reg[][4] = {
+                            {0x33, 0x8c, 0xa1, 0x20},
+                            {0x33, 0x90, 0x00, 0x02},
+                            {0x33, 0x8c, 0xa1, 0x03},
+                            {0x33, 0x90, 0x00, 0x02}
+                        };
+	uint8 close_reg[][4] = {
+	                        {0x33, 0x8c, 0xa1, 0x02},
+	                        {0x33, 0x90, 0x00, 0x00}
+	                       };
+    uint32 i = 0;
+    uint8 exp_val[4] = {0x30, 0x12, 0, 0};
+    uint8 reg_val1[2] = {0, 0};
+    
+    uint8 gain1_val[4] = {0x30,0x56,0,0};
+	uint8 gain2_val[4] = {0x30,0x58,0,0};
+	uint8 gain3_val[4] = {0x30,0x5a,0,0};
+	uint8 gain4_val[4] = {0x30,0x5c,0,0}; 
+    uint32 gain_value =0;
+    
+
+    for(i = 0; i<sizeof(cap_reg)/sizeof(cap_reg[0]); i++)
+    {
+        I2C_WriteCmdArr(  MT9D112_I2C_ADDR_W, 
+                          (uint8*)&cap_reg[i], 
+                          4,
+                          MT9D112_I2C_ACK
+                        );
+    }
+    
+    for(i = 0; i<sizeof(close_reg)/sizeof(close_reg[0]); i++)
+    {
+        I2C_WriteCmdArr(  MT9D112_I2C_ADDR_W, 
+                          (uint8*)&close_reg[i], 
+                          4,
+                          MT9D112_I2C_ACK
+                        );
+    }
+    
+ 	
+    for(i = 0; i<sizeof(close_reg)/sizeof(close_reg[0]); i++)
+    {
+     	I2C_WriteCmdArrNoStop(  MT9D112_I2C_ADDR_W,
+        	                    (uint8*)close_reg[i],
+        	                    MT9D112_CMD_LEN,
+        	                    MT9D112_I2C_ACK
+        	                 );
+
+    	I2C_ReadCmdArr( MT9D112_I2C_ADDR_R,
+    	                reg_val1,
+    	                MT9D112_DAT_LEN,
+    	                MT9D112_I2C_ACK
+    	              );
+    	              
+	    //SCI_TRACE_LOW:"DCAM: sensor close_reg value: 0x%x, 0x%x"
+	    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1519_112_2_18_0_31_5_880,(uint8*)"dd", reg_val1[0], reg_val1[1]);
+    }
+    
+    SCI_Sleep(200);
+    gain_value =  ((((reg_val_gain1[1] & BIT_7)>>7) +1) * (reg_val_gain1[1]&0x7f)) / 16;
+    
+    if(gain_value < 2)
+    {
+        exposure_val /= 2;
+        exp_val[2] = exposure_val>>8;
+        exp_val[3] = exposure_val & 0xff;
+        
+        //SCI_TRACE_LOW:"DCAM: sensor exp_reg value: 0x%x, 0x%x"
+        SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1531_112_2_18_0_31_5_881,(uint8*)"dd", exp_val[2], exp_val[3]);
+        
+        I2C_WriteCmdArr(  MT9D112_I2C_ADDR_W, 
+                          exp_val, 
+                          4,
+                          MT9D112_I2C_ACK
+                        );
+
+           return SCI_SUCCESS;
+    }
+    if(gain_value >=4)
+    {   
+        exposure_val *= 2;
+        exp_val[2] = exposure_val>>8;
+        exp_val[3] = exposure_val & 0xff;
+        
+        //SCI_TRACE_LOW:"DCAM: sensor exp_reg value: 0x%x, 0x%x"
+        SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1547_112_2_18_0_31_5_882,(uint8*)"dd", exp_val[2], exp_val[3]);
+        
+        I2C_WriteCmdArr(  MT9D112_I2C_ADDR_W, 
+                          exp_val, 
+                          4,
+                          MT9D112_I2C_ACK
+                        );
+
+        
+        if( (reg_val_gain1[1]&BIT_7)==0x80 )
+             reg_val_gain1[1] = (reg_val_gain1[1]&0x7f)/2;
+         else
+             reg_val_gain1[1] /=4;
+             
+        gain1_val[2]=reg_val_gain1[0];
+        gain1_val[3]=reg_val_gain1[1];
+        
+        I2C_WriteCmdArr(  MT9D112_I2C_ADDR_W, 
+                      gain1_val, 
+                      4,
+                      MT9D112_I2C_ACK
+                    );   
+                    
+       if( (reg_val_gain2[1]&BIT_7)==0x80 )
+             reg_val_gain2[1] = (reg_val_gain2[1]&0x7f)/2;
+         else
+             reg_val_gain2[1] /=4;
+             
+        gain2_val[2]=reg_val_gain2[0];
+        gain2_val[3]=reg_val_gain2[1];
+        
+        I2C_WriteCmdArr(  MT9D112_I2C_ADDR_W, 
+                      gain2_val, 
+                      4,
+                      MT9D112_I2C_ACK
+                    );             
+                    
+      if( (reg_val_gain3[1]&BIT_7)==0x80 )
+             reg_val_gain3[1] = (reg_val_gain3[1]&0x7f)/2;  
+         else
+             reg_val_gain3[1] /=4;
+             
+        gain3_val[2]=reg_val_gain3[0];
+        gain3_val[3]=reg_val_gain3[1];
+        
+        I2C_WriteCmdArr(  MT9D112_I2C_ADDR_W, 
+                      gain3_val, 
+                      4,
+                      MT9D112_I2C_ACK
+                    ); 
+                 
+        if( (reg_val_gain4[1]&BIT_7)==0x80 )
+             reg_val_gain4[1] = (reg_val_gain4[1]&0x7f)/2;
+         else
+             reg_val_gain4[1] /=4;
+             
+        gain4_val[2]=reg_val_gain4[0];
+        gain4_val[3]=reg_val_gain4[1];
+        
+        I2C_WriteCmdArr(  MT9D112_I2C_ADDR_W, 
+                      gain4_val, 
+                      4,
+                      MT9D112_I2C_ACK
+                    ); 
+    }
+    else
+    {
+        if( (reg_val_gain1[1]&BIT_7)==0x80 )
+             reg_val_gain1[1] &= 0x7f;
+         else
+             reg_val_gain1[1] /=2;
+             
+        gain1_val[2]=reg_val_gain1[0];
+        gain1_val[3]=reg_val_gain1[1];
+        
+        I2C_WriteCmdArr(  MT9D112_I2C_ADDR_W, 
+                      gain1_val, 
+                      4,
+                      MT9D112_I2C_ACK
+                    );   
+                    
+       if( (reg_val_gain2[1]&BIT_7)==0x80 )
+             reg_val_gain2[1] &= 0x7f;
+         else
+             reg_val_gain2[1] /=2;
+             
+        gain2_val[2]=reg_val_gain2[0];
+        gain2_val[3]=reg_val_gain2[1];
+        
+        I2C_WriteCmdArr(  MT9D112_I2C_ADDR_W, 
+                      gain2_val, 
+                      4,
+                      MT9D112_I2C_ACK
+                    );             
+                    
+      if( (reg_val_gain3[1]&BIT_7)==0x80 )
+             reg_val_gain3[1] &= 0x7f;
+         else
+             reg_val_gain3[1] /=2;
+             
+        gain3_val[2]=reg_val_gain3[0];
+        gain3_val[3]=reg_val_gain3[1];
+        
+        I2C_WriteCmdArr(  MT9D112_I2C_ADDR_W, 
+                      gain3_val, 
+                      4,
+                      MT9D112_I2C_ACK
+                    ); 
+                 
+        if( (reg_val_gain4[1]&BIT_7)==0x80 )
+             reg_val_gain4[1] &= 0x7f;
+         else
+             reg_val_gain4[1] /=2;
+             
+        gain4_val[2]=reg_val_gain4[0];
+        gain4_val[3]=reg_val_gain4[1];
+        
+        I2C_WriteCmdArr(  MT9D112_I2C_ADDR_W, 
+                      gain4_val, 
+                      4,
+                      MT9D112_I2C_ACK
+                    ); 
+
+    }
+    
+    //SCI_TRACE_LOW:"DCAM: sensor reg_val_gain1 value: 0x%x, 0x%x"
+    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1672_112_2_18_0_31_6_883,(uint8*)"dd", reg_val_gain1[0],reg_val_gain1[1]);
+    //SCI_TRACE_LOW:"DCAM: sensor reg_val_gain2 value: 0x%x, 0x%x"
+    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1673_112_2_18_0_31_6_884,(uint8*)"dd", reg_val_gain2[0],reg_val_gain2[1]);
+    //SCI_TRACE_LOW:"DCAM: sensor reg_val_gain3 value: 0x%x, 0x%x"
+    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1674_112_2_18_0_31_6_885,(uint8*)"dd", reg_val_gain3[0],reg_val_gain3[1]);
+    //SCI_TRACE_LOW:"DCAM: sensor reg_val_gain1 value: 0x%x, 0x%x"
+    SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1675_112_2_18_0_31_6_886,(uint8*)"dd", reg_val_gain4[0],reg_val_gain4[1]);
+}
+
+    return SCI_SUCCESS;
+}
+
+/******************************************************************************/
+// Description: set wb mode 
+// Global resource dependence: 
+// Author:
+// Note:
+//		
+/******************************************************************************/
+LOCAL uint32 set_mt9d112_awb(uint32 mode)
+{
+	DCAMERA_PARAM_WB_MODE_E awb_mode = (DCAMERA_PARAM_WB_MODE_E)mode;
+
+	switch(awb_mode)
+	{
+		case DCAMERA_WB_MODE_INCANDESCENCE:
+
+			 //SCI_TRACE_LOW:"mt9d112: DCAMERA_WB_MODE_INCANDESCENCE"
+			 SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1694_112_2_18_0_31_6_887,(uint8*)"");
+
+			 Sensor_Mt9d112_Write_Regs(0x338c, 0xa353);
+			 Sensor_Mt9d112_Write_Regs(0x3390, 0x0020);
+ 			 Sensor_Mt9d112_Write_Regs(0x338c, 0xa351);
+ 			 Sensor_Mt9d112_Write_Regs(0x3390, 0x0000);
+		break;
+
+		case DCAMERA_WB_MODE_FLUORESCENT:
+
+			 //SCI_TRACE_LOW:"mt9d112: DCAMERA_WB_MODE_FLUORESCENT"
+			 SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1704_112_2_18_0_31_6_888,(uint8*)"");
+
+			 Sensor_Mt9d112_Write_Regs(0x338c, 0xa353);
+			 Sensor_Mt9d112_Write_Regs(0x3390, 0x0020);
+ 			 Sensor_Mt9d112_Write_Regs(0x338c, 0xa351);
+ 			 Sensor_Mt9d112_Write_Regs(0x3390, 0x0019);
+		break;
+
+		case DCAMERA_WB_MODE_SUN:
+
+			//SCI_TRACE_LOW:"mt9d112: DCAMERA_WB_MODE_SUN"
+			SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1714_112_2_18_0_31_6_889,(uint8*)"");
+
+			 Sensor_Mt9d112_Write_Regs(0x338c, 0xa353);
+			 Sensor_Mt9d112_Write_Regs(0x3390, 0x0020);
+ 			 Sensor_Mt9d112_Write_Regs(0x338c, 0xa351);
+ 			 Sensor_Mt9d112_Write_Regs(0x3390, 0x0064);
+
+		break;
+
+		case DCAMERA_WB_MODE_CLOUD:
+
+			//SCI_TRACE_LOW:"mt9d112: DCAMERA_WB_MODE_CLOUD"
+			SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1725_112_2_18_0_31_6_890,(uint8*)"");
+			 Sensor_Mt9d112_Write_Regs(0x338c, 0xa353);
+			 Sensor_Mt9d112_Write_Regs(0x3390, 0x0020);
+ 			 Sensor_Mt9d112_Write_Regs(0x338c, 0xa351);
+ 			 Sensor_Mt9d112_Write_Regs(0x3390, 0x007f);
+
+		break;
+
+              case  DCAMERA_WB_MODE_AUTO:
+
+
+		       //SCI_TRACE_LOW:"mt9d112: DCAMERA_WB_MODE_AUTO"
+		       SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1736_112_2_18_0_31_6_891,(uint8*)"");
+
+			  Sensor_Mt9d112_Write_Regs(0x338c, 0xa353);
+			 Sensor_Mt9d112_Write_Regs(0x3390, 0x0000);
+
+		break;
+
+		default:
+
+		        SCI_ASSERT(0);
+
+		break;
+		 
+	}
+    return 0;
+}
+
+LOCAL SENSOR_IOCTL_FUNC_TAB_T s_mt9d112_ioctl_func_tab = 
+{
+// Internal 
+    PNULL,
+    PNULL,
+    PNULL,
+    MT9D112_Identify,
+    
+    PNULL,	//mt9d112_Write_Reg_16,          // write register (16 bit width), [31:16] register address; [15:0] register value
+    PNULL,  //mt9d112_Read_Reg_16,           // read  register (16 bit width), input value[15:0]: register address; return value[15:0]: register value    
+     
+    PNULL,
+    PNULL,
+
+// External
+    PNULL, //set_ae_enable,
+    PNULL, //set_hmirror_enable,
+    PNULL, //set_vmirror_enable,
+    
+    set_mt9d112_brightness, 
+    set_mt9d112_contrast,   
+    PNULL, //set_sharpness,
+    PNULL, //set_saturation,
+    
+    set_mt9d112_mode,   // night/normal
+    set_mt9d112_image_effect,
+
+    mt9d112_before_snapshot,//PNULL, 
+    mt9d112_after_snapshot,
+
+    PNULL,
+    
+    PNULL, //read_ev_value,
+    PNULL, //write_ev_value,
+    PNULL, //read_gain_value,
+    PNULL, //write_gain_value,
+    PNULL, //read_gain_scale,
+    PNULL, //set_frame_rate,
+    
+    PNULL,
+    PNULL,
+
+    set_mt9d112_awb,
+
+        PNULL,
+        PNULL,
+        PNULL,    
+        PNULL,
+        PNULL,
+        PNULL,
+        PNULL,   
+        PNULL,
+        PNULL,
+        PNULL,
+        PNULL	
+    
+};
+
+__align(4) const SENSOR_REG_T mt9d112_YUV_1280X960[]=
+{
+    { 0x338C, 0x2707},        //Output Width (B)
+    { 0x3390, 0x0500},        //      = 1280
+    { 0x338C, 0x2709},        //Output Height (B)
+    { 0x3390, 0x03c0},        //      = 960
+
+    {0x338C, 0xA103},	// MCU_ADDRESS
+    {0x3390, 0x0005},	//(1) SEQ_CMD
+    
+    {SENSOR_WRITE_DELAY, 0x64},
+};
+
+__align(4) const SENSOR_REG_T mt9d112_YUV_1600X1200[]=
+{
+    { 0x338C, 0x2707},        //Output Width (B)
+    { 0x3390, 0x0640},        //      = 1600
+    { 0x338C, 0x2709},        //Output Height (B)
+    { 0x3390, 0x04b0},        //      = 1200
+
+    {0x338C, 0xA103},	// MCU_ADDRESS
+    {0x3390, 0x0005},	//(1) SEQ_CMD	
+    
+    {SENSOR_WRITE_DELAY, 0x64},
+};
+
+__align(4)const SENSOR_REG_T mt9d112_YUV_640X480[]=
+{
+    {0x338C, 0xA120},
+    {0x3390, 0x0000},
+    {0x338C, 0xA103},
+    {0x3390, 0x0001},
+    //{SENSOR_WRITE_DELAY, 0xff},
+    {SENSOR_WRITE_DELAY, 0x64}
+
+    
+};
+LOCAL SENSOR_REG_TAB_INFO_T s_mt9d112_resolution_Tab_YUV[]=
+{   
+    // COMMON INIT
+    {ADDR_AND_LEN_OF_ARRAY(mt9d112_YUV_COMMON), 0, 0, 12, 0},	
+
+    // YUV422 PREVIEW 1
+    {ADDR_AND_LEN_OF_ARRAY(mt9d112_YUV_640X480), 640, 480, 12,0 },
+    {ADDR_AND_LEN_OF_ARRAY(mt9d112_YUV_1280X960), 1280, 960, 12, 0},	
+    {ADDR_AND_LEN_OF_ARRAY(mt9d112_YUV_1600X1200), 1600, 1200, 12, 0},
+    {PNULL,	0, 0,	0, 0, 0},
+
+    // YUV422 PREVIEW 2 
+    {PNULL,	0, 0,	0, 0, 0},
+    {PNULL,	0, 0,	0, 0, 0},
+    {PNULL,	0, 0,	0, 0, 0},
+    {PNULL,	0, 0,	0, 0, 0}
+};
+
+/**---------------------------------------------------------------------------*
+ ** 						Global Variables								  *
+ **---------------------------------------------------------------------------*/
+ PUBLIC SENSOR_INFO_T g_mt9d112_yuv_info =
+{
+	MT9D112_I2C_ADDR_W,				// salve i2c write address
+	MT9D112_I2C_ADDR_R, 				// salve i2c read address
+
+	SENSOR_I2C_VAL_16BIT|\
+	SENSOR_I2C_REG_16BIT,			// bit0: 0: i2c register value is 8 bit, 1: i2c register value is 16 bit
+									// bit2: 0: i2c register addr  is 8 bit, 1: i2c register addr  is 16 bit
+									// other bit: reseved
+	SENSOR_HW_SIGNAL_PCLK_N|\
+	SENSOR_HW_SIGNAL_VSYNC_P|\
+	SENSOR_HW_SIGNAL_HSYNC_P,		// bit0: 0:negative; 1:positive -> polarily of pixel clock
+									// bit2: 0:negative; 1:positive -> polarily of horizontal synchronization signal
+									// bit4: 0:negative; 1:positive -> polarily of vertical synchronization signal
+									// other bit: reseved											
+											
+	// preview mode
+	SENSOR_ENVIROMENT_NORMAL|\
+	SENSOR_ENVIROMENT_NIGHT|\
+	SENSOR_ENVIROMENT_SUNNY,		
+	
+	// image effect
+	SENSOR_IMAGE_EFFECT_NORMAL|\
+	SENSOR_IMAGE_EFFECT_BLACKWHITE|\
+	SENSOR_IMAGE_EFFECT_RED|\
+	SENSOR_IMAGE_EFFECT_GREEN|\
+	SENSOR_IMAGE_EFFECT_BLUE|\
+	SENSOR_IMAGE_EFFECT_YELLOW|\
+	SENSOR_IMAGE_EFFECT_NEGATIVE|\
+	SENSOR_IMAGE_EFFECT_CANVAS,
+	
+	// while balance mode
+	0,
+		
+	7,								// bit[0:7]: count of step in brightness, contrast, sharpness, saturation
+									// bit[8:31] reseved
+	
+	SENSOR_LOW_PULSE_RESET,			// reset pulse level
+	20,								// reset pulse width(ms)
+	
+	SENSOR_LOW_LEVEL_PWDN,			// 1: high level valid; 0: low level valid
+	
+	0,								// count of identify code
+	0x00, 0x00,						// supply two code to identify sensor.
+	0x00, 0x00,						// for Example: index = 0-> Device id, index = 1 -> version id	
+									
+	SENSOR_AVDD_2800MV,				// voltage of avdd	
+
+	1600,							// max width of source image
+	1200,							// max height of source image
+	"MT9D112",						// name of sensor												
+
+	SENSOR_IMAGE_FORMAT_YUV422,		// define in SENSOR_IMAGE_FORMAT_E enum,
+									// if set to SENSOR_IMAGE_FORMAT_MAX here, image format depent on SENSOR_REG_TAB_INFO_T
+	SENSOR_IMAGE_PATTERN_YUV422_YUYV,	// pattern of input image form sensor;			
+
+	s_mt9d112_resolution_Tab_YUV,	// point to resolution table information structure
+	&s_mt9d112_ioctl_func_tab,		// point to ioctl function table
+			
+	PNULL,							// information and table about Rawrgb sensor
+	PNULL,							// extend information about sensor	
+	SENSOR_AVDD_2800MV,                     // iovdd
+	SENSOR_AVDD_1800MV,                      // dvdd
+	0,                     // skip frame num before preview 
+	0,                      // skip frame num before capture	
+	0,                      // deci frame num during preview;		
+	0,                      // deci frame num during video preview;
+	0,    	                 // atv output mode 0 fix mode 1 auto mode	
+	0,        	          // atv output start postion	
+	0       	         // atv output end postion      
+	
+};
+
+/**---------------------------------------------------------------------------*
+ **                         Function Definitions                              *
+ **---------------------------------------------------------------------------*/
+LOCAL uint32 Sensor_Mt9d112_Write_Regs( uint16 reg, uint16 value )
+{
+    uint8   cmd[4];
+    
+    cmd[0]=(reg>>8)& 0xFF;
+    cmd[1]=(reg)& 0xFF;
+    cmd[2]=(value>>8)& 0xFF;
+    cmd[3]=(value)& 0xFF;
+    
+    I2C_WriteCmdArr(MT9D112_I2C_ADDR_W, cmd, 4, SCI_FALSE);
+    
+    return 0;
+}
+
+LOCAL uint32 MT9D112_Identify(void)
+{
+    uint8 reg[2]={0x30,0x00};    // model_id
+    uint8 value[2] = {0x15,0x80}; // default value
+//    uint8 reg[2]={0x33,0x4a};    // model_id
+//    uint8 value[2] = {0x00,0x00}; // default value 
+    uint8 reg_val[2] ={0,0};
+    uint8 ret       = 0;
+    uint32 count =0;
+
+    do
+    {
+        ret = I2C_WriteCmdArrNoStop(MT9D112_I2C_ADDR_W, 
+                                    reg, 
+                                    MT9D112_CMD_LEN,
+                                    MT9D112_I2C_ACK
+                                    );
+
+        if(count >= 2)
+        {
+            //SCI_TRACE_LOW:"MT9D112_Identify: I2C error id = %d"
+            SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1977_112_2_18_0_31_6_892,(uint8*)"d", ret);
+            return 0xFF;
+        }
+        else
+        {                 
+            count++;
+        }
+    } while(ret != 0);
+    
+    I2C_ReadCmdArr( MT9D112_I2C_ADDR_R,
+                    reg_val,
+                    MT9D112_DAT_LEN,
+                    MT9D112_I2C_ACK
+                  );
+
+ //   SCI_TRACE_LOW("MT9D112_Identify: Fail reg_val[0] = 0x%X, [1] = 0x%X", reg_val[0], reg_val[1] );
+    
+    if( (reg_val[0]==value[0]) && (reg_val[1] ==value[1]) )
+    {
+        //SCI_TRACE_LOW:"MT9D112_Identify: Succ"
+        SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_1996_112_2_18_0_31_6_893,(uint8*)"" );
+    }
+    else
+    
+    {
+        //SCI_TRACE_LOW:"MT9D112_Identify: Fail reg_val[0] = 0x%X, [1] = 0x%X"
+        SCI_TRACE_ID(TRACE_TOOL_CONVERT,SENSOR_MT9D112_2001_112_2_18_0_31_6_894,(uint8*)"dd", reg_val[0], reg_val[1] );
+        return 0xFF;
+    }
+    
+    //s_sensor_ID = SENSOR_MT9D112;
+    return 0;
+}
+
+PUBLIC uint32 mt9d112_after_snapshot(void )
+{
+    uint32 i;
+
+    uint32 setting_length = sizeof(mt9d112_YUV_640X480)/sizeof(SENSOR_REG_T);
+        
+    
+    for(i = 0; i<setting_length ; i++)
+    {
+        if(SENSOR_WRITE_DELAY == mt9d112_YUV_640X480[i].reg_addr)
+        {
+              break;
+			  
+        }
+        Sensor_Mt9d112_Write_Regs(mt9d112_YUV_640X480[i].reg_addr, mt9d112_YUV_640X480[i].reg_value);
+    }
+   
+    
+    return 0;
+	
+}
+
+
+
+#endif  //_MT9D112_C_
+

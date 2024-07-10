@@ -1,0 +1,9 @@
+    WIN_ID_DEF(MMIUSSD_SEND_WIN_ID),			// ussd send window
+    WIN_ID_DEF(MMIUSSD_SHOWDATA_WIN_ID),   	 	//ussd show ind window
+    WIN_ID_DEF(MMIUSSD_SHOWSERVICECNF_WIN_ID),	//ussd show service cnf window
+    WIN_ID_DEF(MMIUSSD_SHOWNOTIFY_WIN_ID),  	//ussd show notify window
+    WIN_ID_DEF(MMIUSSD_INPUT_WIN_ID),			//ussd input window
+    WIN_ID_DEF(MMIUSSD_EXTRACT_NUMBER_POP_WIN_ID),
+    WIN_ID_DEF(MMIUSSD_EXTRACT_URL_POP_WIN_ID),
+    WIN_ID_DEF(MMIUSSD_EXTRACT_EMAIL_POP_WIN_ID),
+

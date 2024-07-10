@@ -1,0 +1,30 @@
+        
+  System.mode down 
+  System.Reset 
+  System.JtagClock 1Mhz
+
+  System.CPU CORTEXA5
+  ;SYSTEM.CONFIG CORENUMBER 1.
+  ;CORE.ASSIGN
+
+  ;Sys.Config.COREBASE 0x00110000
+  Sys.Config.COREBASE 0x8000a000
+  Sys.Config.CTIBASE  0x8000c000
+  Sys.Config.ETMBASE  0x80015000
+
+  ;Sys.Config.FUNNEL.BASE  0x00220000
+
+  SYSTEM.CONFIG DEBUGACCESSPORT 0
+  SYSTEM.CONFIG.DEBUGPORTTYPE SWD
+
+
+  System.Attach  ;目标板没有代码执行,否则替换为 SYS.ATTACH    （UP 模式会对CPU复位操作）
+  
+  Break
+  
+  D.S 0x50308060 %LE %Long 0xE551
+  D.S 0x50308048 %LE %Long 0x0
+  
+  Go
+
+

@@ -1,0 +1,316 @@
+/=======================================================================================================
+//MsgDefine.dat 消息结构脚本定义文件
+//作者：lp
+//CopyRight (c) 2011 By CYIT
+//日期：2012.12.03
+//文本格式:
+//参数名          参数类型  参数基类型   参数含义        参数备注
+//修改历史：
+//=======================================================================================================
+<0X03 BSI_DSP_ASSERT>
+     dspAssertIndex[20]       array     u32    Dsp断言信息
+     dspDriverInfo[32]        array     u32    Dsp驱动信息
+<\0X03 BSI_DSP_ASSERT>
+
+<0X07 ARM_SYSTEM_INFO>
+     serviceState             u32      u32     状态      |select;0x00000000:无业务;0x00000001:电话业务;0x02:短信业务;0x04:附件业务;0x08:CS业务;0x10:PS业务;|
+     psStateType              u32      u32     状态      |select;0x00000000:无PS业务;0x00000001:TDS普通ps业务;0x02:TDS HSDPA业务;0x04:TDS HSUPA业务;0x08:GGE业务;0x10:LTE业务;|     
+<\0X07 ARM_SYSTEM_INFO>
+
+<0x06 BSI_DSP_PERFORMANCE>
+     chanTypeSnrCnt[21]       array     u16    当前不同信道环境次数统计
+     dlSnrPdschBler[21]       array     u16    不同信道误块率统计
+     ulPuschThroughput        u32       u32    上行速率吞吐率
+     rlmUnsyncCnt             u32       u32    下行速率吞吐率
+     reserved                 u16       u16    保留字节
+     cellId[6][20]            array     u16    服务小区ID
+     cellIdPwr[6][20]         array     u16    功率值   
+<\0x06 BSI_DSP_PERFORMANCE>
+
+<0x08 DSP_SYSTM_INFO>
+      harqDDRRate            u16        u16    hardddrate
+      zspUnMissRate          u16        u16    zspUnMissRate
+      zspIDLERate            u16        u16    zspIDLERate
+<\0x08 DSP_SYSTM_INFO>
+
+<0x0F DSP_CMD_VB_HW>
+      Switch                 u16        u16    Switch
+      afeextinputctrl        u16        u16    afeextinputctrl
+      afetxctrl1             u16        u16    afetxctrl1 
+      afetxctrl4             u16        u16    afetxctrl4 
+      afetxctrl5             u16        u16    afetxctrl5 
+      afetxctrl6             u16        u16    afetxctrl6
+      afetxctrl7             u16        u16    afetxctrl7
+      aferxringer            u16        u16    aferxringer
+      aferxana1              u16        u16    aferxana1
+      aferxana2              u16        u16    aferxana2
+      aferxana3              u16        u16    aferxana3
+      aferxctrl2             u16        u16    aferxctrl2
+      aferxepref             u16        u16    aferxepref
+      aferxgaindigital       u16        u16    aferxgaindigital
+      afetxctrl2             u16        u16    afetxctrl2
+      inputmicmode           u16        u16    inputmicmode
+      ratesw                 u16        u16    ratesw
+      outmode                u16        u16    outmode
+      csel                   u16        u16    csel
+      num0                   u16        u16    num0
+      den0                   u16        u16    den0
+      num1                   u16        u16    num1
+      den1                   u16        u16    den1
+      rxconf                 u16        u16    rxconf
+      txconf                 u16        u16    txconf
+      i2s1hwmode             u16        u16    i2s1hwmode
+      i2s1chnmode            u16        u16    i2s1chnmode 
+<\0x0F DSP_CMD_VB_HW>
+
+<0x10 DSP_CMD_VB_SET_BIQUAD>
+      coeffi            u16        u16    coeffi
+      a11               u16        u16    a11
+      b11               u16        u16    b11
+      a21               u16        u16    a21
+      b21               u16        u16    b21
+      a01               u16        u16    a01
+      a12               u16        u16    a12
+      b12               u16        u16    b12
+      a22               u16        u16    a22
+      b22               u16        u16    b22
+      a02               u16        u16    a02
+<\0x10 DSP_CMD_VB_SET_BIQUAD>
+
+<0x11 DSP_CMD_VB_SET_GAIN>
+      scalin            u16        u16    scalin
+      scalout           u16        u16    scalout
+      sidetonefact      u16        u16    sidetonefact
+      micmuteon         u16        u16    micmuteon
+      scalmic           u16        u16    scalmic
+      gainout           u16        u16    gainout
+      scalrec           u16        u16    scalrec
+      speechmix         u16        u16    speechmix 
+      tonefact          u16        u16    tonefact
+      delta0            u16        u16    delta0
+      delta1            u16        u16    delta1
+      kappa0            u16        u16    kappa0
+      kappa1            u16        u16    kappa1
+      lambda0           u16        u16    lambda0
+      lambda1           u16        u16    lambda1
+      scalafe           u16        u16    scalafe
+      scalamic2         u16        u16    scalamic2
+      afetone           u16        u16    afetone 
+      tonmixul          u16        u16    tonmixul
+      tonmixdl          u16        u16    tonmixdl
+      speechmixul       u16        u16    speechmixul
+      scalI2S1          u16        u16    scalI2S1
+      voiceulgain       u16        u16    voiceulgain
+      voicedlgain       u16        u16    voicedlgain
+<\0x11 DSP_CMD_VB_SET_GAIN>
+
+<0x16 DSP_CMD_VB_DAI>
+      mode            u16        u16    mode
+<\0x16 DSP_CMD_VB_DAI>
+
+<0x17 DSP_CMD_HF_SET_PAR>
+      gainanlog          u16        u16        gainanlog
+      stepwidth          u16        u16        stepwidth
+      lmslength          u16        u16        lmslength
+      lmsoffset          u16        u16        lmsoffset
+      blocklength        u16        u16        blocklength
+      rxtxrelation       u16        u16        rxtxrelation
+      nrsw2              u16        u16        nrsw2
+      nrufak0            u16        u16        nrufak0
+      nrufak             u16        u16        nrufak
+      addatten           u16        u16        addatten
+      minatten           u16        u16        minatten
+      maxatten           u16        u16        maxatten
+      nrcounterdelay     u16        u16        nrcounterdelay
+      agcrxtxrelation    u16        u16        agcrxtxrelation
+      wfbeta             u16        u16        wfbeta
+      wfoverest          u16        u16        wfoverest
+      wfthploud          u16        u16        wfthploud 
+<\0x17 DSP_CMD_HF_SET_PAR>
+
+<0x18 DSP_CMD_HF_ON>
+      mode            u16        u16       mode
+      echosource      u16        u16       echosource
+      adddelay        u16        u16       adddelay
+<\0x18 DSP_CMD_HF_ON>
+
+<0x19 DSP_CMD_VM_SET_COEFF>
+      vmmode          u16        u16       vmmode
+      alpha0          u16        u16       alpha0
+      alpha1          u16        u16       alpha1
+      beta0           u16        u16       beta0 
+      beta1           u16        u16       beta1
+      gamma0          u16        u16       gamma0 
+      gamma1          u16        u16       gamma1
+<\0x19 DSP_CMD_VM_SET_COEFF>
+
+<0x1A DSP_CMD_CBUF_GAIN>
+      scalsapp        u16        u16       scalsapp
+      scalext         u16        u16       scalext
+      scalpcm         u16        u16       scalpcm
+      mixafe          u16        u16       mixafe 
+      mixi2s1         u16        u16       mixi2s1
+      mixpcmrec       u16        u16       mixpcmrec 
+<\0x1A DSP_CMD_CBUF_GAIN>
+
+<0x1E DSP_CMD_DTX_ON>
+      mode            u16        u16    mode
+<\0x1E DSP_CMD_DTX_ON>
+
+<0x20 DSP_CMD_WRITE_DSP>
+      saddr           u16        u16     saddr
+      daddr           u16        u16     daddr
+      pgreg           u16        u16     pgreg
+      len             u16        u16     len
+<\0x20 DSP_CMD_WRITE_DSP>
+
+<0x21 DSP_CMD_READ_DSP>
+      saddr           u16        u16     saddr
+      pgreg           u16        u16     pgreg
+      daddr           u16        u16     daddr    
+      len             u16        u16     len
+<\0x21 DSP_CMD_WRITE_DSP>
+
+<0x25 DSP_CMD_VB_I2S2>
+      Swtich          u16        u16     Swtich
+      SI2SxSCEL       u16        u16     SI2SxSCEL
+      SI2SxNUM0       u16        u16     SI2SxNUM0    
+      SI2SxDEN0       u16        u16     SI2SxDEN0
+      SI2SxNUM1       u16        u16     SI2SxNUM1    
+      SI2SxDEN1       u16        u16     SI2SxDEN1
+      SI2SxRXCONF     u16        u16     SI2SxRXCONF
+      SI2SxTXCONF     u16        u16     SI2SxTXCONF
+      SI2SxI2s2Rate   u16        u16     SI2SxI2s2Rate
+      SI2SxI2s2Mode   u16        u16     SI2SxI2s2Mode
+<\0x25 DSP_CMD_WRITE_DSP>
+
+<0x27 DSP_CMD_VB_SYNC>
+      mode            u16        u16     mode
+      sync            u16        u16     sync
+      ptrval          u16        u16     ptrval    
+      synclim         u16        u16     synclim
+<\0x27 DSP_CMD_VB_SYNC>
+
+<0x28 DSP_CMD_UMTS_ON>
+      switchpar            u16        u16    switchpar
+<\0x28 DSP_CMD_UMTS_ON>
+
+<0x2A DSP_CMD_MIDI>
+      mode                          u16        u16     mode
+      sampletateheadroom            u16        u16     sampletateheadroom
+      mididatasharedmemaddr         u16        u16     mididatasharedmemaddr    
+<\0x2A DSP_CMD_MIDI>
+
+<0x2C DSP_CMD_AUDIOPROC>
+      AudioPostProcSwitch           u16        u16     AudioPostProcSwitch
+      bexp                          u16        u16     bexp
+      b1                            u16        u16     b1
+      b0                            u16        u16     b0
+      a1                            u16        u16     a1
+      monoflag                      u16        u16     monoflag
+      mbufflen                      u16        u16     mbufflen
+      minvbufflen                   u16        u16     minvbufflen
+      mhpcoefexp                    u16        u16     mhpcoefexp
+      mlp1coef                      u16        u16     mlp1coef
+      mlp2coef                      u16        u16     mlp2coef
+      mlp4coef                      u16        u16     mlp4coef
+      mlp3coef                      u16        u16     mlp3coef
+      mLA                           u16        u16     mLA
+      mLBf                          u16        u16     mLBf
+      mGComp                        u16        u16     mGComp
+      umRinfA                       u16        u16     umRinfA
+      umRAB                         u16        u16     umRAB
+      umRB0                         u16        u16     umRB0
+<\0x2C DSP_CMD_AUDIOPROC>
+
+<0x2D DSP_CMD_PCM>
+      mode             u16        u16     mode
+      parm0            u16        u16     parm0
+      samplerate       u16        u16     samplerate    
+      monostereo       u16        u16     monostereo
+      rmsthreslow      u16        u16     rmsthreslow
+      rmsthreshigh     u16        u16     rmsthreshigh
+      bitpersample     u16        u16     bitpersample
+<\0x2D DSP_CMD_MIDI>
+
+<0x2E DSP_CMD_PCM_REC>
+      Swtich           u16        u16     Swtich
+      Format           u16        u16     Format
+      Mode             u16        u16     Mode    
+      Bitpersample     u16        u16     Bitpersample
+<\0x2E DSP_CMD_PCM_REC>
+
+<0x2F DSP_CMD_A3D>
+      mode                u16        u16     mode
+      scenario            u16        u16     scenario   
+<\0x2F DSP_CMD_A3D>
+
+<0x30 DSP_CMD_SBC>
+      Swtich           u16        u16     Swtich
+      samplerate       u16        u16     samplerate
+      noofblocks       u16        u16     noofblocks    
+      channelmode      u16        u16     channelmode
+      bitpool          u16        u16     bitpool
+<\0x30 DSP_CMD_SBC>
+
+<0x32 DSP_CMD_VB_ASP_EP>
+      operation        u16        u16     operation
+      attenndbfs       u16        u16     attenndbfs
+      attacktime       u16        u16     attacktime    
+      releasetime      u16        u16     releasetime
+      mode             u16        u16     mode 
+<\0x32 DSP_CMD_VB_ASP_EP>
+
+<0x33 DSP_CMD_VB_HF_SET_GAIN>
+      mode            u16        u16    mode
+<\0x33 DSP_CMD_VB_HF_SET_GAIN>
+
+<0x34 DSP_CMD_VB_SET_FIR>
+      uldlselect      u16        u16    uldlselect
+      csi             u16        u16    csi
+      h               array      u16    h
+<\0x34 DSP_CMD_VB_SET_FIR>
+
+<0x35 DSP_CMD_VB_AUDIO_FILTER_SWITCH>
+      dlenable      u16        u16    dlenable
+      ulenable      u16        u16    ulenable
+      cbufenable    u16        u16    cbufenable
+<\0x35 DSP_CMD_VB_AUDIO_FILTER_SWITCH>
+
+<0x36 DSP_CMD_VB_RX_NR_CONFIG>
+      Swtich              u16        u16    Swtich
+      nrsw2               u16        u16    nrsw2
+      nrufak0             u16        u16    nrufak0
+      nrufak              u16        u16    nrufak
+      nrcounterdelay      u16        u16    nrufak
+<\0x36 DSP_CMD_VB_RX_NR_CONFIG>
+
+<0x37 DSP_CMD_VB_RX_CNI_SET_GAIN>
+      rxcnigain      u16        u16    rxcnigain
+<\0x37 DSP_CMD_VB_RX_CNI_SET_GAIN>
+
+<0x38 DSP_CMD_DUAL_BAND_COMPR>
+      Swtich              u16        u16    Swtich
+      monoflag            u16        u16    monoflag
+      buflen              u16        u16    buflen
+      invbuflen           u16        u16    invbuflen
+      hpcoeffexp          u16        u16    hpcoeffexp
+      lp1coeff            u16        u16    lp1coeff
+      lp2coeff            u16        u16    lp2coeff
+      lp4coeff            u16        u16    lp4coeff
+      lp3coeff            u16        u16    lp3coeff
+      la                  u16        u16    la
+      lb                  u16        u16    lb
+      gcomp               u16        u16    gcomp
+      rinfa               u16        u16    rinfa
+      rab                 u16        u16    rab
+      rb0                 u16        u16    rb0
+      nbband              u16        u16    nbband
+<\0x38 DSP_CMD_DUAL_BAND_COMPR>
+
+<0x3A DSP_CMD_PCMIF_SET_GAIN>
+      pcmgainin      u16        u16    pcmgainin
+      pcmgainout     u16        u16    pcmgainout
+      pcmrecgain     u16        u16    pcmrecgain
+      pcmplaygain    u16        u16    pcmplaygain
+<\0x3A DSP_CMD_PCMIF_SET_GAIN>

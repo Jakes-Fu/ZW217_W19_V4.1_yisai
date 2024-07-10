@@ -1,0 +1,2 @@
+set LM_LICENSE_FILE=8224@shlic02
+make p=UIX8910MPW_128X256_320X240 new -j2 job=2

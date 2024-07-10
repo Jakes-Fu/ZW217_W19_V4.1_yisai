@@ -1,0 +1,18 @@
+ROM_LOAD 0x50800100 0x13F00
+{
+    ROM_EXEC 0x50800100 0x13F00
+    {
+        init.o (Init, +First)
+        Chip_phy_uws6121e.o (+RO)
+        clock.o(+RO)
+        ddr.o(+RO)
+        *.o(+RO)
+    }
+	
+	RW_DATA 0x80000000 0x200000
+    {
+		*.o(+RW)
+        *.o(+ZI)
+    }
+	
+}

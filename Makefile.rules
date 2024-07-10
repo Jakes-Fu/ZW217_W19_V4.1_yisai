@@ -1,0 +1,385 @@
+#
+# Compiler Cmd Definition
+#
+
+MAKE_OS = $(if $(findstring Window,$(OS)),Windows,Linux)
+
+SIMPLE_PATH_NAME=Progra~1
+FULL_PATH_NAME  =Program Files
+
+ifeq ($(strip $(COMPILER)), RVCT)
+	ifeq ($(strip $(MAKE_OS)), Windows)
+	ifeq ($(strip $(CC_VER)),RVCT41)
+		RVCT_VERSION = RVCT41
+	else
+		RVCT_VERSION = V504
+	endif
+else
+		RVCT_VERSION = V504
+endif
+    ifeq ($(strip $(RVCT_VERSION)), RVCT41)
+
+        ARM_HOME        =$(ARMCC41BIN)
+        ifeq ($(strip $(MAKE_OS)), Windows)
+            ARM_HOME = $(subst \,/,$(subst $(FULL_PATH_NAME),$(SIMPLE_PATH_NAME),$(ARMCC41BIN)))
+        endif
+        ARMCC           ="$(ARM_HOME)/armcc"
+        CC              ="$(ARM_HOME)/armcc"
+        CPP             ="$(ARM_HOME)/armcc"
+        ASM             ="$(ARM_HOME)/armasm"
+        LINK            ="$(ARM_HOME)/armlink"
+        AR              ="$(ARM_HOME)/armar"
+        FROMELF         ="$(ARM_HOME)/fromelf"
+        ARMINC          ="$(ARMCC41INC)"
+        ARMLIB          ="$(ARMCC41LIB)"
+        ifeq ($(strip $(MAKE_OS)), Windows)
+            ARMINC = "$(subst \,/,$(subst $(FULL_PATH_NAME),$(SIMPLE_PATH_NAME),$(ARMCC41INC)))"
+            ARMLIB = "$(subst \,/,$(subst $(FULL_PATH_NAME),$(SIMPLE_PATH_NAME),$(ARMCC41LIB)))"
+        endif
+
+    else  # RVCT_VERSION != RVCT41
+				ifeq ($(strip $(RVCT_VERSION)), V504)
+						ifeq ($(strip $(DS5PATH2)),)
+						ARM_HOME=C:/Program Files/DS-5 v5.26.0/sw/ARMCompiler5.06u4
+						ifeq ($(strip $(MAKE_OS)), Linux)
+							ARM_HOME = /opt/armcc5
+						endif
+						ARMCC           ="$(ARM_HOME)/bin/armcc"
+						CC              ="$(ARM_HOME)/bin/armcc"
+						CPP             ="$(ARM_HOME)/bin/armcc"
+						ASM             ="$(ARM_HOME)/bin/armasm"
+						LINK            ="$(ARM_HOME)/bin/armlink"
+						AR              ="$(ARM_HOME)/bin/armar"
+						FROMELF         ="$(ARM_HOME)/bin/fromelf"
+						ARMINC          ="$(ARM_HOME)/include"
+						ARMLIB          ="$(ARM_HOME)/lib/armlib"
+						else
+						ARM_HOME        = $(DS5PATH2)
+						ifeq ($(strip $(MAKE_OS)), Windows)
+								ARM_HOME        =$(subst \,/,$(DS5PATH2))
+						endif
+						endif
+						ARMCC           ="$(ARM_HOME)/bin/armcc"
+						CC              ="$(ARM_HOME)/bin/armcc"
+						CPP             ="$(ARM_HOME)/bin/armcc"
+						ASM             ="$(ARM_HOME)/bin/armasm"
+						LINK            ="$(ARM_HOME)/bin/armlink"
+						AR              ="$(ARM_HOME)/bin/armar"
+						FROMELF         ="$(ARM_HOME)/bin/fromelf"
+						ARMINC          ="$(ARM_HOME)/include"
+						ARMLIB          ="$(ARM_HOME)/lib/armlib"
+				else
+		        ARM_HOME        =$(RVCT31BIN)
+		        ifeq ($(strip $(MAKE_OS)), Windows)
+		            ARM_HOME = $(subst \,/,$(subst $(FULL_PATH_NAME),$(SIMPLE_PATH_NAME),$(RVCT31BIN)))
+		        endif
+		        ARMCC           ="$(ARM_HOME)/armcc"
+		        CC              ="$(ARM_HOME)/tcc"
+		        CPP             ="$(ARM_HOME)/tcpp"
+		        ASM             ="$(ARM_HOME)/armasm"
+		        LINK            ="$(ARM_HOME)/armlink"
+		        AR              ="$(ARM_HOME)/armar"
+		        FROMELF         ="$(ARM_HOME)/fromelf"
+		        ARMINC          ="$(RVCT31INC)"
+		        ARMLIB          ="$(RVCT31LIB)"
+		        ifeq ($(strip $(MAKE_OS)), Windows)
+		            ARMINC = "$(subst \,/,$(subst $(FULL_PATH_NAME),$(SIMPLE_PATH_NAME),$(RVCT31INC)))"
+		            ARMLIB = "$(subst \,/,$(subst $(FULL_PATH_NAME),$(SIMPLE_PATH_NAME),$(RVCT31LIB)))"
+		        endif
+				endif	# RVCT_VERSION == V504
+    endif  # RVCT_VERSION == RVCT41
+
+    BIG_ENDIAN_OPT  = --bi
+    LITTLE_ENDIAN_OPT = --li
+    APCS            = --apcs
+    VIA             = --via
+    KEEP            = --keep
+    CODE16          = --16
+    CHECKREGLIST    = --diag_warning 1206
+    CPU             = --cpu
+
+    PD_OPT          = --pd
+    IGNOR_WARNNINGS = --diag_suppress 1,9,61,66,68,69,111,117,144,152,167,170,174,177,186,188,191,223,226,236,375,494,513,550,815,940,1134,1287,1293,1294,1295,1296,1381,1441,1608,1652,1764,1786,2523,2775,3017,3052,6314,6329
+    VFP             = --fpu VFPv2
+
+else  # COMPILER != RVCT
+
+
+	ARM_HOME        =$(subst \,/,$(ARMHOME))
+	ARMCC           ="$(ARM_HOME)/Bin/armcc"
+	CC              ="$(ARM_HOME)/Bin/tcc"
+	CPP             ="$(ARM_HOME)/Bin/tcpp"
+	ASM             ="$(ARM_HOME)/Bin/armasm"
+	LINK            ="$(ARM_HOME)/Bin/armlink"
+	AR              ="$(ARM_HOME)/Bin/armar"
+	FROMELF         ="$(ARM_HOME)/Bin/fromelf"
+	ARMINC          ="$(ARM_HOME)/Include"
+	BIG_ENDIAN_OPT  = -bi
+	LITTLE_ENDIAN_OPT = -li
+	APCS            = -apcs
+        VIA             = -via
+	KEEP            = -keep
+	CODE16          = -16
+        CHECKREGLIST    = -checkreglist
+        CPU             = -cpu
+	PD_OPT              = -pd
+        IGNOR_WARNNINGS =
+	VFP = --fpu softvfp
+endif    # COMPILER == RVCT
+
+  MKDIR           =make
+
+ifeq ($(strip $(MMI_VER)), MAIN)
+  MMI_DIR      = MS_MMI_Main
+  SIMU_DIR     = simulator_main
+  SIMU_IDH  = simulator_idh
+  APP_MK       = app_main
+  RES_MAKE_DIR  = resource_main
+endif
+
+ifeq ($(strip $(MMI_VER)), STABLE)
+  MMI_DIR      = MS_MMI
+  SIMU_DIR     = simulator
+  SIMU_IDH  = simulator_idh
+  APP_MK       = app
+  RES_MAKE_DIR  = resource
+endif
+
+ifeq ($(strip $(USE_LZMA_UZIP_BIN)),TRUE)
+  CPIMG    = cp_zip.bin
+  ZSPIMG   = zsp_zip.bin
+  BTIMG    = bt_zip.bin
+  RISCV    = riscV_zip.bin
+else
+  CPIMG    = cp.bin
+  ZSPIMG   = zsp.bin
+  BTIMG    = bt.bin
+  RISCV    = riscV.bin
+endif
+#
+# Common Compiler Options
+#
+
+
+
+ifeq ($(strip $(PLATFORM)),UIX8910)
+__CPU__       = cortex-a5
+ifeq ($(strip $(COMPILER)),	RVCT)
+CFLAGS        = $(CPU) $(__CPU__) -O3 $(APCS) /interwork/ $(IGNOR_WARNNINGS) $(VFP) --enum_is_int -D_RTOS -D_DEBUG --loose_implicit_cast  --debug --no_unaligned_access
+AFLAGS        = $(CPU) $(__CPU__) $(KEEP) $(APCS) /interwork/ $(IGNOR_WARNNINGS) $(VFP) --no_unaligned_access
+else
+CFLAGS        = -cpu $(__CPU__) -O2 -apcs /interwork/ $(VFP) -fy -D_RTOS -D_DEBUG -Ec -W
+AFLAGS        = -cpu $(__CPU__) -keep -apcs /shlclient/interwork/ $(VFP)
+endif
+endif
+
+ifeq ($(strip $(PLATFORM)),UWS6121E)
+__CPU__       = cortex-a5
+ifeq ($(strip $(COMPILER)),	RVCT)
+CFLAGS        = $(CPU) $(__CPU__) -O3 $(APCS) /interwork/ $(IGNOR_WARNNINGS) $(VFP) --enum_is_int -D_RTOS -D_DEBUG --loose_implicit_cast  --debug --no_unaligned_access
+AFLAGS        = $(CPU) $(__CPU__) $(KEEP) $(APCS) /interwork/ $(IGNOR_WARNNINGS) $(VFP) --no_unaligned_access
+else
+CFLAGS        = -cpu $(__CPU__) -O2 -apcs /interwork/ $(VFP) -fy -D_RTOS -D_DEBUG -Ec -W
+AFLAGS        = -cpu $(__CPU__) -keep -apcs /shlclient/interwork/ $(VFP)
+endif
+endif
+
+ifeq ($(strip $(STACK_CHECK_SUPPORT)),TRUE)
+	ifeq ($(strip $(COMPILER)),	RVCT)
+		SWST_OPT      =
+	else
+		SWST_OPT      = $(APCS) /swst
+	endif
+endif
+
+# for endian selection
+ENDIAN_OPT    = 
+ifneq ($(strip $(CHIP_ENDIAN)), LITTLE)
+		ENDIAN_OPT    = $(BIG_ENDIAN_OPT)
+else
+		ENDIAN_OPT    = $(LITTLE_ENDIAN_OPT)
+endif
+
+
+CFLAGS	     += $(SWST_OPT) $(ENDIAN_OPT)
+AFLAGS	     += $(SWST_OPT) $(ENDIAN_OPT)
+
+
+# for library and link option
+ifeq ($(strip $(COMPILER)),	RVCT)
+ARFLAGS         = --create
+LFLAGS          = --no_merge $(VFP)
+MDFLAGS         = --depend
+else
+ARFLAGS         = -create
+LFLAGS          =
+MDFLAGS         = -depend
+endif
+
+
+ifeq ($(strip $(MAKE_OS)), Windows)
+	LFLAGS += --keep=spiflash_cfg.o(DFILE_DOWNLOAD_CFG_B)
+else
+	LFLAGS += --keep=spiflash_cfg.o\(DFILE_DOWNLOAD_CFG_B\)
+endif
+
+#
+# Bash Systmm Commands
+#
+
+  ROOT_DIR	= $(shell $(PERL) ./make/perl_script/get_root_fullpath.pl)
+ifeq ($(strip $(MAKE_OS)), Windows)
+  MAKESHELL=CMD
+  MAKE_HOME     = make\make_cmd
+  SHELL         = $(MAKE_HOME)\CMD.exe
+  COPY_FILE     = copy /y
+  COPY_DIR      = xcopy /E /Y /R
+  DEL_FILE      = del /F /Q /S
+  ADD_WRITE_PROP= attrib -R
+  ECHO          = "$(MAKE_HOME)\echo.exe"
+  TEE           = "$(MAKE_HOME)\tee"
+  CAT           = type
+  DIFF          = $(MAKE_HOME)\diff
+  PERL          = make\make_cmd\Perl
+  PYTHON        = python
+  MAKE          = $(MAKE_HOME)\make
+  CP_FILE       = make\make_cmd\Perl make\perl_script\cp.pl
+  MOVE          = $(MAKE_HOME)\mv -f
+  BZP           = $(MAKE_HOME)\BZPcmd.exe
+  VLRSIGN       = $(MAKE_HOME)\VLRSign.exe
+  MAKEIMAGE     = $(MAKE_HOME)\mkimage_uix8910.exe
+  MAKEFDL1IMAGE = $(MAKE_HOME)\dtools\windows\dtools.exe
+  LZMABIN       = $(MAKE_HOME)\Lzmabin.exe
+else
+  MAKE_HOME     = make/make_cmd
+  COPY_FILE     = cp -f
+  COPY_DIR      = cp -R -f
+  DEL_FILE      = rm -f
+  ADD_WRITE_PROP= chmod -R +w
+  ECHO          = "echo"
+  SHELL         = sh
+  TEE           = tee
+  CAT           = cat
+  DIFF          = diff
+  PERL          = perl
+  PYTHON        = python
+  MAKE          = make
+  CP_FILE       = perl make/perl_script/cp.pl
+  MOVE          = mv -f
+  BZP           = $(MAKE_HOME)/BZPcmd.exe
+  VLRSIGN       = $(MAKE_HOME)/VLRSign.exe
+  MAKEIMAGE     = $(MAKE_HOME)/mkimage_uix8910.exe
+  MAKEFDL1IMAGE = $(MAKE_HOME)/dtools/linux/fota-cli-xenial/dtools
+  LZMABIN       = $(MAKE_HOME)/Lzmabin.exe
+endif
+
+#
+# Common Build Directories Definition
+#
+COMMON_INCPATH = MS_Ref/export/inc common/export/inc common/export/inc/trace_id RTOS/export/inc MS_Customize/export/inc chip_drv/export/inc DAPS/export/inc char_lib/export/inc
+
+
+
+
+  SPRDLIB_DIR      = lib
+  3RDLIB_DIR       = Third-party/lib
+
+ifneq ($(strip $(SPRD_CUSTOMER)),TRUE)
+ifeq ($(pclint_tool),PLUS)
+  PCLINT_DIR       = $(ROOT_DIR)/project/pclintPlus
+else
+  PCLINT_DIR       = $(ROOT_DIR)/project/pclint_tool
+endif
+else
+  PCLINT_DIR       = $(ROOT_DIR)/tools/DEBUG_TOOL/PCLINT
+endif
+
+  ifeq ($(strip $(DM_BASE)),TRUE)
+      PS_INCPATH = PS/export/inc
+      L1_INCPATH = Layer1/export/inc
+      PS_PATH = PS
+      L1_PATH = Layer1
+      L1_DSP_PATH = Layer1_dsp
+      ATC_INCPATH =  atc/export/inc
+      ATC_PATH = atc
+      P_TJPATH = ../P_TianJi2
+  else
+      ifeq ($(strip $(PRODUCT_DM)),TRUE)
+               PS_INCPATH = dm_2g_PS/export/inc
+    	       L1_INCPATH = dm_2g_Layer1/export/inc
+    	       PS_PATH = dm_2g_PS
+    	       L1_PATH = dm_2g_Layer1
+    	       L1_DSP_PATH = dm_2g_Layer1_dsp
+    	       ATC_INCPATH = atc_3g/export/inc
+    	       ATC_PATH = atc_3g
+    	       P_TJPATH=P_TianJi2
+      else  
+               PS_PATH = BASE/PS
+               L1_PATH = BASE/Layer1
+               PS_INCPATH = BASE/PS/export/inc
+               L1_INCPATH = BASE/Layer1/export/inc
+               ATC_INCPATH =  BASE/atc/export/inc
+               ATC_PATH = BASE/atc
+	       L4_INCPATH  = BASE/l4/export/inc
+	       SIM_INCPATH = BASE/sim/export/inc
+      endif
+  endif
+
+#
+# makefile location
+#
+  MAKEFILE_DIR_atc = BASE/make/atc
+  MAKEFILE_DIR_l4 = BASE/make/l4
+  MAKEFILE_DIR_sim = BASE/make/sim
+  MAKEFILE_DIR_ps = BASE/make/ps
+  MAKEFILE_DIR_layer1 = BASE/make/layer1
+  MAKEFILE_DIR_layer1_dsp = BASE/make/layer1_dsp
+  MAKEFILE_DIR_bt_ps_v3x = connectivity/make/bt/bt_ps_v3x
+  MAKEFILE_DIR_bt_pal = make/bt_pal
+  MAKEFILE_DIR_logsave = BASE/make/logsave
+  MAKEFILE_DIR_chip_base = make/chip_drv
+  MAKEFILE_DIR_dm_2g_layer1 = dm_2g_layer1
+  MAKEFILE_DIR_dm_2g_layer1_dsp = dm_2g_layer1_dsp
+  MAKEFILE_DIR_dm_2g_ps = dm_2g_ps
+  MAKEFILE_DIR_xsr = Third-party/Source/xsr_stlmp
+  MAKEFILE_DIR_xsr_bl = Third-party/Source/xsr_stlmp
+  MAKEFILE_DIR_mplapi_threadx_8801h = Third-party/Source/Mplapi/stacks
+  MAKEFILE_DIR_mplapi_intg_8801h = Third-party/Source/Mplapi/stacks
+#
+# public function
+# 
+
+  empty:=
+  space:=$(empty) $(empty)
+
+  Path_process = $(if $(strip $(MAKESHELL)),$(subst /,\,$(1)),$(subst \,/,$(1)))
+               
+  FILTER_MACRO=BLUETOOTH_SUPPORT RELEASE_LEVEL_D0 BT_OPP_SUPPORT  BT_FTP_SERVER_SUPPORT BT_FTS_SUPPORT BT_FTP_CLIENT_SUPPORT BT_DUN_SUPPORT BT_SPP_SUPPORT  BT_HFG_SUPPORT BT_A2DP_SUPPORT BT_A2DP_SAMPLERATE_RECONFIG_SUPPORT BT_AVRCP_SUPPORT MP3_A2DP_SUPPORT AAC_A2DP_SUPPORT WMA_A2DP_SUPPORT
+
+  GETMAKEPATH = $(if $(strip $(MAKEFILE_DIR_$(1))),$(strip $(MAKEFILE_DIR_$(1))/$(1).mk),make/$(1)/$(1).mk)
+
+  GET_ALLMACRO_LIST=$(sort $(filter-out $(filter-out_macro) filter-out_macro,$(foreach W,$(.VARIABLES),$(if $(filter-out environment default automatic, $(origin $W)),$W,))))
+  GET_SIMU_C_MACRO=$(foreach V,$(ALL_MACRO_LIST),$(if $(filter-out FALSE,$($(V))),$(if $(filter-out TRUE,$($(V))),$(if $(filter-out NONE,$($(V))),-D$(strip $(V)) -D$(V)_$(strip $($(V))),-D$(V)_$(strip $($(V)))),-D$(strip $(V))),))
+
+  GET_C_MACRO=$(foreach V,$(call GET_ALLMACRO_LIST),$(if $(filter-out FALSE,$($(V))),$(if $(filter-out TRUE,$($(V))),$(if $(filter-out NONE,$($(V))),-D$(strip $(V)) -D$(V)_$(strip $($(V))),-D$(V)_$(strip $($(V)))),-D$(strip $(V))),))
+  GET_A_MACRO=$(foreach V,$(call GET_ALLMACRO_LIST),$(if $(filter-out FALSE,$($(V))),$(if $(filter-out TRUE,$($(V))),$(if $(filter-out NONE,$($(V))),$(PD_OPT) "$(V)_$(strip $($(V))) SETL {TRUE}" $(PD_OPT) "$(strip $(V)) SETL {TRUE}",$(PD_OPT) "$(V)_$(strip $($(V))) SETL {TRUE}"),$(PD_OPT) "$(strip $(V)) SETL {TRUE}"),))
+
+  GET_SPRD_MACRO_START = $(foreach W,$(.VARIABLES),$(if $(filter-out file, $(origin $W)),,$W))
+  
+  GET_SPRD_MACRO_LIST=$(sort $(filter-out $(filter-out_macro) filter-out_macro SPRD_CUSTOMER $(SPRD_MACRO_LIST_START),$(foreach W,$(.VARIABLES),$(if $(filter-out file, $(origin $W)),,$W))))
+  GET_SPRD_MACRO=$(foreach V,$(filter-out  $(FILTER_MACRO) ,$(SPRD_MACRO_LIST)),$(if $(filter-out FALSE,$($(V))),$(if $(filter-out TRUE,$($(V))),$(if $(filter-out NONE,$($(V))),-D$(strip $(V)) -D$(V)_$(strip $($(V))),-D$(V)_$(strip $($(V)))),-D$(strip $(V))),))
+
+  ECHO_Long = $(foreach V,$(1),$(shell $(ECHO) $(V) $(2) $(3)))
+
+  temp_var := $(foreach W,$(.VARIABLES),$(if $(filter-out environment default automatic command line, $(origin $W)),$W,))
+  filter-out_macro := p project P PROJECT m M modules MODULES ib IB run RUN lite LITE job JOB stop STOP C_MACRO A_MACRO $(temp_var) temp_var CUSTOM_CFLAG PRODUCT_BASELIB_DIR MMI_RES_DIR  SPRD_MACRO_LIST_START SPRD_MACRO MAKESHELL SOURCES COMPONENT PS_PATH SPRD_MACRO_LIST pid PID PID_%_VALID_ALL PID_%_VALID_TA_ALL LANGUAGE_SUPPORT_ALL LANGUAGE_%_SUPPORT PID_DEFAULT sp SP st ST buildresource buildres BUILDRES BR br
+
+  ENCODE_A_MACRO = $(subst $(space)SETL$(space){TRUE}",:SETL:{TRUE}\",$(subst -pd$(space)",$(PD_OPT):\",$(1)))
+  ENCODE_C_MACRO = $(subst $(space),:,$(1))
+  DECODE_AC_MACRO = $(subst :,$(space),$(1))
+
+  CO_OPTION_TO_FILE = $(if $(1)$(2),$(foreach V, SHELL_ACTION_DELETE $(call ENCODE_C_MACRO,$(wordlist 1, 200,$(1))) $(call ENCODE_C_MACRO,$(wordlist 201, 400,$(1)))  $(wordlist 401, $(words $(1)),$(1)), $(if $(findstring SHELL_ACTION_DELETE,$(V)),$(shell $(PERL) make/perl_script/rm_file.pl $(2) ./),$(shell $(ECHO) $(call DECODE_AC_MACRO,$(V)) >> $(2)))),)
+  A_OPTION_TO_FILE  = $(if $(1)$(2),$(foreach V, SHELL_ACTION_DELETE $(call ENCODE_C_MACRO,$(wordlist 1, 150,$(call ENCODE_A_MACRO,$(1)))) $(call ENCODE_C_MACRO,$(wordlist 151, 300,$(call ENCODE_A_MACRO,$(1))))  $(wordlist 301, $(words $(call ENCODE_A_MACRO,$(1))),$(call ENCODE_A_MACRO,$(1))), $(if $(findstring SHELL_ACTION_DELETE,$(V)),$(shell $(PERL) make/perl_script/rm_file.pl $(2) ./),$(shell $(ECHO) $(call DECODE_AC_MACRO,$(V)) >> $(2)))),)
+
+  PATH_TO_FILE = $(if $(1)$(2),$(foreach V, SHELL_ACTION_DELETE $(wordlist 1, 20,$(1)) $(wordlist 21, 40,$(1))  $(wordlist 41, $(words $(1)),$(1)), $(if $(findstring SHELL_ACTION_DELETE,$(V)),$(shell $(PERL) make/perl_script/rm_file.pl $(2) ./),$(shell $(ECHO) $(V) >> $(2)))),)
+

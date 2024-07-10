@@ -1,0 +1,14 @@
+> 2018-6-14 16:6:51:972	select adb server vesion: 25
+> 2018-6-14 16:6:51:972	adb.exe file path: D:\SVN-First\RDAAudioCalibrator - spread\ReleasePackage\adb.exe
+
+> 2018-6-14 16:6:52:152
+start_forward:  LocalPort=tcp:8100  RemotePort=tcp:6100 
+
+-------------------------------Length:00000000h-----------------------------
+
+> 2018-6-14 16:6:53:180	success start forword tcp:8100 tcp:6100
+> 2018-6-14 16:6:53:181
+start_forward:  LocalPort=tcp:8100  RemotePort=tcp:6100 
+
+-------------------------------Length:00000000h-----------------------------
+

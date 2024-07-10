@@ -1,0 +1,7 @@
+{
+    "unc_rtos_w217_22a":
+        [
+            {"name": "UWS6121E_WC_1H00_NoGNSS", "config": "uws6121e"}, 
+            {"name": "UWS6121E_WC_1H00", "config": "uws6121e"}
+        ]
+}

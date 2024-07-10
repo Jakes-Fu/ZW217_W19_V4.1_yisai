@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BMPlatform", "BMPlatform.vcproj", "{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Cust Debug|Win32 = Cust Debug|Win32
+		Cust Release|Win32 = Cust Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Debug|Win32.Build.0 = Cust Debug|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Release|Win32.ActiveCfg = Cust Release|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Release|Win32.Build.0 = Cust Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

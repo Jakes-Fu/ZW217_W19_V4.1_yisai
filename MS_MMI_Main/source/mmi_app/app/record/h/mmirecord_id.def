@@ -1,0 +1,20 @@
+
+WIN_ID_DEF(MMIRECORD_MENU_WIN_ID),              // 录音主菜单窗口
+           WIN_ID_DEF(MMIRECORD_OPTIONMENU_WIN_ID),        // 录音选项菜单窗口
+           WIN_ID_DEF(MMIRECORD_PLAY_WIN_ID),              // 录音播放窗口
+           WIN_ID_DEF(MMIRECORD_RECORD_WIN_ID),            // 录音录音窗口
+           WIN_ID_DEF(MMIRECORD_LIST_WIN_ID),              // 录音list窗口
+           WIN_ID_DEF(MMIRECORD_DETAIL_WIN_ID),            // 录音详情窗口
+           WIN_ID_DEF(MMIRECORD_RENAME_EDITBOX_WIN_ID),     // 录音重命名窗口
+           WIN_ID_DEF(MMIRECORD_WAIT_WIN_ID),               // 停止录音等待窗口
+           WIN_ID_DEF(MMIRECORD_MAINPLAY_WIN_ID),           //录音播放窗口
+           WIN_ID_DEF(MMIRECORD_STARTSTATUS_OPTIONMENU_WIN_ID), //录音选项菜单窗口
+           WIN_ID_DEF(MMIRECORD_STORAGE_SELECT_WIN_ID),  //录音存储介质选择窗口
+           WIN_ID_DEF(MMIRECORD_RECORD_FILE_SEND_WIN_ID),
+           WIN_ID_DEF(MMIRECORD_QUERY_WIN_ID),
+           WIN_ID_DEF(MMIRECORD_WORK_QUERY_WIN_ID),
+           WIN_ID_DEF(MMIRECORD_CALENDAR_RING_QUERY_WIN_ID),
+           WIN_ID_DEF(MMIRECORD_ALARM_RING_QUERY_WIN_ID),
+           WIN_ID_DEF(MMIRECORD_PLAYING_NOTE_WIN_ID),
+           WIN_ID_DEF(MMIRECORD_WAITING_WIN_ID),
+

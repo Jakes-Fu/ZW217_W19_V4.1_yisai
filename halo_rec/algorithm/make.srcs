@@ -1,0 +1,8 @@
+
+S_SRC := 
+C_SRC +=  pk1.c \
+		rsa.c \
+		rsa_sprd.c \
+		sha1_32.c \
+   
+   

@@ -1,0 +1,7 @@
+; SCIPBUD.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SCIPBUD"
+DESCRIPTION  'SCIPBUD Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

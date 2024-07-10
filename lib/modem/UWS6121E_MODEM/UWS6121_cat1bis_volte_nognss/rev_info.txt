@@ -1,0 +1,12 @@
+========shell script========
+shell_UWS6121_cat1bis_volte_nognss
+
+========svn info==========
+URL: http://shsvn05/svn/prj_src/modem_iot/branches/Integration/2023/ivykit_modem_rls_W217_W23.16.7
+Repository Root: http://shsvn05/svn/prj_src
+Last Changed Rev: 62336
+
+========nvitem info==========
+nvitem dir is UWS6121
+
+========end==========

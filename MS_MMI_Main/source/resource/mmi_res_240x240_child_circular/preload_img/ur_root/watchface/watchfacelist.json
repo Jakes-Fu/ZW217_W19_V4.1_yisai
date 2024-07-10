@@ -1,0 +1,29 @@
+{
+    "date": "2021-07-28 19:18",
+    "current_watchface":0,
+    "app_info":
+    [
+        {
+            "id": "AnalogTime",
+            "app_name": "模拟表盘",
+            "version_code": 1,
+            "version_name": "01.01.01",
+            "type": "unisoc",
+            "introduction": "AnalogTime",
+            "icon": "preview.png",
+            "url":"D:\\ur_root\\watchface\\AnalogTime",
+            "edit":false
+        },
+        {
+            "id": "DigitalTime",
+            "app_name": "太空人",
+            "version_code": 1,
+            "version_name": "01.01.01",
+            "type": "unisoc",
+            "introduction": "DigitalTime",
+            "icon": "preview.png",
+            "url":"D:\\ur_root\\watchface\\DigitalTime",
+            "edit":false
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+│  __File_list.txt - 文件列表
+│  readme.txt - 本目录文档的一些详细补充说明
+│  _english_alphabet.src - 英文的源代码文件，由 gen_english_src.pl 生成，用于spim_english.c，生成英文的数据源代码
+│  _english_key_map.src - 同上，仅用于9key
+│  _english_vocabulary.src - 同上
+│  gen_english_src.bat - 生成英文源文件的批处理，主要是文件名比较的长，输入比较烦
+│  gen_english_src.pl - 生成英文源文件的脚本
+│  gen_spell_dict.pm - 生成spells类字典的脚本通用函数
+│  
+└─english - 英文的数据
+        L1.txt - 按单词的使用频率列出的单词集合，L1为最常用
+        L2.txt
+        L3.txt
+        L4.txt
+        L5.txt
+        L6.txt
+        Name0.txt - 常用英文名字
+        

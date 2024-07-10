@@ -1,0 +1,16 @@
+/*****************************************************************************
+** File Name:      mmi_winse.h                                    *
+** Author:         arvin                                             *
+** Date:           01/08/2011                                                *
+** Copyright:      2011 Spreadtrum, Incorporated. All Rights Reserved.       *
+** Description:    This file is used to describe runninglight wallpaer       *
+*****************************************************************************
+**                         Important Edit History                            *
+** --------------------------------------------------------------------------*
+** DATE           NAME             DESCRIPTION                               *
+**  08/2011      Arvin.wu            Create                                  *
+******************************************************************************/
+
+WINSE_DEF(MMI_WIN_ANIM_SE_TYPE_FADE, MMI_WIN_ANIM_SE_SETTING_FADE)  
+WINSE_DEF(MMI_WIN_ANIM_SE_TYPE_FADE_INOUT, MMI_WIN_ANIM_SE_SETTING_FADE_INOUT)  
+WINSE_DEF(MMI_WIN_ANIM_SE_TYPE_VERT_INOUT, MMI_WIN_ANIM_SE_SETTING_VERT_INOUT)  

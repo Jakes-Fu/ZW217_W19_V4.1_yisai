@@ -1,0 +1,23 @@
+
+//RECORD
+
+MENU_DEF(MENU_RECORD_START_OPTION, menu_record_start_option, GUIMENU_STYLE_POPUP, TXT_RECORD_OPTION,       \
+         IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_record_start_option))
+
+#if defined (MMS_SUPPORT) || defined (BLUETOOTH_SUPPORT)
+#ifndef MMI_PDA_SUPPORT
+MENU_DEF(MENU_MULTIM_SEND_FILE, menu_record_send_file, GUIMENU_STYLE_POPUP, TXT_RECORD_OPTION,     \
+         IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_record_send_file))
+#else
+MENU_DEF(MENU_MULTIM_SEND_FILE, menu_record_send_file, GUIMENU_STYLE_POPUP_AUTO, TXT_RECORD_OPTION,     \
+         IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_record_send_file))
+#endif
+#endif
+
+MENU_DEF(MENU_RECORD_STORE_STATUS, menu_record_store_status, GUIMENU_STYLE_POPUP_RADIO, TXT_RECORD_OPTION,       \
+         IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_record_store_status))
+
+MENU_DEF(MENU_RECORD_STORE_FORMAT, menu_record_store_format, GUIMENU_STYLE_POPUP_RADIO, TXT_RECORD_OPTION,       \
+         IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_record_store_format))//andy.he_record  format style
+
+//RECORD END

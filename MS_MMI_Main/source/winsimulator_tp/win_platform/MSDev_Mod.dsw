@@ -1,0 +1,472 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "ControlPanel"=.\ControlPanel_bl7\ConPan_Mod.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    ControlPanel
+    .\ControlPanel
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name MSDevKernel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SIMControlPad
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "DevPS"=..\..\..\..\MS_Code\l4\source\win\devps.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    DevPS
+    ..\..\..\..\MS_Code\l4\source\win
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Filesys_DLL"=.\filesys\Filesys_DLL.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Filesys_DLL
+    .\filesys
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name MSDevKernel
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Kernel"=..\..\..\..\MS_Code\MS_MMI\source\mmi_kernel\source\mmi_kernel.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Kernel
+    ..\..\..\..\MS_Code\MS_MMI\source\mmi_kernel\source
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Kernel_sys"=..\..\..\..\MS_Code\MS_MMI\source\mmi_kernel_sys\source\Kernel_sys.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Kernel_sys
+    ..\..\..\..\MS_Code\MS_MMI\source\mmi_kernel_sys\source
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MSDev"=.\GUI\MSDevGUI_Mod.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    MSDev
+    .\GUI
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ControlPanel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MSDevKernel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SIMControlPad
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MSDevBridge
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Filesys_DLL
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "MSDevBridge"=.\MSKernel\MSBridge\MSDevBridge_Mod.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    MSDevBridge
+    .\MSKernel\MSBridge
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MSDevKernel"=.\MSKernel\MSKernelAPI\MSDevKernel_Mod.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    MSDevKernel
+    .\MSKernel\MSKernelAPI
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name MSDevBridge
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name img
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DevPS
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name gui
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Kernel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ref_base_win
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name driver_windows
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name imgproc
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name refbase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name RTOS
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name chip_drv
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Kernel_sys
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TCPIP
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Utility
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name caf_interface
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name caf_templete
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name xml_expat
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mmi
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SFS20
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "RTOS"=..\..\..\..\MS_Code\RTOS\Source\lib\win\rtos_win\rtos_win.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    RTOS
+    ..\..\..\..\MS_Code\RTOS\source\lib\win
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SFS20"=..\..\..\..\MS_Code\MS_Ref\source\sfs\prj_win\sfs20.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    SFS20
+    ..\..\..\..\MS_Code\MS_Ref\source\sfs\prj_win
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SIMControlPad"=..\..\..\..\MS_Code\SIM\Source\test\SIMConPad\SIMConPad.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    SIMControlPad
+    ..\..\..\..\MS_Code\PS\source\sim\test
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name DevPS
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MSDevBridge
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ref_base_win
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name driver_windows
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MSDevKernel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TCPIP
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "TCPIP"=..\..\..\..\MS_Code\DAPS\source\tcpip\prj\tcpip_win.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    TCPIP
+    ..\..\..\..\MS_Code\DAPS\source\tcpip\prj
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Utility"=..\..\..\..\MS_Code\MS_MMI\source\mmi_utility\Utility.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Utility
+    ..\..\..\..\MS_Code\MS_MMI\source\mmi_utility
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "caf_interface"=..\..\..\..\MS_Code\MS_MMI\source\caf_interface\source\caf_interface.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    caf_interface
+    ..\..\..\..\MS_Code\MS_MMI\source\caf_interface\source
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "caf_templete"=..\..\..\..\MS_Code\MS_MMI\source\caf_templete\source\caf_templete.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    caf_templete
+    ..\..\..\..\MS_Code\MS_MMI\source\caf_templete\source
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "chip_drv"=..\..\..\..\MS_Code\chip_drv\source\prj_win\chip_drv.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    chip_drv
+    ..\..\..\..\MS_Code\chip_drv\source\prj_win
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "gui"=..\..\..\..\MS_Code\MS_MMI\source\mmi_gui\source\gui.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    gui
+    ..\..\..\..\MS_Code\MS_MMI\source\mmi_gui\source
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "img"=..\..\..\..\MS_Code\MS_Ref\source\img\prj\img.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    img
+    ..\..\..\..\MS_Code\MS_Ref\source\img\prj
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "imgproc"=..\..\..\..\MS_Code\MS_Ref\source\image_proc\prj\imgproc\imgproc.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    imgproc
+    ..\..\..\..\MS_Code\MS_Ref\source\image_proc\prj\imgproc
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "mmi"=..\..\..\..\MS_Code\MS_MMI\source\mmi_app\app_nor_cstar_240x320.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    mmi
+    ..\..\..\..\MS_Code\MS_MMI\source\mmi_app
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "refbase"=..\..\..\..\MS_Code\MS_Ref\source\base\prj_win\refbase.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    refbase
+    ..\..\..\..\MS_Code\MS_Ref\source\base\prj_win
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "xml_expat"=..\..\..\..\MS_Code\DAPS\source\xml_expat\prj\xml_expat.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    xml_expat
+    ..\..\..\..\MS_Code\DAPS\source\xml_expat
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    MSDev
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

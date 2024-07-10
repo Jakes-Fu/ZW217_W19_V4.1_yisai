@@ -1,0 +1,13 @@
+//Widget 
+
+
+//Widget pb Favorite List option menu,Start
+MENU_DEF( MENU_WIDGET_PB_FAVORITE_LIST_OPT,menu_widget_pb_favorite_list_opt,GUIMENU_STYLE_POPUP,STXT_MAIN_CL,IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_widget_pb_favorite_list_opt))
+
+MENU_DEF( MENU_WIDGET_SEND_OPT,menu_widget_send_opt,GUIMENU_STYLE_POPUP,STXT_MAIN_CL,IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_widget_send_opt))
+#if defined(MMI_IP_CALL_SUPPORT)||defined(VT_SUPPORT)
+MENU_DEF( MENU_WIDGET_DIAL_SUBMENU_OPT,menu_widget_dial_submenu_opt,GUIMENU_STYLE_POPUP,STXT_MAIN_CL,IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_widget_dial_submenu_opt))
+#endif
+//Widget pb Favorite List option menu,End
+
+//Widget,End

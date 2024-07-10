@@ -1,0 +1,23 @@
+ROM_LOAD 0x800100
+{
+    ROM_EXEC 0x800100 0xA800
+    {
+        init.o (Init, +First)
+        Chip_phy_uix8910.o (+RO,+RW)
+        rda_sys.o(+RO,+RW)
+        clock.o(+RO,+RW)
+        ddr.o(+RO,+RW)
+        usb_boot.o(+RO,+RW)
+        *.o (+RO)
+        *.o (+RW)
+    }
+	 
+    ROM_EXEC1 0x810000 0x20000
+    {
+#ifdef SECURE_BOOT_SUPPORT 
+        fdl_main.o(ZIDATA_AREA_0)
+#endif
+        *.o (+ZI)
+    }
+}
+

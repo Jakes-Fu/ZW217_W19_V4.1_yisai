@@ -1,0 +1,3 @@
+echo off
+adb shell reboot
+echo it's end

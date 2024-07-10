@@ -1,0 +1,20 @@
+#<SYMDEFS># ARM Linker, ADS1.2 [Build 805]: Last Updated: Mon May 23 18:03:10 2005
+0x4000142e D busy_flag
+0x40001430 D free_flag
+0x40001a72 D midiFormat
+0x40001a74 D trackNumber
+0x40001a76 D atk
+0x40001a78 D Tracklen
+0x40001a7c D deltatime
+0x40001a80 D di
+0x40000070 D PPQN
+0x40000074 D Tus
+0x40001431 D OT
+0x40001432 D nch
+0x40001433 D note
+0x40001434 D velocity
+0x40001435 D npressure
+0x40001436 D controller
+0x40001437 D volume
+0x40000110 D stop_flag
+0x4000004c D playrate_midi

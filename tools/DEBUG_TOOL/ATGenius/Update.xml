@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="gb2312"?>
+<AutoUpdate>
+
+    <description>ATGenius autoUpdate</description>
+
+    <Applications>
+        <Application Id="ATGenius" />
+        <Application PreVersion="2.1.6" />
+        <Application PreReleaseDate="2019-05-17" />
+        <Application Version="2.1.7" />
+        <Application ReleaseDate="2019-06-13" />
+
+        <Application EntryPoint="ATGenius.exe" />
+    </Applications>
+  
+    <Files>
+        <File Ver="1.0.1" Name="ATGenius.exe" />
+        <File Ver="1.0.1" Name="ATGenius.ini" />
+        <File Ver="1.0.1" Name="readme.txt" />
+       
+        <File Ver="1.0.1" Name="AutoUpdate.bk" />
+        <File Ver="1.0.1" Name="AutoUpdate.ink" />      
+
+        <File Ver="1.0.1" Name="adb.cmd" />
+        <File Ver="1.0.1" Name="adb.exe" />
+        <File Ver="1.0.1" Name="ADBShell.bat" />
+        
+        <File Ver="1.0.1" Name="AdbWinApi.dll" />
+        <File Ver="1.0.1" Name="AdbWinUsbApi.dll" />
+        <File Ver="1.0.1" Name="AndroidIntface.dll" />
+        
+        <File Ver="1.0.1" Name="mfc90.dll" />
+        <File Ver="1.0.1" Name="mfc90u.dll" />
+        <File Ver="1.0.1" Name="mfcm90.dll" />
+        <File Ver="1.0.1" Name="mfcm90u.dll" />
+        <File Ver="1.0.1" Name="Microsoft.VC90.CRT.manifest" />
+        <File Ver="1.0.1" Name="Microsoft.VC90.MFC.manifest" />
+        <File Ver="1.0.1" Name="msvcm90.dll" />
+        <File Ver="1.0.1" Name="msvcp90.dll" />
+        <File Ver="1.0.1" Name="msvcr90.dll" />
+        
+        <File Ver="1.0.0.1" Name="UpdateDll.dll" />
+        <File Ver="1.0.1" Name="SendList.dat" />        
+               
+        
+        <File Ver="1.0.1" Name="\Data\89100001ATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100002ATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100003ATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100004ATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100005ATDefine.dat" />
+
+        <File Ver="1.0.1" Name="\Data\89100100Cat1bisATDefine.dat" />
+        
+        <File Ver="1.0.1" Name="\Data\89100100ATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100101ATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100102ATDefine.dat" />        
+        <File Ver="1.0.1" Name="\Data\89100103ATDefine.dat" />        
+        <File Ver="1.0.1" Name="\Data\89100104ATDefine.dat" />
+        
+        <File Ver="1.0.1" Name="\Data\89100200ATDefine.dat" />        
+        <File Ver="1.0.1" Name="\Data\89100201ATDefine.dat" />  
+        <File Ver="1.0.1" Name="\Data\89100202ATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100203ATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100204ATDefine.dat" /> 
+                
+        <File Ver="1.0.1" Name="\Data\89100301CatmATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100302CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100303CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100304CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100305CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100306CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100307CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100308CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100309CatmATDefine.dat" />         
+        
+        <File Ver="1.0.1" Name="\Data\89100400CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100401CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100402CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100403CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100404CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89100405CatmATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100406CatmATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100407CatmATDefine.dat" />           
+        <File Ver="1.0.1" Name="\Data\89100408CatmATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100409CatmATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100410CatmATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100411CatmATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100412CatmATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100413CatmATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89100414CatmATDefine.dat" />
+                                
+        <File Ver="1.0.1" Name="\Data\89110100Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110101Cat1bisATDefine.dat" /> 
+        
+        <File Ver="1.0.1" Name="\Data\89110200Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110201Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110202Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110203Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110204Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110205Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110206Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110207Cat1bisATDefine.dat" />         
+        
+        <File Ver="1.0.1" Name="\Data\89110400Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110401Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110402Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110403Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110404Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110405Cat1bisATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89110406Cat1bisATDefine.dat" />        
+        <File Ver="1.0.1" Name="\Data\89110407Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110408Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110409Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110410Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110411Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110412Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110413Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110414Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89110415Cat1bisATDefine.dat" /> 
+        
+        <File Ver="1.0.1" Name="\Data\89120101CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120102CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120103CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120104CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120105CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120106CatmATDefine.dat" /> 
+                
+        <File Ver="1.0.1" Name="\Data\89120400CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120401CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120402CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120403CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120404CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120405CatmATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89120406CatmATDefine.dat" />        
+        <File Ver="1.0.1" Name="\Data\89120407CatmATDefine.dat" />        
+        <File Ver="1.0.1" Name="\Data\89120408CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120409CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120410CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120411CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120412CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120413CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120414CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120415CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120416CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120417CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120418CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120419CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120420CatmATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89120421CatmATDefine.dat" /> 
+                    
+        <File Ver="1.0.1" Name="\Data\89130101Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130102Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130103Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130104Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130105Cat1bisATDefine.dat" />         
+        
+        <File Ver="1.0.1" Name="\Data\89130400Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130401Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130402Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130403Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130404Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130405Cat1bisATDefine.dat" />
+        <File Ver="1.0.1" Name="\Data\89130406Cat1bisATDefine.dat" />         
+        <File Ver="1.0.1" Name="\Data\89130407Cat1bisATDefine.dat" />         
+        <File Ver="1.0.1" Name="\Data\89130408Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130409Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130410Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130411Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130412Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130413Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130414Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130415Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130416Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130417Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130418Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130419Cat1bisATDefine.dat" /> 
+        <File Ver="1.0.1" Name="\Data\89130420Cat1bisATDefine.dat" /> 
+        
+        <File Ver="1.0.1" Name="\Data\FileDefine.dat" />
+
+
+       <File Ver="1.0.1" Name="\Flow\camt_v2\debug\at_measPwr_para_set.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\debug\band8_only.flw" />
+
+       <File Ver="1.0.1" Name="\Flow\camt_v2\get_data\ded_dci_err.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\get_data\get_dch_data.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\get_data\get_dlcnnt_data.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\get_data\get_msg4_data.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\get_data\get_rar_data_dl.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\get_data\meas_get_data.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\get_data\mib_err_get_data.flw" />
+
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\dch_test.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\dl_mpdcch_base.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\dl_pdsch_test_base.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\dl_test_base.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\irt_afc_test.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\MeasPwr_Tra.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\open_all_phy.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\paging_trace.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\ps_test_base.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\rf_test_base.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\SR_trace.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\trace_layer.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\trace_phy_base.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\trace_phy_base_ulip.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\udp_up.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\ul_test_base.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\ul_test_without_rf.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v2\trace\Update_NV_Version.flw" />
+
+
+       <File Ver="1.0.1" Name="\Flow\camt_v3\debug\AT_reset.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v3\debug\lock_band1&8.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v3\debug\lock_band40.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v3\debug\PCT_changeAT_rate.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v3\debug\test_line_cuizichuan.flw" />
+
+       <File Ver="1.0.1" Name="\Flow\camt_v3\get_data\PDSCH_CRC_err_assert.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v3\get_data\sib1_getdata.flw" />
+
+       <File Ver="1.0.1" Name="\Flow\camt_v3\trace\catm_v3_double_trace.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v3\trace\catm_v3_single_trace.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v3\trace\update_nvm_version.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v3\trace\v3_dch_meas_trace_s.flw" />
+
+
+       <File Ver="1.0.1" Name="\Flow\camt_v4\debug\AT_reset.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v4\debug\lock_band1&8.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v4\debug\lock_band40.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v4\debug\PCT_changeAT_rate.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v4\debug\test_line_cuizichuan.flw" />
+       
+       <File Ver="1.0.1" Name="\Flow\camt_v4\trace\catm_v4_double_trace.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v4\trace\catm_v4_single_trace.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v4\trace\update_nvm_version.flw" />
+       <File Ver="1.0.1" Name="\Flow\camt_v4\trace\v4_dch_meas_trace_s.flw" />
+
+
+
+       <File Ver="1.0.1" Name="\Flow\cat1bis\debug\" />
+       <File Ver="1.0.1" Name="\Flow\cat1bis\get_data\" />
+       <File Ver="1.0.1" Name="\Flow\cat1bis\trace\" />
+
+
+
+
+    </Files>
+
+</AutoUpdate>
+

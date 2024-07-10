@@ -1,0 +1,214 @@
+# SpreadTrum NVEditor NV Module File, Format Version 1.0
+# WARNING: DO NOT EDIT OR DELETE THIS NV Module FILE!
+
+###############################################################################
+  MODULE      = NV_VARIANT_CONFIG_TELE
+  DESCRIPTION = add
+
+################################################################################
+
+# Begin Module Item
+  BEGIN_ITEM
+    ITEM_NAME    = DIAL2_PROMPT
+    ITEM_ID      = 1900
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 0
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Support 2-digits number as call or not. 0: Disable (Not support) 1: Enable (Support)
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = LIFE_TIMER
+    ITEM_ID      = 1901
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 1
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Enable/Disable Life timer feature. 0: Disable 1: Enable
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CALL_AUTO_REDIAL
+    ITEM_ID      = 1902
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 2
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Enable/Disable auto-redial feature.0: Disable (Not support) 1: Enable (Support)
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CLI_NUMBER
+    ITEM_ID      = 1903
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x7
+    ITEM_INDEX   = 3
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Specify how how many digits should be compared for calls. 7~11
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ENABLE_SPEED_DIAL
+    ITEM_ID      = 1904
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 4
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Enable/disable speed dial feature. 0: Disable 1: Enable
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = FAST_DORMANCY
+    ITEM_ID      = 1905
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 5
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Telefonica; no support for Fast Dormancy pre-Rel. 8. 0: Disable 1: Enable
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = OPERATOR_SHOW_ORDER
+    ITEM_ID      = 1906
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 6
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Everything Everywhere feature where operator name is read from EFpnn/Efopl. 0: Show SPN 1: Show PNN instead of SPN
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SET_CPHS_ON
+    ITEM_ID      = 1907
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 7
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Enable/Disable CPHS feature. 0: OFF 1: ON
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CELL_BROADCAST
+    ITEM_ID      = 1908
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 8
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Enable/Disable cell broadcast info service. 0: Default Off 1: Default On 2: Disable CB Setting
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CELL_BROADCAST_CHANNEL
+    ITEM_ID      = 1909
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 5
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 9
+    ITEM_PARENT  = -1
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CELL_BROADCAST_CHANNEL[0]
+    ITEM_ID      = 1909
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 10
+    ITEM_PARENT  = 9
+    ITEM_DESC    = DTAG: Device Cell Broadcast Channels configurable to specific values.0~999
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CELL_BROADCAST_CHANNEL[1]
+    ITEM_ID      = 1909
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 11
+    ITEM_PARENT  = 9
+    ITEM_DESC    = DTAG: Device Cell Broadcast Channels configurable to specific values.0~999
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CELL_BROADCAST_CHANNEL[2]
+    ITEM_ID      = 1909
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 12
+    ITEM_PARENT  = 9
+    ITEM_DESC    = DTAG: Device Cell Broadcast Channels configurable to specific values.0~999
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CELL_BROADCAST_CHANNEL[3]
+    ITEM_ID      = 1909
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 13
+    ITEM_PARENT  = 9
+    ITEM_DESC    = DTAG: Device Cell Broadcast Channels configurable to specific values.0~999
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CELL_BROADCAST_CHANNEL[4]
+    ITEM_ID      = 1909
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 14
+    ITEM_PARENT  = 9
+    ITEM_DESC    = DTAG: Device Cell Broadcast Channels configurable to specific values.0~999
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = L2_FILL_BIT_VAMOS
+    ITEM_ID      = 1910
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 15
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Enable/disable L2 Random Fill Bits and Control VAMOS support level. 0: Disable L2 Fill bits + Disable VAMOS 1: Disable L2 Fill bits + Enable VAMOS I 2: Enable L2 Fill bits + Disable VAMOS 3: Enable L2 Fill bits + Enable VAMOS I
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = OPERATOR_PAY_SET
+    ITEM_ID      = 1911
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 16
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Indicates whether to enable/disable Pre-pay/post pay auto selection.0:OFF 1:ON
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = NETWORK_TYPE_SELECT
+    ITEM_ID      = 1912
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x2
+    ITEM_INDEX   = 17
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Indicate what is visible in Network Type selection UI to end user.0: Menu not visible 1: Partial visible ('2G only'/'3G only' are disabled) 2. All 4 items visible 3: Show '3G prefer'/'3G only'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CELL_INFO_DISPLAY_ENABLE
+    ITEM_ID      = 1913
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 18
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Cell Info Display 0:OFF 1:ON
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SMSCB_MCC_SET
+    ITEM_ID      = 1914
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_CONTENT = 0x00
+    ITEM_INDEX   = 19
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Set MCC as plmn info
+  END_ITEM
+
+# End Module Item
+
+################################################################################

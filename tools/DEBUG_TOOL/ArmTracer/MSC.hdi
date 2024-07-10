@@ -1,0 +1,86 @@
+//*******************************************************************
+//*   MSC图列头信息定义文件
+//*   CopyRiht (c) 2010 By CYIT
+//*   Author:   谭红云
+//*   时  间：  2010.12.17
+//*  列号  列名    收缩名称   进程ID   宽度   收缩标志     列范围     
+//********************************************************************
+//GSM   
+                                                 
+      //0    G-L1G    G-L1G       162      40     0             NULL        
+      
+      //1    dll      G_AS        163      40     1             002;003;004;005;006;007;008;        
+      //2    dll2     dll2        164      40     0             NULL        
+      //3    G_mac    G_mac       166      40     0             NULL        
+      //4    G_rlc    G_rlc       167      40     0             NULL        
+      //5    G_llc    G_llc       165      40     0             NULL        
+      //6    G_rrc    G_rrc       168      40     0             NULL        
+      //7    G_grr    G_grr       169      40     0             NULL        
+      //8    G_rrl    G_rrl       170      40     0             NULL  
+            
+      //9    snp      snp         192      40     0             NULL 
+      
+      0    G-L1G    G-L1G         12      50     0             NULL        
+      
+      1    dll(-)   G_AS(+)        13      50     1             002;003;004;005;006;007;008;        
+      2    dll2     dll2          14      50     0             NULL        
+      3    G_mac    G_mac         16      50     0             NULL        
+      4    G_rlc    G_rlc         17      50     0             NULL        
+      5    G_llc    G_llc         15      50     0             NULL        
+      6    G_rrc    G_rrc         18      50     0             NULL        
+      7    G_grr    G_grr         19      50     0             NULL        
+      8    G_rrl    G_rrl         20      50     0             NULL  
+                                
+      9    snp      snp           42      50     0             NULL       
+//Td_phy id = ? HL1       
+     10    Td_phy   td_phy      0x16      50     0             NULL 
+                                                        
+//TD                                                    
+     11    Td_mac(-)   TD_AS(+)       0x15    50     1             012;013;014;015;016;017;        
+     12    Td_rlc   Td_rlc        0x03    50     0             NULL        
+     13    Td_rrc   Td_rrc        0x14    50     0             NULL        
+     14    Td_pdch  Td_pdch       0x05    50     0             NULL        
+     15    Td_rab   Td_rab        0x13    50     0             NULL        
+     16    Td_bmc   Td_bmc        0x30    50     0             NULL        
+     17    Td_rlp   Td_rlp        0x2A    50     0             NULL 
+     
+//NAS            
+     18    tmm(-)      NAS(+)         0x11    50     1             019;020;021;022;023;024;025;
+     19    gmm      gmm           0x12    50     0             NULL     
+     20    mmc      mmc           0x2F    50     0             NULL     
+     21    cmc      cmc           0x10    50     0             NULL     
+  //TCC                          
+     22    ccid     ccid          0x00    50     0             NULL     
+  //TSS                          
+     23    ssid     ssid          0x04    50     0             NULL 
+  //GMS                          
+     24    gsmid    gsmid         0x01    50     0             NULL     
+  //TSM                          
+     25    smid     smid          0x02    50     0             NULL     
+
+//USIM    
+     26    sap(-)      USIM(+)        0x18    50     1             027;028
+     27    sud       sud          0x25    50     0             NULL     
+     28    stk       stk          0x26    50     0             NULL     
+
+//spv     
+     29    spb(-)      spv(+)         0x21    50     1             030;031;032;033;034;035;036;037;038;039;     
+     30    spp      spp           0x1D    50     0             NULL     
+     31    ssm      ssm           0x17    50     0             NULL     
+     32    spn      spn           0x1C    50     0             NULL     
+     33    spt      spt           0x22    50     0             NULL     
+     34    spe      spe           0x1F    50     0             NULL     
+     35    spm      spm           0x1A    50     0             NULL     
+     36    sps      sps           0x20    50     0             NULL     
+     37    spd      spd           0x1E    50     0             NULL     
+     38    spc      spc           0x19    50     0             NULL     
+     39    acc      acc           0x1B    50     0             NULL     
+                                
+     40    atr      atr           0x2B    50     0             NULL
+     
+   //mmi id = ? 99 or 0x23      
+     41    mmi      mmi           0x23    50     0             NULL     
+     42    pf       pf            100     50     0             NULL     
+                                
+     43    NULL     NULL          255     50     0            NULL
+      

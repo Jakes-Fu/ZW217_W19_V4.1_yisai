@@ -1,0 +1,18 @@
+    WIN_ID_DEF(MMIDL_DOWNLOAD_AUTH_WIN_ID),    //  The window id of Download Auth
+    WIN_ID_DEF(MMIDL_DOWNLOAD_AUTH_INPUT_WIN_ID),    //  The window id of Download Auth Input
+    WIN_ID_DEF(MMIDL_DOWNLOAD_SAVE_WIN_ID),    //  The window id of Download Save
+    WIN_ID_DEF(MMIDL_DOWNLOAD_INPUT_FILENAME_WIN_ID),    //  The window id of Download input file name
+    WIN_ID_DEF(MMIDL_DOWNLOAD_MANAGER_WIN_ID),    //  The window id of Download Manager
+    WIN_ID_DEF(MMIDL_DOWNLOAD_MANAGER_OPT_WIN_ID),    //  The window id of Download Manager Option
+    WIN_ID_DEF(MMIDL_DOWNLOAD_TASK_DETAIL_WIN_ID),    //  The window id of Download task detail
+    WIN_ID_DEF(MMIDL_DOWNLOAD_QUERY_WIN_ID),    //  The window id of Download Quety Win
+    WIN_ID_DEF(MMIDL_DOWNLOAD_SETTINGS_WIN_ID),    //  The window id of Download Settings Win
+    WIN_ID_DEF(MMIDL_DOWNLOAD_SAVE_AS_WIN_ID),    //  The window id of Download Save As
+    WIN_ID_DEF(MMIDL_DOWNLOAD_ALERT_WIN_ID),    //  The window id of Download alert win
+    WIN_ID_DEF(MMIDL_DD_PROPERTY_WIN_ID),    //the window for DD property
+	WIN_ID_DEF(MMIDL_DOWNLOAD_SELECT_DEVICE_WIN_ID),    //the window for select device win
+#ifndef MMI_GUI_STYLE_TYPICAL
+    WIN_ID_DEF(MMIDL_METHOD_SET_WIN_ID), 
+    WIN_ID_DEF(MMIDL_PATH_SET_WIN_ID),
+#endif
+

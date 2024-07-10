@@ -1,0 +1,25 @@
+ROM_LOAD 0x40004000
+{
+     ROM_EXEC  0x40004000 0x6000
+     {
+          init.o (Init, +First)
+          smc_phy_sc6531efm.o (+RO,+RW,+ZI)
+          drv_usb.o(+RO,+RW)
+          usb_boot.o(+RO,+RW)
+          virtual_com.o(+RO,+RW)
+#ifdef SECURE_BOOT_SUPPORT 
+          fdl_main.o(ZIDATA_AREA_0)
+#endif
+          *.o (+RO,+RW)
+     }
+     
+     RAM_EXEC  0x40000000 0x3FFF
+     {
+#ifdef SECURE_BOOT_SUPPORT 
+          sha1_32.o(+RO,+RW,+ZI)
+          rsa.o(+RO,+RW,+ZI)
+#endif
+          *.o(+ZI) 
+     }
+}
+

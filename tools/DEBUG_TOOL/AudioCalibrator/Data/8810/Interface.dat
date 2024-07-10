@@ -1,0 +1,31 @@
+// ----------------------------------------------------------
+// 
+// 平台AP Mode的Interface定义
+// <APMode>
+//    value:InterfaceName
+// </APMode>
+//
+// ----------------------------------------------------------
+
+<Call>
+  0: Receiver
+  1: Ear Piece (four)
+  2: Speaker
+  3: BT (BTHS)
+  4: FM
+  5: TV
+  6: Ear Piece (three)
+  7: BT (BTHSNREC)
+</Call>
+
+
+
+<Music Play>
+  10: Receiver
+  11: Ear Piece
+  12: Speaker
+  13: BT
+  14: FM
+  15: TV
+</Music Play>
+

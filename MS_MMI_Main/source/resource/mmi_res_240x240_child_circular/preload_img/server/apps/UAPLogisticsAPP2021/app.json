@@ -1,0 +1,22 @@
+{
+    "app": {
+        "id": "UAPLogisticsAPP2021",
+        "name": "物流",
+        "vendor": "unisoc",
+        "version": {
+            "code": 1, 
+            "name": "01.01.01"
+        },
+        "apiVersion": {
+            "compatible": "1", 
+            "target": "1"
+        },
+        "icon": "\\UAPLogisticsAPP2021\\Logistica_shortcut.png",
+        "permissions": [
+            {
+                "name": "PERMISSION.INTERNET"
+            }
+        ]
+        
+    }
+}

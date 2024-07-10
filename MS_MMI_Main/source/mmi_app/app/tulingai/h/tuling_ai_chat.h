@@ -1,0 +1,24 @@
+#ifndef __TULING_AI_CHAT_H__
+#define __TULING_AI_CHAT_H__
+/*
+和盈互联智能穿戴通讯协议2.0兼容GSM网.pdf
+*/
+//#include "zdt_common.h"
+//#include "zdt_yx_api.h"
+
+
+
+typedef enum  AICHAT_RECORD_STATUS
+{
+    CHAT_RECORD_DISP_IDLE,
+    CHAT_RECORD_DISP_RECORDING,
+    CHAT_RECORD_DISP_RECORD_OK,
+    CHAT_RECORD_DISP_RECORD_FAIL,
+    CHAT_RECORD_DISP_SENDING,
+    CHAT_RECORD_DISP_SEND_OK,
+    CHAT_RECORD_DISP_SEND_FAIL,
+    CHAT_RECORD_DISP_MAX
+}AICHAT_RECORD_STATUS_T;
+
+
+#endif

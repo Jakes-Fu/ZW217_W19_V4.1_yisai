@@ -1,0 +1,21 @@
+{
+    "app": {
+        "id": "UAPWeatherAPP2021",
+        "name": "天气",
+        "vendor": "unisoc",
+        "version": {
+            "code": 1, 
+            "name": "01.01.01"
+        },
+        "apiVersion": {
+            "compatible": "1", 
+            "target": "1"
+        },
+        "icon": "\\UAPWeatherAPP2021\\Weather_shortcut.png",
+        "permissions": [
+            {
+                "name": "PERMISSION.INTERNET"
+            }
+        ]
+    }
+}

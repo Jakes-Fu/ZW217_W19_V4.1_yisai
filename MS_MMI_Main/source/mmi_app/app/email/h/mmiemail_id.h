@@ -1,0 +1,368 @@
+/***************************************************************************************
+** File Name:      mmiemail_id.h                                                       *
+** Author:         techsoft                                                            *
+** Date:           05/13/2011                                                          *
+** Copyright:      2011 Spreadtrum, Incorporated. All Rights Reserved.                 *
+** Description:                                                                        *
+****************************************************************************************
+**                         Important Edit History                                      *
+** ------------------------------------------------------------------------------------*
+** DATE           NAME             DESCRIPTION                                         *
+** 05/2011        techsoft         create                                              *
+**                                                                                     *
+***************************************************************************************/
+#ifndef _MMIEMAIL_ID_H
+#define _MMIEMAIL_ID_H
+
+/**------------------------------------------------------------------------------------*
+**                         Include Files                                               *
+**------------------------------------------------------------------------------------*/
+#include "sci_types.h"
+#include "mmk_type.h"
+
+/**------------------------------------------------------------------------------------*
+**                         Compiler Flag                                               *
+**------------------------------------------------------------------------------------*/
+#ifdef __cplusplus
+extern  "C"
+{
+#endif
+
+/**------------------------------------------------------------------------------------*
+**                         Macro Declaration                                           *
+**------------------------------------------------------------------------------------*/
+
+/**------------------------------------------------------------------------------------*
+**                         TYPE AND CONSTANT                                           *
+**------------------------------------------------------------------------------------*/
+#define WIN_ID_DEF(win_id)          win_id
+// window ID
+// 命名规则: 模块名 + 窗口名 + WIN_ID,  eg: MMICC_DIALING_WIN_ID (CC部分呼叫窗口ID)
+typedef enum
+{
+    EMAIL_WIN_ID_START = (MMI_MODULE_EMAIL << 16),
+    #include "mmiemail_id.def"
+    EMAIL_MAX_WIN_ID
+}EMAIL_WINDOW_ID_E;
+
+#undef WIN_ID_DEF
+
+// control ID
+typedef enum
+{
+    EMAIL_CTRL_ID_START = EMAIL_MAX_WIN_ID,
+    
+    //for email edit begin
+    EMAIL_EDIT_CTRL_ID,
+    EMAIL_EDIT_TO_LIST_CTRL_ID,
+    EMAIL_EDIT_CC_LIST_CTRL_ID,
+    EMAIL_EDIT_BCC_LIST_CTRL_ID,
+    EMAIL_EDIT_SUBJECT_CTRL_ID,
+    EMAIL_EDIT_ATTACHMENT_CTRL_ID,
+    EMAIL_EDIT_TEXT_CTRL_ID,
+#if defined(MMI_PDA_SUPPORT) 
+    EMAIL_EDIT_TEXT_FORM_CTRL_ID,
+    EMAIL_EDIT_SUBJECT_FORM_CTRL_ID,
+    EMAIL_EDIT_TO_LIST_FORM_CTRL_ID,
+    EMAIL_EDIT_CC_LIST_FORM_CTRL_ID,
+    EMAIL_EDIT_BCC_LIST_FORM_CTRL_ID,
+#endif
+    
+    EMAIL_EDIT_MENU_CTRL_ID, 
+    EMAIL_EDIT_SENDOPT_CTRL_ID, 
+    EMAIL_EDIT_SELECT_SIM_CTRL_ID,
+    
+    //for email view begin
+    EMAIL_VIEW_CTRL_ID,
+    EMAIL_VIEW_MENU_CTRL_ID,
+    EMAIL_VIEW_DETAIL_CTRL_ID,
+    EMAIL_VIEW_ATTACHMENT_CTRL_ID,
+    EMAIL_VIEW_SAVE_ATTACHMENT_CTRL_ID,
+#ifdef MMI_PDA_SUPPORT
+    EMAIL_VIEW_SAVE_ATTACHMENT_OPT_CTRL_ID,
+#endif
+    EMAIL_VIEW_LOCATE_INFO_CTRL_ID,
+    EMAIL_VIEW_LOCATE_OPT_CTRL_ID,
+    EMAIL_VIEW_ADDTOPB_OPT_CTRL_ID,
+    
+    //for box
+    MMIEMAIL_MSGBOX_TAB_CTRL_ID,
+    //EMAIL_BOX_CTRL_ID,
+    EMAIL_BOX_MENU_CTRL_ID,
+    EMAIL_RECV_SELECT_SIM_CTRL_ID,
+    EMAIL_RECV_TYPE_MENU_CTRL_ID,
+    
+    EMAIL_INBOX_LISTBOX_CTRL_ID,
+    EMAIL_OUTBOX_LISTBOX_CTRL_ID,
+    EMAIL_SENTBOX_LISTBOX_CTRL_ID,
+    EMAIL_DRAFTBOX_LISTBOX_CTRL_ID,
+
+    //add by marke
+    EMAIL_SET_DATE_CTRL_ID,
+    EMAIL_SET_DATE_FORM_CTRL_ID,
+    EMAIL_SET_DATE_LABLE_CTRL_ID,
+
+    //for main menu
+    EMAIL_MAIN_MENU_CTRL_ID,
+    EMAIL_MAIN_MENU_OPT_CTRL_ID,
+    //for setting
+    EMAIL_ACCOUNT_CREATE_CTRL_ID,
+    EMAIL_ACCOUNT_RENAME_CTRL_ID,
+    
+    EMAIL_SETTING_ACCOUNT_SELECT_LIST_CTRL_ID,
+    
+    EMAIL_ACCOUNT_MAIN_CTRL_ID,
+    EMAIL_USERINFO_LISTBOX_CTRL_ID,
+    EMAIL_ACCOUNT_CONNECT_CTRL_ID,
+    EMAIL_ACCOUNT_PREFER_LISTBOX_CTRL_ID,
+    EMAIL_ACCOUNT_AUTOSIGN_EDIT_CTRL_ID,
+    
+    EMAIL_CONNECT_SEND_LISTBOX_CTRL_ID,
+    EMAIL_CONNECT_SEND_SSL_OPT_CTRL_ID,
+    EMAIL_CONNECT_RECV_LISTBOX_CTRL_ID,
+    
+    EMAIL_PREFER_DOWNLOAD_LIMIT_EDIT_CTRL_ID,
+    
+    EMAIL_USERINFO_EDIT_CTRL_ID,
+    
+    //add by eva
+    EMAIL_SETTING_LISTBOX_CTRL_ID,
+    EMAIL_ACCOUNT_SETTING_LISTBOX_CTRL_ID,
+    EMAIL_ACCOUNT_DELETE_LISTBOX_CTRL_ID,
+    EMAIL_SETTING_OPT_CTRL_ID,
+    EMAIL_ENTRY_EMAIL_TIP_CTRL_ID,
+    EMAIL_SELECT_EMAIL_ACC_CTRL_ID,
+    //system setting
+    EMAIL_SYSTEM_SETTING_CTRL_ID,
+    
+    EMAIL_STARTUP_SCREEN_FORM_CTRL_ID,
+    EMAIL_MAIL_STORAGE_FORM_CTRL_ID,
+    EMAIL_TONE_FORM_CTRL_ID,
+    EMAIL_TONE_VOLUME_FORM_CTRL_ID,
+    EMAIL_SLIENT_TIME_FORM_CTRL_ID,
+    EMAIL_ACCOUNT_PASSWORD_PROTECTION_FORM_CTRL_ID,
+    EMAIL_SET_PASSWORD_PROTECTION_FORM_CTRL_ID,
+    EMAIL_STORAGE_STATISTICS_FORM_CTRL_ID,
+    EMAIL_FLOW_STATISTICS_FORM_CTRL_ID,
+    EMAIL_SOFTWARE_VERSION_CHECK_FORM_CTRL_ID,
+    EMAIL_RESTORE_FACTORY_SETTINGS_FORM_CTRL_ID,
+    
+    EMAIL_STARTUP_SCREEN_TITLE_LABEL_CTRL_ID,
+    EMAIL_MAIL_STORAGE_TITLE_LABEL_CTRL_ID,
+    EMAIL_TONE_TITLE_LABEL_CTRL_ID,
+    EMAIL_TONE_VOLUME_TITLE_LABEL_CTRL_ID,
+    EMAIL_SLIENT_TIME_TITLE_LABEL_CTRL_ID,
+    EMAIL_ACCOUNT_PASSWORD_PROTECTION_TITLE_LABEL_CTRL_ID,
+    EMAIL_SET_PASSWORD_PROTECTION_TITLE_LABEL_CTRL_ID,
+    EMAIL_STORAGE_STATISTICS_TITLE_LABEL_CTRL_ID,
+    EMAIL_FLOW_STATISTICS_TITLE_LABEL_CTRL_ID,
+    EMAIL_SOFTWARE_VERSION_CHECK_TITLE_LABEL_CTRL_ID,
+    EMAIL_RESTORE_FACTORY_SETTINGS_TITLE_LABEL_CTRL_ID,
+    
+    EMAIL_STARTUP_SCREEN_TEXT_CTRL_ID,
+    EMAIL_MAIL_STORAGE_TEXT_CTRL_ID,
+    EMAIL_TONE_TEXT_CTRL_ID,
+    EMAIL_TONE_VOLUME_TEXT_CTRL_ID,
+    EMAIL_SLIENT_TIME_TEXT_CTRL_ID,
+    EMAIL_ACCOUNT_PASSWORD_PROTECTION_TEXT_CTRL_ID,
+    EMAIL_SET_PASSWORD_PROTECTION_TEXT_CTRL_ID,
+    EMAIL_STORAGE_STATISTICS_TEXT_CTRL_ID,
+    EMAIL_FLOW_STATISTICS_TEXT_CTRL_ID,
+    EMAIL_SOFTWARE_VERSION_CHECK_TEXT_CTRL_ID,
+    EMAIL_RESTORE_FACTORY_SETTINGS_TEXT_CTRL_ID,
+    
+    //Personalized setting
+    EMAIL_PERSONALIZED_SETTING_CTRL_ID,
+    
+    EMAIL_ACC_NAME_FORM_CTRL_ID,
+    EMAIL_SEND_MAIL_FORM_CTRL_ID,
+    EMAIL_SENDER_NAME_FORM_CTRL_ID,
+    EMAIL_SAVESENT_FORM_CTRL_ID,
+    EMAIL_RECEIVE_FREQUENCY_FORM_CTRL_ID,
+    EMAIL_ONCE_DOWNLOAD_NUMBER_FORM_CTRL_ID,
+    EMAIL_RECEIVE_LIMIT_FORM_CTRL_ID,
+    EMAIL_RECEIVE_ONLY_NEW_MAIL_FORM_CTRL_ID,
+    EMAIL_REPLY_MAIL_FORM_CTRL_ID,
+    EMAIL_MAIL_AUTO_DELETE_FORM_CTRL_ID,
+    EMAIL_MAIL_DELETE_FORM_CTRL_ID,
+    EMAIL_SIGNATURE_FORM_CTRL_ID,
+    EMAIL_NEW_MAIL_TIP_FORM_CTRL_ID,
+    
+    EMAIL_ACC_NAME_TITLE_LABEL_CTRL_ID,
+    EMAIL_SEND_MAIL_TITLE_LABEL_CTRL_ID,
+    EMAIL_SENDER_NAME_TITLE_LABEL_CTRL_ID,
+    EMAIL_SAVESENT_TITLE_LABEL_CTRL_ID,
+    EMAIL_RECEIVE_FREQUENCY_TITLE_LABEL_CTRL_ID,
+    EMAIL_ONCE_DOWNLOAD_NUMBER_TITLE_LABEL_CTRL_ID,
+    EMAIL_RECEIVE_LIMIT_TITLE_LABEL_CTRL_ID,
+    EMAIL_RECEIVE_ONLY_NEW_MAIL_TITLE_LABEL_CTRL_ID,
+    EMAIL_REPLY_MAIL_TITLE_LABEL_CTRL_ID,
+    EMAIL_MAIL_AUTO_DELETE_TITLE_LABEL_CTRL_ID,
+    EMAIL_MAIL_DELETE_TITLE_LABEL_CTRL_ID,
+    EMAIL_SIGNATURE_TITLE_LABEL_CTRL_ID,
+    EMAIL_NEW_MAIL_TIP_TITLE_LABEL_CTRL_ID,
+    
+    EMAIL_ACC_NAME_LABEL_CTRL_ID,
+    EMAIL_SEND_MAIL_LABEL_CTRL_ID,
+    EMAIL_SENDER_NAME_LABEL_CTRL_ID,
+    EMAIL_SAVESENT_LABEL_CTRL_ID,
+    EMAIL_RECEIVE_FREQUENCY_LABEL_CTRL_ID,
+    EMAIL_ONCE_DOWNLOAD_NUMBER_LABEL_CTRL_ID,
+    EMAIL_RECEIVE_LIMIT_LABEL_CTRL_ID,
+    EMAIL_RECEIVE_ONLY_NEW_MAIL_LABEL_CTRL_ID,
+    EMAIL_REPLY_MAIL_LABEL_CTRL_ID,
+    EMAIL_MAIL_AUTO_DELETE_LABEL_CTRL_ID,
+    EMAIL_MAIL_DELETE_LABEL_CTRL_ID,
+    EMAIL_SIGNATURE_LABEL_CTRL_ID,
+    EMAIL_NEW_MAIL_TIP_LABEL_CTRL_ID,
+
+#ifndef MMI_GUI_STYLE_TYPICAL
+    EMAIL_LOAD_SETTING_LIST_CTRL_ID,
+    EMAIL_DATA_CONNECTION_LIST_CTRL_ID,
+    EMAIL_INCOMING_SETTING_LIST_CTRL_ID,
+    EMAIL_OUTGOING_SETTING_LIST_CTRL_ID,
+    EMAIL_PERSONALIZED_SETTING_LIST_CTRL_ID,
+#endif    
+    
+    //load setting
+    EMAIL_LOAD_SETTING_CTRL_ID,
+    
+    EMAIL_EMAIL_ADDRESS_FORM_CTRL_ID,
+    EMAIL_USER_NAME_FORM_CTRL_ID,
+    EMAIL_PASSWORD_FORM_CTRL_ID,
+    
+    EMAIL_EMAIL_ADDRESS_TITLE_LABEL_CTRL_ID,
+    EMAIL_USER_NAME_TITLE_LABEL_CTRL_ID,
+    EMAIL_PASSWORD_TITLE_LABEL_CTRL_ID,
+    
+    EMAIL_EMAIL_ADDRESS_LABEL_CTRL_ID,
+    EMAIL_USER_NAME_LABEL_CTRL_ID,
+    EMAIL_PASSWORD_LABEL_CTRL_ID,
+    
+    //data connection
+    EMAIL_DATA_CONNECTION_CTRL_ID,
+    
+    EMAIL_NOTWORKING_PATH_FORM_CTRL_ID,
+    EMAIL_NETWORK_ACCOUNT_SIM1_FORM_CTRL_ID,
+    EMAIL_NETWORK_ACCOUNT_SIM2_FORM_CTRL_ID,
+    EMAIL_NETWORK_ACCOUNT_SIM3_FORM_CTRL_ID,
+    EMAIL_NETWORK_ACCOUNT_SIM4_FORM_CTRL_ID,
+    
+    EMAIL_NOTWORKING_PATH_TITLE_LABEL_CTRL_ID,
+    EMAIL_NETWORK_ACCOUNT_SIM1_TITLE_LABEL_CTRL_ID,
+    EMAIL_NETWORK_ACCOUNT_SIM2_TITLE_LABEL_CTRL_ID,
+    EMAIL_NETWORK_ACCOUNT_SIM3_TITLE_LABEL_CTRL_ID,
+    EMAIL_NETWORK_ACCOUNT_SIM4_TITLE_LABEL_CTRL_ID,
+    
+    EMAIL_NOTWORKING_PATH_LABEL_CTRL_ID,
+    EMAIL_NETWORK_ACCOUNT_SIM1_LABEL_CTRL_ID,
+    EMAIL_NETWORK_ACCOUNT_SIM2_LABEL_CTRL_ID,
+    EMAIL_NETWORK_ACCOUNT_SIM3_LABEL_CTRL_ID,
+    EMAIL_NETWORK_ACCOUNT_SIM4_LABEL_CTRL_ID,
+    
+    //incoming setting
+    EMAIL_INCOMING_SETTING_CTRL_ID,
+    
+    EMAIL_INCOMING_SERVER_FORM_CTRL_ID,
+    EMAIL_INCOMING_SERVER_TYPE_FORM_CTRL_ID,
+    EMAIL_INCOMING_PORT_FORM_CTRL_ID,
+    EMAIL_INCOMING_SECURITY_FORM_CTRL_ID,
+    
+    EMAIL_INCOMING_SERVER_TITLE_LABEL_CTRL_ID,
+    EMAIL_INCOMING_SERVER_TYPE_TITLE_LABEL_CTRL_ID,
+    EMAIL_INCOMING_PORT_TITLE_LABEL_CTRL_ID,
+    EMAIL_INCOMING_SECURITY_TITLE_LABEL_CTRL_ID,
+    
+    EMAIL_INCOMING_SERVER_LABEL_CTRL_ID,
+    EMAIL_INCOMING_SERVER_TYPE_LABEL_CTRL_ID,
+    EMAIL_INCOMING_PORT_LABEL_CTRL_ID,
+    EMAIL_INCOMING_SECURITY_LABEL_CTRL_ID,
+    
+    //outgoing setting
+    EMAIL_OUTGOING_SETTING_CTRL_ID,
+    
+    EMAIL_SMTP_SERVER_FORM_CTRL_ID,
+    EMAIL_SMTP_USER_NAME_FORM_CTRL_ID,
+    EMAIL_SMTP_PASSWORD_FORM_CTRL_ID,
+    EMAIL_SMTP_PORT_FORM_CTRL_ID,
+    EMAIL_SMTP_SECURITY_FORM_CTRL_ID,
+    EMAIL_SMTP_AUTHENTICATION_FORM_CTRL_ID,
+    
+    EMAIL_SMTP_SERVER_TITLE_LABEL_CTRL_ID,
+    EMAIL_SMTP_USER_NAME_TITLE_LABEL_CTRL_ID,
+    EMAIL_SMTP_PASSWORD_TITLE_LABEL_CTRL_ID,
+    EMAIL_SMTP_PORT_TITLE_LABEL_CTRL_ID,
+    EMAIL_SMTP_SECURITY_TITLE_LABEL_CTRL_ID,
+    EMAIL_SMTP_AUTHENTICATION_TITLE_LABEL_CTRL_ID,
+    
+    EMAIL_SMTP_SERVER_LABEL_CTRL_ID,
+    EMAIL_SMTP_USER_NAME_LABEL_CTRL_ID,
+    EMAIL_SMTP_PASSWORD_LABEL_CTRL_ID,
+    EMAIL_SMTP_PORT_LABEL_CTRL_ID,
+    EMAIL_SMTP_SECURITY_LABEL_CTRL_ID,
+    EMAIL_SMTP_AUTHENTICATION_LABEL_CTRL_ID,
+    
+    EMAIL_SETTING_EDIT_CTRL_ID,
+    EMAIL_SETTING_PASSWROD_EDIT_CTRL_ID,
+    EMAIL_SETTING_PASSWROD_LABEL_CTRL_ID,
+    EMAIL_NETWORK_PATH_LISTBOX_CTRL_ID,
+    EMAIL_LINKLIST_LISTBOX_CTRL_ID,
+    EMAIL_SERV_TYPE_LISTBOX_CTRL_ID,
+    EMAIL_SERV_PORT_LISTBOX_CTRL_ID,
+    EMAIL_SECURITY_LISTBOX_CTRL_ID,
+    EMAIL_AUTHENTICATE_LISTBOX_CTRL_ID,
+    
+    EMAIL_SAVESENT_LISTBOX_CTRL_ID,
+    EMAIL_DOWNLOAD_NUMBER_LISTBOX_CTRL_ID,
+    EMAIL_RECEIVE_LIMIT_LISTBOX_CTRL_ID,
+    EMAIL_RECEIVE_NEW_LISTBOX_CTRL_ID,
+    EMAIL_REPLY_MAIL_LISTBOX_CTRL_ID,
+    
+    EMAIL_CHECK_ACCOUNT_LISTBOX_CTRL_ID,
+#if defined(MMI_PDA_SUPPORT) 
+    EMAIL_BOX_POP_MENU_CTRL_ID,
+
+    MMIEMAIL_INBOX_BUTTON_FORM,
+    MMIEMAIL_INBOX_BUTTON_REPLY,
+    MMIEMAIL_INBOX_BUTTON_REPLY_ALL,
+    MMIEMAIL_INBOX_BUTTON_FORWARD,
+    MMIEMAIL_INBOX_BUTTON_DELETE,
+
+    MMIEMAIL_OUTBOX_BUTTON_FORM,
+    MMIEMAIL_OUTBOX_BUTTON_RESEND,
+    MMIEMAIL_OUTBOX_BUTTON_DELETE,
+
+    MMIEMAIL_SENTBOX_BUTTON_FORM,
+    MMIEMAIL_SENTBOX_BUTTON_FORWARD,
+    MMIEMAIL_SENTBOX_BUTTON_RESEND,
+    MMIEMAIL_SENTBOX_BUTTON_DELETE,
+
+    MMIEMAIL_INBOX_FORM_CTRL_ID,
+    MMIEMAIL_OUTBOX_FORM_CTRL_ID,
+    MMIEMAIL_SENTBOX_FORM_CTRL_ID,
+    MMIEMAIL_DRAFTBOX_FORM_CTRL_ID,
+
+    EMAIL_EDIT_LOCATE_OPT_CTRL_ID,
+#endif
+    
+    EMAIL_MAX_CTRL_ID
+}EMAIL_CONTROL_ID_E;
+
+/**------------------------------------------------------------------------------------*
+**                         FUNCTION DEFINITION                                         *
+**------------------------------------------------------------------------------------*/
+/**************************************************************************************/
+// Description : Register email menu group
+// Global resource dependence : none
+// Author: aoke.hu
+// Note:
+/**************************************************************************************/
+//PUBLIC void Email_RegWinIdNameArr(void);
+/**------------------------------------------------------------------------------------*
+**                         Compiler Flag                                               *
+**------------------------------------------------------------------------------------*/
+#ifdef __cplusplus
+    }
+#endif
+
+#endif  /* _MMIEMAIL_ID_H*/

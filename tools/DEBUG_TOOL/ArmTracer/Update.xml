@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="gb2312"?>
+<AutoUpdate>
+
+    <description>ArmTracer autoUpdate</description>
+
+    <Applications>
+        <Application Id="ArmTracer" />
+        <Application PreVersion="6.1.7" />
+        <Application PreReleaseDate="2020-03-12" />
+        <Application Version="6.1.8" />
+        <Application ReleaseDate="2020-03-16" />
+
+        <Application EntryPoint="ArmTracer.exe" />
+    </Applications>
+  
+    <Files>
+        <File Ver="1.0.1" Name="ArmTracer.exe" />
+        <File Ver="1.0.1" Name="ArmTracer.ini" />
+        <File Ver="1.0.1" Name="readme.txt" />
+
+        <File Ver="1.0.1" Name="AutoUpdate.bk" />
+        <File Ver="1.0.1" Name="AutoUpdate.ink" />
+        <File Ver="1.0.1" Name="AutoUpdate.ini" />
+        
+        <File Ver="1.0.1" Name="AboutEx.dll" />
+        
+        <File Ver="1.0.1" Name="/Fooler/Fooler.exe" />
+        <File Ver="1.0.1" Name="/Fooler/Fooler.ini" />
+        <File Ver="1.0.1" Name="/Fooler/cmd.cmd" />
+        
+        <File Ver="1.0.1" Name="/LogSplitter/LogSplitter.exe" />
+        <File Ver="1.0.1" Name="/LogSplitter/LogSplitter.ini" />
+               
+        <File Ver="1.0.1" Name="ggePsDecodeDll.dll" />
+        <File Ver="1.0.1" Name="ggeCsDecodeDll.dll" />
+        <File Ver="1.0.1" Name="LTEDecode.dll" />
+
+        <File Ver="1.0.1" Name="Decoder.dll" />
+
+        <File Ver="1.0.1" Name="ftd2xx.dll" />
+        
+        <File Ver="1.0.1" Name="iaapid.dll" />
+
+        <File Ver="1.0.1" Name="MsgDecode.dll" />
+        
+        <File Ver="1.0.1" Name="MyMsgDefine.dat" />
+
+        <File Ver="1.0.1" Name="NblteDecodeDll.dll" />
+        <File Ver="1.0.1" Name="NewMsgDecode.dll" />
+
+        <File Ver="1.0.1" Name="ossapi.dll" />
+        <File Ver="1.0.1" Name="ossapit.dll" />
+        <File Ver="1.0.1" Name="ossdmem.dll" />
+        <File Ver="1.0.1" Name="ossfmem.dll" />
+        <File Ver="1.0.1" Name="osssmem.dll" />
+
+        <File Ver="1.0.1" Name="PlatTCDefine.ini" />
+        
+        <File Ver="1.0.0.1" Name="UpdateDll.dll" />
+
+        <File Ver="1.0.0.1" Name="EditDAT.ini" />
+
+        <File Ver="1.0.0.1" Name="CCodecStr.dll" />
+        <File Ver="1.0.0.1" Name="traceDb8825.yaml" />
+        <File Ver="1.0.0.1" Name="traceDb8910.yaml" />
+        
+        <File Ver="1.0.0.1" Name="MSC.hdi" />
+        
+        <File Ver="1.0.1" Name="CRegex.dll" />
+
+        <File Ver="1.0.0.1" Name="/Dll/DeFile.dat" />
+        <File Ver="1.0.0.1" Name="/Dll/GenParse.dat" />
+        <File Ver="1.0.0.1" Name="/Dll/GenParse.dll" />
+        <File Ver="1.0.0.1" Name="/Dll/License.dat" />
+        <File Ver="1.0.0.1" Name="/Dll/LicenseDll.dll" />
+
+        <File Ver="1.0.0.1" Name="/Doc/ArmTracer User Guide (EN).pdf" />
+        <File Ver="1.0.0.1" Name="/Doc/ArmTracer User Guide (ZH).pdf" />
+
+        
+        <File Ver="1.0.0.1" Name="/MsgDefine/CPHY.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/CPHY_catm.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/CPHY_cat1bis.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/CPHY_mix_catm.dat" /> 
+        <File Ver="1.0.0.1" Name="/MsgDefine/CPHY_mix_cat1bis.dat" /> 
+        <File Ver="1.0.0.1" Name="/MsgDefine/CPHY_catm_v4.dat" /> 
+        <File Ver="1.0.0.1" Name="/MsgDefine/CPHY_cat1bis_v4.dat" />         
+        <File Ver="1.0.0.1" Name="/MsgDefine/CPHY_v3_cat1bis_plus.dat" />         
+                
+        <File Ver="1.0.0.1" Name="/MsgDefine/CQIPC.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/CQIPC_catm.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/CQIPC_cat1bis.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/CQIPC_mix.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/CQIPC_v4.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/CQIPC_R8910.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/CQIPC_R8910M.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/CQIPC_R8910_ctam_V3.dat" />
+
+
+        <File Ver="1.0.0.1" Name="/MsgDefine/CGsm_IPC.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/BJIPC.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/CSM_Event.dat" />
+               
+        <File Ver="1.0.0.1" Name="/MsgDefine/LTEL3_AS.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/LTEL3_NAS.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/NBIPC_C0.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/NBIPC_C0_Merge.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/NBIPC_R8910_C0.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/NBIPC_R8910M_C0.dat" />
+        
+        
+        <File Ver="1.0.0.1" Name="/MsgDefine/NBL3_AS.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/NBL3_NAS.dat" />
+        <File Ver="1.0.0.1" Name="/MsgDefine/TDSLTE_DHI.dat" />
+
+        <File Ver="1.0.0.1" Name="/TCP-Server/Simulater.exe" />
+        <File Ver="1.0.0.1" Name="/TCP-Server/Simulater.ini" />
+        <File Ver="1.0.0.1" Name="/TCP-Server/Test.tra" />
+        
+        <File Ver="1.0.0.1" Name="/ATcmd/ATCmd.exe" />
+        <File Ver="1.0.0.1" Name="/ATcmd/ATCmd.ini" />
+        <File Ver="1.0.0.1" Name="/ATcmd/SendList.dat" />
+        
+                     
+        <File Ver="1.0.1" Name="/ExportBSD/ExportBSD.exe" />
+        <File Ver="1.0.1" Name="/ExportBSD/ExportBSD.ini" />
+        
+        <File Ver="1.0.1" Name="/ExportBSD/AutoUpdate.bk" />
+        <File Ver="1.0.1" Name="/ExportBSD/AutoUpdate.ini" />
+        <File Ver="1.0.1" Name="/ExportBSD/AboutEx.dll" />
+
+        <File Ver="1.0.0.1" Name="/ExportBSD/set/2a5_cat-m_v2_phyip.dat" />
+        <File Ver="1.0.0.1" Name="/ExportBSD/set/8910_chip_blue_ip.dat" />
+        <File Ver="1.0.0.1" Name="/ExportBSD/set/8910m_blue_ip.dat" />
+        <File Ver="1.0.0.1" Name="/ExportBSD/set/8910m_chip_blue_ip_UIS8910A.dat" />
+        <File Ver="1.0.0.1" Name="/ExportBSD/set/8910m_chip_blue_ip_UIS8910C.dat" />
+        <File Ver="1.0.0.1" Name="/ExportBSD/set/8910m_chip_blue_ip_UIS8910EVB.dat" />
+        <File Ver="1.0.0.1" Name="/ExportBSD/set/8910m_chip_blue_ip_UIS8915DM.dat" />
+        
+        <File Ver="1.0.0.1" Name="/ExportBSD/ExportCMM/ExportCMM.exe" />
+        <File Ver="1.0.0.1" Name="/ExportBSD/ExportCMM/PlatformConfig.ini" />
+
+        <File Ver="1.0.0.1" Name="/ExportBSD/Dll/License.dat" />
+        <File Ver="1.0.0.1" Name="/ExportBSD/Dll/LicenseDll.dll" />
+
+    </Files>
+
+</AutoUpdate>
+

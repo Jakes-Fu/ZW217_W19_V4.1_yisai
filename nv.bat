@@ -1,0 +1,1 @@
+make p=UWS6121E_WC_1H00_NoGNSS_USER m=nv_parameter update job=8

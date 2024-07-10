@@ -1,0 +1,9448 @@
+# SpreadTrum NVEditor NV Module File, Format Version 1.0
+# WARNING: DO NOT EDIT OR DELETE THIS NV Module FILE!
+
+###############################################################################
+  MODULE      = audio_arm
+  DESCRIPTION = @201011@jinnixu@hisenseG2audio4.0
+
+################################################################################
+
+# Begin Module Item
+  BEGIN_ITEM
+    ITEM_NAME    = audio_arm_info
+    ITEM_ID      = 425
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x204
+    ITEM_INDEX   = 0
+    ITEM_PARENT  = -1
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = audio_arm
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 2016
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 1
+    ITEM_PARENT  = -1
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = Headset
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 504
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 2
+    ITEM_PARENT  = 1
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 16
+    ITEM_LENGTH  = 16
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 3
+    ITEM_PARENT  = 2
+    ITEM_DESC    = "Headset"
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x48
+    ITEM_INDEX   = 4
+    ITEM_PARENT  = 3
+    ITEM_DESC    = 'H'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x65
+    ITEM_INDEX   = 5
+    ITEM_PARENT  = 3
+    ITEM_DESC    = 'e'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x61
+    ITEM_INDEX   = 6
+    ITEM_PARENT  = 3
+    ITEM_DESC    = 'a'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x64
+    ITEM_INDEX   = 7
+    ITEM_PARENT  = 3
+    ITEM_DESC    = 'd'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x73
+    ITEM_INDEX   = 8
+    ITEM_PARENT  = 3
+    ITEM_DESC    = 's'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x65
+    ITEM_INDEX   = 9
+    ITEM_PARENT  = 3
+    ITEM_DESC    = 'e'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x74
+    ITEM_INDEX   = 10
+    ITEM_PARENT  = 3
+    ITEM_DESC    = 't'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 11
+    ITEM_PARENT  = 3
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 12
+    ITEM_PARENT  = 3
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 13
+    ITEM_PARENT  = 3
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 14
+    ITEM_PARENT  = 3
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 15
+    ITEM_PARENT  = 3
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 16
+    ITEM_PARENT  = 3
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 17
+    ITEM_PARENT  = 3
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 18
+    ITEM_PARENT  = 3
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 19
+    ITEM_PARENT  = 3
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = AudioStructure
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 504
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 20
+    ITEM_PARENT  = 2
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_path_set
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 36
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 21
+    ITEM_PARENT  = 20
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_dev_set_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x3
+    ITEM_INDEX   = 22
+    ITEM_PARENT  = 21
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 23
+    ITEM_PARENT  = 21
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 8
+    ITEM_LENGTH  = 36
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 24
+    ITEM_PARENT  = 21
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x12
+    ITEM_INDEX   = 25
+    ITEM_PARENT  = 24
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x3
+    ITEM_INDEX   = 26
+    ITEM_PARENT  = 24
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x83
+    ITEM_INDEX   = 27
+    ITEM_PARENT  = 24
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 28
+    ITEM_PARENT  = 24
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 29
+    ITEM_PARENT  = 24
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 30
+    ITEM_PARENT  = 24
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 31
+    ITEM_PARENT  = 24
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 32
+    ITEM_PARENT  = 24
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info_set
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 372
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 33
+    ITEM_PARENT  = 20
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_app_set_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 34
+    ITEM_PARENT  = 33
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_agc_input_gain_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x3
+    ITEM_INDEX   = 35
+    ITEM_PARENT  = 33
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_proc_exp_control
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 2
+    ITEM_LENGTH  = 44
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 36
+    ITEM_PARENT  = 33
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_proc_exp_control[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 37
+    ITEM_PARENT  = 36
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_proc_exp_control[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x100
+    ITEM_INDEX   = 38
+    ITEM_PARENT  = 36
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 372
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 39
+    ITEM_PARENT  = 33
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 208
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 40
+    ITEM_PARENT  = 39
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = eq_switch
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xf
+    ITEM_INDEX   = 41
+    ITEM_PARENT  = 40
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 8
+    ITEM_LENGTH  = 62
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 42
+    ITEM_PARENT  = 40
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xb47
+    ITEM_INDEX   = 43
+    ITEM_PARENT  = 42
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xB47
+    ITEM_INDEX   = 44
+    ITEM_PARENT  = 42
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x400
+    ITEM_INDEX   = 45
+    ITEM_PARENT  = 42
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 46
+    ITEM_PARENT  = 42
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 47
+    ITEM_PARENT  = 42
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 48
+    ITEM_PARENT  = 42
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 49
+    ITEM_PARENT  = 42
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 50
+    ITEM_PARENT  = 42
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_volume_level_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xf
+    ITEM_INDEX   = 51
+    ITEM_PARENT  = 40
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 31
+    ITEM_LENGTH  = 188
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 52
+    ITEM_PARENT  = 40
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180003
+    ITEM_INDEX   = 53
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1e0006
+    ITEM_INDEX   = 54
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0006
+    ITEM_INDEX   = 55
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180006
+    ITEM_INDEX   = 56
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0007
+    ITEM_INDEX   = 57
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180007
+    ITEM_INDEX   = 58
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0008
+    ITEM_INDEX   = 59
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180008
+    ITEM_INDEX   = 60
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0009
+    ITEM_INDEX   = 61
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180009
+    ITEM_INDEX   = 62
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a000a
+    ITEM_INDEX   = 63
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x18000a
+    ITEM_INDEX   = 64
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a000b
+    ITEM_INDEX   = 65
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x18000b
+    ITEM_INDEX   = 66
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a000c
+    ITEM_INDEX   = 67
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x18000c
+    ITEM_INDEX   = 68
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[16]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 69
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[17]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 70
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[18]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 71
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[19]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 72
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[20]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 73
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[21]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 74
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[22]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 75
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[23]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 76
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[24]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 77
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[25]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 78
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[26]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 79
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[27]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 80
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[28]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 81
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[29]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 82
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[30]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 83
+    ITEM_PARENT  = 52
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 9
+    ITEM_LENGTH  = 206
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 84
+    ITEM_PARENT  = 40
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 85
+    ITEM_PARENT  = 84
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 86
+    ITEM_PARENT  = 84
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 87
+    ITEM_PARENT  = 84
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 88
+    ITEM_PARENT  = 84
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 89
+    ITEM_PARENT  = 84
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 90
+    ITEM_PARENT  = 84
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 91
+    ITEM_PARENT  = 84
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 92
+    ITEM_PARENT  = 84
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 93
+    ITEM_PARENT  = 84
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 372
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 94
+    ITEM_PARENT  = 39
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = eq_switch
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 95
+    ITEM_PARENT  = 94
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 8
+    ITEM_LENGTH  = 226
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 96
+    ITEM_PARENT  = 94
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 97
+    ITEM_PARENT  = 96
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 98
+    ITEM_PARENT  = 96
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 99
+    ITEM_PARENT  = 96
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 100
+    ITEM_PARENT  = 96
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 101
+    ITEM_PARENT  = 96
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 102
+    ITEM_PARENT  = 96
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 103
+    ITEM_PARENT  = 96
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 104
+    ITEM_PARENT  = 96
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_volume_level_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 105
+    ITEM_PARENT  = 94
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 31
+    ITEM_LENGTH  = 352
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 106
+    ITEM_PARENT  = 94
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 107
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 108
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 109
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 110
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 111
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 112
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 113
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 114
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 115
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 116
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 117
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 118
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 119
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 120
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 121
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 122
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[16]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 123
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[17]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 124
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[18]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 125
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[19]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 126
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[20]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 127
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[21]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 128
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[22]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 129
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[23]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 130
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[24]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 131
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[25]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 132
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[26]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 133
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[27]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 134
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[28]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 135
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[29]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 136
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[30]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 137
+    ITEM_PARENT  = 106
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 9
+    ITEM_LENGTH  = 370
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 138
+    ITEM_PARENT  = 94
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 139
+    ITEM_PARENT  = 138
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 140
+    ITEM_PARENT  = 138
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 141
+    ITEM_PARENT  = 138
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 142
+    ITEM_PARENT  = 138
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 143
+    ITEM_PARENT  = 138
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 144
+    ITEM_PARENT  = 138
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 145
+    ITEM_PARENT  = 138
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 146
+    ITEM_PARENT  = 138
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 147
+    ITEM_PARENT  = 138
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = midi_opt
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x618
+    ITEM_INDEX   = 148
+    ITEM_PARENT  = 20
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_dev
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 149
+    ITEM_PARENT  = 20
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 64
+    ITEM_LENGTH  = 504
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 150
+    ITEM_PARENT  = 20
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x7f
+    ITEM_INDEX   = 151
+    ITEM_PARENT  = 150
+    ITEM_DESC    = audProcControl : Bit7-bit0: R_LIMIT;   Bit10-bit8:   lcf Filter type=0(f1f1);  Bit11:   EQ_tuning_enable;Bit15-12:reserved.
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xff4c
+    ITEM_INDEX   = 152
+    ITEM_PARENT  = 150
+    ITEM_DESC    = f1_g0
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 153
+    ITEM_PARENT  = 150
+    ITEM_DESC    = f1_g1
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x23
+    ITEM_INDEX   = 154
+    ITEM_PARENT  = 150
+    ITEM_DESC    = f1_fp
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 155
+    ITEM_PARENT  = 150
+    ITEM_DESC    = f2_g0
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 156
+    ITEM_PARENT  = 150
+    ITEM_DESC    = f2_g1
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xbb8
+    ITEM_INDEX   = 157
+    ITEM_PARENT  = 150
+    ITEM_DESC    = f2_fp
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x1e0
+    ITEM_INDEX   = 158
+    ITEM_PARENT  = 150
+    ITEM_DESC    = hold
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x2000
+    ITEM_INDEX   = 159
+    ITEM_PARENT  = 150
+    ITEM_DESC    = rise
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x4fe
+    ITEM_INDEX   = 160
+    ITEM_PARENT  = 150
+    ITEM_DESC    = fall
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 161
+    ITEM_PARENT  = 150
+    ITEM_DESC    = limit
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xffe2
+    ITEM_INDEX   = 162
+    ITEM_PARENT  = 150
+    ITEM_DESC    = threshold
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x671e
+    ITEM_INDEX   = 163
+    ITEM_PARENT  = 150
+    ITEM_DESC    = ratio
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x28c
+    ITEM_INDEX   = 164
+    ITEM_PARENT  = 150
+    ITEM_DESC    = cg_var
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x10
+    ITEM_INDEX   = 165
+    ITEM_PARENT  = 150
+    ITEM_DESC    = release_rate
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x4dd
+    ITEM_INDEX   = 166
+    ITEM_PARENT  = 150
+    ITEM_DESC    = attack_rate
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[16]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 167
+    ITEM_PARENT  = 150
+    ITEM_DESC    = release_rate_ex
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[17]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x62
+    ITEM_INDEX   = 168
+    ITEM_PARENT  = 150
+    ITEM_DESC    = attack_rate_ex
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[18]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x82
+    ITEM_INDEX   = 169
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[19]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x83
+    ITEM_INDEX   = 170
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[20]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x83
+    ITEM_INDEX   = 171
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[21]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x84
+    ITEM_INDEX   = 172
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[22]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x85
+    ITEM_INDEX   = 173
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[23]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x86
+    ITEM_INDEX   = 174
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[24]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x87
+    ITEM_INDEX   = 175
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[25]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x88
+    ITEM_INDEX   = 176
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[26]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x89
+    ITEM_INDEX   = 177
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[27]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8a
+    ITEM_INDEX   = 178
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[28]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8b
+    ITEM_INDEX   = 179
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[29]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8c
+    ITEM_INDEX   = 180
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[30]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8d
+    ITEM_INDEX   = 181
+    ITEM_PARENT  = 150
+    ITEM_DESC    = linein_gain(15)
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[31]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8e
+    ITEM_INDEX   = 182
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[32]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8f
+    ITEM_INDEX   = 183
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[33]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8f
+    ITEM_INDEX   = 184
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[34]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 185
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[35]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 186
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[36]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 187
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[37]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 188
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[38]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 189
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[39]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 190
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[40]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 191
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[41]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 192
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[42]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 193
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[43]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 194
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[44]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 195
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[45]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x694
+    ITEM_INDEX   = 196
+    ITEM_PARENT  = 150
+    ITEM_DESC    = inner pa setting
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[46]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8
+    ITEM_INDEX   = 197
+    ITEM_PARENT  = 150
+    ITEM_DESC    = arm-record gain
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[47]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8
+    ITEM_INDEX   = 198
+    ITEM_PARENT  = 150
+    ITEM_DESC    = lineinad gain
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[48]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 199
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[49]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xffc0
+    ITEM_INDEX   = 200
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[50]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xffe0
+    ITEM_INDEX   = 201
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[51]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xffe4
+    ITEM_INDEX   = 202
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[52]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xffe8
+    ITEM_INDEX   = 203
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[53]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xffec
+    ITEM_INDEX   = 204
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[54]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xfff0
+    ITEM_INDEX   = 205
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[55]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xfff4
+    ITEM_INDEX   = 206
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[56]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xfff8
+    ITEM_INDEX   = 207
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[57]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xfffc
+    ITEM_INDEX   = 208
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[58]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 209
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[59]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 210
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[60]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 211
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[61]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 212
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[62]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 213
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[63]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 214
+    ITEM_PARENT  = 150
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = Headfree
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1008
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 215
+    ITEM_PARENT  = 1
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 16
+    ITEM_LENGTH  = 520
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 216
+    ITEM_PARENT  = 215
+    ITEM_DESC    = "Headfree"
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x48
+    ITEM_INDEX   = 217
+    ITEM_PARENT  = 216
+    ITEM_DESC    = 'H'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x65
+    ITEM_INDEX   = 218
+    ITEM_PARENT  = 216
+    ITEM_DESC    = 'e'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x61
+    ITEM_INDEX   = 219
+    ITEM_PARENT  = 216
+    ITEM_DESC    = 'a'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x64
+    ITEM_INDEX   = 220
+    ITEM_PARENT  = 216
+    ITEM_DESC    = 'd'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x66
+    ITEM_INDEX   = 221
+    ITEM_PARENT  = 216
+    ITEM_DESC    = 'f'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x72
+    ITEM_INDEX   = 222
+    ITEM_PARENT  = 216
+    ITEM_DESC    = 'r'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x65
+    ITEM_INDEX   = 223
+    ITEM_PARENT  = 216
+    ITEM_DESC    = 'e'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x65
+    ITEM_INDEX   = 224
+    ITEM_PARENT  = 216
+    ITEM_DESC    = 'e'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 225
+    ITEM_PARENT  = 216
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 226
+    ITEM_PARENT  = 216
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 227
+    ITEM_PARENT  = 216
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 228
+    ITEM_PARENT  = 216
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 229
+    ITEM_PARENT  = 216
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 230
+    ITEM_PARENT  = 216
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 231
+    ITEM_PARENT  = 216
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 232
+    ITEM_PARENT  = 216
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = AudioStructure
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1008
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 233
+    ITEM_PARENT  = 215
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_path_set
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 540
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 234
+    ITEM_PARENT  = 233
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_dev_set_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x3
+    ITEM_INDEX   = 235
+    ITEM_PARENT  = 234
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 236
+    ITEM_PARENT  = 234
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 8
+    ITEM_LENGTH  = 540
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 237
+    ITEM_PARENT  = 234
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x32
+    ITEM_INDEX   = 238
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 239
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 240
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 241
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 242
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 243
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 244
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 245
+    ITEM_PARENT  = 237
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info_set
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 876
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 246
+    ITEM_PARENT  = 233
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_app_set_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 247
+    ITEM_PARENT  = 246
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_agc_input_gain_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x3
+    ITEM_INDEX   = 248
+    ITEM_PARENT  = 246
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_proc_exp_control
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 2
+    ITEM_LENGTH  = 548
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 249
+    ITEM_PARENT  = 246
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_proc_exp_control[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 250
+    ITEM_PARENT  = 249
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_proc_exp_control[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x101
+    ITEM_INDEX   = 251
+    ITEM_PARENT  = 249
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 876
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 252
+    ITEM_PARENT  = 246
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 712
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 253
+    ITEM_PARENT  = 252
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = eq_switch
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xf
+    ITEM_INDEX   = 254
+    ITEM_PARENT  = 253
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 8
+    ITEM_LENGTH  = 566
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 255
+    ITEM_PARENT  = 253
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xb47
+    ITEM_INDEX   = 256
+    ITEM_PARENT  = 255
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xB47
+    ITEM_INDEX   = 257
+    ITEM_PARENT  = 255
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x400
+    ITEM_INDEX   = 258
+    ITEM_PARENT  = 255
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 259
+    ITEM_PARENT  = 255
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 260
+    ITEM_PARENT  = 255
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 261
+    ITEM_PARENT  = 255
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 262
+    ITEM_PARENT  = 255
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 263
+    ITEM_PARENT  = 255
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_volume_level_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xf
+    ITEM_INDEX   = 264
+    ITEM_PARENT  = 253
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 31
+    ITEM_LENGTH  = 692
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 265
+    ITEM_PARENT  = 253
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180031
+    ITEM_INDEX   = 266
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1e0061
+    ITEM_INDEX   = 267
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0061
+    ITEM_INDEX   = 268
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180061
+    ITEM_INDEX   = 269
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0072
+    ITEM_INDEX   = 270
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180072
+    ITEM_INDEX   = 271
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0083
+    ITEM_INDEX   = 272
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180083
+    ITEM_INDEX   = 273
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0094
+    ITEM_INDEX   = 274
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180094
+    ITEM_INDEX   = 275
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a00a5
+    ITEM_INDEX   = 276
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1800a5
+    ITEM_INDEX   = 277
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a00b6
+    ITEM_INDEX   = 278
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1800b6
+    ITEM_INDEX   = 279
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a00c7
+    ITEM_INDEX   = 280
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1800c7
+    ITEM_INDEX   = 281
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[16]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 282
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[17]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 283
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[18]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 284
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[19]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 285
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[20]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 286
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[21]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 287
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[22]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 288
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[23]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 289
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[24]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 290
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[25]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 291
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[26]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 292
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[27]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 293
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[28]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 294
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[29]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 295
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[30]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 296
+    ITEM_PARENT  = 265
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 9
+    ITEM_LENGTH  = 710
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 297
+    ITEM_PARENT  = 253
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 298
+    ITEM_PARENT  = 297
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 299
+    ITEM_PARENT  = 297
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 300
+    ITEM_PARENT  = 297
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 301
+    ITEM_PARENT  = 297
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 302
+    ITEM_PARENT  = 297
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 303
+    ITEM_PARENT  = 297
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 304
+    ITEM_PARENT  = 297
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 305
+    ITEM_PARENT  = 297
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 306
+    ITEM_PARENT  = 297
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 876
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 307
+    ITEM_PARENT  = 252
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = eq_switch
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 308
+    ITEM_PARENT  = 307
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 8
+    ITEM_LENGTH  = 730
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 309
+    ITEM_PARENT  = 307
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 310
+    ITEM_PARENT  = 309
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 311
+    ITEM_PARENT  = 309
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 312
+    ITEM_PARENT  = 309
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 313
+    ITEM_PARENT  = 309
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 314
+    ITEM_PARENT  = 309
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 315
+    ITEM_PARENT  = 309
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 316
+    ITEM_PARENT  = 309
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 317
+    ITEM_PARENT  = 309
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_volume_level_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 318
+    ITEM_PARENT  = 307
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 31
+    ITEM_LENGTH  = 856
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 319
+    ITEM_PARENT  = 307
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 320
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 321
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 322
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 323
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 324
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 325
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 326
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 327
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 328
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 329
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 330
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 331
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 332
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 333
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 334
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 335
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[16]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 336
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[17]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 337
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[18]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 338
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[19]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 339
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[20]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 340
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[21]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 341
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[22]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 342
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[23]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 343
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[24]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 344
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[25]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 345
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[26]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 346
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[27]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 347
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[28]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 348
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[29]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 349
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[30]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 350
+    ITEM_PARENT  = 319
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 9
+    ITEM_LENGTH  = 874
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 351
+    ITEM_PARENT  = 307
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 352
+    ITEM_PARENT  = 351
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 353
+    ITEM_PARENT  = 351
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 354
+    ITEM_PARENT  = 351
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 355
+    ITEM_PARENT  = 351
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 356
+    ITEM_PARENT  = 351
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 357
+    ITEM_PARENT  = 351
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 358
+    ITEM_PARENT  = 351
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 359
+    ITEM_PARENT  = 351
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 360
+    ITEM_PARENT  = 351
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = midi_opt
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x618
+    ITEM_INDEX   = 361
+    ITEM_PARENT  = 233
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_dev
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x22
+    ITEM_INDEX   = 362
+    ITEM_PARENT  = 233
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 64
+    ITEM_LENGTH  = 1008
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 363
+    ITEM_PARENT  = 233
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x7f
+    ITEM_INDEX   = 364
+    ITEM_PARENT  = 363
+    ITEM_DESC    = audProcControl : Bit7-bit0: R_LIMIT;   Bit10-bit8:   lcf Filter type=0(f1f1);  Bit11:   EQ_tuning_enable;Bit15-12:reserved.
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xff4c
+    ITEM_INDEX   = 365
+    ITEM_PARENT  = 363
+    ITEM_DESC    = f1_g0
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 366
+    ITEM_PARENT  = 363
+    ITEM_DESC    = f1_g1
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x190
+    ITEM_INDEX   = 367
+    ITEM_PARENT  = 363
+    ITEM_DESC    = f1_fp
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 368
+    ITEM_PARENT  = 363
+    ITEM_DESC    = f2_g0
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 369
+    ITEM_PARENT  = 363
+    ITEM_DESC    = f2_g1
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xbb8
+    ITEM_INDEX   = 370
+    ITEM_PARENT  = 363
+    ITEM_DESC    = f2_fp
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x1e0
+    ITEM_INDEX   = 371
+    ITEM_PARENT  = 363
+    ITEM_DESC    = hold
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x2000
+    ITEM_INDEX   = 372
+    ITEM_PARENT  = 363
+    ITEM_DESC    = rise
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x4fe
+    ITEM_INDEX   = 373
+    ITEM_PARENT  = 363
+    ITEM_DESC    = fall
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 374
+    ITEM_PARENT  = 363
+    ITEM_DESC    = limit
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xffe2
+    ITEM_INDEX   = 375
+    ITEM_PARENT  = 363
+    ITEM_DESC    = threshold
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x6666
+    ITEM_INDEX   = 376
+    ITEM_PARENT  = 363
+    ITEM_DESC    = ratio
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x28c
+    ITEM_INDEX   = 377
+    ITEM_PARENT  = 363
+    ITEM_DESC    = cg_var
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x10
+    ITEM_INDEX   = 378
+    ITEM_PARENT  = 363
+    ITEM_DESC    = release_rate
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x4dd
+    ITEM_INDEX   = 379
+    ITEM_PARENT  = 363
+    ITEM_DESC    = attack_rate
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[16]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 380
+    ITEM_PARENT  = 363
+    ITEM_DESC    = release_rate_ex
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[17]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x62
+    ITEM_INDEX   = 381
+    ITEM_PARENT  = 363
+    ITEM_DESC    = attack_rate_ex
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[18]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x831
+    ITEM_INDEX   = 382
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[19]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x842
+    ITEM_INDEX   = 383
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[20]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x853
+    ITEM_INDEX   = 384
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[21]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x864
+    ITEM_INDEX   = 385
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[22]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x875
+    ITEM_INDEX   = 386
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[23]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x886
+    ITEM_INDEX   = 387
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[24]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x897
+    ITEM_INDEX   = 388
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[25]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8a8
+    ITEM_INDEX   = 389
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[26]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8b9
+    ITEM_INDEX   = 390
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[27]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8ca
+    ITEM_INDEX   = 391
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[28]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8b9
+    ITEM_INDEX   = 392
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[29]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8a8
+    ITEM_INDEX   = 393
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[30]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x897
+    ITEM_INDEX   = 394
+    ITEM_PARENT  = 363
+    ITEM_DESC    = linein_gain(15)
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[31]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x886
+    ITEM_INDEX   = 395
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[32]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x875
+    ITEM_INDEX   = 396
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[33]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x864
+    ITEM_INDEX   = 397
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[34]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 398
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[35]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 399
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[36]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 400
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[37]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 401
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[38]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 402
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[39]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 403
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[40]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 404
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[41]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 405
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[42]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 406
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[43]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 407
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[44]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 408
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[45]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x594
+    ITEM_INDEX   = 409
+    ITEM_PARENT  = 363
+    ITEM_DESC    = inner pa setting
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[46]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8
+    ITEM_INDEX   = 410
+    ITEM_PARENT  = 363
+    ITEM_DESC    = arm-record gain
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[47]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8
+    ITEM_INDEX   = 411
+    ITEM_PARENT  = 363
+    ITEM_DESC    = lineinad gain
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[48]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 412
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[49]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 413
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[50]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 414
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[51]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 415
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[52]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 416
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[53]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 417
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[54]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 418
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[55]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 419
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[56]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 420
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[57]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 421
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[58]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 422
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[59]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 423
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[60]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 424
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[61]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 425
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[62]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 426
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[63]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 427
+    ITEM_PARENT  = 363
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = Handset
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1512
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 428
+    ITEM_PARENT  = 1
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 16
+    ITEM_LENGTH  = 1024
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 429
+    ITEM_PARENT  = 428
+    ITEM_DESC    = "Handset"
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x48
+    ITEM_INDEX   = 430
+    ITEM_PARENT  = 429
+    ITEM_DESC    = 'H'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x61
+    ITEM_INDEX   = 431
+    ITEM_PARENT  = 429
+    ITEM_DESC    = 'a'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x6E
+    ITEM_INDEX   = 432
+    ITEM_PARENT  = 429
+    ITEM_DESC    = 'n'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x64
+    ITEM_INDEX   = 433
+    ITEM_PARENT  = 429
+    ITEM_DESC    = 'd'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x73
+    ITEM_INDEX   = 434
+    ITEM_PARENT  = 429
+    ITEM_DESC    = 's'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x65
+    ITEM_INDEX   = 435
+    ITEM_PARENT  = 429
+    ITEM_DESC    = 'e'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x74
+    ITEM_INDEX   = 436
+    ITEM_PARENT  = 429
+    ITEM_DESC    = 't'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 437
+    ITEM_PARENT  = 429
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 438
+    ITEM_PARENT  = 429
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 439
+    ITEM_PARENT  = 429
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 440
+    ITEM_PARENT  = 429
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 441
+    ITEM_PARENT  = 429
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 442
+    ITEM_PARENT  = 429
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 443
+    ITEM_PARENT  = 429
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 444
+    ITEM_PARENT  = 429
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 445
+    ITEM_PARENT  = 429
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = AudioStructure
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1512
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 446
+    ITEM_PARENT  = 428
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_path_set
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1044
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 447
+    ITEM_PARENT  = 446
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_dev_set_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x3
+    ITEM_INDEX   = 448
+    ITEM_PARENT  = 447
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 449
+    ITEM_PARENT  = 447
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 8
+    ITEM_LENGTH  = 1044
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 450
+    ITEM_PARENT  = 447
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 451
+    ITEM_PARENT  = 450
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 452
+    ITEM_PARENT  = 450
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 453
+    ITEM_PARENT  = 450
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 454
+    ITEM_PARENT  = 450
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 455
+    ITEM_PARENT  = 450
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 456
+    ITEM_PARENT  = 450
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 457
+    ITEM_PARENT  = 450
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 458
+    ITEM_PARENT  = 450
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info_set
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1380
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 459
+    ITEM_PARENT  = 446
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_app_set_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 460
+    ITEM_PARENT  = 459
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_agc_input_gain_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x3
+    ITEM_INDEX   = 461
+    ITEM_PARENT  = 459
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_proc_exp_control
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 2
+    ITEM_LENGTH  = 1052
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 462
+    ITEM_PARENT  = 459
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_proc_exp_control[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 463
+    ITEM_PARENT  = 462
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_proc_exp_control[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x101
+    ITEM_INDEX   = 464
+    ITEM_PARENT  = 462
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1380
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 465
+    ITEM_PARENT  = 459
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1216
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 466
+    ITEM_PARENT  = 465
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = eq_switch
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xf
+    ITEM_INDEX   = 467
+    ITEM_PARENT  = 466
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 8
+    ITEM_LENGTH  = 1070
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 468
+    ITEM_PARENT  = 466
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xb47
+    ITEM_INDEX   = 469
+    ITEM_PARENT  = 468
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x400
+    ITEM_INDEX   = 470
+    ITEM_PARENT  = 468
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x400
+    ITEM_INDEX   = 471
+    ITEM_PARENT  = 468
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 472
+    ITEM_PARENT  = 468
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 473
+    ITEM_PARENT  = 468
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 474
+    ITEM_PARENT  = 468
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 475
+    ITEM_PARENT  = 468
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 476
+    ITEM_PARENT  = 468
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_volume_level_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xf
+    ITEM_INDEX   = 477
+    ITEM_PARENT  = 466
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 31
+    ITEM_LENGTH  = 1196
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 478
+    ITEM_PARENT  = 466
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180003
+    ITEM_INDEX   = 479
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1e0006
+    ITEM_INDEX   = 480
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0006
+    ITEM_INDEX   = 481
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180006
+    ITEM_INDEX   = 482
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0007
+    ITEM_INDEX   = 483
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180007
+    ITEM_INDEX   = 484
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0008
+    ITEM_INDEX   = 485
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180008
+    ITEM_INDEX   = 486
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0009
+    ITEM_INDEX   = 487
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180009
+    ITEM_INDEX   = 488
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a000a
+    ITEM_INDEX   = 489
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x18000a
+    ITEM_INDEX   = 490
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a000b
+    ITEM_INDEX   = 491
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x18000b
+    ITEM_INDEX   = 492
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a000c
+    ITEM_INDEX   = 493
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x18000c
+    ITEM_INDEX   = 494
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[16]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 495
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[17]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 496
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[18]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 497
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[19]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 498
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[20]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 499
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[21]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 500
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[22]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 501
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[23]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 502
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[24]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 503
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[25]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 504
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[26]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 505
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[27]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 506
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[28]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 507
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[29]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 508
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[30]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 509
+    ITEM_PARENT  = 478
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 9
+    ITEM_LENGTH  = 1214
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 510
+    ITEM_PARENT  = 466
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 511
+    ITEM_PARENT  = 510
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 512
+    ITEM_PARENT  = 510
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 513
+    ITEM_PARENT  = 510
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 514
+    ITEM_PARENT  = 510
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 515
+    ITEM_PARENT  = 510
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 516
+    ITEM_PARENT  = 510
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 517
+    ITEM_PARENT  = 510
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 518
+    ITEM_PARENT  = 510
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 519
+    ITEM_PARENT  = 510
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1380
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 520
+    ITEM_PARENT  = 465
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = eq_switch
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 521
+    ITEM_PARENT  = 520
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 8
+    ITEM_LENGTH  = 1234
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 522
+    ITEM_PARENT  = 520
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 523
+    ITEM_PARENT  = 522
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 524
+    ITEM_PARENT  = 522
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 525
+    ITEM_PARENT  = 522
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 526
+    ITEM_PARENT  = 522
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 527
+    ITEM_PARENT  = 522
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 528
+    ITEM_PARENT  = 522
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 529
+    ITEM_PARENT  = 522
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 530
+    ITEM_PARENT  = 522
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_volume_level_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 531
+    ITEM_PARENT  = 520
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 31
+    ITEM_LENGTH  = 1360
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 532
+    ITEM_PARENT  = 520
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 533
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 534
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 535
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 536
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 537
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 538
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 539
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 540
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 541
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 542
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 543
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 544
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 545
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 546
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 547
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 548
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[16]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 549
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[17]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 550
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[18]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 551
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[19]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 552
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[20]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 553
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[21]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 554
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[22]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 555
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[23]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 556
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[24]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 557
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[25]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 558
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[26]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 559
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[27]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 560
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[28]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 561
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[29]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 562
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[30]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 563
+    ITEM_PARENT  = 532
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 9
+    ITEM_LENGTH  = 1378
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 564
+    ITEM_PARENT  = 520
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 565
+    ITEM_PARENT  = 564
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 566
+    ITEM_PARENT  = 564
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 567
+    ITEM_PARENT  = 564
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 568
+    ITEM_PARENT  = 564
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 569
+    ITEM_PARENT  = 564
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 570
+    ITEM_PARENT  = 564
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 571
+    ITEM_PARENT  = 564
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 572
+    ITEM_PARENT  = 564
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 573
+    ITEM_PARENT  = 564
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = midi_opt
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x618
+    ITEM_INDEX   = 574
+    ITEM_PARENT  = 446
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_dev
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 575
+    ITEM_PARENT  = 446
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 64
+    ITEM_LENGTH  = 1512
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 576
+    ITEM_PARENT  = 446
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x7f
+    ITEM_INDEX   = 577
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xff4c
+    ITEM_INDEX   = 578
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 579
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x23
+    ITEM_INDEX   = 580
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 581
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 582
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xbb8
+    ITEM_INDEX   = 583
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x1e0
+    ITEM_INDEX   = 584
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x2000
+    ITEM_INDEX   = 585
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x4fe
+    ITEM_INDEX   = 586
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xffd3
+    ITEM_INDEX   = 587
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xffc4
+    ITEM_INDEX   = 588
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x6666
+    ITEM_INDEX   = 589
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x28c
+    ITEM_INDEX   = 590
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x10
+    ITEM_INDEX   = 591
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x4dd
+    ITEM_INDEX   = 592
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[16]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 593
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[17]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x62
+    ITEM_INDEX   = 594
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[18]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 595
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[19]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 596
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[20]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 597
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[21]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 598
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[22]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 599
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[23]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 600
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[24]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 601
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[25]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 602
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[26]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 603
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[27]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 604
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[28]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 605
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[29]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 606
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[30]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 607
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[31]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 608
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[32]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 609
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[33]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 610
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[34]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 611
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[35]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 612
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[36]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 613
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[37]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 614
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[38]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 615
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[39]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 616
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[40]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 617
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[41]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 618
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[42]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 619
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[43]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 620
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[44]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 621
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[45]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x694
+    ITEM_INDEX   = 622
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[46]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 623
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[47]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 624
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[48]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 625
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[49]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 626
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[50]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 627
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[51]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 628
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[52]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 629
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[53]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 630
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[54]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 631
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[55]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 632
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[56]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 633
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[57]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 634
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[58]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 635
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[59]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 636
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[60]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 637
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[61]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 638
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[62]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 639
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[63]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 640
+    ITEM_PARENT  = 576
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = Handsfree
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 2016
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 641
+    ITEM_PARENT  = 1
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 16
+    ITEM_LENGTH  = 1528
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 642
+    ITEM_PARENT  = 641
+    ITEM_DESC    = "Handsfree"
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x48
+    ITEM_INDEX   = 643
+    ITEM_PARENT  = 642
+    ITEM_DESC    = 'H'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x61
+    ITEM_INDEX   = 644
+    ITEM_PARENT  = 642
+    ITEM_DESC    = 'a'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x6E
+    ITEM_INDEX   = 645
+    ITEM_PARENT  = 642
+    ITEM_DESC    = 'n'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x64
+    ITEM_INDEX   = 646
+    ITEM_PARENT  = 642
+    ITEM_DESC    = 'd'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x73
+    ITEM_INDEX   = 647
+    ITEM_PARENT  = 642
+    ITEM_DESC    = 's'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x66
+    ITEM_INDEX   = 648
+    ITEM_PARENT  = 642
+    ITEM_DESC    = 'f'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x72
+    ITEM_INDEX   = 649
+    ITEM_PARENT  = 642
+    ITEM_DESC    = 'r'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x65
+    ITEM_INDEX   = 650
+    ITEM_PARENT  = 642
+    ITEM_DESC    = 'e'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x65
+    ITEM_INDEX   = 651
+    ITEM_PARENT  = 642
+    ITEM_DESC    = 'e'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 652
+    ITEM_PARENT  = 642
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 653
+    ITEM_PARENT  = 642
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 654
+    ITEM_PARENT  = 642
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 655
+    ITEM_PARENT  = 642
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 656
+    ITEM_PARENT  = 642
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 657
+    ITEM_PARENT  = 642
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ModeName[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 5
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 658
+    ITEM_PARENT  = 642
+    ITEM_DESC    = '\0'
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = AudioStructure
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 2016
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 659
+    ITEM_PARENT  = 641
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_path_set
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1548
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 660
+    ITEM_PARENT  = 659
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_dev_set_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x3
+    ITEM_INDEX   = 661
+    ITEM_PARENT  = 660
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 662
+    ITEM_PARENT  = 660
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 8
+    ITEM_LENGTH  = 1548
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 663
+    ITEM_PARENT  = 660
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x22
+    ITEM_INDEX   = 664
+    ITEM_PARENT  = 663
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x2
+    ITEM_INDEX   = 665
+    ITEM_PARENT  = 663
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x83
+    ITEM_INDEX   = 666
+    ITEM_PARENT  = 663
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 667
+    ITEM_PARENT  = 663
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 668
+    ITEM_PARENT  = 663
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 669
+    ITEM_PARENT  = 663
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 670
+    ITEM_PARENT  = 663
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dev_set[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 671
+    ITEM_PARENT  = 663
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info_set
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1884
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 672
+    ITEM_PARENT  = 659
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_app_set_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 673
+    ITEM_PARENT  = 672
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_agc_input_gain_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x3
+    ITEM_INDEX   = 674
+    ITEM_PARENT  = 672
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_proc_exp_control
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 2
+    ITEM_LENGTH  = 1556
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 675
+    ITEM_PARENT  = 672
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_proc_exp_control[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 676
+    ITEM_PARENT  = 675
+    ITEM_DESC    = reserved
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_proc_exp_control[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x101
+    ITEM_INDEX   = 677
+    ITEM_PARENT  = 675
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1884
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 678
+    ITEM_PARENT  = 672
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1720
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 679
+    ITEM_PARENT  = 678
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = eq_switch
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xf
+    ITEM_INDEX   = 680
+    ITEM_PARENT  = 679
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 8
+    ITEM_LENGTH  = 1574
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 681
+    ITEM_PARENT  = 679
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xB47
+    ITEM_INDEX   = 682
+    ITEM_PARENT  = 681
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xB47
+    ITEM_INDEX   = 683
+    ITEM_PARENT  = 681
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x400
+    ITEM_INDEX   = 684
+    ITEM_PARENT  = 681
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 685
+    ITEM_PARENT  = 681
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 686
+    ITEM_PARENT  = 681
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 687
+    ITEM_PARENT  = 681
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 688
+    ITEM_PARENT  = 681
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 689
+    ITEM_PARENT  = 681
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_volume_level_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xf
+    ITEM_INDEX   = 690
+    ITEM_PARENT  = 679
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 31
+    ITEM_LENGTH  = 1700
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 691
+    ITEM_PARENT  = 679
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180001
+    ITEM_INDEX   = 692
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1e0001
+    ITEM_INDEX   = 693
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0001
+    ITEM_INDEX   = 694
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180001
+    ITEM_INDEX   = 695
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0002
+    ITEM_INDEX   = 696
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180002
+    ITEM_INDEX   = 697
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0003
+    ITEM_INDEX   = 698
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180003
+    ITEM_INDEX   = 699
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0004
+    ITEM_INDEX   = 700
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180004
+    ITEM_INDEX   = 701
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0005
+    ITEM_INDEX   = 702
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180005
+    ITEM_INDEX   = 703
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0006
+    ITEM_INDEX   = 704
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180006
+    ITEM_INDEX   = 705
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x1a0007
+    ITEM_INDEX   = 706
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x180007
+    ITEM_INDEX   = 707
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[16]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 708
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[17]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 709
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[18]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 710
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[19]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 711
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[20]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 712
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[21]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 713
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[22]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 714
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[23]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 715
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[24]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 716
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[25]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 717
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[26]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 718
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[27]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 719
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[28]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 720
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[29]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 721
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[30]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 722
+    ITEM_PARENT  = 691
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 9
+    ITEM_LENGTH  = 1718
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 723
+    ITEM_PARENT  = 679
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 724
+    ITEM_PARENT  = 723
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 725
+    ITEM_PARENT  = 723
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 726
+    ITEM_PARENT  = 723
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 727
+    ITEM_PARENT  = 723
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 728
+    ITEM_PARENT  = 723
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 729
+    ITEM_PARENT  = 723
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 730
+    ITEM_PARENT  = 723
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 731
+    ITEM_PARENT  = 723
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 732
+    ITEM_PARENT  = 723
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = app_config_info[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 1884
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 733
+    ITEM_PARENT  = 678
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = eq_switch
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 734
+    ITEM_PARENT  = 733
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 8
+    ITEM_LENGTH  = 1738
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 735
+    ITEM_PARENT  = 733
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 736
+    ITEM_PARENT  = 735
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 737
+    ITEM_PARENT  = 735
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 738
+    ITEM_PARENT  = 735
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 739
+    ITEM_PARENT  = 735
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 740
+    ITEM_PARENT  = 735
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 741
+    ITEM_PARENT  = 735
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 742
+    ITEM_PARENT  = 735
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = agc_input_gain[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 743
+    ITEM_PARENT  = 735
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = valid_volume_level_count
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 744
+    ITEM_PARENT  = 733
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 31
+    ITEM_LENGTH  = 1864
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 745
+    ITEM_PARENT  = 733
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 746
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 747
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 748
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 749
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 750
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 751
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 752
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 753
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 754
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 755
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 756
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 757
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 758
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 759
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 760
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 761
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[16]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 762
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[17]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 763
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[18]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 764
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[19]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 765
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[20]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 766
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[21]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 767
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[22]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 768
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[23]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 769
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[24]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 770
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[25]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 771
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[26]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 772
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[27]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 773
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[28]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 774
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[29]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 775
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = arm_volume[30]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_LENGTH  = 4
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 776
+    ITEM_PARENT  = 745
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 9
+    ITEM_LENGTH  = 1882
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 777
+    ITEM_PARENT  = 733
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 778
+    ITEM_PARENT  = 777
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 779
+    ITEM_PARENT  = 777
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 780
+    ITEM_PARENT  = 777
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 781
+    ITEM_PARENT  = 777
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 782
+    ITEM_PARENT  = 777
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 783
+    ITEM_PARENT  = 777
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 784
+    ITEM_PARENT  = 777
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 785
+    ITEM_PARENT  = 777
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 786
+    ITEM_PARENT  = 777
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = midi_opt
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x618
+    ITEM_INDEX   = 787
+    ITEM_PARENT  = 659
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = aud_dev
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x22
+    ITEM_INDEX   = 788
+    ITEM_PARENT  = 659
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve
+    ITEM_ID      = 426
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 64
+    ITEM_LENGTH  = 2016
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 789
+    ITEM_PARENT  = 659
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[0]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x7f
+    ITEM_INDEX   = 790
+    ITEM_PARENT  = 789
+    ITEM_DESC    = audProcControl : Bit7-bit0: R_LIMIT;   Bit10-bit8:   lcf Filter type=0(f1f1);  Bit11:   EQ_tuning_enable;Bit15-12:reserved.
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[1]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xff4c
+    ITEM_INDEX   = 791
+    ITEM_PARENT  = 789
+    ITEM_DESC    = f1_g0
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[2]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 792
+    ITEM_PARENT  = 789
+    ITEM_DESC    = f1_g1
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[3]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x190
+    ITEM_INDEX   = 793
+    ITEM_PARENT  = 789
+    ITEM_DESC    = f1_fp
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[4]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 794
+    ITEM_PARENT  = 789
+    ITEM_DESC    = f2_g0
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[5]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 795
+    ITEM_PARENT  = 789
+    ITEM_DESC    = f2_g1
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[6]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x2ee0
+    ITEM_INDEX   = 796
+    ITEM_PARENT  = 789
+    ITEM_DESC    = f2_fp
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[7]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x1e0
+    ITEM_INDEX   = 797
+    ITEM_PARENT  = 789
+    ITEM_DESC    = hold
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[8]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x2000
+    ITEM_INDEX   = 798
+    ITEM_PARENT  = 789
+    ITEM_DESC    = rise
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[9]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x4fe
+    ITEM_INDEX   = 799
+    ITEM_PARENT  = 789
+    ITEM_DESC    = fall
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[10]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 800
+    ITEM_PARENT  = 789
+    ITEM_DESC    = limit
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[11]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0xffe2
+    ITEM_INDEX   = 801
+    ITEM_PARENT  = 789
+    ITEM_DESC    = threshold
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[12]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x671e
+    ITEM_INDEX   = 802
+    ITEM_PARENT  = 789
+    ITEM_DESC    = ratio
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[13]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x28c
+    ITEM_INDEX   = 803
+    ITEM_PARENT  = 789
+    ITEM_DESC    = cg_var
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[14]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x10
+    ITEM_INDEX   = 804
+    ITEM_PARENT  = 789
+    ITEM_DESC    = release_rate
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[15]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x4dd
+    ITEM_INDEX   = 805
+    ITEM_PARENT  = 789
+    ITEM_DESC    = attack_rate
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[16]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 806
+    ITEM_PARENT  = 789
+    ITEM_DESC    = release_rate_ex
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[17]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x62
+    ITEM_INDEX   = 807
+    ITEM_PARENT  = 789
+    ITEM_DESC    = attack_rate_ex
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[18]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x81
+    ITEM_INDEX   = 808
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[19]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x82
+    ITEM_INDEX   = 809
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[20]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x83
+    ITEM_INDEX   = 810
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[21]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x84
+    ITEM_INDEX   = 811
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[22]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x85
+    ITEM_INDEX   = 812
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[23]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x86
+    ITEM_INDEX   = 813
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[24]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x87
+    ITEM_INDEX   = 814
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[25]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x88
+    ITEM_INDEX   = 815
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[26]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x89
+    ITEM_INDEX   = 816
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[27]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8a
+    ITEM_INDEX   = 817
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[28]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8b
+    ITEM_INDEX   = 818
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[29]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8c
+    ITEM_INDEX   = 819
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[30]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8d
+    ITEM_INDEX   = 820
+    ITEM_PARENT  = 789
+    ITEM_DESC    = linein_gain(15)
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[31]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8e
+    ITEM_INDEX   = 821
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[32]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8f
+    ITEM_INDEX   = 822
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[33]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8f
+    ITEM_INDEX   = 823
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[34]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 824
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[35]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 825
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[36]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 826
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[37]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 827
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[38]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 828
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[39]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 829
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[40]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 830
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[41]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 831
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[42]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 832
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[43]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 833
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[44]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 834
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[45]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x594
+    ITEM_INDEX   = 835
+    ITEM_PARENT  = 789
+    ITEM_DESC    = inner pa setting
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[46]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8
+    ITEM_INDEX   = 836
+    ITEM_PARENT  = 789
+    ITEM_DESC    = arm-record gain
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[47]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x8
+    ITEM_INDEX   = 837
+    ITEM_PARENT  = 789
+    ITEM_DESC    = lineinad gain
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[48]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 838
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[49]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 839
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[50]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 840
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[51]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 841
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[52]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 842
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[53]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 843
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[54]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 844
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[55]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 845
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[56]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 846
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[57]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 847
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[58]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 848
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[59]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 849
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[60]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 850
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[61]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 851
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[62]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 852
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = reserve[63]
+    ITEM_ID      = 426
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 853
+    ITEM_PARENT  = 789
+    ITEM_DESC    = 
+  END_ITEM
+
+
+# End Module Item
+
+################################################################################

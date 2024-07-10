@@ -1,0 +1,19 @@
+ROM_LOAD 0x80000000 0x100000
+{
+    ROM_EXEC 0x80000000 0x2000
+    {
+        tf_init.o (Init, +First)
+    }
+    ROM_EXEC1 +0x0
+    {
+    	.ANY(+RO)
+    }
+    RAM_RW +0x0
+    {   
+    	.ANY(+RW)
+    } 
+    RAM_ZI +0x0
+    {   
+    	.ANY(+ZI)
+    }
+}

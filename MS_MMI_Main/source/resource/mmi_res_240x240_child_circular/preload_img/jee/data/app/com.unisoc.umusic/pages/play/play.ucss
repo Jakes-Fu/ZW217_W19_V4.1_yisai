@@ -1,0 +1,5 @@
+.text {
+  color: #ffff;
+  text-align: center;
+}
+

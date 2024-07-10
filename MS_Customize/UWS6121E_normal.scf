@@ -1,0 +1,319 @@
+
+
+#define CP_IMAGE_BASE   CP_BASE_ADDR
+
+
+;---------------------------------------------------------------------;
+; USER image region                                                   ;
+; Be carefully to put your code in this image                         ;
+;     Cause it can't be called when startup                           ;
+;---------------------------------------------------------------------;
+
+LOAD_KERNEL_IMAGE IMAGE_ENTRY_ADDR+SIMAGE_HEAD IMAGE_SIZE
+{
+    EXEC_KERNEL_IMAGE IMAGE_ENTRY_ADDR+SIMAGE_HEAD 0x64
+    {
+        tx_illdb.o (Init, +First)
+    }
+    
+    ROM_EXEC_FLASH (IMAGE_ENTRY_ADDR+SIMAGE_HEAD+0x64) FIXED
+    {
+    	spiflash_cfg.o(SPIFLASH_CFG_TABLE)
+    	spiflash_cfg.o(SPIFLASH_CFG_TABLE_DETAIL)
+    }
+    ROM_EXEC_DFILE +0x0
+    {
+    	;flash_cfg.o(DFILE_DOWNLOAD_CFG)
+    	spiflash_cfg.o(DFILE_DOWNLOAD_CFG)
+    }
+    
+    ROM_EXEC_SPIFLASH_TYPE +0x0
+    {
+    	spiflash_cfg.o(SPIFLASH_TYPE_CFG)
+    }
+    
+    ROM_EXEC_SFC_INIT +0x0
+    {
+    	sfc_phy_uws6121e.o (SFC_INIT_IN_FLASH)
+    	spiflash_v2.o (SPIFLASH_INIT_IN_FLASH)
+    }
+
+    ROM_KERNAL_EXEC +0  	
+    {
+        __main.o               (+RO)
+        * (Region$$Table)
+        * (ZISection$$Table)
+         *armlib*              (+RO)
+        ; *cpplib*             (+RO)
+        ; *(C$$pi_ctorvec)
+        ;*(C$$pi_dtorvec)
+        main.a                (+RO)
+        main.o                (+RO)
+        *spzip.a              (+RO)
+        *chip_drv.a           (+RO)
+        ;*rtos.a               (+RO)
+		*mmk_main.a            (+RO)
+		*mmk_sys_main.a        (+RO)
+		*spml_main.a           (+RO)
+		*ctrl.a               (+RO)
+
+         ;*mpeg4_codec.a       (+RO)
+         ;*dv.a                (+RO)
+         ;*midisoundbank.a     (+RO)
+         *wav.a	               (+RO)
+         mmk_app.o             (.text, .constdata)
+         mmk_msg.o             (.text, .constdata)
+         mmk_window.o          (.text, .constdata)
+         mmk_shell.o           (.text, .constdata)
+         mmk_handle.o          (.text, .constdata)
+         mmk_applet.o          (.text, .constdata)
+         mmimain.o             (.text, .constdata)
+         guictrl.o             (.text, .constdata)
+         guigraph.o            (.text, .constdata)
+         guiwin.o              (.text, .constdata)
+         guires_img.o          (.text, .constdata)
+         guisoftkey.o          (.text, .constdata)
+         *theme*.o             (.text, .constdata)
+         mmi_common.o          (.text, .constdata)
+         mmi_default.o         (.text, .constdata)
+         mmi_resource.o        (.text, .constdata)
+
+        *refbase.a             (+RO)
+         rpc.a             (+RO)
+        *custom_drv.a          (+RO)
+        *version.a             (+RO)
+        *efs.a                 (+RO)
+        *ucom.a                (+RO)
+ 
+        *scm.a                 (+RO)
+        ;*isp_service.a        (+RO)
+        ;*img_proc.a           (+RO)
+        *img_proc_core.a       (+RO)
+        *ubot.a                (+RO)
+        *display_core.a        (+RO)
+        *lcd*.a                (+RO)
+        ;*dc.a                 (+RO)
+        ;*upcc.a               (+RO)
+        ;*scp.a                (+RO)
+        ;*vsp.a                (+RO)
+        ;*utility_performance.a (+RO)
+
+        *bsd.a                 (+RO)
+        ;*mux.a                (+RO)
+        *audioservice.a        (+RO)
+        *layer1.a              (+RO)
+        *logsave.a             (+RO)
+        ;*aud_dev.a            (+RO)
+        *usbservice.a          (+RO)
+        ;*ivMagicVoice.a       (+RO)
+        ;optinal, just to fill kernel image space
+        ;*bt_pal_*.a           (+RO)
+        ;*sfs.a                (+RO)
+        ;*sim.a                (+RO)
+        ;*ps.a                 (+RO)
+        ;*l4.a                 (+RO)
+        ;*midi.a               (+RO)
+        ;*daps.a               (+RO)
+        ;*spml.a               (+RO)
+        *chip_base.a           (+RO)
+#if defined(GPS_SUPPORT) && defined(GPS_CHIP_VER_GREENEYE2)
+        *qxsupl.a              (+RO)
+#endif
+		sleep_aon_init_uws6121e.o    (+RO)
+		chip_phy_uws6121e.o     (+RO)		
+#ifndef BZP_SUPPORT
+        *(+RO)
+#endif
+		;*mp3_new.a(.text, .constdata)
+		;*img_proc.a(.text, .constdata)
+		;*img_proc_core.a(.text, .constdata)
+		*mpeg4_codec.a(.text, .constdata)
+	    *aac.a(.text, .constdata)
+		*h264_codec.a(.text, .constdata)
+		
+	}
+
+		MEM_CFG_LIST MEM_RAM_MEM_CFG_LIST_BASE_ADDR	
+		{
+			mem_prod*.o (MEM_CFG_LIST_AREA)
+		}
+	
+		CP_ASS_REG MEM_RAM_CP_ASS_BASE_ADDR	
+		{
+			mem_prod*.o (CP_ASS_REG_AREA)
+		}
+		
+		CP_NV MEM_RAM_CP_NV_BASE_ADDR	
+		{
+			mem_prod*.o (CP_NV_AREA)
+		}
+				
+		RF_CALIB MEM_RAM_RF_CALIB_BASE_ADDR	
+		{
+			mem_prod*.o (RF_CALIB_AREA)
+		}
+				
+		RISCV_BIN MEM_RAM_RSICV_BIN_BASE_ADDR	
+		{
+			mem_prod*.o (RISCV_BIN_AREA)
+		}
+		
+		IPC_SHMEM MEM_RAM_IPC_SHMEM_BASE_ADDR	
+		{
+			mem_prod*.o (IPC_SHMEM_AREA)
+		}
+		
+		AUDIO_SHMEM MEM_RAM_AUDIO_SHMEM_BASE_ADDR
+		{
+			mem_prod*.o (AUDIO_SMEM_AREA)
+		}
+		
+		
+		CP_REG MEM_RAM_CP_BASE_ADDR	
+		{
+			mem_prod*.o (CP_AREA)
+		}
+	
+	
+		MMU_PGT MEM_RAM_MMU_BASE_ADDR 
+		{
+			mem_prod*.o (MMU_TLB)
+		}
+	
+	RAM_EXEC_CORE_CODE  MEM_RAM_AP_BASE_ADDR
+	{
+        ;*chip_base.a    (+RO)
+        *armlib/h_*  (+RO)
+        aeabi_sdivfast.o  (.text, .constdata, .text_udiv)
+        aeabi_memset.o  (.text, .constdata)
+        sfc_phy_uws6121e_v2.o(SFC_DRV_CODE)
+        sfc_hal_v2.o(.text, .constdata)
+        spi_flash_common_v2.o(.text, .constdata)
+        secure_write_flash.o(.text, .constdata)
+        ;esmt.o(.text, .constdata)
+        ;fidelix.o(.text, .constdata)
+        fidelix_fm25m.o(.text, .constdata)
+        giga.o(.text, .constdata)
+        macronix.o(.text, .constdata)
+        ;micron.o(.text, .constdata)
+        ;spansion.o(.text, .constdata)
+        ;sst.o(.text, .constdata)
+        winbond.o(.text, .constdata)
+        berg.o(.text, .constdata)
+        spiflash_v2.o(SPIFLASH_CODE)
+		timer_phy_uws6121e.o(TIMER_REALTICK_CODE)
+        spiflash_cfg.o(SPIFLASH_CFG_CODE)
+        flash.o(FLASH_DRV_CODE)
+		uws6121e_stub.o(.text, .constdata)
+		*rtos.a               (+RO)
+		*v7_mmu_cache.o (mmu_functions_in_ddr)
+		;mmu_bzp.o   (+RO)
+		
+#if defined(GPS_SUPPORT) && defined(GPS_CHIP_VER_GREENEYE2) && defined(GPS_MINI_LOG_SUPPORT)
+        greeneye2_comm.o              (GPS_MINILOG_RAM)
+#endif        
+	}
+
+    ;IMG$$RAM_RW$$LIMIT will be used to check the case of overflow
+    RAM_RW +0
+    {
+        * (+RW)
+        * (+ZI)
+    }
+
+	HEAP_AREA +0 ALIGN 4   
+	{
+		mem_prod*.o (BYTE_HEAP_AREA)
+	}
+	
+	SYS_STACK +0 ALIGN 4   
+	{
+		mem_prod*.o (SYS_STACK_AREA)
+		mem_prod*.o (FIQ_STACK_AREA)
+	}
+
+	ScatterAssert(ImageLimit(SYS_STACK) <= (MEM_RAM_AP_END_ADDR))
+	
+
+
+    IRAM_FIXED   PHY_IRAM_BASE_ADDR   MEM_IRAM_SIZE
+    {
+        ;*armlib/h_*  (+RO)
+        ;emc_phy_v5.o (EMC_FUNC_IN_IRAM)
+        ;emc_phy_v5.o (EMC_REG_BUF_IN_IRAM)
+        ;normcp_spec.o(NORMCP_SPEC_FUNC_IN_SRAM)
+
+        ;sleep_asm_uws6121e.o (C$$code,C$$data)
+        fiq_misc_drv.o(DSP_FIQ_CODE_IRAM)
+        *chip_base.a (MMU_VM_CACHE)
+        ;*main.a (LOAD_RAM_KERNEL);;for multi_bin
+        auto_download.o (AUTODL_IRAM_RW)
+
+        ;smc_phy_6531efm.o (SMC_CFG_IN_IRAM)
+        ;smc_phy_6531efm.o (+RW, +ZI)
+        ;aeabi_sdivfast.o  (.text, .constdata, .text_udiv)
+        ;aeabi_memset.o  (.text, .constdata)
+    }
+
+    AON_RAM   AON_IRAM_CFG_AP_BASE_ADDR   AON_IRAM_CFG_AP_SIZE
+    {
+		sleep_phy_uws6121e.o (SCI_WAKE_PM1_AONRAM)
+		sleep_asm_uws6121e.o   (C$$code,C$$data)
+		clock.o (CLOCK_INIT_AONRAM)
+		ddr.o (DDR_INIT_AONRAM)
+		main.o (FPU_AONRAM)
+		mmu_asm.o (mmu_functions)
+		mcu_clk.o (SCI_CLK_AONRAM)
+		spinlock_phy_uws6121e.o (SPINLOCK_AONRAM)
+		tx_ts.o (THREADX_SCHE_STACK)
+		*.o(ZIDATA_AONRAM,RWDATA_AONRAM,PM_ZIDATA_AONRAM)
+    }
+}
+
+#ifdef BZP_SUPPORT
+LOAD_USER_IMAGE VIR_IMAGE_START_ADDR VIR_IMAGE_SIZE
+{
+#ifdef WRE_VIRTUALDISK_SUPPORT
+    EXEC_USER_IMAGE +0x0 
+    {
+        mmiwre_adaptor.o (+RO-DATA)
+    }
+#else
+    EXEC_USER_IMAGE +0x0 0x00400000
+    {
+        .any (+RO)
+    }
+#endif
+    EXEC_USER_IMAGE_1 +0x0 0x00400000
+    {
+        .any (+RO)
+    }
+    EXEC_USER_IMAGE_2 +0x0 0x00400000
+    {
+        .any (+RO)
+    }
+    
+	EXEC_USER_IMAGE_3 +0x0 0x00400000
+	{
+	  .any(+RO)
+	}
+	EXEC_USER_IMAGE_4 +0x0 0x00400000
+	{
+	  .any(+RO)
+	}
+	EXEC_USER_IMAGE_5 +0x0 0x00400000
+	{
+	  .any(+RO)
+	}	
+}
+#endif
+
+;for modem bin bzp
+LOAD_CP_IMAGE_DFILE CP_IMAGE_BASE 0x001000
+{
+    EXEC_CP_IMAGE_DFILE +0x0 
+    {
+       spiflash_cfg.o(DFILE_DOWNLOAD_CFG_B)
+    }
+}
+

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{f058de76-6106-4917-9ee3-137fac8d2ee4}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{b5c5f6b3-0b6f-423d-a6e3-d48646da3520}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{63d1e950-371c-472a-9416-2a8c5dc3f622}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="crc16">
+      <UniqueIdentifier>{e709c272-b841-41a9-bcc3-e4ead0c41ca2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ErrorToString">
+      <UniqueIdentifier>{2f63d1d3-01d0-4492-b24d-5328622b5ce2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Protector">
+      <UniqueIdentifier>{ae4c97da-fc17-4ab9-b0bc-f9d72a17b7dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ProcessMutex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SecBinPac.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SecBinPacImp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crc16.c">
+      <Filter>crc16</Filter>
+    </ClCompile>
+    <ClCompile Include="ErrorToString.cpp">
+      <Filter>ErrorToString</Filter>
+    </ClCompile>
+    <ClCompile Include="SafeProtector.cpp">
+      <Filter>Protector</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SecBinPac.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+    <None Include="SecBinPack9.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ProcessMutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SecBinPac.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SecBinPacImp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crc16.h">
+      <Filter>crc16</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorToString.h">
+      <Filter>ErrorToString</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeProtector.h">
+      <Filter>Protector</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SecBinPac.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

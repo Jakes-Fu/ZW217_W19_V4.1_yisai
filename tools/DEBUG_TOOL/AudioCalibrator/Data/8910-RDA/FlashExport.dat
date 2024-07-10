@@ -1,0 +1,13 @@
+echo off
+
+adb root
+
+sleep 3000
+
+adb shell factorydatatool read /data/fact.bin
+
+// copy file from device,<local> is local path
+//adb pull /data/fact.bin ~/fact.bin 
+adb pull /data/fact.bin <local>
+
+echo it's end

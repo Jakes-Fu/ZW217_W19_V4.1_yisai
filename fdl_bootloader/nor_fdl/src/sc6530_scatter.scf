@@ -1,0 +1,37 @@
+ROM_LOAD 0x34000000 0x100000
+{  
+
+   ROM_EXEC 0x34000000 0x100000
+   {
+        init.o (Init, +First)
+        __scatter*.o(+RO, +RW, +ZI)
+        __main.o(+RO)
+        __dczerorl2.o(+RO)
+        * (Region$$Table)
+        * (ZISection$$Table)
+        packet.o(+ZI) 
+        fdl_flash_cfg.o(+RO,+RW,+ZI) 
+        fdl_main.o(+RO)
+        fdl_update_fixnv.O(+RO,+RW,+ZI) 
+        .ANY(+RW,+ZI)      
+		   .ANY(+RO)    		
+  }  
+  
+  IRAM_FIXED 0x40000000 0x7fff
+   {        
+	   fdl_crc.o(+RO,+RW,+ZI)
+	   virtual_com.o(+RO,+RW,+ZI)
+	   fdl_main.o(CHIP_SETTING)
+	   packet.o(+RO)
+	   fdl_main.o(+RW,+ZI)
+	   drv_usb.o(+RO,+RW,+ZI)
+	   sfc_phy_v5.o(+RO,+RW,+ZI)
+	   fdl_stdio.o(+RO,+RW,+ZI)
+	   spiflash_cfg.o(+RO,+RW,+ZI)
+	   spiflash.o(+RO,+RW,+ZI)	   
+	   sio_drv.o(+RO,+RW,+ZI)	   
+	   mmu.o(+RO,+RW,+ZI)
+   
+   } 
+}
+

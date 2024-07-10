@@ -1,0 +1,5 @@
+在网上下载的支持Node.js的测试套件JS脚本带Node.js的语法特性，所以对测试脚本进行了修改，使JerryScript和QuickJs都可以运行的脚本myapp.js，
+由于有的测试脚本在JerryScript上不执行，所以在myapp.js中只添加了4个测试脚本：richards、deltablue、crypto、raytrace。
+通过性能测试脚本跑分发现更改JerryScript引擎的开关选项并没有明显提升其性能；同时对比QuickJs，其性能跑分低于QuickJs。
+
+参考文档SVN路径：http://shexsvn02/svn/STRD/PROJECTS/T20A01/Documents/TR3/HLD/JerryScript性能测试相关文档/2_1_JerryScript性能测试报告.docx

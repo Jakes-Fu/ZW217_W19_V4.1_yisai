@@ -1,0 +1,27 @@
+{
+    "app": {
+        "id": "com.unisoc.umusic",
+        "name": "UMusic",
+        "vendor": "unisoc",
+        "version": {
+            "code": 1,
+            "name": "1.0"
+        },
+        "parameter": "2",
+        "apiVersion": {
+            "compatible": "1",
+            "target": "1"
+        },
+        "icon": "//common/logo.png",
+        "permissions": [
+            {
+                "name": "PERMISSION.INTERNET"
+            }
+        ],
+        "pages": [
+            "/pages/plist/plist",
+            "/pages/play/play",
+            "/pages/volume/volume"
+        ]
+    }
+}

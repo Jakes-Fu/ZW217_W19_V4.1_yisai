@@ -1,0 +1,54 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: DspOver - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/DspOver.res" /d "_DEBUG" /d "_AFXDLL" "E:\workspace\Diagnostic\ResOver\Source\DspOver\DspOver.rc"" 
+Creating temporary file "C:\DOCUME~1\XIONG~1.DIN\LOCALS~1\Temp\RSPD31.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "../Include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_UNICODE" /D "UNICODE" /FR"Debug/" /Fp"Debug/DspOver.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\workspace\Diagnostic\ResOver\Source\BZP\BZip.cpp"
+"E:\workspace\Diagnostic\ResOver\Source\DspOver\DspOver.cpp"
+"E:\workspace\Diagnostic\ResOver\Source\DspOver\DspOverDlg.cpp"
+"E:\workspace\Diagnostic\ResOver\Source\BZP\IBZip.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\XIONG~1.DIN\LOCALS~1\Temp\RSPD31.tmp" 
+Creating temporary file "C:\DOCUME~1\XIONG~1.DIN\LOCALS~1\Temp\RSPD32.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "../Include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_UNICODE" /D "UNICODE" /FR"Debug/" /Fp"Debug/DspOver.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\workspace\Diagnostic\ResOver\Source\DspOver\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\XIONG~1.DIN\LOCALS~1\Temp\RSPD32.tmp" 
+Creating temporary file "C:\DOCUME~1\XIONG~1.DIN\LOCALS~1\Temp\RSPD33.tmp" with contents
+[
+zlibd.lib lzmad.lib /nologo /entry:"wWinMainCRTStartup" /subsystem:windows /incremental:yes /pdb:"Debug/DspOver.pdb" /debug /machine:I386 /out:"Debug/DspOver.exe" /pdbtype:sept /libpath:"../zlib/lib" /libpath:"../lzma/lib" 
+.\Debug\BZip.obj
+.\Debug\DspOver.obj
+.\Debug\DspOverDlg.obj
+.\Debug\IBZip.obj
+.\Debug\StdAfx.obj
+.\Debug\DspOver.res
+]
+Creating command line "link.exe @C:\DOCUME~1\XIONG~1.DIN\LOCALS~1\Temp\RSPD33.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+BZip.cpp
+DspOver.cpp
+DspOverDlg.cpp
+IBZip.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+DspOver.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

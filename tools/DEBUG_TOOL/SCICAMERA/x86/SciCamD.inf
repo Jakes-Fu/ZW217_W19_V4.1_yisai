@@ -1,0 +1,172 @@
+; SciCamD.INF - INF file for Spreadtrum USB camera Device
+; Copyright (C) 2001-2006, Spreadtrum Communication Inc.
+;
+; 2006-04-04 created by anli.wei
+; 2006-11-24 modified by anli.wei to compatible xp sp2
+; 2010-01-07 modified by rocky.liao to support 64-bit platform
+
+
+[Version]
+signature="$WINDOWS NT$"
+Class=Image
+ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f} ;image class guid
+Provider=%Mfg%
+;LayoutFile=layout.inf,layout1.inf,layout2.inf ;LayoutFile needed only for Windows 9x/Me
+;CatalogFile=SciCamD.cat       
+DriverVer=01/07/2010,1.2.5.1
+
+[SourceDisksNames]
+1=%Disk1%,,,
+
+[SourceDisksFiles]
+SciCamD.sys  =1
+usbcamex.sys =1
+SciCamDec.sys=1
+
+[SciCam.Inf.Files]
+SciCamD.INF
+
+[SciCam.Sys.Files]
+SciCamD.sys
+usbcamex.sys
+SciCamDec.sys
+
+[DestinationDirs]
+SciCam.Inf.Files  = 17      ; Inf directory
+SciCam.sys.Files  = 12      ; Drivers directory
+
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+[Manufacturer]
+%SciMfg%=Sci,NTx86,NTamd64
+
+;Windows 2000
+[Sci]
+%SciCamDesc%=SciCam,USB\VID_1782&PID_4d04
+
+;Windows XP and later x86
+[Sci.NTx86]
+%SciCamDesc%=SciCam,USB\VID_1782&PID_4d04
+
+;Windows XP and later x64
+[Sci.NTamd64]
+%SciCamDesc%=SciCam,USB\VID_1782&PID_4d04
+
+[SciCam]
+Include  = ks.inf,kscaptur.inf
+Needs    = KS.Registration,KSCAPTUR.Registration
+AddReg   = SciCam.AddReg
+CopyFiles= SciCam.Sys.Files
+
+
+; WIA
+SubClass     = StillImage
+DeviceType   = 2             ;1 scanners, 2 for cameras,3 streaming video
+DeviceSubType= 0x1           ;optional user defined
+;
+; Capabilities is a mask:
+; 0x01 = Device generates events
+; 0x02 = Polling needed
+; 0x04 = Generate event when device installed
+; 0x08 = Enable the "auto" port option
+; 0x10 = WIA capable driver
+; 0x20 = Driver has reduced functionality
+;
+Capabilities = 0x00000031
+;
+; Hides port selection page in the wizard and on the
+; device property sheet.
+;
+PortSelect   = No
+DeviceData   = SciCam.DeviceData
+ICMProfiles  = "sRGB Color Space Profile.icm"
+
+[SciCam.NT]
+Include  = ks.inf, kscaptur.inf, dshowext.inf
+Needs    = KS.Registration,KSCAPTUR.Registration.NT,DSHOWEXT.Registration
+AddReg   = SciCam.AddReg
+CopyFiles= SciCam.Sys.Files
+
+
+; WIA
+SubClass     = StillImage
+DeviceType   = 3             ;1 scanners, 2 for cameras,3 streaming video
+DeviceSubType= 0x1           ;optional user defined
+;
+; Capabilities is a mask:
+; 0x01 = Device generates events
+; 0x02 = Polling needed
+; 0x04 = Generate event when device installed
+; 0x08 = Enable the "auto" port option
+; 0x10 = WIA capable driver
+; 0x20 = Driver has reduced functionality
+;
+Capabilities = 0x00000031
+
+DeviceData   = SciCam.DeviceData
+ICMProfiles  = "sRGB Color Space Profile.icm"
+
+[SciCam.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,SciCamD.sys
+HKR,,PageOutWhenUnopened,3,01
+HKR,,HardwareConfig,1,1
+
+[SciCam.DeviceData]
+Server=local
+UI DLL=sti.dll
+UI Class ID={5d8ef5a3-ac13-11d2-a093-00c04f72dc3c}
+
+[SciCam.Interfaces]
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,SciCam.Interface
+AddInterface=%KSCATEGORY_RENDER%,GLOBAL,SciCam.Interface 
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,SciCam.Interface
+
+[SciCam.NT.Interfaces]
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,SciCam.Interface
+AddInterface=%KSCATEGORY_RENDER%,GLOBAL,SciCam.Interface
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,SciCam.Interface
+
+[SciCam.Interface]
+AddReg=SciCam.Intf.AddReg
+         
+[SciCam.Intf.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+HKR,,FriendlyName,,%SciCamDesc%
+HKR,,RTCFlags,0x00010001,0x00000010
+
+[SciCam.NT.Services]
+AddService = SciCamD,0x00000002,SciCam.ServiceInstall
+
+[SciCam.ServiceInstall]
+DisplayName   = %SciCamDesc%
+ServiceType   = 1                 ; SERVICE_KERNEL_DRIVER
+StartType     = 3                 ; SERVICE_SYSTEM_START
+ErrorControl  = 1                 ; SERVICE_ERROR_IGNORE
+ServiceBinary = %12%\SciCamD.sys
+
+[Strings]
+
+;----------------
+; Non-Localizable
+;----------------
+
+; note: only register value is case sensitive, key is not.
+ProxyVCap.CLSID="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+KSCATEGORY_RENDER="{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_VIDEO="{6994AD05-93EF-11D0-A3CC-00A0C9223196}" 
+
+
+;----------------
+; Localizable
+;----------------
+
+Mfg="Spreadtrum"
+SciMfg="Spreadtrum Communication Inc."
+SciCamDesc="SCI USB Camera"
+Disk1="Sci USB Camera Driver diskette"
+
+

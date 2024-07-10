@@ -1,0 +1,59 @@
+// ----------------------------------------------------------
+// 
+// 平台AP Mode的Interface定义
+// <APMode>
+//    value:InterfaceName
+// </APMode>
+//
+// ----------------------------------------------------------
+
+<VoiceCall>
+  0: NORMAL
+</VoiceCall>
+
+
+
+<BTMusicPlay>
+  0: NORMAL
+</BTMusicPlay>
+
+
+<MusicRecord>
+  0: NORMAL
+</MusicRecord>
+
+
+
+<FMPlay>
+  0: NORMAL
+</FMPlay>
+
+
+
+<FMRecord>
+  0: NORMAL
+</FMRecord>
+
+
+<TCardMusicPlay>
+  0: NORMAL
+</TCardMusicPlay>
+
+
+
+<LineIN>
+  0: NORMAL
+</LineIN>
+
+
+
+<LoopBack>
+  0: NORMAL
+</LoopBack>
+
+
+
+<TonePlay>
+  0: NORMAL
+</TonePlay>
+

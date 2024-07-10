@@ -1,0 +1,7 @@
+; SCIMMIPBUD.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SCIMMIPBUD"
+DESCRIPTION  'SCIMMIPBUD Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

@@ -1,0 +1,321 @@
+menu "Fota by CMIOT"
+    
+    config FOTA_USING_CMIOT
+        bool "Enable fota by cmiot"
+        default n
+        select OS_USING_FAL
+        select OS_USING_LIBC_ADAPTER
+
+    if FOTA_USING_CMIOT
+        choice
+        prompt "The supported device type"
+        default CMIOT_USING_SINGLE
+        help
+            Select device type
+        config CMIOT_USING_SINGLE
+            bool "single device"
+            help
+                Need upgrade single device
+        config CMIOT_USING_MULTI_MASTER
+            bool "multi master"
+            help
+                Need upgrade master device
+        config CMIOT_USING_MULTI_SLAVE
+            bool "multi slave"
+            help
+                Need upgrade slave device
+        endchoice
+
+        if CMIOT_USING_SINGLE
+            choice
+            prompt "The supported download solution"
+            default CMIOT_USING_GEN_SG
+            help
+                Select download solution
+            config CMIOT_USING_GEN_SG
+                bool "general"
+                select NET_USING_BSD
+                help
+                    Connect directly to the server
+            config CMIOT_USING_CMS
+                bool "cms"
+                select NET_USING_BSD
+                select USING_CMS_CONNECT
+                select CMS_USING_ID
+                help
+                    Connect to the server through cms forwarding
+            config CMIOT_USING_CTW
+                bool "ctwing"
+                select NET_USING_MOLINK
+                select MOLINK_USING_CTM2M_OPS
+                help
+                    Connect to the server through ctwing forwarding
+            endchoice
+        endif
+
+        if CMIOT_USING_MULTI_MASTER
+            choice
+            prompt "The supported download solution"
+            default CMIOT_USING_GEN_MT
+            help
+                Select download solution
+            config CMIOT_USING_GEN_MT
+                bool "general"
+                select NET_USING_BSD
+                help
+                    Connect directly to the server
+            endchoice
+        endif
+
+        if CMIOT_USING_MULTI_SLAVE
+            choice
+            prompt "The supported download solution"
+            default CMIOT_USING_GEN_SA
+            help
+                Select download solution
+            config CMIOT_USING_GEN_SA
+                bool "general"
+                help
+                    Connect directly to the server
+            endchoice
+        endif
+
+        if CMIOT_USING_GEN_SG || CMIOT_USING_GEN_MT || CMIOT_USING_GEN_SA
+            config CMIOT_USING_GEN
+                bool
+                default y
+        endif
+
+        if CMIOT_USING_GEN_SG || CMIOT_USING_GEN_MT
+            choice
+            prompt "The supported network protocol"
+            default CMIOT_NETWORKING_MODE_COAP
+            help
+                Select download protocol
+            config CMIOT_NETWORKING_MODE_COAP
+                bool "Coap"
+                help
+                    Download differential packets using coap
+            config CMIOT_NETWORKING_MODE_HTTP
+                bool "Http"
+                help
+                    Download differential packets using http
+            endchoice
+
+            config CMIOT_DEFAULT_NETWORK_PROTOCOL
+                int
+                default 1 if CMIOT_NETWORKING_MODE_COAP
+                default 2 if CMIOT_NETWORKING_MODE_HTTP
+        endif
+
+        if CMIOT_USING_CTW
+            config CMIOT_DEFAULT_NETWORK_PROTOCOL
+                int
+                default 1
+        endif
+
+        if CMIOT_USING_CMS
+            config CMIOT_DEFAULT_NETWORK_PROTOCOL
+                int
+                default 1 if CMS_CONNECT_UDP
+                default 2 if CMS_CONNECT_MQTT || CMS_CONNECT_TCP
+        endif
+
+        choice
+        prompt "The supported algorithm"
+        default CMIOT_ALGORITHM_LUSUN
+        help
+            Select the differential algorithm
+        config CMIOT_ALGORITHM_LUSUN
+            bool "Lusun"
+            help
+                Select lusun as the differential algorithm
+        config CMIOT_ALGORITHM_WOSUN
+            bool "Wosun low"
+            help
+                Select wosun low as the differential algorithm
+        config CMIOT_ALGORITHM_WOSUN_HIGH
+            bool "Wosun high"
+            help
+                Select wosun high as the difference algorithm
+        config CMIOT_ALGORITHM_LUCKSPAR
+            bool "LuckSpar"
+            help
+                Select LuckSpar as the difference algorithm
+        if CMIOT_USING_CMS
+            config CMIOT_ALGORITHM_LUCKPAND
+                bool "LuckPand"
+                help
+                    Select LuckPand as the difference algorithm
+        endif
+        if CMIOT_USING_GEN || CMIOT_USING_CTW
+            config CMIOT_ALGORITHM_FULL_UPGRADE
+                bool "Full upgrade"
+                help
+                    Select Full upgrade as the difference algorithm
+        endif
+        endchoice
+
+        if CMIOT_USING_SINGLE || CMIOT_USING_MULTI_MASTER
+            config CMIOT_DEFAULT_TRY_TIME
+                int "The network timeout"
+                default 200
+        endif
+
+        config CMIOT_FOTA_ALGORITHM
+            int
+            default 0 if CMIOT_ALGORITHM_LUSUN
+            default 1 if CMIOT_ALGORITHM_WOSUN
+            default 2 if CMIOT_ALGORITHM_WOSUN_HIGH
+            default 3 if CMIOT_ALGORITHM_LUCKSPAR
+            default 4 if CMIOT_ALGORITHM_LUCKPAND
+            default 5 if CMIOT_ALGORITHM_FULL_UPGRADE
+
+        config CMIOT_DEFAULT_SECTOR_SIZE
+            hex
+            default 0x800  if SERIES_STM32F0
+            default 0x800 if SERIES_STM32F1
+            default 0x20000 if SERIES_STM32F2
+            default 0x800 if SERIES_STM32F3
+            default 0x20000 if SERIES_STM32F4
+            default 0x40000 if SERIES_STM32F7
+            default 0x20000 if SERIES_STM32H7
+            default 0x100 if SERIES_STM32L1
+            default 0x800 if SERIES_STM32L4
+            default 0x800 if SERIES_STM32G0
+            default 0x800 if SERIES_STM32L5
+
+        if CMIOT_ALGORITHM_WOSUN || CMIOT_ALGORITHM_WOSUN_HIGH || CMIOT_ALGORITHM_LUCKSPAR || CMIOT_ALGORITHM_LUCKPAND
+            config CMIOT_FOTA_AVAILABLE_RAM_SIZE
+                hex "The bootloader available ram"
+                default 0x1000
+
+                if CMIOT_ALGORITHM_WOSUN || CMIOT_ALGORITHM_WOSUN_HIGH
+                    config CMIOT_FLASH_APP_ADDR
+                        hex "App part addr from fal's OS_APP_PART_ADDR"
+                        default 0x8010000
+                endif
+
+            config CMIOT_UPDATE_SIZE
+                hex "Download part size from fal's OS_DL_PART_SIZE"
+                default 0x30000
+        endif
+
+        config CMIOT_FOTA_WOSUN_VERSION
+            string
+            default "IOT4.0_R42641"
+        
+        config CMIOT_FOTA_LUSUN_VERSION
+            string
+            default "IOT5.0_LUSUN11_R50426"
+
+        config CMIOT_FOTA_LUCKSPAR_VERSION
+            string
+            default "IOT6.0_LUCKSPAR_R010100"
+
+        config CMIOT_FOTA_LUCKPAND_VERSION
+            string
+            default "IOT7.0_LUCKPAND_R010100"
+
+        if CMIOT_USING_GEN 
+            config CMIOT_SEGMENT_SIZE_INDEX_START
+                int
+                default 0 if CMIOT_NETWORKING_MODE_COAP
+                default 3 if CMIOT_NETWORKING_MODE_HTTP
+        endif
+        
+        if CMIOT_USING_CTW
+        config CMIOT_SEGMENT_SIZE_INDEX_START
+                int
+                default 0
+        endif
+
+        if CMIOT_USING_CMS
+        config CMIOT_SEGMENT_SIZE_INDEX_START
+                int
+                default 0 if CMS_CONNECT_UDP
+                default 3 if CMS_CONNECT_MQTT || CMS_CONNECT_TCP
+        endif
+
+        config CMIOT_DEFAULT_SEGMENT_SIZE_INDEX
+            int "Segment size index"
+            range CMIOT_SEGMENT_SIZE_INDEX_START 5
+            default 3
+            help
+                Set the size of each download,0 is 16 bytes,1 is 32 bytes,2 is 64 bytes,3 is 128 bytes,4 is 256 bytes,5 is 512 bytes
+
+        if CMIOT_USING_GEN || CMIOT_USING_CTW        
+            config CMIOT_FOTA_SERVICE_OEM
+                string "Oem"
+                default "cmiot_cd"
+                help
+                    Consistent with the OEM of project information in OTA platform
+        
+            config CMIOT_FOTA_SERVICE_MODEL
+                string "Model"
+                default "L475RE"
+                help
+                    Consistent with the device model of project information in OTA platform
+
+            config CMIOT_FOTA_SERVICE_PRODUCT_ID
+                string "Product id"
+                default "1571101950"
+                help
+                    Consistent with the product id of project information in OTA platform
+        
+            config CMIOT_FOTA_SERVICE_PRODUCT_SEC
+                string "Product secret"
+                default "c36b6a45f78546e1a11390a90ee7f158"
+                help
+                    Consistent with the product secret of project information in OTA platform
+
+            config CMIOT_FOTA_SERVICE_DEVICE_TYPE
+                string "Device type"
+                default "box"
+                help
+                    Consistent with the device type of project information in OTA platform
+        
+            config CMIOT_FOTA_SERVICE_PLATFORM
+                string "Platform"
+                default "stm32l4"
+                help
+                    Consistent with the platform of project information in OTA platform
+        endif
+        
+        if CMIOT_USING_CMS
+            if CMIOT_ALGORITHM_LUCKPAND
+                source "$OS_ROOT/components/ota/cmiot/Kconfig.MultiBin"
+            endif
+            config CMIOT_FOTA_CONTRAST_BLOCK_SIZE
+                int "Diff block size"
+                default 2
+                help
+                    The block size of flash, KB
+        endif
+        
+        config CMIOT_FIRMWARE_VERSION
+            string "Firmware version"
+            default "1.0"
+        
+        config CMIOT_FOTA_OS_VERSION
+            string
+            default "ONEOS_V1.0"
+        
+        if CMIOT_USING_CTW
+            config CMIOT_CTW_PRODUCT_ATTR_ID
+            int "Ctwing product attribute id"
+            default 15056578
+
+            config CMIOT_CTW_FOTA_SERVICE_ID
+                int "Ctwing fota service id"
+                range 1 999
+                default 999
+        
+            config CMIOT_CTW_MSG_TYPE
+                int "The msg type report to ctwing"
+                range 1 2
+                default 1
+        endif
+    endif
+
+endmenu

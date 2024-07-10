@@ -1,0 +1,131 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "Etion"=".\Etion\Etion.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MobileCnnt"=".\GUI\MobileCnnt.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Etion
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ResEn
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SCIPB
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SCIPBGroup
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SCIShortMsg
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SCIMemo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ResEn"=".\ResDll\ResEn\ResEn.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SCIMemo"=".\SCIMemo\SCIMemo.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SCIPB"=".\SCIPB\SCIPB_7550.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SCIPBGroup"=".\SCIPBGroup\SCIPBGroup.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SCIShortMsg"=".\SCIShortMsg\SCIShortMsg_7550.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SciPort"=".\SciPort\SciPort.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

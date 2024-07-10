@@ -1,0 +1,9 @@
+// notifycenter win
+WIN_ID_DEF(WATCH_SHORTCUT_WIN_ID),
+//notifylist win
+WIN_ID_DEF(NOTIFYLIST_WIN_ID),
+//notifydetail win
+WIN_ID_DEF(NOTIFYDETAIL_WIN_ID),
+// notifycenter note win
+WIN_ID_DEF(NOTIFYCENTER_NOTE_WIN_ID),
+

@@ -1,0 +1,1874 @@
+# SpreadTrum NVEditor NV Module File, Format Version 1.0
+# WARNING: DO NOT EDIT OR DELETE THIS NV Module FILE!
+
+###############################################################################
+  MODULE      = nv_classmark
+  DESCRIPTION = 
+
+################################################################################
+
+# Begin Module Item
+  BEGIN_ITEM
+    ITEM_NAME    = FIXED_NVITEM_T
+    ITEM_ID      = 3
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_LENGTH  = 174
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 0
+    ITEM_PARENT  = -1
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = revision_level
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X2
+    ITEM_INDEX   = 1
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0 = Reserved for phase 1; 1 = phase 2; 2 = R99 or later; 3 = Reserved for future use
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = support_early_classmark
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 2
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1 = support Controlled early classmark sending
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = pseudo_sync_handover_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 3
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = support pseudo_sync handover
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ss_screen_ind
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 4
+    ITEM_PARENT  = 0
+    ITEM_DESC    = SS screening indicator
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ss_version_ind
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 5
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1 = SS-Protocol version 3 is supported,0 = not support version 3
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = mt_sms_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 6
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1 = support mobile terminated short message
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = vbs_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 7
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1 = voice broadcast service is supported.not supported!
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = vgcs_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 8
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1 = voice group call service is supported.not supported!
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = classmark3_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 9
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1 = Classmark 3 supported
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = lcs_va_capability
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X0
+    ITEM_INDEX   = 10
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0:location request notification via PS domain not supported;1:location request notification via PS domain supported
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ucs2_treatment
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 1
+    ITEM_INDEX   = 11
+    ITEM_PARENT  = 0
+    ITEM_DESC    = ucs2_treatment,0 : default alphabet 1:no reference
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = solsa_capability
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X0
+    ITEM_INDEX   = 12
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0:does not support SoLSA;1:supports SoLSA
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = cm_service_prompt
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X0
+    ITEM_INDEX   = 13
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0:"Network initiated MO CM connection request" not supported;1:"Network initiated MO CM connection request" supported for at least one CM protocol
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ext_meas_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 14
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1 = support extend measurement report.
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sms_value_flag
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 15
+    ITEM_PARENT  = 0
+    ITEM_DESC    = en/disable sms_value and sm_value
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sms_value
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X2
+    ITEM_INDEX   = 16
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 421/625 QBC3/4 timeslot based on dsp/chip/RF
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sm_value
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X2
+    ITEM_INDEX   = 17
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 379/625 QBC3/4 timeslot based on dsp/chip/RF
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gsm_multislot_class
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 18
+    ITEM_PARENT  = 0
+    ITEM_DESC    = Multislot class about CS service
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ms_pos_method_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X0
+    ITEM_INDEX   = 19
+    ITEM_PARENT  = 0
+    ITEM_DESC    = indicates whether the MS supports Positioning Method or not for the provision of Location Services.
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ms_pos_method
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 20
+    ITEM_PARENT  = 0
+    ITEM_DESC    = indicates the Positioning Method(s) supported by the mobile station.
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = sms_gprs_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 21
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = SMS over GPRS is supported,dualsim not support.
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = pfc_mode
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 22
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = support Packet Flow Context,not support
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dtm_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 23
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0:support DTM;1:not support DTM
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ctm_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 24
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0:CTM text telephony is not supported;1:CTM text telephony is supported
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = a51_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 25
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1= support gsm encryption algorithm a5/1
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = a52_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 26
+    ITEM_PARENT  = 0
+    ITEM_DESC    = A5/2 algoritrhm is not be supported in Rel-6(SP-040862),main branch not support it.
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = a53_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 27
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1= support gsm encryption algorithm a5/3,6800h will,6600L not support
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = a54_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 28
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1= support gsm encryption algorithm a5/4,not supported!
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = a55_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 29
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1= support gsm encryption algorithm a5/5,not supported!
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = a56_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 30
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1= support gsm encryption algorithm a5/6,not supported!
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = a57_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 31
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1= support gsm encryption algorithm a5/7,not supported!
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gea1_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 32
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = GPRS encription algrithm GEA/1
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gea2_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X1
+    ITEM_INDEX   = 33
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = GPRS encription algrithm GEA2
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gea3_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 34
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = GPRS encription algrithm GEA/3,6800h will support,6600L not suport
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gea4_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 35
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = GPRS encription algrithm GEA/4,not supported!
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gea5_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 36
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = GPRS encription algrithm GEA/5,not supported!
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gea6_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 37
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = GPRS encription algrithm GEA/6,not supported!
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gea7_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 38
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = GPRS encription algrithm GEA/7,not supported!
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = split_pg_cycle
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X07
+    ITEM_INDEX   = 39
+    ITEM_PARENT  = 0
+    ITEM_DESC    = refer nokia setting
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = split_on_ccch
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 40
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = non_drx_timer
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 2
+    ITEM_INDEX   = 41
+    ITEM_PARENT  = 0
+    ITEM_DESC    = max 2 second after tbf in bcch mode
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = p_gsm_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 42
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = support P_GSM band
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = e_gsm_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 43
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = support E_GSM band
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = r_gsm_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 44
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = support R_GSM band
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dcs_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 45
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = support DCS band
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = pcs_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 46
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = support PCS band
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gsm_850_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 47
+    ITEM_PARENT  = 0
+    ITEM_DESC    = true = support 850 band 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = umts_fdd_ra_tech_cap
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X0
+    ITEM_INDEX   = 48
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0:UMTS FDD not supported;1:UMTS FDD supported
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = umts_384mcps_tdd_ra_tech_cap
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X0
+    ITEM_INDEX   = 49
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0:UMTS 3.84 Mcps TDD not supported;1:UMTS 3.84 Mcps TDD supported
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = cdma2000_ra_tech_cap
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X0
+    ITEM_INDEX   = 50
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0:CDMA2000 not supported;1:CDMA2000 supported
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = umts_128mcps_tdd_ra_tech_cap
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X0
+    ITEM_INDEX   = 51
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0:UMTS 1.28 Mcps TDD not supported;1:UMTS 1.28 Mcps TDD supported
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = e_gsm_pwr_class
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x3
+    ITEM_INDEX   = 52
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0 = class1; 1 = class2 ... class5 = 4
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = dcs_pwr_class
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 53
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0 = class1; 1 = class2 ... class3 = 2
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = pcs_pwr_class
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 54
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0 = class1; 1 = class2 ... class3 = 2
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gsm_850_pwr_class
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x3
+    ITEM_INDEX   = 55
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0 = class1; 1 = class2 ... class5 = 4
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = psk8_gsm900_pwr_class
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 2
+    ITEM_INDEX   = 56
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 8psk power class type,0 for not support uplink 8psk, 1-3
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = psk8_dcs_pwr_class
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 2
+    ITEM_INDEX   = 57
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 8psk power class type,0 for not support uplink 8psk, 1-3
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = psk8_pcs_pwr_class
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 2
+    ITEM_INDEX   = 58
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 8psk power class type,0 for not support uplink 8psk, 1-3
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = psk8_gsm850_pwr_class
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 2
+    ITEM_INDEX   = 59
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 8psk power class type,0 for not support uplink 8psk, 1-3
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gprs_multislot_class
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 12
+    ITEM_INDEX   = 60
+    ITEM_PARENT  = 0
+    ITEM_DESC    = Class 1 - 12,value 1 ... 12
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gprs_ext_dynamic_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 1
+    ITEM_INDEX   = 61
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 6800H support ext dynamic,6600L not support class12 and ext dynamic
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = egprs_support
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 62
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1 for support egprs; 0 for not support egprs
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = egprs_class_type
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 63
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1 egprs_class1 support 8psk downlink;0 egprs_class2 support bothlink 8psk
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = egprs_multislot_class
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 10
+    ITEM_INDEX   = 64
+    ITEM_PARENT  = 0
+    ITEM_DESC    = if support egprs,the egprs mutislot class type,1-12
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = egprs_ext_dynamic_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0
+    ITEM_INDEX   = 65
+    ITEM_PARENT  = 0
+    ITEM_DESC    = if egprs support,extended dynamic allocation support or not,1 for support
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = egprs_gmsk_only_mode
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X0
+    ITEM_INDEX   = 66
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0:"Modulation based multislot class" not supported;1:"Modulation based multislot class" supported
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ext_ul_tbf_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X1
+    ITEM_INDEX   = 67
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0: not support Extended uplink TBF;1: support Extended uplink TBF
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = nacc_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0X0
+    ITEM_INDEX   = 68
+    ITEM_PARENT  = 0
+    ITEM_DESC    = indicates whether support Network Assisted Cell Change or not
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = channel_type_flag
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 69
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0: full rate noly 1: dual rate,and set with half rate version is must
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = half_rate_prefer_flag
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 70
+    ITEM_PARENT  = 0
+    ITEM_DESC    = TRUE: prefer half rate in dual rate; FALSE: prefer full rate
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = full_rate_v1_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 71
+    ITEM_PARENT  = 0
+    ITEM_DESC    = GSM full rate speech version 1,FS is must
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = full_rate_v2_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 72
+    ITEM_PARENT  = 0
+    ITEM_DESC    = GSM full rate speech version 2,EFS
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = full_rate_v3_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 73
+    ITEM_PARENT  = 0
+    ITEM_DESC    = GSM full rate speech version 3,AFS
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = half_rate_v1_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 74
+    ITEM_PARENT  = 0
+    ITEM_DESC    = GSM half rate speech version 1,HS ,set with channel_type_flag is must
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = half_rate_v3_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 75
+    ITEM_PARENT  = 0
+    ITEM_DESC    = GSM half rate speech version 3,AHS, set with channel_type_flag is must
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = data_12k_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 76
+    ITEM_PARENT  = 0
+    ITEM_DESC    = GSM circuit data transfer,not supported
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = data_6k_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 77
+    ITEM_PARENT  = 0
+    ITEM_DESC    = GSM circuit data transfer,not supported
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = data_3k_supported
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 78
+    ITEM_PARENT  = 0
+    ITEM_DESC    = GSM circuit data transfer,not supported
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = rf_sensitivity
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x2
+    ITEM_INDEX   = 79
+    ITEM_PARENT  = 0
+    ITEM_DESC    = RF ref power level,used to filter ARFCN in power sweep result
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ms_class
+    ITEM_ID      = 3
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 80
+    ITEM_PARENT  = 0
+    ITEM_DESC    = indicates the mode of operation:Class-A,Class-B,Class-CG,Class-CC
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_type
+    ITEM_ID      = 3
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 81
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 0 means mobile, 1 means module
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name
+    ITEM_ID      = 3
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 40
+    ITEM_LENGTH  = 124
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 82
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[0]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x56
+    ITEM_INDEX   = 83
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[1]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x31
+    ITEM_INDEX   = 84
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[2]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x2E
+    ITEM_INDEX   = 85
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[3]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x30
+    ITEM_INDEX   = 86
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[4]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x2E
+    ITEM_INDEX   = 87
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[5]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x31
+    ITEM_INDEX   = 88
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[6]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x2D
+    ITEM_INDEX   = 89
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[7]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x42
+    ITEM_INDEX   = 90
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[8]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x37
+    ITEM_INDEX   = 91
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[9]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 92
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[10]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 93
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[11]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 94
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[12]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 95
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[13]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 96
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[14]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 97
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[15]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 98
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[16]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 99
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[17]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 100
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[18]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 101
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[19]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 102
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[20]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 103
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[21]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 104
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[22]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 105
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[23]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 106
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[24]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 107
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[25]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 108
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[26]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 109
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[27]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 110
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[28]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 111
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[29]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 112
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[30]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 113
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[31]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 114
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[32]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 115
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[33]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 116
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[34]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 117
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[35]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 118
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[36]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 119
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[37]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 120
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[38]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 121
+    ITEM_PARENT  = 82
+    ITEM_DESC    = 1 means Cancel the 1st Powersweep
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = model_name[39]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 122
+    ITEM_PARENT  = 82
+    ITEM_DESC    = GPRS TBF Mask. BIT0 SIM1, BIT1 SIM2, BIT2 SIM2, BIT3 SIM3.
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name
+    ITEM_ID      = 3
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 40
+    ITEM_LENGTH  = 164
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 123
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[0]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x53
+    ITEM_INDEX   = 124
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[1]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x70
+    ITEM_INDEX   = 125
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[2]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x72
+    ITEM_INDEX   = 126
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[3]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x65
+    ITEM_INDEX   = 127
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[4]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x61
+    ITEM_INDEX   = 128
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[5]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x64
+    ITEM_INDEX   = 129
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[6]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x74
+    ITEM_INDEX   = 130
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[7]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x72
+    ITEM_INDEX   = 131
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[8]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x75
+    ITEM_INDEX   = 132
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[9]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x6D
+    ITEM_INDEX   = 133
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[10]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x20
+    ITEM_INDEX   = 134
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[11]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x43
+    ITEM_INDEX   = 135
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[12]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x6F
+    ITEM_INDEX   = 136
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[13]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x6D
+    ITEM_INDEX   = 137
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[14]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x6D
+    ITEM_INDEX   = 138
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[15]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x75
+    ITEM_INDEX   = 139
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[16]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x6E
+    ITEM_INDEX   = 140
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[17]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x69
+    ITEM_INDEX   = 141
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[18]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x63
+    ITEM_INDEX   = 142
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[19]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x61
+    ITEM_INDEX   = 143
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[20]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x74
+    ITEM_INDEX   = 144
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[21]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x69
+    ITEM_INDEX   = 145
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[22]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x6F
+    ITEM_INDEX   = 146
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[23]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x6E
+    ITEM_INDEX   = 147
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[24]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x20
+    ITEM_INDEX   = 148
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[25]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x43
+    ITEM_INDEX   = 149
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[26]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x4F
+    ITEM_INDEX   = 150
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[27]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x2E
+    ITEM_INDEX   = 151
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[28]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 152
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[29]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 153
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[30]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 154
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[31]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 155
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[32]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 156
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[33]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 157
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[34]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 158
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[35]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 159
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[36]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 160
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[37]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 161
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[38]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 162
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = manufaturer_name[39]
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 163
+    ITEM_PARENT  = 123
+    ITEM_DESC    = 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gmm_readytimer_flag
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 164
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1:requested READY timer included, 0: requested READY timer not included
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = gmm_readytimer_value
+    ITEM_ID      = 3
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 44
+    ITEM_INDEX   = 165
+    ITEM_PARENT  = 0
+    ITEM_DESC    = requested READY timer in second unit, is even number from 0-11160 and 65535 indicate READY timer is deactivated, the default is 44s.
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = band_filter_on
+    ITEM_ID      = 3
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_LENGTH  = 1
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 166
+    ITEM_PARENT  = 0
+    ITEM_DESC    = 1:support band filter, 0: not support
+  END_ITEM
+  
+  BEGIN_ITEM
+    ITEM_NAME    = start_arfcn
+    ITEM_ID      = 3
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x3E8
+    ITEM_INDEX   = 167
+    ITEM_PARENT  = 0
+    ITEM_DESC    = band filter start arfcn
+  END_ITEM
+  
+  BEGIN_ITEM
+    ITEM_NAME    = end_arfcn
+    ITEM_ID      = 3
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_LENGTH  = 2
+    ITEM_CONTENT = 0x3FB
+    ITEM_INDEX   = 168
+    ITEM_PARENT  = 0
+    ITEM_DESC    = band filter end arfcn
+  END_ITEM
+
+# End Module Item
+
+################################################################################

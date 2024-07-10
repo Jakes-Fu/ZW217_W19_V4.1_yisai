@@ -1,0 +1,439 @@
+//////////////////////////////////////////////////////
+// LTE L3 AS 消息数据结构定义
+// 作者：谭红云
+// 日期：2016-08-08
+// 版本：V0.0.1
+// 版权：CopyRight (c) 2016 BY RDA
+/////////////////////////////////////////////////////
+
+
+// 下行消息定义
+// channelType=0x80
+<0x8000 MasterInformationBlock>
+
+</0x8000 MasterInformationBlock>
+
+
+
+// channelType=0x81
+<0x8100 systemInformationBlockType1>
+
+</0x8100 systemInformationBlockType1>
+
+
+<0x8101 sib2>
+
+</0x8101 sib2>
+
+
+<0x8102 sib3>
+
+</0x8102 sib3>
+
+
+<0x8103 sib4>
+
+</0x8103 sib4>
+
+
+<0x8104 sib5>
+
+</0x8104 sib5>
+
+
+<0x8105 sib6>
+
+</0x8105 sib6>
+
+
+<0x8106 sib7>
+
+</0x8106 sib7>
+
+
+
+<0x8107 sib8>
+
+</0x8107 sib8>
+
+
+
+<0x8108 sib9>
+
+</0x8108 sib9>
+
+
+
+<0x8109 sib10>
+
+</0x8109 sib10>
+
+
+
+<0x810A sib11>
+
+</0x810A sib11>
+
+
+
+<0x810B sib12>
+
+</0x810B sib12>
+
+
+
+<0x810C sib13>
+
+</0x810C sib13>
+
+
+
+<0x810D sib14>
+
+</0x810D sib14>
+
+
+
+<0x810E sib15>
+
+</0x810E sib15>
+
+
+
+<0x810F sib16>
+
+</0x810F sib16>
+
+
+
+<0x8110 sib17>
+
+</0x8110 sib17>
+
+
+
+<0x8111 sib18>
+
+</0x8111 sib18>
+
+
+
+<0x8112 sib19>
+
+</0x8112 sib19>
+
+
+
+<0x8113 sib20>
+
+</0x8113 sib20>
+
+
+
+
+// channelType=0x82
+<0x8200 paging>
+
+</0x8200 paging>
+
+
+
+// channelType=0x83
+<0x8301 rrcConnectionReestablishment>
+
+</0x8301 rrcConnectionReestablishment>
+
+
+<0x8302 rrcConnectionReestablishmentReject>
+
+</0x8302 rrcConnectionReestablishmentReject>
+
+
+<0x8303 rrcConnectionReject>
+
+</0x8303 rrcConnectionReject>
+
+
+<0x8304 rrcConnectionSetup>
+
+</0x8304 rrcConnectionSetup>
+
+
+<0x8305 RRCConnectionResume>
+
+</0x8305 RRCConnectionResume>
+
+
+
+// channelType=0x84
+<0x8401 csfbParametersResponseCDMA2000>
+
+</0x8401 csfbParametersResponseCDMA2000>
+
+
+
+<0x8402 dlInfomationTransfer>
+
+</0x8402 dlInfomationTransfer>
+
+
+
+<0x8403 handoverFromEUTRAPreparationRequest>
+
+</0x8403 handoverFromEUTRAPreparationRequest>
+
+
+
+<0x8404 mobilityFromEUTRACommand>
+
+</0x8404 mobilityFromEUTRACommand>
+
+
+
+<0x8405 rrcConnectionReconfiguration>
+
+</0x8405 rrcConnectionReconfiguration>
+
+
+
+<0x8406 rrcConnectionRelease>
+
+</0x8406 rrcConnectionRelease>
+
+
+
+<0x8407 securityModeCommand>
+
+</0x8407 securityModeCommand>
+
+
+
+
+<0x8408 ueCapabilityEnquiry>
+
+</0x8408 ueCapabilityEnquiry>
+
+
+
+<0x8409 counterCheck>
+
+</0x8409 counterCheck>
+
+
+
+<0x840A UEInformationRequest_r9>
+
+</0x840A UEInformationRequest_r9>
+
+
+// 上行消息定义
+// channelType=0x03
+
+<0x0301 rrcConnectionReestablishmentRequest>
+
+</0x0301 rrcConnectionReestablishmentRequest>
+
+
+
+<0x0302 rrcConnectionRequest>
+
+</0x0302 rrcConnectionRequest>
+
+
+<0x0303 RRCConnectionResumeRequest>
+
+</0x0303 RRCConnectionResumeRequest>
+
+
+<0x0304 RRCConnectionResumeComplete>
+
+</0x0304 RRCConnectionResumeComplete>
+
+
+// channelType=0x04
+<0x0401 csfbParametersRequestCDMA2000>
+
+</0x0401 csfbParametersRequestCDMA2000>
+
+
+<0x0402 measurementReport>
+
+</0x0402 measurementReport>
+
+
+
+<0x0403 rrcConnectionReconfigurationComplete>
+
+</0x0403 rrcConnectionReconfigurationComplete>
+
+
+
+<0x0404 rrcConnectionReestablishmentComplete>
+
+</0x0404 rrcConnectionReestablishmentComplete>
+
+
+
+<0x0405 rrcConnectionSetupComplete>
+
+</0x0405 rrcConnectionSetupComplete>
+
+
+<0x0406 securityModeComplete>
+
+</0x0406 securityModeComplete>
+
+
+
+<0x0407 securityModeFailure>
+
+</0x0407 securityModeFailure>
+
+
+
+<0x0408 ueCapabilityInformation>
+
+</0x0408 ueCapabilityInformation>
+
+
+
+<0x0409 ulHandoverPreparationTransfer>
+
+</0x0409 ulHandoverPreparationTransfer>
+
+
+<0x040A ulInformationTransfer>
+
+</0x040A ulInformationTransfer>
+
+
+
+<0x040B counterCheckResponse>
+
+</0x040B counterCheckResponse>
+
+
+<0x040C UEInformationResponse_r9>
+
+</0x040C UEInformationResponse_r9>
+
+
+<0x040D ProximityIndication_r9>
+
+</0x040D ProximityIndication_r9>
+
+
+<0x0b00 ueCapability_RAT_Container>
+
+</0x0b00 ueCapability_RAT_Container>
+
+// LPP消息定义
+// 上行channelType=0x85
+<0x8500 LPP_requestCapabilities>
+
+</0x8500 LPP_requestCapabilities>
+
+<0x8501 LPP_provideCapabilities>
+
+</0x8501 LPP_provideCapabilities>
+
+<0x8502 LPP_requestAssistanceData>
+
+</0x8502 LPP_requestAssistanceData>
+
+<0x8503 LPP_provideAssistanceData>
+
+</0x8503 LPP_provideAssistanceData>
+
+<0x8504 LPP_requestLocationInfomation>
+
+</0x8504 LPP_requestLocationInfomation>
+
+<0x8505 LPP_provideLocationInfomation>
+
+</0x8505 LPP_provideLocationInfomation>
+
+<0x8506 LPP_abort>
+
+</0x8506 LPP_abort>
+
+<0x8507 LPP_error>
+
+</0x8507 LPP_error>
+
+<0x850F LPP_ACK>
+
+</0x850F LPP_ACK>
+
+
+
+// 下行channelType=0x05
+<0x0500 LPP_requestCapabilities>
+
+</0x0500 LPP_requestCapabilities>
+
+<0x0501 LPP_provideCapabilities>
+
+</0x0501 LPP_provideCapabilities>
+
+<0x0502 LPP_requestAssistanceData>
+
+</0x0502 LPP_requestAssistanceData>
+
+<0x0503 LPP_provideAssistanceData>
+
+</0x0503 LPP_provideAssistanceData>
+
+<0x0504 LPP_requestLocationInfomation>
+
+</0x0504 LPP_requestLocationInfomation>
+
+<0x0505 LPP_provideLocationInfomation>
+
+</0x0505 LPP_provideLocationInfomation>
+
+<0x0506 LPP_abort>
+
+</0x0506 LPP_abort>
+
+<0x0507 LPP_error>
+
+</0x0507 LPP_error>
+
+<0x050F LPP_ACK>
+
+</0x050F LPP_ACK>
+
+// 上行 LCS
+<0x0601 LCS_LocNotifyArg>
+
+</0x0601 LCS_LocNotifyArg>
+
+<0x0602 LCS_LocNotifyRes>
+
+</0x0602 LCS_LocNotifyRes>
+
+<0x0603 LCS_MOLRArg>
+
+</0x0603 LCS_MOLRArg>
+
+<0x0604 LCS_MOLRRes>
+
+</0x0604 LCS_MOLRRes>
+
+// 下行 LCS
+<0x8601 LCS_LocNotifyArg>
+
+</0x8601 LCS_LocNotifyArg>
+
+<0x8602 LCS_LocNotifyRes>
+
+</0x8602 LCS_LocNotifyRes>
+
+<0x8603 LCS_MOLRArg>
+
+</0x8603 LCS_MOLRArg>
+
+<0x8604 LCS_MOLRRes>
+
+</0x8604 LCS_MOLRRes>

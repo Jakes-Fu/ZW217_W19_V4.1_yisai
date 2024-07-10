@@ -1,0 +1,21 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Condition: 0, means "="  					-->
+<!--             1, means "<"       		-->
+<!--             2, means "<="       		-->
+<!--             3, means ">"       		-->
+<!--             4, means ">="       		-->
+<!--             5, means "Like"       	-->
+<!--             6, means "UnLike"			-->
+<GraphConfig>
+	<ChartList>
+		<Chart>
+			<ID>DL_RB_Number</ID>
+			<Alias>DL RB Number</Alias>
+			<Addr condition="0" data="0xD5A0"/>
+			<Data condition="5" data="****" />
+			<RGB>0xFF6EB4</RGB>
+			<Description>D5A0(low 8 bit)</Description>
+		</Chart>
+	</ChartList>
+</GraphConfig>

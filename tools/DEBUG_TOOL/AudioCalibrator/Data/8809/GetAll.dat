@@ -1,0 +1,23 @@
+// Audio Codec AT
+atctst_aud_codec_get_tx_gain
+atctst_aud_codec_get_rx_gain
+atctst_aud_codec_get_sidetone_gain
+atctst_aud_codec_get_recorder_gain
+ 
+// Audio Voc AT
+atctst_aud_voc_get_hpf
+atctst_aud_voc_get_fir_tx
+atctst_aud_voc_get_fir_rx
+atctst_aud_voc_get_aec
+atctst_aud_voc_get_speex_tx
+atctst_aud_voc_get_speex_rx
+atctst_aud_voc_get_agc_tx
+atctst_aud_voc_get_agc_rx
+atctst_aud_voc_get_eq
+atctst_aud_voc_get_diggain
+ 
+// Audio Music Play AT
+atctst_aud_mus_get_eq
+atctst_aud_mus_get_drc
+atctst_aud_voc_get_mp3
+ 

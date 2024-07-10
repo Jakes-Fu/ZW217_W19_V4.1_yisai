@@ -1,0 +1,233 @@
+; SciModem.INF - INF file for Spreadtrum USB-to-Modem Device
+; Copyright (C) 2001-2009, Spreadtrum Communication Inc.
+;
+; 2008-06-03 created by anli.wei
+; 2008-08-27 modified baudrate to 921600*2     [anli.wei]
+; 2010-01-07 add 64-bit support                [rocky.liao]
+; 
+;========================================================================
+;  
+;========================================================================
+[Version]
+Signature  = "$WINDOWS NT$"
+Class      = Modem
+ClassGuid  = {4D36E96D-E325-11CE-BFC1-08002BE10318}
+Provider   = %Mfg%
+CatalogFile= SciModem.cat
+DriverVer  = 02/15/2011,1.5.6.1
+
+[Manufacturer]
+%MfgName%=SCI,NTx86,NTamd64
+
+;Windows 2000
+[SCI]
+%DvcDsc%  =ModemX, USB\VID_1782&PID_3d01
+%DvcDsc%  =ModemX, USB\VID_1782&PID_3d00&MI_00
+%DvcDsc%   =ModemX,USB\VID_1782&PID_3d02&MI_01
+
+;Windows XP and later x86
+[SCI.NTx86]
+%DvcDsc%  =ModemX, USB\VID_1782&PID_3d01
+%DvcDsc%  =ModemX, USB\VID_1782&PID_3d00&MI_00
+%DvcDsc%   =ModemX,USB\VID_1782&PID_3d02&MI_01
+
+;Windows XP and later x64
+[SCI.NTamd64]
+%DvcDsc%  =ModemX, USB\VID_1782&PID_3d01
+%DvcDsc%  =ModemX, USB\VID_1782&PID_3d00&MI_00
+%DvcDsc%   =ModemX,USB\VID_1782&PID_3d02&MI_01
+
+[SourceDisksNames]
+1=%Disk1%,,,
+
+;========================================================================
+; SourceDisksFiles
+;========================================================================
+
+[SourceDisksFiles]
+SciModem.sys=1
+
+;========================================================================
+;  DestinationDirs
+;========================================================================
+
+[DestinationDirs]
+SciModem.sys.Files.NT = 12          ; Drivers directory
+
+;========================================================================
+; copy files section flag
+;========================================================================
+
+[SciModem.Sys.Files.NT]
+SciModem.sys
+
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+;========================================================================
+; 
+;========================================================================
+
+[ModemX.NT]
+CopyFiles = SciModem.Sys.Files.NT
+AddReg = All, MfgAddReg, ModemX.AddReg
+
+
+[ModemX.NT.HW]
+AddReg = ModemX.NT.HW.AddReg
+
+[ModemX.NT.HW.AddReg]
+HKR,,"LowerFilters",0x00010000,"SciModem"
+
+
+[ModemX.NT.Services]
+AddService = SciModem, 0x00000000, SciModem_Srv_Inst
+
+
+;========================================================================
+;  Serial Port Driver install sections
+;========================================================================
+
+[SciModem_Srv_Inst]
+DisplayName   = %ModemX.SVCDESC%         
+ServiceType   = 1                ; SERVICE_KERNEL_DRIVER
+StartType     = 3                ; SERVICE_SYSTEM_START (this driver may do detection)
+ErrorControl  = 1                ; SERVICE_ERROR_IGNORE
+ServiceBinary = %12%\SciModem.sys
+
+AddReg=SrvReg.NT
+
+
+[SrvReg.NT]
+HKR,,"IsComposite",0x00010001,0x00000001  ; DWORD value for is composite device
+HKR,,"RxBufSize",0x00010001,0x00001000    ; DWORD value for rx buffer 64,512,1024,2048,4096
+HKR,,"DbgLevel",0x00010001,0x00000005    ; Debug level
+HKR,,"SuspendInterval",0x00010001,0x00000020    ; DWORD value suspend interval, in seconds, 0 means the suspend is disabled
+
+;========================================================================
+; User readable strings
+;========================================================================
+
+[Strings]
+Mfg            = "Spreadtrum"
+Disk1          = "SCI USBModem Driver Diskette"
+MfgName        = "Spreadtrum Communication Inc."
+DvcDsc         = "SCI USBModem"
+ModemX.SVCDESC = "Spreadtrum USB Modem Driver"
+
+
+;========================================================================
+; modem informations
+;========================================================================
+
+[All]
+HKR,,ConfigDialog,0,modemui.dll
+HKR,,EnumPropPages,0,"modemui.dll,EnumPropPages"
+HKR,,PortSubClass,1,02
+HKR,,DeviceType,1,01
+HKR,,Contention,,""
+HKR, Init, 1,, "AT<cr>"
+
+
+[ModemX.AddReg]
+
+HKR,, Properties, 1, 80,01,00,00, 00,00,00,00, 00,00,00,00, 04,00,00,00, 02,00,00,00, 10,01,00,00, 00,20,1C,00, 00,20,1C,00
+; ------------------       |baud rate|                                          |stop| -----------------
+HKR,, DCB, 1, 1C,00,00,00, 00,20,1C,00, 01,00,00,00, 00,00, 0a,00, 0a,00, 08, 00, 00, 11, 13, 00, 00, 00
+
+;//----------------------------------------------------------------------------
+;// modem options
+;//----------------------------------------------------------------------------
+[MfgAddReg]
+HKR, Init, 1,, "AT<cr>"
+HKR, Init, 2,, "ATE0V1<cr>"
+HKR, Monitor, 1,, "ATS0=0<cr>"
+HKR, Monitor, 2,, "None"
+HKR, Answer, 1,, "ATA<cr>"
+HKR, Hangup, 1,, "ATH<cr>"
+HKR,, Reset,, "ATZ<cr>"
+HKR, Settings, DialSuffix,, "" 
+HKR, Settings, Prefix,, "AT"
+HKR, Settings, Terminator,, "<cr>"
+HKR, Settings, DialPrefix,, "D"
+HKR, Settings, Pulse,, "P"
+HKR, Settings, Tone,, "T"
+;HKR, Settings, FlowControl_Off,, "&K0"
+;HKR, Settings, FlowControl_Hard,, "&K3"
+;HKR, Settings, FlowControl_Soft,, "&K4"
+
+
+;HKR, Responses, "<cr>",                        1, 01, 00, 00,00,00,00, 00,00,00,00
+;HKR, Responses, "<lf>",                        1, 01, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>OK<cr><lf>",          1, 00, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>RING<cr><lf>",        1, 08, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>NO CARRIER<cr><lf>",  1, 04, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>ERROR<cr><lf>",       1, 03, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>NO DIALTONE<cr><lf>", 1, 05, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>BUSY<cr><lf>",        1, 06, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>NO ANSWER<cr><lf>",   1, 07, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT<cr><lf>",     1, 02, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "0<cr>",       1, 00, 00, 00,00,00,00, 00,00,00,00 ; OK
+HKR, Responses, "2<cr>",       1, 08, 00, 00,00,00,00, 00,00,00,00 ; RING
+HKR, Responses, "3<cr>",       1, 04, 00, 00,00,00,00, 00,00,00,00 ; NO CARRIER
+HKR, Responses, "4<cr>",       1, 03, 00, 00,00,00,00, 00,00,00,00 ; ERROR
+HKR, Responses, "6<cr>",       1, 05, 00, 00,00,00,00, 00,00,00,00 ; NO DIALTONE
+HKR, Responses, "7<cr>",       1, 06, 00, 00,00,00,00, 00,00,00,00 ; BUSY
+HKR, Responses, "8<cr>",       1, 07, 00, 00,00,00,00, 00,00,00,00 ; NO ANSWER
+HKR, Responses, "OK",          1, 00, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "RING",        1, 08, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "NO CARRIER",  1, 04, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "ERROR",       1, 03, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "NO DIALTONE", 1, 05, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "NO DIAL TONE",1, 05, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "BUSY",        1, 06, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "NO ANSWER",   1, 07, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "FAX",         1, 03, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "DATA",        1, 03, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "VOICE",       1, 03, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "RINGING",     1, 01, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "DELAYED",     1, 03, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "BLACKLISTED", 1, 03, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "+FCERROR",    1, 03, 00, 00,00,00,00, 00,00,00,00
+
+HKR, Responses, "CONNECT",                 1, 02, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "CONNECT/ARQ",             1, 02, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "CONNECT/REL",             1, 02, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "CONNECT/MNP",             1, 02, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "CONNECT/LAP-M",           1, 02, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "CONNECT/V42BIS",          1, 02, 03, 00,00,00,00, 00,00,00,00
+HKR, Responses, "CONNECT/V42b",            1, 02, 03, 00,00,00,00, 00,00,00,00
+;HKR, Responses, "CONNECT 460800",          1, 02, 00, 00,08,07,00, 00,00,00,00
+
+HKR, Responses, "COMPRESSION: CLASS 5",  1, 01, 03, 00,00,00,00, 00,00,00,00
+HKR, Responses, "COMPRESSION: MNP5",     1, 01, 03, 00,00,00,00, 00,00,00,00
+HKR, Responses, "COMPRESSION: V.42BIS",  1, 01, 03, 00,00,00,00, 00,00,00,00
+HKR, Responses, "COMPRESSION: V.42 BIS", 1, 01, 03, 00,00,00,00, 00,00,00,00
+HKR, Responses, "COMPRESSION: ADC",      1, 01, 01, 00,00,00,00, 00,00,00,00
+HKR, Responses, "COMPRESSION: NONE",     1, 01, 00, 00,00,00,00, 00,00,00,00
+
+HKR, Responses, "PROTOCOL: NONE",                   1, 01, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: ERROR-CONTROL/LAPB",     1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: ERROR-CONTROL/LAPB/HDX", 1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: ERROR-CONTROL/LAPB/AFT", 1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: X.25/LAPB",              1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: X.25/LAPB/HDX",          1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: X.25/LAPB/AFT",          1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: LAPM",                   1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: LAP-M",                  1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: LAPM/HDX",               1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: LAP-M/HDX",              1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: LAPM/AFT",               1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: LAP-M/AFT",              1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: ALT",                    1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: ALT-CELLULAR",           1, 01, 0A, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: MNP",                    1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: MNP2",                   1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: MNP3",                   1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: MNP4",                   1, 01, 02, 00,00,00,00, 00,00,00,00
+HKR, Responses, "PROTOCOL: RLP",                    1, 01, 02, 00,00,00,00, 00,00,00,00
+
+HKR, Responses, "AUTOSTREAM: LEVEL 1", 1, 01, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "AUTOSTREAM: LEVEL 2", 1, 01, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "AUTOSTREAM: LEVEL 3", 1, 01, 00, 00,00,00,00, 00,00,00,00

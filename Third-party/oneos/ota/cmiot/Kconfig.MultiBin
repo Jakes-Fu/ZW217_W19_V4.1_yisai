@@ -1,0 +1,354 @@
+config CMIOT_FOTA_FILENAME1
+    string "First file name"
+    default "oneos1.bin"
+
+config CMIOT_FOTA_ADDRESS1
+    hex "First file address base"
+    default 0x8010000
+
+config CMIOT_FOTA_USE_FULL1
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE1
+    bool "More file"
+    default n
+
+if CMIOT_FOTA_FILE_MORE1
+config CMIOT_FOTA_FILENAME2
+    string "Second file name"
+    default "oneos2.bin"
+
+config CMIOT_FOTA_ADDRESS2
+    hex "Second file address base"
+    default 0x8020000
+
+config CMIOT_FOTA_USE_FULL2
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE2
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE2
+config CMIOT_FOTA_FILENAME3
+    string "Third file name"
+    default "oneos3.bin"
+
+config CMIOT_FOTA_ADDRESS3
+    hex "Third file address base"
+    default 0x8030000
+
+config CMIOT_FOTA_USE_FULL3
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE3
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE3
+config CMIOT_FOTA_FILENAME4
+    string "Fourth file name"
+    default "oneos4.bin"
+
+config CMIOT_FOTA_ADDRESS4
+    hex "Fourth file address base"
+    default 0x8040000
+
+config CMIOT_FOTA_USE_FULL4
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE4
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE4
+config CMIOT_FOTA_FILENAME5
+    string "Fifth file name"
+    default "oneos5.bin"
+
+config CMIOT_FOTA_ADDRESS5
+    hex "Fifth file address base"
+    default 0x8050000
+
+config CMIOT_FOTA_USE_FULL5
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE5
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE5
+config CMIOT_FOTA_FILENAME6
+    string "Sixth file name"
+    default "oneos6.bin"
+
+config CMIOT_FOTA_ADDRESS6
+    hex "Sixth file address base"
+    default 0x8060000
+
+config CMIOT_FOTA_USE_FULL6
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE6
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE6
+config CMIOT_FOTA_FILENAME7
+    string "Seventh file name"
+    default "oneos7.bin"
+
+config CMIOT_FOTA_ADDRESS7
+    hex "Seventh file address base"
+    default 0x8070000
+
+config CMIOT_FOTA_USE_FULL7
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE7
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE7
+config CMIOT_FOTA_FILENAME8
+    string "Eighth file name"
+    default "oneos8.bin"
+
+config CMIOT_FOTA_ADDRESS8
+    hex "Eighth file address base"
+    default 0x8080000
+
+config CMIOT_FOTA_USE_FULL8
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE8
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE8
+config CMIOT_FOTA_FILENAME9
+    string "Ninth file name"
+    default "oneos9.bin"
+
+config CMIOT_FOTA_ADDRESS9
+    hex "Ninth file address base"
+    default 0x8090000
+
+config CMIOT_FOTA_USE_FULL9
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE9
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE9
+config CMIOT_FOTA_FILENAME10
+    string "Tenth file name"
+    default "oneos10.bin"
+
+config CMIOT_FOTA_ADDRESS10
+    hex "Tenth file address base"
+    default 0x80A0000
+
+config CMIOT_FOTA_USE_FULL10
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE10
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE10
+config CMIOT_FOTA_FILENAME11
+    string "Eleventh file name"
+    default "oneos11.bin"
+
+config CMIOT_FOTA_ADDRESS11
+    hex "Eleventh file address base"
+    default 0x8110000
+
+config CMIOT_FOTA_USE_FULL11
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE11
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE11
+config CMIOT_FOTA_FILENAME12
+    string "Twelfth file name"
+    default "oneos12.bin"
+
+config CMIOT_FOTA_ADDRESS12
+    hex "Twelfth file address base"
+    default 0x8120000
+
+config CMIOT_FOTA_USE_FULL12
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE12
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE12
+config CMIOT_FOTA_FILENAME13
+    string "Thirteenth file name"
+    default "oneos13.bin"
+
+config CMIOT_FOTA_ADDRESS13
+    hex "Thirteenth file address base"
+    default 0x8130000
+
+config CMIOT_FOTA_USE_FULL13
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE13
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE13
+config CMIOT_FOTA_FILENAME14
+    string "Fourteenth file name"
+    default "oneos14.bin"
+
+config CMIOT_FOTA_ADDRESS14
+    hex "Fourteenth file address base"
+    default 0x8140000
+
+config CMIOT_FOTA_USE_FULL14
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE14
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE14
+config CMIOT_FOTA_FILENAME15
+    string "Fifteenth file name"
+    default "oneos15.bin"
+
+config CMIOT_FOTA_ADDRESS15
+    hex "Fifteenth file address base"
+    default 0x8150000
+
+config CMIOT_FOTA_USE_FULL15
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE15
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE15
+config CMIOT_FOTA_FILENAME16
+    string "Sixteenth file name"
+    default "oneos16.bin"
+
+config CMIOT_FOTA_ADDRESS16
+    hex "Sixteenth file address base"
+    default 0x8160000
+
+config CMIOT_FOTA_USE_FULL16
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE16
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE16
+config CMIOT_FOTA_FILENAME17
+    string "Seventeenth file name"
+    default "oneos17.bin"
+
+config CMIOT_FOTA_ADDRESS17
+    hex "Seventeenth file address base"
+    default 0x8170000
+
+config CMIOT_FOTA_USE_FULL17
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE17
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE17
+config CMIOT_FOTA_FILENAME18
+    string "Eighteenth file name"
+    default "oneos18.bin"
+
+config CMIOT_FOTA_ADDRESS18
+    hex "Eighteenth file address base"
+    default 0x8180000
+
+config CMIOT_FOTA_USE_FULL18
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE18
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE18
+config CMIOT_FOTA_FILENAME19
+    string "Nineteenth file name"
+    default "oneos19.bin"
+
+config CMIOT_FOTA_ADDRESS19
+    hex "Nineteenth file address base"
+    default 0x8190000
+
+config CMIOT_FOTA_USE_FULL19
+    bool "Use full"
+    default n
+
+config CMIOT_FOTA_FILE_MORE19
+    bool "More file"
+    default n
+endif
+
+if CMIOT_FOTA_FILE_MORE19
+config CMIOT_FOTA_FILENAME20
+    string "Twentieth file name"
+    default "oneos20.bin"
+
+config CMIOT_FOTA_ADDRESS20
+    hex "Twentieth file address base"
+    default 0x81A0000
+
+
+config CMIOT_FOTA_USE_FULL20
+    bool "Use full"
+    default n
+endif

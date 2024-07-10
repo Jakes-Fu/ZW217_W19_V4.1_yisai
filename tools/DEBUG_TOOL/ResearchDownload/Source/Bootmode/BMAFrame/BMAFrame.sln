@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BMAFrame", "BMAFrame.vcproj", "{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Cust Debug|Win32 = Cust Debug|Win32
+		Cust Release|Win32 = Cust Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Debug|Win32.Build.0 = Cust Debug|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Release|Win32.ActiveCfg = Cust Release|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Release|Win32.Build.0 = Cust Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

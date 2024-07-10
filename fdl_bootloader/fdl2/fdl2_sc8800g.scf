@@ -1,0 +1,16 @@
+ROM_LOAD 0x30000000
+{
+     ROM_EXEC  0x30000000
+     {
+          init.o (Init, +First)
+          * (+RO,+RW, +ZI)
+     }
+     INTER_RAM 0x40000000 0x8000
+     {
+          usb_boot.o (+RO)
+          packet.o (+RO,+RW)
+          drv_usb.o (+RW,+ZI,+RO)
+          virtual_com.o (+RO)
+          fdl_crc.o(+RO)
+     }
+}

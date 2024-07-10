@@ -1,0 +1,7 @@
+
+RES_ADD_IMG(STOPWATCH_STOP,"\\MMI_RES_##\\IMAG\\stopwatch_stop.png", IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(STOPWATCH_START,"\\MMI_RES_##\\IMAG\\stopwatch_start.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(STOPWATCH_RESET,"\\MMI_RES_##\\IMAG\\stopwatch_reset.png",IMG_CMP_PNG_ARGB_RLE,0)
+
+
+

@@ -1,0 +1,11 @@
+
+S_SRC := 
+C_SRC += alloc-testing.c \
+		framework.c \
+		test-algorithm.c \
+		test-alloc-testing.c \
+		test-apcp-process.c \
+		test-diagcmd.c \
+		test-main.c \
+    
+   

@@ -1,0 +1,1 @@
+my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime; $year += 1900;$mon += 1;my $datetime = sprintf ('%d%02d%02d', $year,$mon,$mday);print $datetime;

@@ -1,0 +1,42 @@
+{
+    "date": "2021-07-28 19:18",
+    "app_info":
+    [
+        {
+            "id": "UAPLogisticsAPP2021",
+            "app_name": "物流",
+            "version_code": 2,
+            "version_name": "01.01.01",
+            "developer": "unisoc.org",
+            "type": "app",
+            "introduction": "Quick query of logistics information",
+            "icon": "UAPLogisticsAPP2021\\Logistica_shortcut.png",
+            "url":"D:\\server\\apps\\",
+            "size":102400
+        },
+        {
+            "id": "UAPSportVlogAPP2021",
+            "app_name": "运动",
+            "version_code": 2,
+            "version_name": "10.01.00",
+            "developer": "unisoc4.org",
+            "type": "app",
+            "introduction": "Record happy exercise",
+            "icon": "UAPSportVlogAPP2021\\SportVlog_shortcut.png",
+            "url":"D:\\server\\apps\\",
+            "size":102400
+        },
+        {
+            "id": "UAPWeatherAPP2021",
+            "app_name": "天气",
+            "version_code": 1,
+            "version_name": "01.01.01",
+            "developer": "unisoc4.org",
+            "type": "app",
+            "introduction": "Quick query of weather",
+            "icon": "UAPWeatherAPP2021\\Weather_shortcut.png",
+            "url":"D:\\server\\apps\\",
+            "size":102400
+        }
+    ]
+}

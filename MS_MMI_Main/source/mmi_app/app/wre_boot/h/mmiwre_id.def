@@ -1,0 +1,9 @@
+#ifdef WRE_SUPPORT
+    WIN_ID_DEF(MMIWRE_MAIN_MENU_WIN_ID),
+    WIN_ID_DEF(MMISET_SET_WREMGR_WIN_ID),             // WRE 管理
+    WIN_ID_DEF(MMISET_WRE_KERNEL_CHECK_WIN_ID),             // WRE 动画处理
+    WIN_ID_DEF(MMIWRE_WIN_ID_SELECT_SIM),             // WRE SIM 选择
+    WIN_ID_DEF(MMIWRE_OPEN_WAIT_WIN_ID),             // WRE 等待窗口
+    WIN_ID_DEF(MMIWRE_PICTURE_PREVIEW_WIN_ID), //图片显示窗口
+#endif
+

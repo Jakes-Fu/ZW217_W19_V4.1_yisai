@@ -1,0 +1,158 @@
+	#define  LEBAO_FONT_PADDING				(5)
+
+	#define  LEBAO_LEFT_PADDING_			(5)
+	#define  LEBAO_TOP_PADDING_				(5)
+	#define  LEBAO_RIGHT_PADDING_			(5)
+	#define  LEBAO_BOTTOM_PADDING_			(2)
+
+	#define  LEBAO_LIST_HEIGHT				(90)
+	#define  LEBAO_LIST_IMAGE_WIDTH			(80)
+	#define  LEBAO_LIST_IMAGE_HEIGHT		(80)
+	#define  LEBAO_LIST_IMAGE_WIDTH_SAMLL	(20)
+	#define  LEBAO_LIST_ITEM_RIGHT			(LEBAO_SCREEN_WIDTH_MAX - LEBAO_RIGHT_PADDING_)
+	
+//|---------------------------|
+//|  @     text               |
+//|---------------------------|
+//GUIITEM_STYLE_ONE_LINE_ICON_80X80_TEXT_FIXED_HEIGHT_90,
+LOCAL THEMELIST_ITEM_STYLE_T const s_item_style_1_icon_80x80_text_fixed_height_90 =
+{
+	90, 90,
+	{
+		{
+			0,
+			{ LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_, 1,  80 + LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,   90 - 1}, // normal
+			{ LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_, 1,  80 + LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_ ,  90 - 1}, // focus
+			0, 0,
+			0, 0
+		},
+		{
+			0,
+			{ 80 + LEBAO_LEFT_PADDING_ * 2 + LEBAO_ROUND_PADDING_,  0,  LEBAO_LIST_ITEM_RIGHT - LEBAO_RIGHT_PADDING_ - LEBAO_ROUND_PADDING_, 90 - 1 },
+			{ 80 + LEBAO_LEFT_PADDING_ * 2 + LEBAO_ROUND_PADDING_,  0,  LEBAO_LIST_ITEM_RIGHT - LEBAO_RIGHT_PADDING_ - LEBAO_ROUND_PADDING_, 90 - 1 },
+			MMI_LIST_BIG_ITEM_FONT, MMI_LIST_BIG_ITEM_FONT,
+			0, 100
+		},
+		{0},
+		{0},
+		{0},
+		{0},
+	},
+
+	0, MMILIST_INVALID_ITEM_INDEX
+};
+
+//|---------------------------|
+//|  @@     text              |
+//|---------------------------|
+//GUIITEM_STYLE_ONE_LINE_ICON_80X80_TEXT_FIXED_HEIGHT_90,
+LOCAL THEMELIST_ITEM_STYLE_T const s_item_style_2_icon_text_fixed_height_90 =
+{
+	90, 90,
+	{
+		{
+			0,
+			{ LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_, 1,  80 + LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,   90 - 1}, // normal
+			{ LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_, 1,  80 + LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,   90 - 1}, // focus
+			0, 0,
+			0, 0
+		},
+		{
+			0,
+			{ 80 + LEBAO_LEFT_PADDING_ * 2 + LEBAO_ROUND_PADDING_,  0,  LEBAO_LIST_ITEM_RIGHT - LEBAO_RIGHT_PADDING_ - LEBAO_ROUND_PADDING_, 90 - 1 },
+			{ 80 + LEBAO_LEFT_PADDING_ * 2 + LEBAO_ROUND_PADDING_,  0,  LEBAO_LIST_ITEM_RIGHT - LEBAO_RIGHT_PADDING_ - LEBAO_ROUND_PADDING_, 90 - 1 },
+			MMI_LIST_BIG_ITEM_FONT, MMI_LIST_BIG_ITEM_FONT,
+			0, 100
+		},
+		{
+			0,
+			{ LEBAO_LEFT_PADDING_ + 2 + LEBAO_ROUND_PADDING_, 5,  32 + LEBAO_LEFT_PADDING_ + 2 + LEBAO_ROUND_PADDING_,  5 + 16}, // 32px, 16px
+			{ LEBAO_LEFT_PADDING_ + 2 + LEBAO_ROUND_PADDING_, 5,  32 + LEBAO_LEFT_PADDING_ + 2 + LEBAO_ROUND_PADDING_,  5 + 16},
+			0, 0,
+			0, 0
+		},
+		{0},
+		{0},
+		{0},
+	},
+
+	0, MMILIST_INVALID_ITEM_INDEX
+};
+
+//|---------------------------|
+//|        text               |
+//|        text               |
+//|---------------------------|
+//GUIITEM_STYLE_TWO_LINE_TEXT_AND_TEXT_FIXED_HEIGHT_90,
+LOCAL THEMELIST_ITEM_STYLE_T const s_item_style_2_text_text_fixed_height_90 =
+{
+	90, 90,
+	{
+		{
+			0,
+			{ LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,  LEBAO_TOP_PADDING_,  LEBAO_LIST_ITEM_RIGHT - LEBAO_ROUND_PADDING_, 90 / 2 - 1},
+			{ LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,  LEBAO_TOP_PADDING_,  LEBAO_LIST_ITEM_RIGHT - LEBAO_ROUND_PADDING_, 90 / 2 - 1},
+			MMI_DEFAULT_BIG_FONT, MMI_DEFAULT_BIG_FONT,
+			0, 100
+		},
+		{
+			0,
+			{ LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,  90 / 2, LEBAO_LIST_ITEM_RIGHT - LEBAO_ROUND_PADDING_, 90 - LEBAO_BOTTOM_PADDING_},
+			{ LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,  90 / 2, LEBAO_LIST_ITEM_RIGHT - LEBAO_ROUND_PADDING_, 90 - LEBAO_BOTTOM_PADDING_},
+			MMI_DEFAULT_NORMAL_FONT, MMI_DEFAULT_NORMAL_FONT, //SONG_FONT_16
+			0, 100
+		},
+		{0},
+		{0},
+		{0},
+		{0},
+	},
+
+	// Set main_index = 1 to avoid the serious bug of not clearing the background when scrolling text.
+	// Maybe the length of singer's name is no longer than the width of the line
+	1, MMILIST_INVALID_ITEM_INDEX
+};
+
+//|---------------------------|
+//|  @     text               |
+//|        text               |
+//|---------------------------|
+LOCAL THEMELIST_ITEM_STYLE_T const s_item_style_1_icon_20x72_2_text_text_fixed_height_90 =
+{
+	90, 90,
+	{
+		{
+			0,
+			{ LEBAO_ROUND_PADDING_, 1,  20 + LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,  90 - 1}, // normal
+			{ LEBAO_ROUND_PADDING_, 1,  20 + LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,  90 - 1}, // focus
+			0, 0,
+			0, 0
+		},
+		{
+			0,
+			{ 25 + LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,  LEBAO_TOP_PADDING_,  LEBAO_LIST_ITEM_RIGHT - LEBAO_ROUND_PADDING_, 90 / 2 - 1},
+			{ 25 + LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,  LEBAO_TOP_PADDING_,  LEBAO_LIST_ITEM_RIGHT - LEBAO_ROUND_PADDING_, 90 / 2 - 1},
+			MMI_DEFAULT_BIG_FONT, MMI_DEFAULT_BIG_FONT,
+			0, 100
+		},
+		{
+			0,
+			{ 25 + LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,  90 / 2, LEBAO_LIST_ITEM_RIGHT - LEBAO_ROUND_PADDING_, 90 - LEBAO_BOTTOM_PADDING_ - 1},
+			{ 25 + LEBAO_LEFT_PADDING_ + LEBAO_ROUND_PADDING_,  90 / 2, LEBAO_LIST_ITEM_RIGHT - LEBAO_ROUND_PADDING_, 90 - LEBAO_BOTTOM_PADDING_ - 1},
+			MMI_DEFAULT_NORMAL_FONT, MMI_DEFAULT_NORMAL_FONT, //SONG_FONT_16
+			0, 100
+		},
+		{
+			0,
+			{ 25 + LEBAO_ROUND_PADDING_, 88,  LEBAO_LIST_ITEM_RIGHT - LEBAO_ROUND_PADDING_, 89}, //split line
+			{ 25 + LEBAO_ROUND_PADDING_, 88,  LEBAO_LIST_ITEM_RIGHT - LEBAO_ROUND_PADDING_, 89},
+			0, 0,
+			0, 100
+		},
+		{0},
+		{0},
+	},
+
+	1, MMILIST_INVALID_ITEM_INDEX
+};
+	

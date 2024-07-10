@@ -1,0 +1,955 @@
+ Channel9D
+
+ Timestamp is 55017341 (Thu Mar 12 19:06:41 2015)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00010000H .textbss                DATA
+ 0002:00000000 0001d8e6H .text                   CODE
+ 0002:0001d8f0 0000128bH .text$x                 CODE
+ 0003:00000000 00000104H .CRT$XCA                DATA
+ 0003:00000104 00000104H .CRT$XCZ                DATA
+ 0003:00000208 00000104H .CRT$XIA                DATA
+ 0003:0000030c 00000104H .CRT$XIAA               DATA
+ 0003:00000410 00000104H .CRT$XIZ                DATA
+ 0003:00000520 0000492cH .rdata                  DATA
+ 0003:00004e4c 00000164H .rdata$debug            DATA
+ 0003:00004fb0 00000456H .rdata$r                DATA
+ 0003:00005408 00000104H .rtc$IAA                DATA
+ 0003:0000550c 00000104H .rtc$IZZ                DATA
+ 0003:00005610 00000104H .rtc$TAA                DATA
+ 0003:00005714 00000104H .rtc$TZZ                DATA
+ 0003:00005818 00000550H .xdata$x                DATA
+ 0003:00005d70 0000017bH .edata                  DATA
+ 0004:00000000 00000300H .data                   DATA
+ 0004:00000300 000006acH .bss                    DATA
+ 0005:00000000 00000064H .idata$2                DATA
+ 0005:00000064 00000014H .idata$3                DATA
+ 0005:00000078 000003b8H .idata$4                DATA
+ 0005:00000430 000003b8H .idata$5                DATA
+ 0005:000007e8 00000bf2H .idata$6                DATA
+ 0006:00000000 000001c0H .rsrc$01                DATA
+ 0006:000001c0 000007dcH .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base       Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       __except_list              00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0000:00009876       __ldused                   00009876     <absolute>
+ 0000:00009876       __fltused                  00009876     <absolute>
+ 0000:00000000       ___ImageBase               10000000     <linker-defined>
+ 0001:00000000       __enc$textbss$begin        10001000     <linker-defined>
+ 0001:00010000       __enc$textbss$end          10011000     <linker-defined>
+ 0002:00000f80       _DllMain@12                10011f80 f   Channel.obj
+ 0002:00000fc0       ??1ICommChannel@@UAE@XZ    10011fc0 f   Channel.obj
+ 0002:00001000       _CreateChannel             10012000 f   Channel.obj
+ 0002:00001170       _ReleaseChannel            10012170 f   Channel.obj
+ 0002:000011f0       ?GetCurrentModule@@YAPAUHINSTANCE__@@XZ 100121f0 f   StdAfx.obj
+ 0002:00001250       ?GetModuleFilePath@@YAXPAUHINSTANCE__@@PAG@Z 10012250 f   StdAfx.obj
+ 0002:00001340       ?wcsrchr@@YAPAGPAGG@Z      10012340 f i StdAfx.obj
+ 0002:000013a0       ?_tcstrim@@YAPAGPAG@Z      100123a0 f   StdAfx.obj
+ 0002:000015d0       ?SplitStr@@YAHPBGAAV?$vector@PAGV?$allocator@PAG@std@@@std@@G@Z 100125d0 f   StdAfx.obj
+ 0002:00001870       ?wcschr@@YAPAGPAGG@Z       10012870 f i StdAfx.obj
+ 0002:000018d0       ?size@?$vector@PAGV?$allocator@PAG@std@@@std@@QBEIXZ 100128d0 f i StdAfx.obj
+ 0002:00001930       ?push_back@?$vector@PAGV?$allocator@PAG@std@@@std@@QAEXABQAG@Z 10012930 f i StdAfx.obj
+ 0002:00001990       ?clear@?$vector@PAGV?$allocator@PAG@std@@@std@@QAEXXZ 10012990 f i StdAfx.obj
+ 0002:000019f0       ?begin@?$vector@PAGV?$allocator@PAG@std@@@std@@QAEPAPAGXZ 100129f0 f i StdAfx.obj
+ 0002:00001a30       ?end@?$vector@PAGV?$allocator@PAG@std@@@std@@QAEPAPAGXZ 10012a30 f i StdAfx.obj
+ 0002:00001a70       ?insert@?$vector@PAGV?$allocator@PAG@std@@@std@@QAEPAPAGPAPAGABQAG@Z 10012a70 f i StdAfx.obj
+ 0002:00001af0       ?erase@?$vector@PAGV?$allocator@PAG@std@@@std@@QAEPAPAGPAPAG0@Z 10012af0 f i StdAfx.obj
+ 0002:00001b80       ?insert@?$vector@PAGV?$allocator@PAG@std@@@std@@QAEXPAPAGIABQAG@Z 10012b80 f i StdAfx.obj
+ 0002:00001e50       ?_Destroy@?$vector@PAGV?$allocator@PAG@std@@@std@@IAEXPAPAG0@Z 10012e50 f i StdAfx.obj
+ 0002:00001ec0       ?_Ucopy@?$vector@PAGV?$allocator@PAG@std@@@std@@IAEPAPAGPBQAG0PAPAG@Z 10012ec0 f i StdAfx.obj
+ 0002:00001f40       ?_Ufill@?$vector@PAGV?$allocator@PAG@std@@@std@@IAEXPAPAGIABQAG@Z 10012f40 f i StdAfx.obj
+ 0002:00001fc0       ?allocate@?$allocator@PAG@std@@QAEPAPAGIPBX@Z 10012fc0 f i StdAfx.obj
+ 0002:00002010       ?deallocate@?$allocator@PAG@std@@QAEXPAXI@Z 10013010 f i StdAfx.obj
+ 0002:00002060       ?destroy@?$allocator@PAG@std@@QAEXPAPAG@Z 10013060 f i StdAfx.obj
+ 0002:000020b0       ?construct@?$allocator@PAG@std@@QAEXPAPAGABQAG@Z 100130b0 f i StdAfx.obj
+ 0002:00002100       ?copy@std@@YAPAPAGPAPAG00@Z 10013100 f i StdAfx.obj
+ 0002:00002160       ?fill@std@@YAXPAPAG0ABQAG@Z 10013160 f i StdAfx.obj
+ 0002:000021b0       ?copy_backward@std@@YAPAPAGPAPAG00@Z 100131b0 f i StdAfx.obj
+ 0002:00002210       ?_Allocate@std@@YAPAPAGHPAPAG@Z 10013210 f i StdAfx.obj
+ 0002:00002270       ?_Destroy@std@@YAXPAPAG@Z  10013270 f i StdAfx.obj
+ 0002:000022a0       ?_Construct@std@@YAXPAPAGABQAG@Z 100132a0 f i StdAfx.obj
+ 0002:00002310       ??2@YAPAXIPAX@Z            10013310 f i StdAfx.obj
+ 0002:00002340       _dlmalloc                  10013340 f   dlmalloc.obj
+ 0002:00005e70       _dlfree                    10016e70 f   dlmalloc.obj
+ 0002:00007b40       _dlcalloc                  10018b40 f   dlmalloc.obj
+ 0002:00007c10       _dlrealloc                 10018c10 f   dlmalloc.obj
+ 0002:000081d0       _dlmemalign                100191d0 f   dlmalloc.obj
+ 0002:00008600       _dlindependent_calloc      10019600 f   dlmalloc.obj
+ 0002:00008a50       _dlindependent_comalloc    10019a50 f   dlmalloc.obj
+ 0002:00008ab0       _dlvalloc                  10019ab0 f   dlmalloc.obj
+ 0002:00008b20       _dlpvalloc                 10019b20 f   dlmalloc.obj
+ 0002:00008ba0       _dlmalloc_trim             10019ba0 f   dlmalloc.obj
+ 0002:00008c80       _dlmalloc_footprint        10019c80 f   dlmalloc.obj
+ 0002:00008cb0       _dlmalloc_max_footprint    10019cb0 f   dlmalloc.obj
+ 0002:00008ce0       _dlmallinfo                10019ce0 f   dlmalloc.obj
+ 0002:00009050       _dlmalloc_stats            1001a050 f   dlmalloc.obj
+ 0002:00009380       _dlmallopt                 1001a380 f   dlmalloc.obj
+ 0002:000094c0       _dlmalloc_usable_size      1001a4c0 f   dlmalloc.obj
+ 0002:00009540       ??0CFileComm@@QAE@XZ       1001a540 f   FileComm.obj
+ 0002:00009730       ??_GCFileComm@@UAEPAXI@Z   1001a730 f i FileComm.obj
+ 0002:00009730       ??_ECFileComm@@UAEPAXI@Z   1001a730 f i FileComm.obj
+ 0002:000097a0       ??0ICommChannel@@QAE@XZ    1001a7a0 f i FileComm.obj
+ 0002:000097e0       ??1CFileComm@@UAE@XZ       1001a7e0 f   FileComm.obj
+ 0002:00009930       ?InitLog@CFileComm@@UAEHPBGIIPAVISpLog@@0@Z 1001a930 f   FileComm.obj
+ 0002:00009bd0       ?SetReceiver@CFileComm@@UAEHKHPBX@Z 1001abd0 f   FileComm.obj
+ 0002:00009ca0       ?GetReceiver@CFileComm@@UAEXAAKAAHAAPAX@Z 1001aca0 f   FileComm.obj
+ 0002:00009d20       ?Open@CFileComm@@UAEHQAU_CHANNEL_ATTRIBUTE@@@Z 1001ad20 f   FileComm.obj
+ 0002:0000a210       ?Close@CFileComm@@UAEXXZ   1001b210 f   FileComm.obj
+ 0002:0000a380       ?Read@CFileComm@@UAEKPAXKKK@Z 1001b380 f   FileComm.obj
+ 0002:0000a3c0       ?Write@CFileComm@@UAEKPAXKK@Z 1001b3c0 f   FileComm.obj
+ 0002:0000a400       ?Clear@CFileComm@@UAEHXZ   1001b400 f   FileComm.obj
+ 0002:0000a440       ?FreeMem@CFileComm@@UAEXPAX@Z 1001b440 f   FileComm.obj
+ 0002:0000a490       ?GetProperty@CFileComm@@UAEHJKPAX@Z 1001b490 f   FileComm.obj
+ 0002:0000a5d0       ?SetProperty@CFileComm@@UAEHJKPBX@Z 1001b5d0 f   FileComm.obj
+ 0002:0000a7f0       ?GetThreadProc@CFileComm@@CGKPAX@Z 1001b7f0 f   FileComm.obj
+ 0002:0000a840       ?FileWatchProc@CFileComm@@AAGKXZ 1001b840 f   FileComm.obj
+ 0002:0000ae50       ?SendDataToUplevel@CFileComm@@AAEXPBXK@Z 1001be50 f   FileComm.obj
+ 0002:0000b0f0       ?OpenLogFile@CFileComm@@AAEHPAG@Z 1001c0f0 f   FileComm.obj
+ 0002:0000b460       ?CloseLogFile@CFileComm@@AAEXXZ 1001c460 f   FileComm.obj
+ 0002:0000b4d0       ?GetAppPath@CFileComm@@AAEHPAGK@Z 1001c4d0 f   FileComm.obj
+ 0002:0000b5b0       ?StartFileWatch@CFileComm@@AAEHPAX@Z 1001c5b0 f   FileComm.obj
+ 0002:0000b790       ?StopFileWatch@CFileComm@@AAEXXZ 1001c790 f   FileComm.obj
+ 0002:0000b870       ?LoadConfig@CFileComm@@AAEHXZ 1001c870 f   FileComm.obj
+ 0002:0000ba80       ?_Read@CFileComm@@AAEKPAXK@Z 1001ca80 f   FileComm.obj
+ 0002:0000bca0       ?InitFiles@CFileComm@@AAEHPAG@Z 1001cca0 f   FileComm.obj
+ 0002:0000bd20       ?ClearFiles@CFileComm@@AAEXXZ 1001cd20 f   FileComm.obj
+ 0002:0000bdd0       ??0?$vector@PAGV?$allocator@PAG@std@@@std@@QAE@ABV?$allocator@PAG@1@@Z 1001cdd0 f i FileComm.obj
+ 0002:0000be40       ??1?$vector@PAGV?$allocator@PAG@std@@@std@@QAE@XZ 1001ce40 f i FileComm.obj
+ 0002:0000bef0       ??A?$vector@PAGV?$allocator@PAG@std@@@std@@QAEAAPAGI@Z 1001cef0 f i FileComm.obj
+ 0002:0000bf40       ??0CMemoryMgr@@QAE@XZ      1001cf40 f   MemoryMgr.obj
+ 0002:0000bfb0       ??_GCMemoryMgr@@UAEPAXI@Z  1001cfb0 f i MemoryMgr.obj
+ 0002:0000bfb0       ??_ECMemoryMgr@@UAEPAXI@Z  1001cfb0 f i MemoryMgr.obj
+ 0002:0000c020       ??1CMemoryMgr@@UAE@XZ      1001d020 f   MemoryMgr.obj
+ 0002:0000c080       ?Init@CMemoryMgr@@QAEHHKK@Z 1001d080 f   MemoryMgr.obj
+ 0002:0000c0e0       ?GetMemory@CMemoryMgr@@QAEPAXKPAK@Z 1001d0e0 f   MemoryMgr.obj
+ 0002:0000c170       ?FreeMemory@CMemoryMgr@@QAEXPAX@Z 1001d170 f   MemoryMgr.obj
+ 0002:0000c1f0       ?Reset@CMemoryMgr@@QAEXXZ  1001d1f0 f   MemoryMgr.obj
+ 0002:0000c220       ??0CSocketComm@@QAE@XZ     1001d220 f   SocketComm.obj
+ 0002:0000c4d0       ??0_SC_ATTR@CSocketComm@@QAE@XZ 1001d4d0 f i SocketComm.obj
+ 0002:0000c530       ??_GCSocketComm@@UAEPAXI@Z 1001d530 f i SocketComm.obj
+ 0002:0000c530       ??_ECSocketComm@@UAEPAXI@Z 1001d530 f i SocketComm.obj
+ 0002:0000c5a0       ??1CSocketComm@@UAE@XZ     1001d5a0 f   SocketComm.obj
+ 0002:0000c6b0       ?InitLog@CSocketComm@@UAEHPBGIIPAVISpLog@@0@Z 1001d6b0 f   SocketComm.obj
+ 0002:0000c970       ?SetReceiver@CSocketComm@@UAEHKHPBX@Z 1001d970 f   SocketComm.obj
+ 0002:0000ca20       ?GetReceiver@CSocketComm@@UAEXAAKAAHAAPAX@Z 1001da20 f   SocketComm.obj
+ 0002:0000cab0       ?Open@CSocketComm@@UAEHQAU_CHANNEL_ATTRIBUTE@@@Z 1001dab0 f   SocketComm.obj
+ 0002:0000d010       ?Close@CSocketComm@@UAEXXZ 1001e010 f   SocketComm.obj
+ 0002:0000d250       ?Read@CSocketComm@@UAEKPAXKKK@Z 1001e250 f   SocketComm.obj
+ 0002:0000d510       ?_Read@CSocketComm@@AAEKAAU_SC_ATTR@1@PAXK@Z 1001e510 f   SocketComm.obj
+ 0002:0000d960       ?_SyncRead@CSocketComm@@AAEKAAU_SC_ATTR@1@PAXKK@Z 1001e960 f   SocketComm.obj
+ 0002:0000dcd0       ?Write@CSocketComm@@UAEKPAXKK@Z 1001ecd0 f   SocketComm.obj
+ 0002:0000e0c0       ?_Write@CSocketComm@@AAEKAAU_SC_ATTR@1@PAXK@Z 1001f0c0 f   SocketComm.obj
+ 0002:0000e630       ?Clear@CSocketComm@@UAEHXZ 1001f630 f   SocketComm.obj
+ 0002:0000e670       ?FreeMem@CSocketComm@@UAEXPAX@Z 1001f670 f   SocketComm.obj
+ 0002:0000e6d0       ?GetProperty@CSocketComm@@UAEHJKPAX@Z 1001f6d0 f   SocketComm.obj
+ 0002:0000ec10       ?SetProperty@CSocketComm@@UAEHJKPBX@Z 1001fc10 f   SocketComm.obj
+ 0002:0000ed60       ?SendDataToUplevel@CSocketComm@@AAEXPBXK@Z 1001fd60 f   SocketComm.obj
+ 0002:0000f050       ?OpenLogFile@CSocketComm@@AAEHK@Z 10020050 f   SocketComm.obj
+ 0002:0000f340       ?CloseLogFile@CSocketComm@@AAEXXZ 10020340 f   SocketComm.obj
+ 0002:0000f3b0       ?GetAppPath@CSocketComm@@AAEHPAGK@Z 100203b0 f   SocketComm.obj
+ 0002:0000f490       ?LoadConfig@CSocketComm@@AAEHXZ 10020490 f   SocketComm.obj
+ 0002:0000f690       ?CreateEventHandle@CSocketComm@@AAEHXZ 10020690 f   SocketComm.obj
+ 0002:0000f890       ?CloseEventHandle@CSocketComm@@AAEXXZ 10020890 f   SocketComm.obj
+ 0002:0000fa40       ?_Cleanup@CSocketComm@@AAEXXZ 10020a40 f i SocketComm.obj
+ 0002:0000fb20       ?_CloseSocket@CSocketComm@@AAEXAAU_SC_ATTR@1@@Z 10020b20 f i SocketComm.obj
+ 0002:0000fd60       ?CreateServer@CSocketComm@@AAEHKK@Z 10020d60 f   SocketComm.obj
+ 0002:00010140       ?_CloseSocketAndCleanup@CSocketComm@@AAEXAAU_SC_ATTR@1@@Z 10021140 f i SocketComm.obj
+ 0002:000101a0       ?CreateClient@CSocketComm@@AAEHKK@Z 100211a0 f   SocketComm.obj
+ 0002:00010810       ?WS32_CreateThread@CSocketComm@@AAEHXZ 10021810 f   SocketComm.obj
+ 0002:00010950       ?WS32_Thread@CSocketComm@@AAGKXZ 10021950 f   SocketComm.obj
+ 0002:00010a90       ?WS32_GetThreadFunc@CSocketComm@@CGKPAX@Z 10021a90 f   SocketComm.obj
+ 0002:00010ae0       ?WS32_Accept@CSocketComm@@AAEHXZ 10021ae0 f   SocketComm.obj
+ 0002:00010f90       ?WS32_ProcessRead@CSocketComm@@AAEHXZ 10021f90 f   SocketComm.obj
+ 0002:00011810       ?_GetClientIndex@CSocketComm@@AAEHI@Z 10022810 f i SocketComm.obj
+ 0002:000118d0       ?CreateClientBinLogFile@CSocketComm@@AAEHAAU_SC_ATTR@1@@Z 100228d0 f   SocketComm.obj
+ 0002:00011be0       ?GetConnectState@CSocketComm@@AAEHK@Z 10022be0 f   SocketComm.obj
+ 0002:00011c20       ??0?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@QAE@ABV?$allocator@U_SC_ATTR@CSocketComm@@@1@@Z 10022c20 f i SocketComm.obj
+ 0002:00011c90       ??1?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@QAE@XZ 10022c90 f i SocketComm.obj
+ 0002:00011d40       ?begin@?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@QAEPAU_SC_ATTR@CSocketComm@@XZ 10022d40 f i SocketComm.obj
+ 0002:00011d80       ?end@?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@QAEPAU_SC_ATTR@CSocketComm@@XZ 10022d80 f i SocketComm.obj
+ 0002:00011dc0       ?size@?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@QBEIXZ 10022dc0 f i SocketComm.obj
+ 0002:00011e30       ??A?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@QAEAAU_SC_ATTR@CSocketComm@@I@Z 10022e30 f i SocketComm.obj
+ 0002:00011e80       ?push_back@?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@QAEXABU_SC_ATTR@CSocketComm@@@Z 10022e80 f i SocketComm.obj
+ 0002:00011ee0       ?erase@?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@QAEPAU_SC_ATTR@CSocketComm@@PAU34@@Z 10022ee0 f i SocketComm.obj
+ 0002:00011f80       ?clear@?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@QAEXXZ 10022f80 f i SocketComm.obj
+ 0002:00011fe0       ?insert@?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@QAEPAU_SC_ATTR@CSocketComm@@PAU34@ABU34@@Z 10022fe0 f i SocketComm.obj
+ 0002:00012070       ?erase@?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@QAEPAU_SC_ATTR@CSocketComm@@PAU34@0@Z 10023070 f i SocketComm.obj
+ 0002:00012100       ?_Destroy@?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@IAEXPAU_SC_ATTR@CSocketComm@@0@Z 10023100 f i SocketComm.obj
+ 0002:00012170       ?deallocate@?$allocator@U_SC_ATTR@CSocketComm@@@std@@QAEXPAXI@Z 10023170 f i SocketComm.obj
+ 0002:000121c0       ?insert@?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@QAEXPAU_SC_ATTR@CSocketComm@@IABU34@@Z 100231c0 f i SocketComm.obj
+ 0002:000124c0       ?destroy@?$allocator@U_SC_ATTR@CSocketComm@@@std@@QAEXPAU_SC_ATTR@CSocketComm@@@Z 100234c0 f i SocketComm.obj
+ 0002:00012510       ?_Ucopy@?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@IAEPAU_SC_ATTR@CSocketComm@@PBU34@0PAU34@@Z 10023510 f i SocketComm.obj
+ 0002:00012590       ?_Ufill@?$vector@U_SC_ATTR@CSocketComm@@V?$allocator@U_SC_ATTR@CSocketComm@@@std@@@std@@IAEXPAU_SC_ATTR@CSocketComm@@IABU34@@Z 10023590 f i SocketComm.obj
+ 0002:00012610       ?allocate@?$allocator@U_SC_ATTR@CSocketComm@@@std@@QAEPAU_SC_ATTR@CSocketComm@@IPBX@Z 10023610 f i SocketComm.obj
+ 0002:00012660       ?construct@?$allocator@U_SC_ATTR@CSocketComm@@@std@@QAEXPAU_SC_ATTR@CSocketComm@@ABU34@@Z 10023660 f i SocketComm.obj
+ 0002:000126b0       ?find@std@@YAPAU_SC_ATTR@CSocketComm@@PAU23@0ABU23@@Z 100236b0 f i SocketComm.obj
+ 0002:00012720       ??8_SC_ATTR@CSocketComm@@QAE_NABU01@@Z 10023720 f i SocketComm.obj
+ 0002:00012790       ?copy@std@@YAPAU_SC_ATTR@CSocketComm@@PAU23@00@Z 10023790 f i SocketComm.obj
+ 0002:000127f0       ?fill@std@@YAXPAU_SC_ATTR@CSocketComm@@0ABU23@@Z 100237f0 f i SocketComm.obj
+ 0002:00012850       ?copy_backward@std@@YAPAU_SC_ATTR@CSocketComm@@PAU23@00@Z 10023850 f i SocketComm.obj
+ 0002:000128b0       ?_Destroy@std@@YAXPAU_SC_ATTR@CSocketComm@@@Z 100238b0 f i SocketComm.obj
+ 0002:000128e0       ?_Allocate@std@@YAPAU_SC_ATTR@CSocketComm@@HPAU23@@Z 100238e0 f i SocketComm.obj
+ 0002:00012940       ?_Construct@std@@YAXPAU_SC_ATTR@CSocketComm@@ABU23@@Z 10023940 f i SocketComm.obj
+ 0002:000129c0       ??0CSpLog@@QAE@XZ          100239c0 f   SpLog.obj
+ 0002:00012da0       ??1ISpLog@@UAE@XZ          10023da0 f i SpLog.obj
+ 0002:00012de0       ??_EISpLog@@UAEPAXI@Z      10023de0 f i SpLog.obj
+ 0002:00012de0       ??_GISpLog@@UAEPAXI@Z      10023de0 f i SpLog.obj
+ 0002:00012e50       ?Release@CSpLog@@UAEXXZ    10023e50 f i SpLog.obj
+ 0002:00012ed0       ??_GCSpLog@@UAEPAXI@Z      10023ed0 f i SpLog.obj
+ 0002:00012ed0       ??_ECSpLog@@UAEPAXI@Z      10023ed0 f i SpLog.obj
+ 0002:00012f40       ??0ISpLog@@QAE@XZ          10023f40 f i SpLog.obj
+ 0002:00012f80       ??1CSpLog@@UAE@XZ          10023f80 f   SpLog.obj
+ 0002:00013090       ?Open@CSpLog@@UAEHPBGIII@Z 10024090 f   SpLog.obj
+ 0002:000133b0       ?Close@CSpLog@@UAEHXZ      100243b0 f   SpLog.obj
+ 0002:00013540       ?SetProperty@CSpLog@@UAEHJJPBX@Z 10024540 f   SpLog.obj
+ 0002:00013ab0       ?GetProperty@CSpLog@@UAEHJJPAX@Z 10024ab0 f   SpLog.obj
+ 0002:00013e50       ?WriteLog@CSpLog@@IAEHAAPAXPBGAAIPBXK@Z 10024e50 f   SpLog.obj
+ 0002:00014020       ?LogString@CSpLog@@IAEHPBD@Z 10025020 f   SpLog.obj
+ 0002:000141b0       ?GetLocalTime@CSpLog@@IBEPBDXZ 100251b0 f i SpLog.obj
+ 0002:000142a0       ?WriteConsoleWindow@CSpLog@@IAEXPBXK@Z 100252a0 f   SpLog.obj
+ 0002:00014340       ?LogHexData@CSpLog@@UAEHPBEKI@Z 10025340 f   SpLog.obj
+ 0002:00014400       ?LogRawStrA@CSpLog@@UAEHIPBD@Z 10025400 f   SpLog.obj
+ 0002:000144c0       ?LogRawStrW@CSpLog@@UAEHIPBG@Z 100254c0 f   SpLog.obj
+ 0002:000145f0       ?LogFmtStrA@CSpLog@@UAAHIPBDZZ 100255f0 f   SpLog.obj
+ 0002:00014730       ?LogFmtStrW@CSpLog@@UAAHIPBGZZ 10025730 f   SpLog.obj
+ 0002:000148d0       ?LogBufData@CSpLog@@UAEHIPBEKIPBK@Z 100258d0 f   SpLog.obj
+ 0002:00015040       ?AllocConsoleWindow@CSpLog@@IAEXXZ 10026040 f   SpLog.obj
+ 0002:000151f0       ?CreateMultiDirectory@CSpLog@@IAEHPBG@Z 100261f0 f   SpLog.obj
+ 0002:00015460       ?GetLogExtension@CSpLog@@IAEXPBGPAGH@Z 10026460 f   SpLog.obj
+ 0002:000156c0       ?GetLogFilePath@CSpLog@@IAEXPBGPAGH@Z 100266c0 f   SpLog.obj
+ 0002:00015b20       ?GetBinFilePath@CSpLog@@IAEXPBGPAGH@Z 10026b20 f   SpLog.obj
+ 0002:00015d10       ?GetNextPartLog@CSpLog@@IAEXPBGPAGI@Z 10026d10 f   SpLog.obj
+ 0002:00015eb0       ?OpenFile@CSpLog@@IAEPAXPBG@Z 10026eb0 f   SpLog.obj
+ 0002:00015f90       ??0CFnLog@@QAA@PAVISpLog@@PBD1ZZ 10026f90 f   SpLog.obj
+ 0002:00016170       ??_ECFnLog@@UAEPAXI@Z      10027170 f i SpLog.obj
+ 0002:00016170       ??_GCFnLog@@UAEPAXI@Z      10027170 f i SpLog.obj
+ 0002:000161e0       ??0CFnLog@@QAA@PAVISpLog@@PBG1ZZ 100271e0 f   SpLog.obj
+ 0002:00016420       ??1CFnLog@@UAE@XZ          10027420 f   SpLog.obj
+ 0002:000164c0       ??0CUartComm@@QAE@XZ       100274c0 f   UartComm.obj
+ 0002:00016810       ??_GCUartComm@@UAEPAXI@Z   10027810 f i UartComm.obj
+ 0002:00016810       ??_ECUartComm@@UAEPAXI@Z   10027810 f i UartComm.obj
+ 0002:00016880       ??1CUartComm@@UAE@XZ       10027880 f   UartComm.obj
+ 0002:00016990       ?InitLog@CUartComm@@UAEHPBGIIPAVISpLog@@0@Z 10027990 f   UartComm.obj
+ 0002:00016c50       ?SetReceiver@CUartComm@@UAEHKHPBX@Z 10027c50 f   UartComm.obj
+ 0002:00016d20       ?GetReceiver@CUartComm@@UAEXAAKAAHAAPAX@Z 10027d20 f   UartComm.obj
+ 0002:00016da0       ?Open@CUartComm@@UAEHQAU_CHANNEL_ATTRIBUTE@@@Z 10027da0 f   UartComm.obj
+ 0002:00017380       ?Close@CUartComm@@UAEXXZ   10028380 f   UartComm.obj
+ 0002:00017590       ?Read@CUartComm@@UAEKPAXKKK@Z 10028590 f   UartComm.obj
+ 0002:00017c60       ?_Read@CUartComm@@AAEKPAXK@Z 10028c60 f   UartComm.obj
+ 0002:00017fd0       ?Write@CUartComm@@UAEKPAXKK@Z 10028fd0 f   UartComm.obj
+ 0002:00018370       ?Clear@CUartComm@@UAEHXZ   10029370 f   UartComm.obj
+ 0002:00018560       ?FreeMem@CUartComm@@UAEXPAX@Z 10029560 f   UartComm.obj
+ 0002:000185c0       ?GetProperty@CUartComm@@UAEHJKPAX@Z 100295c0 f   UartComm.obj
+ 0002:00018730       ?SetProperty@CUartComm@@UAEHJKPBX@Z 10029730 f   UartComm.obj
+ 0002:00018a60       ?GetThreadProc@CUartComm@@CGKPAX@Z 10029a60 f   UartComm.obj
+ 0002:00018ab0       ?UartWatchProc@CUartComm@@AAGKXZ 10029ab0 f   UartComm.obj
+ 0002:00019010       ?SendDataToUplevel@CUartComm@@AAEXPBXK@Z 1002a010 f   UartComm.obj
+ 0002:000192e0       ?OpenLogFile@CUartComm@@AAEHK@Z 1002a2e0 f   UartComm.obj
+ 0002:00019600       ?CloseLogFile@CUartComm@@AAEXXZ 1002a600 f   UartComm.obj
+ 0002:00019670       ?GetAppPath@CUartComm@@AAEHPAGK@Z 1002a670 f   UartComm.obj
+ 0002:00019750       ?StartUartWatch@CUartComm@@AAEHPAX@Z 1002a750 f   UartComm.obj
+ 0002:00019a40       ?StopUartWatch@CUartComm@@AAEXXZ 1002aa40 f   UartComm.obj
+ 0002:00019bb0       ?LoadConfig@CUartComm@@AAEHXZ 1002abb0 f   UartComm.obj
+ 0002:0001a000       ?_SetCommState@CUartComm@@AAEHPAXK@Z 1002b000 f   UartComm.obj
+ 0002:0001aa90       ?_SetCommTimeouts@CUartComm@@AAEHPAX@Z 1002ba90 f   UartComm.obj
+ 0002:0001ab60       ?CreateEventHandle@CUartComm@@AAEHXZ 1002bb60 f   UartComm.obj
+ 0002:0001af00       ?CloseEventHandle@CUartComm@@AAEXXZ 1002bf00 f   UartComm.obj
+ 0002:0001b050       ?NotifyWndProc@@YGJPAUHWND__@@IIJ@Z 1002c050 f   UartComm.obj
+ 0002:0001b250       ?StartDevNtfThread@CUartComm@@AAEXXZ 1002c250 f   UartComm.obj
+ 0002:0001b2d0       ?StopDevNtfThread@CUartComm@@AAEXXZ 1002c2d0 f   UartComm.obj
+ 0002:0001b370       ?GetDevNtfProc@CUartComm@@CGKPAX@Z 1002c370 f   UartComm.obj
+ 0002:0001b3d0       ?DevNtfProc@CUartComm@@AAEXXZ 1002c3d0 f   UartComm.obj
+ 0002:0001b694       _VirtualQuery@12           1002c694 f   kernel32:KERNEL32.dll
+ 0002:0001b69a       _GetModuleFileNameW@12     1002c69a f   kernel32:KERNEL32.dll
+ 0002:0001b6a0       _LeaveCriticalSection@4    1002c6a0 f   kernel32:KERNEL32.dll
+ 0002:0001b6a6       _EnterCriticalSection@4    1002c6a6 f   kernel32:KERNEL32.dll
+ 0002:0001b6ac       _GetTickCount@0            1002c6ac f   kernel32:KERNEL32.dll
+ 0002:0001b6b2       _InitializeCriticalSectionAndSpinCount@8 1002c6b2 f   kernel32:KERNEL32.dll
+ 0002:0001b6b8       _GetSystemInfo@4           1002c6b8 f   kernel32:KERNEL32.dll
+ 0002:0001b6be       _SleepEx@8                 1002c6be f   kernel32:KERNEL32.dll
+ 0002:0001b6c4       _InitializeCriticalSection@4 1002c6c4 f   kernel32:KERNEL32.dll
+ 0002:0001b6ca       _VirtualAlloc@16           1002c6ca f   kernel32:KERNEL32.dll
+ 0002:0001b6d0       _VirtualFree@12            1002c6d0 f   kernel32:KERNEL32.dll
+ 0002:0001b6d6       _CloseHandle@4             1002c6d6 f   kernel32:KERNEL32.dll
+ 0002:0001b6dc       _GetLastError@0            1002c6dc f   kernel32:KERNEL32.dll
+ 0002:0001b6e2       _CreateFileW@28            1002c6e2 f   kernel32:KERNEL32.dll
+ 0002:0001b6e8       _Sleep@4                   1002c6e8 f   kernel32:KERNEL32.dll
+ 0002:0001b6ee       _GetFileSize@8             1002c6ee f   kernel32:KERNEL32.dll
+ 0002:0001b6f4       _GetLocalTime@4            1002c6f4 f   kernel32:KERNEL32.dll
+ 0002:0001b6fa       _SetThreadPriority@8       1002c6fa f   kernel32:KERNEL32.dll
+ 0002:0001b700       _CreateThread@24           1002c700 f   kernel32:KERNEL32.dll
+ 0002:0001b706       _WaitForSingleObject@8     1002c706 f   kernel32:KERNEL32.dll
+ 0002:0001b70c       _GetPrivateProfileIntW@16  1002c70c f   kernel32:KERNEL32.dll
+ 0002:0001b712       _ReadFile@20               1002c712 f   kernel32:KERNEL32.dll
+ 0002:0001b718       _ResetEvent@4              1002c718 f   kernel32:KERNEL32.dll
+ 0002:0001b71e       _SetEvent@4                1002c71e f   kernel32:KERNEL32.dll
+ 0002:0001b724       _CreateEventW@16           1002c724 f   kernel32:KERNEL32.dll
+ 0002:0001b72a       _WaitForMultipleObjects@16 1002c72a f   kernel32:KERNEL32.dll
+ 0002:0001b730       _FreeConsole@0             1002c730 f   kernel32:KERNEL32.dll
+ 0002:0001b736       _FlushFileBuffers@4        1002c736 f   kernel32:KERNEL32.dll
+ 0002:0001b73c       _GetConsoleWindow@0        1002c73c f   kernel32:KERNEL32.dll
+ 0002:0001b742       _GetTempPathW@8            1002c742 f   kernel32:KERNEL32.dll
+ 0002:0001b748       _IsBadWritePtr@8           1002c748 f   kernel32:KERNEL32.dll
+ 0002:0001b74e       _WriteFile@20              1002c74e f   kernel32:KERNEL32.dll
+ 0002:0001b754       _lstrlenA@4                1002c754 f   kernel32:KERNEL32.dll
+ 0002:0001b75a       _WriteConsoleW@20          1002c75a f   kernel32:KERNEL32.dll
+ 0002:0001b760       _WideCharToMultiByte@32    1002c760 f   kernel32:KERNEL32.dll
+ 0002:0001b766       _lstrcatA@8                1002c766 f   kernel32:KERNEL32.dll
+ 0002:0001b76c       _SetConsoleTitleW@4        1002c76c f   kernel32:KERNEL32.dll
+ 0002:0001b772       _SetConsoleWindowInfo@12   1002c772 f   kernel32:KERNEL32.dll
+ 0002:0001b778       _SetConsoleScreenBufferSize@8 1002c778 f   kernel32:KERNEL32.dll
+ 0002:0001b77e       _GetStdHandle@4            1002c77e f   kernel32:KERNEL32.dll
+ 0002:0001b784       _AllocConsole@0            1002c784 f   kernel32:KERNEL32.dll
+ 0002:0001b78a       _CreateDirectoryW@8        1002c78a f   kernel32:KERNEL32.dll
+ 0002:0001b790       _GetFileAttributesW@4      1002c790 f   kernel32:KERNEL32.dll
+ 0002:0001b796       _lstrlenW@4                1002c796 f   kernel32:KERNEL32.dll
+ 0002:0001b79c       _SetFilePointer@16         1002c79c f   kernel32:KERNEL32.dll
+ 0002:0001b7a2       _SetCommMask@8             1002c7a2 f   kernel32:KERNEL32.dll
+ 0002:0001b7a8       _PurgeComm@8               1002c7a8 f   kernel32:KERNEL32.dll
+ 0002:0001b7ae       _GetOverlappedResult@16    1002c7ae f   kernel32:KERNEL32.dll
+ 0002:0001b7b4       _GetCommMask@8             1002c7b4 f   kernel32:KERNEL32.dll
+ 0002:0001b7ba       _WaitCommEvent@12          1002c7ba f   kernel32:KERNEL32.dll
+ 0002:0001b7c0       _ClearCommError@12         1002c7c0 f   kernel32:KERNEL32.dll
+ 0002:0001b7c6       _SetCommState@8            1002c7c6 f   kernel32:KERNEL32.dll
+ 0002:0001b7cc       _GetCommState@8            1002c7cc f   kernel32:KERNEL32.dll
+ 0002:0001b7d2       _SetupComm@12              1002c7d2 f   kernel32:KERNEL32.dll
+ 0002:0001b7d8       _SetCommTimeouts@8         1002c7d8 f   kernel32:KERNEL32.dll
+ 0002:0001b7de       _GetModuleHandleW@4        1002c7de f   kernel32:KERNEL32.dll
+ 0002:0001b7e4       _PostMessageW@16           1002c7e4 f   user32:USER32.dll
+ 0002:0001b7ea       _PostThreadMessageW@16     1002c7ea f   user32:USER32.dll
+ 0002:0001b7f0       _ShowWindow@8              1002c7f0 f   user32:USER32.dll
+ 0002:0001b7f6       _EnableMenuItem@12         1002c7f6 f   user32:USER32.dll
+ 0002:0001b7fc       _GetSystemMenu@8           1002c7fc f   user32:USER32.dll
+ 0002:0001b802       _GetWindowLongW@8          1002c802 f   user32:USER32.dll
+ 0002:0001b808       _UnregisterClassW@8        1002c808 f   user32:USER32.dll
+ 0002:0001b80e       _DispatchMessageW@4        1002c80e f   user32:USER32.dll
+ 0002:0001b814       _TranslateMessage@4        1002c814 f   user32:USER32.dll
+ 0002:0001b81a       _GetMessageW@16            1002c81a f   user32:USER32.dll
+ 0002:0001b820       _SetWindowLongW@12         1002c820 f   user32:USER32.dll
+ 0002:0001b826       _CreateWindowExW@48        1002c826 f   user32:USER32.dll
+ 0002:0001b82c       _RegisterClassExW@4        1002c82c f   user32:USER32.dll
+ 0002:0001b832       __purecall                 1002c832 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b840       ??0type_info@@AAE@ABV0@@Z  1002c840 f   MSVCRTD:ti_inst.obj
+ 0002:0001b870       ??_Etype_info@@UAEPAXI@Z   1002c870 f i MSVCRTD:ti_inst.obj
+ 0002:0001b900       ??4type_info@@AAEAAV0@ABV0@@Z 1002c900 f   MSVCRTD:ti_inst.obj
+ 0002:0001b916       ??2@YAPAXI@Z               1002c916 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b91c       __chkesp                   1002c91c f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b922       _wcscpy                    1002c922 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b928       _wcsrchr                   1002c928 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b92e       _memmove                   1002c92e f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b934       _wcslen                    1002c934 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b93a       ??3@YAXPAX@Z               1002c93a f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b940       _memset                    1002c940 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b946       _wcschr                    1002c946 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b94c       _abort                     1002c94c f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b952       _memcpy                    1002c952 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b958       _fprintf                   1002c958 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b95e       ___CxxFrameHandler         1002c95e f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b970       __assert                   1002c970 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b976       _wcscat                    1002c976 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b97c       __snwprintf                1002c97c f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b982       __snprintf                 1002c982 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b990       __chkstk                   1002c990 f   MSVCRTD:chkstk.obj
+ 0002:0001b990       __alloca_probe             1002c990     MSVCRTD:chkstk.obj
+ 0002:0001b9c6       __vsnprintf                1002c9c6 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b9cc       __vsnwprintf               1002c9cc f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b9d2       _isprint                   1002c9d2 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b9d8       _sprintf                   1002c9d8 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b9de       _wcsncpy                   1002c9de f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b9e4       __wcsicmp                  1002c9e4 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b9ea       __wtol                     1002c9ea f   MSVCRTD:MSVCR90D.dll
+ 0002:0001b9f0       __beginthreadex            1002c9f0 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001baa0       __CRT_INIT@12              1002caa0 f   MSVCRTD:crtdll.obj
+ 0002:0001be70       _NtCurrentTeb              1002ce70 f i MSVCRTD:crtdll.obj
+ 0002:0001be80       __DllMainCRTStartup@12     1002ce80 f   MSVCRTD:crtdll.obj
+ 0002:0001c100       ??_M@YGXPAXIHP6EX0@Z@Z     1002d100 f   MSVCRTD:ehvecdtr.obj
+ 0002:0001c1e0       ?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z 1002d1e0 f   MSVCRTD:ehvecdtr.obj
+ 0002:0001c2ca       __swprintf                 1002d2ca f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c2d0       ___clean_type_info_names   1002d2d0 f   MSVCRTD:tncleanup.obj
+ 0002:0001c2f0       __onexit                   1002d2f0 f   MSVCRTD:atonexit.obj
+ 0002:0001c440       _atexit                    1002d440 f   MSVCRTD:atonexit.obj
+ 0002:0001c470       __RTC_Initialize           1002d470 f   MSVCRTD:_initsect_.obj
+ 0002:0001c4a0       __RTC_Terminate            1002d4a0 f   MSVCRTD:_initsect_.obj
+ 0002:0001c4d0       __encode_pointer           1002d4d0 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c4d6       __malloc_dbg               1002d4d6 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c4dc       __free_dbg                 1002d4dc f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c4e2       __encoded_null             1002d4e2 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c4e8       __decode_pointer           1002d4e8 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c4ee       __CrtSetCheckCount         1002d4ee f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c500       __ValidateImageBase        1002d500 f   MSVCRTD:pesect.obj
+ 0002:0001c580       __FindPESection            1002d580 f   MSVCRTD:pesect.obj
+ 0002:0001c620       __IsNonwritableInCurrentImage 1002d620 f   MSVCRTD:pesect.obj
+ 0002:0001c776       __initterm                 1002d776 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c77c       __initterm_e               1002d77c f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c782       __amsg_exit                1002d782 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c790       ___security_init_cookie    1002d790 f   MSVCRTD:gs_support.obj
+ 0002:0001c8a2       ___CppXcptFilter           1002d8a2 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c8b0       __except_handler4          1002d8b0 f   MSVCRTD:chandler4gs.obj
+ 0002:0001c8e4       ?terminate@@YAXXZ          1002d8e4 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c8ea       ?_type_info_dtor_internal_method@type_info@@QAEXXZ 1002d8ea f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c8ea       ??1type_info@@UAE@XZ       1002d8ea f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c8f0       ___clean_type_info_names_internal 1002d8f0 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c8f6       __unlock                   1002d8f6 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c8fc       ___dllonexit               1002d8fc f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c902       __lock                     1002d902 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c908       __except_handler4_common   1002d908 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001c910       @__security_check_cookie@4 1002d910 f   MSVCRTD:secchk.obj
+ 0002:0001c930       ___report_gsfailure        1002d930 f   MSVCRTD:gs_report.obj
+ 0002:0001ca82       __crt_debugger_hook        1002da82 f   MSVCRTD:MSVCR90D.dll
+ 0002:0001ca88       _PathFindFileNameW@4       1002da88 f   shlwapi:SHLWAPI.dll
+ 0002:0001ca8e       _PathRemoveFileSpecW@4     1002da8e f   shlwapi:SHLWAPI.dll
+ 0002:0001ca94       _PathFindExtensionW@4      1002da94 f   shlwapi:SHLWAPI.dll
+ 0002:0001ca9a       _PathIsRelativeW@4         1002da9a f   shlwapi:SHLWAPI.dll
+ 0002:0001caa0       _WSAStartup@8              1002daa0 f   ws2_32:WS2_32.dll
+ 0002:0001caa6       _WSAGetOverlappedResult@20 1002daa6 f   ws2_32:WS2_32.dll
+ 0002:0001caac       _WSAGetLastError@0         1002daac f   ws2_32:WS2_32.dll
+ 0002:0001cab2       _WSARecv@28                1002dab2 f   ws2_32:WS2_32.dll
+ 0002:0001cab8       _WSAResetEvent@4           1002dab8 f   ws2_32:WS2_32.dll
+ 0002:0001cabe       _recv@16                   1002dabe f   ws2_32:WS2_32.dll
+ 0002:0001cac4       _WSAEventSelect@12         1002dac4 f   ws2_32:WS2_32.dll
+ 0002:0001caca       _WSAWaitForMultipleEvents@20 1002daca f   ws2_32:WS2_32.dll
+ 0002:0001cad0       _WSASend@28                1002dad0 f   ws2_32:WS2_32.dll
+ 0002:0001cad6       _WSACleanup@0              1002dad6 f   ws2_32:WS2_32.dll
+ 0002:0001cadc       _closesocket@4             1002dadc f   ws2_32:WS2_32.dll
+ 0002:0001cae2       _shutdown@8                1002dae2 f   ws2_32:WS2_32.dll
+ 0002:0001cae8       _WSACloseEvent@4           1002dae8 f   ws2_32:WS2_32.dll
+ 0002:0001caee       _WSASetEvent@4             1002daee f   ws2_32:WS2_32.dll
+ 0002:0001caf4       _listen@8                  1002daf4 f   ws2_32:WS2_32.dll
+ 0002:0001cafa       _bind@12                   1002dafa f   ws2_32:WS2_32.dll
+ 0002:0001cb00       _htons@4                   1002db00 f   ws2_32:WS2_32.dll
+ 0002:0001cb06       _WSACreateEvent@0          1002db06 f   ws2_32:WS2_32.dll
+ 0002:0001cb0c       _WSASocketW@24             1002db0c f   ws2_32:WS2_32.dll
+ 0002:0001cb12       _WSAEnumNetworkEvents@12   1002db12 f   ws2_32:WS2_32.dll
+ 0002:0001cb18       _WSAConnect@28             1002db18 f   ws2_32:WS2_32.dll
+ 0002:0001cb1e       _htonl@4                   1002db1e f   ws2_32:WS2_32.dll
+ 0002:0001cb24       _WSAAccept@20              1002db24 f   ws2_32:WS2_32.dll
+ 0002:0001cb2a       _InterlockedExchange@8     1002db2a f   kernel32:KERNEL32.dll
+ 0002:0001cb30       _InterlockedCompareExchange@12 1002db30 f   kernel32:KERNEL32.dll
+ 0002:0001cb36       _QueryPerformanceCounter@4 1002db36 f   kernel32:KERNEL32.dll
+ 0002:0001cb3c       _GetCurrentThreadId@0      1002db3c f   kernel32:KERNEL32.dll
+ 0002:0001cb42       _GetCurrentProcessId@0     1002db42 f   kernel32:KERNEL32.dll
+ 0002:0001cb48       _GetSystemTimeAsFileTime@4 1002db48 f   kernel32:KERNEL32.dll
+ 0002:0001cb4e       _TerminateProcess@8        1002db4e f   kernel32:KERNEL32.dll
+ 0002:0001cb54       _GetCurrentProcess@0       1002db54 f   kernel32:KERNEL32.dll
+ 0002:0001cb5a       _UnhandledExceptionFilter@4 1002db5a f   kernel32:KERNEL32.dll
+ 0002:0001cb60       _SetUnhandledExceptionFilter@4 1002db60 f   kernel32:KERNEL32.dll
+ 0002:0001cb66       _IsDebuggerPresent@0       1002db66 f   kernel32:KERNEL32.dll
+ 0003:00000000       ___xc_a                    10030000     MSVCRTD:cinitexe.obj
+ 0003:00000104       ___xc_z                    10030104     MSVCRTD:cinitexe.obj
+ 0003:00000208       ___xi_a                    10030208     MSVCRTD:cinitexe.obj
+ 0003:00000410       ___xi_z                    10030410     MSVCRTD:cinitexe.obj
+ 0003:00000540       ??_7ICommChannel@@6B@      10030540     Channel.obj
+ 0003:0000057c       ??_C@_0BK@PNLM@in?5use?5bytes?5?5?5?5?5?$DN?5?$CF10lu?6?$AA@ 1003057c     dlmalloc.obj
+ 0003:0000059c       ??_C@_0BK@MAAD@system?5bytes?5?5?5?5?5?$DN?5?$CF10lu?6?$AA@ 1003059c     dlmalloc.obj
+ 0003:000005bc       ??_C@_0BK@NAHM@max?5system?5bytes?5?$DN?5?$CF10lu?6?$AA@ 100305bc     dlmalloc.obj
+ 0003:000005e0       ??_7CFileComm@@6B@         100305e0     FileComm.obj
+ 0003:0000061c       ??_C@_1FI@FGKK@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AAF?$AAi?$AAl?$AAe?$AA?$CI?$AA?$CJ?$AA?5?$AAf?$AAa@ 1003061c     FileComm.obj
+ 0003:00000688       ??_C@_1CA@GHMD@?$AAO?$AAp?$AAe?$AAn?$AA?5?$AAF?$AAi?$AAl?$AAe?$AA?5?$AA?$FL?$AA?$CF?$AAs?$AA?$FN?$AA?4?$AA?$AA@ 10030688     FileComm.obj
+ 0003:000006b0       ??_C@_0BD@ILPI@NULL?5?$CB?$DN?5m_pLogUtil?$AA@ 100306b0     FileComm.obj
+ 0003:000006c8       ??_C@_0FF@JKME@e?3?2work?2workspace?2tools?9main?2tru@ 100306c8     FileComm.obj
+ 0003:00000730       ??_C@_1EG@GBFP@?$AAL?$AAo?$AAa?$AAd?$AA?5?$AAc?$AAo?$AAn?$AAf?$AAi?$AAg?$AAu?$AAr?$AAe?$AA?3?$AA?5?$AAp?$AAa?$AAc?$AAk@ 10030730     FileComm.obj
+ 0003:00000784       ??_C@_1BO@JAHG@?$AAC?$AAl?$AAo?$AAs?$AAe?$AA?5?$AAC?$AAh?$AAa?$AAn?$AAn?$AAe?$AAl?$AA?4?$AA?$AA@ 10030784     FileComm.obj
+ 0003:000007a8       ??_C@_1DO@GLAH@?$AAC?$AAl?$AAo?$AAs?$AAe?$AA?3?$AA?5?$AAC?$AAl?$AAo?$AAs?$AAe?$AAH?$AAa?$AAn?$AAd?$AAl?$AAe?$AA?$CI?$AA?5@ 100307a8     FileComm.obj
+ 0003:000007f4       ??_C@_1GG@LLIL@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAG?$AAe?$AAt?$AAP?$AAr?$AAo?$AAp?$AAe?$AAr?$AAt?$AAy?$AA?$CI?$AA?$CJ?$AA?5?$AAf@ 100307f4     FileComm.obj
+ 0003:00000870       ??_C@_1FK@NOPP@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAG?$AAe?$AAt?$AAP?$AAr?$AAo?$AAp?$AAe?$AAr?$AAt?$AAy?$AA?$CI?$AA?$CJ?$AA?5?$AAf@ 10030870     FileComm.obj
+ 0003:000008dc       ??_C@_1GG@EPB@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAS?$AAe?$AAt?$AAP?$AAr?$AAo?$AAp?$AAe?$AAr?$AAt?$AAy?$AA?$CI?$AA?$CJ?$AA?5?$AAF@ 100308dc     FileComm.obj
+ 0003:00000958       ??_C@_1FI@DDB@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAS?$AAe?$AAt?$AAP?$AAr?$AAo?$AAp?$AAe?$AAr?$AAt?$AAy?$AA?$CI?$AA?5?$AAP?$AAa@ 10030958     FileComm.obj
+ 0003:000009c4       ??_C@_1IE@PDKM@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAS?$AAe?$AAt?$AAP?$AAr?$AAo?$AAp?$AAe?$AAr?$AAt?$AAy?$AA?$CI?$AA?5?$AAP?$AAa@ 100309c4     FileComm.obj
+ 0003:00000a64       ??_C@_1GA@BMOC@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAS?$AAe?$AAt?$AAP?$AAr?$AAo?$AAp?$AAe?$AAr?$AAt?$AAy?$AA?$CI?$AA?$CJ?$AA?5?$AAf@ 10030a64     FileComm.obj
+ 0003:00000ad8       ??_C@_1CK@EPKC@?$AAF?$AAi?$AAl?$AAe?$AAW?$AAa?$AAt?$AAc?$AAh?$AAP?$AAr?$AAo?$AAc?$AA?5?$AAe?$AAn?$AAd?$AA?4?$AA?4?$AA?4@ 10030ad8     FileComm.obj
+ 0003:00000b0c       ??_C@_1CK@FAHP@?$AAU?$AAa?$AAr?$AAt?$AAW?$AAa?$AAt?$AAc?$AAh?$AAP?$AAr?$AAo?$AAc?$AA?5?$AAe?$AAn?$AAd?$AA?4?$AA?4?$AA?4@ 10030b0c     FileComm.obj
+ 0003:00000b40       ??_C@_1DO@NIPK@?$AAm?$AA_?$AAM?$AAe?$AAm?$AAM?$AAg?$AAr?$AA?4?$AAG?$AAe?$AAt?$AAM?$AAe?$AAm?$AAo?$AAr?$AAy?$AA?5?$AAf@ 10030b40     FileComm.obj
+ 0003:00000b8c       ??_C@_1CG@BHIJ@?$AAp?$AAa?$AAc?$AAk?$AA?5?$AAs?$AAi?$AAz?$AAe?$AA?5?$AAi?$AAs?$AA?5?$AAz?$AAe?$AAr?$AAo?$AA?4?$AA?$AA@ 10030b8c     FileComm.obj
+ 0003:00000bbc       ??_C@_1GM@IDP@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AAF?$AAi?$AAl?$AAe?$AA?$CI?$AA?$CJ?$AA?5?$AAf?$AAa@ 10030bbc     FileComm.obj
+ 0003:00000c40       ??_C@_1EI@GMLM@?$AAm?$AA_?$AAb?$AAC?$AAo?$AAn?$AAn?$AAe?$AAc?$AAt?$AAe?$AAd?$AA?3?$AA?5?$AA?$CF?$AAd?$AA?5?$AA?5?$AA?5?$AAm@ 10030c40     FileComm.obj
+ 0003:00000c98       ??_C@_1CO@CAPF@?$AAF?$AAi?$AAl?$AAe?$AAW?$AAa?$AAt?$AAc?$AAh?$AAP?$AAr?$AAo?$AAc?$AA?5?$AAs?$AAt?$AAa?$AAr?$AAt?$AA?4@ 10030c98     FileComm.obj
+ 0003:00000cd0       ??_C@_1EE@OADB@?$AAT?$AAr?$AAy?$AA?5?$AAP?$AAo?$AAs?$AAt?$AAM?$AAe?$AAs?$AAs?$AAa?$AAg?$AAe?$AA?$CI?$AA?$CJ?$AA?5?$AA3?$AA?5@ 10030cd0     FileComm.obj
+ 0003:00000d24       ??_C@_1FK@EADB@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAP?$AAo?$AAs?$AAt?$AAM?$AAe?$AAs?$AAs?$AAa?$AAg?$AAe?$AA?$CI?$AA?$CJ?$AA?5?$AAf@ 10030d24     FileComm.obj
+ 0003:00000d90       ??_C@_1EO@FPLB@?$AAT?$AAr?$AAy?$AA?5?$AAP?$AAo?$AAs?$AAt?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AAM?$AAe?$AAs?$AAs?$AAa?$AAg@ 10030d90     FileComm.obj
+ 0003:00000df0       ??_C@_1GC@PMHI@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAP?$AAo?$AAs?$AAt?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AAM?$AAe?$AAs?$AAs?$AAa@ 10030df0     FileComm.obj
+ 0003:00000e68       ??_C@_1EE@PBIG@?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN?$AA?$DN@ 10030e68     FileComm.obj
+ 0003:00000ebc       ??_C@_1CC@OMKF@?$AAF?$AAi?$AAl?$AAe?$AAC?$AAo?$AAm?$AAm?$AA_?$AAN?$AAA?$AAM?$AAE?$AA_?$AA?$CF?$AAs?$AA?$AA@ 10030ebc     FileComm.obj
+ 0003:00000ee4       ??_C@_1EM@FNBH@?$AAS?$AAt?$AAa?$AAr?$AAt?$AAF?$AAi?$AAl?$AAe?$AAW?$AAa?$AAt?$AAc?$AAh?$AA?3?$AA?5?$AAm?$AA_?$AAb?$AAW@ 10030ee4     FileComm.obj
+ 0003:00000f40       ??_C@_1GA@DLFF@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AA_?$AAb?$AAe?$AAg?$AAi?$AAn?$AAt?$AAh?$AAr?$AAe?$AAa?$AAd?$AAe?$AAx?$AA?$CI@ 10030f40     FileComm.obj
+ 0003:00000fb4       ??_C@_0BG@PBCG@NULL?5?$CB?$DN?5m_hFileThread?$AA@ 10030fb4     FileComm.obj
+ 0003:00000fd0       ??_C@_1EK@LMK@?$AAS?$AAt?$AAa?$AAr?$AAt?$AAF?$AAi?$AAl?$AAe?$AAW?$AAa?$AAt?$AAc?$AAh?$AA?3?$AA?5?$AAm?$AA_?$AAb?$AAW@ 10030fd0     FileComm.obj
+ 0003:00001028       ??_C@_1EK@FLMP@?$AAS?$AAt?$AAo?$AAp?$AAF?$AAi?$AAl?$AAe?$AAW?$AAa?$AAt?$AAc?$AAh?$AA?3?$AA?5?$AAm?$AA_?$AAb?$AAW?$AAa@ 10031028     FileComm.obj
+ 0003:00001080       ??_C@_1BC@CNBO@?$AAP?$AAa?$AAc?$AAk?$AAF?$AAr?$AAe?$AAq?$AA?$AA@ 10031080     FileComm.obj
+ 0003:00001098       ??_C@_1BK@KMEK@?$AAF?$AAi?$AAl?$AAe?$AAS?$AAe?$AAt?$AAt?$AAi?$AAn?$AAg?$AAs?$AA?$AA@ 10031098     FileComm.obj
+ 0003:000010b8       ??_C@_1BC@CGAI@?$AAP?$AAa?$AAc?$AAk?$AAS?$AAi?$AAz?$AAe?$AA?$AA@ 100310b8     FileComm.obj
+ 0003:000010d0       ??_C@_1DA@PNHJ@?$AAF?$AAi?$AAl?$AAe?$AAW?$AAa?$AAt?$AAc?$AAh?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AAP?$AAr?$AAi?$AAo?$AAr@ 100310d0     FileComm.obj
+ 0003:0000110c       ??_C@_1BC@CFHF@?$AAS?$AAe?$AAt?$AAt?$AAi?$AAn?$AAg?$AAs?$AA?$AA@ 1003110c     FileComm.obj
+ 0003:00001124       ??_C@_1BG@HOIH@?$AAU?$AAs?$AAe?$AAM?$AAe?$AAm?$AAp?$AAo?$AAo?$AAl?$AA?$AA@ 10031124     FileComm.obj
+ 0003:00001140       ??_C@_19KJIP@?$AAT?$AAy?$AAp?$AAe?$AA?$AA@ 10031140     FileComm.obj
+ 0003:0000114c       ??_C@_17HOKD@?$AAL?$AAo?$AAg?$AA?$AA@ 1003114c     FileComm.obj
+ 0003:00001158       ??_C@_1M@GPC@?$AAL?$AAe?$AAv?$AAe?$AAl?$AA?$AA@ 10031158     FileComm.obj
+ 0003:00001168       ??_C@_1BK@BNAE@?$AA?2?$AAC?$AAh?$AAa?$AAn?$AAn?$AAe?$AAl?$AA?4?$AAi?$AAn?$AAi?$AA?$AA@ 10031168     FileComm.obj
+ 0003:00001188       ??_C@_1GC@HMMH@?$AA_?$AAR?$AAe?$AAa?$AAd?$AA?5?$AAc?$AAa?$AAl?$AAl?$AA?5?$AAR?$AAe?$AAa?$AAd?$AAF?$AAi?$AAl?$AAe?$AA?$CI@ 10031188     FileComm.obj
+ 0003:00001200       ??_C@_1DC@HFHC@?$AA_?$AAR?$AAe?$AAa?$AAd?$AA?5?$AAr?$AAe?$AAt?$AAu?$AAr?$AAn?$AA?5?$AAd?$AAi?$AAr?$AAe?$AAc?$AAt?$AAl@ 10031200     FileComm.obj
+ 0003:0000123c       ??_C@_0P@EPHD@ulDataSize?5?$DO?50?$AA@ 1003123c     FileComm.obj
+ 0003:00001250       ??_C@_0P@IGOL@lpData?5?$CB?$DN?5NULL?$AA@ 10031250     FileComm.obj
+ 0003:00001268       ??_7CMemoryMgr@@6B@        10031268     MemoryMgr.obj
+ 0003:00001274       ??_7CSocketComm@@6B@       10031274     SocketComm.obj
+ 0003:000012b0       ??_C@_1FC@MKLN@?$AAO?$AAp?$AAe?$AAn?$AA?5?$AAs?$AAo?$AAc?$AAk?$AAe?$AAt?$AA?5?$AA?$FL?$AAp?$AAo?$AAr?$AAt?$AA?3?$AA?5?$AA?$CF@ 100312b0     SocketComm.obj
+ 0003:00001314       ??_C@_1GA@ODKG@?$AAO?$AAp?$AAe?$AAn?$AA?5?$AAs?$AAo?$AAc?$AAk?$AAe?$AAt?$AA?5?$AA?$FL?$AAp?$AAo?$AAr?$AAt?$AA?3?$AA?5?$AA?$CF@ 10031314     SocketComm.obj
+ 0003:00001388       ??_C@_1DK@MJID@?$AAS?$AAo?$AAc?$AAk?$AAe?$AAt?$AA?5?$AAv?$AAe?$AAr?$AAs?$AAi?$AAo?$AAn?$AA?5?$AAi?$AAs?$AA?5?$AAn?$AAo@ 10031388     SocketComm.obj
+ 0003:000013d0       ??_C@_1FA@DGBD@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAS?$AAA?$AAS?$AAt?$AAa?$AAr?$AAt?$AAu?$AAp?$AA?$CI?$AA?$CJ?$AA?5?$AAf?$AAa@ 100313d0     SocketComm.obj
+ 0003:00001430       ??_C@_1DO@BFCN@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AAE?$AAv?$AAe?$AAn?$AAt?$AAH?$AAa?$AAn?$AAd@ 10031430     SocketComm.obj
+ 0003:0000147c       ??_C@_0FH@DGNC@e?3?2work?2workspace?2tools?9main?2tru@ 1003147c     SocketComm.obj
+ 0003:000014e4       ??_C@_1EC@GCG@?$AAR?$AAe?$AAa?$AAd?$AA?$CI?$AA?$CJ?$AA?5?$AAc?$AAl?$AAi?$AAe?$AAn?$AAt?$AA?5?$AAI?$AAD?$AA?5?$AAd?$AAo?$AAe@ 100314e4     SocketComm.obj
+ 0003:00001534       ??_C@_1DM@MKHM@?$AAR?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAs?$AAo?$AAc?$AAk?$AAe?$AAt?$AA?5?$AAi?$AAs?$AA?5?$AAn?$AAo?$AAt?$AA?5@ 10031534     SocketComm.obj
+ 0003:0000157c       ??_C@_1DG@LPLN@?$AAr?$AAe?$AAc?$AAv?$AA?5?$AA?$CF?$AAd?$AA?5?$AAb?$AAy?$AAt?$AAe?$AAs?$AA?5?$AAf?$AAr?$AAo?$AAm?$AA?5?$AA?$FL@ 1003157c     SocketComm.obj
+ 0003:000015bc       ??_C@_1DO@EFLP@?$AAW?$AAS?$AAA?$AAR?$AAe?$AAc?$AAv?$AA?5?$AAo?$AAk?$AA?4?$AA?5?$AA?$FL?$AAd?$AAw?$AAB?$AAy?$AAt?$AAe?$AAs@ 100315bc     SocketComm.obj
+ 0003:00001608       ??_C@_1FI@HOMH@?$AA?$FL?$AA_?$AAR?$AAe?$AAa?$AAd?$AA?$FN?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAS?$AAA?$AAR?$AAe?$AAc?$AAv@ 10031608     SocketComm.obj
+ 0003:00001674       ??_C@_1GG@GECL@?$AA?$FL?$AA_?$AAR?$AAe?$AAa?$AAd?$AA?$FN?$AA?5?$AAW?$AAa?$AAi?$AAt?$AAF?$AAo?$AAr?$AAS?$AAi?$AAn?$AAg?$AAl@ 10031674     SocketComm.obj
+ 0003:000016f0       ??_C@_1EI@NFMG@?$AAW?$AAa?$AAi?$AAt?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AAW?$AAS?$AAA?$AAR?$AAe?$AAc?$AAv?$AA?5?$AAo?$AAp?$AAe@ 100316f0     SocketComm.obj
+ 0003:00001748       ??_C@_1EA@NBOD@?$AAs?$AAy?$AAn?$AAc?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAf?$AAa?$AAi?$AAl?$AA?0?$AA?5?$AA?$FL?$AAE?$AAr?$AAr@ 10031748     SocketComm.obj
+ 0003:00001794       ??_C@_1CG@HJDN@?$AAs?$AAy?$AAn?$AAc?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAt?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?4?$AA?$AA@ 10031794     SocketComm.obj
+ 0003:000017c4       ??_C@_0CC@IMP@lpData?5?$CB?$DN?5NULL?5?$CG?$CG?5ulDataSize?5?$CB?$DN?5@ 100317c4     SocketComm.obj
+ 0003:000017ec       ??_C@_1EO@GICF@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?$CI?$AA?$CJ?$AA?5?$AAc?$AAl?$AAi?$AAe?$AAn?$AAt?$AA?5?$AA?$FL?$AAI?$AAD?$AA?3?$AA?$CF@ 100317ec     SocketComm.obj
+ 0003:0000184c       ??_C@_1DA@IFJP@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?5?$AAt?$AAo?$AA?5?$AAc?$AAl?$AAi?$AAe?$AAn?$AAt?$AA?5?$AA?$FL?$AAI?$AAD?$AA?3@ 1003184c     SocketComm.obj
+ 0003:00001888       ??_C@_1EA@FDII@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAs?$AAo?$AAc?$AAk?$AAe?$AAt?$AA?5?$AAh?$AAa?$AAn?$AAd?$AAl?$AAe@ 10031888     SocketComm.obj
+ 0003:000018d4       ??_C@_1DO@KHOM@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAs?$AAo?$AAc?$AAk?$AAe?$AAt?$AA?5?$AAi?$AAs?$AA?5?$AAn?$AAo?$AAt@ 100318d4     SocketComm.obj
+ 0003:00001920       ??_C@_1EE@LPGJ@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAp?$AAa?$AAr?$AAa?$AAm?$AAe?$AAt?$AAe?$AAr?$AAs?$AA?5?$AAa?$AAr@ 10031920     SocketComm.obj
+ 0003:00001974       ??_C@_1DG@MENB@?$AAs?$AAe?$AAn?$AAd?$AA?5?$AA?$CF?$AAd?$AA?5?$AAb?$AAy?$AAt?$AAe?$AAs?$AA?5?$AAt?$AAo?$AA?5?$AA?$FL?$AAI?$AAD@ 10031974     SocketComm.obj
+ 0003:000019b4       ??_C@_1EM@OKDC@?$AA_?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?5?$AAc?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAS?$AAA?$AAG?$AAe?$AAt?$AAL?$AAa@ 100319b4     SocketComm.obj
+ 0003:00001a10       ??_C@_1II@GOOJ@?$AA_?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?5?$AAc?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAS?$AAA?$AAW?$AAa?$AAi?$AAt?$AAF@ 10031a10     SocketComm.obj
+ 0003:00001ab4       ??_C@_1FM@FOLK@?$AA_?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?5?$AAc?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAS?$AAA?$AAW?$AAa?$AAi?$AAt?$AAF@ 10031ab4     SocketComm.obj
+ 0003:00001b24       ??_C@_1HE@MLFJ@?$AA_?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?5?$AAc?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAS?$AAA?$AAG?$AAe?$AAt?$AAO?$AAv@ 10031b24     SocketComm.obj
+ 0003:00001bb0       ??_C@_1FA@IBEN@?$AA_?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?5?$AAW?$AAa?$AAi?$AAt?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AAs?$AAe?$AAn?$AAd@ 10031bb0     SocketComm.obj
+ 0003:00001c10       ??_C@_1FK@MBGM@?$AA?$FL?$AAI?$AAD?$AA?3?$AA?$CF?$AAd?$AA?$FN?$AA?5?$AAW?$AAS?$AAA?$AAS?$AAe?$AAn?$AAd?$AA?5?$AAi?$AAs?$AA?5?$AAc@ 10031c10     SocketComm.obj
+ 0003:00001c7c       ??_C@_1JC@NFHG@?$AAo?$AAl?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?4?$AAh?$AAE?$AAv?$AAe?$AAn?$AAt?$AA?5?$AAi?$AAs?$AA?5?$AAN?$AAU@ 10031c7c     SocketComm.obj
+ 0003:00001d2c       ??_C@_1HM@KMNK@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAG?$AAe?$AAt?$AAP?$AAr?$AAo?$AAp?$AAe?$AAr?$AAt?$AAy?$AA?$CI?$AA?$CJ?$AA?5?$AAf@ 10031d2c     SocketComm.obj
+ 0003:00001dc0       ??_C@_1FE@BCGO@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAS?$AAe?$AAt?$AAP?$AAr?$AAo?$AAp?$AAe?$AAr?$AAt?$AAy?$AA?$CI?$AA?5?$AAL?$AAo@ 10031dc0     SocketComm.obj
+ 0003:00001e24       ??_C@_1CM@IKBM@?$AAS?$AAo?$AAc?$AAk?$AAe?$AAt?$AAC?$AAo?$AAm?$AAm?$AA_?$AA?$CF?$AAs?$AA_?$AAP?$AAO?$AAR?$AAT?$AA_?$AA?$CF@ 10031e24     SocketComm.obj
+ 0003:00001e58       ??_C@_1O@GBDL@?$AAS?$AAe?$AAr?$AAv?$AAe?$AAr?$AA?$AA@ 10031e58     SocketComm.obj
+ 0003:00001e68       ??_C@_1O@CONJ@?$AAC?$AAl?$AAi?$AAe?$AAn?$AAt?$AA?$AA@ 10031e68     SocketComm.obj
+ 0003:00001e78       ??_C@_1DE@KFIC@?$AAS?$AAo?$AAc?$AAk?$AAe?$AAt?$AAW?$AAa?$AAt?$AAc?$AAh?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AAP?$AAr?$AAi@ 10031e78     SocketComm.obj
+ 0003:00001eb8       ??_C@_1BO@JAAC@?$AAC?$AAo?$AAn?$AAn?$AAe?$AAc?$AAt?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?$AA@ 10031eb8     SocketComm.obj
+ 0003:00001edc       ??_C@_1BG@HMJJ@?$AAM?$AAa?$AAx?$AAR?$AAc?$AAv?$AAS?$AAi?$AAz?$AAe?$AA?$AA@ 10031edc     SocketComm.obj
+ 0003:00001ef8       ??_C@_1FA@EBPC@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAS?$AAA?$AAC?$AAl?$AAe?$AAa?$AAn?$AAu?$AAp?$AA?$CI?$AA?$CJ?$AA?5?$AAf?$AAa@ 10031ef8     SocketComm.obj
+ 0003:00001f58       ??_C@_1EM@EFEH@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAc?$AAl?$AAo?$AAs?$AAe?$AAs?$AAo?$AAc?$AAk?$AAe?$AAt?$AA?$CI?$AA?$CJ?$AA?5?$AAf@ 10031f58     SocketComm.obj
+ 0003:00001fb4       ??_C@_1EE@GFKG@?$AAS?$AAe?$AAr?$AAv?$AAe?$AAr?$AA?5?$AAi?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAa?$AAt?$AAi?$AAo@ 10031fb4     SocketComm.obj
+ 0003:00002008       ??_C@_1EC@JHOP@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAl?$AAi?$AAs?$AAt?$AAe?$AAn?$AA?$CI?$AA?$CJ?$AA?5?$AAf?$AAa?$AAi?$AAl?$AA?4?$AA?5@ 10032008     SocketComm.obj
+ 0003:00002058       ??_C@_1FC@CLDB@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAS?$AAA?$AAE?$AAv?$AAe?$AAn?$AAt?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AA?$CI@ 10032058     SocketComm.obj
+ 0003:000020bc       ??_C@_1DO@HKGH@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAb?$AAi?$AAn?$AAd?$AA?$CI?$AA?$CJ?$AA?5?$AAf?$AAa?$AAi?$AAl?$AA?4?$AA?5?$AA?$FL?$AAE@ 100320bc     SocketComm.obj
+ 0003:00002108       ??_C@_1EC@DAEC@?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AA?5?$AAs?$AAo?$AAc?$AAk?$AAe?$AAt?$AA?5?$AAf?$AAa?$AAi?$AAl?$AA?4?$AA?5@ 10032108     SocketComm.obj
+ 0003:00002158       ??_C@_1EE@KDKN@?$AAC?$AAl?$AAi?$AAe?$AAn?$AAt?$AA?5?$AAi?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAa?$AAt?$AAi?$AAo@ 10032158     SocketComm.obj
+ 0003:000021ac       ??_C@_1FG@FKEB@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAS?$AAA?$AAE?$AAv?$AAe?$AAn?$AAt?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AA?$CI@ 100321ac     SocketComm.obj
+ 0003:00002214       ??_C@_1DO@FAGH@?$AAC?$AAo?$AAn?$AAn?$AAe?$AAc?$AAt?$AA?5?$AAf?$AAa?$AAi?$AAl?$AA?4?$AA?5?$AA?$FL?$AAE?$AAr?$AAr?$AAo?$AAr@ 10032214     SocketComm.obj
+ 0003:00002260       ??_C@_1GG@DKM@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAS?$AAA?$AAE?$AAn?$AAu?$AAm?$AAN?$AAe?$AAt?$AAw?$AAo?$AAr?$AAk?$AAE@ 10032260     SocketComm.obj
+ 0003:000022dc       ??_C@_1EA@EJDL@?$AAw?$AAa?$AAi?$AAt?$AA?5?$AAt?$AAh?$AAe?$AA?5?$AAc?$AAo?$AAn?$AAn?$AAe?$AAc?$AAt?$AA?5?$AAe?$AAv?$AAe@ 100322dc     SocketComm.obj
+ 0003:00002328       ??_C@_1EM@KHBO@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAc?$AAo?$AAn?$AAn?$AAe?$AAc?$AAt?$AA?$CI?$AA?$CJ?$AA?5?$AAf?$AAa?$AAi?$AAl?$AA?4@ 10032328     SocketComm.obj
+ 0003:00002384       ??_C@_1FK@EEED@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAS?$AAA?$AAE?$AAv?$AAe?$AAn?$AAt?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AA?$CI@ 10032384     SocketComm.obj
+ 0003:000023f0       ??_C@_1EK@IGKI@?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AA?5?$AAs?$AAo?$AAc?$AAk?$AAe?$AAt?$AA?5?$AAf?$AAa?$AAi?$AAl?$AA?4?$AA?5@ 100323f0     SocketComm.obj
+ 0003:00002448       ??_C@_1DO@GMFB@?$AAC?$AAl?$AAi?$AAe?$AAn?$AAt?$AA?5?$AAI?$AAP?$AA?$FL?$AA0?$AAx?$AA?$CF?$AAX?$AA?$FN?$AA?5?$AAi?$AAs?$AA?5?$AAi@ 10032448     SocketComm.obj
+ 0003:00002494       ??_C@_1GE@KKNH@?$AAW?$AAS?$AAA?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AAE?$AAv?$AAe?$AAn?$AAt?$AA?5?$AAo?$AAl?$AAA?$AAs?$AAy@ 10032494     SocketComm.obj
+ 0003:0000250c       ??_C@_1GE@EEOJ@?$AAW?$AAS?$AAA?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AAE?$AAv?$AAe?$AAn?$AAt?$AA?5?$AAo?$AAl?$AAS?$AAy?$AAn@ 1003250c     SocketComm.obj
+ 0003:00002584       ??_C@_1FO@GJLG@?$AAW?$AAS?$AAA?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AAE?$AAv?$AAe?$AAn?$AAt?$AA?5?$AAo?$AAl?$AAW?$AAr?$AAi@ 10032584     SocketComm.obj
+ 0003:000025f4       ??_C@_1GO@PGPC@?$AAa?$AAc?$AAc?$AAe?$AAp?$AAt?$AA?5?$AAo?$AAn?$AAe?$AA?5?$AAc?$AAl?$AAi?$AAe?$AAn?$AAt?$AA?5?$AA?$FL?$AAI@ 100325f4     SocketComm.obj
+ 0003:00002678       ??_C@_1EK@JDPG@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAa?$AAc?$AAc?$AAe?$AAp?$AAt?$AA?$CI?$AA?$CJ?$AA?5?$AAf?$AAa?$AAi?$AAl?$AA?4?$AA?5@ 10032678     SocketComm.obj
+ 0003:000026d0       ??_C@_0BN@LIPB@iter?$CB?$DNm_vClientSockets?4end?$CI?$CJ?$AA@ 100326d0     SocketComm.obj
+ 0003:000026f4       ??_C@_1GM@DFPA@?$AAc?$AAl?$AAo?$AAs?$AAe?$AA?5?$AAo?$AAn?$AAe?$AA?5?$AAc?$AAl?$AAi?$AAe?$AAn?$AAt?$AA?5?$AA?$FL?$AAI?$AAD@ 100326f4     SocketComm.obj
+ 0003:00002778       ??_C@_1FE@NHEI@?$AAF?$AAD?$AA_?$AAR?$AAE?$AAA?$AAD?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAf?$AAr?$AAo?$AAm?$AA?5@ 10032778     SocketComm.obj
+ 0003:000027dc       ??_C@_1DA@IMDE@?$AAS?$AAo?$AAc?$AAk?$AAe?$AAt?$AA?5?$AAi?$AAs?$AA?5?$AAd?$AAi?$AAs?$AAc?$AAo?$AAn?$AAn?$AAe?$AAc?$AAt@ 100327dc     SocketComm.obj
+ 0003:00002818       ??_C@_1EK@LOOB@?$AAS?$AAo?$AAc?$AAk?$AAe?$AAt?$AAC?$AAo?$AAm?$AAm?$AA_?$AAS?$AAC?$AA_?$AAI?$AAP?$AA_?$AA?$CF?$AAd?$AA_@ 10032818     SocketComm.obj
+ 0003:00002870       ??_C@_1M@BOOB@?$AA?$CF?$AAs?$AA?2?$AA?$CF?$AAs?$AA?$AA@ 10032870     SpLog.obj
+ 0003:00002884       ??_7CSpLog@@6B@            10032884     SpLog.obj
+ 0003:000028c4       ??_7ISpLog@@6B@            100328c4     SpLog.obj
+ 0003:00002900       ??_C@_15DEDE@?$AA?$CF?$AAs?$AA?$AA@ 10032900     SpLog.obj
+ 0003:00002908       ??_C@_1BC@KMPI@?$AA?$CF?$AAs?$AA?2?$AA?$CF?$AAs?$AA?2?$AA?$CF?$AAs?$AA?$AA@ 10032908     SpLog.obj
+ 0003:00002920       ??_C@_19OLEP@?$AA?4?$AAb?$AAi?$AAn?$AA?$AA@ 10032920     SpLog.obj
+ 0003:0000292c       ??_C@_04PCLE@?$CFs?$AN?6?$AA@ 1003292c     SpLog.obj
+ 0003:00002934       ??_C@_07IIIG@?$CFs?5?$CFs?$AN?6?$AA@ 10032934     SpLog.obj
+ 0003:00002940       ??_C@_0CF@NBEC@?$FL?$CF04d?9?$CF02d?9?$CF02d?5?$CF02d?3?$CF02d?3?$CF02d?3?$CF@ 10032940     SpLog.obj
+ 0003:0000296c       ??_C@_0BD@NCOA@NULL?5?$CB?$DN?5lpszString?$AA@ 1003296c     SpLog.obj
+ 0003:00002984       ??_C@_0FG@LIFE@e?3?2work?2workspace?2tools?9main?2tru@ 10032984     SpLog.obj
+ 0003:000029ec       ??_C@_0BA@KCDC@NULL?5?$CB?$DN?5lpszFmt?$AA@ 100329ec     SpLog.obj
+ 0003:00002a00       ??_C@_07GDGB@?$CFs?$CFs?$DL?$AN?6?$AA@ 10032a00     SpLog.obj
+ 0003:00002a0c       ??_C@_0L@HKFB@?$CFs?$CFs?$DL?5?$CFs?$AN?6?$AA@ 10032a0c     SpLog.obj
+ 0003:00002a1c       ??_C@_03MFGH@?5?5?5?$AA@   10032a1c     SpLog.obj
+ 0003:00002a20       ??_C@_05DLFD@?$CF02X?5?$AA@ 10032a20     SpLog.obj
+ 0003:00002a28       ??_C@_07MAC@?$CF08xh?3?5?$AA@ 10032a28     SpLog.obj
+ 0003:00002a34       ??_C@_0BP@GKON@?$CFs?5?$CFd?$CI0x?$CF08x?$CJ?1?$CFd?$CI0x?$CF08x?$CJ?5Bytes?$AA@ 10032a34     SpLog.obj
+ 0003:00002a5c       ??_C@_03OCLJ@?9?9?9?$AA@   10032a5c     SpLog.obj
+ 0003:00002a60       ??_C@_03ONMG@?$DM?$DM?9?$AA@ 10032a60     SpLog.obj
+ 0003:00002a64       ??_C@_03LEHA@?9?9?$DO?$AA@ 10032a64     SpLog.obj
+ 0003:00002a68       ??_C@_0BE@IFDE@?$CFs?5?$CFd?$CI0x?$CF08x?$CJ?5Bytes?$AA@ 10032a68     SpLog.obj
+ 0003:00002a80       ??_C@_03JBMF@?$DM?9?9?$AA@ 10032a80     SpLog.obj
+ 0003:00002a84       ??_C@_19HKOD@?$AA?4?$AAl?$AAo?$AAg?$AA?$AA@ 10032a84     SpLog.obj
+ 0003:00002a90       ??_C@_0BI@KGID@NULL?5?$CB?$DN?5lpszFileExtName?$AA@ 10032a90     SpLog.obj
+ 0003:00002aac       ??_C@_0BI@MPO@NULL?5?$CB?$DN?5lpszOrgFilePath?$AA@ 10032aac     SpLog.obj
+ 0003:00002ac8       ??_C@_1BA@KBKI@?$AA?$CF?$AAs?$AA?2?$AA?$CF?$AAs?$AA?$CF?$AAs?$AA?$AA@ 10032ac8     SpLog.obj
+ 0003:00002adc       ??_C@_1CO@IOMI@?$AA?$CF?$AAs?$AA?2?$AA?$CF?$AAs?$AA_?$AA?$CF?$AA0?$AA4?$AAd?$AA_?$AA?$CF?$AA0?$AA2?$AAd?$AA_?$AA?$CF?$AA0?$AA2?$AAd@ 10032adc     SpLog.obj
+ 0003:00002b14       ??_C@_1FG@MKMB@?$AA?$CF?$AAs?$AA?2?$AA?$CF?$AAs?$AA_?$AA?$CF?$AA0?$AA4?$AAd?$AA_?$AA?$CF?$AA0?$AA2?$AAd?$AA_?$AA?$CF?$AA0?$AA2?$AAd@ 10032b14     SpLog.obj
+ 0003:00002b7c       ??_C@_0BI@IKII@NULL?5?$CB?$DN?5lpszDstFilePath?$AA@ 10032b7c     SpLog.obj
+ 0003:00002b98       ??_C@_1BG@GKLI@?$AA?$CF?$AAs?$AA?2?$AA?$CF?$AAs?$AA_?$AAW?$AAt?$AA?$CF?$AAs?$AA?$AA@ 10032b98     SpLog.obj
+ 0003:00002bb4       ??_C@_1BG@EIIK@?$AA?$CF?$AAs?$AA?2?$AA?$CF?$AAs?$AA_?$AAR?$AAd?$AA?$CF?$AAs?$AA?$AA@ 10032bb4     SpLog.obj
+ 0003:00002bd0       ??_C@_1BG@PIPO@?$AA?$CF?$AAs?$AA?2?$AA?$CF?$AAs?$AA_?$AA?$CF?$AAd?$AA?$CF?$AAs?$AA?$AA@ 10032bd0     SpLog.obj
+ 0003:00002bec       ??_C@_0O@IPON@Enter?5?$FL?$CFs?$FN?5?$CFs?$AA@ 10032bec     SpLog.obj
+ 0003:00002bfc       ??_C@_0L@IIEB@Enter?5?$FL?$CFs?$FN?$AA@ 10032bfc     SpLog.obj
+ 0003:00002c0c       ??_C@_02DILL@?$CFs?$AA@    10032c0c     SpLog.obj
+ 0003:00002c10       ??_C@_0BD@LGCI@NULL?5?$CB?$DN?5lpszFnName?$AA@ 10032c10     SpLog.obj
+ 0003:00002c2c       ??_7CFnLog@@6B@            10032c2c     SpLog.obj
+ 0003:00002c34       ??_C@_0L@OPPD@Leave?5?$FL?$CFs?$FN?$AA@ 10032c34     SpLog.obj
+ 0003:00002c48       ??_7CUartComm@@6B@         10032c48     UartComm.obj
+ 0003:00002c84       ??_C@_1FM@FFJH@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAS?$AAe?$AAt?$AAC?$AAo?$AAm?$AAm?$AAM?$AAa?$AAs?$AAk?$AA?$CI?$AA?$CJ?$AA?5?$AA?5@ 10032c84     UartComm.obj
+ 0003:00002cf4       ??_C@_1FG@LDBE@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAP?$AAu?$AAr?$AAg?$AAe?$AAC?$AAo?$AAm?$AAm?$AA?$CI?$AA?$CJ?$AA?5?$AAf?$AAa?$AAi@ 10032cf4     UartComm.obj
+ 0003:00002d5c       ??_C@_1BE@KHGB@?$AA?2?$AA?2?$AA?4?$AA?2?$AAC?$AAO?$AAM?$AA?$CF?$AAd?$AA?$AA@ 10032d5c     UartComm.obj
+ 0003:00002d74       ??_C@_1EA@KFOA@?$AAO?$AAp?$AAe?$AAn?$AA?5?$AAu?$AAa?$AAr?$AAt?$AA?5?$AA?$FL?$AAp?$AAo?$AAr?$AAt?$AA?3?$AA?5?$AA?$CF?$AAd?$AA?0@ 10032d74     UartComm.obj
+ 0003:00002dc0       ??_C@_0L@BGKO@dwBaud?5?$DO?50?$AA@ 10032dc0     UartComm.obj
+ 0003:00002dd0       ??_C@_0L@HNPP@dwPort?5?$DO?50?$AA@ 10032dd0     UartComm.obj
+ 0003:00002de0       ??_C@_0FF@OCFM@e?3?2work?2workspace?2tools?9main?2tru@ 10032de0     UartComm.obj
+ 0003:00002e48       ??_C@_1HA@BKDF@?$AAC?$AAl?$AAo?$AAs?$AAe?$AA?3?$AA?5?$AAC?$AAl?$AAo?$AAs?$AAe?$AAH?$AAa?$AAn?$AAd?$AAl?$AAe?$AA?$CI?$AA?5@ 10032e48     UartComm.obj
+ 0003:00002ed0       ??_C@_1DO@OIOF@?$AAC?$AAl?$AAo?$AAs?$AAe?$AA?3?$AA?5?$AAC?$AAl?$AAo?$AAs?$AAe?$AAH?$AAa?$AAn?$AAd?$AAl?$AAe?$AA?$CI?$AA?5@ 10032ed0     UartComm.obj
+ 0003:00002f1c       ??_C@_1EE@CEE@?$AAC?$AAl?$AAo?$AAs?$AAe?$AA?3?$AA?5?$AAS?$AAe?$AAt?$AAC?$AAo?$AAm?$AAm?$AAM?$AAa?$AAs?$AAk?$AA?$CI?$AA?5@ 10032f1c     UartComm.obj
+ 0003:00002f70       ??_C@_1GC@FLJN@?$AAR?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAR?$AAe?$AAa?$AAd?$AAF?$AAi?$AAl?$AAe?$AA?$CI@ 10032f70     UartComm.obj
+ 0003:00002fe8       ??_C@_1HI@GKEN@?$AAR?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAG?$AAe?$AAt?$AAO?$AAv?$AAe?$AAr?$AAl?$AAa@ 10032fe8     UartComm.obj
+ 0003:00003078       ??_C@_1GM@BNIJ@?$AAR?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAa?$AAi?$AAt?$AAC?$AAo?$AAm?$AAm?$AAE@ 10033078     UartComm.obj
+ 0003:000030fc       ??_C@_1MC@FFLD@?$AAR?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAa?$AAi?$AAt?$AAF?$AAo?$AAr?$AAS?$AAi@ 100330fc     UartComm.obj
+ 0003:000031e4       ??_C@_1CO@BNKI@?$AAR?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?3?$AA?5?$AA?$CF?$AAd?$AA?5?$AA?$CI?$AAm@ 100331e4     UartComm.obj
+ 0003:0000321c       ??_C@_1DG@HIIA@?$AAR?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAa?$AAi?$AAt?$AAC?$AAo?$AAm?$AAm?$AAE@ 1003321c     UartComm.obj
+ 0003:0000325c       ??_C@_1GO@OBDD@?$AAR?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAC?$AAl?$AAe?$AAa?$AAr?$AAC?$AAo?$AAm?$AAm@ 1003325c     UartComm.obj
+ 0003:000032e0       ??_C@_1GI@GDAD@?$AAA?$AAu?$AAt?$AAo?$AAR?$AAe?$AAa?$AAd?$AA?5?$AAc?$AAa?$AAl?$AAl?$AA?5?$AAR?$AAe?$AAa?$AAd?$AAF?$AAi@ 100332e0     UartComm.obj
+ 0003:0000335c       ??_C@_1HO@MHOO@?$AAA?$AAu?$AAt?$AAo?$AAR?$AAe?$AAa?$AAd?$AA?5?$AAc?$AAa?$AAl?$AAl?$AA?5?$AAG?$AAe?$AAt?$AAO?$AAv?$AAe@ 1003335c     UartComm.obj
+ 0003:000033f4       ??_C@_1BI@NHO@?$AAR?$AAe?$AAa?$AAd?$AAF?$AAi?$AAl?$AAe?$AA?4?$AA?4?$AA?4?$AA?$AA@ 100333f4     UartComm.obj
+ 0003:00003410       ??_C@_1GG@NLP@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAW?$AAr?$AAi?$AAt?$AAe?$AAF?$AAi?$AAl@ 10033410     UartComm.obj
+ 0003:0000348c       ??_C@_1JM@IGFC@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAG?$AAe?$AAt?$AAO?$AAv?$AAe?$AAr?$AAl@ 1003348c     UartComm.obj
+ 0003:00003548       ??_C@_1HK@LLLB@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAG?$AAe?$AAt?$AAO?$AAv?$AAe?$AAr?$AAl@ 10033548     UartComm.obj
+ 0003:000035dc       ??_C@_1HA@JOEE@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAC?$AAl?$AAe?$AAa?$AAr?$AAC?$AAo?$AAm@ 100335dc     UartComm.obj
+ 0003:00003664       ??_C@_1CM@DAAB@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAC?$AAl?$AAe?$AAa?$AAr?$AAC?$AAo?$AAm?$AAm?$AAE?$AAr?$AAr?$AAo@ 10033664     UartComm.obj
+ 0003:00003698       ??_C@_1DO@KFNP@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAp?$AAa?$AAr?$AAa?$AAm?$AAe?$AAt?$AAe?$AAr?$AAs?$AA?5?$AAa?$AAr@ 10033698     UartComm.obj
+ 0003:000036e4       ??_C@_1CM@PFFE@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAC?$AAl?$AAe?$AAa?$AAr?$AA?$CI?$AA?$CJ?$AA?5?$AAs?$AAu?$AAc?$AAc?$AAe?$AAs?$AAs@ 100336e4     UartComm.obj
+ 0003:00003718       ??_C@_1EO@BBLG@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAC?$AAl?$AAe?$AAa?$AAr?$AA?$CI?$AA?$CJ?$AA?5?$AAf?$AAa?$AAi?$AAl?$AA?0?$AA?5?$AA?$FL@ 10033718     UartComm.obj
+ 0003:00003778       ??_C@_1FE@LMFE@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAS?$AAe?$AAt?$AAP?$AAr?$AAo?$AAp?$AAe?$AAr?$AAt?$AAy?$AA?$CI?$AA?5?$AAL?$AAo@ 10033778     UartComm.obj
+ 0003:000037dc       ??_C@_1FE@LBCA@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAS?$AAe?$AAt?$AAP?$AAr?$AAo?$AAp?$AAe?$AAr?$AAt?$AAy?$AA?$CI?$AA?5?$AAB?$AAa@ 100337dc     UartComm.obj
+ 0003:00003840       ??_C@_1EO@DNDO@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAS?$AAe?$AAt?$AAP?$AAr?$AAo?$AAp?$AAe?$AAr?$AAt?$AAy?$AA?$CI?$AA?5?$AAB?$AAa@ 10033840     UartComm.obj
+ 0003:000038a0       ??_C@_1EI@BPGO@?$AAm?$AA_?$AAb?$AAC?$AAo?$AAn?$AAn?$AAe?$AAc?$AAt?$AAe?$AAd?$AA?3?$AA?5?$AA?$CF?$AAd?$AA?5?$AA?5?$AA?5?$AAm@ 100338a0     UartComm.obj
+ 0003:000038f8       ??_C@_1JE@HBMG@?$AAU?$AAa?$AAr?$AAt?$AAW?$AAa?$AAt?$AAc?$AAh?$AAP?$AAr?$AAo?$AAc?$AA?3?$AA?5?$AAE?$AAV?$AA_?$AAR?$AAX@ 100338f8     UartComm.obj
+ 0003:000039ac       ??_C@_1KA@DFNJ@?$AAU?$AAa?$AAr?$AAt?$AAW?$AAa?$AAt?$AAc?$AAh?$AAP?$AAr?$AAo?$AAc?$AA?3?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5@ 100339ac     UartComm.obj
+ 0003:00003a6c       ??_C@_1EI@DEFL@?$AAU?$AAa?$AAr?$AAt?$AAW?$AAa?$AAt?$AAc?$AAh?$AAP?$AAr?$AAo?$AAc?$AA?3?$AA?5?$AAC?$AAa?$AAl?$AAl?$AA?5@ 10033a6c     UartComm.obj
+ 0003:00003ac4       ??_C@_1FM@CLAE@?$AAU?$AAa?$AAr?$AAt?$AAW?$AAa?$AAt?$AAc?$AAh?$AAP?$AAr?$AAo?$AAc?$AA?3?$AA?5?$AAm?$AA_?$AAM?$AAe?$AAm@ 10033ac4     UartComm.obj
+ 0003:00003b34       ??_C@_1GG@OJCP@?$AAU?$AAa?$AAr?$AAt?$AAW?$AAa?$AAt?$AAc?$AAh?$AAP?$AAr?$AAo?$AAc?$AA?3?$AA?5?$AAm?$AA_?$AAb?$AAC?$AAo@ 10033b34     UartComm.obj
+ 0003:00003bb0       ??_C@_1CO@KIJG@?$AAU?$AAa?$AAr?$AAt?$AAW?$AAa?$AAt?$AAc?$AAh?$AAP?$AAr?$AAo?$AAc?$AA?5?$AAs?$AAt?$AAa?$AAr?$AAt?$AA?4@ 10033bb0     UartComm.obj
+ 0003:00003be8       ??_C@_1CA@CCAB@?$AAU?$AAa?$AAr?$AAt?$AAC?$AAo?$AAm?$AAm?$AA_?$AAC?$AAO?$AAM?$AA_?$AA?$CF?$AAd?$AA?$AA@ 10033be8     UartComm.obj
+ 0003:00003c10       ??_C@_1EM@DEDG@?$AAS?$AAt?$AAa?$AAr?$AAt?$AAU?$AAa?$AAr?$AAt?$AAW?$AAa?$AAt?$AAc?$AAh?$AA?3?$AA?5?$AAm?$AA_?$AAb?$AAW@ 10033c10     UartComm.obj
+ 0003:00003c6c       ??_C@_0BG@DLLA@NULL?5?$CB?$DN?5m_hUartThread?$AA@ 10033c6c     UartComm.obj
+ 0003:00003c88       ??_C@_1EK@LHBJ@?$AAS?$AAt?$AAa?$AAr?$AAt?$AAU?$AAa?$AAr?$AAt?$AAW?$AAa?$AAt?$AAc?$AAh?$AA?3?$AA?5?$AAm?$AA_?$AAb?$AAW@ 10033c88     UartComm.obj
+ 0003:00003ce0       ??_C@_1GC@PLPA@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAS?$AAe?$AAt?$AAC?$AAo?$AAm?$AAm?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AAs@ 10033ce0     UartComm.obj
+ 0003:00003d58       ??_C@_0BO@FPAB@hUart?5?$CB?$DN?5INVALID_HANDLE_VALUE?$AA@ 10033d58     UartComm.obj
+ 0003:00003d7c       ??_C@_1GE@GNOI@?$AAS?$AAt?$AAo?$AAp?$AAU?$AAa?$AAr?$AAt?$AAW?$AAa?$AAt?$AAc?$AAh?$AA?3?$AA?5?$AAS?$AAe?$AAt?$AAC?$AAo@ 10033d7c     UartComm.obj
+ 0003:00003df4       ??_C@_1EK@DCOO@?$AAS?$AAt?$AAo?$AAp?$AAU?$AAa?$AAr?$AAt?$AAW?$AAa?$AAt?$AAc?$AAh?$AA?3?$AA?5?$AAm?$AA_?$AAb?$AAW?$AAa@ 10033df4     UartComm.obj
+ 0003:00003e4c       ??_C@_1CE@JEJH@?$AAf?$AAT?$AAX?$AAC?$AAo?$AAn?$AAt?$AAi?$AAn?$AAu?$AAe?$AAO?$AAn?$AAX?$AAo?$AAf?$AAf?$AA?$AA@ 10033e4c     UartComm.obj
+ 0003:00003e78       ??_C@_19FBJA@?$AAf?$AAI?$AAn?$AAX?$AA?$AA@ 10033e78     UartComm.obj
+ 0003:00003e84       ??_C@_1M@PDJE@?$AAf?$AAO?$AAu?$AAt?$AAX?$AA?$AA@ 10033e84     UartComm.obj
+ 0003:00003e94       ??_C@_1BK@CCIK@?$AAf?$AAO?$AAu?$AAt?$AAx?$AAD?$AAs?$AAr?$AAF?$AAl?$AAo?$AAw?$AA?$AA@ 10033e94     UartComm.obj
+ 0003:00003eb4       ??_C@_1BK@DDGF@?$AAf?$AAO?$AAu?$AAt?$AAx?$AAC?$AAt?$AAs?$AAF?$AAl?$AAo?$AAw?$AA?$AA@ 10033eb4     UartComm.obj
+ 0003:00003ed4       ??_C@_1BI@EGCH@?$AAf?$AAR?$AAt?$AAs?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AA?$AA@ 10033ed4     UartComm.obj
+ 0003:00003ef0       ??_C@_1BE@GHNL@?$AAC?$AAo?$AAm?$AAm?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?$AA@ 10033ef0     UartComm.obj
+ 0003:00003f08       ??_C@_1BI@NHLB@?$AAf?$AAD?$AAt?$AAr?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AA?$AA@ 10033f08     UartComm.obj
+ 0003:00003f24       ??_C@_1DE@KHJN@?$AAW?$AAr?$AAi?$AAt?$AAe?$AAT?$AAo?$AAt?$AAa?$AAl?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AAC?$AAo?$AAn@ 10033f24     UartComm.obj
+ 0003:00003f64       ??_C@_1DI@CFIL@?$AAW?$AAr?$AAi?$AAt?$AAe?$AAT?$AAo?$AAt?$AAa?$AAl?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AAM?$AAu?$AAl@ 10033f64     UartComm.obj
+ 0003:00003fa8       ??_C@_1DC@LOFK@?$AAR?$AAe?$AAa?$AAd?$AAT?$AAo?$AAt?$AAa?$AAl?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AAC?$AAo?$AAn?$AAs@ 10033fa8     UartComm.obj
+ 0003:00003fe4       ??_C@_1DG@FLIP@?$AAR?$AAe?$AAa?$AAd?$AAT?$AAo?$AAt?$AAa?$AAl?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AAM?$AAu?$AAl?$AAt@ 10033fe4     UartComm.obj
+ 0003:00004024       ??_C@_1BK@HMKK@?$AAC?$AAo?$AAm?$AAm?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AAs?$AA?$AA@ 10034024     UartComm.obj
+ 0003:00004044       ??_C@_1CI@HNBH@?$AAR?$AAe?$AAa?$AAd?$AAI?$AAn?$AAt?$AAe?$AAr?$AAv?$AAa?$AAl?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?$AA@ 10034044     UartComm.obj
+ 0003:00004074       ??_C@_1DA@HJJI@?$AAC?$AAo?$AAm?$AAm?$AAW?$AAa?$AAt?$AAc?$AAh?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AAP?$AAr?$AAi?$AAo?$AAr@ 10034074     UartComm.obj
+ 0003:000040b0       ??_C@_1BM@MLJC@?$AAC?$AAo?$AAm?$AAm?$AAQ?$AAu?$AAe?$AAu?$AAe?$AAS?$AAi?$AAz?$AAe?$AA?$AA@ 100340b0     UartComm.obj
+ 0003:000040d4       ??_C@_1EE@KAJK@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAw?$AAR?$AAe?$AAs?$AAe?$AAr?$AAv?$AAe?$AAd@ 100340d4     UartComm.obj
+ 0003:00004128       ??_C@_1EE@FIDP@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAE?$AAv?$AAt?$AAC?$AAh?$AAa?$AAr?$AA?5?$AA?5@ 10034128     UartComm.obj
+ 0003:0000417c       ??_C@_1EE@KLFG@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAE?$AAo?$AAf?$AAC?$AAh?$AAa?$AAr?$AA?5?$AA?5@ 1003417c     UartComm.obj
+ 0003:000041d0       ??_C@_1EE@KIJP@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAE?$AAr?$AAr?$AAo?$AAr?$AAC?$AAh?$AAa?$AAr@ 100341d0     UartComm.obj
+ 0003:00004224       ??_C@_1EE@OHEL@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAX?$AAo?$AAf?$AAf?$AAC?$AAh?$AAa?$AAr?$AA?5@ 10034224     UartComm.obj
+ 0003:00004278       ??_C@_1EE@KJBP@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAX?$AAo?$AAn?$AAC?$AAh?$AAa?$AAr?$AA?5?$AA?5@ 10034278     UartComm.obj
+ 0003:000042cc       ??_C@_1EE@GNGN@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAS?$AAt?$AAo?$AAp?$AAB?$AAi?$AAt?$AAs?$AA?5@ 100342cc     UartComm.obj
+ 0003:00004320       ??_C@_1EE@OALH@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAP?$AAa?$AAr?$AAi?$AAt?$AAy?$AA?5?$AA?5?$AA?5@ 10034320     UartComm.obj
+ 0003:00004374       ??_C@_1EE@PBID@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAB?$AAy?$AAt?$AAe?$AAS?$AAi?$AAz?$AAe?$AA?5@ 10034374     UartComm.obj
+ 0003:000043c8       ??_C@_1EE@GJJF@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAX?$AAo?$AAf?$AAf?$AAL?$AAi?$AAm?$AA?5?$AA?5@ 100343c8     UartComm.obj
+ 0003:0000441c       ??_C@_1EE@EJLJ@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAX?$AAo?$AAn?$AAL?$AAi?$AAm?$AA?5?$AA?5?$AA?5@ 1003441c     UartComm.obj
+ 0003:00004470       ??_C@_1EE@IJPC@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAw?$AAR?$AAe?$AAs?$AAe?$AAr?$AAv?$AAe?$AAd@ 10034470     UartComm.obj
+ 0003:000044c4       ??_C@_1EE@JLBE@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAD?$AAu?$AAm?$AAm?$AAy?$AA2?$AA?5?$AA?5@ 100344c4     UartComm.obj
+ 0003:00004518       ??_C@_1EE@GFGN@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAA?$AAb?$AAo?$AAr?$AAt?$AAO?$AAn?$AAE@ 10034518     UartComm.obj
+ 0003:0000456c       ??_C@_1EE@FIGE@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAR?$AAt?$AAs?$AAC?$AAo?$AAn?$AAt?$AAr@ 1003456c     UartComm.obj
+ 0003:000045c0       ??_C@_1EE@OPII@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAN?$AAu?$AAl?$AAl?$AA?5?$AA?5?$AA?5?$AA?5@ 100345c0     UartComm.obj
+ 0003:00004614       ??_C@_1EE@JBFA@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAE?$AAr?$AAr?$AAo?$AAr?$AAC?$AAh?$AAa@ 10034614     UartComm.obj
+ 0003:00004668       ??_C@_1EE@LFEF@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAI?$AAn?$AAX?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5@ 10034668     UartComm.obj
+ 0003:000046bc       ??_C@_1EE@GFIL@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAO?$AAu?$AAt?$AAX?$AA?5?$AA?5?$AA?5?$AA?5@ 100346bc     UartComm.obj
+ 0003:00004710       ??_C@_1EE@HOOF@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAT?$AAX?$AAC?$AAo?$AAn?$AAt?$AAi?$AAn@ 10034710     UartComm.obj
+ 0003:00004764       ??_C@_1EE@GHGG@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAD?$AAs?$AAr?$AAS?$AAe?$AAn?$AAs?$AAi@ 10034764     UartComm.obj
+ 0003:000047b8       ??_C@_1EE@HKAJ@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAD?$AAt?$AAr?$AAC?$AAo?$AAn?$AAt?$AAr@ 100347b8     UartComm.obj
+ 0003:0000480c       ??_C@_1EE@IGL@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAO?$AAu?$AAt?$AAx?$AAD?$AAs?$AAr?$AAF@ 1003480c     UartComm.obj
+ 0003:00004860       ??_C@_1EE@GCDG@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAO?$AAu?$AAt?$AAx?$AAC?$AAt?$AAs?$AAF@ 10034860     UartComm.obj
+ 0003:000048b4       ??_C@_1EE@INNE@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAP?$AAa?$AAr?$AAi?$AAt?$AAy?$AA?5?$AA?5@ 100348b4     UartComm.obj
+ 0003:00004908       ??_C@_1EE@JPA@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAf?$AAB?$AAi?$AAn?$AAa?$AAr?$AAy?$AA?5?$AA?5@ 10034908     UartComm.obj
+ 0003:0000495c       ??_C@_1EE@EMA@?$AAt?$AAa?$AAg?$AAC?$AAo?$AAm?$AAm?$AAD?$AAC?$AAB?$AA?4?$AAB?$AAa?$AAu?$AAd?$AAR?$AAa?$AAt?$AAe?$AA?5@ 1003495c     UartComm.obj
+ 0003:000049b0       ??_C@_1BM@CCII@?$AAS?$AAe?$AAt?$AAC?$AAo?$AAm?$AAm?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?3?$AA?$AA@ 100349b0     UartComm.obj
+ 0003:000049d4       ??_C@_1HG@EEJN@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAS?$AAe?$AAt?$AAC?$AAo?$AAm?$AAm?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?$CI?$AA?$CJ?$AA?5@ 100349d4     UartComm.obj
+ 0003:00004a64       ??_C@_1FI@IAIB@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAG?$AAe?$AAt?$AAC?$AAo?$AAm?$AAm?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?$CI?$AA?$CJ?$AA?5@ 10034a64     UartComm.obj
+ 0003:00004ad0       ??_C@_1FK@PGBP@?$AAC?$AAa?$AAl?$AAl?$AA?5?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AAE?$AAv?$AAe?$AAn?$AAt?$AA?$CI?$AA?$CJ?$AA?5?$AA?5@ 10034ad0     UartComm.obj
+ 0003:00004b3c       ??_C@_1CK@IKIO@?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?4@ 10034b3c     UartComm.obj
+ 0003:00004b70       ??_C@_1O@GLEG@?$AAS?$AAa?$AAm?$AAp?$AAl?$AAe?$AA?$AA@ 10034b70     UartComm.obj
+ 0003:00004b80       ??_C@_1EO@JALB@?$AAR?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAC?$AAl?$AAa?$AAs?$AAs?$AAE?$AAx?$AA?5?$AAf?$AAa?$AAi?$AAl@ 10034b80     UartComm.obj
+ 0003:00004be0       ??_C@_1CM@KKPE@?$AAC?$AAh?$AAa?$AAn?$AAn?$AAe?$AAl?$AAN?$AAo?$AAt?$AAi?$AAf?$AAy?$AAW?$AAn?$AAd?$AAC?$AAl?$AAa?$AAs@ 10034be0     UartComm.obj
+ 0003:00004c14       ??_C@_11A@?$AA?$AA@        10034c14     UartComm.obj
+ 0003:00004c1c       ??_7type_info@@6B@         10034c1c     MSVCRTD:ti_inst.obj
+ 0003:00004c24       __pRawDllMain              10034c24     MSVCRTD:crtdll.obj
+ 0003:00004c24       __pDefaultRawDllMain       10034c24     MSVCRTD:crtdll.obj
+ 0003:00004c28       ??_C@_0DA@FJPPCPEH@f?3?2dd?2vctools?2crt_bld?2self_x86?2c@ 10034c28     MSVCRTD:crtdll.obj
+ 0003:00004c64       ?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB 10034c64     MSVCRTD:tncleanup.obj
+ 0003:00004c68       ?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB 10034c68     MSVCRTD:tncleanup.obj
+ 0003:00004c6c       ?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB 10034c6c     MSVCRTD:tncleanup.obj
+ 0003:00004c70       ?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB 10034c70     MSVCRTD:tncleanup.obj
+ 0003:00004c74       ?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB 10034c74     MSVCRTD:tncleanup.obj
+ 0003:00004fb0       ??_R1A@?0A@A@ICommChannel@@8 10034fb0     Channel.obj
+ 0003:00004fcc       ??_R2ICommChannel@@8       10034fcc     Channel.obj
+ 0003:00004fd8       ??_R3ICommChannel@@8       10034fd8     Channel.obj
+ 0003:00004ff0       ??_R4ICommChannel@@6B@     10034ff0     Channel.obj
+ 0003:00005008       ??_R1A@?0A@A@CFileComm@@8  10035008     FileComm.obj
+ 0003:00005028       ??_R2CFileComm@@8          10035028     FileComm.obj
+ 0003:00005038       ??_R3CFileComm@@8          10035038     FileComm.obj
+ 0003:00005050       ??_R4CFileComm@@6B@        10035050     FileComm.obj
+ 0003:00005068       ??_R1A@?0A@A@CMemoryMgr@@8 10035068     MemoryMgr.obj
+ 0003:00005084       ??_R2CMemoryMgr@@8         10035084     MemoryMgr.obj
+ 0003:00005090       ??_R3CMemoryMgr@@8         10035090     MemoryMgr.obj
+ 0003:000050a8       ??_R4CMemoryMgr@@6B@       100350a8     MemoryMgr.obj
+ 0003:000050c0       ??_R1A@?0A@A@CSocketComm@@8 100350c0     SocketComm.obj
+ 0003:000050e0       ??_R2CSocketComm@@8        100350e0     SocketComm.obj
+ 0003:000050f0       ??_R3CSocketComm@@8        100350f0     SocketComm.obj
+ 0003:00005108       ??_R4CSocketComm@@6B@      10035108     SocketComm.obj
+ 0003:00005120       ??_R1A@?0A@A@ISpLog@@8     10035120     SpLog.obj
+ 0003:00005140       ??_R1A@?0A@A@CSpLog@@8     10035140     SpLog.obj
+ 0003:00005160       ??_R2CSpLog@@8             10035160     SpLog.obj
+ 0003:00005170       ??_R3CSpLog@@8             10035170     SpLog.obj
+ 0003:00005188       ??_R4CSpLog@@6B@           10035188     SpLog.obj
+ 0003:000051a0       ??_R2ISpLog@@8             100351a0     SpLog.obj
+ 0003:000051a8       ??_R3ISpLog@@8             100351a8     SpLog.obj
+ 0003:000051c0       ??_R4ISpLog@@6B@           100351c0     SpLog.obj
+ 0003:000051d8       ??_R1A@?0A@A@CFnLog@@8     100351d8     SpLog.obj
+ 0003:000051f4       ??_R2CFnLog@@8             100351f4     SpLog.obj
+ 0003:00005200       ??_R3CFnLog@@8             10035200     SpLog.obj
+ 0003:00005218       ??_R4CFnLog@@6B@           10035218     SpLog.obj
+ 0003:00005230       ??_R1A@?0A@A@CUartComm@@8  10035230     UartComm.obj
+ 0003:00005250       ??_R2CUartComm@@8          10035250     UartComm.obj
+ 0003:00005260       ??_R3CUartComm@@8          10035260     UartComm.obj
+ 0003:00005278       ??_R4CUartComm@@6B@        10035278     UartComm.obj
+ 0003:00005290       ??_R4type_info@@6B@        10035290     MSVCRTD:ti_inst.obj
+ 0003:000052a8       ??_R3type_info@@8          100352a8     MSVCRTD:ti_inst.obj
+ 0003:000052bc       ??_R2type_info@@8          100352bc     MSVCRTD:ti_inst.obj
+ 0003:000052c4       ??_R1A@?0A@EA@type_info@@8 100352c4     MSVCRTD:ti_inst.obj
+ 0003:00005408       ___rtc_iaa                 10035408     MSVCRTD:_initsect_.obj
+ 0003:0000550c       ___rtc_izz                 1003550c     MSVCRTD:_initsect_.obj
+ 0003:00005610       ___rtc_taa                 10035610     MSVCRTD:_initsect_.obj
+ 0003:00005714       ___rtc_tzz                 10035714     MSVCRTD:_initsect_.obj
+ 0004:00000000       ??_R0?AVICommChannel@@@8   10036000     Channel.obj
+ 0004:00000020       ??_R0?AVCFileComm@@@8      10036020     FileComm.obj
+ 0004:0000003c       ?__LINE__Var@?1??Open@CFileComm@@UAEHQAU_CHANNEL_ATTRIBUTE@@@Z@4FA 1003603c     FileComm.obj
+ 0004:00000040       ?__LINE__Var@?1??StartFileWatch@CFileComm@@AAEHPAX@Z@4FA 10036040     FileComm.obj
+ 0004:00000044       ?__LINE__Var@?1??_Read@CFileComm@@AAEKPAXK@Z@4FA 10036044     FileComm.obj
+ 0004:00000048       ??_R0?AVCMemoryMgr@@@8     10036048     MemoryMgr.obj
+ 0004:00000068       ??_R0?AVCSocketComm@@@8    10036068     SocketComm.obj
+ 0004:00000088       ?__LINE__Var@?1??Open@CSocketComm@@UAEHQAU_CHANNEL_ATTRIBUTE@@@Z@4FA 10036088     SocketComm.obj
+ 0004:0000008c       ?__LINE__Var@?1??_SyncRead@CSocketComm@@AAEKAAU_SC_ATTR@2@PAXKK@Z@4FA 1003608c     SocketComm.obj
+ 0004:00000090       ?__LINE__Var@?1??WS32_ProcessRead@CSocketComm@@AAEHXZ@4FA 10036090     SocketComm.obj
+ 0004:00000100       ??_R0?AVISpLog@@@8         10036100     SpLog.obj
+ 0004:00000120       ??_R0?AVCSpLog@@@8         10036120     SpLog.obj
+ 0004:0000013c       ?__LINE__Var@?1??LogRawStrA@CSpLog@@UAEHIPBD@Z@4FA 1003613c     SpLog.obj
+ 0004:00000140       ?__LINE__Var@?1??LogRawStrW@CSpLog@@UAEHIPBG@Z@4FA 10036140     SpLog.obj
+ 0004:00000144       ?__LINE__Var@?1??LogFmtStrA@CSpLog@@UAAHIPBDZZ@4FA 10036144     SpLog.obj
+ 0004:00000148       ?__LINE__Var@?1??LogFmtStrW@CSpLog@@UAAHIPBGZZ@4FA 10036148     SpLog.obj
+ 0004:0000014c       ?__LINE__Var@?1??GetLogExtension@CSpLog@@IAEXPBGPAGH@Z@4FA 1003614c     SpLog.obj
+ 0004:00000150       ?__LINE__Var@?1??GetLogFilePath@CSpLog@@IAEXPBGPAGH@Z@4FA 10036150     SpLog.obj
+ 0004:00000158       ??_R0?AVCFnLog@@@8         10036158     SpLog.obj
+ 0004:00000174       ?__LINE__Var@?1???0CFnLog@@QAA@PAVISpLog@@PBD1ZZ@4FA 10036174     SpLog.obj
+ 0004:00000178       ?__LINE__Var@?1???0CFnLog@@QAA@PAVISpLog@@PBG1ZZ@4FA 10036178     SpLog.obj
+ 0004:00000180       ??_R0?AVCUartComm@@@8      10036180     UartComm.obj
+ 0004:0000019c       ?__LINE__Var@?1??Open@CUartComm@@UAEHQAU_CHANNEL_ATTRIBUTE@@@Z@4FA 1003619c     UartComm.obj
+ 0004:000001a0       ?__LINE__Var@?1??_Read@CUartComm@@AAEKPAXK@Z@4FA 100361a0     UartComm.obj
+ 0004:000001a4       ?__LINE__Var@?1??StartUartWatch@CUartComm@@AAEHPAX@Z@4FA 100361a4     UartComm.obj
+ 0004:000001a8       ??_R0?AVtype_info@@@8      100361a8     MSVCRTD:ti_inst.obj
+ 0004:000001d0       ___native_dllmain_reason   100361d0     MSVCRTD:natstart.obj
+ 0004:000001d4       ___native_vcclrit_reason   100361d4     MSVCRTD:natstart.obj
+ 0004:000001dc       ___security_cookie         100361dc     MSVCRTD:gs_cookie.obj
+ 0004:000001e0       ___security_cookie_complement 100361e0     MSVCRTD:gs_cookie.obj
+ 0004:00000598       __forceCRTManifestRTM      10036598     MSVCRTD:crtmanifestrtm.obj
+ 0004:0000059c       ?__type_info_root_node@@3U__type_info_node@@A 1003659c     MSVCRTD:tncleanup.obj
+ 0004:0000096c       __adjust_fdiv              1003696c     <common>
+ 0004:00000978       ___native_startup_state    10036978     <common>
+ 0004:00000988       ___native_startup_lock     10036988     <common>
+ 0004:0000098c       ___onexitend               1003698c     <common>
+ 0004:0000099c       ___onexitbegin             1003699c     <common>
+ 0004:000009a0       ___dyn_tls_init_callback   100369a0     <common>
+ 0005:00000000       __IMPORT_DESCRIPTOR_KERNEL32 10037000     kernel32:KERNEL32.dll
+ 0005:00000014       __IMPORT_DESCRIPTOR_USER32 10037014     user32:USER32.dll
+ 0005:00000028       __IMPORT_DESCRIPTOR_MSVCR90D 10037028     MSVCRTD:MSVCR90D.dll
+ 0005:0000003c       __IMPORT_DESCRIPTOR_SHLWAPI 1003703c     shlwapi:SHLWAPI.dll
+ 0005:00000050       __IMPORT_DESCRIPTOR_WS2_32 10037050     ws2_32:WS2_32.dll
+ 0005:00000064       __NULL_IMPORT_DESCRIPTOR   10037064     kernel32:KERNEL32.dll
+ 0005:00000430       __imp__VirtualQuery@12     10037430     kernel32:KERNEL32.dll
+ 0005:00000434       __imp__GetModuleFileNameW@12 10037434     kernel32:KERNEL32.dll
+ 0005:00000438       __imp__LeaveCriticalSection@4 10037438     kernel32:KERNEL32.dll
+ 0005:0000043c       __imp__EnterCriticalSection@4 1003743c     kernel32:KERNEL32.dll
+ 0005:00000440       __imp__GetTickCount@0      10037440     kernel32:KERNEL32.dll
+ 0005:00000444       __imp__InitializeCriticalSectionAndSpinCount@8 10037444     kernel32:KERNEL32.dll
+ 0005:00000448       __imp__GetSystemInfo@4     10037448     kernel32:KERNEL32.dll
+ 0005:0000044c       __imp__SleepEx@8           1003744c     kernel32:KERNEL32.dll
+ 0005:00000450       __imp__InitializeCriticalSection@4 10037450     kernel32:KERNEL32.dll
+ 0005:00000454       __imp__VirtualAlloc@16     10037454     kernel32:KERNEL32.dll
+ 0005:00000458       __imp__VirtualFree@12      10037458     kernel32:KERNEL32.dll
+ 0005:0000045c       __imp__CloseHandle@4       1003745c     kernel32:KERNEL32.dll
+ 0005:00000460       __imp__GetLastError@0      10037460     kernel32:KERNEL32.dll
+ 0005:00000464       __imp__CreateFileW@28      10037464     kernel32:KERNEL32.dll
+ 0005:00000468       __imp__Sleep@4             10037468     kernel32:KERNEL32.dll
+ 0005:0000046c       __imp__GetFileSize@8       1003746c     kernel32:KERNEL32.dll
+ 0005:00000470       __imp__GetLocalTime@4      10037470     kernel32:KERNEL32.dll
+ 0005:00000474       __imp__SetThreadPriority@8 10037474     kernel32:KERNEL32.dll
+ 0005:00000478       __imp__CreateThread@24     10037478     kernel32:KERNEL32.dll
+ 0005:0000047c       __imp__WaitForSingleObject@8 1003747c     kernel32:KERNEL32.dll
+ 0005:00000480       __imp__GetPrivateProfileIntW@16 10037480     kernel32:KERNEL32.dll
+ 0005:00000484       __imp__ReadFile@20         10037484     kernel32:KERNEL32.dll
+ 0005:00000488       __imp__ResetEvent@4        10037488     kernel32:KERNEL32.dll
+ 0005:0000048c       __imp__SetEvent@4          1003748c     kernel32:KERNEL32.dll
+ 0005:00000490       __imp__CreateEventW@16     10037490     kernel32:KERNEL32.dll
+ 0005:00000494       __imp__WaitForMultipleObjects@16 10037494     kernel32:KERNEL32.dll
+ 0005:00000498       __imp__FreeConsole@0       10037498     kernel32:KERNEL32.dll
+ 0005:0000049c       __imp__FlushFileBuffers@4  1003749c     kernel32:KERNEL32.dll
+ 0005:000004a0       __imp__GetConsoleWindow@0  100374a0     kernel32:KERNEL32.dll
+ 0005:000004a4       __imp__GetTempPathW@8      100374a4     kernel32:KERNEL32.dll
+ 0005:000004a8       __imp__IsBadWritePtr@8     100374a8     kernel32:KERNEL32.dll
+ 0005:000004ac       __imp__WriteFile@20        100374ac     kernel32:KERNEL32.dll
+ 0005:000004b0       __imp__lstrlenA@4          100374b0     kernel32:KERNEL32.dll
+ 0005:000004b4       __imp__WriteConsoleW@20    100374b4     kernel32:KERNEL32.dll
+ 0005:000004b8       __imp__WideCharToMultiByte@32 100374b8     kernel32:KERNEL32.dll
+ 0005:000004bc       __imp__lstrcatA@8          100374bc     kernel32:KERNEL32.dll
+ 0005:000004c0       __imp__SetConsoleTitleW@4  100374c0     kernel32:KERNEL32.dll
+ 0005:000004c4       __imp__SetConsoleWindowInfo@12 100374c4     kernel32:KERNEL32.dll
+ 0005:000004c8       __imp__SetConsoleScreenBufferSize@8 100374c8     kernel32:KERNEL32.dll
+ 0005:000004cc       __imp__GetStdHandle@4      100374cc     kernel32:KERNEL32.dll
+ 0005:000004d0       __imp__AllocConsole@0      100374d0     kernel32:KERNEL32.dll
+ 0005:000004d4       __imp__CreateDirectoryW@8  100374d4     kernel32:KERNEL32.dll
+ 0005:000004d8       __imp__GetFileAttributesW@4 100374d8     kernel32:KERNEL32.dll
+ 0005:000004dc       __imp__lstrlenW@4          100374dc     kernel32:KERNEL32.dll
+ 0005:000004e0       __imp__SetFilePointer@16   100374e0     kernel32:KERNEL32.dll
+ 0005:000004e4       __imp__SetCommMask@8       100374e4     kernel32:KERNEL32.dll
+ 0005:000004e8       __imp__PurgeComm@8         100374e8     kernel32:KERNEL32.dll
+ 0005:000004ec       __imp__GetOverlappedResult@16 100374ec     kernel32:KERNEL32.dll
+ 0005:000004f0       __imp__GetCommMask@8       100374f0     kernel32:KERNEL32.dll
+ 0005:000004f4       __imp__WaitCommEvent@12    100374f4     kernel32:KERNEL32.dll
+ 0005:000004f8       __imp__ClearCommError@12   100374f8     kernel32:KERNEL32.dll
+ 0005:000004fc       __imp__SetCommState@8      100374fc     kernel32:KERNEL32.dll
+ 0005:00000500       __imp__GetCommState@8      10037500     kernel32:KERNEL32.dll
+ 0005:00000504       __imp__SetupComm@12        10037504     kernel32:KERNEL32.dll
+ 0005:00000508       __imp__SetCommTimeouts@8   10037508     kernel32:KERNEL32.dll
+ 0005:0000050c       __imp__GetModuleHandleW@4  1003750c     kernel32:KERNEL32.dll
+ 0005:00000510       __imp__SetUnhandledExceptionFilter@4 10037510     kernel32:KERNEL32.dll
+ 0005:00000514       __imp__UnhandledExceptionFilter@4 10037514     kernel32:KERNEL32.dll
+ 0005:00000518       __imp__GetCurrentProcess@0 10037518     kernel32:KERNEL32.dll
+ 0005:0000051c       __imp__TerminateProcess@8  1003751c     kernel32:KERNEL32.dll
+ 0005:00000520       __imp__GetSystemTimeAsFileTime@4 10037520     kernel32:KERNEL32.dll
+ 0005:00000524       __imp__GetCurrentProcessId@0 10037524     kernel32:KERNEL32.dll
+ 0005:00000528       __imp__GetCurrentThreadId@0 10037528     kernel32:KERNEL32.dll
+ 0005:0000052c       __imp__QueryPerformanceCounter@4 1003752c     kernel32:KERNEL32.dll
+ 0005:00000530       __imp__InterlockedCompareExchange@12 10037530     kernel32:KERNEL32.dll
+ 0005:00000534       __imp__InterlockedExchange@8 10037534     kernel32:KERNEL32.dll
+ 0005:00000538       __imp__IsDebuggerPresent@0 10037538     kernel32:KERNEL32.dll
+ 0005:0000053c       \177KERNEL32_NULL_THUNK_DATA 1003753c     kernel32:KERNEL32.dll
+ 0005:0000059c       __imp___unlock             1003759c     MSVCRTD:MSVCR90D.dll
+ 0005:000005a0       __imp___crt_debugger_hook  100375a0     MSVCRTD:MSVCR90D.dll
+ 0005:000005a4       __imp___except_handler4_common 100375a4     MSVCRTD:MSVCR90D.dll
+ 0005:000005a8       __imp___purecall           100375a8     MSVCRTD:MSVCR90D.dll
+ 0005:000005ac       __imp_??2@YAPAXI@Z         100375ac     MSVCRTD:MSVCR90D.dll
+ 0005:000005b0       __imp___chkesp             100375b0     MSVCRTD:MSVCR90D.dll
+ 0005:000005b4       __imp__wcscpy              100375b4     MSVCRTD:MSVCR90D.dll
+ 0005:000005b8       __imp__wcsrchr             100375b8     MSVCRTD:MSVCR90D.dll
+ 0005:000005bc       __imp__memmove             100375bc     MSVCRTD:MSVCR90D.dll
+ 0005:000005c0       __imp__wcslen              100375c0     MSVCRTD:MSVCR90D.dll
+ 0005:000005c4       __imp_??3@YAXPAX@Z         100375c4     MSVCRTD:MSVCR90D.dll
+ 0005:000005c8       __imp__memset              100375c8     MSVCRTD:MSVCR90D.dll
+ 0005:000005cc       __imp___onexit             100375cc     MSVCRTD:MSVCR90D.dll
+ 0005:000005d0       __imp__abort               100375d0     MSVCRTD:MSVCR90D.dll
+ 0005:000005d4       __imp__memcpy              100375d4     MSVCRTD:MSVCR90D.dll
+ 0005:000005d8       __imp__fprintf             100375d8     MSVCRTD:MSVCR90D.dll
+ 0005:000005dc       __imp___iob                100375dc     MSVCRTD:MSVCR90D.dll
+ 0005:000005e0       __imp____CxxFrameHandler   100375e0     MSVCRTD:MSVCR90D.dll
+ 0005:000005e4       __imp___assert             100375e4     MSVCRTD:MSVCR90D.dll
+ 0005:000005e8       __imp__wcscat              100375e8     MSVCRTD:MSVCR90D.dll
+ 0005:000005ec       __imp___snwprintf          100375ec     MSVCRTD:MSVCR90D.dll
+ 0005:000005f0       __imp___snprintf           100375f0     MSVCRTD:MSVCR90D.dll
+ 0005:000005f4       __imp___vsnprintf          100375f4     MSVCRTD:MSVCR90D.dll
+ 0005:000005f8       __imp___vsnwprintf         100375f8     MSVCRTD:MSVCR90D.dll
+ 0005:000005fc       __imp__isprint             100375fc     MSVCRTD:MSVCR90D.dll
+ 0005:00000600       __imp__sprintf             10037600     MSVCRTD:MSVCR90D.dll
+ 0005:00000604       __imp__wcsncpy             10037604     MSVCRTD:MSVCR90D.dll
+ 0005:00000608       __imp___wcsicmp            10037608     MSVCRTD:MSVCR90D.dll
+ 0005:0000060c       __imp___wtol               1003760c     MSVCRTD:MSVCR90D.dll
+ 0005:00000610       __imp___beginthreadex      10037610     MSVCRTD:MSVCR90D.dll
+ 0005:00000614       __imp___swprintf           10037614     MSVCRTD:MSVCR90D.dll
+ 0005:00000614       __imp__swprintf            10037614     MSVCRTD:MSVCR90D.dll
+ 0005:00000618       __imp___encode_pointer     10037618     MSVCRTD:MSVCR90D.dll
+ 0005:0000061c       __imp___malloc_dbg         1003761c     MSVCRTD:MSVCR90D.dll
+ 0005:00000620       __imp___free_dbg           10037620     MSVCRTD:MSVCR90D.dll
+ 0005:00000624       __imp___encoded_null       10037624     MSVCRTD:MSVCR90D.dll
+ 0005:00000628       __imp___decode_pointer     10037628     MSVCRTD:MSVCR90D.dll
+ 0005:0000062c       __imp___CrtSetCheckCount   1003762c     MSVCRTD:MSVCR90D.dll
+ 0005:00000630       __imp___initterm           10037630     MSVCRTD:MSVCR90D.dll
+ 0005:00000634       __imp___initterm_e         10037634     MSVCRTD:MSVCR90D.dll
+ 0005:00000638       __imp___amsg_exit          10037638     MSVCRTD:MSVCR90D.dll
+ 0005:0000063c       __imp___adjust_fdiv        1003763c     MSVCRTD:MSVCR90D.dll
+ 0005:00000640       __imp____CppXcptFilter     10037640     MSVCRTD:MSVCR90D.dll
+ 0005:00000644       __imp_?terminate@@YAXXZ    10037644     MSVCRTD:MSVCR90D.dll
+ 0005:00000648       __imp_?_type_info_dtor_internal_method@type_info@@QAEXXZ 10037648     MSVCRTD:MSVCR90D.dll
+ 0005:0000064c       __imp____clean_type_info_names_internal 1003764c     MSVCRTD:MSVCR90D.dll
+ 0005:00000650       __imp__wcschr              10037650     MSVCRTD:MSVCR90D.dll
+ 0005:00000654       __imp____dllonexit         10037654     MSVCRTD:MSVCR90D.dll
+ 0005:00000658       __imp___lock               10037658     MSVCRTD:MSVCR90D.dll
+ 0005:0000065c       \177MSVCR90D_NULL_THUNK_DATA 1003765c     MSVCRTD:MSVCR90D.dll
+ 0005:000006ac       __imp__PathIsRelativeW@4   100376ac     shlwapi:SHLWAPI.dll
+ 0005:000006b0       __imp__PathFindExtensionW@4 100376b0     shlwapi:SHLWAPI.dll
+ 0005:000006b4       __imp__PathFindFileNameW@4 100376b4     shlwapi:SHLWAPI.dll
+ 0005:000006b8       __imp__PathRemoveFileSpecW@4 100376b8     shlwapi:SHLWAPI.dll
+ 0005:000006bc       \177SHLWAPI_NULL_THUNK_DATA 100376bc     shlwapi:SHLWAPI.dll
+ 0005:000006e8       __imp__RegisterClassExW@4  100376e8     user32:USER32.dll
+ 0005:000006ec       __imp__SetWindowLongW@12   100376ec     user32:USER32.dll
+ 0005:000006f0       __imp__PostMessageW@16     100376f0     user32:USER32.dll
+ 0005:000006f4       __imp__PostThreadMessageW@16 100376f4     user32:USER32.dll
+ 0005:000006f8       __imp__ShowWindow@8        100376f8     user32:USER32.dll
+ 0005:000006fc       __imp__EnableMenuItem@12   100376fc     user32:USER32.dll
+ 0005:00000700       __imp__GetSystemMenu@8     10037700     user32:USER32.dll
+ 0005:00000704       __imp__GetWindowLongW@8    10037704     user32:USER32.dll
+ 0005:00000708       __imp__UnregisterClassW@8  10037708     user32:USER32.dll
+ 0005:0000070c       __imp__DispatchMessageW@4  1003770c     user32:USER32.dll
+ 0005:00000710       __imp__TranslateMessage@4  10037710     user32:USER32.dll
+ 0005:00000714       __imp__GetMessageW@16      10037714     user32:USER32.dll
+ 0005:00000718       __imp__CreateWindowExW@48  10037718     user32:USER32.dll
+ 0005:0000071c       \177USER32_NULL_THUNK_DATA 1003771c     user32:USER32.dll
+ 0005:00000750       __imp__shutdown@8          10037750     ws2_32:WS2_32.dll
+ 0005:00000754       __imp__WSACloseEvent@4     10037754     ws2_32:WS2_32.dll
+ 0005:00000758       __imp__closesocket@4       10037758     ws2_32:WS2_32.dll
+ 0005:0000075c       __imp__listen@8            1003775c     ws2_32:WS2_32.dll
+ 0005:00000760       __imp__bind@12             10037760     ws2_32:WS2_32.dll
+ 0005:00000764       __imp__htons@4             10037764     ws2_32:WS2_32.dll
+ 0005:00000768       __imp__WSACreateEvent@0    10037768     ws2_32:WS2_32.dll
+ 0005:0000076c       __imp__WSASocketW@24       1003776c     ws2_32:WS2_32.dll
+ 0005:00000770       __imp__WSAEnumNetworkEvents@12 10037770     ws2_32:WS2_32.dll
+ 0005:00000774       __imp__WSAConnect@28       10037774     ws2_32:WS2_32.dll
+ 0005:00000778       __imp__htonl@4             10037778     ws2_32:WS2_32.dll
+ 0005:0000077c       __imp__WSAAccept@20        1003777c     ws2_32:WS2_32.dll
+ 0005:00000780       __imp__WSACleanup@0        10037780     ws2_32:WS2_32.dll
+ 0005:00000784       __imp__WSASend@28          10037784     ws2_32:WS2_32.dll
+ 0005:00000788       __imp__WSAWaitForMultipleEvents@20 10037788     ws2_32:WS2_32.dll
+ 0005:0000078c       __imp__WSAEventSelect@12   1003778c     ws2_32:WS2_32.dll
+ 0005:00000790       __imp__recv@16             10037790     ws2_32:WS2_32.dll
+ 0005:00000794       __imp__WSAResetEvent@4     10037794     ws2_32:WS2_32.dll
+ 0005:00000798       __imp__WSARecv@28          10037798     ws2_32:WS2_32.dll
+ 0005:0000079c       __imp__WSAGetLastError@0   1003779c     ws2_32:WS2_32.dll
+ 0005:000007a0       __imp__WSAGetOverlappedResult@20 100377a0     ws2_32:WS2_32.dll
+ 0005:000007a4       __imp__WSAStartup@8        100377a4     ws2_32:WS2_32.dll
+ 0005:000007a8       __imp__WSASetEvent@4       100377a8     ws2_32:WS2_32.dll
+ 0005:000007ac       \177WS2_32_NULL_THUNK_DATA 100377ac     ws2_32:WS2_32.dll
+
+ entry point at        0002:0000043d
+

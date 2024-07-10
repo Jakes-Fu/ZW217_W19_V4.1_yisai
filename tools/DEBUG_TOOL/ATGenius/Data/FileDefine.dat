@@ -1,0 +1,151 @@
+//////////////////////////////////////////////////
+//文 件 名：FileDefine.dat
+//功    能：定义各AT指令配置文件的信息
+//文件格式：文件名,标题
+//日    期：2009.11.16
+//作    者：谭红云
+// 版   权：CopyRight (c) 2009.11.16 By CYIT
+////////////////////////////////////////////////// 
+
+// catm
+89100001ATDefine.dat,8910 CATM (Ver:0001)
+89100002ATDefine.dat,8910 CATM (Ver:0002)
+89100003ATDefine.dat,8910 CATM (Ver:0003)
+89100004ATDefine.dat,8910 CATM (Ver:0004)
+89100005ATDefine.dat,8910 CATM (Ver:0005)
+
+89100100ATDefine.dat,8910 CATM (Ver:0100)
+89100101ATDefine.dat,8910 CATM (Ver:0101)
+89100102ATDefine.dat,8910 CATM (Ver:0102)
+89100103ATDefine.dat,8910 CATM (Ver:0103)
+89100104ATDefine.dat,8910 CATM (Ver:0104)
+
+89100200ATDefine.dat,8910 CATM (Ver:0200)
+89100201ATDefine.dat,8910 CATM (Ver:0201)
+89100202ATDefine.dat,8910 CATM (Ver:0202)
+89100203ATDefine.dat,8910 CATM (Ver:0203)
+89100204ATDefine.dat,8910 CATM (Ver:0204)
+
+// catm V3
+89100301CatmATDefine.dat,8910 Catm V3 (Ver:0301)
+89100302CatmATDefine.dat,8910 Catm V3 (Ver:0302)
+89100303CatmATDefine.dat,8910 Catm V3 (Ver:0303)
+89100304CatmATDefine.dat,8910 Catm V3 (Ver:0304)
+89100305CatmATDefine.dat,8910 Catm V3 (Ver:0305)
+89100306CatmATDefine.dat,8910 Catm V3 (Ver:0306)
+89100307CatmATDefine.dat,8910 Catm V3 (Ver:0307)
+89100308CatmATDefine.dat,8910 Catm V3 (Ver:0308)
+89100309CatmATDefine.dat,8910 Catm V3 (Ver:0309)
+
+// catm V3 Merge NB
+89100400CatmATDefine.dat,8910 Catm V3 (Ver:0400)
+89100401CatmATDefine.dat,8910 Catm V3 (Ver:0401)
+89100402CatmATDefine.dat,8910 Catm V3 (Ver:0402)
+89100403CatmATDefine.dat,8910 Catm V3 (Ver:0403)
+89100404CatmATDefine.dat,8910 Catm V3 (Ver:0404)
+89100405CatmATDefine.dat,8910 Catm V3 (Ver:0405)
+89100406CatmATDefine.dat,8910 Catm V3 (Ver:0406)
+89100407CatmATDefine.dat,8910 Catm V3 (Ver:0407)
+89100408CatmATDefine.dat,8910 Catm V3 (Ver:0408)
+89100409CatmATDefine.dat,8910 Catm V3 (Ver:0409)
+89100410CatmATDefine.dat,8910 Catm V3 (Ver:0410)
+89100411CatmATDefine.dat,8910 Catm V3 (Ver:0411)
+89100412CatmATDefine.dat,8910 Catm V3 (Ver:0412)
+89100413CatmATDefine.dat,8910 Catm V3 (Ver:0413)
+89100414CatmATDefine.dat,8910 Catm V3 (Ver:0414)
+
+
+// cat1bis V3
+89110100Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0100)
+89110101Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0101)
+89110200Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0200)
+89110201Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0201)
+89110202Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0202)
+89110203Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0203)
+89110204Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0204)
+89110205Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0205)
+89110206Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0206)
+89110207Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0207)
+
+// cat1bis Merge NB
+89110400Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0400)
+89110401Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0401)
+89110402Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0402)
+89110403Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0403)
+89110404Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0404)
+89110405Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0405)
+89110406Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0406)
+89110407Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0407)
+89110408Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0408)
+89110409Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0409)
+89110410Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0410)
+89110411Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0411)
+89110412Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0412)
+89110413Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0413)
+89110414Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0414)
+89110415Cat1bisATDefine.dat,8910 Cat1bis V3 (Ver:0415)
+
+
+// catm v4
+89120101CatmATDefine.dat,8910 Catm v4 (Ver:0101)
+89120102CatmATDefine.dat,8910 Catm v4 (Ver:0102)
+89120103CatmATDefine.dat,8910 Catm v4 (Ver:0103)
+89120104CatmATDefine.dat,8910 Catm v4 (Ver:0104)
+89120105CatmATDefine.dat,8910 Catm v4 (Ver:0105)
+89120106CatmATDefine.dat,8910 Catm v4 (Ver:0106)
+
+// catm V4 Merge NB
+89120400CatmATDefine.dat,8910 Catm V4 (Ver:0400)
+89120401CatmATDefine.dat,8910 Catm V4 (Ver:0401)
+89120402CatmATDefine.dat,8910 Catm V4 (Ver:0402)
+89120403CatmATDefine.dat,8910 Catm V4 (Ver:0403)
+89120404CatmATDefine.dat,8910 Catm V4 (Ver:0404)
+89120405CatmATDefine.dat,8910 Catm V4 (Ver:0405)
+89120406CatmATDefine.dat,8910 Catm V4 (Ver:0406)
+89120407CatmATDefine.dat,8910 Catm V4 (Ver:0407)
+89120408CatmATDefine.dat,8910 Catm V4 (Ver:0408)
+89120409CatmATDefine.dat,8910 Catm V4 (Ver:0409)
+89120410CatmATDefine.dat,8910 Catm V4 (Ver:0410)
+89120411CatmATDefine.dat,8910 Catm V4 (Ver:0411)
+89120412CatmATDefine.dat,8910 Catm V4 (Ver:0412)
+89120413CatmATDefine.dat,8910 Catm V4 (Ver:0413)
+89120414CatmATDefine.dat,8910 Catm V4 (Ver:0414)
+89120415CatmATDefine.dat,8910 Catm V4 (Ver:0415)
+89120416CatmATDefine.dat,8910 Catm V4 (Ver:0416)
+89120417CatmATDefine.dat,8910 Catm V4 (Ver:0417)
+89120418CatmATDefine.dat,8910 Catm V4 (Ver:0418)
+89120419CatmATDefine.dat,8910 Catm V4 (Ver:0419)
+89120420CatmATDefine.dat,8910 Catm V4 (Ver:0420)
+89120421CatmATDefine.dat,8910 Catm V4 (Ver:0421)
+
+
+// cat1bis V4
+89130101Cat1bisATDefine.dat,8910 Cat1bis v4 (Ver:0101)
+89130102Cat1bisATDefine.dat,8910 Cat1bis v4 (Ver:0102)
+89130103Cat1bisATDefine.dat,8910 Cat1bis v4 (Ver:0103)
+89130104Cat1bisATDefine.dat,8910 Cat1bis v4 (Ver:0104)
+89130105Cat1bisATDefine.dat,8910 Cat1bis v4 (Ver:0105)
+                                           
+// cat1bis V4 Merge NB                     
+89130400Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0400)
+89130401Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0401)
+89130402Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0402)
+89130403Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0403)
+89130404Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0404)
+89130405Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0405)
+89130406Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0406)
+89130407Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0407)
+89130408Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0408)
+89130409Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0409)
+89130410Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0410)
+89130411Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0411)
+89130412Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0412)
+89130413Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0413)
+89130414Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0414)
+89130415Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0415)
+89130416Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0416)
+89130417Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0417)
+89130418Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0418)
+89130419Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0419)
+89130420Cat1bisATDefine.dat,8910 Cat1bis V4 (Ver:0420)
+

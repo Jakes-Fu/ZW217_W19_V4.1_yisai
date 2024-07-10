@@ -1,0 +1,191 @@
+#
+# Makefile.pid - Makefile part for product id
+# 2015	Candle Sun <candle.sun@spreadtrum.com>
+#
+# For Microsoft BOCA project, pid/PID usage is:
+# make xx xx xx pid=<Language Pack>:<Product Code>
+# To describe value patterns, we suppose LP has AA, AD;
+# AA has one PC "059W7M1", AD has "059W6F6" and "059W886"
+# Values for PID can be following patterns:
+# pid=AA@059W7M1
+# pid=AD@059W6F6,059W886
+# pid=AD@ALL
+# pid=AA
+# pid=AA,AD
+# pid=ALL
+# pid=ALL@ALL
+# pid=
+# The patterns have the rules:
+# * LP field can not be empty, while PC field can be empty
+# * LP@PC can be 1@N, but can not be N@1
+# * "ALL" keyword can be used to include all the valid values(LP or PC)
+# * "ALL@ALL" is used include all valid LP_PC combinations
+# * No matter which pattern is used, the LPs provided will be included
+# * If PID variable is not provided in the command line, $(PID_DEFAULT) value will
+#   be used
+# * If "PID="(value is empty) is used, the Mocor base will be built without LP, PC
+# * Lowercase and uppercase letters can be used in the values, the build system can
+#   automatically convert them to all uppercase letters
+#
+# For BOCA image signing in build process:
+# make xx xx xx sp/SP=<7z Password> [st/ST=<Sign Tool Path]
+# * 7z password is used to un7z ms_keys.7z
+# * 7z file rules:
+#   - Be placed in sign tool directory
+#   - Be named ms_keys.7z
+#   - Has one file ms_keys.txt
+#   - Please refer to demo file to know content format
+#   - Demo ms_keys.7z password is 123
+# * ST argument is not necessary, "tools\DEBUG_TOOL\BOCASecureTools\Bin" 
+#   will be used default
+# * Signing process is invoked only on SP is provided
+# * Detailed signing process is defined in ms_sign.bat
+# * To run ms_sign.bat:
+#   ms_sign.bat toolpath key1name key1pass key2name key2pass key3name key3pass \
+#               imgpath pacname prefix
+# 
+
+export EMPTY :=
+export COMMAR := $(EMPTY),$(EMPTY)
+export SPACE := $(EMPTY) $(EMPTY)
+export COLON := $(EMPTY)@$(EMPTY)
+
+str_lc = $(subst A,a,$(subst B,b,$(subst C,c,$(subst D,d,$(subst E,e,$(subst F,f,$(subst G,g,$(subst H,h,$(subst I,i,$(subst J,j,$(subst K,k,$(subst L,l,$(subst M,m,$(subst N,n,$(subst O,o,$(subst P,p,$(subst Q,q,$(subst R,r,$(subst S,s,$(subst T,t,$(subst U,u,$(subst V,v,$(subst W,w,$(subst X,x,$(subst Y,y,$(subst Z,z,$1))))))))))))))))))))))))))
+str_uc = $(subst a,A,$(subst b,B,$(subst c,C,$(subst d,D,$(subst e,E,$(subst f,F,$(subst g,G,$(subst h,H,$(subst i,I,$(subst j,J,$(subst k,K,$(subst l,L,$(subst m,M,$(subst n,N,$(subst o,O,$(subst p,P,$(subst q,Q,$(subst r,R,$(subst s,S,$(subst t,T,$(subst u,U,$(subst v,V,$(subst w,W,$(subst x,X,$(subst y,Y,$(subst z,Z,$1))))))))))))))))))))))))))
+
+# str2path=$(if $(strip $(1)),$(addsuffix /,$(strip $(1))),)
+# str2suffix=$(if (strip $(1)),$(addprefix _,$(strip $(1))),)
+
+pid ?= $(PID_DEFAULT)
+PID ?= $(sort $(pid))
+override PID := $(call str_uc,$(subst $(COLON),$(SPACE),$(strip $(PID))))
+
+ifneq ($(word 3,$(PID)),)
+$(error PID can not include more than 3 parts!!!)
+endif
+
+PID_LP := $(sort $(subst $(COMMAR),$(SPACE),$(word 1,$(PID))))
+PID_PC := $(sort $(subst $(COMMAR),$(SPACE),$(word 2,$(PID))))
+
+ifneq ($(filter ALL,$(strip $(PID_LP))),)
+ ifneq ($(word 2,$(PID_LP)),)
+  $(info For LP [ALL] keyword, other LPs are ignored!!!)
+ endif
+ PID_LP := $(sort $(PID_LP_VALID_ALL))
+ 
+ $(foreach lp,$(PID_LP),$(if $(filter $(lp),$(PID_LP_VALID_ALL)),,$(error Language Pack $(lp) is not valid!!!)))
+
+endif
+
+ifneq ($(filter TA_ALL,$(strip $(PID_LP))),)
+ ifneq ($(word 2,$(PID_LP)),)
+  $(info For LP [ALL] keyword, other LPs are ignored!!!)
+ endif
+ PID_LP := $(sort $(PID_LP_VALID_TA_ALL))
+
+ $(foreach lp,$(PID_LP),$(if $(filter $(lp),$(PID_LP_VALID_TA_ALL)),,$(error Language Pack $(lp) is not valid!!!)))
+
+endif
+
+
+ifneq ($(filter ALL,$(strip $(PID_PC))),)
+ ifneq ($(word 2,$(PID_PC)),)
+  $(info For PC [ALL] keyword, other PCs are ignored!!!)
+ endif
+ PID_PC := ALL
+endif
+
+ifneq ($(strip $(PID_PC)),)
+ ifneq ($(strip $(PID_PC)),ALL)
+  ifneq ($(word 2,$(PID_LP)),)
+   $(error Language Pack$(COLON)Product Code should be N$(COLON)0 or 1$(COLON)N!!!)
+  else
+   $(foreach pc,$(PID_PC),$(if $(filter $(pc),$(PID_PC_$(PID_LP)_VALID_ALL)),,$(error Product Code $(pc) is not valid!!!)))
+   PID_LIST := $(foreach pc,$(PID_PC),$(PID_LP)_$(pc))
+  endif
+ else
+  PID_LIST := $(foreach lp,$(PID_LP),$(foreach pc,$(sort $(PID_PC_$(lp)_VALID_ALL)),$(lp)_$(pc)))
+ endif
+# PID_LIST := $(sort $(PID_LP) $(PID_LIST))
+else
+# PID_LIST := $(PID_LP)
+   pc=$(word 1, $(PID_PC_$(PID_LP)_VALID_ALL))
+   PID_LIST := $(PID_LP)_$(pc)
+endif
+
+PID_LIST := $(sort $(PID_LIST))
+$(info PID_LIST is $(PID_LIST))
+
+ifneq ($(strip $(PID_LP)),)
+ LP_LIST := $(PID_LP)
+endif
+
+LP_LIST := $(sort $(LP_LIST))
+$(info LP_LIST is $(LP_LIST))
+
+
+ifneq ($(PID_LIST),)
+SP ?= $(sp)
+ifneq ($(SP),)
+st ?= tools\DEBUG_TOOL\BOCASecureTools\Bin
+ST ?= $(st)
+override ST := $(strip $(call Path_process,$(ST)))
+define img_sign
+$(eval SK_LIST := $(strip $(shell make\make_cmd\7za.exe x -p$(SP) $(strip $(ST))\ms_keys.7z -so | $(TEE))))
+$(eval SK_LIST := $(sort $(subst =$(SPACE),=,$(subst $(SPACE)=,=,$(SK_LIST)))))
+$(eval SK_LIST := $(subst key3=,$(EMPTY),$(subst key2=,$(EMPTY),$(subst key1=,$(EMPTY),$(SK_LIST)))))
+$(eval SK_LIST := $(subst $(COLON),$(SPACE),$(SK_LIST)))
+$(eval SIGNED_NAME_PREFIX := SIGNED_)
+ms_sign.bat $(strip $(ST)) $(strip $(SK_LIST)) $(strip $(call Path_process,$(BUILD_DIR)/img)) $(strip $(IMGFILENAME)) $(strip $(SIGNED_NAME_PREFIX))
+
+endef
+endif
+
+export variant_lp_get = $$(word 1,$$(subst _,$$(SPACE),$$(strip $$(1))))
+export variant_pc_get = $$(word 2,$$(subst _,$$(SPACE),$$(strip $$(1))))
+
+# For define, the final blank line is needed
+# indep_module_variant_build(mod_name,variant_pid)
+define indep_module_variant_build
+$(ECHO) "---------------------------------------------------------------------------"
+$(ECHO) "BUILDING LIBRARY $(1)_$(2)"
+$(ECHO) "---------------------------------------------------------------------------"
+$(MAKE) PROJECT=$(PROJECT)  VARIANT_PID=$(2) -f $(call GETMAKEPATH,$(1)) -I ./$(BUILD_DIR)/dep/$(1)  2>&1 | $(TEE) -a $(BUILD_DIR)/log/$(1).log
+
+endef
+
+# Overrides original pac_loop
+pac_loop = $(foreach variant_pid,$(sort $(PID_LIST)),$(call pac_build,$(variant_pid)))
+
+# Building independent modules for Microsoft
+nv_parameter.indep:
+	@$(eval MOD_NAME := $(subst .indep,,$@)) 
+	@$(ECHO)
+	$(PERL) make/perl_script/rm_file.pl ./$(BUILD_DIR)/log/$(MOD_NAME).log ""
+	@$(ECHO) Building library $(MOD_NAME) \( refer to $(BUILD_DIR)/log/$(MOD_NAME).log for detail \), Please Wait ... 
+	@-$(PERL) make/perl_script/getsecond.pl >./$(BUILD_DIR)/tmp/$(MOD_NAME)_start.txt
+	@$(PERL) make/perl_script/mk_dir.pl "$(MOD_NAME)" $(BUILD_DIR)/obj
+	@$(PERL) make/perl_script/mk_dir.pl "$(MOD_NAME)" $(BUILD_DIR)/dep
+	@$(foreach variant_pid,$(PID_LIST),$(call indep_module_variant_build,$(MOD_NAME),$(variant_pid)))
+	@$(ECHO) \n$(MOD_NAME) library build finished
+	@-$(PERL) make/perl_script/getcompiletime.pl $(MOD_NAME) ./$(BUILD_DIR)/tmp/$(MOD_NAME)_start.txt  2>&1 | $(TEE) -a $(BUILD_DIR)/log/time_consuming.log
+	@$(PERL) make/perl_script/rm_file.pl ./$(BUILD_DIR)/tmp/$(MOD_NAME)_start.txt ""
+	$(PERL) make/perl_script/del_target.pl "$(MOD_NAME)" "fdl1 fdl2 bootloader nor_fdl resource nv_parameter dmdsp fota wre_preload  preload_app spload" "$(BUILD_DIR)/img/$(PROJECT).pac"
+
+resource%.indep:
+	@$(eval MOD_NAME := $(subst .indep,,$@)) 
+	@$(ECHO)
+	$(PERL) make/perl_script/rm_file.pl ./$(BUILD_DIR)/log/$(MOD_NAME).log ""
+	@$(ECHO) Building library $(MOD_NAME) \( refer to $(BUILD_DIR)/log/$(MOD_NAME).log for detail \), Please Wait ... 
+	@-$(PERL) make/perl_script/getsecond.pl >./$(BUILD_DIR)/tmp/$(MOD_NAME)_start.txt
+	@$(PERL) make/perl_script/mk_dir.pl "$(MOD_NAME)" $(BUILD_DIR)/obj
+	@$(PERL) make/perl_script/mk_dir.pl "$(MOD_NAME)" $(BUILD_DIR)/dep
+	@$(foreach variant_lp,$(LP_LIST),$(call indep_module_variant_build,$(MOD_NAME),$(variant_lp)))
+	@$(ECHO) \n$(MOD_NAME) library build finished
+	@-$(PERL) make/perl_script/getcompiletime.pl $(MOD_NAME) ./$(BUILD_DIR)/tmp/$(MOD_NAME)_start.txt  2>&1 | $(TEE) -a $(BUILD_DIR)/log/time_consuming.log
+	@$(PERL) make/perl_script/rm_file.pl ./$(BUILD_DIR)/tmp/$(MOD_NAME)_start.txt ""
+	$(PERL) make/perl_script/del_target.pl "$(MOD_NAME)" "fdl1 fdl2 bootloader nor_fdl resource nv_parameter dmdsp fota wre_preload  preload_app spload" "$(BUILD_DIR)/img/$(PROJECT).pac"
+
+
+
+endif

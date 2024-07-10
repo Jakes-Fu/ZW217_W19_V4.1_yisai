@@ -1,0 +1,238 @@
+/*****************************************************************************
+** File Name:      mmialarm_menutable.c                                      *
+** Author:                                                                   *
+** Date:           2006/09/12                                                *
+** Copyright:      2006 Spreadtrum, Incorporated. All Rights Reserved.         *
+** Description:    This file is used to handle alarm menutable               *
+******************************************************************************
+**                         Important Edit History                            *
+** --------------------------------------------------------------------------*
+** DATE           NAME             DESCRIPTION                               *
+** 2006/09/12     liqing.peng      Creat                                     *
+******************************************************************************/
+
+
+/**--------------------------------------------------------------------------*
+ **                         Include Files                                    *
+ **--------------------------------------------------------------------------*/
+#include "window_parse.h"
+#include "guimenu.h"
+#include "mmi_text.h"
+#include "mmi_image.h"
+#include "mmieng_menutable.h"
+#include "mmi_menutable.h"
+#include "mmi_modu_main.h"
+#include "mmialarm_menutable.h"
+#include "mmialarm_id.h"
+#include "mmialarm_text.h"
+#include "mmialarm_image.h"
+#include "mmi_module.h"
+#include "mmi_common.h"
+#include "mmi_nv.h"
+#include "mmiacc_text.h"
+#include "mmifmm_text.h"
+#ifdef MMI_VCALENDAR_SUPPORT
+#include "Mmipb_text.h"
+#endif
+#include "mmiacc_image.h"
+#include "mmipb_image.h"
+/**--------------------------------------------------------------------------*
+ **                         MACRO DEFINITION                                 *
+ **--------------------------------------------------------------------------*/
+
+/**--------------------------------------------------------------------------*
+ **                         STATIC DEFINITION                                *
+ **--------------------------------------------------------------------------*/
+
+
+/*---------------------------------------------------------------------------*/
+/*                          TYPE AND CONSTANT                                */
+/*---------------------------------------------------------------------------*/
+const GUIMENU_ITEM_T menu_alarm_option[] =
+{   
+    {ID_ALM_OPEN,      TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_COMMON_ENABLE_ON,  0, 0, 0, MENU_NULL},
+    {ID_ALM_CLOSE,    TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_CLOSE,         0, 0, 0, MENU_NULL},
+    {ID_ALM_MODE,     TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_ALARM_EDIT_MODE,     0, 0, 0, MENU_NULL},
+    {ID_ALM_RING,      TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_RING,   0, 0, 0, MENU_NULL},
+};
+
+const GUIMENU_ITEM_T menu_aotopower_option[] =
+{   
+    {ID_ALM_OPEN,      TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_COMMON_ENABLE_ON,  0, 0, 0, MENU_NULL},
+    {ID_ALM_CLOSE,    TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_CLOSE,         0, 0, 0, MENU_NULL},
+    {ID_ALM_MODE,     TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_ALARM_EDIT_MODE,     0, 0, 0, MENU_NULL},
+};
+
+const GUIMENU_ITEM_T menu_auto_poweronoff[] =
+{   
+    {ID_AUTO_POWERON,      TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_AUTOPOWER_ON,  0, 0, 0, MENU_NULL},
+    {ID_AUTO_POWEROFF,     TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_AUTOPOWER_OFF,  0, 0, 0, MENU_NULL}
+};
+
+const GUIMENU_ITEM_T  menu_sch[] =
+{
+#ifdef MMI_PDA_SUPPORT
+    {ID_SCH_EDIT,  		TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_EDIT,  IMG_PB_MENU_EDIT_ICON, IMG_PB_MENU_EDIT_ICON, IMG_PB_MENU_EDIT_ICON, MENU_NULL},
+    {ID_SCH_DEL,        TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_DELETE,  IMAGE_COMMON_OPTMENU_DELETE, IMAGE_COMMON_OPTMENU_DELETE, IMAGE_COMMON_OPTMENU_DELETE, MENU_NULL},
+#ifdef MMI_VCALENDAR_SUPPORT
+    {ID_SCH_LIST_SEND,	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_SEND,  IMAGE_COMMON_OPTMENU_SEND, IMAGE_COMMON_OPTMENU_SEND, IMAGE_COMMON_OPTMENU_SEND, MENU_SCH_SEND},
+    {ID_SCH_VCALENDAR_EXPORT,    TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_COMM_EXPORT, IMG_CALENDAR_MENU_EXPORT_ICON, IMG_CALENDAR_MENU_EXPORT_ICON, IMG_CALENDAR_MENU_EXPORT_ICON, MENU_NULL},
+#endif
+#else
+    {ID_SCH_EDIT,  		TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_EDIT,  0, 0, 0, MENU_NULL},
+    {ID_SCH_DEL,        TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_DELETE,  0, 0, 0, MENU_NULL},
+#endif
+};
+const GUIMENU_ITEM_T  menu_sch_opt[] =
+{
+#ifdef MMI_PDA_SUPPORT
+    {ID_SCH_LIST_NEW,   TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_CALENDAR_NEW,  IMG_CALENDAR_MENU_ADD_ICON, IMG_CALENDAR_MENU_ADD_ICON, IMG_CALENDAR_MENU_ADD_ICON, MENU_NULL},
+#ifdef MMI_VCALENDAR_SUPPORT
+    {ID_SCH_LIST_MARK,	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   STXT_MARK,  IMAGE_COMMON_OPTMENU_MARK, IMAGE_COMMON_OPTMENU_MARK, IMAGE_COMMON_OPTMENU_MARK, MENU_SCH_MARK},
+    {ID_SCH_VCALENDAR_IMPORT,      TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_COMMON_IMPORT,  IMG_PB_MENU_IMPORT_ICON, IMG_PB_MENU_IMPORT_ICON, IMG_PB_MENU_IMPORT_ICON, MENU_NULL},
+#else
+    {ID_SCH_LIST_DEL_ALL,   TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_DELALL,  IMAGE_COMMON_OPTMENU_REMOVE_ALL, IMAGE_COMMON_OPTMENU_REMOVE_ALL, IMAGE_COMMON_OPTMENU_REMOVE_ALL, MENU_NULL},
+#endif
+    {ID_SCH_LIST_LUNAR_DETAIL,	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_CALENDAR_LUNAR_DETAIL,  IMG_CALENDAR_MENU_LURA_DETAIL_ICON, IMG_CALENDAR_MENU_LURA_DETAIL_ICON, IMG_CALENDAR_MENU_LURA_DETAIL_ICON, MENU_NULL},
+    {ID_SCH_TO_DATE,	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_CALENDAR_TO_DATE,  IMG_CALENDAR_MENU_CLEAN_GOTO_DATE_ICON, IMG_CALENDAR_MENU_CLEAN_GOTO_DATE_ICON, IMG_CALENDAR_MENU_CLEAN_GOTO_DATE_ICON, MENU_NULL},
+
+#else//MMI_PDA_SUPPORT
+
+    {ID_SCH_LIST_VIEW,	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_VIEW,  0, 0, 0, MENU_NULL},
+    {ID_SCH_LIST_EDIT, 	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_EDIT,  0, 0, 0, MENU_NULL},
+    {ID_SCH_LIST_NEW,   TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_CALENDAR_NEW,  0, 0, 0, MENU_NULL},
+#ifdef MMI_VCALENDAR_SUPPORT
+    {ID_SCH_LIST_DEL_MARK, 	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_DELETE,  0, 0, 0, MENU_NULL},
+    {ID_SCH_LIST_SEND,	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_SEND,  0, 0, 0, MENU_SCH_SEND},
+    {ID_SCH_LIST_MARK,	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   STXT_MARK,  0, 0, 0, MENU_SCH_MARK},
+    {ID_SCH_VCALENDAR,  TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_IDLE_CALENDAR,  0, 0, 0, MENU_SCH_VCALENDAR},   
+#else
+    {ID_SCH_LIST_DEL, 	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_DELETE,  0, 0, 0, MENU_NULL},
+    {ID_SCH_LIST_DEL_ALL,   TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_DELALL,  0, 0, 0, MENU_NULL},
+#endif
+    {ID_SCH_LIST_LUNAR_DETAIL,	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_CALENDAR_LUNAR_DETAIL,  0, 0, 0, MENU_NULL},
+    {ID_SCH_TO_DATE,	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_CALENDAR_TO_DATE,  0, 0, 0, MENU_NULL},
+#endif//MMI_PDA_SUPPORT
+};
+const GUIMENU_ITEM_T  menu_sch_all_opt[] =
+{
+#ifdef MMI_PDA_SUPPORT
+    {ID_SCH_ALL_LIST_NEW,  	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_CALENDAR_NEW,  IMG_CALENDAR_MENU_ADD_ICON, IMG_CALENDAR_MENU_ADD_ICON, IMG_CALENDAR_MENU_ADD_ICON, MENU_NULL},
+#ifdef MMI_VCALENDAR_SUPPORT
+    {ID_SCH_LIST_MARK,	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   STXT_MARK,  IMAGE_COMMON_OPTMENU_MARK, IMAGE_COMMON_OPTMENU_MARK, IMAGE_COMMON_OPTMENU_MARK, MENU_SCH_MARK},
+    {ID_SCH_VCALENDAR_IMPORT,      TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_COMMON_IMPORT,  IMG_PB_MENU_IMPORT_ICON,IMG_PB_MENU_IMPORT_ICON, IMG_PB_MENU_IMPORT_ICON, MENU_NULL},
+#else
+    {ID_SCH_ALL_LIST_DEL_ALL,	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_DELALL,  IMAGE_COMMON_OPTMENU_REMOVE_ALL, IMAGE_COMMON_OPTMENU_REMOVE_ALL, IMAGE_COMMON_OPTMENU_REMOVE_ALL, MENU_NULL},
+#endif
+    {ID_SCH_LIST_LUNAR_DETAIL,	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_CALENDAR_LUNAR_DETAIL,  IMG_CALENDAR_MENU_LURA_DETAIL_ICON, IMG_CALENDAR_MENU_LURA_DETAIL_ICON, IMG_CALENDAR_MENU_LURA_DETAIL_ICON, MENU_NULL},
+    {ID_SCH_TO_DATE,	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_CALENDAR_TO_DATE,  IMG_CALENDAR_MENU_CLEAN_GOTO_DATE_ICON, IMG_CALENDAR_MENU_CLEAN_GOTO_DATE_ICON, IMG_CALENDAR_MENU_CLEAN_GOTO_DATE_ICON, MENU_NULL},
+#else//MMI_PDA_SUPPORT
+    {ID_SCH_ALL_LIST_VIEW,	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_VIEW,  0, 0, 0, MENU_NULL},
+    {ID_SCH_ALL_LIST_EDIT, 	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_EDIT,  0, 0, 0, MENU_NULL},   
+    {ID_SCH_ALL_LIST_NEW,  	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_CALENDAR_NEW,  0, 0, 0, MENU_NULL},
+#ifdef MMI_VCALENDAR_SUPPORT
+    {ID_SCH_LIST_DEL_MARK, 	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_DELETE,  0, 0, 0, MENU_NULL},
+    {ID_SCH_LIST_MARK,	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   STXT_MARK,  0, 0, 0, MENU_SCH_MARK},
+    {ID_SCH_LIST_SEND,	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_SEND,  0, 0, 0, MENU_SCH_SEND},
+    {ID_SCH_VCALENDAR,	TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_IDLE_CALENDAR,  0, 0, 0, MENU_SCH_VCALENDAR},
+#else
+    {ID_SCH_ALL_LIST_DEL, 	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_DELETE,  0, 0, 0, MENU_NULL},
+    {ID_SCH_ALL_LIST_DEL_ALL,	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_DELALL,  0, 0, 0, MENU_NULL},
+#endif
+
+    {ID_SCH_LIST_LUNAR_DETAIL,	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_CALENDAR_LUNAR_DETAIL,  0, 0, 0, MENU_NULL},
+    {ID_SCH_TO_DATE,	TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_CALENDAR_TO_DATE,  0, 0, 0, MENU_NULL},
+#endif//MMI_PDA_SUPPORT
+};
+const GUIMENU_ITEM_T menu_feast[] =
+{   
+    {ID_FEAST_VIEW,         TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_VIEW,  0, 0, 0, MENU_NULL},
+    {ID_FEAST_NEW,          TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_NEW,  0, 0, 0, MENU_NULL},
+    {ID_FEAST_INQUIRE,      TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_INQUIRE,  0, 0, 0, MENU_NULL},
+    {ID_FEAST_DELETE,       TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_DELETE,  0, 0, 0, MENU_NULL},
+    {ID_FEAST_DELALL,       TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_DELALL,  0, 0, 0, MENU_NULL},
+};
+
+/*const GUIMENU_ITEM_T menu_alarm_ring_type[] =
+{   
+    {ID_ALM_RING_INHERE,      TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_ALARM_INHEAR_RING_TYPE,  0, 0, 0, MENU_NULL},
+    {ID_ALM_RING_SELFHOOD,    TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_ALARM_SELFHOOD_RING_TYPE, 0, 0, 0, MENU_NULL},
+    {ID_ALM_RING_MP3,         TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_ALARM_MP3_RING_TYPE,     0, 0, 0, MENU_NULL},
+    {ID_ALM_RING_RECORD,      TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_ALARM_RECORD_RING_TYPE,   0, 0, 0, MENU_NULL},
+};*/
+#ifdef MMI_VCALENDAR_SUPPORT
+const GUIMENU_ITEM_T menu_sch_mark[] =
+{   
+    {ID_SCH_LIST_SUB_MARK,      TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   STXT_MARK,  0, 0, 0, MENU_NULL},
+    {ID_SCH_LIST_SUB_CANCEL_MARK,    TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_CANCEL_MARK, 0, 0, 0, MENU_NULL},
+    {ID_SCH_LIST_SUB_MARK_ALL,         TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_MARK_ALL,     0, 0, 0, MENU_NULL},
+    {ID_SCH_LIST_SUB_CANCEL_MARK_ALL,      TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_CANCEL_MARK_ALL,   0, 0, 0, MENU_NULL},
+};
+
+const GUIMENU_ITEM_T menu_sch_vcalendar[] =
+{   
+    {ID_SCH_VCALENDAR_IMPORT,      TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_COMMON_IMPORT,  0, 0, 0, MENU_NULL},
+    {ID_SCH_VCALENDAR_EXPORT,    TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_COMM_EXPORT, 0, 0, 0, MENU_NULL},
+};
+
+const GUIMENU_ITEM_T menu_sch_send[] =
+{   
+    {ID_SCH_LIST_SEND_SMS,      TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_SMS,  0, 0, 0, MENU_NULL},
+#ifdef MMS_SUPPORT
+    {ID_SCH_LIST_SEND_MMS,    TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_MMS, 0, 0, 0, MENU_NULL},
+#endif
+#ifdef BLUETOOTH_SUPPORT
+    {ID_SCH_LIST_SEND_BT,         TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_BLUETOOTH,     0, 0, 0, MENU_NULL},
+#endif
+};
+#endif
+
+const GUIMENU_ITEM_T menu_alarm_setting_ring[] =
+{   
+    {ID_ALARM_RING_FIX,      TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_RING_FIXED,  0, 0, 0, MENU_NULL},
+    {ID_ALARM_RING_DOWNLOAD,    TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_COMMON_MORE_RING, 0, 0, 0, MENU_NULL},
+    {ID_ALARM_RING_RECORD,    TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_ALARM_RECORD_RING_TYPE, 0, 0, 0, MENU_NULL},
+#ifdef FM_SUPPORT
+    {ID_ALARM_RING_FM,    TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_ALARM_FM_RING, 0, 0, 0, MENU_NULL},
+#endif
+};
+
+const GUIMENU_ITEM_T menu_sch_setting_ring[] =
+{   
+    {ID_ALARM_RING_FIX,      TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_RING_FIXED,  0, 0, 0, MENU_NULL},
+    {ID_ALARM_RING_DOWNLOAD,    TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_COMMON_MORE_RING, 0, 0, 0, MENU_NULL},
+    {ID_ALARM_RING_RECORD,    TIP_NULL, {TXT_COMMON_OK, TXT_NULL, STXT_RETURN},   TXT_ALARM_RECORD_RING_TYPE, 0, 0, 0, MENU_NULL},    
+};
+
+#ifdef MMI_ALARM_DEL_ADD_SUPPORT
+const GUIMENU_ITEM_T menu_alarm_opt[] =
+{   
+    {ID_ALM_OPT_ADD,      TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_ADD,  0, 0, 0, MENU_NULL},
+    {ID_ALM_OPT_EDIT,    TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_EDIT, 0, 0, 0, MENU_NULL},
+    {ID_ALM_OPT_DEL,         TIP_NULL, {STXT_OK, TXT_NULL, STXT_RETURN},   TXT_DELETE,     0, 0, 0, MENU_NULL},
+};
+#endif
+
+#define MENU_DEF(_TABLEID, _ITEMPTR, _STYLE, _TITLESTR, _TITLE_ICON, _TITLE_NUMICON, _TITLE_BACKGROUND, \
+	_ITEMCOUNT) \
+     _ITEMPTR, _STYLE, _TITLESTR, _TITLE_ICON, _TITLE_NUMICON, _TITLE_BACKGROUND, _ITEMCOUNT, 
+
+const GUIMENU_GROUP_T alarm_menu_table[] = 
+{
+    {NULL},
+    #include "mmialarm_menutable.def"
+};
+
+
+
+/*****************************************************************************/
+// 	Description : Register alarm menu group
+//	Global resource dependence : none
+//  Author: liqing.peng
+//	Note:
+/*****************************************************************************/
+PUBLIC void MMIALM_RegMenuGroup(void)
+{
+    MMI_RegMenuGroup(MMI_MODULE_ALARM, alarm_menu_table);
+}
+

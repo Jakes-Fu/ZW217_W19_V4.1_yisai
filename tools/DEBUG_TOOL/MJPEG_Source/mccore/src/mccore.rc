@@ -1,0 +1,192 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include <windows.h>
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PARAM DIALOGEX 0, 0, 220, 223
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TAB,"SysTabControl32",0x0,4,3,211,193
+    EDITTEXT        IDC_EDIT,13,173,64,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE,162,173,13,13,NOT WS_VISIBLE
+    COMBOBOX        IDC_VALUE,13,173,65,74,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "&Revert",IDC_REVERT,47,201,40,15
+    PUSHBUTTON      "&OK",IDOK,139,201,40,15
+    CONTROL         "",IDC_SLIDER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | 
+                    NOT WS_VISIBLE | WS_TABSTOP,83,171,77,16
+    EDITTEXT        IDC_INFO,9,137,200,25,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | NOT WS_BORDER | WS_VSCROLL,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,
+                    9,19,200,115
+    PUSHBUTTON      "&Apply",IDC_APPLY,93,201,40,15
+    GROUPBOX        "Value",IDC_VALUE_FRAME,9,163,201,28
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+3 TEXTINCLUDE 
+BEGIN
+    "preference.h\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include <windows.h>\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR_DECODE_AUDIO  "Error decoding audio"
+    IDS_AUDIO_STREAM_UNSUPPORTED 
+                            "The selected container format does not support the selected audio format."
+    IDS_NOT_STANDALONE_ENCODER 
+                            "The selected audio encoder is a portion of the video encoder and can not be used for audio-only transcoding."
+    IDS_ERROR_VIDEO_TRANSCODE "Error occurs during video transcoding."
+    IDS_TRANSCODE_DONE      "Transcoding completed.\n\n%d file(s) / %d KB have been transcoded into %d KB\nTotal time elapsed: %d seconds\nCompression ratio: %.2f:1"
+    IDS_INCOMPATIBLE_AV     "The selected video format is incompatible with the selected audio format."
+    IDS_TRANSCODE_FAIL      "Nothing is transcoded. Please check the log to identify the cause. Some possible causes:\n\n1. Incorrect settings (most occasionally)\n2. The target file cannot be created.\n3. Unsupported input format\n4. Unsupported combinations of target audio/video/container format\n5. You chose to skip all existing files\n6. A bug in the program (if you are sure, please report with details)\n\nMediaCoder is still in beta stage, so please give it enough patience to let it get better and better. Thank you."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TRANSCODE_INTERRUPTED "Transcoding is interrupted by user."
+    IDS_CANNOT_MUX_AUDIO    "The target audio format cannot be muxed into the selected container format. The audio stream will be bypassed."
+    IDS_ERROR_PS            "Parametric stereo can only be applied for encoding with bitrate of no higher than 48Kbps."
+    IDS_UNSUPPORTED_MODE    "This encoding mode is not supported by the encoder."
+    IDS_ERROR_MUX           "Unable to mux selected files into the container."
+    IDS_ERROR_MUXER         "Failed to launch container muxer to mux streams."
+    IDS_INVALID_FILE        "The container information of file %s cannot be interpreted. However it is still quite likely that it can be transcoded. Are you sure you want to transcode this file?"
+    IDS_ERROR_NAMED_PIPE    "Error creating named pipe. This function requires Windows NT based OS."
+    IDS_ENCODER_FAIL        "Failed to load %s. This can be caused by the absence of the encoder library/executive."
+    IDS_SOURCE_FAIL         "Failed to load %s. This is possible that the decoder is absent."
+    IDS_LOADED              "%s loaded"
+    IDS_UNLOADED            "%s unloaded"
+    IDS_APPLY_SETTINGS      "Applying codec parameters"
+    IDS_ERROR_START         "Error starting %s"
+    IDS_LOAD_AUDIO_ENCODER  "Starting audio encoder (%s)"
+    IDS_LOAD_AUDIO_SOURCE   "Opening audio source (%s)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SCAN_PLUGINS        "Scanning plugins"
+    IDS_LOADING             "Loading %s"
+    IDS_ERROR_LOADING       "Error loading %s"
+    IDS_EXTRACTING_WAVE     "%s extracting waveform"
+    IDS_STOPPED             "%s stopped"
+    IDS_FOUND_MATCH_PLUGIN  "Found matching input plugin for %s"
+    IDS_START_JOB           "Start transcoding job for %s"
+    IDS_FINISH_JOB          "Finished transcoding job for %s"
+    IDS_OVERWRITE_CONFIRM   "The target file %s already exists.\nChoose ""Yes"" to overwrite it. Choose ""No"" to back it up before encoding. Choose ""Cancel"" to skip this file."
+    IDS_OVERWRITE_KEEP      "Do you want to apply your choice to the rest of the files in the queue in this manner?"
+    IDS_ERROR_DELETE        "File %s is in use and cannot be overwritten."
+    IDS_EXTRACT_WAVE        "Extracting waveform from file %s"
+    IDS_MP_NEED_UPDATE      "MPlayer needs to be updated so that MediaCoder can interface with it. Usually a Full Pack update can solve this."
+    IDS_ERROR_AUDIO         "Error occured during audio transcoding."
+    IDS_FILE_NOT_FOUND      "%s not found"
+    IDS_INCORRECT_VERSION   "Incompatible version of %s loaded."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INCORRECT_SETTINGS  "Incorrect parameters for %s."
+    IDS_FAIL_START_FE       "Failed to start encoder front-end"
+    IDS_ERROR_CREATE_PIPE   "Error creating pipe"
+    IDS_WAIT_PROCESS        "Waiting for process to terminate"
+    IDS_UNLOADING_DLL       "Unloading codec DLL"
+    IDS_LOADING_DLL         "Loading codec DLL"
+    IDS_SET_FRAME_SIZE      "Setting frame size to %d bytes"
+    IDS_INCOMPATIBLE_INPUT  "Incompatible input stream"
+    IDS_INVALID_SAMPLE_RATE "The sample rate of the input stream is out of the valid range of %s."
+    IDS_RUNNING             "Running %s"
+    IDS_INVALID_BITRATE     "Invalid bitrate is set."
+    IDS_CT_INFO             "To use CT aacPlus encoder, you need to either install latest Winamp or get and copy enc_aacplus.dll to MediaCoder's ""codecs"" folder."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+preference.h
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

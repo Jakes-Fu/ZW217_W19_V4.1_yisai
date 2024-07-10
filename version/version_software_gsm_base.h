@@ -1,0 +1,1 @@
+#define _BASE_SW_VERSION_ "SVN"

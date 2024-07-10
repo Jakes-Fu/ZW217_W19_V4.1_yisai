@@ -1,0 +1,31 @@
+; ROM_LOAD base address comes from flash_cfg.c
+; if you change lcd bin base address, you must
+; chang ROM_LOAD base address accordingly.
+ROM_LOAD 0x00FE0000 0x4000
+{
+    ROM_EXEC 0x00FE0000 0x200
+    {
+      	init.o (Init, +First)	
+    }
+    ; lcm func should be set follow the following equation:
+    ; ROM_EXEC2 BASE ADDR: lcm bin load addr(base addr) + 0x200(offset)
+    ROM_EXEC2 0xfe0200 FIXED
+    {
+    	spload_main.o(LCM_SENSOR_EXT_FUNC)
+    }
+    ROM_EXEC3 +0
+    {
+    	.ANY (+RO)
+    }
+    ;RAM_RW section base address,should equal to LCD_EXT_STACK(comes from project_name.scf)
+    ;section base address
+    RAM_RW 0x047F8000 0x2000
+    {   
+    	.ANY (+RW)
+    } 
+    RAM_ZI 0x47fa000 0x2000
+    {   
+    	.ANY (+ZI)
+    }    
+}
+

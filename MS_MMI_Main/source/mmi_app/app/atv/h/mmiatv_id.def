@@ -1,0 +1,19 @@
+#ifdef ATV_SUPPORT
+WIN_ID_DEF(MMIATV_MAIN_WIN_ID),		                                    //main play window
+WIN_ID_DEF(MMIATV_MAIN_OPT_WIN_ID),                                    //main opt menu
+WIN_ID_DEF(MMIATV_SERVICE_LIST_WIN_ID),		                    //service list
+WIN_ID_DEF(MMIATV_FAVORITE_SERVICE_LIST_WIN_ID),          //favorite service list
+WIN_ID_DEF(MMIATV_FAVORITE_SERVICE_LIST_OPT_WIN_ID),  //favorite service list opt menu
+WIN_ID_DEF(MMIATV_QUERY_WIN_ID),                                          //help
+WIN_ID_DEF(MMIATV_FAVORITE_NAME_EDIT_WIN_ID),                //service name edit
+WIN_ID_DEF(MMIATV_SELECT_REGION_WIN_ID),                          //select region
+WIN_ID_DEF(MMIATV_HELP_WIN_ID),                                            //help
+WIN_ID_DEF(MMIATV_SETTING_WIN_ID),                                      //setting
+
+#ifdef MMI_PDA_SUPPORT
+WIN_ID_DEF(MMIATV_FAVORITE_SERVICE_LIST_LONGOK_OPT_WIN_ID),          //favorite service list longok opt
+WIN_ID_DEF(MMIATV_SERVICE_LIST_LONGOK_OPT_WIN_ID),		                    //service list longok opt
+#endif //MMI_PDA_SUPPORT
+
+WIN_ID_DEF(MMIATV_END_WIN_ID),//结束ID，保留。用于判断关闭所有窗口
+#endif

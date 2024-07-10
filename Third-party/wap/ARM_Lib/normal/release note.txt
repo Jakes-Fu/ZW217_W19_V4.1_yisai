@@ -1,0 +1,32 @@
+2006-2-8 新库的mmi主要改动了2个地方：
+1．wap显示尺寸、字体可以动态设置，请修改WapCoreLoad(UInt16 wapWidth,UInt16 wapHeight,UInt16 fontSize,UInt16 maxWBXMLLength)传入相应的参数
+wapWidth：wap显示区域的宽度 （7350是128）
+wapHeight：wap显示区域的高度（7350是114）
+fontSize：字体大小，如12、14、16
+maxWBXMLLength：目前未用。
+
+
+
+2. user agent 可以设置。
+
+fnWAP_GetSessionHeader(char **header[ ], short* head_len)
+
+
+2006-2-16 wap库的改动
+可动态传入可支持的最大WBXML大小
+
+WapCoreLoad函数的第4个参数可用，初始化时，请传入相应的大小
+
+WapCoreLoad(UInt16 wapWidth,UInt16 wapHeight,UInt16 fontSize,UInt16 maxWBXMLLength)
+
+注意：以原来的能力值wapcore 6k，stack 30k，分配400k内存为基准，如果要增大这两个能力值
+
+则需要相应的增加内存以避免风险，具体公式是：
+
+对于wapcore需额外增加的内存值为增加值 * 7
+
+对wapstack需额外增加的内存值为增加值 * 3
+
+例如，要将wapcore从6k调整为8k，并且将wapstack从30k调整为50k则需要增加的内存为
+
+(8-6) * 7 + (50-30) * 3 = 74k

@@ -1,0 +1,487 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// 描述：NB LTE L3 AS 消息定义文件
+// 作者：HongyunTan
+// 日期：2016-08-27
+// 版本：V0.0.1
+// 版权：CopyRight(c) 2016.08 By RDA
+// 
+// 消息定义格式：
+//    <MsgID MsgName>
+//         参数名      参数类型      参数基类型        参数含义         参数选项
+//    </MsgID MsgName>
+//Bit
+// 子结构定义
+//    <Sub T_Temp>
+//         参数名      参数类型      参数基类型        参数含义         参数选项
+//    </Sub T_Temp>
+//
+//  一个参数的bit位定义
+//    <Bit T_Var>
+//         成员名      在参数中的Bit位起始位置         成员长度(Bit数)         成员含义       成员选项
+//    </Bit T_Var>
+//
+//  指针类型参数定义
+//     参数名          Ptr           参数基类型         参数含义
+//  e.g:
+//      u8   *pPdschPointer;             ===> pPdschPointer      Ptr   u8              pPdschPointer 
+//      T_PDSCH_MEM  *pPdschMapPointer;  ===> pPdschMapPointer   Ptr   T_PDSCH_MEM     pPdschMapPointer
+//
+//
+// 选项定义：
+//    |input;|                       参数值允许输入
+//    |nochange;|                    参数值不允许改变
+//    |select;值1:含义;值2:含义;|    参数值只能选择
+//    |dismember;名称;|              参数bit定义
+//    |multiedit;|                   数组输入
+//              
+//  注意：
+//      1. 不支持union类型
+//      2. ..:取值范围定义,e.g: 1..5,表示1到5范围
+//      3. 空格符作为各列间的分隔符，如内容中有空格符，使用Tab符代替.
+//      4. 参数基类型，支持u8、u16、u32，s8，s16，s32，自定义子结构、数组、指针类型(Ptr)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// --------------------------------------------------------------
+// changel = 0x80  BCCH-BCH
+// --------------------------------------------------------------
+<0x8000 MasterInformationBlock-NB>
+
+</0x8000 MasterInformationBlock-NB>
+
+
+
+// --------------------------------------------------------------
+// changel = 0x81  BCCH-DL-SCH
+// --------------------------------------------------------------
+<0x8100 systemInformationBlockType1-NB>
+
+</0x8100 systemInformationBlockType1-NB>
+
+
+<0x8101 SIB2-NB>
+
+</0x8101 SIB2-NB>
+
+		
+
+<0x8102 SIB3-NB>
+
+</0x8102 SIB3-NB>
+
+
+<0x8103 SIB4-NB>
+
+</0x8103 SIB4-NB>
+
+
+
+<0x8104 SIB5-NB>
+
+</0x8104 SIB5-NB>
+
+
+
+<0x8105 SIB14-NB>
+
+</0x8105 SIB14-NB>
+
+
+
+<0x8106 SIB16-NB>
+
+</0x8106 SIB16-NB>
+
+<0x8107 SIB22-NB>
+
+</0x8107 SIB22-NB>
+
+
+
+// --------------------------------------------------------------
+// changel = 0x82  PAGING
+// --------------------------------------------------------------
+<0x8200 Paging-NB>
+
+</0x8200 Paging-NB>
+
+
+
+// --------------------------------------------------------------
+// changel = 0x83  DL_DCCH
+// --------------------------------------------------------------
+<0x8301 rrcConnectionReestablishment-NB>
+
+</0x8301 rrcConnectionReestablishment-NB>
+
+
+
+<0x8302 rrcConnectionReestablishmentReject-NB>
+
+</0x8302 rrcConnectionReestablishmentReject-NB>
+
+
+
+<0x8303 rrcConnectionReject-NB>
+
+</0x8303 rrcConnectionReject-NB>
+
+
+
+<0x8304 rrcConnectionSetup-NB>
+
+</0x8304 rrcConnectionSetup-NB>
+
+
+// --------------------------------------------------------------
+// changel = 0x03 UL-CCCH
+// --------------------------------------------------------------
+<0x0301 rrcConnectionReestablishmentRequest-NB>
+
+</0x0301 rrcConnectionReestablishmentRequest-NB>
+
+
+<0x0302 rrcConnectionRequest-NB>
+
+</0x0302 rrcConnectionRequest-NB>
+
+
+
+<0x0303 rrcConnectionResumeReq-NB>
+
+</0x0303 rrcConnectionResumeReq-NB>
+
+
+
+// --------------------------------------------------------------
+// changel = 0x84  DL-DCCH
+// --------------------------------------------------------------
+<0x8401 dlInformationTransfer-NB>
+
+</0x8401 dlInformationTransfer-NB>
+
+
+<0x8402 rrcConnectionReconfiguration-NB>
+
+</0x8402 rrcConnectionReconfiguration-NB>
+
+
+<0x8403 rrcConnectionRelease-NB>
+
+</0x8403 rrcConnectionRelease-NB>
+
+
+<0x8404 securityModeCommand-NB>
+
+</0x8404 securityModeCommand-NB>
+
+
+<0x8405 ueCapabilityEnquiry-NB>
+
+</0x8405 ueCapabilityEnquiry-NB>
+
+
+<0x8406 rrcConnectionResume-NB>
+
+</0x8406 rrcConnectionResume-NB>
+
+// --------------------------------------------------------------
+// changel = 0x04  UL-DCCH
+// --------------------------------------------------------------
+<0x0401 rrcConnectionReconfigurationComplete-NB>
+
+</0x0401 rrcConnectionReconfigurationComplete-NB>
+
+
+<0x0402 rrcConnectionReestablishmentComplete-NB>
+
+</0x0402 rrcConnectionReestablishmentComplete-NB>
+
+
+<0x0403 rrcConnectionSetupComplete-NB>
+
+</0x0403 rrcConnectionSetupComplete-NB>
+
+
+
+<0x0404 securityModeComplete-NB>
+
+</0x0404 securityModeComplete-NB>
+
+
+
+<0x0405 securityModeFailure-NB>
+
+</0x0405 securityModeFailure-NB>
+
+
+
+<0x0406 ueCapabilityInformation-NB>
+
+</0x0406 ueCapabilityInformation-NB>
+
+
+
+<0x0407 ulInformationTransfer-NB>
+
+</0x0407 ulInformationTransfer-NB>
+
+
+
+<0x0408 rrcConnectionResumeComplete-NB>
+
+</0x0408 rrcConnectionResumeComplete-NB>
+
+
+
+
+// LPP消息定义
+// 上行channelType=0x85
+<0x8501 LPP_requestCapabilities>
+
+</0x8501 LPP_requestCapabilities>
+
+<0x8502 LPP_provideCapabilities>
+
+</0x8502 LPP_provideCapabilities>
+
+<0x8503 LPP_requestAssistanceData>
+
+</0x8503 LPP_requestAssistanceData>
+
+<0x8504 LPP_provideAssistanceData>
+
+</0x8504 LPP_provideAssistanceData>
+
+<0x8505 LPP_requestLocationInfomation>
+
+</0x8505 LPP_requestLocationInfomation>
+
+<0x8506 LPP_provideLocationInfomation>
+
+</0x8506 LPP_provideLocationInfomation>
+
+<0x8507 LPP_abort>
+
+</0x8507 LPP_abort>
+
+<0x8508 LPP_error>
+
+</0x8508 LPP_error>
+
+<0x850F LPP_ACK>
+
+</0x850F LPP_ACK>
+
+
+
+// 下行channelType=0x05
+<0x0501 LPP_requestCapabilities>
+
+</0x0501 LPP_requestCapabilities>
+
+<0x0502 LPP_provideCapabilities>
+
+</0x0502 LPP_provideCapabilities>
+
+<0x0503 LPP_requestAssistanceData>
+
+</0x0503 LPP_requestAssistanceData>
+
+<0x0504 LPP_provideAssistanceData>
+
+</0x0504 LPP_provideAssistanceData>
+
+<0x0505 LPP_requestLocationInfomation>
+
+</0x0505 LPP_requestLocationInfomation>
+
+<0x0506 LPP_provideLocationInfomation>
+
+</0x0506 LPP_provideLocationInfomation>
+
+<0x0507 LPP_abort>
+
+</0x0507 LPP_abort>
+
+<0x0508 LPP_error>
+
+</0x0508 LPP_error>
+
+<0x050F LPP_ACK>
+
+</0x050F LPP_ACK>
+
+
+// dsa消息定义
+
+// --------------------------------------------------------------
+// changel = 0x86
+// --------------------------------------------------------------
+<0x8600 MasterInformationBlock-DSA>
+
+</0x8600 MasterInformationBlock-DSA>
+
+
+
+// --------------------------------------------------------------
+// changel = 0x87
+// --------------------------------------------------------------
+<0x8700 systemInformationBlockType1-DSA>
+
+</0x8700 systemInformationBlockType1-DSA>
+
+
+<0x8701 SIB2-DSA>
+
+</0x8701 SIB2-DSA>
+
+		
+
+<0x8702 SIB3-DSA>
+
+</0x8702 SIB3-DSA>
+
+
+<0x8703 SIB4-DSA>
+
+</0x8703 SIB4-DSA>
+
+
+
+// --------------------------------------------------------------
+// changel = 0x82
+// --------------------------------------------------------------
+<0x8200 Paging-DSA>
+
+</0x8200 Paging-DSA>
+
+
+
+// --------------------------------------------------------------
+// changel = 0x89
+// --------------------------------------------------------------
+<0x8901 rrcConnectionReestablishment-DSA>
+
+</0x8901 rrcConnectionReestablishment-DSA>
+
+
+
+<0x8902 rrcConnectionReestablishmentReject-DSA>
+
+</0x8902 rrcConnectionReestablishmentReject-DSA>
+
+
+
+<0x8903 rrcConnectionReject-DSA>
+
+</0x8903 rrcConnectionReject-DSA>
+
+
+
+<0x8904 rrcConnectionSetup-DSA>
+
+</0x8904 rrcConnectionSetup-DSA>
+
+
+// --------------------------------------------------------------
+// changel = 0x09
+// --------------------------------------------------------------
+<0x0901 rrcConnectionReestablishmentRequest-DSA>
+
+</0x0901 rrcConnectionReestablishmentRequest-DSA>
+
+
+<0x0902 rrcConnectionRequest-DSA>
+
+</0x0902 rrcConnectionRequest-DSA>
+
+
+
+<0x0903 rrcConnectionResumeReq-DSA>
+
+</0x0903 rrcConnectionResumeReq-DSA>
+
+
+
+// --------------------------------------------------------------
+// changel = 0x8A
+// --------------------------------------------------------------
+<0x8A01 dlInformationTransfer-DSA>
+
+</0x8A01 dlInformationTransfer-DSA>
+
+
+<0x8A02 rrcConnectionReconfiguration-DSA>
+
+</0x8A02 rrcConnectionReconfiguration-DSA>
+
+
+<0x8A03 rrcConnectionRelease-DSA>
+
+</0x8A03 rrcConnectionRelease-DSA>
+
+
+<0x8A04 securityModeCommand-DSA>
+
+</0x8A04 securityModeCommand-DSA>
+
+
+<0x8A05 ueCapabilityEnquiry-DSA>
+
+</0x8A05 ueCapabilityEnquiry-DSA>
+
+
+<0x8A06 rrcConnectionResume-DSA>
+
+</0x8A06 rrcConnectionResume-DSA>
+
+// --------------------------------------------------------------
+// changel = 0x0A
+// --------------------------------------------------------------
+<0x0A01 rrcConnectionReconfigurationComplete-DSA>
+
+</0x0A01 rrcConnectionReconfigurationComplete-DSA>
+
+
+<0x0A02 rrcConnectionReestablishmentComplete-DSA>
+
+</0x0A02 rrcConnectionReestablishmentComplete-DSA>
+
+
+<0x0A03 rrcConnectionSetupComplete-DSA>
+
+</0x0A03 rrcConnectionSetupComplete-DSA>
+
+
+
+<0x0A04 securityModeComplete-DSA>
+
+</0x0A04 securityModeComplete-DSA>
+
+
+
+<0x0A05 securityModeFailure-DSA>
+
+</0x0A05 securityModeFailure-DSA>
+
+
+
+<0x0A06 ueCapabilityInformation-DSA>
+
+</0x0A06 ueCapabilityInformation-DSA>
+
+
+
+<0x0A07 ulInformationTransfer-DSA>
+
+</0x0A07 ulInformationTransfer-DSA>
+
+
+
+<0x0A08 rrcConnectionResumeComplete-DSA>
+
+</0x0A08 rrcConnectionResumeComplete-DSA>
+

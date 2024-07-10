@@ -1,0 +1,7 @@
+; SCIMemoU.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SCIMemoU"
+DESCRIPTION  'SCIMemoU Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

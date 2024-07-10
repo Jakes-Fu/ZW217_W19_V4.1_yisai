@@ -1,0 +1,22 @@
+ROM_LOAD 0x40000000 0x4000
+{
+     ROM_EXEC  0x40000000 0x8000
+     {
+          boot0_entry.o (Reset, +First)
+          sdram_init.o (+RO,+RW,+ZI)
+          prod_cfg.o (+RO,+RW,+ZI)
+          *.o (+RO,+RW)
+     }
+     
+     ;sp = 0x3f0000- (4k reserved), mmu_table = 0x3f0000+
+     RAM_EXEC  0x0300000 0xEF000
+     {
+          copy_kernel_img.o (+ZI)      
+          DRV_usb.o (+ZI)
+          usb_boot.o (+ZI)
+          virtual_com.o (+ZI)
+          bsl_main.o (+ZI)
+          OSLessOAM.o (+ZI)
+          *.o (+ZI)
+     }
+}

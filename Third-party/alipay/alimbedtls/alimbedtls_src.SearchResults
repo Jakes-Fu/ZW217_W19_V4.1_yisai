@@ -1,0 +1,8 @@
+---- mbedtls_dhm_make_public Matches (7 in 4 files) ----
+Compat-1.3.h (include\alimbedtls):#define dhm_make_public mbedtls_dhm_make_public
+Dhm.c (src):int mbedtls_dhm_make_public( mbedtls_dhm_context *ctx, int x_size,
+Dhm.h (include\alimbedtls):int mbedtls_dhm_make_public( mbedtls_dhm_context *ctx, int x_size,
+Ssl_cli.c (src):        ret = mbedtls_dhm_make_public( &ssl->handshake->dhm_ctx,
+Ssl_cli.c (src):            MBEDTLS_SSL_DEBUG_RET( 1, "mbedtls_dhm_make_public", ret );
+Ssl_cli.c (src):            ret = mbedtls_dhm_make_public( &ssl->handshake->dhm_ctx,
+Ssl_cli.c (src):                MBEDTLS_SSL_DEBUG_RET( 1, "mbedtls_dhm_make_public", ret );

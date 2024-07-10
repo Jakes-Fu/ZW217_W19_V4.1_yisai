@@ -1,0 +1,8 @@
+#ifdef MMI_PDA_SUPPORT
+MENU_DEF(MMIIKB_RESTORE_LIST_LONGOK_OPT_MENU, mmiikb_restore_list_longok_opt_menu, GUIMENU_STYLE_POPUP_AUTO, TXT_NULL, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(mmiikb_restore_list_longok_opt_menu))
+#endif
+MENU_DEF(MMIIKB_RESTORE_LIST_OPT_MENU, mmiikb_restore_list_opt_menu, GUIMENU_STYLE_POPUP, TXT_NULL, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(mmiikb_restore_list_opt_menu))
+
+
+
+

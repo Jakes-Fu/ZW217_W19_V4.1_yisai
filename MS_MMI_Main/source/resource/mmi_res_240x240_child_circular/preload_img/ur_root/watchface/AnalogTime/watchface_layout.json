@@ -1,0 +1,59 @@
+{
+  "Scale": 1,
+  "Background": [{
+    "center_position": {
+      "X": 0.5,
+      "Y": 0.5
+    },
+    "image_list": ["bg.png"],
+    "update_interval": 100
+  }],
+  "AnalogTime": [{
+    "center_position": {
+      "X": 0.5,
+      "Y": 0.5
+    },
+    "image_list": [
+    "hour.png",
+    "minute.png",
+    "second.png"
+	],
+    "update_interval": 1000
+  }],
+  "Day": [{
+    "digit_capacity": true,
+    "center_position": {
+      "X": 0.761,
+      "Y": 0.4833
+    },
+    "image_list": [
+      "0.png",
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png",
+      "9.png"
+    ]
+  }
+  ],
+  "Week": [{
+    "center_position": {
+      "X": 0.761,
+      "Y": 0.56
+    },
+    "image_list": [
+      "SUN.png",
+      "MON.png",
+      "TUE.png",
+      "WED.png",
+      "THU.png",
+      "FRI.png",
+      "SAT.png"
+    ]
+  }
+  ]
+}

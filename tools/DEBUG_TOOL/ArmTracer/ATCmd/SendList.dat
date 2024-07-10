@@ -1,0 +1,19 @@
+0, at+setvolte=1
+0, at+cemode=0
+0, at+cemode=2
+0, at+cfun=1                     // power on
+0, at+cfun=0                     // power off
+0, at+cgdcont=1,"IPV4V6","CMNET"
+0, at+cgact=1,5
+0, atd10086;
+0, ata
+0, ath                  // hang up
+0, at+cops=?
+0, at^ssit=0,2
+0, at^ssit=9,0,2,0,0               // Verson Control
+0, AT+NVPC=0,1,787,1,"02"
+0, AT+NVPC=0,2            // Write Static NV to FLASH
+0, AT
+0, AT^TRACECTRL=1,0,2      // close CP Trace
+0, AT+SYSNV=1,"diag_device",1   // uart У׼
+0, AT+SYSNV=1,"diag_device",2   // usb У׼

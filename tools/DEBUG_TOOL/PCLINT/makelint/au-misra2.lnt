@@ -1,0 +1,693 @@
+
+// au-misra2.lnt -- Author options - MISRA 2004
+
+/*
+    This options file can be used to explicitly activate those
+    checks advocated by the Motor Industry Software Reliability
+    Association.
+
+    You can use this file directly when linting your programs as in:
+
+    lin  au-misra2  files
+
+    Gimpel Software relies on the document, "MISRA-C:2004
+    Guidelines for the use of the C language in critical systems",
+    copyright 2004 by MIRA Limited, as the primary source for this
+    file.  Gimpel Software makes no warranty as to the completeness
+    or applicability of this options file and reserves the right to
+    amend or alter the official contents of such at any time.
+
+    "MISRA" is a registered trademark of MIRA Limited, held on
+    behalf of the MISRA Consortium.
+
+ */
+    -misra(2)
+    +e960                      /* enable special MISRA 2 messages */
+    +e961                      /* enable special MISRA 2 messages */
+
+/* Rule 1.1 (req) **********************************/
+
+    -A(C90)                   /* strict ANSI */
+    +e950                               /* flag non-ANSI word or construct */
+    -append(950,[MISRA 2004 Rules 1.1 and 2.2])
+
+/* Rule 1.2 (req) **********************************/
+
+/* Rule 1.3 (req) **********************************/
+
+/* Rule 1.4 (req) **********************************/
+
+    -idlen(31)   /* flag names identical in the first 31 characters */
+    +e621        /* Identifier clash - length set by -idlen */
+    -append(621,[MISRA 2004 Rules 1.4 and 5.1])
+
+/* Rule 1.5 (adv) **********************************/
+
+/* Rule 2.1 (req) **********************************/
+
+        -rw( asm, _asm, __asm )         /* remove asm built-in's */
+        -dasm=_ignore_init              /* define asm as a ... */
+        +rw( _ignore_init )             /* function introduction */
+
+/* Rule 2.2 (req) **********************************/
+
+    /* -A(C90) strict ANSI */
+    /* +e950 flag non-ANSI word or construct */
+
+/* Rule 2.3 (req) **********************************/
+
+    -fnc                        /* flag nested comments */
+    +e602                       /* comment within comment */
+    -append(602,[MISRA 2004 Rule 2.3])
+
+/* Rule 2.4 (adv) **********************************/
+
+/* Rule 3.1 (req) **********************************/
+
+/* Rule 3.2 (req) **********************************/
+
+/* Rule 3.3 (adv) **********************************/
+
+/* Rule 3.4 (req) **********************************/
+
+/* Rule 3.5 (req) **********************************/
+
+/* Rule 3.6 (req) **********************************/
+
+/* Rule 4.1 (req) **********************************/
+
+    +e606                                       /* non-ANSI escape sequence */
+    -append(606,[MISRA 2004 Rule 4.1])
+
+/* Rule 4.2 (req) **********************************/
+
+    -ftg                        /* inhibit use of trigraphs */
+    +e739                       /* activate trigraph in string message */
+    -append(739,[MISRA 2004 Rule 4.2])
+
+/* Rule 5.1 (req) **********************************/
+
+    /* -idlen(31) flag names identical in the first 31 characters */
+    /* +e621 Identifier clash - length set by -idlen */
+
+/* Rule 5.2 (req) **********************************/
+
+    +e578                         /* enable reports of name hiding */
+    -append(578,[MISRA 2004 Rules 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, and 8.8])
+
+/* Rule 5.3 (req) **********************************/
+
+    /* +e578 enable reports of name hiding */
+    +e623               /* redefining the storage class of symbol */
+    -append(623,[MISRA 2004 Rule 5.3])
+
+/* Rule 5.4 (req) **********************************/
+
+    /* +e578 Declaration of Symbol hides Symbol */
+    +e14
+    -append(14,[MISRA 2004 Rules 5.4 and 8.9])
+    +e15
+    -append(15,[MISRA 2004 Rules 5.4 and 8.4])
+    +e64                    /* flag type mismatch */
+    -append(64,[MISRA 2004 Rule 5.4])
+
+/* Rule 5.5 (adv) **********************************/
+
+    /* +e578 Declaration of Symbol hides Symbol */
+    +e580                         /* enable reports of name hiding */
+    -append(580,[MISRA 2004 Rule 5.5, 5.6, and 5.7])
+
+/* Rule 5.6 (adv) **********************************/
+
+    /* +e578 enable reports of name hiding */
+    /* +e580 enable reports of name hiding */
+
+/* Rule 5.7 (adv) **********************************/
+
+    /* +e578 enable reports of name hiding */
+    /* +e580 enable reports of name hiding */
+
+/* Rule 6.1 (req) **********************************/
+
+    /* no option for this */
+
+/* Rule 6.2 (req) **********************************/
+
+    /* no option for this */
+
+/* Rule 6.3 (adv) **********************************/
+
+    +e970               /* flag modifiers used outside of typedefs */
+    -append(970,[MISRA 2004 Rule 6.3])
+
+/* Rule 6.4 (req) **********************************/
+
+    +e46                        /* field type should be int */
+    -append(46,[MISRA 2004 Rule 6.4])
+
+/* Rule 6.5 (req) **********************************/
+
+    +e806               /* small bit field is signed rather than unsigned */
+    -append(806,[MISRA 2004 Rule 6.5])
+
+/* Rule 7.1 (req) **********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 7.1, Octal constant or octal escape sequence used */
+
+/* Rule 8.1 (req) **********************************/
+
+    +e718                        /* Symbol undeclared */
+    -append(718,[MISRA 2004 Rule 8.1])
+    +e746
+    -append(746,[MISRA 2004 Rule 8.1])
+    +e937                     /* old-style function declaration */
+    -append(937,[MISRA 2004 Rules 8.1 and 16.5])
+    +e957
+    -append(957,[MISRA 2004 Rule 8.1])
+
+/* Rule 8.2 (req) **********************************/
+
+    +e745                           /* function has no explicit type */
+    +e939                           /* return type defaults to int */
+    -append(745,[MISRA 2004 Rule 8.2])
+    -append(939,[MISRA 2004 Rule 8.2])
+
+/* Rule 8.3 (req) **********************************/
+
+    +e18                          /* symbol redeclared */
+    -fvr                          /* varying return mode not allowed */
+    +e516                         /* argument type conflict */
+    +e532                         /* return mode of symbol inconsistent */
+    -append(18,[Encompasses MISRA 2004 Rule 8.3])
+    -append(516,[MISRA 2004 Rule 8.3])
+    -append(532,[MISRA 2004 Rule 8.3])
+
+/* Rule 8.4 (req) **********************************/
+
+    /* +e15 symbol redeclared */
+
+/* Rule 8.5 (req) **********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 8.5, */
+    /* no object/function definitions in header files */
+
+/* Rule 8.6 (req) **********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 8.6, */
+    /* function not declared at file scope */
+
+/* Rule 8.7 (req) **********************************/
+
+/* Rule 8.8 (req) **********************************/
+
+    /* +e578 Declaration of Symbol hides Symbol */
+
+/* Rule 8.9 (req) **********************************/
+
+/* Rule 8.10 (req) *********************************/
+
+    +e765                       /* symbol could be made static */
+    -append(765,[MISRA 2004 Rule 8.10])
+
+/* Rule 8.11 (req) *********************************/
+
+    +e512                        /* symbol previously used as static */
+    -append(512,[MISRA 2004 Rule 8.11])
+
+/* Rule 8.12 (req) *********************************/
+
+/* Rule 9.1 (req) **********************************/
+
+    +e644                   /* Symbol may not have been initialized */
+    +e771                   /* Symbol conceivably not initialized */
+    +e530                   /* Symbol not initialized */
+    -append(644,[MISRA 2004 Rule 9.1])
+    -append(771,[MISRA 2004 Rule 9.1])
+    -append(530,[MISRA 2004 Rule 9.1])
+
+/* Rule 9.2 (req) **********************************/
+
+    +e940                   /* omitted braces within an initializer */
+    -append(940,[MISRA 2004 Rule 9.2])
+
+/* Rule 9.3 (req) **********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 9.3, */
+    /* should initialize either all enum members or only the first */
+
+/* Rule 10.1 (req) *********************************/
+
+    +e524                                                   /* loss of precision */
+    -append(524,[MISRA 2004 Rule 10.1])
+    +e653                                                   /* possible loss of fraction */
+    -append(653,[MISRA 2004 Rules 10.1 and 10.4])
+
+/* Rule 10.2 (req) *********************************/
+
+    +e747                       /* significant prototype coercion */
+    +e918                       /* prototype coercion of pointers */
+    -append(747,[MISRA 2004 Rule 10.2])
+    -append(918,[MISRA 2004 Rule 10.2])
+
+/* Rule 10.3 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 10.3, */
+    /* Prohibited cast of complex integer expression */
+
+/* Rule 10.4 (req) *********************************/
+
+/* Rule 10.5 (req) *********************************/
+
+    +e701                        /* shift left of signed quantity */
+    +e702                        /* shift right of signed quantity */
+    -append(701,[MISRA 2004 Rule 10.5])
+    -append(702,[MISRA 2004 Rule 10.5])
+
+/* Rule 10.6 (req) *********************************/
+
+/* Rule 11.1 (req) *********************************/
+
+/* Rule 11.2 (req) *********************************/
+
+/* Rule 11.3 (adv) *********************************/
+
+    +e923                        /* cast pointer/non-pointer */
+    -append(923,[MISRA 2004 Rule 11.3])
+
+/* Rule 11.4 (adv) *********************************/
+
+/* Rule 11.5 (req) *********************************/
+
+/* Rule 12.1 (adv) *********************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA 2004 Advisory Rule 12.1, */
+    /* dependence placed on C's operator precedence */
+    +e834  /* confusing operator sequence (same precedence) */
+    -append(834,[MISRA 2004 Rule 12.1])
+
+/* Rule 12.2 (req) *********************************/
+
+    +e564                       /* order of evaluation */
+    -append(564,[MISRA 2004 Rule 12.2])
+
+/* Rule 12.3 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 12.3, */
+    /* 'sizeof' used on expressions with side effect */
+
+/* Rule 12.4 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 12.4,  */
+    /* side effects on right hand side of logical operator */
+
+/* Rule 12.5 (req) *********************************/
+
+/* Rule 12.6 (adv) *********************************/
+
+/* Rule 12.7 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 12.7, */
+    /* Bitwise operator applied to signed underlying type */
+
+/* Rule 12.8 (req) *********************************/
+
+    +e572                        /* excessive shift value */
+    -append(572,[MISRA 2004 Rule 12.8])
+
+/* Rule 12.9 (req) *********************************/
+
+    +e501                        /* expected signed type */
+    -append(501,[MISRA 2004 Rule 12.9])
+
+/* Rule 12.10 (req) ********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 42, */
+    /* comma operator used */
+
+/* Rule 12.11 (adv) ********************************/
+
+    +e648                        /* overflow in computing constant */
+    -append(648,[MISRA 2004 Rule 12.11])
+
+/* Rule 12.12 (req) ********************************/
+
+/* Rule 12.13 (req) ********************************/
+
+/* Rule 13.1 (req) *********************************/
+
+    +e720                         /* Boolean test of assignment */
+    -append(720,[MISRA 2004 Rules 13.1 and 13.2])
+    +e820
+    -append(820,[MISRA 2004 Rule 13.1])
+
+/* Rule 13.2 (adv) *********************************/
+
+    /* +e720 */
+
+/* Rule 13.3 (req) *********************************/
+
+    +e777                        /* testing floats for equality */
+    -append(777,[MISRA 2004 Rule 13.3])
+
+/* Rule 13.4 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 13.4, */
+    /* floating point variable used as loop counter */
+
+/* Rule 13.5 (req) *********************************/
+
+/* Rule 13.6 (req) *********************************/
+
+
+/* Rule 13.7 (req) *********************************/
+
+    +e506
+    -append(506,[MISRA 2004 Rules 13.7 and 14.1])
+
+/* Rule 14.1 (req) *********************************/
+
+    /* +e506 */
+    +e527                       /* unreachable */
+    -append(527,[MISRA 2004 Rule 14.1])
+    +e681
+    -append(681,[MISRA 2004 Rule 14.1])
+    +e827
+    -append(827,[MISRA 2004 Rule 14.1])
+
+/* Rule 14.2 (req) *********************************/
+
+    +e505
+    +e522
+    -append(505,[MISRA 2004 Rule 14.2])
+    -append(522,[MISRA 2004 Rule 14.2])
+
+/* Rule 14.3 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 14.3, */
+    /* null statement not in line by itself */
+
+/* Rule 14.4 (req) *********************************/
+
+    +e801
+    -append(801,[MISRA 2004 Rule 14.4])
+
+/* Rule 14.5 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 14.5, */
+    /* continue statement detected */
+
+/* Rule 14.6 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 14.6, */
+    /* more than one 'break' terminates loop */
+
+/* Rule 14.7 (req) *********************************/
+
+/* Rule 14.8 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 14.8, */
+    /* left brace expected for switch, for, do and while */
+
+/* Rule 14.9 (req) *********************************/
+
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 14.9, */
+    /* left brace expected for if, else and else if */
+
+/* Rule 14.10 (req) ********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 14.10, */
+    /* no 'else' at end of 'if ... else if' chain */
+
+/* Rule 15.1 (req) *********************************/
+
+/* Rule 15.2 (req) *********************************/
+
+    +e616
+    -append(616,[MISRA 2004 Rule 15.2])
+    +e825
+    -append(825,[MISRA 2004 Rule 15.2])
+
+/* Rule 15.3 (req) *********************************/
+
+    +e744                         /* switch statement has no default */
+    -append(744,[MISRA 2004 Rule 15.3])
+
+/* Rule 15.4 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 15.4, */
+    /* boolean value in switch statement */
+
+/* Rule 15.5 (req) *********************************/
+
+    +e764                         /* switch does not have a case */
+    -append(764,[MISRA 2004 Rule 15.5])
+
+/* Rule 16.1 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 16.1, */
+    /* function has variable number of arguments */
+
+/* Rule 16.2 (req) *********************************/
+
+/* Rule 16.3 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 16.3, */
+    /* all parameters shall have identifiers */
+
+/* Rule 16.4 (req) *********************************/
+
+/* Rule 16.5 (req) *********************************/
+
+    /* +e937 old-style function declaration */
+
+/* Rule 16.6 (req) *********************************/
+
+    +e118               /* too few arguments for prototype */
+    +e119               /* too many arguments for prototype */
+    -append(118,[MISRA 2004 Rule 16.6])
+    -append(119,[MISRA 2004 Rule 16.6])
+
+/* Rule 16.7 (adv) *********************************/
+
+    +e818                       /* use const on paramaters where appropriate */
+    -append(818,[MISRA 2004 Rule 16.7])
+
+/* Rule 16.8 (req) *********************************/
+
+    +e533                        /* function should return a value */
+    -append(533,[MISRA 2004 Rule 16.8])
+
+/* Rule 16.9 (req) *********************************/
+
+/* Rule 16.10 (req) ********************************/
+
+/* Rule 17.1 (req) *********************************/
+
+/* Rule 17.2 (req) *********************************/
+
+/* Rule 17.3 (req) *********************************/
+
+    +e946          /* relational or subtract operator applied to pointers */
+    -append(946,[MISRA 2004 Rule 17.3])
+
+/* Rule 17.4 (req) *********************************/
+
+/* Rule 17.5 (adv) *********************************/
+
+/* Rule 17.6 (req) *********************************/
+
+    +e733               /* assigning address of auto to outer scope symbol */
+    +e789               /* assigning address of auto to static */
+    -append(733,[MISRA 2004 Rule 17.6])
+    -append(789,[MISRA 2004 Rule 17.6])
+
+/* Rule 18.1 (req) *********************************/
+
+    +e43                         /* vacuous type for variable */
+    -append(43,[MISRA 2004 Rule 18.1])
+
+/* Rule 18.2 (req) *********************************/
+
+/* Rule 18.3 (req) *********************************/
+
+/* Rule 18.4 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 18.4, */
+    /* unions shall not be used */
+
+/* Rule 19.1 (adv) *********************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA 2004 Advisory Rule 19.1, */
+    /* only preprocessor statements and comments before '#include' */
+
+/* Rule 19.2 (adv) *********************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA 2004 Advisory Rule 19.2, */
+    /* header file name with non-standard character */
+
+/* Rule 19.3 (req) *********************************/
+
+    +e12                        /* Need < or \ " after #include */
+    -append(12,[MISRA 2004 Rule 19.3])
+
+/* Rule 19.4 (req) *********************************/
+
+/* Rule 19.5 (req) *********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 19.5, */
+    /* '#define/#undef' used within a block */
+
+/* Rule 19.6 (req) *********************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA 2004 Advisory Rule 19.6, */
+    /* use of '#undef' is discouraged */
+
+/* Rule 19.7 (adv) *********************************/
+
+/* Rule 19.8 (req) *********************************/
+
+    +e131                         /* syntax error in call of macro */
+    -append(131,[MISRA 2004 Rule 19.8])
+
+/* Rule 19.9 (req) *********************************/
+    +e436
+    -append(436,[MISRA 2004 Rule 19.9])
+
+/* Rule 19.10 (req) ********************************/
+
+    +e773                      /* expression-like macro not parenthesized */
+    -append(773,[MISRA 2004 Rule 19.10])
+
+/* Rule 19.11 (req) ********************************/
+
+    +e553                        /* undefined preprocessor variable */
+    -append(553,[MISRA 2004 Rule 19.11])
+
+/* Rule 19.12 (req) ********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 19.12, */
+    /* multiple use of '#/##' operators in macro definition */
+
+/* Rule 19.13 (adv) ********************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA 2004 Advisory Rule 19.13, */
+    /* '#/##' operators used */
+
+/* Rule 19.14 (req) ********************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA 2004 Required Rule 19.14, */
+    /* non-standard use of 'defined' preprocessor statement */
+
+/* Rule 19.15 (req) ********************************/
+
+/* Rule 19.16 (req) ********************************/
+
+/* Rule 19.17 (req) ********************************/
+
+/* Rule 20.1 (req) *********************************/
+
+    +e683             /* complain about #define standard functions */
+    -append(683,[MISRA 2004 Rule 20.1])
+
+/* Rule 20.2 (req) *********************************/
+
+/* Rule 20.3 (req) *********************************/
+
+    /* 100 calls to standard library functions are monitored */
+    /* users can specify additional constraints for other functions */
+
+/* Rule 20.4 (req) *********************************/
+
+    -deprecate( function, calloc, [MISRA 2004 Rule 20.4] )
+    -deprecate( function, malloc, [MISRA 2004 Rule 20.4] )
+    -deprecate( function, realloc, [MISRA 2004 Rule 20.4] )
+    -deprecate( function, free, [MISRA 2004 Rule 20.4] )
+
+        /* enable message 586 for these functions */
+
+/* Rule 20.5 (req) *********************************/
+
+    -deprecate( variable, errno, [MISRA 2004 Rule 20.5] )
+
+/* Rule 20.6 (req) *********************************/
+
+    -deprecate( macro, offsetof, [MISRA 2004 Rule 20.6] )
+
+/* Rule 20.7 (req) *********************************/
+
+    -deprecate( function, longjmp, [MISRA 2004 Rule 20.7] )
+    -deprecate( function, setjmp, [MISRA 2004 Rule 20.7] )
+
+    /* enable message 586 for these functions */
+
+/* Rule 20.8 (req) *********************************/
+
+    -deprecate( function, signal, [MISRA 2004 Rule 20.8] )
+    -deprecate( function, raise, [MISRA 2004 Rule 20.8] )
+
+    /* enable message 586 for these functions */
+
+/* Rule 20.9 (req) *********************************/
+
+    -headerwarn(stdio.h)
+        /* enable message 829 for stdio.h */
+    -append(829(stdio.h), [MISRA 2004 Rule 20.9])
+
+/* Rule 20.10 (req) ********************************/
+
+    -deprecate( function, atof, [MISRA 2004 Rule 20.10] )
+    -deprecate( function, atoi, [MISRA 2004 Rule 20.10] )
+    -deprecate( function, atol, [MISRA 2004 Rule 20.10] )
+
+    /* enable message 586 for these functions */
+
+/* Rule 20.11 (req) ********************************/
+
+    -deprecate( function, abort, [MISRA 2004 Rule 20.11] )
+    -deprecate( function, exit, [MISRA 2004 Rule 20.11] )
+    -deprecate( function, getenv, [MISRA 2004 Rule 20.11] )
+    -deprecate( function, system, [MISRA 2004 Rule 20.11] )
+
+    /* enable message 586 for these functions */
+
+/* Rule 20.12 (req) ********************************/
+
+    -deprecate( function, time, [MISRA 2004 Rule 20.12] )
+    -deprecate( function, strftime, [MISRA 2004 Rule 20.12] )
+    -deprecate( function, clock, [MISRA 2004 Rule 20.12] )
+    -deprecate( function, difftime, [MISRA 2004 Rule 20.12] )
+    -deprecate( function, mktime, [MISRA 2004 Rule 20.12] )
+
+    /* enable message 586 for these functions */
+
+/* Rule 21.1 (req) *********************************/
+

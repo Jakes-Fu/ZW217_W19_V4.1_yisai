@@ -1,0 +1,96 @@
+// ------------------------------------------------------------------------------------------
+// 
+// 定义平台某ITF下AT指令参数的选择信息
+// 
+// <AT:ATName>
+//     Platform_ITF value
+//     ParaName     ParamMeans     ParaMemo
+// </AT:ATName>
+//
+// ------------------------------------------------------------------------------------------
+
+// 8809 平台修改备注信息的AT定义
+
+ <AT:atctst_aud_codec_set_rx_gain>   
+    Platform_ITF 0
+    output_gain_ana  6=0dB;3dB/step          |select;0:-6dB;3:-3dB;6:0dB;9:3dB;12:6dB;15:9dB;18:12dB;21:15dB;|
+    output_gain_dac  -26=mute;0=0dB;1dB/step |select;-26:mute;-25:-25dB;-24;-23;-22;-21;-20;-19;-18;-17;-16;-15;-14;-13;-12;-11;-10;-9;-8;-7;-6;-5;-4;-3;-2;-1;0:0dB;1;2;3;4;5;|
+ </AT:atctst_aud_codec_get_rx_gain>
+
+ <AT:atctst_aud_codec_set_rx_gain>
+    Platform_ITF 1
+    output_gain_ana  6=0dB;3dB/step          |select;0:-6dB;3:-3dB;6:0dB;9:3dB;12:6dB;15:9dB;18:12dB;21:15dB|
+    output_gain_dac  -26=mute;0=0dB;1dB/step |select;-26:mute;-25:-25dB;-24;-23;-22;-21;-20;-19;-18;-17;-16;-15;-14;-13;-12;-11;-10;-9;-8;-7;-6;-5;-4;-3;-2;-1;0:0dB;1;2;3;4;5;|
+ </AT:atctst_aud_codec_get_rx_gain>
+
+ <AT:atctst_aud_codec_set_rx_gain>
+    Platform_ITF 2
+    output_gain_ana  12=0dB                  |select;0:-12dB;12:0dB;15:6dB;18:9dB;21:10.5dB;22:12dB;23:13dB;24:14dB;|
+    output_gain_dac  -26=mute;0=0dB;1dB/step |select;-26:mute;-25:-25dB;-24;-23;-22;-21;-20;-19;-18;-17;-16;-15;-14;-13;-12;-11;-10;-9;-8;-7;-6;-5;-4;-3;-2;-1;0:0dB;1;2;3;4;5;|
+ </AT:atctst_aud_codec_get_rx_gain>
+
+ <AT:atctst_aud_codec_set_rx_gain>
+    Platform_ITF 3
+    output_gain_ana      output_gain_ana  |input;|
+    output_gain_dac      output_gain_adc  |input;|  
+ </AT:atctst_aud_codec_get_rx_gain>
+
+
+ <AT:atctst_aud_codec_set_rx_gain>
+    Platform_ITF 4
+    output_gain_ana      output_gain_ana  |input;|
+    output_gain_dac      output_gain_adc  |input;|  
+ </AT:atctst_aud_codec_get_rx_gain>
+
+
+ <AT:atctst_aud_codec_set_rx_gain>
+    Platform_ITF 5
+    output_gain_ana      output_gain_ana  |input;|
+    output_gain_dac      output_gain_adc  |input;|  
+ </AT:atctst_aud_codec_get_rx_gain>
+
+
+ <AT:atctst_aud_codec_set_rx_gain>
+    Platform_ITF 6
+    output_gain_ana  6=0dB;3dB/step          |select;0:-6dB;3:-3dB;6:0dB;9:3dB;12:6dB;15:9dB;18:12dB;21:15dB|
+    output_gain_dac  -26=mute;0=0dB;1dB/step |select;-26:mute;-25:-25dB;-24;-23;-22;-21;-20;-19;-18;-17;-16;-15;-14;-13;-12;-11;-10;-9;-8;-7;-6;-5;-4;-3;-2;-1;0:0dB;1;2;3;4;5;|
+ </AT:atctst_aud_codec_get_rx_gain>
+
+  <AT:atctst_aud_codec_set_rx_gain>   
+    Platform_ITF 10
+    output_gain_ana  6=0dB;3dB/step          |select;0:-6dB;3:-3dB;6:0dB;9:3dB;12:6dB;15:9dB;18:12dB;21:15dB;|
+    output_gain_dac  -26=mute;0=0dB;1dB/step |select;-26:mute;-25:-25dB;-24;-23;-22;-21;-20;-19;-18;-17;-16;-15;-14;-13;-12;-11;-10;-9;-8;-7;-6;-5;-4;-3;-2;-1;0:0dB;1;2;3;4;5;|
+ </AT:atctst_aud_codec_get_rx_gain>
+
+ <AT:atctst_aud_codec_set_rx_gain>
+    Platform_ITF 11
+    output_gain_ana  6=0dB;3dB/step          |select;0:-6dB;3:-3dB;6:0dB;9:3dB;12:6dB;15:9dB;18:12dB;21:15dB|
+    output_gain_dac  -26=mute;0=0dB;1dB/step |select;-26:mute;-25:-25dB;-24;-23;-22;-21;-20;-19;-18;-17;-16;-15;-14;-13;-12;-11;-10;-9;-8;-7;-6;-5;-4;-3;-2;-1;0:0dB;1;2;3;4;5;|
+ </AT:atctst_aud_codec_get_rx_gain>
+
+ <AT:atctst_aud_codec_set_rx_gain>
+    Platform_ITF 12
+    output_gain_ana  12=0dB                  |select;0:-12dB;12:0dB;15:6dB;18:9dB;21:10.5dB;22:12dB;23:13dB;24:14dB;|
+    output_gain_dac  -26=mute;0=0dB;1dB/step |select;-26:mute;-25:-25dB;-24;-23;-22;-21;-20;-19;-18;-17;-16;-15;-14;-13;-12;-11;-10;-9;-8;-7;-6;-5;-4;-3;-2;-1;0:0dB;1;2;3;4;5;|
+ </AT:atctst_aud_codec_get_rx_gain>
+
+ <AT:atctst_aud_codec_set_rx_gain>
+    Platform_ITF 13
+    output_gain_ana      output_gain_ana  |input;|
+    output_gain_dac      output_gain_adc  |input;|  
+ </AT:atctst_aud_codec_get_rx_gain>
+
+
+ <AT:atctst_aud_codec_set_rx_gain>
+    Platform_ITF 14
+    output_gain_ana      output_gain_ana  |input;|
+    output_gain_dac      output_gain_adc  |input;|  
+ </AT:atctst_aud_codec_get_rx_gain>
+
+
+ <AT:atctst_aud_codec_set_rx_gain>
+    Platform_ITF 15
+    output_gain_ana      output_gain_ana  |input;|
+    output_gain_dac      output_gain_adc  |input;|  
+ </AT:atctst_aud_codec_get_rx_gain>
+

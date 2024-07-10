@@ -1,0 +1,1563 @@
+#=========================================================================================
+#========================================MMI LIB==========================================
+#=========================================================================================
+
+# multilanguage config for iekie
+
+ifeq ($(strip $(IM_NEPALI_SUPPORT)), TRUE)
+    ifneq ($(strip $(IM_ENGINE)), IEKIE)
+        $(error IEKIE inputmethod must be open when NEPALI is supported!)
+    endif
+endif
+ifeq ($(strip $(IM_ENGINE)), IEKIE)
+    ifeq ($(strip $(MMI_DISPLAY_SIMP_CHINESE_SUPPORT)), FALSE)
+      ifeq ($(strip $(IM_SIMP_CHINESE_SUPPORT)), TRUE)
+        $(error IEKIE inputmethod does NOT support Chinese!)
+      endif
+    endif
+    ifeq ($(strip $(MMI_DISPLAY_TRAD_CHINESE_SUPPORT)), FALSE)
+      ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+        $(error IEKIE inputmethod does NOT support Chinese!)
+      endif
+    endif
+endif
+
+# multilanguage config for cstar
+ifeq ($(strip $(IM_ENGINE)), CSTAR)
+  ifeq ($(strip $(COMPILER)), RVCT)
+    ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+        ifeq ($(strip $(IM_SIMP_CHINESE_SUPPORT)), TRUE)
+          3RD_LIBS           =Third-party/cstar/Arm_lib/rvct_le/csk2_full.a
+        else
+           ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+              3RD_LIBS           =Third-party/cstar/Arm_lib/rvct_le/csk2_full.a  
+            else
+              3RD_LIBS           =Third-party/cstar/Arm_lib/rvct_le/csk2_latin.a
+            endif 
+        endif               
+    else 
+        ifeq ($(strip $(IM_SIMP_CHINESE_SUPPORT)), TRUE)
+           3RD_LIBS           =Third-party/cstar/Arm_lib/rvct3.1/csk2_full.a
+        else
+            ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+              3RD_LIBS           =Third-party/cstar/Arm_lib/rvct3.1/csk2_full.a  
+            else
+              3RD_LIBS           =Third-party/cstar/Arm_lib/rvct3.1/csk2_latin.a
+            endif 
+        endif
+    endif
+  else
+    ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+        ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            ifeq ($(strip $(IM_SIMP_CHINESE_SUPPORT)), TRUE)
+              3RD_LIBS           =Third-party/cstar/Arm_lib/LE/csk2_full.a
+            else
+               ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+                  3RD_LIBS           =Third-party/cstar/Arm_lib/LE/csk2_full.a  
+                else
+                  3RD_LIBS           =Third-party/cstar/Arm_lib/LE/csk2_latin.a
+                endif 
+            endif               
+        else 
+            ifeq ($(strip $(IM_SIMP_CHINESE_SUPPORT)), TRUE)
+               3RD_LIBS           =Third-party/cstar/Arm_lib/normal/csk2_full.a
+            else
+                ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+                  3RD_LIBS           =Third-party/cstar/Arm_lib/normal/csk2_full.a  
+                else
+                  3RD_LIBS           =Third-party/cstar/Arm_lib/normal/csk2_latin.a
+                endif 
+            endif
+        endif
+    else
+        ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            ifeq ($(strip $(IM_SIMP_CHINESE_SUPPORT)), TRUE)
+              3RD_LIBS           =Third-party/cstar/Arm_lib/nostack_le/csk2_full.a
+            else
+               ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+                 3RD_LIBS           =Third-party/cstar/Arm_lib/nostack_le/csk2_full.a  
+               else
+                 3RD_LIBS           =Third-party/cstar/Arm_lib/nostack_le/csk2_latin.a
+               endif 
+            endif               
+        else 
+            ifeq ($(strip $(IM_SIMP_CHINESE_SUPPORT)), TRUE)
+              3RD_LIBS           =Third-party/cstar/Arm_lib/nostack/csk2_full.a
+            else
+                ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+                  3RD_LIBS           =Third-party/cstar/Arm_lib/nostack/csk2_full.a 
+                else
+                  3RD_LIBS           =Third-party/cstar/Arm_lib/nostack/csk2_latin.a
+                endif 
+            endif
+        endif
+    endif
+  endif
+endif
+# end ime for cstar
+
+ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+  ifeq ($(strip $(GPS_CHIP_VER)), GREENEYE2)
+    ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE)
+        3RD_LIBS += Third-party/qx/lib/trace/qxsupl.a
+    else
+        3RD_LIBS += Third-party/qx/lib/release/qxsupl.a
+    endif
+  endif
+endif
+
+ifeq ($(strip $(FONT_TYPE_SUPPORT)), CSTAR_BITMAP)
+    ifeq ($(strip $(COMPILER)), RVCT)
+        ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            3RD_LIBS           +=Third-party/cstar/Arm_lib/rvct_le/scripteasy.a
+        else 
+            3RD_LIBS           +=Third-party/cstar/Arm_lib/rvct3.1/scripteasy.a
+        endif
+    else
+        ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+            ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+                3RD_LIBS           +=Third-party/cstar/Arm_lib/LE/scripteasy.a
+            else 
+                3RD_LIBS           +=Third-party/cstar/Arm_lib/normal/scripteasy.a
+            endif
+        else
+            ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+               3RD_LIBS           +=Third-party/cstar/Arm_lib/nostack_le/scripteasy.a
+            else 
+               3RD_LIBS           +=Third-party/cstar/Arm_lib/nostack/scripteasy.a
+            endif
+        endif    
+    endif
+endif
+
+ifeq ($(strip $(FONT_TYPE_SUPPORT)), CSTAR_BITMAP_SLIM)
+    ifeq ($(strip $(COMPILER)), RVCT)
+        ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            3RD_LIBS           +=Third-party/cstar/Arm_lib/rvct_le/scripteasy_slim.a
+        else 
+            3RD_LIBS           +=Third-party/cstar/Arm_lib/rvct3.1/scripteasy_slim.a
+        endif
+    else
+        ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+            ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+                3RD_LIBS           +=Third-party/cstar/Arm_lib/LE/scripteasy_slim.a
+            else 
+                3RD_LIBS           +=Third-party/cstar/Arm_lib/normal/scripteasy_slim.a
+            endif
+        else
+            ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+               3RD_LIBS           +=Third-party/cstar/Arm_lib/nostack_le/scripteasy_slim.a
+            else 
+               3RD_LIBS           +=Third-party/cstar/Arm_lib/nostack/scripteasy_slim.a
+            endif
+        endif    
+    endif
+endif
+
+# IA JAVA lib config
+ifeq ($(strip $(JAVA_SUPPORT)), IA)
+   IA_JAVA_PATH:=
+   ifeq ($(strip $(SPRD_CUSTOMER)), FALSE)
+      IA_JAVA_PATH:=Third-party/formal/ia_java/Arm_lib
+   else
+      IA_JAVA_PATH:=Third-party/ia_java/Arm_lib
+   endif
+   
+   ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+    IA_JAVA_PATH:=$(strip $(IA_JAVA_PATH))/le
+   endif
+   
+   ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+      IA_JAVA_PATH:=$(strip $(IA_JAVA_PATH))/normal
+   else
+      IA_JAVA_PATH:=$(strip $(IA_JAVA_PATH))/nostack
+   endif
+   
+   ifeq ($(strip $(SRAM_SIZE)), 32MBIT)
+         IA_JAVA_PATH:=$(strip $(IA_JAVA_PATH))/reduce
+   endif
+
+   3RD_LIBS   += $(strip $(IA_JAVA_PATH))/ajsc_arm_rvct.a \
+    $(strip $(IA_JAVA_PATH))/libmjb2.a \
+    $(strip $(IA_JAVA_PATH))/libaicrypto.a
+endif
+
+#SUN JAVA lib config
+ifeq ($(strip $(JAVA_SUPPORT)), SUN)
+    ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+      ifeq ($(strip $(PLATFORM)),SC8800H)
+              ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+                3RD_LIBS      +=Third-party/Sun_Java/arm/arm9/normal_le/jvm.a
+              else
+                3RD_LIBS      +=Third-party/Sun_Java/arm/arm9/normal/jvm.a
+              endif
+      else
+         ifeq ($(strip $(PLATFORM)),SC6800H)
+      ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+        3RD_LIBS      +=Third-party/Sun_Java/arm/arm9/le/jvm.a
+      else
+        3RD_LIBS      +=Third-party/Sun_Java/arm/arm9/normal/jvm.a
+      endif
+         else
+             ifeq ($(strip $(PLATFORM)),SC8800G)
+                ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+                  3RD_LIBS      +=Third-party/Sun_Java/arm/arm9/normal_le/jvm.a
+                else
+                  3RD_LIBS      +=Third-party/Sun_Java/arm/arm9/normal/jvm.a
+                endif
+             else
+                3RD_LIBS      +=Third-party/Sun_Java/arm/arm7/jvm.a
+             endif
+         endif
+      endif
+    else
+        ifeq ($(strip $(PLATFORM)),SC8800H)
+            3RD_LIBS      +=Third-party/Sun_Java/arm/arm9/nostack/jvm.a
+        else
+              ifeq ($(strip $(PLATFORM)),SC6800H)
+                    3RD_LIBS     +=Third-party/Sun_Java/arm/arm9/nostack/jvm.a
+              else
+                ifeq ($(strip $(PLATFORM)),SC8800G)
+                    ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+                      3RD_LIBS      +=Third-party/Sun_Java/arm/arm9/nostack_le/jvm.a
+                    else
+                      3RD_LIBS      +=Third-party/Sun_Java/arm/arm9/nostack/jvm.a
+                    endif
+                else
+                 3RD_LIBS     +=Third-party/Sun_Java/arm/arm7/jvm.a
+                endif
+            endif
+        endif
+    endif  
+endif 
+
+ifeq ($(strip $(MET_MEX_SUPPORT)), TRUE)
+	ifeq ($(strip $(STACK_CHECK_SUPPORT)),TRUE)
+		3RD_LIBS        +=  Third-party/met/lib/stack/Met_Mex.a
+	else
+		3RD_LIBS        +=  Third-party/met/lib/nostack/Met_Mex.a
+	endif
+endif         
+# multilanguage config for T9
+ifeq ($(strip $(IM_ENGINE)), T9)
+	ifeq ($(strip $(COMPILER)), ADS)
+		ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+			ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+				T9_LOCALPATH = Third-party/t9/Arm_lib/le
+			else
+				T9_LOCALPATH = Third-party/t9/Arm_lib/normal
+			endif
+		else
+			ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+				T9_LOCALPATH = Third-party/t9/Arm_lib/nostack_le
+			else
+				T9_LOCALPATH = Third-party/t9/Arm_lib/nostack
+			endif
+		endif
+	else
+		ifeq ($(strip $(COMPILER)), RVCT)
+			ifeq ($(strip $(RVCT_VERSION)), RVCT31)
+				ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+					T9_LOCALPATH = Third-party/t9/Arm_lib/rvct_le
+				else
+					T9_LOCALPATH = Third-party/t9/Arm_lib/rvct
+				endif
+			else
+				ifeq ($(strip $(RVCT_VERSION)), RVCT22)
+					ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+						T9_LOCALPATH = Third-party/t9/Arm_lib/rvct22/le
+					else
+						T9_LOCALPATH = Third-party/t9/Arm_lib/rvct22/normal
+					endif
+				else     #  add for RVCT41 and ARMCC5  zhigang.peng 2018/09/20 
+				    ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+					T9_LOCALPATH = Third-party/t9/Arm_lib/rvct_le
+				    else
+					T9_LOCALPATH = Third-party/t9/Arm_lib/rvct
+				    endif
+				endif
+			endif
+		endif	
+	endif
+
+	#default open english, so add alphabetic object
+	ifeq ($(strip $(IM_SIMP_CHINESE_SUPPORT)), TRUE)
+		3RD_LIBS   	+=	$(strip $(T9_LOCALPATH))/T9_Core_744_KoreanDotFix_RVCT_31_AC_1.o
+	else
+		ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+			3RD_LIBS   	+=	$(strip $(T9_LOCALPATH))/T9_Core_744_KoreanDotFix_RVCT_31_AC_1.o
+		else
+			3RD_LIBS   	+=	$(strip $(T9_LOCALPATH))/T9_Core_744_KoreanDotFix_RVCT_31_AC_1.o
+		endif
+	endif
+endif         
+
+#Handwriting
+ifeq ($(strip $(SPRD_CUSTOMER)), FALSE)
+#    ifeq ($(strip $(PLATFORM)), SC8800H)
+#        HW_FORMAL_PATH =formal/hw
+#    else
+    HW_FORMAL_PATH =hw
+#    endif
+else
+    HW_FORMAL_PATH =hw
+endif
+
+ifeq ($(strip $(IM_HANDWRITING)), HANWANG)
+    ifeq ($(strip $(COMPILER)), RVCT)
+        ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/rvct_le/Europhw.a
+            	ifeq ($(strip $(IM_SIMP_CHINESE_SUPPORT)), TRUE)
+	              ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+	                  3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/rvct_le/ChshwJF.a
+	              else               
+	                  3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/rvct_le/Chshw.a
+	              endif
+	            else
+	            	ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+	                  3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/rvct_le/Chshw_t_min.a
+	              endif
+	            endif
+            ifeq ($(strip $(IM_ARABIC_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/rvct_le/ArabicHW.a
+            endif
+            ifeq ($(strip $(IM_VIETNAMESE_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/rvct_le/VietHW.a
+            endif
+            ifeq ($(strip $(IM_THAI_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/rvct_le/ThaiHW.a
+            endif
+            ifeq ($(strip $(IM_PERSIAN_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/rvct_le/PersianHW.a
+            endif
+            ifeq ($(strip $(IM_URDU_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/rvct_le/PersianHW.a
+            endif
+            ifeq ($(strip $(IM_HEBREW_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/rvct_le/HebrewHW.a
+            endif
+            ifeq ($(strip $(IM_HINDI_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/rvct_le/Hindihw.a
+            endif
+            ifeq ($(strip $(IM_BENGALI_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/rvct_le/BengaliHw.a
+            endif    
+        else
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/RVCT3.1/Europhw.a
+            ifeq ($(strip $(LOW_MEMORY_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/RVCT3.1/Chshw.a
+            else
+                ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/RVCT3.1/Chshw_t_min.a
+                else               
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/RVCT3.1/Chshw.a
+                endif            
+            endif
+            ifeq ($(strip $(IM_ARABIC_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/RVCT3.1/ArabicHW.a
+            endif
+            ifeq ($(strip $(IM_VIETNAMESE_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/RVCT3.1/VietHW.a
+            endif
+            ifeq ($(strip $(IM_THAI_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/RVCT3.1/ThaiHW.a
+            endif
+            ifeq ($(strip $(IM_PERSIAN_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/RVCT3.1/PersianHW.a
+            endif
+            ifeq ($(strip $(IM_URDU_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/RVCT3.1/PersianHW.a
+            endif
+            ifeq ($(strip $(IM_HEBREW_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/RVCT3.1/HebrewHW.a
+            endif
+            ifeq ($(strip $(IM_HINDI_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/RVCT3.1/Hindihw.a
+            endif
+            ifeq ($(strip $(IM_BENGALI_SUPPORT)), TRUE)
+            3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/RVCT3.1/BengaliHw.a
+            endif
+        endif
+    else
+        ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+            ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/chshw.a
+                ifeq ($(strip $(IM_ARABIC_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Arabichw.a
+                endif
+                ifeq ($(strip $(IM_VIETNAMESE_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Viethw.a
+                endif
+                ifeq ($(strip $(IM_PORTUGUESE_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_RUSSIAN_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_GREEK_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_FRENCH_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_HUNGARIAN_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_ITALIAN_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_TURKISH_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_SPANISH_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_GERMAN_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_ROMANIAN_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_SLOVENIAN_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_CZECH_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_MALAY_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_TAGALOG_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_INDONESIAN_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Europhw.a
+                endif
+                ifeq ($(strip $(IM_THAI_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/Thaihw.a
+                endif
+                ifeq ($(strip $(IM_PERSIAN_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/PersianHW.a
+                endif
+                ifeq ($(strip $(IM_URDU_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/PersianHW.a
+                endif
+                ifeq ($(strip $(IM_HEBREW_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/HebrewHW.a
+                endif
+                ifeq ($(strip $(IM_HINDI_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/HindiHW.a
+                endif
+                ifeq ($(strip $(IM_BENGALI_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/LE_S/BengaliHW.a
+                endif
+            else
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                ifeq ($(strip $(LOW_MEMORY_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/s_chinese/normal/chshw.a
+                else
+                    ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+                        3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/st_chinese/chshw.a
+                    else               
+                        3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/s_chinese/enhance/chshw.a
+                    endif              
+                endif
+                ifeq ($(strip $(IM_ARABIC_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Arabic/Arabichw.a
+                endif
+                ifeq ($(strip $(IM_VIETNAMESE_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Viet/Viethw.a
+                endif
+                ifeq ($(strip $(IM_PORTUGUESE_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_RUSSIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_GREEK_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_FRENCH_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_HUNGARIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_ITALIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_TURKISH_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_SPANISH_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_GERMAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_ROMANIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_SLOVENIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_CZECH_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_MALAY_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_TAGALOG_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_INDONESIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_THAI_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Thai/Thaihw.a
+                endif
+                ifeq ($(strip $(IM_PERSIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Persian/PersianHW.a
+                endif
+                ifeq ($(strip $(IM_URDU_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Persian/PersianHW.a
+                endif
+                ifeq ($(strip $(IM_HEBREW_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Hebrew/HebrewHW.a
+                endif
+                ifeq ($(strip $(IM_HINDI_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Hindi/HindiHW.a
+                endif
+                ifeq ($(strip $(IM_BENGALI_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/normal/Bengali/BengaliHW.a
+                endif
+            endif
+        else
+            ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                ifeq ($(strip $(LOW_MEMORY_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/s_chinese/min/chshw.a
+                else
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/s_chinese/min/chshw.a
+                    endif
+                ifeq ($(strip $(IM_ARABIC_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Arabic/Arabichw.a
+                endif
+                ifeq ($(strip $(IM_VIETNAMESE_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Viet/Viethw.a
+                endif
+                ifeq ($(strip $(IM_PORTUGUESE_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_RUSSIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_GREEK_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_FRENCH_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_HUNGARIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_ITALIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_TURKISH_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_SPANISH_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_GERMAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_ROMANIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_SLOVENIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_CZECH_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_MALAY_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_TAGALOG_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_INDONESIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_THAI_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Thai/Thaihw.a
+                endif
+                ifeq ($(strip $(IM_PERSIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Persian/PersianHW.a
+                endif
+                ifeq ($(strip $(IM_URDU_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Persian/PersianHW.a
+                endif
+                ifeq ($(strip $(IM_HEBREW_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Hebrew/HebrewHW.a
+                endif
+                ifeq ($(strip $(IM_HINDI_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Hindi/HindiHW.a
+                endif
+                ifeq ($(strip $(IM_BENGALI_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack_le/Bengali/BengaliHW.a
+                endif    
+            else
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                ifeq ($(strip $(LOW_MEMORY_SUPPORT)), TRUE)
+                    3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/s_chinese/normal/chshw.a
+                else
+                    ifeq ($(strip $(IM_TRAD_CHINESE_SUPPORT)), TRUE)
+                        3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/st_chinese/chshw.a
+                    else               
+                        3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/s_chinese/normal/chshw.a
+                    endif            
+                endif
+                ifeq ($(strip $(IM_ARABIC_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Arabic/Arabichw.a
+                endif
+                ifeq ($(strip $(IM_VIETNAMESE_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Viet/Viethw.a
+                endif
+                ifeq ($(strip $(IM_PORTUGUESE_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_RUSSIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_GREEK_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_FRENCH_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_HUNGARIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_ITALIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_TURKISH_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_SPANISH_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_GERMAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_ROMANIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_SLOVENIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_CZECH_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_MALAY_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_TAGALOG_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_INDONESIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Europ/Europhw.a
+                endif
+                ifeq ($(strip $(IM_THAI_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Thai/Thaihw.a
+                endif
+                ifeq ($(strip $(IM_PERSIAN_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Persian/PersianHW.a
+                endif
+                ifeq ($(strip $(IM_URDU_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Persian/PersianHW.a
+                endif
+                ifeq ($(strip $(IM_HEBREW_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Hebrew/HebrewHW.a
+                endif
+                ifeq ($(strip $(IM_HINDI_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Hindi/HindiHW.a
+                endif
+                ifeq ($(strip $(IM_BENGALI_SUPPORT)), TRUE)
+                3RD_LIBS            +=Third-party/$(strip $(HW_FORMAL_PATH))/Arm_lib/nostack/Bengali/BengaliHW.a
+                endif
+            endif
+        endif
+    endif
+endif
+
+#nxp
+ifeq ($(strip $(NXP_LVVE_SUPPORT)), TRUE)
+ifeq ($(strip $(VOICE_WB)), TRUE)
+	ifeq ($(strip $(DUALMIC_NORMAL)), TRUE)
+	ifeq ($(strip $(COMPILER)), ADS)
+		3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_DEMO_HPF_RX_NF_EQ_VOL_HF_NV_FENS_VC_WB_DRC_TX_CNG_ARM9E_ADS_T1D2D848SWST.a
+	else ifeq ($(strip $(RVCT_VERSION)), V41)
+		3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_HPF_RX_NF_EQ_VOL_HF_NV_FENS_VC_WB_DRC_TX_CNG_ARM9E_RVCT_T4D1.a
+	else	
+		3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_HPF_RX_NF_EQ_VOL_HF_NV_FENS_VC_WB_DRC_TX_CNG_ARM9E_RVCT_T3D1.a
+	endif
+else
+		ifeq ($(strip $(RVCT_VERSION)), V31)
+			3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_HPF_RX_NF_EQ_VOL_HF_FENS_VC_WB_DRC_TX_CNG_ARM9E_RVCT_T3D1.a
+		else 
+			3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_HPF_RX_NF_EQ_VOL_HF_FENS_VC_WB_DRC_TX_CNG_ARM9E_RVCT_T3D1.a
+		endif
+	endif
+else
+ifeq ($(strip $(DUALMIC)), TRUE)
+		ifeq ($(strip $(DUALMIC_NORMAL)), TRUE)
+	ifeq ($(strip $(COMPILER)), ADS)
+				3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_HPF_RX_NF_EQ_VOL_HF_NV_FENS_VC_DRC_TX_CNG_ARM9E_ADS_T1D2D848SWST.a
+			else ifeq ($(strip $(RVCT_VERSION)), V41)
+				3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_HPF_RX_NF_EQ_VOL_HF_NV_FENS_VC_DRC_TX_CNG_ARM9E_RVCT_T4D1.a
+			else #ifeq ($(strip $(RVCT_VERSION)), V31)
+				3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_HPF_RX_NF_EQ_VOL_HF_NV_FENS_VC_DRC_TX_CNG_ARM9E_RVCT_T3D1.a
+			endif
+		else
+			ifeq ($(strip $(COMPILER)), ADS)
+		3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_HPF_RX_EQ_VOL_HF_NV_FENS_VC_WM_RX_WB_DRC_RX_CNG_NG_ARM9E_ADS_demo.a
+			endif
+	endif
+else
+		ifeq ($(strip $(COMPILER)), ADS)
+			3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_HPF_EQ_VOL_HF_FENS_VC_WM_WB_DRC_TX_CNG_ARM9E_ADS_T1D2D848SWSTFY.a
+		else
+			ifeq ($(strip $(RVCT_VERSION)), V41)
+				3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_HPF_RX_EQ_VOL_HF_FENS_VC_WM_RX_WB_DRC_TX_CNG_ARM9E_RVCT_T4D1D561.a
+			else 
+					ifeq ($(strip $(NXP_HORN_SUPPRESSION_SUPPORT)), TRUE)
+						3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_HPF_RX_EQ_VOL_HF_FENS_VC_AGC_RX_WB_HS_DRC_TX_CNG_ARM9E_RVCT_T3D1.a
+					else
+				3RD_LIBS  += MS_Ref/export/lib/REL_LVVE_HPF_RX_EQ_VOL_HF_FENS_VC_WM_RX_WB_DRC_TX_CNG_ARM9E_RVCT_T3D1.a
+				  endif
+				endif
+			endif
+	endif
+endif
+endif
+
+#mv
+ifeq ($(strip $(MV_SUPPORT)), IFLYTEK)
+  ifneq ($(strip $(COMPILER)), RVCT)
+    ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+      ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+        3RD_LIBS   +=   Third-party/mv/Arm_lib/normal/ivMagicVoice_arm9_li.a
+      else
+        3RD_LIBS   +=   Third-party/mv/Arm_lib/normal/ivMagicVoice_arm9_bi.a
+      endif
+    else
+      ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+        3RD_LIBS   +=   Third-party/mv/Arm_lib/nostack/ivMagicVoice_arm9_li.a
+      else
+        3RD_LIBS   +=   Third-party/mv/Arm_lib/nostack/ivMagicVoice_arm9_bi.a
+      endif
+    endif
+  else
+      ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+        3RD_LIBS   +=   Third-party/mv/Arm_lib/rvct31/ivMagicVoice_arm9_li.a
+      else
+        3RD_LIBS   +=   Third-party/mv/Arm_lib/rvct31/ivMagicVoice_arm9_bi.a
+      endif
+  endif
+endif
+#add for sky app start
+ifeq ($(strip $(MRAPP_SUPPORT)), TRUE)
+ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+3RD_LIBS			+=Third-party/SKYENGINE/Arm_lib/normal/mythroad.lib
+3RD_LIBS			+=Third-party/SKYENGINE/Arm_lib/normal/skyApn.a
+3RD_LIBS			+=Third-party/SKYENGINE/Arm_lib/normal/skyDove.a
+else
+3RD_LIBS			+=Third-party/SKYENGINE/Arm_lib/nostack/mythroad.lib
+3RD_LIBS			+=Third-party/SKYENGINE/Arm_lib/nostack/skyApn.lib
+3RD_LIBS			+=Third-party/SKYENGINE/Arm_lib/nostack/skyDove.a
+ifeq ($(strip $(__MMI_SKYQQ__)), TRUE)
+3RD_LIBS			+=MS_MMI/source/mmi_app/app/skyqq/lib/skyqq.a
+endif
+endif
+endif
+#add for sky app end
+
+ifeq ($(strip $(HERO_ENGINE_SUPPORT)), TRUE)
+3RD_LIBS			+=Third-party/HeroEngine/Arm_lib/nostack/HeroEngine.lib
+ifeq ($(strip $(HERO_ENGINE_OVERSEA_SUPPORT)), TRUE)
+3RD_LIBS			+=Third-party/HeroEngine/Arm_lib/nostack/heroApn.lib
+endif
+ifeq ($(strip $(HERO_ENGINE_TTS_SUPPORT)),TRUE)
+	ifeq ($(strip $(HERO_ENGINE_TTS_INROM_SUPPORT)), TRUE)
+			3RD_LIBS			+=MS_MMI_Main/Source/MMI_App/App/heroengine/tts/Arm_lib/nostack/tiho_ivTTScoreInRom.a
+			3RD_LIBS			+=MS_MMI_Main/Source/MMI_App/App/heroengine/tts/Arm_lib/nostack/heroTtsAdapter.a
+	endif
+endif
+endif
+#tts
+ifeq ($(strip $(TTS_SUPPORT)),IFLYTEK)
+    ifeq ($(strip $(COMPILER)), RVCT)
+        ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            3RD_LIBS   +=  Third-party/InterSound4/Arm_lib/rvct_le/Aisound4.a
+        else
+            3RD_LIBS   +=  Third-party/InterSound4/Arm_lib/rvct_be/Aisound4.a
+        endif
+    else
+       ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+          ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+               3RD_LIBS   +=  Third-party/InterSound4/Arm_lib/littleendian/normal/Aisound4.a
+          else
+              3RD_LIBS   +=  Third-party/InterSound4/Arm_lib/littleendian/nostack/Aisound4.a
+          endif
+       else
+           ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+              3RD_LIBS   +=  Third-party/InterSound4/Arm_lib/normal/Aisound4.a
+           else
+              3RD_LIBS   +=  Third-party/InterSound4/Arm_lib/nostack/Aisound4.a
+           endif
+       endif
+    endif
+endif
+
+ifeq ($(strip $(TTS_SUPPORT)), YOUNGTONE)
+    ifeq ($(strip $(YOUNGTONE_TTS_LIB)), MAN)
+	    3RD_LIBS   +=  Third-party/youngtone/lib/yt_tts_16k_cn_man_8910ff.a
+	endif
+	ifeq ($(strip $(YOUNGTONE_TTS_LIB)), MULTI)
+        3RD_LIBS   +=  Third-party/youngtone/lib/yt_tts_16k_english_french_hindi_8910ff.a    ## 8910 multi-language library to be determined
+	endif
+endif
+
+ifeq ($(strip $(TTS_SUPPORT)), YOUNGTONE_ROM)
+    3RD_LIBS   +=  Third-party/youngtone/lib/yt_tts_16k_cn_man_8910ff_rom.a
+endif
+
+ifeq ($(strip $(TTS_SUPPORT)),EJ)
+  ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+  ifeq ($(strip $(TTS_SUPPORT_EJ_ROM)),TRUE)
+    3RD_LIBS   +=  Third-party/ejTTS/LE_lib/ejTTS_rom.a
+  else
+    3RD_LIBS   +=  Third-party/ejTTS/LE_lib/ejTTS.a
+  endif
+  endif
+endif
+
+ifeq ($(strip $(SXH_APPLE_SUPPORT)), TRUE)
+	ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+		3RD_LIBS			+= Third-party/apple/lib/normal/liboem.a
+	else
+		3RD_LIBS			+=  Third-party/apple/lib/nostack/liboem_noswts.a
+	endif
+endif
+
+#DM lib config 
+ifeq ($(strip $(DM_SUPPORT)), REDBENCH)
+    ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+          ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            DM_LOCALPATH := dm/Arm_lib/LE_normal
+          else
+            DM_LOCALPATH := dm/Arm_lib/normal
+          endif
+    else
+          ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            DM_LOCALPATH := dm/Arm_lib/LE_nostack
+          else
+            DM_LOCALPATH := dm/Arm_lib/nostack
+          endif
+        endif
+    ifeq ($(strip $(DEV_MANAGE_SUPPORT)), TRUE)
+        ifeq ($(strip $(SPRD_CUSTOMER)), FALSE)  
+            3RD_LIBS      +=Third-party/formal/$(strip $(DM_LOCALPATH))/vdmengine.a \
+            Third-party/formal/$(strip $(DM_LOCALPATH))/vdmfumo.a \
+            Third-party/formal/$(strip $(DM_LOCALPATH))/vdmscomo.a \
+            Third-party/formal/$(strip $(DM_LOCALPATH))/vdmutil.a \
+            Third-party/formal/$(strip $(DM_LOCALPATH))/vdmscinv.a
+        else
+            3RD_LIBS      +=Third-party/$(strip $(DM_LOCALPATH))/vdmengine.a \
+            Third-party/$(strip $(DM_LOCALPATH))/vdmfumo.a \
+            Third-party/$(strip $(DM_LOCALPATH))/vdmscomo.a \
+            Third-party/$(strip $(DM_LOCALPATH))/vdmutil.a \
+            Third-party/$(strip $(DM_LOCALPATH))/vdmscinv.a
+        endif
+    endif
+endif
+
+#Support TechSoft Email Lib
+ifneq ($(strip $(MMIEMAIL_SUPPORT)), NONE)
+   ifeq ($(strip $(MMIEMAIL_SUPPORT)),TRUE)
+        #3RD_LIBS +=Third-party/email/arm_lib/email.a
+   endif
+endif
+
+#push mail lib config
+ifeq ($(strip $(PUSH_EMAIL_SUPPORT)), TRUE)
+   ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+        3RD_LIBS   +=   Third-party/push_mail/arm_lib/normal/push_mail.a
+   else
+        3RD_LIBS   +=   Third-party/push_mail/arm_lib/nostack/push_mail.a
+   endif
+endif
+
+#mobile video lib config
+ifeq ($(strip $(MOBILE_VIDEO_SUPPORT)), TRUE)
+    ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+        ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            3RD_LIBS      +=MS_MMI/Source/MMI_App/App/mobile_video/lib/le/cmplayer.a
+        else
+            3RD_LIBS      +=MS_MMI/Source/MMI_App/App/mobile_video/lib/cmplayer.a
+        endif
+    else
+        ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            3RD_LIBS      +=MS_MMI/Source/MMI_App/App/mobile_video/lib/le_no_stack/cmplayer.a
+        else  
+            3RD_LIBS      +=MS_MMI/Source/MMI_App/App/mobile_video/lib/bi_no_stack/cmplayer.a      
+        endif
+    endif
+endif
+
+ifeq ($(strip $(VECTOR_FONT_SUPPORT)),ETRUMP)
+    ifeq ($(strip $(COMPILER)),ADS)
+        3RD_LIBS += Third-party/etrump/lib/ads12/libet_common.spreadtrum_sc6530_rvct.a
+        3RD_LIBS += Third-party/etrump/lib/ads12/libetrump.spreadtrum_sc6530_rvct.a
+        3RD_LIBS += Third-party/etrump/lib/ads12/libft2_mini.spreadtrum_sc6530_rvct.a
+        3RD_LIBS += Third-party/etrump/lib/ads12/libottab.spreadtrum_ssc6530_rvct.a
+        3RD_LIBS += Third-party/etrump/lib/ads12/libtextlayout.spreadtrum_sc6530_rvct.a
+    else
+        3RD_LIBS += Third-party/etrump/lib/rvct31/libet_common.spreadtrum_sc6530_rvct.a
+        3RD_LIBS += Third-party/etrump/lib/rvct31/libetrump.spreadtrum_sc6530_rvct.a
+        3RD_LIBS += Third-party/etrump/lib/rvct31/libft2_mini.spreadtrum_sc6530_rvct.a
+        3RD_LIBS += Third-party/etrump/lib/rvct31/libottab.spreadtrum_sc6530_rvct.a
+        3RD_LIBS += Third-party/etrump/lib/rvct31/libtextlayout.spreadtrum_sc6530_rvct.a
+    endif
+endif
+
+ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+    ifeq ($(strip $(NETFRONT_SUPPORT)), VER42)
+        ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+                NETFRONT_LOCALPATH :=netfront/Netfront4.2/arm_lib/le_stack_rel
+        else
+                NETFRONT_LOCALPATH :=netfront/Netfront4.2/arm_lib/be_stack_rel
+        endif
+    else
+        ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+                NETFRONT_LOCALPATH :=netfront/LittleEndian/arm_lib
+        else
+                NETFRONT_LOCALPATH :=netfront/Netfront4.0/arm_lib
+        endif
+    endif
+else
+    ifeq ($(strip $(NETFRONT_SUPPORT)), VER42)
+        ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+                NETFRONT_LOCALPATH :=netfront/Netfront4.2/arm_lib/le_nostack_rel
+        else
+                NETFRONT_LOCALPATH :=netfront/Netfront4.2/arm_lib/be_nostack_rel
+        endif
+    else
+        ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+                NETFRONT_LOCALPATH :=netfront/LittleEndian/arm_lib/nostack
+        else
+                NETFRONT_LOCALPATH :=netfront/Netfront4.0/arm_lib/nostack
+        endif
+    endif
+endif
+
+ifeq ($(strip $(BROWSER_SUPPORT_NETFRONT)), TRUE)
+    ifeq ($(strip $(NETFRONT_SUPPORT)), VER42)
+        ifeq ($(strip $(SPRD_CUSTOMER)), FALSE)   
+            3RD_LIBS      += Third-party/formal/$(strip $(NETFRONT_LOCALPATH))/nmcs_libs.a \
+                 Third-party/formal/$(strip $(NETFRONT_LOCALPATH))/nmcs_slim.a \
+                 Third-party/formal/$(strip $(NETFRONT_LOCALPATH))/nmcs_nf4libs.a \
+                 Third-party/formal/$(strip $(NETFRONT_LOCALPATH))/nmcs_siipeerglue.a
+        else
+            3RD_LIBS      += Third-party/$(strip $(NETFRONT_LOCALPATH))/nmcs_libs.a \
+                         Third-party/$(strip $(NETFRONT_LOCALPATH))/nmcs_slim.a \
+                         Third-party/$(strip $(NETFRONT_LOCALPATH))/nmcs_nf4libs.a \
+                         Third-party/$(strip $(NETFRONT_LOCALPATH))/nmcs_siipeerglue.a
+        endif
+    else
+        ifeq ($(strip $(SPRD_CUSTOMER)), FALSE)   
+            3RD_LIBS      += Third-party/formal/$(strip $(NETFRONT_LOCALPATH))/nmcs_libs.a \
+                 Third-party/formal/$(strip $(NETFRONT_LOCALPATH))/nmcs_slim.a \
+                 Third-party/formal/$(strip $(NETFRONT_LOCALPATH))/nmcs_nf4libs.a \
+                 Third-party/formal/$(strip $(NETFRONT_LOCALPATH))/nmcs_siipeerglue.a
+        else
+            3RD_LIBS      += Third-party/$(strip $(NETFRONT_LOCALPATH))/nmcs_libs.a \
+                         Third-party/$(strip $(NETFRONT_LOCALPATH))/nmcs_slim.a \
+                         Third-party/$(strip $(NETFRONT_LOCALPATH))/nmcs_nf4libs.a \
+                         Third-party/$(strip $(NETFRONT_LOCALPATH))/nmcs_siipeerglue.a
+        endif
+
+    endif
+endif
+
+#==========================================================================================
+#=======================================Ref LIB============================================
+#==========================================================================================
+ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+    ifeq ($(strip $(MOTION_SENSOR_TYPE)), YANGXUN_MEYE)
+    3RD_LIBS      +=Third-party/met/lib/MET_VM.lib
+    endif 
+else
+endif 
+
+ifneq ($(strip $(COMPILER)), RVCT)
+    ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+        ifeq ($(strip $(CMMB_SUPPORT)), TRUE)
+            ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            3RD_LIBS          +=  Third-party/zlib/le/zlib.a
+            else
+            3RD_LIBS          +=  Third-party/zlib/Lib/zlib.a 
+            endif   
+        endif
+    else
+        ifeq ($(strip $(CMMB_SUPPORT)), TRUE)
+        3RD_LIBS          +=  Third-party/zlib/Lib/zlib_nostack.a
+        
+        endif
+    endif
+endif
+
+ifeq ($(strip $(SPRD_CUSTOMER)), FALSE)
+    BLUETOOTH_FORMAL:=formal/
+else
+    BLUETOOTH_FORMAL:=
+endif
+
+ifneq ($(strip $(BLUETOOTH_SUPPORT)),NONE)
+ifneq ($(strip $(BLUETOOTH_SUPPORT)),SPRD_BT)
+
+    BT_LOG      =
+    BT_LOW_MEM  =
+    
+    ifeq ($(strip $(BLUETOOTH_SUPPORT)), CSR_BC4_6)
+        BT_VENDER   = bt_csr
+        BT_LIB_ROOT = Third-party/$(BLUETOOTH_FORMAL)$(BT_VENDER)/bt_csr_15_3/Arm_lib
+    endif
+    
+    ifeq ($(strip $(BLUETOOTH_SUPPORT)), CSR_BC4_6_LOW_MEM)
+        BT_VENDER   = bt_csr
+        BT_LIB_ROOT = Third-party/$(BLUETOOTH_FORMAL)$(BT_VENDER)/bt_csr_15_3/Arm_lib
+        BT_LOW_MEM  = _low_mem_r111
+    endif
+       
+    
+    ifeq ($(strip $(BLUETOOTH_SUPPORT)), IS1662)
+        BT_VENDER   = bt_issc
+        BT_LIB_ROOT = Third-party/$(BLUETOOTH_FORMAL)$(BT_VENDER)/lib
+        
+	    ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE)
+	        BT_LOG  = _log
+	    endif        
+    endif       
+
+    ifeq ($(strip $(BLUETOOTH_SUPPORT)), RTL8723)
+        BT_VENDER   = bt_rtk
+        BT_LIB_ROOT = Third-party/$(BLUETOOTH_FORMAL)$(BT_VENDER)/lib
+        
+	    ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE)
+	        BT_LOG  = _log
+	    endif        
+    endif       
+    
+    ifeq ($(strip $(COMPILER)), RVCT)
+             BT_SUB_DIR = rvct
+    else 
+        ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+             BT_SUB_DIR = normal
+        else 
+             BT_SUB_DIR = nostack
+        endif
+    endif
+
+    BT_ARM = arm9
+
+    ifeq ($(strip $(RVCT_VERSION)), RVCT31)
+        BT_RVCT_VER = _rvct31
+    else
+        BT_RVCT_VER = 
+    endif   
+    
+    ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+        BT_ENDIAN = _le
+    else
+        BT_ENDIAN =
+    endif    
+# example 
+# .../nostack/bt_csr_arm7_low_mem_r111.a
+# .../normal/bt_csr_arm9_le.a
+# .../rvct/bt_csr_arm9_rvct31_le.a
+
+    3RD_LIBS += $(BT_LIB_ROOT)/$(BT_SUB_DIR)/$(BT_VENDER)_$(BT_ARM)$(BT_LOW_MEM)$(BT_RVCT_VER)$(BT_ENDIAN)$(BT_LOG).a
+    
+endif
+endif
+
+ifeq ($(strip $(BLUETOOTH_SUPPORT)), NONE)
+   ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+        3RD_LIBS          +=
+   else 
+       ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+            3RD_LIBS          += Third-party/bt_csr/bt_pal_csr_dummy.a
+       else
+            3RD_LIBS          += Third-party/bt_csr/bt_pal_csr_nostackcheck_dummy.a
+       endif
+    endif
+endif
+
+ifeq ($(strip $(VT_SUPPORT)), TRUE)
+    ifeq ($(strip $(SPRD_CUSTOMER)), FALSE)    
+        3RD_LIBS      += build/$(PROJECT)_builddir/lib/mplapi_intg_8801h.a \
+            build/$(PROJECT)_builddir/lib/mplapi_threadx_8801h.a
+    else
+        3RD_LIBS      += Third-party/Mplapi/Arm_lib/normal/mplapi_intg_8801h.a \
+            Third-party/Mplapi/Arm_lib/normal/mplapi_threadx_8801h.a
+    endif
+endif
+#==========================================================================================
+#=======================================OTHER LIB==========================================
+#==========================================================================================
+ifeq ($(strip $(WIFI_SUPPORT)),CSR6030)
+    CSR_LOG = TRUE
+    #root path
+    CSR6030_WIFI_LIB_ROOT  =  Third-party/wifi/CSR6030
+
+    #chip type
+    ifeq ($(strip $(PLATFORM)), SC6600L)
+        CSR_ARM_DESC = arm7
+    else
+        CSR_ARM_DESC = arm9
+    endif
+    #chip endian
+    ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+        CSR_ENDIAN_DESC = _le
+    endif
+    #log switch
+    ifeq ($(strip $(CSR_LOG)),TRUE)
+        CSR_LOG_DESC= -log
+    endif
+    #stack check
+    ifeq ($(strip $(STACK_CHECK_SUPPORT)),TRUE)
+        CSR_STK_DESC = -stack
+    else
+        CSR_STK_DESC = -nostack
+    endif
+
+    #compiler
+    ifeq ($(strip $(COMPILER)), RVCT)
+        CSR_COMPILER_DESC = _rvct31
+        endif
+    3RD_LIBS  +=  $(CSR6030_WIFI_LIB_ROOT)/frw_csr/lib/csr_frw_${CSR_ARM_DESC}${CSR_STK_DESC}${CSR_COMPILER_DESC}${CSR_ENDIAN_DESC}.a \
+                  $(CSR6030_WIFI_LIB_ROOT)/lib/csr_wifi_${CSR_ARM_DESC}${CSR_STK_DESC}${CSR_COMPILER_DESC}${CSR_ENDIAN_DESC}.a
+    ifeq ($(strip $(CSR_LOG)), TRUE)
+      3RD_LIBS += $(CSR6030_WIFI_LIB_ROOT)/frw_csr/lib/csr_frw_spt_${CSR_ARM_DESC}${CSR_STK_DESC}${CSR_COMPILER_DESC}${CSR_ENDIAN_DESC}.a \
+                  $(CSR6030_WIFI_LIB_ROOT)/frw_csr/lib/csr_frw_log_${CSR_ARM_DESC}${CSR_STK_DESC}${CSR_COMPILER_DESC}${CSR_ENDIAN_DESC}.a
+    endif
+endif
+  
+ifeq ($(findstring CSR6027,$(WIFI_SUPPORT)), CSR6027)
+    CSR_LOG = FALSE
+    #root path
+    CSR6027_WIFI_LIB_ROOT  = Third-party/wifi/CSR6027
+    #chip type
+    ifeq ($(strip $(PLATFORM)), SC6600L)
+        CSR_ARM_DESC = arm7
+    else
+        CSR_ARM_DESC = arm9
+    endif
+
+    #chip endian
+    ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+        CSR_ENDIAN_DESC = _le
+    endif
+
+    #log switch
+    ifeq ($(strip $(CSR_LOG)),TRUE)
+        CSR_LOG_DESC= -log
+    endif
+
+    #stack check
+    ifeq ($(strip $(STACK_CHECK_SUPPORT)),TRUE)
+        CSR_STK_DESC = -stack
+    else
+        CSR_STK_DESC = -nostack
+    endif
+
+    #compiler
+    ifeq ($(strip $(COMPILER)), RVCT)
+        CSR_COMPILER_DESC = _rvct31
+    endif
+
+    3RD_LIBS  +=  $(CSR6027_WIFI_LIB_ROOT)/frw_csr/lib/csr_frw_${CSR_ARM_DESC}${CSR_STK_DESC}${CSR_COMPILER_DESC}${CSR_ENDIAN_DESC}.a \
+                  $(CSR6027_WIFI_LIB_ROOT)/lib/csr_wifi_${CSR_ARM_DESC}${CSR_STK_DESC}${CSR_COMPILER_DESC}${CSR_ENDIAN_DESC}.a
+
+    ifeq ($(strip $(CSR_LOG)), TRUE)
+      3RD_LIBS += $(CSR6027_WIFI_LIB_ROOT)/frw_csr/lib/csr_frw_spt_${CSR_ARM_DESC}${CSR_STK_DESC}${CSR_COMPILER_DESC}${CSR_ENDIAN_DESC}.a \
+                  $(CSR6027_WIFI_LIB_ROOT)/frw_csr/lib/csr_frw_log_${CSR_ARM_DESC}${CSR_STK_DESC}${CSR_COMPILER_DESC}${CSR_ENDIAN_DESC}.a
+    endif
+endif
+
+ifeq ($(strip $(WIFI_SUPPORT)), RTL8723)
+
+    RTL8723_WIFI_LIB_ROOT  = Third-party/wifi/RTL8723
+    ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE) 
+    
+    	3RD_LIBS  +=  $(RTL8723_WIFI_LIB_ROOT)/rtl8723_log_rvct_le.a \
+                  	$(RTL8723_WIFI_LIB_ROOT)/iperf_log_rvct_le.a                	
+    else
+    
+    	3RD_LIBS  +=  $(RTL8723_WIFI_LIB_ROOT)/rtl8723_nolog_rvct_le.a \
+                  	$(RTL8723_WIFI_LIB_ROOT)/iperf_nolog_rvct_le.a                 	 	  
+    endif  
+                
+endif
+
+ifeq ($(strip $(WIFI_SUPPORT)), RTL8189)
+
+    RTL8189_WIFI_LIB_ROOT  = Third-party/wifi/RTL8189
+    
+		ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE) 
+		
+    	3RD_LIBS  +=  $(RTL8189_WIFI_LIB_ROOT)/rtl8189es_log_rvct_le.a \
+                  	$(RTL8189_WIFI_LIB_ROOT)/iperf_log_rvct_le.a 
+                  
+    else
+    
+ 			3RD_LIBS  +=  $(RTL8189_WIFI_LIB_ROOT)/rtl8189es_nolog_rvct_le.a \
+                 		$(RTL8189_WIFI_LIB_ROOT)/iperf_nolog_rvct_le.a    
+    endif              
+endif
+
+
+ifeq ($(strip $(RELEASE_LEVEL_D0)), TRUE)
+3RD_LIBS         += lib/$(strip $(PRODUCT_BASELIB_DIR))/release_level_d0.a
+endif 
+
+ifeq ($(strip $(OPERA_MINI_SUPPORT)), VER42)
+    ifeq ($(strip $(PLATFORM)),SC6600L)
+        ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+                3RD_LIBS += Third-party/opera/mini4/arm_lib/arm7_be_swst/opera.lib
+        else
+                3RD_LIBS += Third-party/opera/mini4/arm_lib/arm7_be_noswst/opera.lib
+        endif
+    else ifeq ($(strip $(PLATFORM)),SC6530)
+        ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+                ifeq ($(strip $(COMPILER)), RVCT)
+                    3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_rvct_le_swst/opera.lib
+    else
+                    3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_le_swst/opera.lib
+                endif
+        else
+                ifeq ($(strip $(COMPILER)), RVCT)
+                    3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_rvct_le_noswst/opera.lib
+                else
+                  3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_le_noswst/opera.lib
+              endif
+        endif
+    else ifeq ($(strip $(PLATFORM)),SC6800H)
+            ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+                    3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_be_swst/opera.lib
+            else
+                    3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_be_noswst/opera.lib
+        endif
+    else
+            ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+                    ifeq ($(strip $(COMPILER)), RVCT)
+                        3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_rvct_le_swst/opera.lib
+                    else
+                        3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_le_swst/opera.lib
+                    endif
+            else
+                    ifeq ($(strip $(COMPILER)), RVCT)
+                          ifeq ($(strip $(MMI_VER)), STABLE)
+                              3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_rvct_le_noswst_ss/opera.lib
+                          else
+                              ifeq ($(strip $(OPERA_MINI_VER42_TEST_MXP)), TRUE)
+                                  3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_rvct_le_noswst_test_mxp/opera.lib
+                              else
+                                  ifeq ($(strip $(OPERA_MINI_VER42_DEBUG)), TRUE)
+                                      3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_rvct_le_noswst_debug/opera.lib
+                                  else
+                                      3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_rvct_le_noswst/opera.lib
+                                  endif
+                              endif
+                          endif
+                    else
+                        3RD_LIBS += Third-party/opera/mini4/arm_lib/arm9_le_noswst/opera.lib
+                    endif
+            endif
+    endif
+else
+        ifeq ($(strip $(OPERA_MINI_SUPPORT)), VER6)
+        ifeq ($(strip $(PLATFORM)),SC6800H)
+            ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+                    3RD_LIBS += Third-party/opera/mini6/arm_lib/arm9_be_swst/opera.lib
+            else
+                    3RD_LIBS += Third-party/opera/mini6/arm_lib/arm9_be_noswst/opera.lib
+            endif
+        else
+            ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+                    ifeq ($(strip $(COMPILER)), RVCT)
+                        3RD_LIBS += Third-party/opera/mini6/arm_lib/arm9_rvct_le_swst/opera.lib
+                    else
+                        3RD_LIBS += Third-party/opera/mini6/arm_lib/arm9_le_swst/opera.lib
+                    endif
+            else
+                            ifeq ($(strip $(COMPILER)), RVCT)
+                          ifeq ($(strip $(MMI_VER)), STABLE)
+                              3RD_LIBS += Third-party/opera/mini6/arm_lib/arm9_rvct_le_noswst_ss/opera.lib
+                          else
+                                3RD_LIBS += Third-party/opera/mini6/arm_lib/arm9_rvct_le_noswst/opera.lib
+                          endif
+                            else
+                        3RD_LIBS += Third-party/opera/mini6/arm_lib/arm9_le_noswst/opera.lib
+                    endif
+            endif
+        endif
+    endif
+endif
+
+ifeq ($(strip $(OPERA_MOBILE_SUPPORT)), V11)
+    ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+            3RD_LIBS += Third-party/opera/mobile11/arm_lib/arm9_le_swst/opera1.lib Third-party/opera/mobile11/arm_lib/arm9_le_swst/opera2.lib
+    else
+            3RD_LIBS += Third-party/opera/mobile11/arm_lib/arm9_le_noswst/opera1.lib Third-party/opera/mobile11/arm_lib/arm9_le_noswst/opera2.lib
+    endif
+endif
+
+ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+    ifeq ($(strip $(EXSTERN_WIFI_CO_EXIST)), TRUE)
+             3RD_LIBS     +=Third-party/wifi_atheros/athr_btfilter.a
+    endif         
+else
+    ifeq ($(strip $(EXSTERN_WIFI_CO_EXIST)), TRUE)
+             3RD_LIBS     +=Third-party/wifi_atheros/athr_btfilter_no_stack.a
+    endif         
+endif
+
+ifneq ($(strip $(COMPILER)), RVCT)
+    ifeq ($(strip $(WRE_SUPPORT)),TRUE)
+        ifeq ($(strip $(STACK_CHECK_SUPPORT)), TRUE)
+            ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            3RD_LIBS          +=  Third-party/zlib/le/zlib.a
+            else
+            3RD_LIBS          +=  Third-party/zlib/Lib/zlib.a 
+            endif  
+        else
+            ifeq ($(strip $(CHIP_ENDIAN)), LITTLE)
+            3RD_LIBS          +=  Third-party/zlib/le/zlib_nostack.a
+            else
+            3RD_LIBS          +=  Third-party/zlib/Lib/zlib_nostack.a
+                endif
+        endif
+    endif
+endif
+
+#mcare V31 lib
+ifeq ($(strip $(MCARE_V31_SUPPORT)),TRUE)
+
+		  ifeq ($(strip $(FLASH_SUPPORT)),TRUE)
+			3RD_LIBS += Third-party/TencentMcare/Arm_lib/flash_no_stack.a
+		  else
+			ifeq ($(strip $(STACK_CHECK_SUPPORT)),TRUE)
+			3RD_LIBS += Third-party/TencentMcareV31/Arm_lib/TencentMcare.a
+			else
+				ifeq ($(strip $(RELEASE_INFO)),TRUE)
+				3RD_LIBS += Third-party/TencentMcareV31/Arm_lib/TencentMcareV31_No_Stack.a
+				else
+				3RD_LIBS += Third-party/TencentMcareV31/Arm_lib/TencentMcareV31_No_Stack_Debug.a				
+				endif
+			endif
+		endif
+endif
+
+ifneq ($(strip $(XYSDK_SRC_SUPPORT)), TRUE)
+ifeq ($(strip $(XYSDK_SUPPORT)), TRUE)
+    ifeq ($(strip $(RELEASE_INFO)), TRUE)
+        ifeq ($(strip $(MAINLCD_DEV_SIZE_240X284)), TRUE)
+            3RD_LIBS += Third-party/xmly/lib/xmly_240X284_USER.a
+        else
+            ifeq ($(strip $(MAINLCD_DEV_SIZE)), 240X240)
+                3RD_LIBS += Third-party/xmly/lib/xmly_240X240_USER.a
+            endif
+        endif
+    else
+        ifeq ($(strip $(MAINLCD_DEV_SIZE_240X284)), TRUE)
+            3RD_LIBS += Third-party/xmly/lib/xmly_240X284_DEBUG.a
+        else
+            ifeq ($(strip $(MAINLCD_DEV_SIZE)), 240X240)
+                3RD_LIBS += Third-party/xmly/lib/xmly_240X240_DEBUG.a
+            endif
+        endif
+    endif
+endif
+endif
+
+##zmt add start
+ifeq ($(strip $(MATH_COUNT_SUPPORT)), TRUE)
+	ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+		3RD_LIBS += Third-party/zmt_math/lib/zmt_math_gnss.a
+	else
+		3RD_LIBS += Third-party/zmt_math/lib/zmt_math.a
+	endif
+endif
+ifeq ($(strip $(FORMULA_SUPPORT)), TRUE)
+	ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+		3RD_LIBS += Third-party/zmt_formula/lib/zmt_formula_gnss.a
+	else
+		3RD_LIBS += Third-party/zmt_formula/lib/zmt_formula.a
+	endif
+endif
+ifeq ($(strip $(WORD_CARD_SUPPORT)), TRUE)
+	ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+		3RD_LIBS += Third-party/zmt_word/lib/zmt_word_gnss.a
+	else
+		3RD_LIBS += Third-party/zmt_word/lib/zmt_word.a
+	endif
+endif
+ifeq ($(strip $(HANZI_CARD_SUPPORT)), TRUE)
+	ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+		3RD_LIBS += Third-party/zmt_hanzi/lib/zmt_hanzi_gnss.a
+	else
+		3RD_LIBS += Third-party/zmt_hanzi/lib/zmt_hanzi.a
+	endif
+endif
+##zmt add end
+
+#midi lib config
+ifeq ($(strip $(MIDI_SUPPORT)),TRUE)
+	ifeq ($(strip $(SOUNDBANK_VER)), ARM_256KB)
+			ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE)
+					3RD_LIBS += MS_Customize/midi/ARM_256KB/trace/midi.a
+     	else
+        3RD_LIBS += MS_Customize/midi/ARM_256KB/no_trace/midi.a 
+    	endif
+   else
+    ifeq ($(strip $(SOUNDBANK_VER)), ARM_300KB)
+			 ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE)
+    			3RD_LIBS += MS_Customize/midi/ARM_300KB/trace/midi.a
+     	 else
+         3RD_LIBS += MS_Customize/midi/ARM_300KB/no_trace/midi.a   
+    	 endif
+     else
+      ifeq ($(strip $(SOUNDBANK_VER)), ARM_700KB)
+			   ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE) 		
+    		   3RD_LIBS += MS_Customize/midi/ARM_700KB/trace/midi.a
+     	   else
+           3RD_LIBS += MS_Customize/midi/ARM_700KB/no_trace/midi.a   
+    	   endif
+       else
+       ifeq ($(strip $(SOUNDBANK_VER)), ARM_2MB)
+			    ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE)
+    		    	3RD_LIBS += MS_Customize/midi/ARM_2MB/trace/midi.a
+     	    else
+            3RD_LIBS += MS_Customize/midi/ARM_2MB/no_trace/midi.a   
+    	    endif   
+        else
+        ifeq ($(strip $(SOUNDBANK_VER)), NEWMIDI_75KB)
+			     ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE) 		
+    		     3RD_LIBS += MS_Customize/midi/NEWMIDI_75KB/trace/midi.a
+     	     else
+             3RD_LIBS += MS_Customize/midi/NEWMIDI_75KB/no_trace/midi.a   
+    	     endif
+         else
+         ifeq ($(strip $(SOUNDBANK_VER)), NEWMIDI_170KB)
+			      ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE) 		
+    		      3RD_LIBS += MS_Customize/midi/NEWMIDI_170KB/trace/midi.a
+     	       else
+              3RD_LIBS += MS_Customize/midi/NEWMIDI_170KB/no_trace/midi.a   
+    	      endif
+          else
+          ifeq ($(strip $(SOUNDBANK_VER)), NEWMIDI_400KB)
+			       ifeq ($(strip $(TRACE_INFO_SUPPORT)), TRUE) 		
+    		       3RD_LIBS += MS_Customize/midi/NEWMIDI_400KB/trace/midi.a
+     	       else
+               3RD_LIBS += MS_Customize/midi/NEWMIDI_400KB/no_trace/midi.a   
+    	       endif    	
+         endif
+        endif
+       endif      
+     endif
+    endif
+   endif
+  endif    	     	            
+endif
+# end midi
+
+ifeq ($(strip $(ZDT_ZFB_SUPPORT)), TRUE)
+            3RD_LIBS += Third-party/alipay/id2/icrypto.lib
+            3RD_LIBS += Third-party/alipay/id2/id2.lib
+            3RD_LIBS += Third-party/alipay/id2/km.lib
+            3RD_LIBS += Third-party/alipay/id2/prov.lib
+            3RD_LIBS += Third-party/alipay/id2/sst.lib
+            3RD_LIBS += Third-party/alipay/id2/ls_alipay.lib
+            3RD_LIBS += Third-party/alipay/lib/protobuf-c.lib
+            3RD_LIBS += Third-party/alipay/lib/alipay_iot_device_name.lib
+            3RD_LIBS += Third-party/alipay/lib/alipay_iot_netcore.lib
+            3RD_LIBS += Third-party/alipay/lib/alipay_iot_rpc.lib
+            3RD_LIBS += Third-party/alipay/lib/ALIPAY_IoTPay_network.lib
+
+endif
+
+ifeq ($(strip $(FOTA_SUPPORT)), REDSTONE)
+3RD_LIBS           +=Third-party/rsfota/rsdl/rsdlsdk.a
+endif
+
+ifeq ($(strip $(FOTA_SUPPORT)), ABUP)
+3RD_LIBS           +=Third-party/abup/lib/abupfota.a
+endif
+
+ifeq ($(strip $(LEBAO_MUSIC_SUPPORT)), TRUE)
+        ifeq ($(strip $(RELEASE_INFO)), TRUE)
+	3RD_LIBS         +=	Third-party/lebao/release/lebao_217w.a
+        else
+	3RD_LIBS         +=	Third-party/lebao/lebao_217w.a
+	endif
+endif
+
+
+#ifeq ($(strip $(VIDEO_CALL_AGORA_SUPPORT)), TRUE)
+#3RD_LIBS           +=Third-party/agora_rtc_sdk/lib/libagora-rtc-sdk.a
+#3RD_LIBS           +=Third-party/agora_rtc_sdk/lib/video_call_mw.a
+#endif
+
+#==========================================================================================
+#=======================================END================================================
+#==========================================================================================
+ifeq ($(strip $(OD_GAME_SUPPORT)),TRUE)
+    ifeq ($(strip $(OD_GAME_LIB_SUPPORT)),TRUE)
+	ifeq ($(findstring 7701,$(strip $(CHIP_VER))),7701)
+	    MMI_PATH := MS_MMI_Main
+           OD_PATH_PREFIX :=$(strip $(MMI_PATH))/source/mmi_app/app/od_game/libs/7701
+	else
+	    MMI_PATH := MS_MMI
+	    OD_PATH_PREFIX :=$(strip $(MMI_PATH))/source/mmi_app/app/od_game/libs
+	    endif
+	    3RD_LIBS	+=$(strip $(OD_PATH_PREFIX))/od_game_core.a
+	ifeq ($(strip $(OD_GAME_BILLING_SUPPORT)),TRUE)
+	    3RD_LIBS	+=$(strip $(OD_PATH_PREFIX))/od_game_billing_core.a
+	endif
+	ifeq ($(strip $(OD_DOODLE_JUMP_SUPPORT)),TRUE)
+           3RD_LIBS	+=$(strip $(OD_PATH_PREFIX))/od_doodle_jump.a
+	endif
+	ifeq ($(strip $(OD_CROSSY_ROAD_SUPPORT)),TRUE)
+	    3RD_LIBS	+=$(strip $(OD_PATH_PREFIX))/od_crossy_road.a
+	endif
+	ifeq ($(strip $(OD_STICK_HERO_SUPPORT)),TRUE)
+	    3RD_LIBS	+=$(strip $(OD_PATH_PREFIX))/od_stick_hero.a
+	endif
+	ifeq ($(strip $(OD_BUBBLE_PARTY_MIX_SUPPORT)),TRUE)
+	    3RD_LIBS	+=$(strip $(OD_PATH_PREFIX))/od_bubble_party_mix.a
+	endif
+	ifeq ($(strip $(OD_SUPER_PET_SUPPORT)),TRUE)
+	    3RD_LIBS	+=$(strip $(OD_PATH_PREFIX))/od_super_pet.a
+	endif
+	ifeq ($(strip $(OD_RUNNER_SUPPORT)),TRUE)
+	    3RD_LIBS	+=$(strip $(OD_PATH_PREFIX))/od_runner.a
+	endif
+    endif
+endif

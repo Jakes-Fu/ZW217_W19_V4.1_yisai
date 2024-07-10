@@ -1,0 +1,114 @@
+# SpreadTrum NVEditor NV Module File, Format Version 1.0
+# WARNING: DO NOT EDIT OR DELETE THIS NV Module FILE!
+
+###############################################################################
+  MODULE      = NV_VARIANT_CONFIG_MESSAGES
+  DESCRIPTION = the
+
+################################################################################
+
+# Begin Module Item
+  BEGIN_ITEM
+    ITEM_NAME    = SMS_DELIVERY_REPORT
+    ITEM_ID      = 1920
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 0
+    ITEM_PARENT  = -1
+    ITEM_DESC    = SMS delivery report enable/disable.enable:1 disable:0
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SMS_ENCODING_SUPPORT
+    ITEM_ID      = 1921
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 1
+    ITEM_PARENT  = -1
+    ITEM_DESC    = 7-bit/8bit support. 0: Reduced 1: Full 2:Auto
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = MMS_CONFIG
+    ITEM_ID      = 1922
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 2
+    ITEM_PARENT  = -1
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = MAX_NUMBER
+    ITEM_ID      = 1922
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_CONTENT = 0x64
+    ITEM_INDEX   = 3
+    ITEM_PARENT  = 2
+    ITEM_DESC    = supported max mms number
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = MAX_BODY_SIZE
+    ITEM_ID      = 1922
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 4
+    ITEM_PARENT  = 2
+    ITEM_DESC    = The maximum size for sent MMS messages in bytes.0: 100K 1: 300K 2: 600K 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = AUTO_RECEIVE
+    ITEM_ID      = 1922
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 5
+    ITEM_PARENT  = 2
+    ITEM_DESC    = MMS auto receive. 0: Retrieve 1: Ask first 2: Reject
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = TIME_STAMP_TYPE
+    ITEM_ID      = 1923
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 6
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Save timestamp as reveived from SMSC or from Device. 0: Local/Device 1: Network
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = MADVERTISE_ON
+    ITEM_ID      = 1924
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 7
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Allow/Disallow MMS advertisement. 0: Disallow 1: Allow
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = MMS_DELIVERY_REPORT
+    ITEM_ID      = 1925
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 8
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Enable/disable MMS delivery report. 0: Disable 1: Enable
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SMSC_EDITABLE
+    ITEM_ID      = 1926
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 9
+    ITEM_PARENT  = -1
+    ITEM_DESC    = If the user is allowed to edit the SMS centre number."0:SMSC number is non-Editable 
+  END_ITEM
+
+
+# End Module Item
+
+################################################################################

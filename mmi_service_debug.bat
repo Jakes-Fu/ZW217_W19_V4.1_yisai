@@ -1,0 +1,1 @@
+make p=UWS6121E_WC_1H00_NoGNSS m=mmi_service update job=8

@@ -1,0 +1,28 @@
+工具支持命令行操作
+具体参数如下：
+NVGen.exe. <xxx.prj> <–L >[ [ [ [ [yyy.nv] dsp.bin ] zzz.txt ]–W –id FileID FilePath][-T][[-m MergeFilePath yyy_config.h]|[-c MergeFilePath Moderm.bin]][-v][-f FixBinFile][-h HashValue.h] [-FastMode]
+其中，
+xxx.prj   为prj文件，必须参数，其他为可选参数
+-L        如果有这选项，则表示生成的NV bin文件是little endian 否则默认为big endian
+yyy.nv    用于修改工程NV参数
+dsp.bin   写DSP文件到NV bin文件
+zzz.txt   为工具运行出错的log文件
+-id       如果有这选项，后面跟两个选项参数：FileID and FilePath. 将写入后面输入的文件到NV bin 文件。
+          FileID  为File Item ID.
+          FilePath 为File Path, 写入此文件到NV bin 文件。
+-m| -c    这两个选项，二选一， 针对不同项目处理delta.nv文件，后面跟一个或者两位个选项参数：
+-m        MergeFilePath 为必选参数，headerFileName 为可选参数，默认值为MergeFilePath\nv_config.h ;
+-c        MergeFilePath 为必选参数，BinFileName 为可选参数，为空时，则只解析生成deltaNV.bin,  若为moderm.bin文件， 将解析的nv文件merge到moder.bin文件中；       
+-f        如果有这个选项，后面跟一个参数，即要写入nvitem.bin文件的fixNV.bin 文件，要求写入全路径；
+-h        如果有这个选项，后面跟一个参数，记录要生成的hash value 存储的头文件全路径名； 
+-v        生成的nvitem.bin文件包含版本信息；
+-T        如果有这选项，则表示生成的NV bin文件，没有8个FF的结束标志；没有这个选项，则表示生成的NV bin文件，含有8个FF的结束标志。
+-FastMode 关闭去重功能
+举例： 
+# 直接生成nvitem.bin：
+NVGen.exe ./nvitem.prj -L
+# 生成nvitem.bin的同时，合并多个delta.nv files生成yy_config.h, delta.nv 文件存储于./NVFilePath/:
+NVGen ./nvitem.prj -L -m ./NVFilePath/  ./NVFilePath/yy_config.h
+# 生成nvitem.bin的同时，合并多个delta.nv files至CP侧的moderm.bin, delta.nv 文件存储于./NVFilePath/:
+NVGen ./nvitem.prj -L -m ./NVFilePath/  ./NVFilePath/moderm.bin
+

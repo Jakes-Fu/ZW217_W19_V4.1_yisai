@@ -1,0 +1,7 @@
+; ResEn.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ResEn"
+DESCRIPTION  'ResEn Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

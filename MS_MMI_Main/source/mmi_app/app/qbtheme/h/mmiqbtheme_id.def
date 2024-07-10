@@ -1,0 +1,17 @@
+
+    WIN_ID_DEF(MMIQBTHEME_MAIN_WIN_ID),         // QB theme main win
+    WIN_ID_DEF(MMIQBTHEME_LIST_WIN_ID),         // QB theme list win
+    WIN_ID_DEF(MMIQBTHEME_WALLPAPER_LIST_WIN_ID),   // QB theme wallpaper list win
+    WIN_ID_DEF(MMIQBTHEME_ICON_LIST_WIN_ID),   // QB theme icon list win
+    WIN_ID_DEF(MMIQBTHEME_ICON_BG_LIST_WIN_ID),   // QB theme icon bg list win
+    WIN_ID_DEF(MMIQBTHEME_FONT_LIST_WIN_ID),   // QB theme font list win
+    WIN_ID_DEF(MMIQBTHEME_PREVIEW_GLIDE_WIN_ID),   // QB theme preview glide win
+    WIN_ID_DEF(MMIQBTHEME_WALLPAPER_PREVIEW_GLIDE_WIN_ID),   // QB theme wallpaper preview glide win
+    WIN_ID_DEF(MMIQBTHEME_ICON_PREVIEW_GLIDE_WIN_ID),   // QB theme icon preview glide win
+    WIN_ID_DEF(MMIQBTHEME_ICON_BG_PREVIEW_GLIDE_WIN_ID),   // QB theme icon bg preview glide win
+    WIN_ID_DEF(MMIQBTHEME_FONT_PREVIEW_GLIDE_WIN_ID),   // QB theme font preview glide win
+
+    WIN_ID_DEF(MMIQBTHEME_PROGRESS_WIN_ID),   // QB theme progress win
+    WIN_ID_DEF(MMIQBTHEME_QUERY_WIN_ID),   // QB theme query win
+	WIN_ID_DEF(MMIQBTHEME_QUERY_APPLY_WIN_ID),   // QB theme query apply win
+

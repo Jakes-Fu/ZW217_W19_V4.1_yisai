@@ -1,0 +1,366 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\VNetSetting.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,6,0,0
+ PRODUCTVERSION 1,6,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "VNetSetting DLL\0"
+            VALUE "FileVersion", "1, 6, 0, 0\0"
+            VALUE "InternalName", "VNetSetting\0"
+            VALUE "LegalCopyright", "°æÈ¨ËùÓÐ (C) 2009\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "VNetSetting.DLL\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "VNetSetting Dynamic Link Library\0"
+            VALUE "ProductVersion", "1, 6, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_YES            ICON    DISCARDABLE     "res\\Ok.ico"
+IDI_ICON_NO             ICON    DISCARDABLE     "res\\Cancel.ico"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_NETSTATE_PANAL DIALOG DISCARDABLE  0, 0, 311, 290
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Network State"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Simulator Network Parameters",IDC_STATIC_PARAM_SIMU,7,7,
+                    297,156
+    RTEXT           "Simulator MAC :",ID_STATIC,17,27,63,8
+    EDITTEXT        IDC_EDIT_MAC,87,27,117,12,ES_READONLY | NOT WS_BORDER
+    RTEXT           "Simulator IP :",ID_STATIC,17,43,63,8
+    EDITTEXT        IDC_EDIT_IP,87,43,117,12,ES_READONLY | NOT WS_BORDER
+    RTEXT           "Subnet Mask :",ID_STATIC,17,59,63,8
+    EDITTEXT        IDC_EDIT_SNMASK,87,59,117,12,ES_READONLY | NOT WS_BORDER
+    RTEXT           "Gateway :",ID_STATIC,17,75,63,8
+    EDITTEXT        IDC_EDIT_GATEWAY,87,75,117,12,ES_READONLY | NOT 
+                    WS_BORDER
+    RTEXT           "DNS Servers :",ID_STATIC,17,91,63,8
+    EDITTEXT        IDC_EDIT_DNS1,87,91,117,12,ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_DNS2,87,107,117,12,ES_READONLY | NOT WS_BORDER
+    RTEXT           "Net ID :",ID_STATIC,17,123,63,8
+    EDITTEXT        IDC_EDIT_NETID,87,123,117,12,ES_READONLY | NOT WS_BORDER
+    RTEXT           "Config File :",ID_STATIC,17,139,63,8
+    EDITTEXT        IDC_EDIT_CFGFILE,87,139,199,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER
+    PUSHBUTTON      "Setting...",IDC_BTN_SETTING,226,24,60,18
+    GROUPBOX        "Ethernet Device State",IDC_STATIC_PARAM_ETHER,7,170,297,
+                    111
+    RTEXT           "Description :",ID_STATIC,17,189,63,8
+    EDITTEXT        IDC_EDIT_DEVICE_DESC,87,189,204,12,ES_READONLY | NOT 
+                    WS_BORDER
+    RTEXT           "Interface :",ID_STATIC,17,205,63,8
+    EDITTEXT        IDC_EDIT_DEVICE_NAME,87,205,204,12,ES_READONLY | NOT 
+                    WS_BORDER
+    RTEXT           "Current State :",ID_STATIC,17,221,63,8
+    EDITTEXT        IDC_EDIT_DEVICE_STATE,87,221,204,12,ES_READONLY | NOT 
+                    WS_BORDER
+    CONTROL         "Enable Receive",IDC_CHECK_RECV,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,88,238,72,10
+    CONTROL         "Enable Send",IDC_CHECK_SEND,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,88,254,60,10
+    PUSHBUTTON      "Driver Install",IDC_BTN_DRV_INSTALL,187,244,100,21
+END
+
+IDD_NETSETTING_PANAL DIALOG DISCARDABLE  0, 0, 300, 330
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Simulator NetParam Setting"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Simulator Parameter",IDC_STATIC_PARAM_SIMU,7,7,286,108
+    LTEXT           "1) select an ethernet interface bellow for simulator use",
+                    IDC_STATIC_NOTE1,22,25,236,8
+    LTEXT           "2) select simulator parameters and do test if necessary",
+                    IDC_STATIC_NOTE2,22,40,236,8
+    LTEXT           "Simulator MAC",IDC_STATIC,22,60,55,8
+    EDITTEXT        IDC_EDIT_MAC1,82,58,15,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAC2,99,58,15,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAC3,116,58,15,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAC4,133,58,15,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAC5,150,58,15,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAC6,167,58,15,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    PUSHBUTTON      "MAC Test",IDC_BTN_MACTEST,195,57,68,16
+    LTEXT           "Simulator IP",IDC_STATIC,22,76,55,8
+    CONTROL         "IPAddress1",IDC_IPADDRESS_SIMU,"SysIPAddress32",
+                    WS_TABSTOP,82,74,101,12
+    CONTROL         "use DHCP",IDC_CHK_DHCP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,82,94,44,10
+    CONTROL         "IP Search",IDC_CHK_IPSEARCH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,135,94,52,10
+    PUSHBUTTON      "IP Test",IDC_BTN_IPTEST,195,74,68,16
+    GROUPBOX        "Ethernet Interface",IDC_STATIC_PARAM_LOCAL,7,121,286,
+                    176
+    LTEXT           "Description",IDC_STATIC,22,143,55,8
+    EDITTEXT        IDC_EDIT_DEVDESC,82,143,193,12,ES_READONLY | NOT 
+                    WS_BORDER
+    LTEXT           "Interface",IDC_STATIC,22,159,55,8
+    COMBOBOX        IDC_COMBO_ADAPTER,82,156,193,60,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Local MAC",IDC_STATIC,22,175,55,8
+    EDITTEXT        IDC_EDIT_LMAC,82,175,87,12,ES_READONLY | NOT WS_BORDER
+    LTEXT           "Local IP",IDC_STATIC,22,191,55,8
+    EDITTEXT        IDC_EDIT_LIP,82,191,87,12,ES_READONLY | NOT WS_BORDER
+    LTEXT           "Subnet Mask",IDC_STATIC,22,207,55,8
+    EDITTEXT        IDC_EDIT_SNMASK,82,207,87,12,ES_READONLY | NOT WS_BORDER
+    LTEXT           "Gateway",IDC_STATIC,22,223,55,8
+    EDITTEXT        IDC_EDIT_GATEWAY,82,223,87,12,ES_READONLY | NOT 
+                    WS_BORDER
+    LTEXT           "DNS Servers",IDC_STATIC,22,239,55,8
+    COMBOBOX        IDC_COMBO_DNS1,82,237,90,58,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_DNS2,82,253,90,58,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "DHCP Server",IDC_STATIC,22,271,55,8
+    EDITTEXT        IDC_EDIT_DHCP,82,271,87,12,ES_READONLY | NOT WS_BORDER
+    DEFPUSHBUTTON   "OK",IDOK,98,306,49,15
+    PUSHBUTTON      "CANCEL",IDCANCEL,152,306,49,15
+END
+
+IDD_IPTESTING DIALOG DISCARDABLE  0, 0, 235, 68
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Not initialized!",IDC_STATIC_NOTES,8,19,220,8
+    DEFPUSHBUTTON   "close",IDOK,93,40,50,16
+END
+
+IDD_MACTESTING DIALOG DISCARDABLE  0, 0, 235, 68
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "close",IDOK,93,41,50,16
+    CTEXT           "Not initialized!",IDC_STATIC_NOTES,8,19,220,8
+END
+
+IDD_IPSEARCHING DIALOG DISCARDABLE  0, 0, 280, 180
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "IP Searching"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Option",IDC_STATIC,7,7,266,66
+    CONTROL         "IPAddress1",IDC_IPADDRESS_BEGIN,"SysIPAddress32",
+                    WS_TABSTOP,27,28,100,13
+    CTEXT           "->",IDC_STATIC_RANGE,133,31,15,8
+    CONTROL         "IPAddress2",IDC_IPADDRESS_END,"SysIPAddress32",
+                    WS_TABSTOP,152,28,100,13
+    CONTROL         "Forward",IDC_RADIO_FORWARD,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,27,51,44,10
+    CONTROL         "Backward",IDC_RADIO_BACKWARD,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,83,51,48,10
+    GROUPBOX        "Status",IDC_STATIC,7,79,266,66
+    CTEXT           "Static",IDC_STATIC_NOTES,21,102,237,8
+    RTEXT           "Available IP",IDC_STATIC,28,123,55,8
+    COMBOBOX        IDC_COMBO_RESULT,89,120,101,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Search",IDC_BTN_NEXT,88,155,50,16
+    DEFPUSHBUTTON   "OK",IDOK,141,155,50,16
+END
+
+IDD_CLOSEWAIT DIALOG DISCARDABLE  0, 0, 235, 77
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Not initialized!",IDC_STATIC_NOTES,8,17,220,8
+    DEFPUSHBUTTON   "close",IDOK,93,50,50,16
+    CTEXT           "To close in x seconds ...",IDC_STATIC_TIMER,8,32,220,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_NETSTATE_PANAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 304
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 283
+    END
+
+    IDD_NETSETTING_PANAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 323
+    END
+
+    IDD_IPTESTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 61
+    END
+
+    IDD_MACTESTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 61
+    END
+
+    IDD_IPSEARCHING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 273
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    IDD_CLOSEWAIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 70
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\VNetSetting.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

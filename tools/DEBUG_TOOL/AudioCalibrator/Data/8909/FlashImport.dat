@@ -1,0 +1,22 @@
+echo off
+
+adb root
+sleep 3000
+
+adb shell factorydatatool read /data/fact.bin
+
+// export from device£¬<local> is local path
+adb pull /data/fact.bin <tmpbin>
+sleep 500
+
+// insert cfp data to local file
+filldata <local> <tmpbin>
+sleep 1000
+
+// copy file to device,<local> is local path
+//adb push ~/fact.bin /data/fact.bin
+adb push <tmpbin> /data/fact.bin
+
+adb shell factorydatatool write /data/fact.bin
+
+echo it's end

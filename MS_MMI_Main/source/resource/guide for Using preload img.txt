@@ -1,0 +1,53 @@
+1.	ImgTool.exe命令行格式
+		ImgTool preload源文件夹路径 img原始文件大小 img文件路径 是否为M18flash（0/1）
+		其中M18flash（0/1）：0表示SECTOR SIZE为512，1表示SERCTOR SIZE为1024
+		eg: ImgTool e:\test  2048  f:\img\preload_img.bin 0
+
+2.	应用ImgTool 生成preload_img.bin 流程
+
+		a.	preload_def.h
+		
+		内容：
+		SFS_SET_IS_M8_FLASH(BOOL)
+		SFS_ADD_FILE(PATH)
+		SFS_ADD_FOLDER(PATH)
+		
+		说明：
+		SFS_SET_IS_M8_FLASH: 	为TRUE时表示SECTOR SIZE为1024，为FALSE时表示SECTOR SIZE 为512.
+		SFS_ADD_FILE:	 		增加一个文件
+		SFS_ADD_FOLDER: 		增加一个目录（可以包含子目录）
+		
+		示例：
+		SFS_SET_IS_M8_FLASH(“FALSE”)
+		SFS_ADD_FILE(“preload\\java\\java.bin”)
+		SFS_ADD_FOLDER(“preload\\wap”)
+		
+		b.	preload_app.mk
+		
+		完成preload_def.h 的预处理，调用preload.pl 生成 preload_img.bin
+		注意：该文件中的两个宏定义。
+		I: .IMG_SIZE :该宏定义为preload_img.bin的大小，单位为K. 
+		preload_img.bin 尽量做一个大的文件系统，SFS可以做自适应，减少浪费。
+		
+		II: OLD_PRELOAD : 该宏开关用来设置采用何种的方式来生成preload_img.bin。默认FALSE时表示用ImgTool的方式生成preload_img.bin
+		OLD_PRELOAD = FALSE:表示用新的方式（ImgTool工具）来生成preload_img.bin（默认值）
+		OLD_PRELOAD = TRUE:表示用旧的方式（img_proc工具）来生成preload_img.bin。
+		
+		c.	preload.pl
+		
+		该脚本根据预编译后的preload_def.h ，从preload目录中抽取文件和目录到tmp目录下，然后调用ImgTool.exe在img目录下生成preload_img.bin
+		
+		输入参数：预编译后的preload_def.h,  preload 目录，tmp目录，生成的bin, IMG_SIZE
+		输出参数：preload_img.bin 
+		
+		d.	目录结构
+		
+		preload_app.mk  : 位于 MS_Code\ make \preload _app\ preload_app.mk
+		preload.pl : 位于MS_Code\ make \perl_script \ preload.pl
+		ImgTool.exe  : 位于MS_Code\make\make_cmd\ ImgTool.exe
+		preload_def.h : 位于MS_Code\MS_MMI\source\resource\ preload_def.h
+		preload目录 : 位于MS_Code\MS_MMI\source\resource\ mmi_res_X*X\preload
+
+3.	单独编译preload_app模块方法
+   ../MS_CODE>make p=xxxx m=preload_app
+   Such as:>make p =sc8800g2_openphone_240x400_le  m=preload_app

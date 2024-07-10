@@ -1,0 +1,16 @@
+7/22/2015 10:46:50 AM Creat tmpFile...
+7/22/2015 10:46:56 AM TmpFile complete!
+ 
+7/22/2015 10:46:56 AM Creat StructFile_ALL...
+7/22/2015 10:46:56 AM StructFile_ALL complete!
+ 
+7/22/2015 10:46:56 AM Creat StructFile_ENU...
+7/22/2015 10:46:56 AM StructFile_ENU complete!
+ 
+7/22/2015 10:46:56 AM Creat StructFile_STR...
+7/22/2015 10:46:56 AM StructFile_STR complete!
+ 
+7/22/2015 10:46:56 AM Creat StructFile_EXT...
+7/22/2015 10:46:56 AM StructFile_EXT complete!
+ 
+7/22/2015 10:46:56 AM App complete!

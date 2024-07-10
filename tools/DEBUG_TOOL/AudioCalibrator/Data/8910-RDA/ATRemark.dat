@@ -1,0 +1,153 @@
+// ------------------------------------------------------------------------------------------
+// 
+// 定义平台某ITF下AT指令参数的选择信息
+// 
+// <AT:ATName>
+//     Platform_ITF value
+//     ParaName     ParamMeans     |select;value:mean;|
+// </AT:ATName>
+//
+// ------------------------------------------------------------------------------------------
+
+// 88910 平台修改AT备注信息的定义
+
+
+<AT:atctst_aud_codec_set_ingain>
+     Platform_ITF 0
+     ana         ana        |select;0:0dB;1:3dB;2:6dB;3:12dB;4:18dB;5:24dB;6:30dB;7:36;|
+     adc         adc        |select;0:MUTE;1:-12dB;2:-10dB;3:-8dB;4:-6dB;-5:-4dB;6:-2dB;7:0dB;8:2dB;9:4dB;10:6dB;11:8dB;12:10dB;13:12dB;14:14dB;15:16dB;|
+</AT:atctst_aud_codec_set_ingain>
+
+
+<AT:atctst_aud_codec_set_ingain>
+     Platform_ITF 1
+     ana         ana        |select;0:0dB;1:3dB;2:6dB;3:12dB;4:18dB;5:24dB;6:30dB;7:36;|
+     adc         adc        |select;0:MUTE;1:-12dB;2:-10dB;3:-8dB;4:-6dB;-5:-4dB;6:-2dB;7:0dB;8:2dB;9:4dB;10:6dB;11:8dB;12:10dB;13:12dB;14:14dB;15:16dB;|
+</AT:atctst_aud_codec_set_ingain>
+
+
+<AT:atctst_aud_codec_set_ingain>
+     Platform_ITF 2
+     ana         ana        |select;0:0dB;1:3dB;2:6dB;3:12dB;4:18dB;5:24dB;6:30dB;7:36;|
+     adc         adc        |select;0:MUTE;1:-12dB;2:-10dB;3:-8dB;4:-6dB;-5:-4dB;6:-2dB;7:0dB;8:2dB;9:4dB;10:6dB;11:8dB;12:10dB;13:12dB;14:14dB;15:16dB;|     
+</AT:atctst_aud_codec_set_ingain>
+
+
+<AT:atctst_aud_codec_set_ingain>
+     Platform_ITF 3
+     ana         ana        |select;0:0dB;1:3dB;2:6dB;3:12dB;4:18dB;5:24dB;6:30dB;7:36;|
+     adc         adc        |select;0:MUTE;1:-12dB;2:-10dB;3:-8dB;4:-6dB;-5:-4dB;6:-2dB;7:0dB;8:2dB;9:4dB;10:6dB;11:8dB;12:10dB;13:12dB;14:14dB;15:16dB;|
+</AT:atctst_aud_codec_set_ingain>
+
+
+<AT:atctst_aud_codec_set_ingain>
+     Platform_ITF 4
+     ana         ana        |select;0:0dB;1:3dB;2:6dB;3:12dB;4:18dB;5:24dB;6:30dB;7:36;|
+     adc         adc        |select;0:MUTE;1:-12dB;2:-10dB;3:-8dB;4:-6dB;-5:-4dB;6:-2dB;7:0dB;8:2dB;9:4dB;10:6dB;11:8dB;12:10dB;13:12dB;14:14dB;15:16dB;|
+</AT:atctst_aud_codec_set_ingain>
+
+
+<AT:atctst_aud_codec_set_ingain>
+     Platform_ITF 5
+     ana         ana        |select;0:0dB;1:3dB;2:6dB;3:12dB;4:18dB;5:24dB;6:30dB;7:36;|
+     adc         adc        |select;0:MUTE;1:-12dB;2:-10dB;3:-8dB;4:-6dB;-5:-4dB;6:-2dB;7:0dB;8:2dB;9:4dB;10:6dB;11:8dB;12:10dB;13:12dB;14:14dB;15:16dB;|
+</AT:atctst_aud_codec_set_ingain>
+
+
+
+
+<AT:atctst_aud_codec_set_outgain>
+     Platform_ITF 0                // handset
+     ana         ana        |select;2:6db;3:3dB;4:0db;5:-3db;6:-6dB;7:-9db;8:-12dB;9:-15db;10:-18dB;15:MUTE;|
+     dac         dac        |select;0:-26dB;1:-25.5dB;2:-25dB;3:-24.5dB;4:-24dB;5:-23.5dB;6:-23dB;7:-22.5dB;8:-22dB;9:-21.5dB;10:-21dB;11:-20.5dB;12:-20dB;13:-19.5dB;14:-19dB;15:-18.5dB;16:-18dB;17:-17.5dB;18:-17dB;19:-16.5dB;20:-16dB;21:-15.5dB;22:-15dB;23:-14.5dB;24:-14dB;25:-13.5dB;26:-13dB;27:-12.5dB;28:-12dB;29:-11.5dB;30:-11dB;31:-10.5dB;32:-10dB;33:-9.5dB;34:-9dB;35:-8.5dB;36:-8dB;37:-7.5dB;38:-7dB;39:-6.5dB;40:-6dB;41:-5.5dB;42:-5dB;43:-4.5dB;44:-4dB;45:-3.5dB;46:-3dB;47:-2.5dB;48:-2dB;49:-1.5dB;50:-1dB;51:-0.5dB;52:0dB;53:0.5dB;54:1dB;55:1.5dB;56:2dB;57:2.5dB;58:3dB;59:3.5dB;60:4dB;61:4.5dB;62:5dB;63:5.5dB;116:6dB;117:6.5dB;118:7dB;119:7.5dB;120:8dB;121:8.5dB;122:9dB;123:9.5dB;124:10dB;125:10.5dB;126:11dB;127:11.5dB;180:12dB;181:12.5dB;182:13dB;183:13.5dB;184:14dB;185:14.5dB;186:15dB;187:15.5dB;188:16dB;189:16.5dB;190:17dB;191:17.5dB;244:18dB;245:18.5dB;246:19dB;247:19.5dB;248:20dB;249:20.5dB;250:21dB;251:21.5dB;252:22dB;253:22.5dB;254:23dB;255:23.5dB;|
+     alg         alg        |select;-45:MUTE;-42;-39;-36;-33;-30;-27;-24;-21;-18;-15;-12;-9;-6;-3;0;|
+     alg         alg        |select;-45:MUTE;-42;-39;-36;-33;-30;-27;-24;-21;-18;-15;-12;-9;-6;-3;0;|
+
+</AT:atctst_aud_codec_set_outgain>
+
+
+<AT:atctst_aud_codec_set_outgain>
+     Platform_ITF 1               // handfree
+     ana         ana        |select;0:0db;1:1.5dB;2:3db;3:3db;|
+     dac         dac        |select;0:-26dB;1:-25.5dB;2:-25dB;3:-24.5dB;4:-24dB;5:-23.5dB;6:-23dB;7:-22.5dB;8:-22dB;9:-21.5dB;10:-21dB;11:-20.5dB;12:-20dB;13:-19.5dB;14:-19dB;15:-18.5dB;16:-18dB;17:-17.5dB;18:-17dB;19:-16.5dB;20:-16dB;21:-15.5dB;22:-15dB;23:-14.5dB;24:-14dB;25:-13.5dB;26:-13dB;27:-12.5dB;28:-12dB;29:-11.5dB;30:-11dB;31:-10.5dB;32:-10dB;33:-9.5dB;34:-9dB;35:-8.5dB;36:-8dB;37:-7.5dB;38:-7dB;39:-6.5dB;40:-6dB;41:-5.5dB;42:-5dB;43:-4.5dB;44:-4dB;45:-3.5dB;46:-3dB;47:-2.5dB;48:-2dB;49:-1.5dB;50:-1dB;51:-0.5dB;52:0dB;53:0.5dB;54:1dB;55:1.5dB;56:2dB;57:2.5dB;58:3dB;59:3.5dB;60:4dB;61:4.5dB;62:5dB;63:5.5dB;116:6dB;117:6.5dB;118:7dB;119:7.5dB;120:8dB;121:8.5dB;122:9dB;123:9.5dB;124:10dB;125:10.5dB;126:11dB;127:11.5dB;180:12dB;181:12.5dB;182:13dB;183:13.5dB;184:14dB;185:14.5dB;186:15dB;187:15.5dB;188:16dB;189:16.5dB;190:17dB;191:17.5dB;244:18dB;245:18.5dB;246:19dB;247:19.5dB;248:20dB;249:20.5dB;250:21dB;251:21.5dB;252:22dB;253:22.5dB;254:23dB;255:23.5dB;|
+     alg         alg        |select;-45:MUTE;-42;-39;-36;-33;-30;-27;-24;-21;-18;-15;-12;-9;-6;-3;0;|
+</AT:atctst_aud_codec_set_outgain>
+
+
+
+<AT:atctst_aud_codec_set_outgain>
+     Platform_ITF 2               // headset4p
+     ana         ana        |select;4:0db;5:-3dB;6:-6dB;7:-9db;8:-12dB;9:-15db;10:-18dB;15:MUTE;|
+     dac         dac        |select;0:-26dB;1:-25.5dB;2:-25dB;3:-24.5dB;4:-24dB;5:-23.5dB;6:-23dB;7:-22.5dB;8:-22dB;9:-21.5dB;10:-21dB;11:-20.5dB;12:-20dB;13:-19.5dB;14:-19dB;15:-18.5dB;16:-18dB;17:-17.5dB;18:-17dB;19:-16.5dB;20:-16dB;21:-15.5dB;22:-15dB;23:-14.5dB;24:-14dB;25:-13.5dB;26:-13dB;27:-12.5dB;28:-12dB;29:-11.5dB;30:-11dB;31:-10.5dB;32:-10dB;33:-9.5dB;34:-9dB;35:-8.5dB;36:-8dB;37:-7.5dB;38:-7dB;39:-6.5dB;40:-6dB;41:-5.5dB;42:-5dB;43:-4.5dB;44:-4dB;45:-3.5dB;46:-3dB;47:-2.5dB;48:-2dB;49:-1.5dB;50:-1dB;51:-0.5dB;52:0dB;53:0.5dB;54:1dB;55:1.5dB;56:2dB;57:2.5dB;58:3dB;59:3.5dB;60:4dB;61:4.5dB;62:5dB;63:5.5dB;116:6dB;117:6.5dB;118:7dB;119:7.5dB;120:8dB;121:8.5dB;122:9dB;123:9.5dB;124:10dB;125:10.5dB;126:11dB;127:11.5dB;180:12dB;181:12.5dB;182:13dB;183:13.5dB;184:14dB;185:14.5dB;186:15dB;187:15.5dB;188:16dB;189:16.5dB;190:17dB;191:17.5dB;244:18dB;245:18.5dB;246:19dB;247:19.5dB;248:20dB;249:20.5dB;250:21dB;251:21.5dB;252:22dB;253:22.5dB;254:23dB;255:23.5dB;|
+     alg         alg        |select;-45:MUTE;-42;-39;-36;-33;-30;-27;-24;-21;-18;-15;-12;-9;-6;-3;0;|
+</AT:atctst_aud_codec_set_outgain>
+
+
+<AT:atctst_aud_codec_set_outgain>
+     Platform_ITF 3               // headset3p
+     ana         ana        |select;4:0db;5:-3dB;6:-6dB;7:-9db;8:-12dB;9:-15db;10:-18dB;15:MUTE;|
+     dac         dac        |select;0:-26dB;1:-25.5dB;2:-25dB;3:-24.5dB;4:-24dB;5:-23.5dB;6:-23dB;7:-22.5dB;8:-22dB;9:-21.5dB;10:-21dB;11:-20.5dB;12:-20dB;13:-19.5dB;14:-19dB;15:-18.5dB;16:-18dB;17:-17.5dB;18:-17dB;19:-16.5dB;20:-16dB;21:-15.5dB;22:-15dB;23:-14.5dB;24:-14dB;25:-13.5dB;26:-13dB;27:-12.5dB;28:-12dB;29:-11.5dB;30:-11dB;31:-10.5dB;32:-10dB;33:-9.5dB;34:-9dB;35:-8.5dB;36:-8dB;37:-7.5dB;38:-7dB;39:-6.5dB;40:-6dB;41:-5.5dB;42:-5dB;43:-4.5dB;44:-4dB;45:-3.5dB;46:-3dB;47:-2.5dB;48:-2dB;49:-1.5dB;50:-1dB;51:-0.5dB;52:0dB;53:0.5dB;54:1dB;55:1.5dB;56:2dB;57:2.5dB;58:3dB;59:3.5dB;60:4dB;61:4.5dB;62:5dB;63:5.5dB;116:6dB;117:6.5dB;118:7dB;119:7.5dB;120:8dB;121:8.5dB;122:9dB;123:9.5dB;124:10dB;125:10.5dB;126:11dB;127:11.5dB;180:12dB;181:12.5dB;182:13dB;183:13.5dB;184:14dB;185:14.5dB;186:15dB;187:15.5dB;188:16dB;189:16.5dB;190:17dB;191:17.5dB;244:18dB;245:18.5dB;246:19dB;247:19.5dB;248:20dB;249:20.5dB;250:21dB;251:21.5dB;252:22dB;253:22.5dB;254:23dB;255:23.5dB;|
+     alg         alg        |select;-45:MUTE;-42;-39;-36;-33;-30;-27;-24;-21;-18;-15;-12;-9;-6;-3;0;|
+</AT:atctst_aud_codec_set_outgain>
+
+
+<AT:atctst_aud_codec_set_outgain>
+     Platform_ITF 4               // BTHS
+     dac         dac        |select;0:-26dB;1:-25.5dB;2:-25dB;3:-24.5dB;4:-24dB;5:-23.5dB;6:-23dB;7:-22.5dB;8:-22dB;9:-21.5dB;10:-21dB;11:-20.5dB;12:-20dB;13:-19.5dB;14:-19dB;15:-18.5dB;16:-18dB;17:-17.5dB;18:-17dB;19:-16.5dB;20:-16dB;21:-15.5dB;22:-15dB;23:-14.5dB;24:-14dB;25:-13.5dB;26:-13dB;27:-12.5dB;28:-12dB;29:-11.5dB;30:-11dB;31:-10.5dB;32:-10dB;33:-9.5dB;34:-9dB;35:-8.5dB;36:-8dB;37:-7.5dB;38:-7dB;39:-6.5dB;40:-6dB;41:-5.5dB;42:-5dB;43:-4.5dB;44:-4dB;45:-3.5dB;46:-3dB;47:-2.5dB;48:-2dB;49:-1.5dB;50:-1dB;51:-0.5dB;52:0dB;53:0.5dB;54:1dB;55:1.5dB;56:2dB;57:2.5dB;58:3dB;59:3.5dB;60:4dB;61:4.5dB;62:5dB;63:5.5dB;116:6dB;117:6.5dB;118:7dB;119:7.5dB;120:8dB;121:8.5dB;122:9dB;123:9.5dB;124:10dB;125:10.5dB;126:11dB;127:11.5dB;180:12dB;181:12.5dB;182:13dB;183:13.5dB;184:14dB;185:14.5dB;186:15dB;187:15.5dB;188:16dB;189:16.5dB;190:17dB;191:17.5dB;244:18dB;245:18.5dB;246:19dB;247:19.5dB;248:20dB;249:20.5dB;250:21dB;251:21.5dB;252:22dB;253:22.5dB;254:23dB;255:23.5dB;|
+     alg         alg        |select;-45:MUTE;-42;-39;-36;-33;-30;-27;-24;-21;-18;-15;-12;-9;-6;-3;0;|
+</AT:atctst_aud_codec_set_outgain>
+
+
+<AT:atctst_aud_codec_set_outgain>
+     Platform_ITF 5               // BTHSNRec
+     dac         dac        |select;0:-26dB;1:-25.5dB;2:-25dB;3:-24.5dB;4:-24dB;5:-23.5dB;6:-23dB;7:-22.5dB;8:-22dB;9:-21.5dB;10:-21dB;11:-20.5dB;12:-20dB;13:-19.5dB;14:-19dB;15:-18.5dB;16:-18dB;17:-17.5dB;18:-17dB;19:-16.5dB;20:-16dB;21:-15.5dB;22:-15dB;23:-14.5dB;24:-14dB;25:-13.5dB;26:-13dB;27:-12.5dB;28:-12dB;29:-11.5dB;30:-11dB;31:-10.5dB;32:-10dB;33:-9.5dB;34:-9dB;35:-8.5dB;36:-8dB;37:-7.5dB;38:-7dB;39:-6.5dB;40:-6dB;41:-5.5dB;42:-5dB;43:-4.5dB;44:-4dB;45:-3.5dB;46:-3dB;47:-2.5dB;48:-2dB;49:-1.5dB;50:-1dB;51:-0.5dB;52:0dB;53:0.5dB;54:1dB;55:1.5dB;56:2dB;57:2.5dB;58:3dB;59:3.5dB;60:4dB;61:4.5dB;62:5dB;63:5.5dB;116:6dB;117:6.5dB;118:7dB;119:7.5dB;120:8dB;121:8.5dB;122:9dB;123:9.5dB;124:10dB;125:10.5dB;126:11dB;127:11.5dB;180:12dB;181:12.5dB;182:13dB;183:13.5dB;184:14dB;185:14.5dB;186:15dB;187:15.5dB;188:16dB;189:16.5dB;190:17dB;191:17.5dB;244:18dB;245:18.5dB;246:19dB;247:19.5dB;248:20dB;249:20.5dB;250:21dB;251:21.5dB;252:22dB;253:22.5dB;254:23dB;255:23.5dB;|
+     alg         alg        |select;-45:MUTE;-42;-39;-36;-33;-30;-27;-24;-21;-18;-15;-12;-9;-6;-3;0;|
+</AT:atctst_aud_codec_set_outgain>
+
+
+
+<AT:atctst_aud_codec_set_recordergain>
+       Platform_ITF    0
+       ana         ana      |select;0:0dB;1:3dB;2:6dB;3:12dB;4:18dB;5:24dB;6:30dB;7:36dB;| 
+       adc         adc        |select;0:MUTE;1:-12dB;2:-10dB;3:-8dB;4:-6dB;-5:-4dB;6:-2dB;7:0dB;8:2dB;9:4dB;10:6dB;11:8dB;12:10dB;13:12dB;14:14dB;15:16dB;|
+</AT:atctst_aud_codec_set_recordergain>
+
+
+<AT:atctst_aud_codec_set_recordergain>
+       Platform_ITF    1
+       ana         ana      |select;0:0dB;1:3dB;2:6dB;3:12dB;4:18dB;5:24dB;6:30dB;7:36dB;|
+       adc         adc        |select;0:MUTE;1:-12dB;2:-10dB;3:-8dB;4:-6dB;-5:-4dB;6:-2dB;7:0dB;8:2dB;9:4dB;10:6dB;11:8dB;12:10dB;13:12dB;14:14dB;15:16dB;|
+</AT:atctst_aud_codec_set_recordergain>
+
+
+<AT:atctst_aud_codec_set_recordergain>
+       Platform_ITF    2
+       ana         ana      |select;0:0dB;1:3dB;2:6dB;3:12dB;4:18dB;5:24dB;6:30dB;7:36dB;|
+       adc         adc        |select;0:MUTE;1:-12dB;2:-10dB;3:-8dB;4:-6dB;-5:-4dB;6:-2dB;7:0dB;8:2dB;9:4dB;10:6dB;11:8dB;12:10dB;13:12dB;14:14dB;15:16dB;| 
+</AT:atctst_aud_codec_set_recordergain>
+
+
+<AT:atctst_aud_codec_set_recordergain>
+       Platform_ITF    3
+       ana         ana      |select;0:0dB;1:3dB;2:6dB;3:12dB;4:18dB;5:24dB;6:30dB;7:36dB;|
+       adc         adc        |select;0:MUTE;1:-12dB;2:-10dB;3:-8dB;4:-6dB;-5:-4dB;6:-2dB;7:0dB;8:2dB;9:4dB;10:6dB;11:8dB;12:10dB;13:12dB;14:14dB;15:16dB;| 
+</AT:atctst_aud_codec_set_recordergain>
+
+
+<AT:atctst_aud_codec_set_recordergain>
+       Platform_ITF    4
+       ana         ana      |select;0:0dB;1:3dB;2:6dB;3:12dB;4:18dB;5:24dB;6:30dB;7:36dB;|
+       adc         adc        |select;0:MUTE;1:-12dB;2:-10dB;3:-8dB;4:-6dB;-5:-4dB;6:-2dB;7:0dB;8:2dB;9:4dB;10:6dB;11:8dB;12:10dB;13:12dB;14:14dB;15:16dB;| 
+</AT:atctst_aud_codec_set_recordergain>
+
+
+<AT:atctst_aud_codec_set_recordergain>
+       Platform_ITF    5
+       ana         ana      |select;0:0dB;1:3dB;2:6dB;3:12dB;4:18dB;5:24dB;6:30dB;7:36dB;|
+       adc         adc        |select;0:MUTE;1:-12dB;2:-10dB;3:-8dB;4:-6dB;-5:-4dB;6:-2dB;7:0dB;8:2dB;9:4dB;10:6dB;11:8dB;12:10dB;13:12dB;14:14dB;15:16dB;| 
+</AT:atctst_aud_codec_set_recordergain>
+
+
+
+
+

@@ -1,0 +1,583 @@
+/************************************************************************
+* 版权所有 (C)2010,扬讯科技。
+*
+* 文件名称： // Mex_Res.h
+* 文件标识：
+* 内容摘要： //系统资源定义
+*
+************************************************************************/
+#if defined(MEX_TARGET_SERVER)
+#ifndef __MEX_RES_H__
+#define __MEX_RES_H__
+
+#include "MMIDataType.h"
+#include "GlobalMenuItems.h"
+
+#include "mex_app_id.h"
+
+//窗口ID
+typedef enum
+{
+	E_MSI_BASE = MET_MEX_BASE,
+	E_MSI_MAIN,
+	E_MSI_INPUT_BOX,
+	E_MSI_SSCHANDLE,
+	E_MSI_SSCHANDLE_RESTORE,
+	E_MSI_ENGINEERMODE,
+	E_MSI_SECOND_MENULIST,
+	E_MSI_SECOND_ABOUT,
+	E_MSI_FMGR_SCREEN,
+	E_MSI_APN_SELECT_SCREEN,
+    E_MSI_INSTALL_APP_SCREEN,
+    E_MSI_MAX
+} E_MEX_SCR_ID;
+
+//图标
+typedef enum
+{
+	E_MII_RES_BASE = MET_MEX_BASE,
+	E_MII_MAIN_ICON,
+	E_MII_MEX_PLATFORM_STATUS_ICON,//平台显示在状态栏的图标
+	//E_MII_MEX_QQ_ICON,
+	//QQ在状态栏的图标
+	E_MII_MEX_QQ_ONLINE_ICON,		//QQ在线
+	E_MII_MEX_QQ_OFFLINE_ICON,		//QQ离线
+	E_MII_MEX_QQ_HIDE_ICON,			//QQ隐身
+	E_MII_MEX_QQ_MSG_ICON,			//QQ来消息
+	E_MII_MEX_QQ_AWAY_ICON,			//QQ离开
+	E_MII_MEX_TB_ICON,				//TB 图标
+	E_MII_MEX_SMS_ICON,				//SMS图标
+	E_MII_MEX_MSN_ICON,				//MSN图标
+	E_MII_MEX_ZT_ICON,				//征途图标
+	E_MII_MEX_MSN_ONLINE_ICON,		//MSN在线
+	E_MII_MEX_MSN_OFFLINE_ICON,		//MSN脱机
+	E_MII_MEX_MSN_AWAY_ICON,		//MSN离开
+	E_MII_MEX_MSN_BUSY_ICON,		//MSN忙碌
+	E_MII_MEX_MSN_MSG_ICON,			//MSN来消息
+	E_MII_MEX_MSN_IDLE_ICON,		//MSN空白
+	E_MII_MEX_FETION_ICON,			//FETION 菜单图标
+	E_MII_MEX_FETION_ONLINE_ICON,		//FETION 在线
+	E_MII_MEX_FETION_OFFLINE_ICON,	//FETION 脱机
+	E_MII_MEX_FETION_AWAY_ICON,	//FETION 离开
+	E_MII_MEX_FETION_BUSY_ICON,	//FETION 忙碌
+	E_MII_MEX_FETION_HIDE_ICON,	//FETION 隐身
+	E_MII_MEX_FETION_IDLE_ICON,		//FETION 空白
+	E_MII_MEX_WOCHAT_ICON,			//视频
+	E_MII_MEX_LWSG_ICON,			//三国
+	E_MII_MEX_FARM_ICON,			//农场
+	E_MII_MEX_ZWDZJS_ICON,			//植物大战僵尸
+	E_MII_MEX_DDZ_ICON,				//斗地主
+	E_MII_MEX_FKCS_ICON,			//CS
+	E_MII_MEX_JSCB_ICON,			//金山词霸
+	E_MII_MEX_CSJ_ICON,				//彩世界
+	E_MII_MEX_ZFT_ICON,				//找房通
+	E_MII_MEX_YMDS_ICON,			//幽默大师
+	E_MII_MEX_PLAYER_ICON,			//流媒体播放器
+	E_MII_MEX_HDHL_ICON,			//红豆婚恋
+	E_MII_MEX_HXZ_ICON,				//话匣子
+	E_MII_MEX_FNDXN_ICON,
+	E_MII_MEX_TQYB_ICON,			//天气预报
+	E_MII_MEX_SINA_ICON,			//新浪微博
+#if defined(__MEX_QSG_SUPPORT__) || (MEX_MTK_CODE_VERSION == 0x1012)
+    E_MII_MEX_QSG_ICON,
+#endif
+#if 1//defined(__MEX_CQZ_SUPPORT__) || (MEX_MTK_CODE_VERSION == 0x1012)
+    E_MII_MEX_CQZ_ICON,
+#endif
+#if 1//defined(__MEX_TOMMAO_SUPPORT__) || (MEX_MTK_CODE_VERSION == 0x1012)
+    E_MII_MEX_TOMMAO_ICON,
+#endif
+#ifdef __MEX_ZIPPO_SUPPORT__
+    E_MII_MEX_ZIPPO_ICON,
+#endif
+
+#ifdef __MEX_BULLETSFLY_SUPPORT__
+    E_MII_MEX_BULLETSFLY_ICON,
+#endif
+#ifdef __MEX_AQ_SUPPORT__
+	E_MII_MEX_AQ_ICON,
+#endif
+#ifdef __MEX_HTC_TQ_SUPPORT__
+		E_MII_MEX_HTC_TQ_ICON,
+#endif
+
+
+#ifdef __MEX_Lighter_SUPPORT__
+		E_MII_MEX_Lighter_ICON,
+#endif
+#ifdef __MEX_MLSZ_SUPPORT__
+			E_MII_MEX_MLSZ_ICON,
+#endif
+#ifdef __MEX_MvBol_SUPPORT__
+		E_MII_MEX_MvBol_ICON,
+#endif
+#ifdef __MEX_HDtqyb_SUPPORT__
+			E_MII_MEX_HDtqyb_ICON,
+#endif
+#ifdef __MEX_HDcqz_SUPPORT__
+		E_MII_MEX_HDcqz_ICON,
+#endif
+#ifdef __MEX_DMC_SUPPORT__
+			E_MII_MEX_DMC_ICON,
+#endif
+#ifdef __MEX_QQ_SUPPORT__
+                        E_MII_MEX_QQ_ICON,
+#endif
+#ifdef __MEX_SETTIME_SUPPORT__
+		E_MII_MEX_SETTIME_ICON,
+#endif
+#ifdef __MEX_JJFB_SUPPORT__
+			E_MII_MEX_JJFB_ICON,
+#endif
+#ifdef __MEX_JPFCKB_SUPPORT__
+		E_MII_MEX_JPFCKB_ICON,
+#endif
+#ifdef __MEX_GANJILIFE_SUPPORT__
+			E_MII_MEX_GANJILIFE_ICON,
+#endif
+#ifdef __MEX_MEXSQAPP_SUPPORT__
+		E_MII_MEX_MEXSQAPP_ICON,
+#endif
+
+#if defined(__MEX_RENREN_SUPPORT__)
+    E_MII_MEX_RENREN_ICON,
+#endif
+#if defined(__MEX_KAIXIN_SUPPORT__)
+    E_MII_MEX_KAIXIN_ICON,
+#endif
+#if defined(__MEX_TAOBAO_SUPPORT__)
+    E_MII_MEX_TAOBAO_ICON,
+#endif
+#if 1//(MEX_MTK_CODE_VERSION == 0x1012) || defined(__MEX_SHSL_SUPPORT__) 
+	E_MII_MEX_SHSL_ICON,
+#endif
+
+#if 1//(MEX_MTK_CODE_VERSION == 0x1012) || defined(__MEX_CSJJS_SUPPORT__)
+	E_MII_MEX_CSJJS_ICON,
+#endif
+
+#if 1//(MEX_MTK_CODE_VERSION == 0x1012) || defined(__MEX_BLFC_SUPPORT__)
+	E_MII_MEX_BLFC_ICON,
+#endif
+
+#if 1//(MEX_MTK_CODE_VERSION == 0x1012) || defined(__MEX_MXSQY_SUPPORT__)
+	E_MII_MEX_MXSQY_ICON,
+#endif
+
+	E_MMI_RES_MAX
+} E_MEX_ICON_ID;
+
+//文字
+typedef enum
+{
+	E_MSI_RES_BASE = MET_MEX_BASE,
+	E_MSI_MENU_STRING,
+	E_MSI_MENU_YZH_STRING,
+	E_MSI_SSCRESTORE_TITLE,
+	E_MSI_GPRS_ALLOW_STRING,     //流量提醒
+	E_MSI_QQ_MENU_STRING,			//QQ菜单名称
+	E_MSI_USB_MASSSTORAGE,			//USB处于存储状态
+	E_MSI_NO_TFLASH,				//无存储卡
+	E_MSI_NOT_ENOUGH_SPACE,			//存储空间不足
+	E_MSI_OUT_OF_MEMORY,			//内存不足
+	E_MSI_UNABLE_READ_FILE,			//无法读取文件
+	E_MSI_INIT_FAILED,				//启动程序失败
+	E_MSI_QUIT_MESSAGE,				//退出平台提示
+	E_MSI_MODE_QUIT_QQ_TIP,			//切换模式退出qq的提示
+	E_MSI_WAMKF_MENU_STRING,			//TB菜单名称
+	E_MSI_KGZW_MENU_STRING,
+	E_MSI_SMS_MENU_STRING,			//SMS菜单名称
+	E_MSI_MSN_MENU_STRING,			//
+	E_MSI_LSZT_MENU_STRING,
+	E_MSI_ZTWY_MENU_STRING,
+	E_MSI_FETION_MENU_STRING,			//FETION
+	E_MSI_WMSP_MENU_STRING,			//视频
+	E_MSI_TCJY_MENU_STRING,
+	E_MSI_LWSG_MENU_STRING,				//三国
+	E_MSI_MFWY_MENU_STRING,
+	E_MSI_KXNC_MENU_STRING,				//农场
+	E_MSI_QQNC_MENU_STRING,
+	E_MSI_ZWDZJS_MENU_STRING,			//植物大战僵尸
+	E_MSI_JSDZ_MENU_STRING,
+	E_MSI_DDZ_MENU_STRING,				//斗地主
+	E_MSI_MVDDZ_MENU_STRING,
+	E_MSI_FKCS_MENU_STRING,				//CS
+	E_MSI_CYHX_MENU_STRING,
+	E_MSI_JSCB_MENU_STRING,				//金山词霸
+	E_MSI_KXCD_MENU_STRING,
+	E_MSI_CPTZ_MENU_STRING,				//彩世界
+	E_MSI_CPZDJ_MENU_STRING,
+	E_MSI_GJWZF_MENU_STRING,				//找房通
+	E_MSI_MFZF_MENU_STRING,
+	E_MSI_YMDS_MENU_STRING,				//幽默大师
+	E_MSI_YMMH_MENU_STRING,
+	E_MSI_SDYY_MENU_STRING,			//流媒体播放器
+	E_MSI_WYJC_MENU_STRING,
+	E_MSI_HDHL_MENU_STRING,				//红豆婚恋
+	E_MSI_YFDDP_MENU_STRING,
+	E_MSI_SGDJT_MENU_STRING,				//话匣子
+	E_MSI_BJLT_MENU_STRING,
+	E_MSI_QQ1_MENU_STRING,
+	E_MSI_QQ2_MENU_STRING,
+	E_MSI_DMC_MENU_STRING,			//电子保卡
+	E_MSI_FNDXN_MENU_STRING,
+	E_MSI_ABIRD_MENU_STRING,
+	E_MSI_TQYB_MENU_STRING,			//天气预报
+	E_MSI_SINA_MENU_STRING,			//新浪微博
+#if 1//defined(__MEX_QSG_SUPPORT__) || (MEX_MTK_CODE_VERSION == 0x1012)
+    E_MSI_QSG_MENU_STRING,
+#endif
+#if 1//defined(__MEX_CQZ_SUPPORT__) || (MEX_MTK_CODE_VERSION == 0x1012)
+    E_MSI_CQZ_MENU_STRING,
+#endif
+#if 1//defined(__MEX_TOMMAO_SUPPORT__) || (MEX_MTK_CODE_VERSION == 0x1012)
+    E_MSI_TOMMAO_MENU_STRING,
+    E_MSI_HDTOMMAO_MENU_STRING,
+#endif
+#ifdef __MEX_ZIPPO_SUPPORT__
+    E_MSI_ZIPPO_MENU_STRING,
+#endif
+
+#ifdef __MEX_BULLETSFLY_SUPPORT__
+    E_MSI_BULLETSFLY_MENU_STRING,
+#endif
+#ifdef __MEX_AQ_SUPPORT__
+	E_MSI_AQ_MENU_STRING,
+#endif
+#ifdef __MEX_HTC_TQ_SUPPORT__
+		E_MSI_MEX_HTC_TQ_MENU_STRING,
+#endif
+
+
+#ifdef __MEX_Lighter_SUPPORT__
+			E_MSI_MEX_Lighter_MENU_STRING,
+#endif
+#ifdef __MEX_MLSZ_SUPPORT__
+				E_MSI_MEX_MLSZ_MENU_STRING,
+#endif
+#ifdef __MEX_MvBol_SUPPORT__
+			E_MSI_MEX_MvBol_MENU_STRING,
+#endif
+#ifdef __MEX_MEX_HDtqyb_SUPPORT__
+				E_MSI_MEX_HDtqyb_MENU_STRING,
+#endif
+#ifdef __MEX_HDcqz_SUPPORT__
+			E_MSI_MEX_HDcqz_MENU_STRING,
+#endif
+#ifdef __MEX_DMC_SUPPORT__
+				E_MSI_MEX_DMC_MENU_STRING,
+#endif
+#ifdef __MEX_QQ_SUPPORT__
+			E_MSI_MEX_QQ_MENU_STRING,
+#endif
+#ifdef __MEX_MSN_SUPPORT__
+				E_MSI_MEX_MSN_MENU_STRING,
+#endif
+#ifdef __MEX_SETTIME_SUPPORT__
+			E_MSI_MEX_SETTIME_MENU_STRING,
+#endif
+#ifdef __MEX_JJFB_SUPPORT__
+				E_MSI_MEX_JJFB_MENU_STRING,
+#endif
+
+#ifdef __MEX_JPFCKB_SUPPORT__
+			E_MSI_MEX_JPFCKB_MENU_STRING,
+#endif
+#ifdef __MEX_GANJILIFE_SUPPORT__
+				E_MSI_MEX_GANJILIFE_MENU_STRING,
+#endif
+#ifdef __MEX_MEXSQAPP_SUPPORT__
+			E_MSI_MEX_MEXSQAPP_MENU_STRING,
+#endif
+
+#if defined(__MEX_RENREN_SUPPORT__)
+        E_MSI_RENREN_MENU_STRING,
+#endif
+#if defined(__MEX_KAIXIN_SUPPORT__)
+            E_MSI_KAIXIN_MENU_STRING,
+#endif
+#if defined(__MEX_TAOBAO_SUPPORT__)
+            E_MSI_TAOBAO_MENU_STRING,
+#endif
+
+#if 1//(MEX_MTK_CODE_VERSION == 0x1012) || defined(__MEX_SHSL_SUPPORT__) 
+		E_MSI_SHSL_MENU_STRING,
+#endif
+	
+#if 1//(MEX_MTK_CODE_VERSION == 0x1012) || defined(__MEX_CSJJS_SUPPORT__)
+		E_MSI_CSJJS_MENU_STRING,
+#endif
+	
+#if 1//(MEX_MTK_CODE_VERSION == 0x1012) || defined(__MEX_BLFC_SUPPORT__)
+		E_MSI_BLFC_MENU_STRING,
+#endif
+	
+#if 1//(MEX_MTK_CODE_VERSION == 0x1012) || defined(__MEX_MXSQY_SUPPORT__)
+		E_MSI_MXSQY_MENU_STRING,
+#endif
+
+	E_MSI_RES_MAX
+} E_MEX_STRING_ID;
+
+
+
+typedef enum
+{
+	MET_MEX_MAIN = MENU_MET_MEX_BEGIN,
+
+	#ifdef __MEX_MERIG_YZH_SUPPORT__
+		MET_MEX_MENU_YZH,
+	#endif
+
+	#ifdef __MEX_QQ_TOOLS_SUPPORT__
+		#ifdef __MEX_QQ_DOUBLEMENU_SUPPORT__
+			MET_MEX_QQ2_TOOLS_MENUID,
+		#endif
+		MET_MEX_QQ_TOOLS_MENUID,
+	#endif
+
+	#ifdef __MEX_QQ_SMS_SUPPORT__
+		#ifdef __MEX_QQ_DOUBLEMENU_SUPPORT__
+			MET_MEX_QQ2_SMS_MENUID,
+		#endif
+		MET_MEX_QQ_SMS_MENUID,
+	#endif
+
+	#ifdef __MEX_WAMKF_SUPPORT__
+		MET_MEX_WAMKF_MENUID,
+	#endif
+
+	#ifdef __MEX_KGZW_SUPPORT__
+		MET_MEX_KGZW_MENUID,
+	#endif
+
+	#ifdef __MEX_SMS_SUPPORT__
+		MET_MEX_SMS_MENUID,
+	#endif
+
+	#ifdef __MEX_MSN_SMS_SUPPORT__
+		MET_MEX_MSN_SMS_MENUID,
+	#endif
+	#ifdef __MEX_MSN_PHB_SUPPORT__
+		MET_MEX_MSN_PHB_MENUID,
+	#endif
+	#ifdef __MEX_LSZT_SUPPORT__
+		MET_MEX_LSZT_MENUID,
+	#endif
+	#ifdef __MEX_ZTWY_SUPPORT__
+		MET_MEX_ZTWY_MENUID,
+	#endif
+	#ifdef __MEX_FETION_SMS_SUPPORT__
+		MET_MEX_FETION_SMS_MENUID,
+	#endif
+	#ifdef __MEX_FETION_TOOLS_SUPPORT__
+		MET_MEX_FETION_TOOLS_MENUID,
+	#endif
+	#ifdef __MEX_WMSP_SUPPORT__
+		MET_MEX_WMSP_MENUID,
+	#endif
+	#ifdef __MEX_TCJY_SUPPORT__
+		MET_MEX_TCJY_MENUID,
+	#endif
+
+	#ifdef __MEX_LWSG_SUPPORT__
+		MET_MEX_LWSG_MENUID,
+	#endif
+
+	#ifdef __MEX_MFWY_SUPPORT__
+		MET_MEX_MFWY_MENUID,
+	#endif
+
+	#ifdef __MEX_KXNC_SUPPORT__
+		MET_MEX_KXNC_MENUID,
+	#endif
+
+	#ifdef __MEX_QQNC_SUPPORT__
+		MET_MEX_QQNC_MENUID,
+	#endif
+
+	#if 1//defined(__MEX_ZWDZJS_SUPPORT__) || (MEX_MTK_CODE_VERSION == 0x1012)	
+		MET_MEX_ZWDZJS_MENUID,
+	#endif
+
+	#ifdef __MEX_JSDZ_SUPPORT__
+		MET_MEX_JSDZ_MENUID,
+	#endif
+
+	#if 1//defined(__MEX_DDZ_SUPPORT__) || (MEX_MTK_CODE_VERSION == 0x1012)	
+		MET_MEX_DDZ_MENUID,
+	#endif
+
+	#ifdef __MEX_MVDDZ_SUPPORT__
+		MET_MEX_MVDDZ_MENUID,
+	#endif
+
+	#ifdef __MEX_FKCS_SUPPORT__
+		MET_MEX_FKCS_MENUID,
+	#endif
+
+	#ifdef __MEX_CYHX_SUPPORT__
+		MET_MEX_CYHX_MENUID,
+	#endif
+
+	#ifdef __MEX_JSCB_SUPPORT__
+		MET_MEX_JSCB_MENUID,
+	#endif
+
+	#ifdef __MEX_KXCD_SUPPORT__
+		MET_MEX_KXCD_MENUID,
+	#endif
+
+	#ifdef __MEX_CPTZ_SUPPORT__
+		MET_MEX_CPTZ_MENUID,
+	#endif
+
+	#ifdef __MEX_CPZDJ_SUPPORT__
+		MET_MEX_CPZDJ_MENUID,
+	#endif
+
+	#ifdef __MEX_GJWZF_SUPPORT__
+		MET_MEX_GJWZF_MENUID,
+	#endif
+
+	#ifdef __MEX_MFZF_SUPPORT__
+		MET_MEX_MFZF_MENUID,
+	#endif
+
+	#ifdef __MEX_YMMH_SUPPORT__
+		MET_MEX_YMMH_MENUID,
+	#endif
+
+	#ifdef __MEX_YMDS_SUPPORT__
+		MET_MEX_YMDS_MENUID,
+	#endif
+
+	#ifdef __MEX_SDYY_SUPPORT__
+		MET_MEX_SDYY_MENUID,
+	#endif
+	#ifdef __MEX_WYJC_SUPPORT__
+		MET_MEX_WYJC_MENUID,
+	#endif
+	#ifdef __MEX_HDHL_SUPPORT__
+		MET_MEX_HDHL_MENUID,
+	#endif
+	#ifdef __MEX_YFDDP_SUPPORT__
+		MET_MEX_YFDDP_MENUID,
+	#endif
+	#ifdef __MEX_SGDJT_SUPPORT__
+		MET_MEX_SGDJT_MENUID,
+	#endif
+	#ifdef __MEX_BJLT_SUPPORT__
+		MET_MEX_BJLT_MENUID,
+	#endif
+	//#ifdef __MEX_DMC_SUPPORT__
+		//MET_MEX_DMC_MENUID,
+	//#endif
+	#if 1//defined(__MEX_FNDXN_SUPPORT__) || (MEX_MTK_CODE_VERSION == 0x1012)	
+		MET_MEX_FNDXN_MENUID,
+	#endif
+	#ifdef __MEX_ABIRD_SUPPORT__
+		MET_MEX_ABIRD_MENUID,
+	#endif
+	#ifdef __MEX_TQYB_SUPPORT__
+			MET_MEX_TQYB_MENUID,
+	#endif
+	#ifdef __MEX_SINA_SUPPORT__
+			MET_MEX_SINA_MENUID,
+	#endif
+    #if 1//defined(__MEX_QSG_SUPPORT__) || (MEX_MTK_CODE_VERSION == 0x1012)	
+            MET_MEX_QSG_MENUID,
+    #endif
+    #if 1//defined(__MEX_CQZ_SUPPORT__) || (MEX_MTK_CODE_VERSION == 0x1012)	
+            MET_MEX_CQZ_MENUID,
+    #endif
+    #if 1//defined(__MEX_TOMMAO_SUPPORT__) || (MEX_MTK_CODE_VERSION == 0x1012)	
+            MET_MEX_TOMMAO_MENUID,
+    #endif
+	#ifdef __MEX_ZIPPO_SUPPORT__
+            MET_MEX_ZIPPO_MENUID,
+    #endif
+    #ifdef __MEX_BULLETSFLY_SUPPORT__
+            MET_MEX_BULLETSFLY_MENUID,    
+    #endif
+	#ifdef __MEX_AQ_SUPPORT__
+			MET_MEX_AQ_MENUID,
+	#endif
+	#ifdef __MEX_HTC_TQ_SUPPORT__
+			MET_MEX_HTC_TQ_MENUID,
+	#endif
+	#ifdef __MEX_Lighter_SUPPORT__
+		MET_MEX_Lighter_MENUID,
+#endif
+#ifdef __MEX_MLSZ_SUPPORT__
+			MET_MEX_MLSZ_MENUID,
+#endif
+#ifdef __MEX_MvBol_SUPPORT__
+		MET_MEX_MvBol_MENUID,
+#endif
+#ifdef __MEX_MEX_HDtqyb_SUPPORT__
+			MET_MEX_HDtqyb_MENUID,
+#endif
+#ifdef __MEX_HDcqz_SUPPORT__
+		MET_MEX_HDcqz_MENUID,
+#endif
+#ifdef __MEX_DMC_SUPPORT__
+			MET_MEX_DMC_MENUID,
+#endif
+#ifdef __MEX_QQ_SUPPORT__
+		MET_MEX_QQ_MENUID,
+#endif
+#ifdef __MEX_MSN_SUPPORT__
+			MET_MEX_MSN_MENUID,
+#endif
+#ifdef __MEX_SETTIME_SUPPORT__
+		MET_MEX_SETTIME_MENUID,
+#endif
+#ifdef __MEX_JJFB_SUPPORT__
+			MET_MEX_JJFB_MENUID,
+#endif
+#ifdef __MEX_JPFCKB_SUPPORT__
+		MET_MEX_JPFCKB_MENUID,
+#endif
+#ifdef __MEX_GANJILIFE_SUPPORT__
+			MET_MEX_GANJILIFE_MENUID,
+#endif
+#ifdef __MEX_MEXSQAPP_SUPPORT__
+		MET_MEX_MEXSQAPP_MENUID,
+#endif
+
+    #ifdef __MEX_RENREN_SUPPORT__
+			MET_MEX_RENREN_MENUID,
+	#endif
+    #ifdef __MEX_KAIXIN_SUPPORT__
+			MET_MEX_KAIXIN_MENUID,
+	#endif
+    #ifdef __MEX_TAOBAO_SUPPORT__
+			MET_MEX_TAOBAO_MENUID,
+	#endif
+	
+#if 1//(MEX_MTK_CODE_VERSION == 0x1012) || defined(__MEX_SHSL_SUPPORT__) 
+	MET_MEX_SHSL_MENUID,
+#endif
+
+#if 1//(MEX_MTK_CODE_VERSION == 0x1012) || defined(__MEX_CSJJS_SUPPORT__)
+	MET_MEX_CSJJS_MENUID,
+#endif
+
+#if 1//(MEX_MTK_CODE_VERSION == 0x1012) || defined(__MEX_BLFC_SUPPORT__)
+	MET_MEX_BLFC_MENUID,
+#endif
+
+#if 1//(MEX_MTK_CODE_VERSION == 0x1012) || defined(__MEX_MXSQY_SUPPORT__)
+	MET_MEX_MXSQY_MENUID,
+#endif
+	// add new menu
+
+	MET_MEX_MENU_END = MENU_MET_MEX_END
+} E_Mex_Menu_ID;
+
+
+#endif
+
+#endif
+

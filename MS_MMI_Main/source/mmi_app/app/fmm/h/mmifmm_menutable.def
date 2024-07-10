@@ -1,0 +1,76 @@
+
+//fmm list normal option menu
+MENU_DEF( MENU_FMM_NORMAL_LIST_OPT,menu_fmm_normal_list_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_normal_list_opt))
+
+MENU_DEF( MENU_FMM_NORMAL_FILE_LIST_OPT,menu_fmm_normal_file_list_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_normal_file_list_opt))
+//fmm list picture option menu
+MENU_DEF( MENU_FMM_PICTURE_LIST_OPT,menu_fmm_picture_list_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_picture_list_opt))
+
+//fmm list music option menu
+MENU_DEF( MENU_FMM_MUSIC_LIST_OPT,menu_fmm_music_list_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_music_list_opt))
+
+//fmm list movie option menu
+MENU_DEF( MENU_FMM_MOVIE_LIST_OPT,menu_fmm_movie_list_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_movie_list_opt))
+
+//fmm picture preview option menu
+MENU_DEF( MENU_FMM_PICTURE_PREVIEW_OPT,menu_fmm_picture_preview_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_picture_preview_opt))
+
+//fmm sort option menu
+MENU_DEF( MENU_FMM_SORT_OPT,menu_fmm_sort_opt, GUIMENU_STYLE_POPUP_RADIO,TXT_FMM_SORT_MANNER,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_sort_opt))
+
+//fmm send option menu
+#if defined (MMS_SUPPORT) && defined (BLUETOOTH_SUPPORT)	    
+MENU_DEF( MENU_FMM_SEND_OPT,menu_fmm_send_opt, GUIMENU_STYLE_POPUP,TXT_SEND,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_send_opt))
+#endif
+#if defined MMI_VCARD_SUPPORT
+//fmm send vcard option menu
+MENU_DEF( MENU_FMM_SEND_VCARD_OPT,menu_fmm_send_vcard_opt, GUIMENU_STYLE_POPUP,TXT_SEND,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_send_vcard_opt))
+#endif
+//fmm empty folder option menu
+MENU_DEF( MENU_FMM_EMPTY_FOLDER_OPT,menu_fmm_empty_folder_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_empty_folder_opt))
+
+//fmm list edit option menu
+#ifndef MMI_GUI_STYLE_MINISCREEN
+
+MENU_DEF( MENU_FMM_LIST_EDIT_OPT,menu_fmm_list_edit_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_list_edit_opt))
+#endif
+
+//fmm list sort option menu
+MENU_DEF( MENU_FMM_MARK_OPT,menu_fmm_mark_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_mark_opt))
+
+//fmm movie list manage option menu
+#if ((defined SCREENSAVER_SUPPORT)||(!defined MMI_DISPLAYSET_MINI_SUPPORT)||(defined MMI_VIDEOWALLPAPER_SUPPORT))
+MENU_DEF( MENU_FMM_MANAGE_OPT,menu_fmm_manage_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_manage_opt))
+#endif
+//fmm pic list manage option menu
+#if ((!defined FLASH_SUPPORT)||(defined MMIPB_ADD_EXIST_CONTACT_SUPPORT)||(defined SCREENSAVER_SUPPORT)||(!defined MMI_DISPLAYSET_MINI_SUPPORT))
+MENU_DEF( MENU_FMM_PIC_MANAGE_OPT,menu_fmm_pic_manage_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_pic_manage_opt))
+#endif
+#ifdef MMI_AUDIO_PLAYER_SUPPORT
+MENU_DEF( MENU_FMM_MUSIC_MANAGE_OPT,menu_fmm_music_manage_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_music_manage_opt))
+#endif
+//fmm list other option menu
+MENU_DEF( MENU_FMM_OTHER_LIST_OPT,menu_fmm_other_list_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_other_list_opt))
+#if defined MMI_VCARD_SUPPORT
+//fmm list other option menu
+MENU_DEF( MENU_FMM_VCARD_LIST_OPT,menu_fmm_vcard_list_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_vcard_list_opt))
+#endif
+#ifdef MMI_AUDIO_PLAYER_SUPPORT
+MENU_DEF( MENU_FMM_SIM_SELECT_OPT,menu_fmm_sim_select_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_sim_select_opt))
+MENU_DEF( MENU_FMM_ALARM_SELECT_OPT,menu_fmm_alarm_select_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_alarm_select_opt))
+#endif
+MENU_DEF( MENU_FMM_SELECT_MOVIE_OPT, menu_fmm_select_movie_opt, GUIMENU_STYLE_POPUP, STXT_OPTION,		\
+	IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_fmm_select_movie_opt))
+
+MENU_DEF( MENU_FMM_MEMORY_OPT,menu_fmm_memory_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_memory_opt))
+#ifdef MMI_VCALENDAR_SUPPORT
+MENU_DEF( MENU_FMM_VCALENDAR_LIST_OPT,menu_fmm_vcalendar_list_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_vcalendar_list_opt))
+MENU_DEF( MENU_FMM_SEND_VCALENDAR_OPT,menu_fmm_send_vcalendar_opt, GUIMENU_STYLE_POPUP,TXT_SEND,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_send_vcalendar_opt))
+#endif
+#ifdef DRM_SUPPORT
+MENU_DEF( MENU_FMM_DRM_DOWNLOAD_OPT,menu_fmm_drm_download_opt,GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_COMMON_TITLE_BAR,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_drm_download_opt))
+#endif
+#ifdef MMI_PDA_SUPPORT
+MENU_DEF( MENU_FMM_MARK_LIST_OPT,menu_fmm_mark_list_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_fmm_mark_list_opt))
+#endif
+

@@ -1,0 +1,25 @@
+{
+    "app": {
+        "id": "com.unisoc.jeeui",
+        "name": "jeeui",
+        "vendor": "unisoc",
+        "version": {
+            "code": 1,
+            "name": "1.0"
+        },
+        "parameter": "2",
+        "apiVersion": {
+            "compatible": "1",
+            "target": "1"
+        },
+        "icon": "//common/logo.png",
+        "permissions": [
+            {
+                "name": "PERMISSION.INTERNET"
+            }
+        ],
+        "pages": [
+            "/pages/msgbox/msgbox"
+        ]
+    }
+}

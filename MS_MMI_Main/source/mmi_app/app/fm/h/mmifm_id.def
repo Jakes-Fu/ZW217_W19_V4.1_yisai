@@ -1,0 +1,27 @@
+
+    WIN_ID_DEF(FM_MAIN_WIN_ID),         // FM main win
+    WIN_ID_DEF(FM_OPTION_WIN_ID),       // FM option win
+    WIN_ID_DEF(MMI_FM_CHANNEL_LIST_WIN_ID),// channel list
+    WIN_ID_DEF(FM_CHANNEL_OPTION_WIN_ID),        // FM channel options
+    WIN_ID_DEF(FM_QUERY_WIN_ID),    // FM sound mode win
+    WIN_ID_DEF(FM_AUTO_SEARCH_WIN_ID),    // FM sound mode win
+    WIN_ID_DEF(FM_WAIT_WIN_ID),         // FM wait win
+	WIN_ID_DEF(MMIFM_EDITBOX_WIN_ID),         // FM edit box win
+	WIN_ID_DEF(MMIFM_CHANNEL_DETAIL_WIN_ID),    // FM channel details
+	WIN_ID_DEF(MMIFM_TEXT_BOX_WIN_ID),    // fm text box
+    WIN_ID_DEF(MMIFM_HEADSET_PLUG_ALERT_ID),    //headset plug out win
+    WIN_ID_DEF(FM_RECORD_WIN_ID),    // fm text box
+    WIN_ID_DEF(MMIFM_RECORD_RENAME_WIN_ID),    // rename fm record file  box
+    WIN_ID_DEF(FM_TIMER_RECORD_WIN_ID),
+    WIN_ID_DEF(FM_SET_TIMER_INFO_WIN_ID),
+    #ifdef MMI_PDA_SUPPORT
+	WIN_ID_DEF(FM_CHANNEL_MENU_OPTION_WIN_ID),
+	#endif
+	#ifdef MMI_FM_TIMER_RECORD_SUPPORT
+	WIN_ID_DEF(MMIFM_TIMEWIN_ID),
+	WIN_ID_DEF(MMIFM_TIMEEDUREWIN_ID),
+	WIN_ID_DEF(MMIFM_EDITFMFRE_WIN_ID),
+	#endif
+	#if defined (MMI_FM_TIMER_RECORD_SUPPORT) && defined(ATV_SUPPORT)
+	WIN_ID_DEF(MMIFM_QUERY_WIN_ID),		//query win
+	#endif

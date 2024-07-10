@@ -1,0 +1,1 @@
+RES_ADD_STRING(TXT_SENSOR, "sensor")

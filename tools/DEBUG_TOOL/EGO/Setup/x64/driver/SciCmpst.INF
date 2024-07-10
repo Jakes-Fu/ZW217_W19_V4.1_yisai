@@ -1,0 +1,128 @@
+; SciU2S.INF - INF file for Spreadtrum USB-to-Serial Device
+; Copyright (C) 2001-2009, Spreadtrum Communication Inc.
+;
+; 2005-11-11 created by anli.wei
+; 2006-03-08 modified to support composite device  [anli.wei]
+; 2008-06-03 delete "at" port, add "dumprx" flag   [anli.wei]
+; 2008-08-27 checked ok by chkinf tool             [anli.wei]
+; 2010-01-07 add 64-bit support                    [rocky.liao]
+;========================================================================
+; 
+;========================================================================
+
+[Version]
+Signature  = "$WINDOWS NT$"
+Class      = Ports
+ClassGuid  = {4D36E978-E325-11CE-BFC1-08002BE10318}
+Provider   = %Mfg%
+CatalogFile= SciCmpst.cat
+DriverVer  = 02/15/2011,1.5.6.1
+
+[Manufacturer]
+%MfgName%=SCI,NTx86,NTamd64
+
+;Windows 2000
+[SCI]
+;%DvcDscAT% =ComPortCmpst,USB\VID_1782&PID_3d00&MI_00
+%DvcDscDiag%=ComPortCmpst,USB\VID_1782&PID_3d00&MI_01
+
+;Windows XP and later x86
+[SCI.NTx86]
+;%DvcDscAT% =ComPortCmpst,USB\VID_1782&PID_3d00&MI_00
+%DvcDscDiag%=ComPortCmpst,USB\VID_1782&PID_3d00&MI_01
+
+;Windows XP and later x64
+[SCI.NTamd64]
+;%DvcDscAT% =ComPortCmpst,USB\VID_1782&PID_3d00&MI_00
+%DvcDscDiag%=ComPortCmpst,USB\VID_1782&PID_3d00&MI_01
+
+[SourceDisksNames]
+1=%Disk1%,,,
+
+;========================================================================
+; SourceDisksFiles
+;========================================================================
+
+[SourceDisksFiles]
+SciCmpst.sys=1
+
+;========================================================================
+;  DestinationDirs
+;========================================================================
+
+[DestinationDirs]
+SciCmpst.sys.Files.NT = 12          ; Drivers directory
+
+;========================================================================
+; copy files section flag
+;========================================================================
+
+[SciCmpst.Sys.Files.NT]
+SciCmpst.sys
+
+[ComPortCmpst.NT]
+CopyFiles = SciCmpst.Sys.Files.NT
+AddReg    = ComPortCmpst.NT.AddReg
+
+
+[ComPortCmpst.NT.HW]
+AddReg=ComPortCmpst.NT.HW.AddReg
+
+
+[ComPortCmpst.NT.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,SciCmpst.sys
+HKR,,EnumPropPages32,,"MsPorts.dll,SerialPortPropPageProvider"
+
+[ComPortCmpst.NT.HW.AddReg]
+HKR,,"UpperFilters",0x00010000,"serenum"
+
+;========================================================================
+;  Service installation
+;  Port Driver (function driver for this device)
+;========================================================================
+
+[ComPortCmpst.NT.Services]
+AddService=SciCmpst,0x00000002,Ser_Srv_Inst_Cmpst
+AddService = Serenum,,Serenum_Service_Inst
+
+;========================================================================
+;  Serial Port Driver install sections
+;========================================================================
+
+[Ser_Srv_Inst_Cmpst]
+DisplayName   = %SciCmpst.SVCDESC%
+ServiceType   = 1                 ; SERVICE_KERNEL_DRIVER
+StartType     = 3                 ; SERVICE_SYSTEM_START (this driver may do detection)
+ErrorControl  = 1                 ; SERVICE_ERROR_IGNORE
+ServiceBinary = %12%\SciCmpst.sys
+
+AddReg=SrvRegCmpst.NT
+
+[Serenum_Service_Inst]
+DisplayName    = %Serenum.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\serenum.sys
+LoadOrderGroup = PNP Filter
+
+
+[SrvRegCmpst.NT]
+HKR,,"IsComposite",0x00010001,0x00000001  ; DWORD value for is composite device
+HKR,,"RxBufSize",0x00010001,0x00001000    ; DWORD value for rx buffer 0-16K
+HKR,,"DbgLevel",0x00010001,0x00000005    ; Debug level
+
+;========================================================================
+; User readable strings
+;========================================================================
+
+[Strings]
+Mfg            = "Spreadtrum"
+Disk1          = "SCI Composite USB Driver Diskette"
+MfgName        = "Spreadtrum Communication Inc."
+PortsClassName = "Ports (COM & LPT)"
+DvcDscAT       = "SciCmpst AT"
+DvcDscDiag     = "SciCmpst Diag"
+SciCmpst.SVCDESC = "Spreadtrum Composite USB2Serial Driver"
+Serenum.SVCDESC  = "Serenum Filter Driver"

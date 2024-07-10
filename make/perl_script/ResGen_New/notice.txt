@@ -1,0 +1,10 @@
+[linux版本]
+为了让当前的工具能在linux下运行,做了如下修改。
+1.使用python脚本替换resCmd.exe，并且将工具中处理excel的逻辑，放在python脚本中。
+2.新增的python脚本会将excel转换为xml文件，原有工具处理excel的部分，修改为处理xml文件。
+3.工具源码处理xml文件的部分，使用开源库tinyxml2替换。
+4.resview.ini文件中关于excel的配置，不再生效
+注意：
+1.resgen.py依赖2个python三方库（dicttoxml-1.7.4，xlrd-1.2.0）
+2.新增字符串且默认是中文（如RES_ADD_STRING(TXT_TSET,"测试")），需要加到str_table或str_table1中，否则TXT_TSET会显示乱码
+3.当前不支持多国语，只支持中文和英语

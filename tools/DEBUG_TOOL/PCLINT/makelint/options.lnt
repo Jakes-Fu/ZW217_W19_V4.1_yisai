@@ -1,0 +1,306 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Title: Spreadtrum PCLINT Option
+
+// Description: 
+// Version: V0.7.1
+// ----------------------------------------------------------------------------------------------------------------
+// History: 
+// 2009-1-20			V0.1		Younan		正式发布公司第3批告警，共36类告警；加上第1/2批的17类告警，共53类告警。
+//								由于‘减规则’尚需研究，本次发布使用‘加规则’。
+// 2009-2-1			  V0.2		Younan		增加对'__asm'和'_asm'的屏蔽。
+// 2009-7-20      v0.3		Wind		增加e718告警作为正式版本扫描要求(53+1)
+// 2009-8-4   		v0.4		Wind		增加对TD的支持（主要是屏蔽一些非必要的选项）
+// 2009-11-16     v0.5		Wind		增加告警类型e64，合并TD的一些屏蔽项
+// 2009-12-8			v0.6    Wind         优化告警选项，屏蔽掉64告警对于enum/int的类型不匹配的问题
+// 2010-3-16      v0.6.1  Wind         适应TD屏蔽要求：屏蔽自动生成文件tt_rrc_peer_asn_rest.c的告警，"-efile(548,tt_rrc_peer_asn_rest.c)"屏蔽语句无效，使用-efunc逐个屏蔽。
+// 2010-5-18      v0.7    Connie       GSM原有55类告警的基础上,把option全部打开,对扫描结果进行分析.下一步以减项分析,PClint减计划第一步（已review，暂时减去54个告警，这54个告警待下次分析。)
+// 2010-7-9	      v0.7.1	Wind         屏蔽掉64和26告警的误报宏
+// 2010-7-27      v0.8    connie       所有的告警已review完毕，本次又增加打开16个告警项，目前mocor平台告警减项为38个。 
+// 2010-10-25     v0.8.1  Wind         屏蔽由于C语言内部va_start宏引起的告警（64，718，746）
+// 2010-12-02     v0.9.0	Wind 				 减去一个告警项（-e751），目前代码中枚举定义了而不使用，是允许的。
+// 2010-12-15     v0.9.1	Wind				 屏蔽掉TCPIP模块的移位操作告警572的误报，不存在位移值超限问题；DAPS由于有对IP地址，MAC地址的操作，是需要出现0的情况，优化。
+// 2010-12-28			v1.0.0  Wind				 减去告警793, 765, 306，理由参加具体的告警注释
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+-w3                         // Set warning level 3
+-wlib(0)                    // Don't care about issues in Microsoft's library headers
+
+-emacro(1776, assert)       // Don't complain about assert's void* args
+-e1702                      // Don't complain about inside/outside class member redefinitions
++fce
+
++macros
++fce
+
+-function(exit,SCI_Assert)
+-function(exit,SCI_PAssert)
+-function(exit,__assert)
+
+
+-esym(644,interrupt_save)
+
+
++rw(__align)
++rw(__swi)
++rw(__packed)								//Add For Xianglong 2009-6-16 Younan Wang
+
+///////////////////////////////////////////////////////////////////////////////////
+// Part1：公共屏蔽告警 & 脚本优化
+///////////////////////////////////////////////////////////////////////////////////
+
+-e322	//不能打开include文件。
+-e550	//冗余代码  
+-emacro(506,TRACE)	//去除TRACE引起的误告警          
+
+-emacro(1776, assert)       // Don't complain about assert's void* args
+
+//For Mocor
+-emacro(506, SCI_MEMSET)
+-emacro(506, SCI_CREATE_SIGNAL) 
+-emacro(506, SCI_MEMCPY)
+-emacro(506,SCI_ASSERT)
+-emacro(506,SCI_PASSERT)
+-emacro(506,EQ_EXP_ASSERT)
+-emacro(506,AUDIO_ASSERT)
+-emacro(506,WAV_PASSERT)
+-emacro(506,BULKDEV_ASSERT) 
+-emacro(506,NV_ASSERT)
+-emacro(506,FAT_PASSERT)
+-emacro(506,SIM_GET_DATA_BETWEEN)
+-emacro(506,FAT_MEMSET)
+-emacro(506,FAT_MEMCPY)
+-emacro(506,TB_MEMCPY)
+-emacro(506,HALF_FIFO_DATA_RATE)
+-emacro(506,SET_CAPTURE_MODE)
+-emacro(827,SCI_CREATE_SIGNAL)
+-emacro(774,FAT_MEMSET)
+-emacro(774,SCI_ASSERT)
+-emacro(774,SCI_MEMSET)
+-emacro(774,SCI_MEMCPY)
+-emacro(774,ASSERT)
+-emacro(774,SME_ASSERT_CH)
+-emacro(827,BUG)
+
+//2010-10-25增加，在系统头文件中，_va_start_ 被定义为 __va_start__,但是确找不到 __va_start__ 的定义原型，因此 pclint 会报告 746、718 和 64 错误
+-emacro(64, va_start)
+-emacro(718, va_start)
+-emacro(746, va_start)
+
+//2010-7-27 屏蔽掉613告警的误报宏
+-emacro(613,SCI_ASSERT)
+
+//2010-7-9 屏蔽掉64和26告警的误报宏
+-emacro(64,SCI_ALLOC_APP)
+-emacro(64,SCI_ALLOCA)
+-emacro(64,SCI_ALLOC)
+-emacro(64,SCI_ALLOC_CONST)
+-emacro(26,SCI_ALLOC_APP)
+-emacro(26,SCI_ALLOCA)
+-emacro(26,SCI_ALLOC)
+-emacro(26,SCI_ALLOC_CONST)
+
+//2010-12-10, 屏蔽掉TCPIP模块的移位操作告警572的误报，不存在位移值超限问题
+-emacro(572,htonl)
+-emacro(572,htons)
+-emacro(572,ntohl)
+-emacro(572,ntohs)
+//2010-12-15, DAPS由于有对IP地址，MAC地址的操作，是需要出现0的情况，优化。
+-emacro(778,lswap)
+-emacro(778,htons)
+
+
+//For 8800S GSM DSP Younan Add 2009-5-27
+-esym(506,PRINT_TESTPOINT)
+-emacro(506,PRINT_TESTPOINT)
+-emacro(506,SCI_DSP_ASSERT)
+
+//For Tianlong ----2009-1-20
+-emacro(408,SCI_TRACE_LOW)
+-emacro(506,MAP_IRA_SPEC_CHAR)
+-emacro(506,SEND_ILM_TO_AS)
+-emacro(506,SEND_ILM_TO_DATA_PLANE)
+-emacro(506,SME_ASSERT)
+-emacro(506,STK_ASSERT)
+-emacro(506,SME_CASSERT_EXT)
+-emacro(506,SME_DEBUG_PRINT)
+-emacro(506,RRC_DB_GEN_SET_CONN_BMP)
+-emacro(506,MAKE_TAG_ID)
+-emacro(506,SME_PRINT_1_NL)
+-emacro(506,SME_PRINT_2_NL)
+-emacro(506,SME_PRINT_3_NL)
+-emacro(506,SME_PRINT_1)
+-emacro(506,SME_PRINT_2)
+-emacro(506,SME_PRINT_3)
+-emacro(506,GET_BITS_1_8)
+-emacro(506,GET_BITS_9_16)
+-emacro(506,GET_BITS_17_24)
+-emacro(506,GET_BITS_25_32)
+-emacro(506,GET_BITS)
+-emacro(506,RRC_BCFE_INVOKE_PROC)
+-emacro(506,BCFE_DEBUG_PRINT)
+-emacro(568,SME_ASSERT)
+-emacro(568,MM_VALUE_OF_CS_CONTEXT)
+-emacro(568,RRC_IS_SSI)
+-emacro(613,SCI_ASSERT)
+-emacro(613,SME_ASSERT)
+-emacro(685,SME_ASSERT)
+-emacro(685,SCI_ASSERT)
+-emacro(774,RRC_BCFE_INVOKE_PROC)
+-emacro(774,STK_ASSERT)
+-emacro(774,SME_ASSERT)
+-emacro(774,FOR_EACH_LIST_ELMT)
+-emacro(774,SEND_ILM_TO_AS)
+-emacro(774,SEND_ILM_WITHOUT_LOG)
+-emacro(774,SEND_ILM)
+-emacro(774,SME_TBD)
+-emacro(774,BCFE_FREE_MEM)
+-emacro(774,BCFE_FREE_CTRL_BUFFER)
+-emacro(774,AllowedTFI_List_dealloc)//GEN自动生成的代码
+-esym(767,_FILE_CODE_)//故意这样设计的，各个模块的宏定义不同。
+-efunc(428,atcparse)	//屏蔽自动生成文件atc_yacc.c的告警， 2009-5-27 Younan
+-efunc(527,atcparse)	//屏蔽自动生成文件atc_yacc.c的告警， 2009-5-27 Younan
+-efunc(644,atcparse)	//屏蔽自动生成文件atc_yacc.c的告警， 2009-5-27 Younan
+-efunc(744,atcparse)	//屏蔽自动生成文件atc_yacc.c的告警， 2009-8-4 Younan
+-efunc(527,atclex)		//屏蔽自动生成文件atc_lex.c的告警，  2009-5-27 Younan
+-esym(773,BEGIN)			//屏蔽自动生成文件atc_lex.c的告警，设计如此 2009-5-27 Younan
+-emacro(522,SCI_ASSERT) //增加522的优化屏蔽语句（Tianlong）2009-6-1 Younan
+-emacro({522},ns_printf)//增加522的优化屏蔽语句（Tianlong）2009-6-1 Younan
+
+//For Xianglong2
+-emacro(568,SCI_ASSERT)
+-emacro(568,SCI_PASSERT)
+-emacro(506,MV_SHIFT_UP_AND_MASK) 
+-emacro(506,MV_SHIFT_FROM_MASK) 
+-emacro(506,IMG_SET_LASTERROR) 
+-emacro(506,IMG_ASSERT) 
+-emacro(506,MCI_BIT_MASK) 
+-emacro(506,MCI_BIT_GET) 
+-emacro(506,MCI_BIT_MASK_FIELD) 
+-emacro(506,MCI_BIT_GET_FIELD) 
+-emacro(506,SENSOR_LDO_CON) 
+-emacro(506,SENSOR_PWDN_CON_MAIN_SENSOR) 
+-emacro(506,SENSOR_RESET_CON_MAIN_SENSOR) 
+-emacro(774,MV_SHIFT_UP_AND_MASK) 
+-emacro(774,MV_SHIFT_FROM_MASK) 
+-emacro(774,IMG_SET_LASTERROR) 
+-emacro(774,IMG_ASSERT) 
+-emacro(774,MCI_BIT_MASK) 
+-emacro(774,MCI_BIT_GET) 
+-emacro(774,MCI_BIT_MASK_FIELD) 
+-emacro(774,MCI_BIT_GET_FIELD) 
+-emacro(774,SENSOR_LDO_CON) 
+-emacro(774,SENSOR_PWDN_CON_MAIN_SENSOR) 
+-emacro(774,SENSOR_RESET_CON_MAIN_SENSOR) 
+-emacro(774,MV_ASSERT) 
+-emacro(774,SD_FAT_FREE) 
+-d_asm=asm          // Borland accepts both "_asm" and "asm"
+-d__asm=asm         // and __asm
+-d__asm__=asm         // and __asm, (for TD, 2009-8-4, wind)
+
+-etd(int/enum)     //屏蔽掉对于enum/int的类型不匹配的告警，允许对枚举类型使用{0}的方式赋值，如LOCAL MMIFMM_DATA_INFO_T  s_fmm_list_data={0};
+
+//屏蔽自动生成文件tt_rrc_peer_asn_rest.c的告警，"-efile(548,tt_rrc_peer_asn_rest.c)"屏蔽语句无效，使用-efunc逐个屏蔽。 2010-3-16 Younan 
+-efunc(548,RAT_FDD_Info_dealloc)	
+-efunc(548,SysInfoType15_5_v3a0ext_dealloc)
+-efunc(548,SysInfoType14_dealloc)
+-efunc(548,PUSCHCapacityRequest_v590ext_dealloc)
+-efunc(548,PUSCHCapacityRequest_dealloc)
+-efunc(737,PICH_Info_LCR_r4_bits)
+-efunc(737,TDD_PRACH_CCodeList_bits)
+-efunc(737,FACH_MeasurementOccasionInfo_bits)
+-efunc(737,CellAccessRestriction_bits)
+-efunc(737,CapabilityUpdateRequirement_bits)
+-efunc(737,PRACH_Definition_LCR_r4_bits)
+-efunc(737,IntraFreqMeasQuantityChoiceSeq1_bits)
+-efunc(737,IntraFreqReportingQuantityForRACHChoiceSeq1_bits)
+-efunc(737,PRACH_SystemInformation_bits)
+-efunc(737,CapabilityUpdateRequirement_r4_bits)
+-efunc(737,CapabilityUpdateRequirement_r5_bits)
+-efunc(737,Rplmn_Information_bits)
+-efunc(737,Rplmn_Information_r4_bits)
+-efunc(737,SysInfoType2_bits)
+-efunc(737,SysInfoType15_dealloc)
+-efunc(737,ActiveSetUpdate_v4b0ext_IEs_bits)
+-efunc(737,CellUpdateConfirm_v4b0ext_IEs_print)
+-efunc(737,PhysicalChannelReconfiguration_v4b0ext_IEs_bits)
+-efunc(774,SysInfoType15_dealloc)
+-efunc(737,CellUpdateConfirm_v4b0ext_IEs_bits)
+-efunc(737,RadioBearerReconfiguration_v4b0ext_IEs_bits)
+-efunc(737,RadioBearerRelease_v4b0ext_IEs_bits)
+-efunc(737,RadioBearerSetup_v4b0ext_IEs_bits)
+-efunc(737,RRCConnectionSetup_v4b0ext_IEs_bits)
+-efunc(737,TransportChannelReconfiguration_v4b0ext_IEs_bits)
+
+///////////////////////////////////////////////////////////////////////////////////
+// Part2：2010-5-17分析后暂时先不增加的告警有56项，待确认
+//目前只留40个告警类型作为减项了。16个告警类型经7月27日review后决定修改。
+//（kai wan,xiaoqing lu,wind deng,connie li)
+///////////////////////////////////////////////////////////////////////////////////
+-e10      //Mocor:一般是语句中遇到了不可识别的标识符或者关键字。.(TD减）
+-e40      //Mocor:没有定义的标识符。.(TD减）
+-e409     //Mocor:期望是一个指针或者数组－－此种类型i[...]的表达式中，发现i是一个整型变量，这种情况可能是合法的，与脚本操作符有关.
+-e505     //Mocor:逗号左边参数冗余..(TD减）
+-e522     //Mocor:期望有void类型，赋值..(TD减）
+-e525     //Mocor:没有对齐..(TD减）
+-e534     //Mocor:没有处理函数的返回值..(TD减）
+-e537     //Mocor:重复包含头文件..(TD减）
+-e539     //Mocor:和前控制语句正的对齐..(TD减）
+-e545     //Mocor:& 用法值得怀疑..(TD减）
+-e641     //Mocor:Enum到int的转化.
+-e701     //Mocor:int类型（有符号）变量左移..(TD减）
+-e702     //Mocor:int类型（有符号）变量右移.(TD减）
+-e704     //Mocor:long类型（有符号）变量右移.
+-e708     //Mocor:union共用体类型变量初始化..(TD减）
+-e713     //Mocor:精确度损失。把无符号数赋值给有符号数，将导致1 bit的损失..(TD减）
+-e714     //Mocor:符号没有使用。外部变量或者函数定义了，但是没有使用..(TD减）
+-e715     //Mocor:符号没有使用。已经定义的形参没有使用..(TD减）
+-e717     //Mocor:发现do ... while(0)..(TD减）
+-e725     //Mocor:子排列问题。例如使用tabs键..(TD减）
+-e732     //Mocor:符号位丢失。赋值（或者隐性赋值）是从符号到无符号。当然，也可以认为符号数为空..(TD减）
+-e734     //Mocor:精确度的丢失。整型之间..(TD减）
+-e740     //Mocor:指针的不合理使用（类型不匹配）..(TD减）
+-e750     //Mocor:局部宏定义没有引用，一个'local'宏定义为没有头文件中定义..(TD减）
+-e754     //Mocor:部structure成员没有使用..(TD减）
+-e788     //Mocor:枚举常量没有在default switch重使用..(TD减）
+-e792     //Mocor:void cast of void expression..(TD减）
+-e801     //Mocor:限制使用goto语句，以免造成结构混乱..(TD减）
+-e818     //Mocor:如果函数的指针参数在函数类不被改变值，可以把指针变量声明为const..(TD减）
+-e826     //Mocor:不同类型指针转换造成大小不匹配..(TD减）
+-e834     //Mocor:操作符号后面又跟着操作符号，需要加上括号，防止混乱..(TD减）
+-e952     //Mocor:参数符号可以被声明为常类型..(TD减）
+-e953     //Mocor:变量符号可以被声明为常类型..(TD减）
+-e954     //Mocor:指针变量可以被声明为指向一个常类型的常类型指针..(TD减）
+-e1776    //Mocor:Converting string literals to char * is deprecated   (Context).(TD减）
+
+//2010-5-17已review，以下红色字体永远作为减项处理
+-e783     //Mocor: 行没有以新行结束.
+-e703     //Mocor:long类型（有符号）变量左移.
+-e528     //Mocor:符号"Symbol"没有引用 －－ 被声明的静态函数或者静态符号一直没有被引用.
+-e526    //符号"Symbol"没有定义 (TD减）
+-e749    //部枚举常量没有引用 (TD减）
+-e751    //可以用-esym()屏蔽 .(TD减）
+
+
+//2010-7-27日review，在5月17日基础上，以下16个告警类型需要修改。（kai wan,xiaoqing lu,windy wang,wind deng,connie li,yolanda wang)
+
+//-e91      //Mocor:代码行超长，缺省600，可以用+linebuf成倍增加..(TD减）
+//-e115     //Mocor:使用到的结构或者联合类型没有定义..(TD减）
+//-e508     //Mocor:使用extern符号对函数进行定义..(TD减）
+//-e529     //Mocor:在函数定义的符号"Symbol"没有引用..(TD减）
+//-e572     //Mocor:位移值太大 －－ 被向右位移的操作数精度小于或等于位移值.(TD减）
+//-e651     //Mocor:潜在的混淆的初始化.
+//-e656     //Mocor:算术运算（'＋'，'－'）使用枚举.(TD减）
+//-e666     //Mocor:有副作用的参数传递给有重复参数的宏.
+//-e712     //Mocor:精确度损失。两个整型之间赋值，第一个地精确度高于第二个.
+//-e747     //Mocor:类型强制转换.
+//-e766     //Mocor:头文件FileName应该被去除包含..(TD减）
+//-e778     //Mocor:常量表达式中计算0值..(TD减）
+//-e504     //Mocor:异常移位值――对某个变量用非规范的方式进行移位操作.
+//-e605     //Mocor:普通指针到常量指针间赋值操作造成.
+//-e613     //Mocor:可能使用空指针（左值或右值）.
+
+//2010-12-28, 根据修改告警中的分析，确定减掉如下类型的告警 
+-e306     //某个文件可能被处理两次，先前已经被处理过一次。MOCOR:这个告警会屏蔽掉后面的扫描告警，所以禁止掉这个告警。
+-e765     //Mocor:外部'Symbol'应该声明为static类型..(TD减)。MOCOR:由于TCPIP等一些模块，有些特定要声明为PUBLIC保留提供给外部使用的函数。
+-e793     //ANSI limit of 'String' 'Name' exceeded。MOCOR:MMI定义位置信息的时候通常都会有很多很多，尤其在头文件中，限制长度没有意义的。

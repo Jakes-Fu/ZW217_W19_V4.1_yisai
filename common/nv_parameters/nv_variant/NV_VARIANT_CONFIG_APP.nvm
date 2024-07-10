@@ -1,0 +1,164 @@
+# SpreadTrum NVEditor NV Module File, Format Version 1.0
+# WARNING: DO NOT EDIT OR DELETE THIS NV Module FILE!
+
+###############################################################################
+  MODULE      = NV_VARIANT_CONFIG_APP
+  DESCRIPTION = Add
+
+################################################################################
+
+# Begin Module Item
+  BEGIN_ITEM
+    ITEM_NAME    = BT_IS_VISIBLE
+    ITEM_ID      = 1940
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 0
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Bluetooth visibility. 0: Not visible 1: Visible
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CAMERA_SHOT_SOUND
+    ITEM_ID      = 1941
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 1
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Enable/Disable camera short sound feature. 0: Enable 1: Disable
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = CAMERA_RECORD_INDICATOR
+    ITEM_ID      = 1942
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 2
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Enable/Disable camera record indicator feature. 0: OFF 1: ON
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = EMERGENCY_CALL_UI
+    ITEM_ID      = 1943
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 3
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Emergency call UI display on lock screen. 0: No emergency call UI display 1: Emergency call UI for China 2: Emergency call UI for AU  3: Emergency call UI for NZ
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = FM_RECORD_CFG
+    ITEM_ID      = 1944
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 4
+    ITEM_PARENT  = -1
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = RECORD_SHARE
+    ITEM_ID      = 1944
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 5
+    ITEM_PARENT  = 4
+    ITEM_DESC    = Indicate whether FM sharing is allowed or not.0: Not allowed 1: Allowed
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = RECORD_ENABLE
+    ITEM_ID      = 1944
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 6
+    ITEM_PARENT  = 4
+    ITEM_DESC    = Indicates whether Radio Recording is allowed.0: Not allowed 1: Allowed
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = FM_TUNNING_STEP
+    ITEM_ID      = 1945
+    ITEM_TYPE    = 2 (SHORT)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 7
+    ITEM_PARENT  = -1
+    ITEM_DESC    = FM radio frequency steps.0: 50KHz 1: 100KHz
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = DEFAULT_BROWSER_APP
+    ITEM_ID      = 1946
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 8
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Indicates which browser is the default browser and visible to end user. 0:Opera Mini 1:Dorado 2:Disabled
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = DISABLE_SHARE_VIA_OPTION
+    ITEM_ID      = 1947
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 9
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Indicate whether SMS is disabled or not.0: Not disabled 1: disabled
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = LEFT_SOFTKEY_APP
+    ITEM_ID      = 1948
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 10
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Indicate default Left softkey APP 0:NONE 1:Contacts 2:Call history 3:Messaging 4:Music 5:Videos 6:Radio 7:Camera 8:Alarm 9:Files 0x0A:Gallery 0x0B:Calendar 0x0C:Calculator 0x0D:Internet 0x0E:Recorder 0x0F:Settings 0x10:Extras 0x11:Counters
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = RIGHT_SOFTKEY_APP
+    ITEM_ID      = 1949
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x7
+    ITEM_INDEX   = 11
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Indicate default Left softkey APP 0:NONE 1:Contacts 2:Call history 3:Messaging 4:Music 5:Videos 6:Radio 7:Camera 8:Alarm 9:Files 0x0A:Gallery 0x0B:Calendar 0x0C:Calculator 0x0D:Internet 0x0E:Recorder 0x0F:Settings 0x10:Extras 0x11:Counters
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = DEFAULT_THEME_COLOR
+    ITEM_ID      = 1950
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 12
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Indicate the default theme color. 0:VIOLENT 1:RED 2:YELLOW 3:GREEN 4:COPPER 5:BLUE 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = BT_PROFILE_LIST
+    ITEM_ID      = 1951
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 13
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Indicate the type of BT profile list. 0:FULL 1:AUDIO Only
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SHOW_UNINSTALL_PRELOAD_GAME
+    ITEM_ID      = 1952
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 14
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Show uninstall option for preload game. 0:Not display 1:Show
+  END_ITEM
+
+
+# End Module Item
+
+################################################################################

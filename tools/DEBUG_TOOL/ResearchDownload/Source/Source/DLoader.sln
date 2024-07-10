@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLoader", "DLoader.vcproj", "{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BMAFrame", "..\Bootmode\BMAFrame\BMAFrame.vcproj", "{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F} = {B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BMPlatform", "..\Bootmode\BMPlatform\BMPlatform.vcproj", "{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Cust Debug|Win32 = Cust Debug|Win32
+		Cust Factory Debug|Win32 = Cust Factory Debug|Win32
+		Cust Factory Release|Win32 = Cust Factory Release|Win32
+		Cust Release|Win32 = Cust Release|Win32
+		Cust Upgrade Debug|Win32 = Cust Upgrade Debug|Win32
+		Cust Upgrade Release|Win32 = Cust Upgrade Release|Win32
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Cust Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Cust Debug|Win32.Build.0 = Cust Debug|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Cust Factory Debug|Win32.ActiveCfg = Cust Factory Debug|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Cust Factory Debug|Win32.Build.0 = Cust Factory Debug|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Cust Factory Release|Win32.ActiveCfg = Cust Factory Release|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Cust Factory Release|Win32.Build.0 = Cust Factory Release|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Cust Release|Win32.ActiveCfg = Cust Release|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Cust Release|Win32.Build.0 = Cust Release|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Cust Upgrade Debug|Win32.ActiveCfg = Cust Upgrade Debug|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Cust Upgrade Debug|Win32.Build.0 = Cust Upgrade Debug|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Cust Upgrade Release|Win32.ActiveCfg = Cust Upgrade Release|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Cust Upgrade Release|Win32.Build.0 = Cust Upgrade Release|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Debug|Win32.Build.0 = Cust Debug|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Release|Win32.ActiveCfg = Cust Factory Release|Win32
+		{3D522F1D-3FD0-48DF-80CD-28A734CC9D73}.Release|Win32.Build.0 = Cust Factory Release|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Debug|Win32.Build.0 = Cust Debug|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Factory Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Factory Debug|Win32.Build.0 = Cust Debug|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Factory Release|Win32.ActiveCfg = Cust Release|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Factory Release|Win32.Build.0 = Cust Release|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Release|Win32.ActiveCfg = Cust Release|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Release|Win32.Build.0 = Cust Release|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Upgrade Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Upgrade Debug|Win32.Build.0 = Cust Debug|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Upgrade Release|Win32.ActiveCfg = Cust Release|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Cust Upgrade Release|Win32.Build.0 = Cust Release|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Debug|Win32.Build.0 = Cust Debug|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Release|Win32.ActiveCfg = Cust Release|Win32
+		{6CFAC59D-4A91-4817-9868-A22F8AA75D5F}.Release|Win32.Build.0 = Cust Release|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Debug|Win32.Build.0 = Cust Debug|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Factory Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Factory Debug|Win32.Build.0 = Cust Debug|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Factory Release|Win32.ActiveCfg = Cust Release|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Factory Release|Win32.Build.0 = Cust Release|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Release|Win32.ActiveCfg = Cust Release|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Release|Win32.Build.0 = Cust Release|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Upgrade Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Upgrade Debug|Win32.Build.0 = Cust Debug|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Upgrade Release|Win32.ActiveCfg = Cust Release|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Cust Upgrade Release|Win32.Build.0 = Cust Release|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Debug|Win32.ActiveCfg = Cust Debug|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Debug|Win32.Build.0 = Cust Debug|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Release|Win32.ActiveCfg = Cust Release|Win32
+		{B92A9ACE-D51B-4B18-A1EC-4D216F508C8F}.Release|Win32.Build.0 = Cust Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+ROM_LOAD 0x40000000 0x7000
+{
+     ROM_EXEC  0x40000000 0x7000
+     {
+          init.o (Init, +First)
+          sdram_init.o (+RO,+RW,+ZI)
+          drv_usb.o(+RO, +RW,+ZI)
+          usb_boot.o(+RO, +RW)
+          virtual_com.o(+RO, +RW, +ZI)
+          *.o (+RO,+RW);the rw section must be set IRAM
+     }
+     RAM_EXEC  0x30800000 0x10000
+     {
+          *.o (+ZI)
+     }
+}
+

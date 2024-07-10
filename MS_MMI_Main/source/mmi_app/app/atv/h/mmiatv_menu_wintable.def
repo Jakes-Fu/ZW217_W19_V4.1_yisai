@@ -1,0 +1,14 @@
+#ifdef ATV_SUPPORT
+#if (defined MAINLCD_SIZE_128X160) || (defined MAINLCD_SIZE_176X220) //6530_low_memory
+MENU_DEF(MMIATV_MAIN_OPT_MENU,          mmiatv_main_opt_menu,	       GUIMENU_STYLE_SECOND, STXT_OPTION, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(mmiatv_main_opt_menu))
+#else
+MENU_DEF(MMIATV_MAIN_OPT_MENU,          mmiatv_main_opt_menu,	       GUIMENU_STYLE_POPUP, TXT_NULL, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(mmiatv_main_opt_menu))
+#endif  //(defined MAINLCD_SIZE_128X160) || (defined MAINLCD_SIZE_176X220) //6530_low_memory
+MENU_DEF(MMIATV_FAVORITE_LIST_OPT_MENU, mmiatv_favorite_list_opt_menu, GUIMENU_STYLE_POPUP, TXT_NULL, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(mmiatv_favorite_list_opt_menu))
+MENU_DEF(MMIATV_RECORD_STORE_STATUS,          mmiatv_record_store_status,	       GUIMENU_STYLE_POPUP_RADIO, TXT_NULL, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(mmiatv_record_store_status))
+#ifdef MMI_PDA_SUPPORT
+MENU_DEF(MMIATV_VIDEO_TYPE,          mmiatv_video_type,	       GUIMENU_STYLE_POPUP_RADIO, TXT_NULL, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(mmiatv_video_type))
+MENU_DEF(MMIATV_FAVORITE_SERVICE_LIST_LONGOK_OPT_MENU,          mmiatv_favorite_service_list_longok_opt_menu,	       GUIMENU_STYLE_POPUP_AUTO, TXT_NULL, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(mmiatv_favorite_service_list_longok_opt_menu))
+MENU_DEF(MMIATV_SERVICE_LIST_LONGOK_OPT_MENU,          mmiatv_service_list_longok_opt_menu,	       GUIMENU_STYLE_POPUP_AUTO, TXT_NULL, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(mmiatv_service_list_longok_opt_menu))
+#endif //MMI_PDA_SUPPORT
+#endif

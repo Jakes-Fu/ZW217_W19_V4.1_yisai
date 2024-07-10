@@ -1,0 +1,9 @@
+start LTE C8320/RDA8825
+DllL3MsgDecoder input: 14 0
+ 41 07 cc 81 39 02 10 7c c4 96 26 2f 06 2d 41 89 a1 f0 00 00
+ DllL3MsgDecoder end: 0 0 0
+
+
+ DllL3MsgDecoder end1: 0 1 9b
+
+DllL3MsgDecoder end!

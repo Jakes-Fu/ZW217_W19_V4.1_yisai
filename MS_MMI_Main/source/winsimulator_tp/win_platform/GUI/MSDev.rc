@@ -1,0 +1,518 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MSDev.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR ACCELERATORS DISCARDABLE 
+BEGIN
+    "C",            ID_COPY_SCREEN,         VIRTKEY, CONTROL, NOINVERT
+    "E",            ID_SHOW_CONTROL_PANEL,  VIRTKEY, CONTROL, NOINVERT
+    "Q",            ID_FILE_CLOSE,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_START,               VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_AT DIALOG DISCARDABLE  0, 0, 214, 181
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "AT Command"
+FONT 10, "System"
+BEGIN
+    LTEXT           "Request:",IDC_STATIC,7,7,30,8
+    EDITTEXT        IDC_AT_REQUEST,7,18,200,26,ES_AUTOHSCROLL
+    LTEXT           "Response:",IDC_STATIC,7,53,36,8
+    EDITTEXT        IDC_AT_RESPONSE,7,70,200,104,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_DIALOG1 DIALOG DISCARDABLE  0, 0, 187, 59
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Com Settings"
+FONT 10, "System"
+BEGIN
+    LTEXT           "???¨²",IDC_STATIC,18,15,17,8
+    EDITTEXT        IDC_EDIT1,173,7,7,14,ES_AUTOHSCROLL | ES_NUMBER | NOT 
+                    WS_VISIBLE | WS_DISABLED
+    LTEXT           "2¡§¨¬??¨º",IDC_STATIC,18,35,25,8
+    EDITTEXT        IDC_EDIT2,53,33,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "¡ä¨°?a¡ä??¨²",IDC_BUTTON1,117,11,50,14
+    PUSHBUTTON      "1?¡À?¡ä??¨²",IDC_BUTTON2,117,33,50,14
+    PUSHBUTTON      "¨ª?3?",IDC_BUTTON3,105,7,50,14,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    COMBOBOX        IDC_COMBO1,53,13,40,61,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_AT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 174
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_IMAGE_CONFIG DIALOGEX 0, 0, 187, 126
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Handset image"
+FONT 10, "Courier", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_BMP_FILE,10,15,138,13,ES_AUTOHSCROLL | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "...",IDC_OPEN_BMP_FILE,153,15,22,14,0,WS_EX_STATICEDGE
+    EDITTEXT        IDC_INI_FILE,10,46,138,13,ES_AUTOHSCROLL | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "...",IDC_OPEN_INI_FILE,153,46,22,14,0,WS_EX_STATICEDGE
+    EDITTEXT        IDC_RES_FILE,10,77,138,13,ES_AUTOHSCROLL | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "...",IDC_OPEN_RES_FILE,152,77,22,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "OK",IDOK,11,104,41,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Cancel",IDCANCEL,73,104,41,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Apply",IDC_APPLY,135,104,41,14,0,WS_EX_STATICEDGE
+    GROUPBOX        "Configuration file",IDC_STATIC,8,35,170,30
+    GROUPBOX        "Image file",IDC_STATIC,8,4,170,30
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,0,2,187,124
+    GROUPBOX        "Resource file",IDC_STATIC,8,66,170,30
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 285, 85
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Spreadtrum MSDev"
+FONT 8, "Courier"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,9,10,20,20
+    LTEXT           "Version: ",IDC_STATIC,33,27,41,8,SS_NOPREFIX
+    LTEXT           "All rights reserved",IDC_STATIC,33,67,96,8
+    PUSHBUTTON      "OK",IDOK,228,10,50,14,WS_GROUP
+    LTEXT           "Spreadtrum MS Develop Platform",IDC_STATIC,33,10,136,8,
+                    SS_NOPREFIX
+    LTEXT           "Build: ",IDC_STATIC,33,39,36,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003 - 2009 Spreadtrum Communications Inc.",
+                    IDC_STATIC,33,55,236,8,SS_NOPREFIX
+    LTEXT           "",IDC_STATIC_VERSION,88,27,110,8,SS_NOPREFIX
+    LTEXT           "",IDC_STATIC_BUILD,88,39,110,8,SS_NOPREFIX
+END
+
+IDD_MONITOR DIALOGEX 0, 0, 297, 177
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_APPWINDOW
+CAPTION "Data Monitor"
+FONT 8, "Courier", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,0,0,297,176
+    EDITTEXT        IDC_CLIENT_BUFFER,6,13,285,70,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        IDC_RTOS_BUFFER,6,99,285,70,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    GROUPBOX        "Messages sent from RTOS",IDC_STATIC,3,85,291,85
+    GROUPBOX        "Messages sent from Client",IDC_STATIC,3,2,291,85
+END
+
+IDD_DIALOG_PIXEL_PROP DIALOG DISCARDABLE  0, 0, 200, 74
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Pixel properties"
+FONT 10, "Courier"
+BEGIN
+    LTEXT           "Static",IDC_STATIC_COORDINATE,7,7,139,13
+    LTEXT           "Static",IDC_STATIC_RGB24,7,29,142,14
+    LTEXT           "Static",IDC_STATIC_RGB565,7,50,142,14
+    LTEXT           "",IDC_STATIC_PANEL,153,14,40,41
+END
+
+IDD_MSDEV_DIALOG DIALOGEX 0, 0, 328, 278
+STYLE WS_POPUP | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+END
+
+IDD_DIALOG_UI_LAYER_DISP DIALOG DISCARDABLE  0, 0, 362, 318
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CLIPCHILDREN | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "UI Layer Infomation"
+FONT 10, "System"
+BEGIN
+    CONTROL         "Tab1",IDC_DLS_TAB,"SysTabControl32",0x0,7,7,348,304
+END
+
+IDD_DIALOG_MAIN_LCD_UI_LAYER DIALOG DISCARDABLE  0, 0, 439, 285
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CLIPCHILDREN | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Layer Info"
+FONT 10, "System"
+BEGIN
+    LTEXT           "",IDC_DML_STC_DISP,7,23,425,255,SS_NOTIFY | SS_SUNKEN
+    CONTROL         "Draw Border",IDC_DLI_BORDER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,7,57,10
+    CONTROL         "Draw Rect",IDC_DLI_RECT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,65,7,49,10
+    CONTROL         "Draw Info",IDC_DLI_INFO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,115,7,47,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_MONITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 290
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 170
+    END
+
+    IDD_DIALOG_PIXEL_PROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 193
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_MSDEV_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 321
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 271
+    END
+
+    IDD_DIALOG_UI_LAYER_DISP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 355
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 311
+    END
+
+    IDD_DIALOG_MAIN_LCD_UI_LAYER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 432
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 278
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,1,2
+ PRODUCTVERSION 2,0,1,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "MSDev\0"
+            VALUE "FileVersion", "2, 0, 1, 2\0"
+            VALUE "InternalName", "MSDev\0"
+            VALUE "LegalCopyright", "Copyright (C) 2010 Spreadtrum Communications INC.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MSDev.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "MSDev\0"
+            VALUE "ProductVersion", "2, 0, 1, 2\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MSDev.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU DISCARDABLE 
+BEGIN
+    POPUP "View"
+    BEGIN
+        MENUITEM "[Start/Stop]",                ID_START
+        MENUITEM SEPARATOR
+        POPUP "Test"
+        BEGIN
+            MENUITEM "Test1",                       ID_TEST1
+            MENUITEM "Test2",                       ID_TEST2
+            MENUITEM "Test3",                       ID_TEST3
+            MENUITEM "Test4",                       ID_TEST4
+            MENUITEM "Test5",                       ID_TEST5
+            MENUITEM "Test6",                       ID_TEST6
+            MENUITEM "Test7",                       ID_TEST7
+            MENUITEM "Test8",                       ID_TEST8
+            MENUITEM "Test9",                       ID_TEST9
+            MENUITEM "Test10",                      ID_TEST10
+            MENUITEM "Test11",                      ID_TEST11
+            MENUITEM "Test12",                      ID_TEST12
+            MENUITEM "Test13",                      ID_TEST13
+            MENUITEM "Test14",                      ID_TEST14
+            MENUITEM "Test15",                      ID_TEST15
+            MENUITEM "Test16",                      ID_TEST16
+            MENUITEM "Test17",                      ID_TEST17
+            MENUITEM "Test18",                      ID_TEST18
+            MENUITEM "Test19",                      ID_TEST19
+            MENUITEM "Test20",                      ID_TEST20
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Always On Top",               ID_SET_TOPMOST
+        MENUITEM "Data Monitor",                ID_DATA_MONITOR
+        MENUITEM "Change Image ...",            ID_CHANGE_IMAGE
+        MENUITEM "LCD Self Test",               ID_LCD_SELFTEST
+        MENUITEM "Copy Screen(Ctrl+C)",         ID_COPY_SCREEN
+        MENUITEM SEPARATOR
+        MENUITEM "Show Pixel property",         ID_SHOW_PIXEL_PROP
+        MENUITEM "Show Control Panel(Ctrl+E)",  ID_SHOW_CONTROL_PANEL
+        MENUITEM "Show Layer Info",             ID_SHOW_LAYER_INFO
+        MENUITEM "AT Command",                  ID_AT
+        MENUITEM "Com Settings",                ID_COM_SETTINGS
+        MENUITEM SEPARATOR
+        MENUITEM "Trace on",                    ID_TRACE_ON
+        MENUITEM SEPARATOR
+        MENUITEM "About...",                    ID_ABOUT
+        MENUITEM "Exit",                        ID_FILE_CLOSE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_HAND1               CURSOR  DISCARDABLE     "res\\hand1.cur"
+IDC_HAND2               CURSOR  DISCARDABLE     "res\\hand2.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDR_PNG_OVER_BTN        PNG     DISCARDABLE     "res\\overbutton.png"
+IDR_PNG_PRESS_BTN       PNG     DISCARDABLE     "res\\pressbutton.png"
+IDR_PNG_BLACK_MASK      PNG     DISCARDABLE     "res\\blackmask.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About MSDev..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_START               "Start"
+    IDS_STOP                "Stop"
+    ID_AT                   "AT Command"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_DATA_MONITOR         "Show/Hide the data monitor window"
+    ID_CHANGE_IMAGE         "Change the handset image\nChange image"
+    ID_SET_TOPMOST          "Always on top\nAlways On Top"
+    ID_START                "Start/Stop the MSSim"
+    ID_PICKUP               "Pick up/hang up the phone"
+    ID_HANDFREE             "Hand free"
+    ID_LCD_SELFTEST         "LCD self test"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SHOW_PIXEL_PROP      "Show pixel property dialog\nShow pixel property dialog"
+    ID_COPY_SCREEN          "Copy Screen/nCopy Screen"
+    ID_SHOW_CONTROL_PANEL   "Show Control Panel\nShow Control Panel"
+    ID_TEST1                "Test1"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_ABOUT               "About MSDev\nAbout MSDev"
+    ID_SHOW_LAYER_INFO      "Show UI Layer info/nShow UI Layer info"
+    ID_TRACE_ON             "Trace on/n Trace on"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_CLOSE           "Exit\nExit"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\MSDev.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

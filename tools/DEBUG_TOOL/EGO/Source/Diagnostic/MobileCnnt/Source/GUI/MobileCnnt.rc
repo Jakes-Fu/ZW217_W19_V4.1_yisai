@@ -1,0 +1,2580 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MobileCnnt.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#include ""l.chs\\afxprint.rc""        // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MobileCnnt.ico"
+IDR_MOBILETYPE          ICON    DISCARDABLE     "res\\MobileCnntDoc.ico"
+IDR_SMS                 ICON    DISCARDABLE     "res\\idr_icon.ico"
+IDI_HIGH                ICON    DISCARDABLE     "res\\high.ico"
+IDI_HIGHER              ICON    DISCARDABLE     "res\\higher.ico"
+IDI_ICON_SIGNAL0        ICON    DISCARDABLE     "res\\icon_sig0.ico"
+IDI_ICON_SIGNAL1        ICON    DISCARDABLE     "res\\icon_sig1.ico"
+IDI_ICON_SIGNAL2        ICON    DISCARDABLE     "res\\icon_sig2.ico"
+IDI_ICON_SIGNAL3        ICON    DISCARDABLE     "res\\icon_sig3.ico"
+IDI_ICON_SIGNAL4        ICON    DISCARDABLE     "res\\icon_sig4.ico"
+IDI_ICON_SIGNAL5        ICON    DISCARDABLE     "res\\icon_sig5.ico"
+IDI_COMING_CALL         ICON    DISCARDABLE     "res\\coming_c.ico"
+IDI_ICON_SIGNAL00       ICON    DISCARDABLE     "res\\ico0000.ico"
+IDI_ICON_SIGNAL01       ICON    DISCARDABLE     "res\\ico00001.ico"
+IDI_ICON_SIGNAL02       ICON    DISCARDABLE     "res\\ico00002.ico"
+IDI_ICON_SIGNAL03       ICON    DISCARDABLE     "res\\ico00003.ico"
+IDI_ICON_SIGNAL04       ICON    DISCARDABLE     "res\\ico00004.ico"
+IDI_ICON_SIGNAL05       ICON    DISCARDABLE     "res\\ico00005.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDR_SMS                 BITMAP  DISCARDABLE     "res\\bmp00001.bmp"
+IDB_BMP_CATEGORY        BITMAP  DISCARDABLE     "res\\bmp_category.bmp"
+IDR_MAIN_USED           BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+IDB_TB_ONE              BITMAP  DISCARDABLE     "res\\tb1.bmp"
+IDB_TB_TWO              BITMAP  DISCARDABLE     "res\\tb2.bmp"
+IDB_TB_THREE            BITMAP  DISCARDABLE     "res\\tb3.bmp"
+IDB_BMP_TM              BITMAP  DISCARDABLE     "res\\trademark.bmp"
+IDB_BMP_CMP             BITMAP  DISCARDABLE     "res\\cmp.bmp"
+IDR_TOOLBAR             BITMAP  DISCARDABLE     "res\\bmp00002.bmp"
+IDB_START               BITMAP  DISCARDABLE     "res\\new_start.bmp"
+IDB_BMP_START           BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDR_TOOLBAR_V1          BITMAP  DISCARDABLE     "res\\bmp00003.bmp"
+IDB_DIS_START           BITMAP  DISCARDABLE     "res\\dis_start.bmp"
+IDB_DLG_BACKGRND        BITMAP  DISCARDABLE     "res\\dlg_back.bmp"
+IDR_SMS_EGO             BITMAP  DISCARDABLE     "res\\sms_ego.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_SMS TOOLBAR DISCARDABLE  20, 20
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_VIEW_CATEG_BAR
+    SEPARATOR
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_DELETE
+    BUTTON      ID_EDIT_NEW
+    BUTTON      ID_OPTION_LOAD_SMS
+    BUTTON      ID_OPTION_LOAD_PB
+END
+
+IDR_MAIN_USED TOOLBAR DISCARDABLE  32, 32
+BEGIN
+    BUTTON      ID_HOME
+    BUTTON      IDC_DIAL_UP
+    BUTTON      IDC_LOAD_SMS
+    BUTTON      IDC_LOAD_CALL
+    BUTTON      IDC_LOAD_ENGENEERING
+    BUTTON      IDC_LOAD_CONFIG
+    BUTTON      IDC_LOAD_HELP
+    BUTTON      ID_STATIC_LOGO
+END
+
+IDR_TOOLBAR TOOLBAR DISCARDABLE  32, 32
+BEGIN
+    BUTTON      ID_HOME
+    BUTTON      IDC_DIAL_UP
+    BUTTON      IDC_LOAD_CALL
+    BUTTON      IDC_LOAD_ENGENEERING
+    BUTTON      IDC_LOAD_CONFIG
+    BUTTON      IDC_LOAD_HELP
+    BUTTON      ID_STATIC_LOGO
+END
+
+IDR_TOOLBAR_V1 TOOLBAR DISCARDABLE  32, 32
+BEGIN
+    BUTTON      ID_HOME
+    BUTTON      IDC_DIAL_UP
+    BUTTON      IDC_LOAD_CONFIG
+    BUTTON      IDC_LOAD_HELP
+    BUTTON      ID_STATIC_LOGO
+END
+
+IDR_SMS_EGO TOOLBAR DISCARDABLE  20, 20
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_VIEW_CATEG_BAR
+    SEPARATOR
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_DELETE
+    BUTTON      ID_EDIT_NEW
+    SEPARATOR
+    BUTTON      ID_OPTION_LOAD_MS_ALL
+    SEPARATOR
+    BUTTON      ID_OPTION_LOAD_SMS
+    BUTTON      ID_OPTION_LOAD_PB
+    BUTTON      ID_OPTION_LOAD_MEMO
+    BUTTON      ID_OPTION_LOAD_PBG
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "系统(&F)"
+    BEGIN
+        MENUITEM "配置(&C)",                    IDC_LOAD_CONFIG
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "服务(&S)"
+    BEGIN
+        MENUITEM "系统信息",                    ID_HOME
+        MENUITEM "拨号连接",                    IDC_DIAL_UP
+        MENUITEM "信息同步",                    IDC_LOAD_SMS
+        MENUITEM "语音服务",                    IDC_LOAD_CALL
+        MENUITEM "工程模式",                    IDC_LOAD_ENGENEERING
+        MENUITEM "关机",                        IDC_POWER_OFF
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "帮助主题",                    IDC_LOAD_HELP
+        MENUITEM "关于 (&A)...",                ID_APP_ABOUT
+        MENUITEM "关于数据卡版本",              ID_LOAD_HSDPA_VERSION
+    END
+END
+
+IDR_TOOL MENU DISCARDABLE 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "打开(&O)",                    ID_TOOL_OPEN
+        MENUITEM "断开拨号连接",                ID_DIS_DIAL_UP
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+END
+
+IDR_SMS MENU DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "打开(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "保存(&S)\tCtrl+S",            ID_FILE_SAVE
+        MENUITEM "另存为(&A)...",               ID_FILE_SAVE_AS
+    END
+    POPUP "编辑(&E)"
+    BEGIN
+        POPUP "新建(&N)"
+        BEGIN
+            MENUITEM "短信息(&S)...",               ID_EDIT_NEW_SMS
+            MENUITEM "电话簿(&P)...",               ID_EDIT_NEW_PB
+            MENUITEM "日程表(&M)...",               ID_EDIT_NEW_MEMO
+        END
+        MENUITEM "编辑(&E)...",                 ID_EDIT_EDIT
+        MENUITEM "复制(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "删除(&D)\tCtrl+D",            ID_EDIT_DELETE
+        MENUITEM "全选(&A)\tCtrl+A",            ID_EDIT_SELECT_ALL
+    END
+    POPUP "选项(&O)"
+    BEGIN
+        POPUP "载入(&L)"
+        BEGIN
+            MENUITEM "全部(&A)",                    ID_OPTION_LOAD_MS_ALL
+            MENUITEM "短消息(&S)",                  ID_OPTION_LOAD_SMS
+            MENUITEM "电话簿(&P)",                  ID_OPTION_LOAD_PB
+            MENUITEM "日程表(&R)",                  ID_OPTION_LOAD_MEMO
+            MENUITEM "电话群组(&G)",                ID_OPTION_LOAD_PBG
+        END
+        POPUP "短信息(&M)"
+        BEGIN
+            MENUITEM "中心号码(&N)...",             ID_OPTION_SMS_CENTER
+            MENUITEM "预设信息(&P)...",             ID_OPTION_SMS_PRESET
+            MENUITEM "发送方式(&S)...",             ID_OPTION_SMS_SEND_MODE
+            MENUITEM "存储区(&C)...",               ID_OPTION_SMS_STORE
+        END
+        POPUP "电话簿(B)"
+        BEGIN
+            MENUITEM "电话簿类型(&T)...",           ID_OPTION_PB_TYPE
+        END
+    END
+END
+
+IDR_MNU_INFOLIST MENU DISCARDABLE 
+BEGIN
+    POPUP "infolist_menu"
+    BEGIN
+        MENUITEM "新建(&N)",                    ID_EDIT_NEW
+        MENUITEM "编辑(&E)\t",                  ID_EDIT_EDIT
+        MENUITEM SEPARATOR
+        MENUITEM "复制(&C)",                    ID_EDIT_COPY
+        MENUITEM SEPARATOR
+        MENUITEM "删除(&D)",                    ID_EDIT_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "全选(&A)",                    ID_EDIT_SELECT_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "发送(&S)",                    ID_ILM_SMS_SEND
+        MENUITEM "答复(&N)",                    ID_ILM_SMS_ANSWER
+        MENUITEM "转发(&F)",                    ID_ILM_SMS_FORWARD
+        MENUITEM "提取号码(&T)",                ID_EXTRACT_NUMBER
+        MENUITEM "预设短信息(&R)",              ID_OPTION_SMS_PRESET
+        MENUITEM SEPARATOR
+        MENUITEM "导出VCard(&X)",               ID_EXPORT_TO_VCARD
+        MENUITEM "导入VCard(&I)",               ID_IMPORT_VCARD
+        MENUITEM "同步电话(&Y)",                ID_SYNC_PB
+        MENUITEM SEPARATOR
+        MENUITEM "导出VCalendar(&L)",           ID_EXPORT_TO_VCALENDAR
+        MENUITEM "导入VCalendar(&p)",           ID_IMPORT_VCALENDAR
+        MENUITEM "同步日程(&M)",                ID_SYNC_MEMO
+        MENUITEM SEPARATOR
+        POPUP "复制移动到..."
+        BEGIN
+            MENUITEM "计算机",                      ID_COPY_MOVE_TO_PC
+            MENUITEM "手机存储器",                  ID_COPY_MOVE_TO_MS
+            MENUITEM "SIM卡1",                      ID_COPY_MOVE_TO_SIM
+            MENUITEM "SIM卡2",                      ID_COPY_MOVE_TO_SIM2
+            MENUITEM "SIM卡3",                      ID_COPY_MOVE_TO_SIM3
+            MENUITEM "SIM卡4",                      ID_COPY_MOVE_TO_SIM4
+        END
+        POPUP "划分群组到..."
+        BEGIN
+            MENUITEM "ONE",                         ID_GROUP_ONE
+            MENUITEM "TWO",                         ID_GROUP_TWO
+            MENUITEM "THREE",                       ID_GROUP_THREE
+            MENUITEM "FOUR",                        ID_GROUP_FOUR
+            MENUITEM "FIVE",                        ID_GROUP_FIVE
+            MENUITEM "SIX",                         ID_GROUP_SIX
+            MENUITEM "SEVEN",                       ID_GROUP_SEVEN
+            MENUITEM "EIGHT",                       ID_GROUP_EIGHT
+            MENUITEM "NINE",                        ID_GROUP_NINE
+            MENUITEM "TEN",                         ID_GROUP_TEN
+            MENUITEM "ELEVEN",                      ID_GROUP_ELEVEN
+            MENUITEM "TWELVE",                      ID_GROUP_TWELVE
+            MENUITEM "THIRTEEN",                    ID_GROUP_THIRTEEN
+            MENUITEM "FOURTEEN",                    ID_GROUP_FOURTEEN
+            MENUITEM "FIFTEEN",                     ID_GROUP_FIFTEEN
+            MENUITEM "SIXTEEN",                     ID_GROUP_SIXTEEN
+            MENUITEM "SEVENTEEN",                   ID_GROUP_SEVENTEEN
+            MENUITEM "EIGHTTEEN",                   ID_GROUP_EIGHTTEEN
+            MENUITEM "NINETEEN",                    ID_GROUP_NINETEEN
+            MENUITEM "TWENTY",                      ID_GROUP_TWENTY
+        END
+        MENUITEM "呼叫",                        ID_CALL_FROM_PB
+        MENUITEM "发送信息",                    ID_SEND_SMS_FROM_PB
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "A",            ID_EDIT_SELECT_ALL,     VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "D",            ID_EDIT_DELETE,         VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 237, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 SPRD8800"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,8,20,20
+    LTEXT           "SPRD8800",IDC_STC_PRD_NAME,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版本：",IDC_STATIC,40,25,34,8
+    DEFPUSHBUTTON   "确定",IDOK,180,7,50,14,WS_GROUP
+    LTEXT           "编译版本：",IDC_STATIC,40,42,45,8
+    LTEXT           "版权所有(C)2008-2009 展讯通信有限公司",IDC_STATIC,40,59,
+                    162,8
+    LTEXT           "",IDC_STATIC_VERSION,84,25,95,8
+    LTEXT           "",IDC_STATIC_BUILD,84,41,95,8
+END
+
+IDD_FORMVIEW_MSINFO DIALOGEX 0, 0, 335, 200
+STYLE WS_CHILD
+FONT 10, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "信号强度",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,18,
+                    39,36,10,WS_EX_TRANSPARENT
+    CONTROL         "网络类型",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,18,
+                    66,36,10,WS_EX_TRANSPARENT
+    CONTROL         "网络提供商",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,18,
+                    92,45,10,WS_EX_TRANSPARENT
+    CONTROL         "系统服务状态",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    18,120,49,9,WS_EX_TRANSPARENT
+    CONTROL         "漫游状态",IDC_STATIC,"Static",SS_SIMPLE,176,39,34,9,
+                    WS_EX_TRANSPARENT,HIDC_STATIC
+    CONTROL         "SIM卡状态",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,176,
+                    147,34,9,WS_EX_TRANSPARENT
+    CONTROL         "系统服务域",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    176,66,37,9,WS_EX_TRANSPARENT
+    CONTROL         "系统模式",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,176,
+                    92,34,9,WS_EX_TRANSPARENT
+    GROUPBOX        "",IDC_STATIC,8,14,153,164
+    GROUPBOX        "",IDC_STATIC,172,14,156,164
+    GROUPBOX        "",IDC_STATIC,65,30,78,20
+    LTEXT           "",IDC_STC_SIGNAL,66,38,75,10
+    GROUPBOX        "",IDC_STATIC,65,57,78,20
+    GROUPBOX        "",IDC_STATIC,65,84,78,20
+    LTEXT           "",IDC_STC_NETWORK_TYPE,66,65,75,10
+    LTEXT           "",IDC_STC_NETWORK_PROVIDER,66,92,75,10
+    GROUPBOX        "",IDC_STATIC,65,112,78,20
+    GROUPBOX        "",IDC_STATIC,221,30,102,20
+    GROUPBOX        "",IDC_STATIC,221,57,102,20
+    GROUPBOX        "",IDC_STATIC,221,84,102,20
+    GROUPBOX        "",IDC_STATIC,220,139,102,27
+    LTEXT           "",IDC_STC_ROAM,222,38,100,10
+    LTEXT           "",IDC_STC_SYSTEM_DOMAIN,222,65,100,10
+    LTEXT           "",IDC_STC_SYSTEM_MODE,222,92,100,10
+    LTEXT           "",IDC_STC_SIM,221,147,100,18
+    LTEXT           "",IDC_STC_SYSTEM_SRV,66,120,76,10
+    LTEXT           "IMEI",IDC_STATIC,18,147,38,8
+    GROUPBOX        "",IDC_STATIC,65,139,78,20
+    LTEXT           "",IDC_STC_IMEI,66,147,76,10
+    LTEXT           "小区信息指示",IDC_STATIC,176,120,45,12,0,
+                    WS_EX_TRANSPARENT
+    GROUPBOX        "",IDC_STATIC,221,112,102,20
+    LTEXT           "",IDC_STC_CELL_SIGN,223,120,98,10
+END
+
+IDD_DLG_PROGRESS DIALOG DISCARDABLE  0, 0, 193, 46
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 10, "宋体"
+BEGIN
+    CONTROL         "Progress1",IDC_PROG,"msctls_progress32",PBS_SMOOTH,7,30,
+                    179,9
+    LTEXT           "Static",IDC_STC_TITLE,7,13,179,10
+END
+
+IDD_FORMVIEW_DIALUP DIALOGEX 0, 0, 335, 200
+STYLE WS_CHILD
+FONT 10, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "连接速度(kbps):",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,28,80,59,10,WS_EX_TRANSPARENT
+    CONTROL         "连接时间:",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,28,
+                    17,47,10,WS_EX_TRANSPARENT
+    CONTROL         "发送数据(byte):",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,28,38,59,10,WS_EX_TRANSPARENT
+    CONTROL         "接收数据(byte):",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,28,59,59,10,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STC_CONN_TIME,93,17,115,11
+    GROUPBOX        "",IDC_STATIC,16,7,307,109
+    LTEXT           "",IDC_STC_SEND_DATA,93,38,115,11
+    LTEXT           "",IDC_STC_CONN_SPEED,93,80,115,11
+    LTEXT           "",IDC_STC_RCV_DATA,93,59,115,11
+    GROUPBOX        "拨号",IDC_STATIC,16,120,307,44
+    PUSHBUTTON      "连接",IDC_BTN_HAND_DIAL,229,136,49,15,BS_FLAT
+    CONTROL         "连接Modem:",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,28,
+                    101,59,10,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STC_CONN_MODEM,93,101,115,11
+    LTEXT           "选择SIM卡：",IDC_FDU_STC_SIM,27,134,43,8
+    COMBOBOX        IDC_FDU_CMB_SIM,75,132,74,54,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITERECT | SS_SUNKEN,164,134,
+                    1,24
+    LTEXT           "",IDC_STATIC_PROMPT,17,169,303,24
+    LTEXT           "APN:",IDC_STATIC_APN,27,150,35,10
+    EDITTEXT        IDC_EDT_APN,75,148,50,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "设置",IDC_BUTTON_SET,128,147,21,14
+END
+
+IDD_FORMVIEW_CALL DIALOG DISCARDABLE  0, 0, 335, 200
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "1",IDC_BTN_NUM_1,22,65,31,17
+    PUSHBUTTON      "2",IDC_BTN_NUM_2,57,65,31,17
+    PUSHBUTTON      "3",IDC_BTN_NUM_3,92,65,31,17
+    PUSHBUTTON      "4",IDC_BTN_NUM_4,22,91,31,17
+    PUSHBUTTON      "5",IDC_BTN_NUM_5,57,91,31,17
+    PUSHBUTTON      "6",IDC_BTN_NUM_6,92,91,31,17
+    PUSHBUTTON      "7",IDC_BTN_NUM_7,22,117,31,17
+    PUSHBUTTON      "8",IDC_BTN_NUM_8,57,117,31,17
+    PUSHBUTTON      "9",IDC_BTN_NUM_9,92,117,31,17
+    PUSHBUTTON      "*",IDC_BTN_NUM_10,22,143,31,17
+    PUSHBUTTON      "0",IDC_BTN_NUM_0,57,143,31,17
+    PUSHBUTTON      "#",IDC_BTN_NUM_11,92,143,31,17
+    PUSHBUTTON      "拨打",IDC_BTN_CALL_AUDIO,127,65,31,17
+    PUSHBUTTON      "挂断",IDC_BTN_CALL_OFF,127,91,31,17
+    PUSHBUTTON      "接听",IDC_BTN_CALL_ON,127,117,31,17
+    CONTROL         "全部",IDC_CHECK_ALL,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,179,27,30,16
+    CONTROL         "未接",IDC_CHECK_UNANSWER,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,214,27,30,16
+    CONTROL         "已接",IDC_CHECK_ANSWERED,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,249,27,30,16
+    CONTROL         "已拨",IDC_CHECK_DIALED,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,284,27,30,16
+    CONTROL         "List1",IDC_LST_CALL_REPORT,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,181,46,132,79
+    GROUPBOX        "通话记录",IDC_STATIC,173,17,148,112
+    GROUPBOX        "电话",IDC_STATIC,15,17,148,151
+    EDITTEXT        IDC_EDT_CALL_NUM,23,35,133,19,ES_AUTOHSCROLL
+    LTEXT           "",IDC_STC_CALL_PROMPT,16,173,303,18
+    GROUPBOX        "SIM卡选项",IDC_STATIC,173,147,148,21
+    COMBOBOX        IDC_FORMCALL_CMB_SIM,233,153,80,40,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "选择SIM卡:",IDC_STATIC,181,155,39,8
+    PUSHBUTTON      "清空记录",IDC_BTN_CLEAR_REPORT,173,132,148,12,BS_FLAT
+END
+
+IDD_FORMVIEW_ENGINEERING DIALOG DISCARDABLE  0, 0, 335, 200
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    LISTBOX         IDC_LST_ITEM,11,13,62,176,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_PAGE_FRAME,80,26,248,162
+    LTEXT           "",IDC_CAPTION_BAR,79,14,249,14
+END
+
+IDD_FORMVIEW_CONFIG DIALOG DISCARDABLE  0, 0, 335, 200
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    CONTROL         "Tab1",IDC_TAB_CFG,"SysTabControl32",0x0,3,0,328,193
+END
+
+IDD_FORMVIEW_CONNECT DIALOG DISCARDABLE  0, 0, 335, 200
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    CONTROL         "",IDC_STATIC_BITMAP,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,16,25,304,150
+END
+
+IDD_DLG_SELECT_NETWORK DIALOGEX 0, 0, 300, 165
+STYLE WS_CHILD | WS_BORDER
+EXSTYLE WS_EX_TRANSPARENT
+FONT 10, "宋体", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "应用",IDC_BTD_SEL_NET_APPLY,124,141,50,14
+    LTEXT           "当前选网模式：",IDC_STATIC,49,9,54,12
+    GROUPBOX        "",IDC_STATIC,107,0,132,23
+    LTEXT           "",IDC_STC_NETWORK_MODE,109,8,127,13
+    GROUPBOX        "",IDC_STATIC,52,20,188,97
+    CONTROL         "更改选网模式",IDC_CHECK_MODIFY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,65,28,64,15
+    LTEXT           "选网模式：",IDC_STATIC,69,51,40,11
+    COMBOBOX        IDC_COMBO_MODE,114,49,106,60,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "PLMN:",IDC_STATIC,69,87,40,11
+    LISTBOX         IDC_LIST_PLMN,114,72,106,37,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,52,115,188,24
+    LTEXT           "",IDC_STATIC_INFO,53,123,185,12
+END
+
+IDD_DLG_DIAL_NETWORK DIALOGEX 0, 0, 300, 169
+STYLE WS_CHILD | WS_BORDER
+EXSTYLE WS_EX_TRANSPARENT
+FONT 10, "宋体", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "拨号",IDC_STATIC,16,0,269,38
+    LTEXT           "连接失败后",IDC_STATIC,31,18,40,12
+    EDITTEXT        IDC_EDT_DIAL_SECOND,71,16,25,13,ES_AUTOHSCROLL
+    LTEXT           "秒后自动重拨",IDC_STATIC,99,18,56,11
+    LTEXT           "最多尝试",IDC_STATIC,169,18,33,12
+    EDITTEXT        IDC_EDT_DIAL_NUM,205,16,25,13,ES_AUTOHSCROLL
+    LTEXT           "次重拨",IDC_STATIC,235,18,38,12
+    GROUPBOX        "业务",IDC_STATIC,16,48,269,83
+    LTEXT           "拨号类型：",IDC_STATIC,67,60,38,11
+    LTEXT           "接入点：",IDC_STATIC,67,79,38,11
+    LTEXT           "上行速率：",IDC_STATIC,67,97,38,11
+    LTEXT           "下行速率：",IDC_STATIC,67,114,38,11
+    COMBOBOX        IDC_COMBO_DIAL_TYPE,112,59,98,80,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_CNNT_IN,112,77,98,12,ES_AUTOHSCROLL
+    LTEXT           "(Kbps)",IDC_STATIC,246,96,35,10
+    LTEXT           "(Kbps)",IDC_STATIC,246,112,35,10
+    PUSHBUTTON      "应用",IDC_BTN_NETWORK_APPLY,116,138,66,16
+    COMBOBOX        IDC_COMBO_UP_SPEED,112,94,98,80,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_DOWN_SPEED,112,111,98,80,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_STC_SPEED_UP,214,96,26,13
+    LTEXT           "",IDC_STC_SPEED_DOWN,214,113,26,13
+END
+
+IDD_DLG_SECURITY DIALOG DISCARDABLE  0, 0, 302, 167
+STYLE WS_CHILD | WS_BORDER
+FONT 10, "宋体"
+BEGIN
+    GROUPBOX        "PIN1码",IDC_STATIC,12,3,136,146
+    GROUPBOX        "PIN2码",IDC_STATIC,156,3,136,146
+    CONTROL         "激活",IDC_RADIO_PIN_ON,"Button",BS_AUTORADIOBUTTON,21,
+                    21,37,12
+    CONTROL         "禁止",IDC_RADIO_PIN_OFF,"Button",BS_AUTORADIOBUTTON,21,
+                    43,37,12
+    CONTROL         "PIN1码：",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,22,
+                    63,31,9
+    EDITTEXT        IDC_EDT_PIN,52,60,66,14,ES_PASSWORD | ES_AUTOHSCROLL
+    PUSHBUTTON      "应用",IDC_BTN_PIN1_APPLY,61,109,37,15
+    PUSHBUTTON      "修改PIN1",IDC_BTN_MODIFY_PIN1,107,108,37,15
+    CONTROL         "开启FDN",IDC_RADIO_OPEN_FDN,"Button",BS_AUTORADIOBUTTON,
+                    165,21,54,13
+    CONTROL         "关闭FDN",IDC_RADIO_CLOSE_FDN,"Button",
+                    BS_AUTORADIOBUTTON,165,43,54,13
+    CONTROL         "PIN2码：",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,166,
+                    63,31,9
+    EDITTEXT        IDC_EDT_PIN2,196,60,66,14,ES_PASSWORD | ES_AUTOHSCROLL
+    CONTROL         "(4-8)位",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,119,
+                    63,30,12
+    CONTROL         "(4-8)位",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,263,
+                    63,30,12
+    CONTROL         "PIN2码剩余次数:",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,166,85,60,9
+    GROUPBOX        "",IDC_STATIC,229,76,34,21
+    LTEXT           "",IDC_STC_PIN2_REMAIN,230,83,32,12
+    PUSHBUTTON      "解锁PIN2",IDC_BTN_UNLOCK_PIN2,161,108,37,15
+    PUSHBUTTON      "应用",IDC_BTN_PIN2_APPLY,206,108,37,15
+    PUSHBUTTON      "修改PIN2",IDC_BTN_PIN2_MODIFY,251,108,37,15
+    PUSHBUTTON      "解锁PIN1",IDC_BTN_UNLOCK_PIN1,15,109,37,15
+    CONTROL         "PIN1码剩余次数:",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,22,85,60,9
+    GROUPBOX        "",IDC_STATIC,85,76,34,21
+    LTEXT           "",IDC_STC_PIN1_REMAIN,86,83,32,12
+END
+
+IDD_DLG_OTHERS DIALOG DISCARDABLE  0, 0, 300, 167
+STYLE WS_CHILD | WS_BORDER
+FONT 10, "宋体"
+BEGIN
+    GROUPBOX        "UPLMN",IDC_STATIC,10,1,136,153
+    GROUPBOX        "AOC",IDC_STATIC,152,1,136,75
+    LTEXT           "已有UPLMN:",IDC_STATIC,16,14,45,10
+    CONTROL         "List1",IDC_LIST_UPLMN,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,15,25,127,47
+    GROUPBOX        "添加修改",IDC_STATIC,14,74,127,61
+    LTEXT           "Index:",IDC_STATIC,25,85,28,11
+    LTEXT           "Uplmn:",IDC_STATIC,25,100,28,11
+    LTEXT           "Type:",IDC_STATIC,25,117,28,11
+    COMBOBOX        IDC_COMBO_INDEX,55,83,72,100,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_TYPE,55,117,72,77,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "应用",IDC_BTN_UPLMN_APPLY,54,137,48,14
+    CONTROL         "开启",IDC_RADIO_AOC_ON,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,168,18,92,10
+    CONTROL         "关闭",IDC_RADIO_AOC_OFF,"Button",BS_AUTORADIOBUTTON,168,
+                    34,92,10
+    PUSHBUTTON      "应用",IDC_BTN_AOC_APPLY,198,52,48,14
+    EDITTEXT        IDC_EDT_UPLMN,55,100,72,12,ES_AUTOHSCROLL
+    GROUPBOX        "协议版本",IDC_STATIC,152,79,136,75
+    CONTROL         "R4",IDC_RADIO_R4,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    168,95,39,10
+    CONTROL         "R5",IDC_RADIO_R5,"Button",BS_AUTORADIOBUTTON,168,111,39,
+                    10
+    PUSHBUTTON      "应用",IDC_BTN_VERSION_APPLY,198,130,48,14
+    CONTROL         "R7",IDC_RADIO_R7,"Button",BS_AUTORADIOBUTTON,235,95,39,
+                    10
+END
+
+IDD_MODIFY_PIN DIALOG DISCARDABLE  0, 0, 214, 117
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PIN"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "修改",IDOK,36,96,50,14
+    PUSHBUTTON      "取消",IDCANCEL,129,96,50,14
+    CONTROL         "旧PIN码：",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,22,
+                    16,45,10
+    CONTROL         "新PIN码：",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,22,
+                    36,49,10
+    CONTROL         "确认新PIN码：",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    22,56,49,10
+    EDITTEXT        IDC_EDT_OLD_PIN,75,14,88,13,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_NEW_PIN,75,33,88,13,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_NEW_PIN_CONFIM,75,53,88,13,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "(4-8)位",IDC_STATIC,167,16,33,13
+    LTEXT           "(4-8)位",IDC_STATIC,167,35,33,13
+    LTEXT           "(4-8)位",IDC_STATIC,167,56,33,13
+    LTEXT           "剩余次数：",IDC_STATIC,22,74,49,10
+    LTEXT           "",IDC_STC_PIN_REMAIN,75,73,88,12
+END
+
+IDD_UNLOCK_PIN2 DIALOG DISCARDABLE  0, 0, 195, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PIN2"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "设置",IDOK,28,100,50,14
+    PUSHBUTTON      "取消",IDCANCEL,117,100,50,14
+    CONTROL         "剩余次数：",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,17,
+                    15,44,10
+    GROUPBOX        "",IDC_STATIC,68,7,85,22
+    LTEXT           "",IDC_STC_REMAIN_PUK2,70,15,78,12
+    LTEXT           "新PIN2码：",IDC_STATIC,18,39,45,10
+    LTEXT           "PUK2码：",IDC_STATIC,18,79,38,12
+    EDITTEXT        IDC_EDT_PIN2_UNLOCK,68,37,85,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PUK2_UNLOCK,68,78,85,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "(4-8)位",IDC_STATIC,156,38,32,12
+    LTEXT           "8位",IDC_STATIC,156,79,33,11
+    CONTROL         "确认新PIN2码：",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,19,60,57,10
+    EDITTEXT        IDC_EDT_PIN2_UNLOCK_CONFIRM,68,58,85,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "(4-8)位",IDC_STATIC,156,59,32,12
+END
+
+IDD_PAGE_CGDCONT DIALOG DISCARDABLE  0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LST_CGDCONT_READ,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,114,70
+    PUSHBUTTON      "读取上下文",IDC_BTN_READ_CGDCONT,39,81,54,12
+    PUSHBUTTON      "测试参数范围",IDC_BTN_TEST_CGDCONT,39,141,54,12
+    GROUPBOX        "设置",IDC_STATIC,123,3,115,131
+    PUSHBUTTON      "设置上下文",IDC_BTN_SET_CGDCONT,156,141,54,12
+    CONTROL         "List2",IDC_LST_CGDCONT_TEST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,102,114,32
+    CONTROL         "ID",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,133,17,31,
+                    10
+    COMBOBOX        IDC_COMBO_CGDCONT_ID,158,16,74,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "类型",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,133,37,
+                    31,10
+    COMBOBOX        IDC_COMBO_CGDCONT_TYPE,158,35,38,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "接入点",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,133,56,
+                    31,10
+    COMBOBOX        IDC_COMBO_CGDCONT_CNNT_IN,158,54,38,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "上下文地址",IDC_CHECK_CGDCONT_ADDR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,133,72,55,8
+    CONTROL         "地址",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,133,88,
+                    31,10
+    EDITTEXT        IDC_EDT_CGDCONT_ADDR,158,86,74,12,ES_AUTOHSCROLL
+    CONTROL         "数据压缩",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,133,
+                    104,36,10
+    CONTROL         "头部数据压缩",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    133,118,52,10
+    COMBOBOX        IDC_COMBO_CGDCONT_DATA_COMP,185,103,47,64,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CGDCONT_HEAD_COMP,185,118,47,64,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_CGDCONT_TYPE,199,35,39,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_CGDCONT_CNNTIN,199,54,39,12,ES_AUTOHSCROLL
+END
+
+IDD_PAGE_SPPSRATE DIALOGEX 0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_LST_SRATE_READ,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,114,70
+    PUSHBUTTON      "读取速率",IDC_BTN_READ_SRATE,39,84,54,12
+    PUSHBUTTON      "测试速率",IDC_BTN_TEST_SRATE,39,141,54,12
+    CONTROL         "List2",IDC_LST_SRATE_TEST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,102,114,32
+    GROUPBOX        "设置",IDC_STATIC,123,3,115,131
+    CONTROL         "类型",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,128,17,
+                    31,10
+    COMBOBOX        IDC_COMBO_SRATE_TYPE,158,16,74,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "上行速率",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,128,
+                    45,31,10
+    PUSHBUTTON      "设置业务速率",IDC_BTN_SET_SRATE,156,141,54,12
+    CONTROL         "下行速率",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,128,
+                    72,31,10
+    EDITTEXT        IDC_EDT_SRATE_UP_SPEED,158,43,52,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_SRATE_DOWN_SPEED,158,70,52,12,ES_AUTOHSCROLL
+    LTEXT           "(Kbps)",IDC_STATIC,210,44,24,10,0,WS_EX_TRANSPARENT
+    LTEXT           "(Kbps)",IDC_STATIC,210,72,24,10
+END
+
+IDD_PAGE_SPFRQ DIALOG DISCARDABLE  0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LST_SPFRQ_READ,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,114,70
+    PUSHBUTTON      "读取锁定频点信息",IDC_BTN_READ_SPFRQ,33,83,61,12
+    PUSHBUTTON      "测试参数范围",IDC_BTN_TEST_SPFRQ,33,141,61,12
+    GROUPBOX        "设置",IDC_STATIC,123,3,115,131
+    PUSHBUTTON      "设置",IDC_BTN_SET_SPFRQ,149,141,61,12
+    CONTROL         "List2",IDC_LST_SPFRQ_TEST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,103,114,32
+    CONTROL         "操作",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,17,
+                    31,10
+    COMBOBOX        IDC_COMBO_SPFRQ_OPR,158,16,74,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "频点索引",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,
+                    37,31,10
+    COMBOBOX        IDC_COMBO_SPFRQ_ID,158,35,74,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "频点信息",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,
+                    56,31,10
+    EDITTEXT        IDC_EDT_SPFRQ_FREQN,158,54,40,12,ES_AUTOHSCROLL
+    CONTROL         "小区ID1",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,
+                    76,31,10
+    EDITTEXT        IDC_EDT_SPFRQ_CELL1,158,74,40,12,ES_AUTOHSCROLL
+    CONTROL         "小区ID2",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,
+                    94,31,10
+    EDITTEXT        IDC_EDT_SPFRQ_CELL2,158,92,40,12,ES_AUTOHSCROLL
+    CONTROL         "小区ID3",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,
+                    114,31,10
+    EDITTEXT        IDC_EDT_SPFRQ_CELL3,158,112,40,12,ES_AUTOHSCROLL
+    CONTROL         "(0-0xffff)",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    198,55,40,11
+    CONTROL         "(0-255)",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,198,
+                    75,40,11
+    CONTROL         "(0-255)",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,198,
+                    94,40,11
+    CONTROL         "(0-255)",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,198,
+                    113,40,11
+END
+
+IDD_PAGE_SAUTOATT DIALOG DISCARDABLE  0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    GROUPBOX        "查询",IDC_STATIC,7,7,231,64
+    LTEXT           "当前附着设置",IDC_STATIC,43,28,47,11
+    GROUPBOX        "",IDC_STATIC,94,21,101,17
+    LTEXT           "",IDC_STC_CUR_ATT,95,28,98,8
+    PUSHBUTTON      "查询",IDC_BTN_AUTOATT_READ,94,47,57,12
+    GROUPBOX        "设置",IDC_STATIC,7,81,231,61
+    LTEXT           "更改附着方式",IDC_STATIC,43,102,49,10
+    COMBOBOX        IDC_COMBO_AUTOATT_MODE,96,99,101,54,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "应用",IDC_BTN_AUTOATT_SET,96,121,57,12
+END
+
+IDD_PAGE_SPTEST DIALOG DISCARDABLE  0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LST_SPTEST_READ,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,114,127
+    PUSHBUTTON      "读取当前测试项",IDC_BTN_READ_SPTEST,33,141,59,12
+    GROUPBOX        "设置",IDC_STATIC,123,3,115,131
+    CONTROL         "测试类型",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,
+                    19,38,11
+    CONTROL         "测试项",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,48,
+                    38,11
+    COMBOBOX        IDC_COMBO_SPTEST_TYPE,163,17,69,74,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SPTEST_ITEM,162,47,69,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "设置测试项",IDC_BTN_SET_SPTEST,153,141,59,12
+END
+
+IDD_PAGE_SPID DIALOG DISCARDABLE  0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    GROUPBOX        "读取",IDC_STATIC,7,7,231,93
+    LTEXT           "tmsi",IDC_STATIC,55,26,30,9
+    LTEXT           "ptmsi",IDC_STATIC,55,49,30,9
+    LTEXT           "imeisv",IDC_STATIC,55,73,30,9
+    GROUPBOX        "",IDC_STATIC,85,19,103,20
+    GROUPBOX        "",IDC_STATIC,85,42,103,20
+    GROUPBOX        "",IDC_STATIC,85,65,103,20
+    LTEXT           "",IDC_STC_TMSI,86,27,100,11
+    LTEXT           "",IDC_STC_PTMSI,86,50,100,11
+    LTEXT           "",IDC_STC_IMEISY,86,73,100,11
+    PUSHBUTTON      "读取UE Identity",IDC_BTN_SPID_REAR,82,129,79,14
+END
+
+IDD_PAGE_SPUPLMN DIALOG DISCARDABLE  0, 0, 245, 160
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LST_UPLMN_READ,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,114,127
+    PUSHBUTTON      "读取UPLMN",IDC_BTN_READ_UPLMN,35,141,54,12
+    GROUPBOX        "设置",IDC_STATIC,123,3,115,131
+    CONTROL         "索引",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,19,
+                    31,11
+    CONTROL         "PLMN",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,43,
+                    31,11
+    CONTROL         "网络类型",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,127,
+                    66,31,11
+    COMBOBOX        IDC_COMBO_UPLMN_INDEX,159,18,73,63,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_UPLMN_TYPE,159,64,73,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "设置UPLMN",IDC_BTN_SET_UPLMN,151,141,54,12
+    EDITTEXT        IDC_EDT_UPLMN_PLMN,159,41,72,12,ES_AUTOHSCROLL
+END
+
+IDD_DLG_INPUT_PIN1 DIALOG DISCARDABLE  0, 0, 187, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PIN1"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "输入",IDOK,22,79,50,14
+    PUSHBUTTON      "取消",IDCANCEL,115,79,50,14
+    CONTROL         "剩余次数：",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,17,
+                    15,44,10
+    GROUPBOX        "",IDC_STATIC,58,7,85,22
+    LTEXT           "",IDC_STC_REMAIN_PIN1,60,15,78,12
+    LTEXT           "PIN1码：",IDC_STATIC,18,47,34,10
+    EDITTEXT        IDC_EDT_PIN1,58,45,85,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "(4-8)位",IDC_STATIC,148,46,32,12
+END
+
+IDD_DLG_INPUT_PUK1 DIALOG DISCARDABLE  0, 0, 191, 127
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PUK1"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "输入",IDOK,26,106,50,14
+    PUSHBUTTON      "取消",IDCANCEL,112,106,50,14
+    CONTROL         "剩余次数：",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,17,
+                    15,44,10
+    GROUPBOX        "",IDC_STATIC,67,7,85,22
+    LTEXT           "",IDC_STC_REMAIN_PUK1,71,15,78,12
+    CONTROL         "新PIN1码：",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,18,
+                    39,39,10
+    LTEXT           "PUK1码：",IDC_STATIC,18,84,38,12
+    EDITTEXT        IDC_EDT_PUK_PIN1,67,37,85,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PUK1,67,83,85,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "(4-8)位",IDC_STATIC,152,38,32,12
+    LTEXT           "8位",IDC_STATIC,152,84,33,11
+    CONTROL         "确认新PIN1码：",IDC_STATIC,"Static",SS_SIMPLE | 
+                    WS_GROUP,18,62,57,10
+    EDITTEXT        IDC_EDT_PUK_PIN1_CONFIRM,67,60,85,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "(4-8)位",IDC_STATIC,152,61,32,12
+END
+
+IDD_DLG_DIALUP DIALOG DISCARDABLE  0, 0, 187, 74
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "正在连接..."
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,72,52,42,15
+    CONTROL         178,IDC_STATIC,"Static",SS_BITMAP,25,15,30,30
+    LTEXT           "",IDC_STATIC_DIAL_UP,59,16,115,31
+END
+
+IDD_DLG_SEND_SMS_PROC DIALOG DISCARDABLE  0, 0, 208, 64
+STYLE WS_POPUP | WS_BORDER
+FONT 10, "宋体"
+BEGIN
+    LTEXT           "正在发送... ...",IDC_STATIC,80,16,46,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,29,
+                    194,1
+    LTEXT           "发送到：",IDC_STATIC,7,34,35,10
+    LTEXT           "",IDC_STC_TO,46,34,53,10
+    LTEXT           "已发送条目：",IDC_STATIC,118,34,46,10
+    LTEXT           "",IDC_STC_SEND_ITEM,169,34,32,10
+    CONTROL         "Progress1",IDC_PRG_SENDING,"msctls_progress32",
+                    WS_BORDER,7,47,194,9
+END
+
+IDD_DLG_SYNC_PB DIALOG DISCARDABLE  0, 0, 299, 255
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "导入导出电话簿"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "确定",IDOK,54,234,38,15
+    PUSHBUTTON      "取消",IDCANCEL,207,234,38,15
+    GROUPBOX        "计算机",IDC_STATIC,7,7,138,123
+    GROUPBOX        "手机",IDC_STATIC,154,7,138,123
+    CONTROL         "List1",IDC_LST_SYNC_PC,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,
+                    12,17,128,107
+    CONTROL         "List2",IDC_LST_SYNC_MS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,
+                    159,17,128,107
+    GROUPBOX        "结果",IDC_STATIC,7,156,285,74
+    CONTROL         "List3",IDC_LST_SYNC_RST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,
+                    13,166,273,57
+    PUSHBUTTON      "导入",IDC_BTN_DOWN,54,137,38,15
+    PUSHBUTTON      "导出",IDC_BTN_UP,207,137,38,15
+END
+
+IDD_DLG_PB DIALOGEX 0, 0, 235, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "电话簿"
+FONT 10, "宋体", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDT_NAME,51,51,62,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PERSON_PHONE,159,51,62,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_HOME_PHONE,51,73,62,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_OFFICE_PHONE,159,73,62,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_EMAIL,51,95,62,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_FAX,159,94,62,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CMB_GROUP,51,114,62,85,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "计算机",IDC_RDO_PC,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED | WS_GROUP,90,28,33,15
+    CONTROL         "手机",IDC_RDO_PHONE,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,127,28,28,15
+    CONTROL         "SIM卡1",IDC_RDO_SIM,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,157,28,33,15
+    CONTROL         "SIM卡2",IDC_RDO_SIM2,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,193,28,33,15
+    PUSHBUTTON      "确定",IDOK,135,138,41,14
+    PUSHBUTTON      "取消",IDCANCEL,184,138,41,14
+    LTEXT           "电话簿",IDC_STATIC,11,11,62,11
+    LTEXT           "pb store place",IDC_STC_PLACE,110,11,112,11,0,
+                    WS_EX_RIGHT
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,7,25,221,
+                    1
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,7,132,221,
+                    1
+    LTEXT           "存储位置：",IDC_STATIC,11,32,37,10
+    LTEXT           "姓    名：",IDC_STATIC,11,52,39,11
+    LTEXT           "住宅电话：",IDC_STC_HOME_PHONE,11,75,39,11
+    LTEXT           "邮    箱：",IDC_STC_EMAIL,11,98,39,11
+    LTEXT           "群    组：",IDC_STC_GROUP,11,117,39,11
+    LTEXT           "办公电话：",IDC_STC_OFFICE_PHONE,119,75,39,11
+    LTEXT           "个人电话：",IDC_STATIC,119,52,39,11
+    LTEXT           "传    真：",IDC_STC_FAX,118,97,39,8
+    COMBOBOX        IDC_PB_CMB_STORE,51,30,62,71,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_MEMO DIALOGEX 0, 0, 235, 183
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "日程表"
+FONT 10, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "计算机",IDC_RDO_PC,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,55,30,35,11
+    CONTROL         "手机",IDC_RDO_PHONE,"Button",BS_AUTORADIOBUTTON,95,30,
+                    32,11
+    COMBOBOX        IDC_CMB_MODE,172,28,56,66,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "DateTimePicker1",IDC_DTP_DATE,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,50,47,59,15
+    CONTROL         "DateTimePicker1",IDC_DTP_DATE_END,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,50,64,59,15
+    CONTROL         "DateTimePicker2",IDC_DTP_TIME,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,51,82,58,
+                    15
+    EDITTEXT        IDC_EDT_CONTENT,51,106,177,40,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    CONTROL         "周日",IDC_CHK_SUN,"Button",BS_AUTOCHECKBOX | WS_GROUP | 
+                    WS_TABSTOP,130,49,31,10
+    CONTROL         "周一",IDC_CHK_MON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    164,49,31,10
+    CONTROL         "周二",IDC_CHK_TUE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    198,49,30,10
+    CONTROL         "周三",IDC_CHK_WED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    130,64,30,10
+    CONTROL         "周四",IDC_CHK_THURS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,164,64,30,10
+    CONTROL         "周五",IDC_CHK_FRI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    198,64,30,10
+    CONTROL         "周六",IDC_CHK_SAT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    130,79,30,10
+    PUSHBUTTON      "确定",IDOK,138,162,38,14
+    PUSHBUTTON      "取消",IDCANCEL,183,162,38,14
+    LTEXT           "日程表",IDC_STATIC,11,11,62,11
+    LTEXT           "memo store place",IDC_STC_PLACE,150,11,72,11,0,
+                    WS_EX_RIGHT
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,7,25,221,
+                    1
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,7,153,221,
+                    1
+    LTEXT           "存储位置：",IDC_STATIC,11,31,40,11
+    LTEXT           "提醒周期：",IDC_STATIC,128,31,38,10
+    LTEXT           "开始日期：",IDC_STATIC,11,49,37,11
+    LTEXT           "起闹时间：",IDC_STATIC,11,84,37,9
+    LTEXT           "标题：",IDC_STATIC,11,106,28,9
+    LTEXT           "结束日期：",IDC_STATIC,11,67,38,11
+END
+
+IDD_DLG_SMS DIALOGEX 0, 0, 302, 243
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "短消息"
+FONT 10, "宋体", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "确定",IDC_BTN_OK,236,169,50,14
+    PUSHBUTTON      "退出",IDCANCEL,236,190,50,14
+    LTEXT           "短消息",IDC_STATIC,7,7,49,8
+    LTEXT           "sms place",IDC_STC_PLACE,170,7,122,8,0,WS_EX_RIGHT
+    GROUPBOX        "收件人",IDC_STATIC,8,19,288,44
+    GROUPBOX        "发件人",IDC_STATIC,8,66,288,27
+    GROUPBOX        "选项",IDC_STATIC,8,96,288,42
+    GROUPBOX        "",IDC_STATIC,8,142,220,79
+    LTEXT           "电话号码：",IDC_STC_PHONENUM,12,39,37,9
+    EDITTEXT        IDC_EDT_PHONENUM,58,29,175,29,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "选择",IDC_BTN_PHONENUM,243,28,44,13
+    PUSHBUTTON      "群组",IDC_BTN_GROUP,243,45,44,13
+    LTEXT           "SIM卡：",IDC_STATIC,14,78,44,8
+    COMBOBOX        IDC_CMB_SMS_SIM_SEL,58,75,90,87,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "发送/保存：",IDC_STATIC,13,110,44,8
+    COMBOBOX        IDC_CMB_SENDSAVE,58,106,90,87,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "期限：",IDC_STATIC,167,110,23,8
+    COMBOBOX        IDC_CMB_SEND_VALID_DATE,193,106,90,87,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "自动拆分",IDC_CHK_AUTOSPLISH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,59,123,47,11
+    CONTROL         "状态报告",IDC_CHK_STATEREPORT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,123,47,11
+    LTEXT           "存储位置：",IDC_STATIC,152,125,37,10
+    CONTROL         "计算机",IDC_RDO_STORE,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED | WS_GROUP,157,73,33,15
+    CONTROL         "SIM卡2",IDC_RDO_SIM3,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,262,74,33,15
+    CONTROL         "SIM卡1",IDC_RDO_SIM,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,222,74,33,15
+    CONTROL         "手机",IDC_RDO_MS,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,194,73,29,15
+    EDITTEXT        IDC_EDT_CONTENT,11,150,213,65,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    LTEXT           "拆分",IDC_STATIC,10,224,17,11
+    LTEXT           "",IDC_STC_SMSNUM,31,224,17,11
+    LTEXT           "条目",IDC_STATIC,52,224,18,11
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITEFRAME | SS_SUNKEN,72,224,
+                    1,10
+    LTEXT           "输入",IDC_STATIC,77,224,17,11
+    LTEXT           "",IDC_STC_INPUT_NUM,96,224,20,11
+    LTEXT           "字",IDC_STATIC,122,224,9,11
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITEFRAME | SS_SUNKEN,135,223,
+                    1,10
+    LTEXT           "剩余",IDC_STATIC,141,224,17,11
+    LTEXT           "",IDC_STC_LEAVE_NUM,160,224,20,11
+    LTEXT           "字",IDC_STATIC,186,224,9,11
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITEFRAME | SS_SUNKEN,199,223,
+                    1,10
+    PUSHBUTTON      "预设信息",IDC_BTN_PRESETSMS,236,148,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITERECT | SS_SUNKEN,7,236,
+                    288,1
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITEFRAME | SS_SUNKEN,7,224,1,
+                    10
+    COMBOBOX        IDC_SMS_CMB_STORE,193,121,90,56,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_STC_SENDING,237,224,56,8
+END
+
+IDD_DLG_PBG DIALOGEX 0, 0, 215, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "电话群组"
+FONT 10, "宋体", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDT_PBG_NAME,51,51,71,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "确定",IDOK,121,84,38,14
+    PUSHBUTTON      "取消",IDCANCEL,166,84,38,14
+    LTEXT           "电话群组",IDC_STATIC,11,11,62,11
+    LTEXT           "pbg store place",IDC_STC_PLACE,144,11,62,11,0,
+                    WS_EX_RIGHT
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,8,25,199,
+                    1
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,8,75,199,
+                    1
+    LTEXT           "存储位置：",IDC_STATIC,11,31,37,10
+    LTEXT           "群组名称：",IDC_STATIC,11,53,39,11
+    LTEXT           "成员数目：",IDC_STATIC,127,52,39,11
+    EDITTEXT        IDC_EDT_PBG_MEMNUM,168,50,34,13,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER
+    COMBOBOX        IDC_PBG_CMB_STORE,50,30,72,30,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_SMSCENTER DIALOG DISCARDABLE  0, 0, 187, 143
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "短消息中心"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "设定",IDC_BTN_SET,101,122,35,14
+    PUSHBUTTON      "取消",IDC_BTN_CANCEL,143,122,35,14
+    LTEXT           "短信中心号码",IDC_STATIC,11,11,62,11
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,9,25,171,
+                    1
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,8,117,171,
+                    1
+    LTEXT           "SIM1：",IDC_STATIC,12,43,25,11
+    LTEXT           "SIM2：",IDC_STATIC,12,62,25,11
+    EDITTEXT        IDC_EDT_SMS_CENTER,38,41,133,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_SMS_CENTER2,38,60,133,13,ES_AUTOHSCROLL
+    LTEXT           "[1 - 20]",IDC_STATIC,37,30,52,11
+    LTEXT           "SIM3：",IDC_STATIC,12,81,25,11
+    EDITTEXT        IDC_EDT_SMS_CENTER3,38,79,133,13,ES_AUTOHSCROLL
+    LTEXT           "SIM4：",IDC_STATIC,12,99,25,11
+    EDITTEXT        IDC_EDT_SMS_CENTER4,38,98,133,13,ES_AUTOHSCROLL
+END
+
+IDD_DLG_SMSPRESET DIALOG DISCARDABLE  0, 0, 287, 217
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "预设短消息"
+FONT 10, "宋体"
+BEGIN
+    LISTBOX         IDC_LST_CAPTION,12,43,136,70,LBS_NOINTEGRALHEIGHT | 
+                    LBS_EXTENDEDSEL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDT_CONTENT_VIEW,159,43,121,70,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | 
+                    WS_VSCROLL
+    PUSHBUTTON      "选择",IDC_BTN_SELECT,13,119,39,12
+    DEFPUSHBUTTON   "新建",IDC_BTN_NEW,72,119,39,12
+    PUSHBUTTON      "编辑",IDC_BTN_EDIT,129,119,39,12
+    PUSHBUTTON      "删除",IDC_BTN_DELETE,179,119,39,12
+    PUSHBUTTON      "退出",IDC_BTN_EXIT,231,119,39,12
+    EDITTEXT        IDC_EDT_CAPTION,12,159,135,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_CONTENT,159,158,121,52,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "确定",IDOK,14,196,39,14
+    PUSHBUTTON      "取消",IDCANCEL,89,196,39,14
+    LTEXT           "预设短消息",IDC_STATIC,11,11,62,11
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,26,25,254,
+                    1
+    CONTROL         "",IDC_EDITWND_POS,"Static",SS_GRAYRECT | SS_SUNKEN,7,
+                    137,273,1
+    LTEXT           "名称：",IDC_STATIC,12,30,23,8
+    LTEXT           "内容：",IDC_STATIC,159,32,23,8
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME | SS_SUNKEN,191,32,1,
+                    10
+    LTEXT           "",IDC_STC_CONTENT_NUM,199,31,13,10
+    LTEXT           "字",IDC_STATIC,217,33,9,10
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME | SS_SUNKEN,184,144,
+                    1,10
+    LTEXT           "",IDC_STC_LEFT_NUM_E,260,143,20,13
+    LTEXT           "剩余：",IDC_STATIC,243,144,23,8
+    LTEXT           "名称：",IDC_STC_NAME,12,144,23,8
+    LTEXT           "内容：",IDC_STC_CONTENT,158,144,23,8
+    LTEXT           "输入：",IDC_STATIC,191,144,23,8
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME | SS_SUNKEN,222,144,
+                    1,10
+    LTEXT           "",IDC_STC_INPUT_NUM_E,214,143,20,11
+END
+
+IDD_DLG_SMS_SEND_MODE DIALOG DISCARDABLE  0, 0, 187, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "短消息发送方式"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "设定",IDOK,27,58,46,14
+    PUSHBUTTON      "取消",IDCANCEL,112,58,46,14
+    LTEXT           "当前方式：",IDC_STATIC,27,11,40,12
+    LTEXT           "发送方式：",IDC_STATIC,27,30,40,12
+    EDITTEXT        IDC_EDIT_CUR_SMS_MODE,74,9,84,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    COMBOBOX        IDC_COMBO_SMS_MODE,74,28,84,71,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_TOOLTIP DIALOG DISCARDABLE  0, 0, 215, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "提示"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,168,114,40,14
+    EDITTEXT        IDC_EDT_TOOLTIP,7,17,201,90,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | 
+                    WS_VSCROLL
+END
+
+IDD_DLG_SEL_GROUP DIALOG DISCARDABLE  0, 0, 187, 163
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择群组"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "确定",IDOK,98,142,38,14
+    PUSHBUTTON      "取消",IDCANCEL,142,142,38,14
+    CONTROL         "List1",IDC_LST_GMEMBER,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,173,102
+    GROUPBOX        "",IDC_STATIC,7,112,173,26
+    LTEXT           "群组名称：",IDC_STATIC,10,122,39,13
+    COMBOBOX        IDC_CMB_GROUP,54,120,118,73,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_SEL_NUM DIALOG DISCARDABLE  0, 0, 187, 156
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择号码"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "确定",IDOK,98,135,38,14
+    PUSHBUTTON      "取消",IDCANCEL,142,135,38,14
+    CONTROL         "List1",IDC_LST_NAMENUM,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,0,173,102
+    GROUPBOX        "",IDC_STATIC,7,105,173,26
+    LTEXT           "姓名：",IDC_STATIC,10,115,28,13
+    EDITTEXT        IDC_EDT_NAME,47,112,62,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "查找",IDC_BTN_FIND,134,112,38,14
+END
+
+IDD_DLG_SEL_SIM DIALOG DISCARDABLE  0, 0, 187, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择SIM卡"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "确定",ID_SELSIM_BTN_OK,88,73,41,14
+    PUSHBUTTON      "取消",ID_SELSIM_BTN_CANCEL,138,73,41,14
+    LTEXT           "选择SIM卡",IDC_STATIC,11,11,62,11
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYRECT | SS_SUNKEN,10,25,168,
+                    1
+    CONTROL         "SIM1",IDC_SELSIM_RDO_SIM1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,36,30,46,10
+    CONTROL         "SIM2",IDC_SELSIM_RDO_SIM2,"Button",BS_AUTORADIOBUTTON,
+                    36,43,46,10
+    CONTROL         "SIM3",IDC_SELSIM_RDO_SIM3,"Button",BS_AUTORADIOBUTTON,
+                    36,56,46,10
+    CONTROL         "SIM4",IDC_SELSIM_RDO_SIM4,"Button",BS_AUTORADIOBUTTON,
+                    36,70,46,10
+END
+
+IDD_DLG_FILENAME DIALOG DISCARDABLE  0, 0, 187, 70
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文件名"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "确定",IDOK,34,49,50,14
+    PUSHBUTTON      "取消",IDCANCEL,110,49,50,14
+    LTEXT           "输入新文件名：",IDC_STATIC,11,23,54,10
+    EDITTEXT        IDC_EDT_FILENAME,70,20,102,13,ES_AUTOHSCROLL
+END
+
+IDD_DLG_SMS_STORE DIALOG DISCARDABLE  0, 0, 207, 131
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "短消息存储区"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "设定",IDOK,114,110,40,14
+    PUSHBUTTON      "取消",IDCANCEL,160,110,40,14
+    LTEXT           "已用",IDC_STATIC,15,59,16,11
+    EDITTEXT        IDC_EDT_RD_USED,48,55,47,12,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "最大容量",IDC_STATIC,15,89,31,11
+    EDITTEXT        IDC_EDT_RD_MAX,48,85,47,12,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "已用",IDC_STATIC,115,59,16,11
+    EDITTEXT        IDC_EDT_WS_USED,147,55,47,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "最大容量",IDC_STATIC,115,89,31,11
+    EDITTEXT        IDC_EDT_WS_MAX,147,85,47,12,ES_AUTOHSCROLL | WS_DISABLED
+    GROUPBOX        "读/删除",IDC_STATIC,11,7,88,99
+    GROUPBOX        "写/发送",IDC_STATIC,109,7,88,99
+    LTEXT           "存储区",IDC_STATIC,15,28,28,12
+    LTEXT           "存储区",IDC_STATIC,112,28,28,12
+    COMBOBOX        IDC_COMBO_RD,48,26,47,36,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_WS,147,26,47,36,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_DLG_PB_TYPE DIALOG DISCARDABLE  0, 0, 203, 113
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "电话簿类型"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "设定",IDOK,118,92,37,14
+    PUSHBUTTON      "取消",IDCANCEL,159,92,37,14
+    LTEXT           "电话簿类型：",IDC_STATIC,32,20,45,11
+    COMBOBOX        IDC_COMBO_PB_TYPE,82,18,86,98,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "已用：",IDC_STATIC,32,41,45,11
+    LTEXT           "最大容量：",IDC_STATIC,32,63,45,11
+    LTEXT           "",IDC_STC_PB_USED,82,41,86,12
+    LTEXT           "",IDC_STC_PB_MAX,82,63,86,12
+    GROUPBOX        "",IDC_STATIC,7,3,189,77
+END
+
+IDD_DLG_HSDPA_VERSION DIALOG DISCARDABLE  0, 0, 222, 126
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "数据卡软件版本"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "确定",IDOK,92,105,36,14
+    LTEXT           "",IDC_STC_HSDPA_VERSION,7,7,208,91
+END
+
+IDD_PAGE_SYSCONFIG DIALOG DISCARDABLE  0, 0, 247, 157
+STYLE WS_CHILD
+FONT 10, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LST_SYSCONFIG_READ,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,0,7,
+                    114,127
+    PUSHBUTTON      "读取当前配置",IDC_BTN_READ_SYSCONFIG,26,141,59,12
+    GROUPBOX        "设置",IDC_STATIC,124,3,115,131
+    CONTROL         "系统模式",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,128,
+                    19,49,11
+    CONTROL         "网络接入次序",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    128,48,49,11
+    COMBOBOX        IDC_COMBO_SYSCONFIG_MODE,177,17,55,74,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SYSCONFIG_APN,177,46,55,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "设置",IDC_BTN_SET_SYSCONFIG,151,141,59,12
+    CONTROL         "漫游支持",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,128,
+                    77,49,11
+    CONTROL         "域设置",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,128,
+                    106,49,11
+    COMBOBOX        IDC_COMBO_SYSCONFIG_DOMAIN,177,104,55,69,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SYSCONFIG_ROAM,177,75,55,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_TDGSM DIALOG DISCARDABLE  0, 0, 303, 168
+STYLE WS_CHILD | WS_BORDER
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "应用",IDC_BTN_APPLY_SYSCONFIG,49,135,50,14
+    GROUPBOX        "双模",IDC_STATIC,10,1,136,153
+    CONTROL         "系统模式",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,17,
+                    22,49,11
+    CONTROL         "网络接入次序",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    17,51,49,11
+    COMBOBOX        IDC_COMBO_TDGSM_MODE,72,20,68,74,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_TDGSM_ORDER,72,49,68,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PAGE_CLIENT DIALOGEX 0, 0, 246, 161
+STYLE WS_CHILD
+FONT 10, "宋体", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDT_AT,50,30,182,14,ES_AUTOHSCROLL
+    LTEXT           "AT Cmd:",IDC_STATIC,20,33,29,10
+    LISTBOX         IDC_LIST_RESULT,15,62,217,79,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Send",IDC_BTN_SEND,91,48,50,11,BS_FLAT
+    LTEXT           "Send file:",IDC_STATIC,20,12,42,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_EDIT_SCRIPT,64,10,141,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_CMD_BROWSE,210,10,22,15
+    CONTROL         "",IDC_RADIO_SCRIPT,"Button",BS_AUTORADIOBUTTON,10,13,8,
+                    8,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_RADIO_LINE,"Button",BS_AUTORADIOBUTTON,10,34,9,8,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "Clear",IDC_BTN_CLEAR,197,143,35,11
+    PUSHBUTTON      "Stop Check",IDC_BTN_STOP_CHECK,15,143,58,11
+END
+
+IDD_PAGE_DSP DIALOG DISCARDABLE  0, 0, 245, 157
+STYLE WS_CHILD | WS_BORDER
+FONT 10, "宋体"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,7,231,98
+    LTEXT           "Param1:",IDC_STATIC,46,25,34,11
+    LTEXT           "Param2:",IDC_STATIC,46,44,34,11
+    LTEXT           "Param3:",IDC_STATIC,46,63,34,11
+    LTEXT           "Param4:",IDC_STATIC,46,82,34,11
+    EDITTEXT        IDC_EDT_PARAM1,81,23,81,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PARAM2,81,42,81,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PARAM3,81,61,81,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_PARAM4,81,80,81,12,ES_AUTOHSCROLL
+    LTEXT           "(0 - 65535)",IDC_STATIC,169,25,44,10
+    LTEXT           "(0 - 65535)",IDC_STATIC,169,44,44,10
+    LTEXT           "(0 - 65535)",IDC_STATIC,169,63,44,10
+    LTEXT           "(0 - 65535)",IDC_STATIC,169,82,44,10
+    PUSHBUTTON      "设置",IDC_BTN_APPLY,89,129,65,13
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,4,1
+ PRODUCTVERSION 1,2,4,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x9L
+#else
+ FILEFLAGS 0x8L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Spreadtrum Communications INC.\0"
+            VALUE "FileDescription", "SPRD8800\0"
+            VALUE "FileVersion", "1, 2, 4, 1\0"
+            VALUE "InternalName", "SPRD8800\0"
+            VALUE "LegalCopyright", "Copyright(C) 2008-2012 Spreadtrum Communications INC.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SPRD8800.EXE\0"
+            VALUE "PrivateBuild", "BL0006\0"
+            VALUE "ProductName", "SPRD8800\0"
+            VALUE "ProductVersion", "1, 2, 4, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_FORMVIEW_MSINFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_DLG_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 186
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_FORMVIEW_DIALUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_FORMVIEW_CALL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_FORMVIEW_ENGINEERING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_FORMVIEW_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_FORMVIEW_CONNECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_DLG_SELECT_NETWORK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 158
+    END
+
+    IDD_DLG_DIAL_NETWORK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 162
+    END
+
+    IDD_DLG_SECURITY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_DLG_OTHERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_MODIFY_PIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 110
+    END
+
+    IDD_UNLOCK_PIN2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_PAGE_CGDCONT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SPPSRATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SPFRQ, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SAUTOATT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SPTEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SPID, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SPUPLMN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_DLG_INPUT_PIN1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+
+    IDD_DLG_INPUT_PUK1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 184
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_DLG_DIALUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_DLG_SEND_SMS_PROC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_DLG_SYNC_PB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 292
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 248
+    END
+
+    IDD_DLG_PB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_DLG_MEMO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_DLG_SMS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 236
+    END
+
+    IDD_DLG_PBG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_DLG_SMSCENTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_DLG_SMSPRESET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 210
+    END
+
+    IDD_DLG_SMS_SEND_MODE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_DLG_TOOLTIP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_DLG_SEL_GROUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_DLG_SEL_NUM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_DLG_SEL_SIM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DLG_FILENAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+
+    IDD_DLG_SMS_STORE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_DLG_PB_TYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 196
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 106
+    END
+
+    IDD_DLG_HSDPA_VERSION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 119
+    END
+
+    IDD_PAGE_SYSCONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_DLG_TDGSM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 296
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 161
+    END
+
+    IDD_PAGE_CLIENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 239
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_PAGE_DSP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CUR_HORZ            CURSOR  DISCARDABLE     "res\\cur_horz.cur"
+IDC_CUR_VERT            CURSOR  DISCARDABLE     "res\\cur_vert.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_FORMVIEW_CALL DLGINIT
+BEGIN
+    IDC_FORMCALL_CMB_SIM, 0x403, 5, 0
+0x4953, 0x314d, "\000" 
+    IDC_FORMCALL_CMB_SIM, 0x403, 5, 0
+0x4953, 0x324d, "\000" 
+    IDC_FORMCALL_CMB_SIM, 0x403, 5, 0
+0x4953, 0x334d, "\000" 
+    IDC_FORMCALL_CMB_SIM, 0x403, 5, 0
+0x4953, 0x344d, "\000" 
+    0
+END
+
+IDD_FORMVIEW_DIALUP DLGINIT
+BEGIN
+    IDC_FDU_CMB_SIM, 0x403, 5, 0
+0x4953, 0x314d, "\000" 
+    IDC_FDU_CMB_SIM, 0x403, 5, 0
+0x4953, 0x324d, "\000" 
+    IDC_FDU_CMB_SIM, 0x403, 5, 0
+0x4953, 0x334d, "\000" 
+    IDC_FDU_CMB_SIM, 0x403, 5, 0
+0x4953, 0x344d, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "SPRD8800\n\nMobile\n\n\nMobileCnnt.Document\nMobile Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "SPRD8800"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "建立新文档\n新建"
+    ID_FILE_OPEN            "打开一个现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "将活动文档以一个新文件名保存\n另存为"
+    ID_FILE_PAGE_SETUP      "改变打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP     "改变打印机及打印选项\n打印设置"
+    ID_FILE_PRINT           "打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示整页\n打印预览"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开该文档"
+    ID_FILE_MRU_FILE2       "打开该文档"
+    ID_FILE_MRU_FILE3       "打开该文档"
+    ID_FILE_MRU_FILE4       "打开该文档"
+    ID_FILE_MRU_FILE5       "打开该文档"
+    ID_FILE_MRU_FILE6       "打开该文档"
+    ID_FILE_MRU_FILE7       "打开该文档"
+    ID_FILE_MRU_FILE8       "打开该文档"
+    ID_FILE_MRU_FILE9       "打开该文档"
+    ID_FILE_MRU_FILE10      "打开该文档"
+    ID_FILE_MRU_FILE11      "打开该文档"
+    ID_FILE_MRU_FILE12      "打开该文档"
+    ID_FILE_MRU_FILE13      "打开该文档"
+    ID_FILE_MRU_FILE14      "打开该文档"
+    ID_FILE_MRU_FILE15      "打开该文档"
+    ID_FILE_MRU_FILE16      "打开该文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预阅"
+    IDS_CATEG_SMS           "短消息"
+    IDS_STORE_SIM           "SIM卡1"
+    IDS_STORE_SIM2          "SIM卡2"
+    IDS_STORE_INBOX         "收件箱"
+    IDS_STORE_OUTBOX        "发件箱"
+    IDS_STORE_SENDS         "已发信息"
+    IDS_STORE_DRAFTS        "草稿箱"
+    IDS_SMS_COLUMN          "存储位置,状态,姓名,电话号码,日期,内容"
+    IDS_DEL_CONFIRM         "您确认要删除吗?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SEL_ITEM_NUM        "已选择条目："
+    IDS_DIAL_DISCONNECTING  "正在断开拨号连接...这可能需要几分钟"
+    IDS_ADMIN_PROMPT        "抱歉，该软件需要系统管理员权限才能使用！"
+    IDS_CATEG_PB            "电话簿"
+    IDS_PB_COLUMN           "存储位置,姓名,电话号码,办公室电话,住宅电话,传真,电子邮件,所属群组"
+    ID_EXPORT_TO_VCARD      "导出VCard\n导出VCard"
+    IDS_WARN_EXTRACT_PB_NUM_CANCEL "是否同时取消提取后续的电话号码？"
+    IDS_ERR_NOT_CONNECT     "数据设备无应答!\n请确认数据设备是否正常接入电脑!"
+    IDS_ERR_DELETE          "删除失败!"
+    IDS_ERR_SYN_PHONE_FULL  "数据设备存储空间已满，同步停止！"
+    IDS_SYNC_MEMO_SUCCESS   "日程同步成功！"
+    IDS_CATEG_MEMO          "日程表"
+    IDS_CATEG_PBG           "电话群组"
+    IDS_MEMO_COLUMN         "存储位置,标题,开始日期,结束日期,起闹时间,提醒周期,提醒频率"
+    IDS_PBGM_COLUMN         "存储位置,姓名,电话号码,办公室电话,住宅电话,传真,电子邮件"
+    IDS_PBG_COLUMN          "存储位置,群组名称,成员数目"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_DIAL_UP             "拨号连接\n拨号连接"
+    IDC_LOAD_SMS            "信息同步\n信息同步"
+    IDC_LOAD_CALL           "语音业务\n语音业务"
+    IDC_LOAD_NET            "选网\n选网"
+    IDC_LOAD_ENGENEERING    "工程模式\n工程模式"
+    IDC_LOAD_CONFIG         "配置\n配置"
+    IDC_POWER_OFF           "关机\n关机"
+    IDC_LOAD_HELP           "帮助\n帮助"
+    ID_ILM_SMS_SEND         "发送该短信息\n发送"
+    ID_ILM_SMS_FORWARD      "转发该短信\n转发"
+    ID_ILM_SMS_ANSWER       "答复该短信息\n答复"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_NEW             "新建\n新建"
+    ID_OPTION_LOAD_SMS      "从手机中载入短消息\n载入短信"
+    ID_EDIT_DELETE          "删除选中的信息\n删除"
+    ID_OPTION_SMS_CENTER    "短信中心号码\n短信中心号码"
+    ID_OPTION_SMS_PRESET    "预设短信息\n预设短信息"
+    ID_OPTION_SMS_SEND_MODE "发送方式\n发送方式"
+    ID_VIEW_CONTENT_BAR     "显示或隐藏内容栏\n显隐内容栏"
+    ID_VIEW_CATEG_BAR       "显示或隐藏类别栏\n显隐类别栏"
+    ID_HOME                 "系统信息\n系统信息"
+    ID_CONNECT              "连接设备\n连接设备"
+    ID_DISCONNECT           "断开设备\n断开设备"
+    ID_DIS_DIAL_UP          "断开拨号连接\n断开拨号连接"
+    ID_DIS_DEVICE           "断开设备连接\n断开设备连接"
+    ID_OPTION_LOAD_ALL      "从手机中载入全部\n下载全部"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STORE_PC            "计算机"
+    IDS_REC_READ            "已读"
+    IDS_REC_UNREAD          "未读"
+    IDS_STO_SEND            "已发送"
+    IDS_STO_UNSEND          "未发送"
+    IDS_CONTENT_NAME        "内容"
+    IDS_CATEG_NAME          "类别"
+    IDS_RESOURCE_NOT_ENOUGHT "资源空间不足"
+    IDS_MODULE_NAME         "短消息、电话簿"
+    IDS_LINKMAN             "联系人"
+    IDS_CALL_TIME           "通话时间"
+    IDS_CALL_LONG           "通话时长"
+    IDS_SELECTNETWORK       "选网"
+    IDS_CONNECT_DIAL        "上网"
+    IDS_SECURITY            "安全"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SYSTEM_CELL_SIGN_6  "HSUPA模式"
+    IDS_SYSTEM_CELL_SIGN_7  "HSUPA和HSDPA模式"
+    IDS_SYSTEM_CELL_SIGN_8  "TD-SCDMA模式"
+    IDS_CUC_FORBIDDEN       "选网不成功"
+    IDS_SMS_SUCCESS         "已发送至："
+    IDS_SMS_FAILED          "未发送至："
+    IDS_DISCONNECTED_CHECKMODEM "连接Modem错误"
+    IDS_SMS_FULL            "已满"
+    IDS_FULL_SMS_PROMPT     "短消息已满，请及时清除！"
+    IDS_SEARCH_PLMN_REJECT  "当前操作拒绝"
+    IDS_STORE_PLACE         "计算机,手机,SIM卡1,SIM卡2,SIM卡3,SIM卡4"
+    IDS_STORE_SIM3          "SIM卡3"
+    IDS_WARN_ALREAY_OPEN    "程序已经打开！"
+    IDS_STORE_SIM4          "SIM卡4"
+    IDS_MEMO_FRE            "周日,周一,周二,周三,周四,周五,周六"
+    IDS_ERR_MEMO_END_DATE   "结束日期不能晚于开始日期！"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SRATE_DOWN_LINK     "下行速率"
+    IDS_SPFRQ_LOCK          "锁频"
+    IDS_SPFRQ_UNLOCK        "解锁"
+    IDS_SPFRQ_OPERATE       "操作"
+    IDS_SPFRQ_INDEX         "频点索引"
+    IDS_SPFRQ_FREQUENCE     "频点"
+    IDS_SPFRQ_CELL1         "Cell1"
+    IDS_SPFRQ_CELL2         "Cell2"
+    IDS_SPFRQ_CELL3         "Cell3"
+    IDS_AUTOATT_AUTO        "自动附着"
+    IDS_STORE_PHONE         "手机存储器"
+    IDS_UPLMN_TYPE          "type"
+    IDS_OTHERS              "其它"
+    IDS_UPLMN_INDEX         "index"
+    IDS_UPLMN_UPLMN         "uplmn"
+    IDS_DISCONNECTED        "未连接设备"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CONNECTED           "已连接设备"
+    IDS_CMCC                "中国移动"
+    IDS_CMCC_TD             "(TD-SCDMA)"
+    IDS_CUC                 "中国联通"
+    IDS_PLEASE_SELECT       "请选择"
+    IDS_HAND_SELECT_NET     "手动选网"
+    IDS_AUTO_SELECT_NET     "自动选网"
+    IDS_UPLINK              "上行"
+    IDS_DOWNLINK            "下行"
+    IDS_CONNECT_DEVICE      "连接"
+    IDS_DISCONNECT_DEVICE   "断开"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CONNT_FAILED        "连接失败！请确认手机已插SIM卡？"
+    IDS_CGDCONT             "PDP上下文"
+    IDS_SPPSRATE            "业务速率"
+    IDS_SPFRQ               "锁频／解锁"
+    IDS_SAUTOATT            "开机PS附着设置"
+    IDS_SPTEST              "测试项设置"
+    IDS_SPID                "UE Identity相关信息"
+    IDS_SPUPLMN             "UPLMN"
+    IDS_CGDCONT_ID          "ID"
+    IDS_CGDCONT_TYPE        "类型"
+    IDS_CGDCONT_CNNT_IN     "接入点"
+    IDS_CGDCONT_ADDR        "地址"
+    IDS_CGDCONT_DCOMP       "数据压缩"
+    IDS_CGDCONT_HCOMP       "头部数据压缩"
+    IDS_SRATE_TYPE          "业务类型"
+    IDS_SRATE_UP_LINK       "上行速率"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_AUTOATT_HAND        "手动附着"
+    IDS_SPTEST_FTA          "FTA"
+    IDS_SPTEST_PROTECT      "完整性保护"
+    IDS_SPTEST_NETWORK      "真实网络"
+    IDS_SPTEST_AOC          "AOC"
+    IDS_SPTEST_GSM_SIM      "支持GSM SIM卡"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SPTEST_VERSION      "协议版本号"
+    IDS_SPTEST_PS           "PS业务数据类型"
+    IDS_SPTEST_UE           "UE服务类型"
+    IDS_FTA_0               "正常"
+    IDS_FTA_1               "协议栈fta测试"
+    IDS_FTA_2               "USIM fta测试"
+    IDS_PROTECT_0           "关闭"
+    IDS_PROTECT_1           "开启"
+    IDS_NETWORK_0           "模拟网络"
+    IDS_NETWORK_1           "真实网络"
+    IDS_AOC_0               "关闭"
+    IDS_AOC_1               "开启"
+    IDS_GSM_SIM_0           "不支持"
+    IDS_GSM_SIM_1           "支持"
+    IDS_VERSION_0           "版本号为R4"
+    IDS_VERSION_1           "版本号为R5"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PS_0                "会话"
+    IDS_PS_1                "流媒体"
+    IDS_PS_2                "交互"
+    IDS_PS_3                "背景"
+    IDS_UE_0                "CS"
+    IDS_UE_1                "PS"
+    IDS_UE_2                "CS and PS"
+    IDS_INIT                "正在初始化..."
+    IDS_INIT_SUCCESS        "初始化完成"
+    IDS_INIT_FAILED         "初始化失败"
+    IDS_CMEE_FAILED         "错误值上报设置失败"
+    IDS_SYS_PROMT_FAILED    "系统主动提示设置失败"
+    IDS_SET_SUCCESS         "设置成功"
+    IDS_SET_FAILED          "设置失败"
+    IDS_PWD_ERROR           "密码错误！请重新输入！"
+    IDS_PUK_NEED            "PIN1只能输入3次！请解锁！"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PIN_PROMT           "PIN码不得少于4位"
+    IDS_PUK_INVALID         "PUK码只能输入10次！该SIM卡已经无效！"
+    IDS_PUK_PROMT           "PUK码必须是8位"
+    IDS_SYSTEM_SERVICE_0    "无网络"
+    IDS_SYSTEM_SERVICE_1    "完整服务"
+    IDS_SYSTEM_SERVICE_2    "正在搜网"
+    IDS_SYSTEM_SERVICE_3    "紧急呼叫"
+    IDS_SYSTEM_SERVICE_4    "未知状态"
+    IDS_SYSTEM_DOMAIN_0     "无服务"
+    IDS_SYSTEM_DOMAIN_1     "仅CS服务"
+    IDS_SYSTEM_DOMAIN_2     "仅PS服务"
+    IDS_SYSTEM_DOMAIN_3     "PS+CS服务"
+    IDS_SYSTEM_ROAM_0       "非漫游状态"
+    IDS_SYSTEM_ROAM_1       "漫游状态"
+    IDS_SYSTEM_MODE_0       "无服务"
+    IDS_SYSTEM_MODE_1       "保留"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SYSTEM_MODE_2       "保留"
+    IDS_SYSTEM_MODE_3       "GSM/GPRS模式"
+    IDS_SYSTEM_MODE_4       "保留"
+    IDS_SYSTEM_MODE_5       "WCDMA模式"
+    IDS_SIM_STATUES_0       "USIM卡状态无效"
+    IDS_SIM_STATUES_1       "USIM卡状态有效"
+    IDS_SIM_STATUES_2       "USIM卡不存在或者PIN码没有校验或解锁"
+    IDS_MOBILE_ROAM         "漫游"
+    IDS_EMPTY               " "
+    IDS_SYSTEM_CHECK_FAILED "系统信息查询失败"
+    IDS_DISENABLE_DIAL      "PS域未注册，不能拨号上网"
+    IDS_DISENABLE_CALL      "CS域未注册，禁止语音业务"
+    IDS_PIN_ERROR           "新PIN码两次输入不一致，请重新输入！"
+    IDS_SELECT_MODEM        "没有安装调制解调器！"
+    IDS_DIAL_OPEN_PORT      "尝试打开端口..."
+    IDS_DIAL_PORT_OPENED    "打开端口成功..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DIAL_CONNECT_DEVICE "尝试连接设备..."
+    IDS_DIAL_DEVICE_CONNECTED "连接设备成功..."
+    IDS_DIAL_AUTHENTICATE   "开始身份验证..."
+    IDS_DIAL_AUTHENTICATED  "身份验证通过..."
+    IDS_DIAL_CONNECTED      "拨号连接成功！"
+    IDS_DIAL_DISCONNECTED   "拨号连接已断开！"
+    IDS_DIAL_START          "正在连接...请稍等"
+    IDS_PHONEBOOK_ENTRYNAME "Spreadtrum Modem connect"
+    IDS_DIALUP_FAILED       "拨号连接失败！"
+    IDS_DIALUP_AGAIN        "秒后自动重播！"
+    IDS_DIALUP_DISCONNECT   "断开"
+    IDS_DIALUP_HAND         "连接"
+    IDS_PHONE_NUMBER_EMPTY  "不能呼叫空号！"
+    IDS_CALL_FAILED         "呼叫失败"
+    IDS_CALL_SUCCESS        "呼叫成功"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_HANGUP_SUCCESS      "已挂断"
+    IDS_HANGUP_FAILED       "挂断失败"
+    IDS_HOLDON_FAILED       "接听失败"
+    IDS_HOLDON_SUCCESS      "接听成功"
+    IDS_CALLING_PHONENUM    "来电号码："
+    IDS_SEARCHING_PLMN      "正在搜索PLMN,请稍候..."
+    IDS_SEARCH_PLMN_FAIELD  "搜索失败"
+    IDS_NETWORK_MODE_2      "撤销注册网络"
+    IDS_NETWORK_MODE_3      "只用于设置格式"
+    IDS_NETWORK_MODE_4      "手动/自动"
+    IDS_PLEASE_SELECT_MODE  "请选择选网模式"
+    IDS_DOING_SELECT_NET    "正在选网，请稍候..."
+    IDS_NO_PLMN             "没有可选的PLMN，操作禁止"
+    IDS_SELECTNET_SUCCESS   "选网成功"
+    IDS_SELECTNET_FAILED    "选网失败"
+    IDS_SEARCH_FINISH       "搜索完成"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    DIAL_TYPE_0             "会话"
+    DIAL_TYPE_1             "流媒体"
+    DIAL_TYPE_2             "交互"
+    DIAL_TYPE_3             "背景"
+    IDS_DIAL_TYPE_FAILED    "拨号类型设置失败"
+    IDS_CONNIN_FAILED       "接入点设置失败"
+    IDS_SPEED_FAILED        "上下行速率设置失败"
+    IDS_PIN_EMPTY           "PIN码不能为空，请填写PIN码"
+    IDS_UNLOCK_PIN2         "PIN2码只能输入三次，请解锁！"
+    IDS_CMCC_GSM            "(GSM)"
+    IDS_PLMN_PROMPT         "PLMN不能少于5位，请重新输入"
+    IDS_CALLING             "正在呼叫..."
+    IDS_ANOTHER_HOLD_DOWN   "对方已挂机"
+    IDS_AT_NO_RESPOND       "该串口不支持AT命令"
+    IDS_CONFIRM_EXIT        "确定要退出吗？"
+    IDS_PLEASE_CONFIRM_DEVICE "请确认设备是否已经正常接入电脑！"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MEMO_MODE           "提醒一次,每日提醒,每周提醒,每月提醒,每年提醒,不提醒"
+    IDS_DLG_CAP_PB          "电话群组"
+    IDS_SMS_PLACE           "已用%d/可用%d"
+    IDS_ERR_PHONE_NUMBER    "电话号码格式不对！请重新输入！"
+    IDS_PLACE_FULL          "手机存储空间已满，请删除部分条目!"
+    IDS_ERR_PB_NUM_EMPTY    "请输入号码!"
+    IDS_ERR_RES_NOENOUGH    "资源不足!"
+    IDS_ERR_ADD_FAIL        "添加失败！\n也许某些项不允许为空。"
+    IDS_ERR_MODIFY_FAIL     "修改失败！"
+    IDS_WARN_FIXED_NOT_EDIT "固定群组不可以编辑！"
+    IDS_UNKNOWN             "未知%d"
+    IDS_MEM_SCHDL_STATUS    "使用  未用  =="
+    IDS_ERR_FN_BUFFER_TOO_SMALL "选择文件太多，请分批导入！"
+    IDS_ERR_IMPORT_FAIL_BELLOW "下面的文件导入失败：\r\n%s"
+    IDS_ERR_SET_MS_PLACE_FAIL "设置手机存储位置失败！"
+    IDS_ERR_MEMO_GET_PHONE_INFO_FAIL "获得手机中的日程表信息失败！"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_PB_MS_FULL      "手机中电话簿存储空间已满！"
+    IDS_ERR_MEMO_MODIFY_FAIL "修改日程表失败！"
+    IDS_ERR_MEMO_MS_FULL    "手机中日程表存储空间已满！"
+    IDS_ERR_PB_GET_PHONE_INFO_FAIL "获得手机中的电话信息失败！"
+    IDS_SYNC_PB_SUCCESS     "电话同步成功！"
+    IDS_ERR_PB_GET_SIM_INFO_FAIL "获得SIM卡中电话信息失败！"
+    IDS_ERR_PB_SIM_FULL     "SIM卡中电话簿存储空间已满！"
+    IDS_ERR_PB_MODIFY_FAIL  "修改电话本失败！"
+    IDS_WARN_CHANGE_SIM_GROUP 
+                            "此操作将改变电话簿在手机中的存储位置！\n请移动到相应位置后，在进行分组。"
+    IDS_ERR_OPENFILE        "文件不存在或被其他程序以独占方式打开!"
+    IDS_DLG_CAP_MEMO        "日程表"
+    IDS_ERR_OUT_OF_DATE     "时间过期了！\r\n若提醒周期设置为“提醒一次”，\r\n请将日期时间设置为手机当前时间两分钟后！\r\n或者将提醒周期设置为其它。"
+    IDS_DLG_CAP_PRESETSMS   "预设短消息"
+    IDS_EXIST               """%s""  已经存在!"
+    IDS_SMS_SEND_MODE       "发送方式"
+    IDS_ERR_UNKNOWN         "发生未知错误!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_FILE_NAME_EMPTY "文件名不能为空！"
+    IDS_ERR_EXT_NAME_VCS    "扩展名必须为“.vcs”!"
+    IDS_ERR_OPEN_FILE_FAIL  "打开文件失败！"
+    IDS_ERR_EXT_NAME_VCF    "扩展名必须为“.vcf ”！"
+    IDS_ERR_FILTTYPE        "文件类型不对或格式已被破坏!"
+    IDS_SELNUM_CLMN         "索引,姓名,电话号码"
+    IDS_ERR_PB_NAME_EMPTY   """姓名""不能为空!"
+    IDS_NO_RECORD_FOUND     "未找到该记录！"
+    IDS_ERR_PBG_NAME_EMPTY  "群组名不能为空！"
+    IDS_ERR_CENTER_NUM_EMPTY "短信中心号码不能为空！"
+    IDS_ERR_CENTER_NUM      "短信中心号码不能为空！"
+    IDS_DLG_CAP_SMS_CENTER  "短信息中心"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OPTION_PICTURE       "查看手机内的图片\n查看图片"
+    ID_OPTION_MUSIC         "查看音乐信息\n查看音乐"
+    ID_OPTION_RING          "查看手机内铃声\n查看铃声"
+    ID_OPTION_LOAD_MS_ALL   "从手机中载入全部\n下载全部"
+    ID_OPTION_LOAD_PB       "从手机中载入电话簿\n重新载入电话簿"
+    ID_OPTION_LOAD_MEMO     "从手机中载入日程表\n重新载入日程表"
+    ID_OPTION_LOAD_PBG      "从手机中载入电话群组\n重新载入电话群组"
+    ID_EDIT_EDIT            "查看或编辑选中的信息\n编辑"
+    ID_EXTRACT_NUMBER       "提取号码\n提取号码"
+    ID_IMPORT_VCARD         "导入VCard\n导入VCard"
+    ID_EXPORT_TO_VCALENDAR  "导出VCalendar\n导出VCalendar"
+    ID_IMPORT_VCALENDAR     "导入VCalendar\n导入VCalendar"
+    ID_SYNC_MEMO            "同步日程\n同步日程"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_COPY_MOVE_TO_PC      "复制移动到计算机\n复制移动到计算机"
+    ID_COPY_MOVE_TO_MS      "复制移动到手机存储器\n复制移动到手机存储器"
+    ID_COPY_MOVE_TO_SIM     "复制移动到SIM卡1\n复制移动到SIM卡1"
+    ID_COPY_MOVE_TO_SIM2    "复制移动到SIM卡2\n复制移动到SIM卡2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_NEW_SMS         "新建短消息"
+    ID_EDIT_NEW_PB          "新建电话簿"
+    ID_EDIT_NEW_MEMO        "新建日程表"
+    ID_OPTION_LOAD_SCHDL    "从手机中载入日程表\n重新载入日程表"
+    ID_OPTION_SMS_STORE     "短消息存储区\n短消息存储区"
+    ID_OPTION_PB_TYPE       "电话簿类型\n电话簿类型"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SMS_E_SET_ACTIVE_SIM "设置当前活动SIM卡失败！"
+    IDS_SENDSMS_OK          "短信已成功发出!"
+    IDS_SENDSMS_FAIL        "短信发送失败!"
+    IDS_INVALIDATE          """%s"" 无效!"
+    IDS_SMS_OPTION          "发送,保存,发送并保存"
+    IDS_SMS_VALID_DATE      "1 小时,6 小时,24 小时,72 小时,1 周"
+    IDS_SMS_SEND_SIM_SEL    "SIM1,SIM2,SIM3,SIM4"
+    IDS_SMS_LEN_INVALID     "短信长度超限，将截断，是否继续？"
+    IDS_WARN_SPLISH         "没有选择“自动拆分”，内容将被截断！"
+    IDS_ERR_SEND_FAIL       "发送失败，您确认保存此信息吗?"
+    IDS_SMS_EXIST_IN_PC     "计算机已经保存“收件人”和“内容”相同的短信息，您确认还要再次保存吗？"
+    IDS_DLG_CAP_SMS         "短消息"
+    IDS_LOAD_COMPLETE       "下载完成！\n%s"
+    IDS_STATUS_SMS_START    "正在下载短消息..."
+    IDS_ERR_SMSMODE         "设置手机短信模式失败!"
+    IDS_PROG_TITLE_SMS      "正在下载%s中的短消息..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SMS_SRP_RECEIVED_BY_SME "状态报告:已收到"
+    IDS_PROG_TITLE_SMS_COMPLETE "%s中短消息下载完成！"
+    IDS_STATUS_SMS_END      "短消息下载完成"
+    IDS_EMPTY_RECORD        "手机中没有记录！"
+    IDS_STATUS_PB_START     "正在下载电话本..."
+    IDS_PROG_TITLE_PB       "正在下载%s中的电话簿..."
+    IDS_PROG_TITLE_PB_COMPLETE "%s中电话簿下载完成！"
+    IDS_STATUS_PB_END       "电话本下载完成"
+    IDS_STATUS_MEMO_START   "正在下载日程表..."
+    IDS_PROG_TITLE_MEMO     "正在下载日程表..."
+    IDS_STATUS_MEMO_END     "日程表下载完成"
+    IDS_STATUS_PBG_START    "正在下载电话群组..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROG_TITLE_PBG      "正在下载电话群组..."
+    IDS_PROG_TITLE_PBG_COMPLETE "电话群组下载完成!"
+    IDS_STATUS_PBG_END      "电话群组下载完成"
+    IDS_SAVE_PROMPT         "您是否需要保存当前所有信息？"
+    IDS_PROMPT_EMPTY        """%s"" 为空!"
+    IDS_COMING_SMS          "收到新短信"
+    IDS_SIM_SIND            "SIM卡不存在不可失"
+    IDS_TDGSM               "双模"
+    IDS_SYSCONFIG_MODE_0    "自动选择"
+    IDS_SYSCONFIG_MODE_1    "GSM ONLY"
+    IDS_SYSCONFIG_MODE_2    "WCDMA ONLY"
+    IDS_SYSCONFIG_MODE_3    "TDSCDMA ONLY"
+    IDS_SYSCONFIG_MODE_4    "无变化"
+    IDS_SYSCONFIG_ORDER_0   "自动"
+    IDS_SYSCONFIG_ORDER_1   "先GSM后UTRAN"
+    IDS_SYSCONFIG_ORDER_2   "先UTRAN后GSM"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SYSCONFIG_ORDER_3   "无变化"
+    IDS_SYSCONFIG_ORDER_4   "不支持"
+    IDS_SYSCONFIG_ROAM_1    "可以漫游"
+    IDS_SYSCONFIG_ROAM_2    "无变化"
+    IDS_SYSCONFIG_DOMAIN_0  "CS_ONLY"
+    IDS_SYSCONFIG_DOMAIN_1  "PS_ONLY"
+    IDS_SYSCONFIG_DOMAIN_2  "CS_PS"
+    IDS_SYSCONFIG_DOMAIN_3  "ANY"
+    IDS_SYSCONFIG_DOMAIN_4  "无变化"
+    IDS_ONLY_URGENCY        "抱歉，只能拨打紧急号码！"
+    IDS_SMS_TITLE           "信息同步"
+    IDS_CHECK_MUX_DRIVER    "请确认MUX驱动是否正常安装！"
+    IDS_ERGENCE_CALLING     "紧急呼叫..."
+    IDS_WCDMA               "(WCDMA)"
+    IDS_LOAD_FAILED         "下载%s从“%s”失败！\n请再试一次！"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CALL_RETURN_ERROR   "未知状态"
+    IDS_AT_CMD              "AT Cmd"
+    IDS_NO_CARRIER          "已有来电，但手机正忙或者无应答！"
+    IDS_UNKNOWN_NUMBER      "未知号码"
+    IDS_DSP                 "DSP"
+    IDS_CONNECT_EXIST       """Spreadtrum Modem Connect"" 尚未断开连接，请断开连接之后再尝试！"
+    IDS_REMOVE_SIM_CARD     "SIM卡不存在或者不可用，相关业务将被禁止"
+    IDS_LOAD_PB_FAILED      "从""%s""下载失败! \n请再试一次！"
+    IDS_EGO_APP_TITLE       "eGo"
+    IDS_SYSTEM_MODE_6       "TD-SCDMA模式"
+    IDS_SYSTEM_CELL_SIGN_0  "无服务"
+    IDS_SYSTEM_CELL_SIGN_1  "GSM模式"
+    IDS_SYSTEM_CELL_SIGN_2  "GPRS模式"
+    IDS_SYSTEM_CELL_SIGN_3  "EDGE模式"
+    IDS_SYSTEM_CELL_SIGN_4  "WCDMA模式"
+    IDS_SYSTEM_CELL_SIGN_5  "HSDPA模式"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_COPY_MOVE_TO_SIM3    "复制移动到SIM卡3\n复制移动到SIM卡3"
+    ID_COPY_MOVE_TO_SIM4    "复制移动到SIM卡4\n复制移动到SIM卡4"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WARN_CLOSE_SMS_FIRST "请先关闭信息同步窗口！"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\MobileCnnt.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#include "l.chs\afxprint.rc"        // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

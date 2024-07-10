@@ -1,0 +1,76 @@
+增加新的转场特效的步骤（以FADE为例） ：
+
+1、在MMI_WINSE.def文件中，增加一个WINSE_DEF(MMI_WIN_ANIM_SE_TYPE_FADE, MMI_WIN_ANIM_SE_SETTING_FADE)
+
+   MMI_WIN_ANIM_SE_TYPE_FADE：代表特效的类型
+   MMI_WIN_ANIM_SE_SETTING_FADE：代表特效在设置列表里的类型
+
+   用户在设置某种特效的时候，会自动转换。
+
+
+2、在mmi_winse_imp_app.c文件中实现一个const 结构体 MMI_WIN_SE_IMPLEMENTOR
+   
+
+const MMI_WIN_SE_IMPLEMENTOR  g_c_winse_fade_anim = 
+{
+    WinSeFadeAnim,    //特效算法
+    PNULL,    //支持播放函数，一般情况下不支持 
+    MMI_WIN_ANIM_SE_TYPE_FADE,      //特效的type
+    MMI_WIN_ANIM_SE_SETTING_FADE,  //为了匹配原有的特效，这个与MMI_WIN_ANIM_SE_TYPE_FADE对应
+    FADEANIM_TOTAL_FRAME_COUNT,                  //总的帧数
+    FALSE,          //是否存在前景层跟背景层
+    0,        //没帧延迟的时间 ，若填0则为系统默认
+    0,        //这个参数是个flag，是跟播放声音函数配合使用，若要使用，可以看mmi_winse.h头文件
+    TXT_SET_3D_STYLE_SCREEN_FADE   //在设置列表显示的特效的名字
+};
+
+
+3、实现算法函数LOCAL void WinSeFadeAnim(MMI_WIN_SE_PARAM_IN *in_param_ptr,MMI_WIN_SE_PARAM_OUT *out_param_ptr)
+
+该函数有两个参数，
+MMI_WIN_SE_PARAM_IN *in_param_ptr
+
+typedef struct _MMI_WIN_SE_SINGLE_LAYER_INFO_
+{
+    uint16 *pre_buffer_ptr; //传入的buffer
+    uint16 *next_buffer_ptr;//传入的buffer
+    uint16 *dest_buffer_ptr;//目标buffer
+}MMI_WIN_SE_SINGLE_LAYER_INFO;
+typedef struct _MMI_WIN_SE_MULTI_LAYER_INFO_
+{
+    uint32 *fg_buffer_ptr; //前景目标buf
+    uint32 *src_buffer_ptr;//前景的源buf
+    uint16 *bg_buffer_ptr;//目标buffer,已经含有背景内容
+}MMI_WIN_SE_MULTI_LAYER_INFO;
+/*pass in param*/
+typedef struct _MMI_WIN_SE_PARAM_IN_
+{
+    MMI_WIN_SE_SINGLE_LAYER_INFO single_layer;//仅用单层时，使用的buffer  是否使用层取决于该实例设置的属性，FALSE
+    MMI_WIN_SE_MULTI_LAYER_INFO   multi_layer;//两层时，使用的buffer     是否使用层取决于该实例设置的属性，TRUE
+    
+    uint16 buf_width;    //传入buffer的宽度
+    uint16 buf_height;   //传入buffer的高度
+    uint16 frame_count;//总帧数
+    uint16 frame_index;//帧索引
+    BOOLEAN is_back;//有些动画有进入，退出表现形式不一样
+}MMI_WIN_SE_PARAM_IN;
+
+MMI_WIN_SE_PARAM_OUT *out_param_ptr
+
+typedef struct _MMI_WIN_SE_PARAM_OUT_
+{
+    GUI_RECT_T invalide_rc;//需要更新的区域，默认全屏更新
+    BOOLEAN is_set_invalide_rc;//FALSE默认全屏更新，TRUE指定invalide_rc区域更新
+}MMI_WIN_SE_PARAM_OUT;
+
+
+3、将2中实现的结构体注册到mmi_winse_imp.c中的一个数组中
+
+extern const MMI_WIN_SE_IMPLEMENTOR  g_c_winse_fade_anim;
+LOCAL const MMI_WIN_SE_IMPLEMENTOR *s_const_se_implementor[] = 
+{
+    &g_c_winse_fade_anim,
+};
+
+
+OK，已经完成，编译代码，即可实现。

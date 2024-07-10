@@ -1,0 +1,7 @@
+; SCIMMIPB.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SCIMMIPB"
+DESCRIPTION  'SCIMMIPB Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

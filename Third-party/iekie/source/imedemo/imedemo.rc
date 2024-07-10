@@ -1,0 +1,592 @@
+
+/*
+ * imedemo.rc
+ *
+ * Copyright (C) 2006 Beijing Chinese Star Cyber Technology Limited.
+ * All rights reserved.
+ */
+
+#include <windows.h>
+#include "resource.h"
+
+#ifndef IDC_STATIC
+    #define IDC_STATIC -1
+#endif
+
+ID_APP_ICON ICON DISCARDABLE "imedemo.ico"
+
+ID_MAIN_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "文件"
+    BEGIN
+        MENUITEM "退出",           ID_CMD_EXIT
+    END
+    POPUP "工具"
+    BEGIN
+        MENUITEM "重启模拟器",     ID_CMD_EMU_RESET
+        MENUITEM "清除用户词库",   ID_CMD_EMU_CLEAR_USERDATA
+        MENUITEM "模拟器选项...",  ID_CMD_EMU_OPTIONS
+        MENUITEM "辅助选项...",	   ID_CMD_EMU_AUX
+        MENUITEM "下载更新词库...", ID_CMD_LOAD_UPDATE
+    END
+    POPUP "显示"
+    BEGIN
+        MENUITEM "GUI放大窗口",    ID_CMD_SWITCH_GUI_ZOOM_WINDOW
+        MENUITEM "GUI调试窗口",    ID_CMD_SWITCH_GUI_DEBUG_WINDOW
+    END
+    POPUP "KMX接口测试"
+    BEGIN
+        MENUITEM "拼音测试...",    ID_CMD_PINYIN_TEST
+        MENUITEM "注音测试...",    ID_CMD_ZHUYIN_TEST
+        MENUITEM "Latin测试...",  ID_CMD_LATIN_TEST
+        MENUITEM "Stroke测试...",  ID_CMD_STROKE_TEST
+    END
+    POPUP "语言"
+    BEGIN
+#if defined(KMX_LDB_ALBANIAN)
+        MENUITEM "00 Albanian"                       MMI_LANG_ALBANIAN
+#endif        
+#if defined(KMX_LDB_AMHARIC)
+        MENUITEM "01 Amharic"                       MMI_LANG_AMHARIC
+#endif        
+#if defined(KMX_LDB_ARABIC)
+        MENUITEM "02 Arabic"                       MMI_LANG_ARABIC
+#endif        
+#if defined(KMX_LDB_ARMENIAN)
+        MENUITEM "03 Armenian"                     MMI_LANG_ARMENIAN
+#endif        
+#if defined(KMX_LDB_ASSAMESE)
+        MENUITEM "04 Assamese"                       MMI_LANG_ASSAMESE
+#endif        
+#if defined(KMX_LDB_BASQUE)
+        MENUITEM "05 Basque"                       MMI_LANG_BASQUE
+#endif        
+#if defined(KMX_LDB_BENGALI)
+        MENUITEM "06 Bengali"                      MMI_LANG_BENGALI
+#endif        
+#if defined(KMX_LDB_BULGARIAN)
+        MENUITEM "07 Bulgarian"                    MMI_LANG_BULGARIAN
+#endif        
+#if defined(KMX_LDB_CATALAN)
+        MENUITEM "08 Catalan"                       MMI_LANG_CATALAN
+#endif        
+#if defined(KMX_LDB_CEBUANO)
+        MENUITEM "09 Cebuano"                       MMI_LANG_CEBUANO
+#endif        
+#if defined(CS_PINYIN) || defined(CS_PINYIN_MINI)
+        MENUITEM "10 Chinese(Simplified)"          MMI_LANG_CHINESE_SIMPLIFIED
+#endif
+
+#if defined(CS_ZHUYIN) || defined(CS_ZHUYIN_MINI)
+        MENUITEM "11 Chinese(Traditional)"         MMI_LANG_CHINESE_TRADITIONAL
+#endif  
+
+#if defined(KMX_LDB_CROATIAN)
+        MENUITEM "12 Croatian"                     MMI_LANG_CROATIAN
+#endif        
+#if defined(KMX_LDB_CZECH)
+        MENUITEM "13 Czech"                        MMI_LANG_CZECH
+#endif        
+#if defined(KMX_LDB_DANISH)
+        MENUITEM "14 Danish"                       MMI_LANG_DANISH
+#endif        
+#if defined(KMX_LDB_DUTCH)
+        MENUITEM "15 Dutch"                        MMI_LANG_DUTCH
+#endif        
+#if defined(KMX_LDB_ENGLISH)
+        MENUITEM "16 English"                      MMI_LANG_ENGLISH
+#endif        
+#if defined(KMX_LDB_FINNISH)
+        MENUITEM "17 Finnish"                      MMI_LANG_FINNISH
+#endif        
+#if defined(KMX_LDB_FRENCH)
+        MENUITEM "18 French"                       MMI_LANG_FRENCH
+#endif        
+#if defined(KMX_LDB_GALICIAN)
+        MENUITEM "19 Galician"                       MMI_LANG_GALICIAN
+#endif        
+#if defined(KMX_LDB_GEORGIAN)
+        MENUITEM "20 Georgian"                       MMI_LANG_GEORGIAN
+#endif        
+#if defined(KMX_LDB_GERMAN)
+        MENUITEM "21 German"                       MMI_LANG_GERMAN
+#endif        
+#if defined(KMX_LDB_GREEK)
+        MENUITEM "22 Greek"                        MMI_LANG_GREEK
+#endif        
+#if defined(KMX_LDB_GUJARATI)
+        MENUITEM "23 Gujarati"                        MMI_LANG_GUJARATI
+#endif        
+#if defined(KMX_LDB_HANGUL)
+        MENUITEM "24 Hangul"                       MMI_LANG_HANGUL
+#endif        
+#if defined(KMX_LDB_HEBREW)
+        MENUITEM "25 Hebrew"                       MMI_LANG_HEBREW
+#endif        
+#if defined(KMX_LDB_HINDI)
+        MENUITEM "26 Hindi"                        MMI_LANG_HINDI
+#endif        
+#if defined(KMX_LDB_HINGLISH)
+        MENUITEM "27 Hinglish"                     MMI_LANG_HINGLISH
+#endif        
+#if defined(KMX_LDB_HUNGARIAN)
+        MENUITEM "28 Hungarian"                    MMI_LANG_HUNGARIAN
+#endif        
+#if defined(KMX_LDB_IGBO)
+        MENUITEM "29 Igbo"                          MMI_LANG_IGBO
+#endif        
+#if defined(KMX_LDB_INDONESIAN)
+        MENUITEM "30 Indonesian"                   MMI_LANG_INDONESIAN
+#endif        
+#if defined(KMX_LDB_ITALIAN)
+        MENUITEM "31 Italian"                      MMI_LANG_ITALIAN
+#endif        
+#if defined(KMX_LDB_KANNADA)
+        MENUITEM "32 Kannada"                        MMI_LANG_KANNADA
+#endif        
+#if defined(KMX_LDB_KAZAKH)
+        MENUITEM "33 Kazakh"                       MMI_LANG_KAZAKH
+#endif        
+#if defined(KMX_LDB_KHMER)
+        MENUITEM "34 Khmer"                         MMI_LANG_KHMER
+#endif        
+#if defined(KMX_LDB_KYRGYZ)
+        MENUITEM "35 Kyrgyz"                         MMI_LANG_KYRGYZ
+#endif        
+#if defined(KMX_LDB_LAO)
+        MENUITEM "36 Lao"                           MMI_LANG_LAO
+#endif        
+#if defined(KMX_LDB_LITHUANIAN)
+        MENUITEM "37 Lithuanian"                   MMI_LANG_LITHUANIAN
+#endif        
+#if defined(KMX_LDB_MALAY)
+        MENUITEM "38 Malay"                        MMI_LANG_MALAY
+#endif        
+#if defined(KMX_LDB_MALAYALAM)
+        MENUITEM "39 Malayalam"                        MMI_LANG_MALAYALAM
+#endif        
+#if defined(KMX_LDB_MARATHI)
+        MENUITEM "40 Marathi"                      MMI_LANG_MARATHI
+#endif        
+#if defined(KMX_LDB_MYANMAR)
+        MENUITEM "41 Myanmar"                      MMI_LANG_MYANMAR
+#endif        
+#if defined(KMX_LDB_NEPALI)
+        MENUITEM "42 Nepali"                       MMI_LANG_NEPALI
+#endif        
+#if defined(KMX_LDB_NORWEGIAN)
+        MENUITEM "43 Norwegian"                    MMI_LANG_NORWEGIAN
+#endif        
+#if defined(KMX_LDB_ORIYA)
+        MENUITEM "44 Oriya"                        MMI_LANG_ORIYA
+#endif        
+#if defined(KMX_LDB_ORIYA)
+        MENUITEM "45 Oromo"                        MMI_LANG_OROMO
+#endif        
+#if defined(KMX_LDB_PERSIAN)
+        MENUITEM "46 Persian"                      MMI_LANG_PERSIAN
+#endif        
+#if defined(KMX_LDB_POLISH)
+        MENUITEM "47 Polish"                       MMI_LANG_POLISH
+#endif        
+#if defined(KMX_LDB_PORTUGUESE)
+        MENUITEM "48 Portuguese"                   MMI_LANG_PORTUGUESE
+#endif        
+#if defined(KMX_LDB_PUNJABI)
+        MENUITEM "49 Punjabi"                      MMI_LANG_PUNJABI
+#endif        
+#if defined(KMX_LDB_ROMANIAN)
+        MENUITEM "50 Romanian"                     MMI_LANG_ROMANIAN
+#endif        
+#if defined(KMX_LDB_RUSSIAN)
+        MENUITEM "51 Russian"                      MMI_LANG_RUSSIAN
+#endif        
+#if defined(KMX_LDB_SERBIAN)
+        MENUITEM "52 Serbian"                      MMI_LANG_SERBIAN
+#endif        
+#if defined(KMX_LDB_SERBIANC)
+        MENUITEM "53 Serbian cyrillic"             MMI_LANG_SERBIANC
+#endif        
+#if defined(KMX_LDB_SLOVAK)
+        MENUITEM "54 Slovak"                       MMI_LANG_SLOVAK
+#endif        
+#if defined(KMX_LDB_SLOVENIAN)
+        MENUITEM "55 Slovenian"                    MMI_LANG_SLOVENIAN
+#endif        
+#if defined(KMX_LDB_SPANISH)
+        MENUITEM "56 Spanish"                      MMI_LANG_SPANISH
+#endif        
+#if defined(KMX_LDB_SWAHILI)
+        MENUITEM "57 Swahili"                      MMI_LANG_SWAHILI
+#endif        
+#if defined(KMX_LDB_SWEDISH)
+        MENUITEM "58 Swedish"                      MMI_LANG_SWEDISH
+#endif        
+#if defined(KMX_LDB_TAGALOG)
+        MENUITEM "59 Tagalog"                      MMI_LANG_TAGALOG
+#endif        
+#if defined(KMX_LDB_TAMIL)
+        MENUITEM "60 Tamil"                        MMI_LANG_TAMIL
+#endif        
+#if defined(KMX_LDB_TELUGU)
+        MENUITEM "61 Telugu"                       MMI_LANG_TELUGU
+#endif        
+#if defined(KMX_LDB_THAI)
+        MENUITEM "62 Thai"                         MMI_LANG_THAI
+#endif        
+#if defined(KMX_LDB_TIBETAN)
+        MENUITEM "63 Tibetan"                      MMI_LANG_TIBETAN
+#endif        
+#if defined(KMX_LDB_TURKISH)
+        MENUITEM "64 Turkish"                      MMI_LANG_TURKISH
+#endif        
+#if defined(KMX_LDB_UKRAINIAN)
+        MENUITEM "65 Ukrainian"                    MMI_LANG_UKRAINIAN
+#endif        
+#if defined(KMX_LDB_URDU)
+        MENUITEM "66 Urdu"                         MMI_LANG_URDU
+#endif        
+#if defined(KMX_LDB_UYGHUR)
+        MENUITEM "67 Uyghur"                       MMI_LANG_UYGHUR
+#endif        
+#if defined(KMX_LDB_UZBEK)
+        MENUITEM "68 Uzbek"                       MMI_LANG_UZBEK
+#endif        
+#if defined(KMX_LDB_VIETNAMESE)
+        MENUITEM "69 Vietnamese"                   MMI_LANG_VIETNAMESE
+#endif        
+#if defined(KMX_LDB_ZULU)
+        MENUITEM "70 Zulu"                       MMI_LANG_ZULU
+#endif
+#if defined(KMX_LDB_SINHALA)//IM_SINHALA_SUPPORT
+        MENUITEM "71 Sinhala"                       MMI_LANG_SINHALA
+#endif
+//daodejing
+#if defined(KMX_LDB_BODO)
+        MENUITEM "72 Bodo"                   	MMI_LANG_BODO
+#endif
+#if defined(KMX_LDB_DOGRI)
+        MENUITEM "73 Dogri"                   	MMI_LANG_DOGRI
+#endif
+#if defined(KMX_LDB_SANSKRIT)
+        MENUITEM "74 Sanskrit"                 	MMI_LANG_SANSKRIT
+#endif
+#if defined(KMX_LDB_KASHMIRI)
+        MENUITEM "75 Kashmiri"                  MMI_LANG_KASHMIRI
+#endif
+#if defined(KMX_LDB_KONKANI)
+        MENUITEM "76 Konkani"                   MMI_LANG_KONKANI
+#endif
+#if defined(KMX_LDB_MAITHILI)
+        MENUITEM "77 Maithili"                  MMI_LANG_MAITHILI
+#endif
+#if defined(KMX_LDB_MANIPURI)
+        MENUITEM "78 Manipuri"                  MMI_LANG_MANIPURI
+#endif
+#if defined(KMX_LDB_SANTALI)
+        MENUITEM "79 Santali"                   MMI_LANG_SANTALI
+#endif
+#if defined(KMX_LDB_SOMALI)
+        MENUITEM "80 Somali"                    MMI_LANG_SOMALI
+#endif
+#if defined(KMX_LDB_SINDHI)
+        MENUITEM "81 Sindhi"                    MMI_LANG_SINDHI
+#endif
+    END
+    POPUP "帮助"
+    BEGIN
+        MENUITEM "版本信息...",    ID_CMD_ABOUT
+    END
+END
+
+ID_ABOUT_DIALOG DIALOG DISCARDABLE  0, 0, 203, 90
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "输入法演示程序版本信息"
+FONT 10, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确认",IDOK,76,69,50,14
+    CTEXT           "输入法演示程序    版本2.01\r\n\r\nCopyright (C) 2000-2007 Beijing Komoxo Inc.\r\nAll rights reserved.",
+                    IDC_STATIC,7,7,189,47
+END
+
+ID_EMU_OPTION_DIALOG DIALOG DISCARDABLE  0, 0, 183, 471
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "模拟器选项"
+FONT 10, "宋体"
+BEGIN
+    GROUPBOX        "笔画键盘布局",IDC_STATIC,7,7,112,47,WS_GROUP
+    CONTROL         "笔画从1键开始",ID_ENABLE_STROKE_LAYOUT1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,13,22,65,10
+    CONTROL         "笔画从2键开始",ID_ENABLE_STROKE_LAYOUT2,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,13,35,65,10
+    DEFPUSHBUTTON   "确认",IDOK,126,7,50,14,WS_GROUP
+    PUSHBUTTON      "取消",IDCANCEL,126,25,50,14
+//    GROUPBOX        "激活选项",IDC_STATIC,7,66,112,58
+//    CONTROL         "试用",ID_STATE_TRY,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,13,80,31,10
+//    CONTROL         "提示",ID_STATE_NOTICE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,13,93,31,10
+//    CONTROL         "激活",ID_STATE_ACTIVE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,13,106,31,10
+    GROUPBOX        "拼音选音模式",IDC_STATIC,7,66,112,88
+    CONTROL         "*键选拼音",ID_STATE_MODE1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,13,80,80,10
+    CONTROL         "左右键选拼音",ID_STATE_MODE2,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,13,94,80,10
+    CONTROL         "左右键选拼音选词组",ID_STATE_MODE3,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,13,109,80,10
+    CONTROL         "恒信彩虹模式",ID_STATE_MODE4,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,13,124,80,10
+    CONTROL         "波导模式",ID_STATE_MODE5,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,13,139,80,10
+    GROUPBOX        "拼音候选项模式",IDC_STATIC,7,169,112,47
+    CONTROL         "单行候选",ID_STATE_CANDIDATE1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,13,183,80,10
+    CONTROL         "双行候选",ID_STATE_CANDIDATE2,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,13,197,80,10
+    GROUPBOX        "火星文模式",IDC_STATIC,7,231,112,47
+    CONTROL         "开启",ID_STATE_MARS_ON,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,13,245,80,10
+    CONTROL         "关闭",ID_STATE_MARS_OFF,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,13,259,80,10
+    GROUPBOX        "全拼操作模式",IDC_STATIC,7,293,112,47
+    CONTROL         "显示标签",ID_STATE_FULLPINYIN_MODE1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,13,307,80,10
+    CONTROL         "不显示标签",ID_STATE_FULLPINYIN_MODE2,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,13,321,80,10
+    GROUPBOX        "神奇一键模式",IDC_STATIC,7,360,112,47
+    CONTROL         "使用1键",ID_STATE_MAGICONE_DEFAULT,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,13,374,80,10
+    CONTROL         "使用*键",ID_STATE_MAGICONE_STAR,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,13,388,80,10
+    GROUPBOX        "输出注音符号",IDC_STATIC,7,417,112,47
+    CONTROL         "不输出注音符号",ID_STATE_ZHUYINASSYMBOL_OFF,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,13,431,80,10
+    CONTROL         "输出注音符号",ID_STATE_ZHUYINASSYMBOL_ON,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,13,445,80,10
+END
+
+ID_EMU_AUX_DIALOG DIALOG DISCARDABLE  0, 0, 200, 168
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Aux Dialog"
+FONT 10, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确认",IDOK,26,134,50,14
+    PUSHBUTTON      "取消",IDCANCEL,111,134,50,14
+    EDITTEXT        IDC_EDIT_AUX_INPUT,88,18,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "查拼音",IDC_BTN_QUERY_PY,18,40,50,14
+    PUSHBUTTON      "查注音",IDC_BTN_QUERY_ZY,127,39,50,14
+    PUSHBUTTON      "简体联想字",IDC_BTN_QUERY_ASSO_SC,18,59,62,14
+    PUSHBUTTON      "繁体联想字",IDC_BTN_QUERY_ASSO_TC,115,59,62,14
+    LTEXT           "输入汉字:",IDC_STATIC,18,18,50,14
+    EDITTEXT        IDC_EDIT_AUX_OUTPUT,19,84,158,40,ES_MULTILINE | ES_READONLY
+END
+
+ID_KMX_PINYIN_DIALOG DIALOG DISCARDABLE  0, 0, 195, 189
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "KMX Pinyin"
+FONT 8, "微软雅黑"
+BEGIN
+    EDITTEXT        IDC_EDIT_PINYIN_INPUT,49,15,69,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PINYIN_INDEX,49,36,65,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_PINYIN_AUX,49,57,40,12,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_COMBO_PINYIN,12,82,122,60,CBS_DROPDOWNLIST | WS_TABSTOP | WS_GROUP| WS_VSCROLL
+    PUSHBUTTON      "Test",IDC_BTN_PINYIN,138,80,50,14
+    DEFPUSHBUTTON   "OK",IDOK,138,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,138,24,50,14
+    EDITTEXT        IDC_EDIT_PINYIN_OUTPUT,12,107,155,55,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN
+    LTEXT           "Input",IDC_STATIC,12,19,19,8
+    LTEXT           "Index",IDC_STATIC,12,40,28,8
+    LTEXT           "aux",IDC_STATIC,12,61,28,8
+    LTEXT           "LDB:",IDC_STATIC,13,171,21,8
+    COMBOBOX        IDC_COMBO_PINYIN_LDB,48,171,120,40,CBS_DROPDOWNLIST | CBS_NOINTEGRALHEIGHT | WS_TABSTOP | WS_GROUP | WS_VSCROLL
+END
+
+ID_KMX_ZHUYIN_DIALOG DIALOG DISCARDABLE  0, 0, 187, 189
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "KMX Zhuyin"
+FONT 8, "微软雅黑"
+BEGIN
+    EDITTEXT        IDC_EDIT_ZHUYIN_INPUT,52,15,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ZHUYIN_INDEX,53,41,40,12,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_COMBO_ZHUYIN,13,71,110,60,CBS_DROPDOWNLIST | WS_TABSTOP | WS_GROUP | WS_VSCROLL
+    PUSHBUTTON      "Test!",IDC_BTN_ZHUYIN,130,69,50,14
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+    LTEXT           "Input",IDC_STATIC,13,19,17,8
+    LTEXT           "Index",IDC_STATIC,13,45,19,8
+    EDITTEXT        IDC_EDIT_ZHUYIN_OUTPUT,13,101,160,63,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN
+    LTEXT           "LDB:",IDC_STATIC,13,173,21,8
+    COMBOBOX        IDC_COMBO_ZHUYIN_LDB,48,173,120,40,CBS_DROPDOWNLIST | CBS_NOINTEGRALHEIGHT | WS_TABSTOP | WS_GROUP | WS_VSCROLL
+END
+
+ID_KMX_LATIN_DIALOG DIALOG DISCARDABLE  0, 0, 187, 239
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "KMX Latin"
+FONT 10, "Arial Unicode MS"
+BEGIN
+    EDITTEXT        IDC_EDIT_LATIN_INPUT,48,9,76,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LATIN_CONTEXT,48,28,76,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LATIN_INDEX,48,47,76,12,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_COMBO_LATIN_FLAGS,48,66,106,80,CBS_DROPDOWNLIST | WS_TABSTOP | WS_GROUP | WS_VSCROLL
+    COMBOBOX        IDC_COMBO_LATIN,13,89,96,80,CBS_DROPDOWNLIST | WS_TABSTOP | WS_GROUP | WS_VSCROLL
+    PUSHBUTTON      "Test!",IDC_BTN_LATIN,130,87,50,14
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+    LTEXT           "Input:",IDC_STATIC,13,13,19,8
+    LTEXT           "Context:",IDC_STATIC,13,32,28,8
+    LTEXT           "Index:",IDC_STATIC,13,51,21,8
+    LTEXT           "Flags:",IDC_STATIC,13,70,21,8
+    EDITTEXT        IDC_EDIT_LATIN_OUTPUT,13,112,156,99,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN
+    LTEXT           "LDB:",IDC_STATIC,13,222,21,8
+    COMBOBOX        IDC_COMBO_LATIN_LDB,48,218,120,40,CBS_DROPDOWNLIST | CBS_NOINTEGRALHEIGHT | WS_TABSTOP | WS_GROUP | WS_VSCROLL
+END
+
+ID_KMX_STROKE_DIALOG DIALOG DISCARDABLE  0, 0, 187, 175
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "KMX Stroke"
+FONT 8, "微软雅黑"
+BEGIN
+    EDITTEXT        IDC_EDIT_STROKE_INPUT,45,13,64,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_STROKE_INDEX,45,32,64,12,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_COMBO_STROKE,13,51,97,60,CBS_DROPDOWNLIST | WS_TABSTOP | WS_GROUP| WS_VSCROLL
+    PUSHBUTTON      "Test",IDC_BTN_STROKE,130,51,50,14
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+    LTEXT           "Input",IDC_STATIC,13,13,17,8
+    LTEXT           "Index:",IDC_STATIC,13,32,21,8
+    EDITTEXT        IDC_EDIT_STROKE_OUTPUT,13,74,159,66,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN
+    LTEXT           "LDB:",IDC_STATIC,13,149,21,8
+    COMBOBOX        IDC_COMBO_STROKE_LDB,48,149,120,40,CBS_DROPDOWNLIST | CBS_NOINTEGRALHEIGHT | WS_TABSTOP | WS_GROUP | WS_VSCROLL
+END
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+KMX_IMAGE_240_ARABIC_N1             BITMAP "komoxo_style1_bmp/arabic_n1.bmp" 
+KMX_IMAGE_240_ARABIC_N2             BITMAP "komoxo_style1_bmp/arabic_n2.bmp" 
+KMX_IMAGE_240_ARABIC_N3             BITMAP "komoxo_style1_bmp/arabic_n3.bmp" 
+KMX_IMAGE_240_ARABIC_N4             BITMAP "komoxo_style1_bmp/arabic_n4.bmp" 
+KMX_IMAGE_240_ARABIC_N5             BITMAP "komoxo_style1_bmp/arabic_n5.bmp" 
+KMX_IMAGE_240_ARABIC_N6             BITMAP "komoxo_style1_bmp/arabic_n6.bmp" 
+KMX_IMAGE_240_ARABIC_N7             BITMAP "komoxo_style1_bmp/arabic_n7.bmp" 
+KMX_IMAGE_240_ARABIC_N8             BITMAP "komoxo_style1_bmp/arabic_n8.bmp" 
+KMX_IMAGE_240_ARABIC_N9             BITMAP "komoxo_style1_bmp/arabic_n9.bmp" 
+KMX_IMAGE_240_ARABIC_H1             BITMAP "komoxo_style1_bmp/arabic_h1.bmp" 
+KMX_IMAGE_240_ARABIC_H2             BITMAP "komoxo_style1_bmp/arabic_h2.bmp" 
+KMX_IMAGE_240_ARABIC_H3             BITMAP "komoxo_style1_bmp/arabic_h3.bmp" 
+KMX_IMAGE_240_ARABIC_H4             BITMAP "komoxo_style1_bmp/arabic_h4.bmp" 
+KMX_IMAGE_240_ARABIC_H5             BITMAP "komoxo_style1_bmp/arabic_h5.bmp" 
+KMX_IMAGE_240_ARABIC_H6             BITMAP "komoxo_style1_bmp/arabic_h6.bmp" 
+KMX_IMAGE_240_ARABIC_H7             BITMAP "komoxo_style1_bmp/arabic_h7.bmp" 
+KMX_IMAGE_240_ARABIC_H8             BITMAP "komoxo_style1_bmp/arabic_h8.bmp" 
+KMX_IMAGE_240_ARABIC_H9             BITMAP "komoxo_style1_bmp/arabic_h9.bmp" 
+KMX_IMAGE_240_ARABIC_ABC            BITMAP "komoxo_style1_bmp/arabic_abc.bmp"
+
+KMX_IMAGE_240_COMMON_N              BITMAP "komoxo_style1_bmp/common_n.bmp"        
+KMX_IMAGE_240_COMMON_H              BITMAP "komoxo_style1_bmp/common_h.bmp"        
+KMX_IMAGE_240_COMMON_CAPS_L         BITMAP "komoxo_style1_bmp/common_caps_l.bmp"   
+KMX_IMAGE_240_COMMON_CAPS_I         BITMAP "komoxo_style1_bmp/common_caps_i.bmp"   
+KMX_IMAGE_240_COMMON_CAPS_U         BITMAP "komoxo_style1_bmp/common_caps_u.bmp"   
+KMX_IMAGE_240_COMMON_BACK           BITMAP "komoxo_style1_bmp/common_back.bmp"     
+KMX_IMAGE_240_COMMON_RETURN         BITMAP "komoxo_style1_bmp/common_return.bmp"   
+KMX_IMAGE_240_COMMON_SPACE          BITMAP "komoxo_style1_bmp/common_space.bmp"    
+KMX_IMAGE_240_COMMON_TAB            BITMAP "komoxo_style1_bmp/common_tab.bmp"      
+KMX_IMAGE_240_COMMON_BACK2          BITMAP "komoxo_style1_bmp/common_back2.bmp"    
+KMX_IMAGE_240_COMMON_N2             BITMAP "komoxo_style1_bmp/common_n2.bmp"       
+KMX_IMAGE_240_COMMON_SHIFT          BITMAP "komoxo_style1_bmp/common_shift.bmp"    
+KMX_IMAGE_240_COMMON_SPACE2         BITMAP "komoxo_style1_bmp/common_space2.bmp"   
+KMX_IMAGE_240_COMMON_H3             BITMAP "komoxo_style1_bmp/common_h3.bmp"       
+KMX_IMAGE_240_COMMON_H2             BITMAP "komoxo_style1_bmp/common_h2.bmp"       
+KMX_IMAGE_240_COMMON_PREV           BITMAP "komoxo_style1_bmp/common_prev.bmp"     
+KMX_IMAGE_240_COMMON_NEXT           BITMAP "komoxo_style1_bmp/common_next.bmp"     
+KMX_IMAGE_240_COMMON_AUX            BITMAP "komoxo_style1_bmp/common_aux.bmp"      
+KMX_IMAGE_240_COMMON_AUX_PREV       BITMAP "komoxo_style1_bmp/common_aux_prev.bmp" 
+KMX_IMAGE_240_COMMON_AUX_NEXT       BITMAP "komoxo_style1_bmp/common_aux_next.bmp" 
+
+KMX_IMAGE_240_ENGLISH_NL1           BITMAP "komoxo_style1_bmp/english_nl1.bmp"
+KMX_IMAGE_240_ENGLISH_NL2           BITMAP "komoxo_style1_bmp/english_nl2.bmp"
+KMX_IMAGE_240_ENGLISH_NL3           BITMAP "komoxo_style1_bmp/english_nl3.bmp"
+KMX_IMAGE_240_ENGLISH_NL4           BITMAP "komoxo_style1_bmp/english_nl4.bmp"
+KMX_IMAGE_240_ENGLISH_NL5           BITMAP "komoxo_style1_bmp/english_nl5.bmp"
+KMX_IMAGE_240_ENGLISH_NL6           BITMAP "komoxo_style1_bmp/english_nl6.bmp"
+KMX_IMAGE_240_ENGLISH_NL7           BITMAP "komoxo_style1_bmp/english_nl7.bmp"
+KMX_IMAGE_240_ENGLISH_NL8           BITMAP "komoxo_style1_bmp/english_nl8.bmp"
+KMX_IMAGE_240_ENGLISH_NL9           BITMAP "komoxo_style1_bmp/english_nl9.bmp"
+KMX_IMAGE_240_ENGLISH_NL0           BITMAP "komoxo_style1_bmp/english_nl0.bmp"
+KMX_IMAGE_240_ENGLISH_NU1           BITMAP "komoxo_style1_bmp/english_nu1.bmp"
+KMX_IMAGE_240_ENGLISH_NU2           BITMAP "komoxo_style1_bmp/english_nu2.bmp"
+KMX_IMAGE_240_ENGLISH_NU3           BITMAP "komoxo_style1_bmp/english_nu3.bmp"
+KMX_IMAGE_240_ENGLISH_NU4           BITMAP "komoxo_style1_bmp/english_nu4.bmp"
+KMX_IMAGE_240_ENGLISH_NU5           BITMAP "komoxo_style1_bmp/english_nu5.bmp"
+KMX_IMAGE_240_ENGLISH_NU6           BITMAP "komoxo_style1_bmp/english_nu6.bmp"
+KMX_IMAGE_240_ENGLISH_NU7           BITMAP "komoxo_style1_bmp/english_nu7.bmp"
+KMX_IMAGE_240_ENGLISH_NU8           BITMAP "komoxo_style1_bmp/english_nu8.bmp"
+KMX_IMAGE_240_ENGLISH_NU9           BITMAP "komoxo_style1_bmp/english_nu9.bmp"
+KMX_IMAGE_240_ENGLISH_NU0           BITMAP "komoxo_style1_bmp/english_nu0.bmp"
+
+KMX_IMAGE_240_STROKE_1              BITMAP "komoxo_style1_bmp/stroke_1.bmp"
+KMX_IMAGE_240_STROKE_2              BITMAP "komoxo_style1_bmp/stroke_2.bmp"
+KMX_IMAGE_240_STROKE_3              BITMAP "komoxo_style1_bmp/stroke_3.bmp"
+KMX_IMAGE_240_STROKE_4              BITMAP "komoxo_style1_bmp/stroke_4.bmp"
+KMX_IMAGE_240_STROKE_5              BITMAP "komoxo_style1_bmp/stroke_5.bmp"
+KMX_IMAGE_240_STROKE_6              BITMAP "komoxo_style1_bmp/stroke_6.bmp"
+KMX_IMAGE_240_STROKE_7              BITMAP "komoxo_style1_bmp/stroke_7.bmp"
+KMX_IMAGE_240_STROKE_8              BITMAP "komoxo_style1_bmp/stroke_8.bmp"
+KMX_IMAGE_240_STROKE_9              BITMAP "komoxo_style1_bmp/stroke_9.bmp"
+
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_N1   BITMAP "komoxo_style1_bmp/highlight_arabic_n1.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_N2   BITMAP "komoxo_style1_bmp/highlight_arabic_n2.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_N3   BITMAP "komoxo_style1_bmp/highlight_arabic_n3.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_N4   BITMAP "komoxo_style1_bmp/highlight_arabic_n4.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_N5   BITMAP "komoxo_style1_bmp/highlight_arabic_n5.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_N6   BITMAP "komoxo_style1_bmp/highlight_arabic_n6.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_N7   BITMAP "komoxo_style1_bmp/highlight_arabic_n7.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_N8   BITMAP "komoxo_style1_bmp/highlight_arabic_n8.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_N9   BITMAP "komoxo_style1_bmp/highlight_arabic_n9.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_H1   BITMAP "komoxo_style1_bmp/highlight_arabic_h1.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_H2   BITMAP "komoxo_style1_bmp/highlight_arabic_h2.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_H3   BITMAP "komoxo_style1_bmp/highlight_arabic_h3.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_H4   BITMAP "komoxo_style1_bmp/highlight_arabic_h4.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_H5   BITMAP "komoxo_style1_bmp/highlight_arabic_h5.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_H6   BITMAP "komoxo_style1_bmp/highlight_arabic_h6.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_H7   BITMAP "komoxo_style1_bmp/highlight_arabic_h7.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_H8   BITMAP "komoxo_style1_bmp/highlight_arabic_h8.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_H9   BITMAP "komoxo_style1_bmp/highlight_arabic_h9.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_ARABIC_ABC  BITMAP "komoxo_style1_bmp/highlight_arabic_abc.bmp"
+
+HIGHLIGHT_KMX_IMAGE_240_COMMON_N            BITMAP "komoxo_style1_bmp/highlight_common_n.bmp"        
+HIGHLIGHT_KMX_IMAGE_240_COMMON_H            BITMAP "komoxo_style1_bmp/highlight_common_h.bmp"        
+HIGHLIGHT_KMX_IMAGE_240_COMMON_CAPS_L       BITMAP "komoxo_style1_bmp/highlight_common_caps_l.bmp"   
+HIGHLIGHT_KMX_IMAGE_240_COMMON_CAPS_I       BITMAP "komoxo_style1_bmp/highlight_common_caps_i.bmp"   
+HIGHLIGHT_KMX_IMAGE_240_COMMON_CAPS_U       BITMAP "komoxo_style1_bmp/highlight_common_caps_u.bmp"   
+HIGHLIGHT_KMX_IMAGE_240_COMMON_BACK         BITMAP "komoxo_style1_bmp/highlight_common_back.bmp"     
+HIGHLIGHT_KMX_IMAGE_240_COMMON_RETURN       BITMAP "komoxo_style1_bmp/highlight_common_return.bmp"   
+HIGHLIGHT_KMX_IMAGE_240_COMMON_SPACE        BITMAP "komoxo_style1_bmp/highlight_common_space.bmp"    
+HIGHLIGHT_KMX_IMAGE_240_COMMON_TAB          BITMAP "komoxo_style1_bmp/highlight_common_tab.bmp"      
+HIGHLIGHT_KMX_IMAGE_240_COMMON_BACK2        BITMAP "komoxo_style1_bmp/highlight_common_back2.bmp"    
+HIGHLIGHT_KMX_IMAGE_240_COMMON_N2           BITMAP "komoxo_style1_bmp/highlight_common_n2.bmp"       
+HIGHLIGHT_KMX_IMAGE_240_COMMON_SHIFT        BITMAP "komoxo_style1_bmp/highlight_common_shift.bmp"    
+HIGHLIGHT_KMX_IMAGE_240_COMMON_SPACE2       BITMAP "komoxo_style1_bmp/highlight_common_space2.bmp"   
+HIGHLIGHT_KMX_IMAGE_240_COMMON_H3           BITMAP "komoxo_style1_bmp/highlight_common_h3.bmp"       
+HIGHLIGHT_KMX_IMAGE_240_COMMON_H2           BITMAP "komoxo_style1_bmp/highlight_common_h2.bmp"       
+HIGHLIGHT_KMX_IMAGE_240_COMMON_PREV         BITMAP "komoxo_style1_bmp/highlight_common_prev.bmp"     
+HIGHLIGHT_KMX_IMAGE_240_COMMON_NEXT         BITMAP "komoxo_style1_bmp/highlight_common_next.bmp"     
+HIGHLIGHT_KMX_IMAGE_240_COMMON_AUX          BITMAP "komoxo_style1_bmp/highlight_common_aux.bmp"      
+HIGHLIGHT_KMX_IMAGE_240_COMMON_AUX_PREV     BITMAP "komoxo_style1_bmp/highlight_common_aux_prev.bmp" 
+HIGHLIGHT_KMX_IMAGE_240_COMMON_AUX_NEXT     BITMAP "komoxo_style1_bmp/highlight_common_aux_next.bmp" 
+
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NL1         BITMAP "komoxo_style1_bmp/highlight_english_nl1.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NL2         BITMAP "komoxo_style1_bmp/highlight_english_nl2.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NL3         BITMAP "komoxo_style1_bmp/highlight_english_nl3.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NL4         BITMAP "komoxo_style1_bmp/highlight_english_nl4.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NL5         BITMAP "komoxo_style1_bmp/highlight_english_nl5.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NL6         BITMAP "komoxo_style1_bmp/highlight_english_nl6.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NL7         BITMAP "komoxo_style1_bmp/highlight_english_nl7.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NL8         BITMAP "komoxo_style1_bmp/highlight_english_nl8.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NL9         BITMAP "komoxo_style1_bmp/highlight_english_nl9.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NL0         BITMAP "komoxo_style1_bmp/highlight_english_nl0.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NU1         BITMAP "komoxo_style1_bmp/highlight_english_nu1.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NU2         BITMAP "komoxo_style1_bmp/highlight_english_nu2.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NU3         BITMAP "komoxo_style1_bmp/highlight_english_nu3.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NU4         BITMAP "komoxo_style1_bmp/highlight_english_nu4.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NU5         BITMAP "komoxo_style1_bmp/highlight_english_nu5.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NU6         BITMAP "komoxo_style1_bmp/highlight_english_nu6.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NU7         BITMAP "komoxo_style1_bmp/highlight_english_nu7.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NU8         BITMAP "komoxo_style1_bmp/highlight_english_nu8.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NU9         BITMAP "komoxo_style1_bmp/highlight_english_nu9.bmp"
+HIGHLIGHT_KMX_IMAGE_240_ENGLISH_NU0         BITMAP "komoxo_style1_bmp/highlight_english_nu0.bmp"
+
+HIGHLIGHT_KMX_IMAGE_240_STROKE_1            BITMAP "komoxo_style1_bmp/highlight_stroke_1.bmp"
+HIGHLIGHT_KMX_IMAGE_240_STROKE_2            BITMAP "komoxo_style1_bmp/highlight_stroke_2.bmp"
+HIGHLIGHT_KMX_IMAGE_240_STROKE_3            BITMAP "komoxo_style1_bmp/highlight_stroke_3.bmp"
+HIGHLIGHT_KMX_IMAGE_240_STROKE_4            BITMAP "komoxo_style1_bmp/highlight_stroke_4.bmp"
+HIGHLIGHT_KMX_IMAGE_240_STROKE_5            BITMAP "komoxo_style1_bmp/highlight_stroke_5.bmp"
+HIGHLIGHT_KMX_IMAGE_240_STROKE_6            BITMAP "komoxo_style1_bmp/highlight_stroke_6.bmp"
+HIGHLIGHT_KMX_IMAGE_240_STROKE_7            BITMAP "komoxo_style1_bmp/highlight_stroke_7.bmp"
+HIGHLIGHT_KMX_IMAGE_240_STROKE_8            BITMAP "komoxo_style1_bmp/highlight_stroke_8.bmp"
+HIGHLIGHT_KMX_IMAGE_240_STROKE_9            BITMAP "komoxo_style1_bmp/highlight_stroke_9.bmp"

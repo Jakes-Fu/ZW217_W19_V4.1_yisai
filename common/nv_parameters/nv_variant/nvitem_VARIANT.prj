@@ -1,0 +1,22 @@
+# SpreadTrum NVEditor Project File, Format Version 1.0
+# WARNING: DO NOT EDIT OR DELETE THIS PROJECT FILE!
+
+################################################################################
+  PROJECT     =  NVitem
+  ALIGNMENT   =  5
+  TARGET      =  nvitem_VARIANT.bin
+  DESCRIPTION =  
+
+################################################################################
+
+# Begin Project Module
+
+  MODULE     =  NV_VARIANT_CONFIG_TELE.nvm
+  MODULE     =  NV_VARIANT_CONFIG_MESSAGES.nvm
+  MODULE     =  NV_VARIANT_CONFIG_APP.nvm
+  MODULE     =  NV_VARIANT_CONFIG_SETTINGS.nvm
+  MODULE     =  NV_VARIANT_CONFIG_OTHER.nvm
+
+# End Project Module
+
+################################################################################

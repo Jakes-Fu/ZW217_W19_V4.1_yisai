@@ -1,0 +1,83 @@
+// ----------------------------------------------------------
+// 
+// 平台AP Mode的Interface定义
+// <APMode>
+//    value:InterfaceName
+// </APMode>
+//
+// ----------------------------------------------------------
+
+<Voice Call NB>
+  0: HandSet
+  1: HandFree
+  2: HeadSet4P
+  3: HeadSet3P
+  4: BTHS
+  5: BTHSNRec
+</Voice Call NB>
+
+
+
+<Music Play>
+  0: HandSet
+  1: HandFree
+  2: HeadSet4P
+  3: HeadSet3P
+  4: BTHS
+  5: BTHSNRec
+</MusicPlay>
+
+
+<Music Record>
+  0: HandSet
+  1: HandFree
+  2: HeadSet4P
+  3: HeadSet3P
+  4: BTHS
+  5: BTHSNRec
+</Music Record>
+
+
+
+<FM Play>
+  0: HandSet
+  1: HandFree
+  2: HeadSet4P
+  3: HeadSet3P
+  4: BTHS
+  5: BTHSNRec
+</FM Play>
+
+
+
+<FM Record>
+  0: HandSet
+  1: HandFree
+  2: HeadSet4P
+  3: HeadSet3P
+  4: BTHS
+  5: BTHSNRec
+</FM Record>
+
+
+<Voice Call WB>
+  0: HandSet
+  1: HandFree
+  2: HeadSet4P
+  3: HeadSet3P
+  4: BTHS
+  5: BTHSNRec
+</Voice Call WB>
+
+
+
+<Tone Play>
+  0: HandSet
+  1: HandFree
+  2: HeadSet4P
+  3: HeadSet3P
+  4: BTHS
+  5: BTHSNRec
+</Tone Play>
+
+

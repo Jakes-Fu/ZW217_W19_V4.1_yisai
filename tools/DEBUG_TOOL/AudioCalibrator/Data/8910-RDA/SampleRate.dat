@@ -1,0 +1,50 @@
+// ----------------------------------------------------------
+// 
+// 平台AP Mode的Sample Rate定义
+// <APMode>
+//    SampleRate
+// </APMode>
+//
+// ----------------------------------------------------------
+
+<Voice Call NB>
+   8000HZ
+   16000HZ
+</Voice Call NB>
+
+
+<Music Play>
+   44100HZ
+</Music Play>
+
+
+<Music Record>
+   8000HZ
+   16000HZ
+</Music Record>
+
+
+<FM Play>
+   44100HZ
+</FM Play>
+
+
+<FM Record>
+   8000HZ
+   16000HZ
+</FM Record>
+
+
+
+<Voice Call WB>
+   8000HZ
+   16000HZ
+</Voice Call WB>
+
+
+<Tone Play>
+   8000HZ
+   16000HZ
+</Tone Play>
+
+

@@ -1,0 +1,21 @@
+{
+  "app": {
+    "id": "UAPSportVlogAPP2021",
+    "name": "运动",
+    "vendor": "unisoc",
+    "version": {
+      "code": 1,
+      "name": "01.01.01"
+    },
+    "apiVersion": {
+      "compatible": "1",
+      "target": "1"
+    },
+    "icon": "\\UAPSportVlogAPP2021\\SportVlog_shortcut.png",
+    "permissions": [
+        {
+            "name": "PERMISSION.INTERNET"
+        }
+    ]
+  }
+}

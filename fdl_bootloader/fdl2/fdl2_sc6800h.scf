@@ -1,0 +1,8 @@
+ROM_LOAD 0x30000000
+{
+     ROM_EXEC  0x30000000
+     {
+          init.o (Init, +First)
+          * (+RO,+RW, +ZI)
+     }
+}

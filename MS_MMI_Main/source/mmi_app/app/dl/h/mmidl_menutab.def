@@ -1,0 +1,4 @@
+//define download main menu start
+MENU_DEF( MENU_DL_MANAGET_OPT,menu_dl_manager_option,GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_dl_manager_option))
+
+//define download main menu end

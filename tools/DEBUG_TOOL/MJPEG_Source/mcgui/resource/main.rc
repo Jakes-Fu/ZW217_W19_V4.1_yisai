@@ -1,0 +1,461 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include <windows.h>
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN DIALOGEX 50, 50, 437, 313
+STYLE DS_SETFONT | DS_SETFOREGROUND | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+MENU IDR_MENU
+FONT 8, "Tahoma", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_FILELIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,8,32,422,75
+    LTEXT           "",IDC_STATIC,0,0,8,8,SS_SUNKEN
+    EDITTEXT        IDC_OUTPUT_FOLDER,313,248,112,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse",IDC_SETOUTPUT,325,265,43,12
+    PUSHBUTTON      "&Start!",IDC_TRANSCODE,149,0,29,26,BS_BITMAP | BS_MULTILINE
+    PUSHBUTTON      "Add &Folder",IDC_ADDDIR,29,0,29,26,BS_BITMAP | BS_MULTILINE
+    PUSHBUTTON      "Add &File",IDC_ADDFILE,0,0,29,26,BS_BITMAP | BS_MULTILINE
+    PUSHBUTTON      "&Delete",IDC_REMOVE,59,0,29,26,BS_BITMAP | BS_MULTILINE
+    PUSHBUTTON      "&Skip",IDC_SKIP,119,0,29,26,BS_BITMAP
+    PUSHBUTTON      "&Clear",IDC_CLEAR,89,0,29,26,BS_BITMAP
+    GROUPBOX        "Video Settings",IDC_FRAME_VIDEO,135,110,168,122
+    GROUPBOX        "Original",IDC_FRAME_PREVIEW,8,110,122,122
+    GROUPBOX        "Audio Settings",IDC_FRAME_AUDIO,135,234,168,63
+    GROUPBOX        "Source Information",IDC_SRC_INFO,8,234,122,63
+    PUSHBUTTON      "&Open",IDC_OPEN_OUTPUT,369,265,43,12
+    GROUPBOX        "Output Folder",IDC_STATIC,308,234,122,62
+    CONTROL         "Output Folder Structure",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,323,281,92,11
+    LTEXT           "Total done:",IDC_STATIC,262,9,37,9
+    CONTROL         "",IDC_PROGRESSALL,"msctls_progress32",WS_BORDER,302,9,121,10
+    GROUPBOX        "Converted",IDC_FRAME_PREVIEW2,308,110,122,122
+END
+
+IDD_VIDEO DIALOGEX 0, 0, 162, 106
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_SLIDER_VIDEO,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,25,1,136,11
+    EDITTEXT        IDC_VIDEO_BITRATE,71,16,39,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    LTEXT           "Lowest",IDC_VIDEO_MIN,30,16,27,10
+    RTEXT           "Highest",IDC_VIDEO_MAX,131,16,26,10
+    LTEXT           "Bitrate",IDC_STATIC,3,2,22,10
+    LTEXT           "Format",IDC_STATIC,3,43,24,8
+    COMBOBOX        IDC_CODECS,2,52,102,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Fixed Bitrate",IDC_OPT_FIXRATE,"Button",BS_AUTORADIOBUTTON,61,28,56,11
+    CONTROL         "Fixed Quality",IDC_OPT_FIXQUANT,"Button",BS_AUTORADIOBUTTON,2,28,55,11
+    CONTROL         "2-Pass",IDC_OPT_TWOPASS,"Button",BS_AUTORADIOBUTTON,120,28,33,11
+    COMBOBOX        IDC_SCALE_PRESET,38,71,59,74,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "FPS",IDC_STATIC,105,73,12,8
+    COMBOBOX        IDC_FPS,121,71,40,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Easy Cropper",IDC_EASY_CROP,110,88,51,13
+    LTEXT           "Rotation",IDC_STATIC,108,43,28,8
+    COMBOBOX        IDC_ROTATE,108,52,53,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Resize",IDC_DO_SCALE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,2,73,35,10
+    CONTROL         "Crop",IDC_DO_CROP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,2,90,31,10
+    EDITTEXT        IDC_CROP_PARAM,37,88,71,13,ES_AUTOHSCROLL
+    CONTROL         "Spreadtrum",IDC_SP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,43,42,53,10
+END
+
+IDD_AUDIO DIALOGEX 0, 0, 161, 47
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Bitrate:",IDC_STATIC,28,13,25,8
+    CONTROL         "",IDC_BITRATE_SLIDER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,0,2,107,11
+    CTEXT           "128 Kbps",IDC_BITRATE,56,14,34,9
+    LTEXT           "Down Mix",IDC_STATIC,56,24,31,9
+    LTEXT           "Format",IDC_STATIC,2,24,25,9
+    COMBOBOX        IDC_ENCODER,1,34,50,62,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_RESAMPLE,110,34,49,62,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Sample Rate",IDC_STATIC,111,24,41,8
+    COMBOBOX        IDC_DOWNMIX2,56,34,49,62,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Volume Gain",IDC_STATIC,111,0,40,8
+    COMBOBOX        IDC_VOLUME,110,9,49,62,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_ADDTRACK DIALOGEX 0, 0, 193, 238
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Add Track"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Add",IDOK,7,56,44,14
+    PUSHBUTTON      "&Close",IDCANCEL,140,56,44,14
+    COMBOBOX        IDC_TYPE,71,5,112,67,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_TRACK,7,86,86,58,LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Tracks",IDC_STATIC,8,77,28,8
+    LTEXT           "Track Type",IDC_STATIC,7,8,38,8
+    LTEXT           "Disc Root/File/URL",IDC_STATIC,7,22,60,9
+    EDITTEXT        IDC_URL,71,21,100,12,ES_AUTOHSCROLL
+    LTEXT           "CD-ROM/DVD-ROM",IDC_STATIC,6,38,64,9
+    COMBOBOX        IDC_CDROMS,71,37,112,67,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_DISCINFO,7,159,181,71,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | WS_VSCROLL | WS_HSCROLL
+    LTEXT           "Disc/Track Information:",IDC_STATIC,8,149,92,8
+    PUSHBUTTON      "&Refresh",IDC_REFRESH,51,56,44,14
+    LISTBOX         IDC_CHAPTERS,100,86,86,58,LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Chapters",IDC_STATIC,101,77,32,8
+    PUSHBUTTON      "...",IDC_BROWSE,171,21,12,12
+    PUSHBUTTON      "&Query",IDC_QUERY,96,56,44,14
+END
+
+IDD_STATS DIALOGEX 0, 0, 98, 236
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Statistics"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Encoding Stats",IDC_STATIC,3,104,92,128
+    LTEXT           "Position",IDC_STATIC,9,146,29,9,SS_CENTERIMAGE
+    EDITTEXT        IDC_STAT_POS,55,144,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Frame/Byte",IDC_STATIC,9,160,40,9,SS_CENTERIMAGE
+    EDITTEXT        IDC_STAT_FRAME,55,158,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Video Bitrate",IDC_STATIC,9,188,44,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_STAT_VB,55,186,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Audio Bitrate",IDC_STATIC,9,202,44,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_STAT_AB,55,200,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Est. File Size",IDC_STATIC,9,216,42,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_STAT_ESTSIZE,55,214,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "Task Stats",IDC_STATIC,3,3,92,98
+    EDITTEXT        IDC_STAT_TOTALTIME,55,83,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Error Files",IDC_STATIC,9,56,42,8,SS_CENTERIMAGE
+    LTEXT           "Total Files",IDC_STATIC,9,14,46,8,SS_CENTERIMAGE
+    LTEXT           "Encoded Files",IDC_STATIC,9,28,46,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_STAT_TOTAL_FILES,55,12,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_STAT_ENCODED_FILES,55,27,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Encoded KBs",IDC_STATIC,9,70,44,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_STAT_ERROR_FILES,55,54,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Skipped Files",IDC_STATIC,9,43,46,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_STAT_SKIPPED_FILES,55,40,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Time Elapsed",IDC_STATIC,9,84,42,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_STAT_ENCODED_KB,55,68,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Encode Rate",IDC_STATIC,9,174,42,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_STAT_FPS,55,172,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Time Elapsed",IDC_STATIC,9,118,45,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_STAT_ELAPSED,55,116,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Remain Time",IDC_STATIC,9,132,42,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_STAT_ESTTIME,55,130,34,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_FILEINFO DIALOGEX 0, 0, 262, 264
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "File Details"
+FONT 8, "Tahoma", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "&Close",IDOK,73,243,50,14
+    RTEXT           "File Name:",IDC_STATIC,7,8,41,10
+    EDITTEXT        IDC_EDIT1,54,7,201,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "Title:",IDC_STATIC,7,24,41,11
+    RTEXT           "Artist:",IDC_STATIC,142,24,29,11
+    EDITTEXT        IDC_EDIT3,54,22,79,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,176,23,79,12,ES_AUTOHSCROLL
+    RTEXT           "Album:",IDC_STATIC,7,40,41,11
+    EDITTEXT        IDC_EDIT5,54,39,79,12,ES_AUTOHSCROLL
+    RTEXT           "Year:",IDC_STATIC,142,41,29,11
+    EDITTEXT        IDC_EDIT6,176,40,79,12,ES_AUTOHSCROLL
+    RTEXT           "Track No:",IDC_STATIC,7,57,41,11
+    EDITTEXT        IDC_EDIT7,54,56,79,12,ES_AUTOHSCROLL
+    RTEXT           "Chapter No:",IDC_STATIC,6,74,42,11
+    EDITTEXT        IDC_EDIT8,54,72,79,12,ES_AUTOHSCROLL
+    RTEXT           "Genre:",IDC_STATIC,142,58,29,11
+    EDITTEXT        IDC_EDIT9,176,57,79,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,176,73,79,44,ES_MULTILINE | ES_AUTOHSCROLL
+    RTEXT           "Comment:",IDC_STATIC,138,74,33,11
+    RTEXT           "Start Offset:",IDC_STATIC,6,106,42,11
+    EDITTEXT        IDC_EDIT11,54,104,79,12,ES_AUTOHSCROLL
+    RTEXT           "Duration:",IDC_STATIC,7,121,41,11
+    EDITTEXT        IDC_EDIT12,54,120,79,12,ES_AUTOHSCROLL
+    RTEXT           "File Size:",IDC_STATIC,6,90,42,11
+    EDITTEXT        IDC_EDIT13,54,88,79,12,ES_AUTOHSCROLL
+    RTEXT           "Disc Root:",IDC_STATIC,135,123,36,11
+    EDITTEXT        IDC_EDIT14,176,121,79,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Apply",IDCANCEL2,138,243,50,14
+    EDITTEXT        IDC_DETAIL,7,137,248,99,ES_MULTILINE | ES_AUTOHSCROLL | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_SUMMARY DIALOGEX 0, 0, 114, 49
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TREE,"SysTreeView32",TVS_HASLINES | WS_BORDER | WS_TABSTOP,0,0,114,49
+END
+
+IDD_PREVIEW DIALOGEX 0, 0, 115, 108
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&Play",IDC_PLAY,4,93,35,13
+    PUSHBUTTON      "P&ause",IDC_PAUSE,40,93,35,13
+    PUSHBUTTON      "&Stop",IDC_STOP,76,93,35,13
+    CONTROL         "",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,0,80,113,12
+    CONTROL         214,IDC_PREVIEW_BOX,"Static",SS_BITMAP,3,2,109,76,WS_EX_CLIENTEDGE
+END
+
+IDD_CROP DIALOGEX 0, 0, 305, 169
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Easy Crop"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,139,2,35,14
+    PUSHBUTTON      "Re-Play",IDC_PLAY,175,2,34,14
+    EDITTEXT        IDC_CROP_PARAM,4,2,57,13,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SLIDER_X1,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,7,30,104,13
+    CONTROL         "",IDC_SLIDER_X2,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,7,55,102,13
+    CONTROL         "",IDC_SLIDER_Y1,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,7,76,12,75
+    CONTROL         "",IDC_SLIDER_Y2,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,40,81,12,68
+    COMBOBOX        IDC_ROUND_VALUE,109,2,26,56,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Round up by",IDC_STATIC,65,4,41,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAIN                ICON                    "mediacoder.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCEL ACCELERATORS 
+BEGIN
+    VK_INSERT,      IDM_ADDFILE,            VIRTKEY, NOINVERT
+    "D",            IDM_ADDFOLDER,          VIRTKEY, CONTROL, NOINVERT
+    "T",            IDM_ADDTRACK,           VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          IDM_CONSOLE,            VIRTKEY, NOINVERT
+    VK_F8,          IDM_FILE_DETAIL,        VIRTKEY, NOINVERT
+    "F",            IDM_FULLSCREEN,         VIRTKEY, CONTROL, NOINVERT
+    "M",            IDM_MUTE,               VIRTKEY, CONTROL, NOINVERT
+    "P",            IDM_PAUSE,              VIRTKEY, CONTROL, NOINVERT
+    "S",            IDM_PREFERENCE,         VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      IDM_REMOVE_ALL_ITEMS,   VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      IDM_REMOVE_ITEM,        VIRTKEY, NOINVERT
+    "R",            IDM_RESET_STATE,        VIRTKEY, CONTROL, NOINVERT
+    VK_F9,          IDM_SET_FORMAT_PRIVATE, VIRTKEY, CONTROL, NOINVERT
+    VK_F9,          IDM_SET_FORMAT_PUBLIC,  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    VK_F9,          IDM_TOGGLE_FORMAT,      VIRTKEY, NOINVERT
+    VK_F7,          IDM_TOGGLE_STATS,       VIRTKEY, NOINVERT
+    VK_F8,          IDM_FILE_DETAIL,        VIRTKEY, CONTROL, NOINVERT
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+3 TEXTINCLUDE 
+BEGIN
+    "mcpref.h\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SPLASH              BITMAP                  "logo.bmp"
+IDB_STOPPLAY            BITMAP                  "stopplay.bmp"
+IDB_ADDFILE             BITMAP                  "addfile.bmp"
+IDB_ADDFOLDER           BITMAP                  "addfolder.bmp"
+IDB_ADDTRACK            BITMAP                  "addtrack.bmp"
+IDB_CLEAR               BITMAP                  "clear.bmp"
+IDB_REMOVE              BITMAP                  "remove.bmp"
+IDB_SKIP                BITMAP                  "skip.bmp"
+IDB_START               BITMAP                  "start.bmp"
+IDB_STOP                BITMAP                  "stop.bmp"
+IDB_PREVIEW             BITMAP                  "mediaCoder_preview.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_AUDIO, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 45
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_ENCODER_VER      "Unable to retrieve version information of %s"
+    IDS_ERROR_CHECK_UPDATE  "Error occurs while checking for an update. You must have direct Internet access to have this function work."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CONNECT             "Connecting to %s for version information"
+    IDS_VER_RETRIEVED       "Version information retrieved"
+    IDS_UNABLE_CROP         "Unable to do Easy Crop as video width and height of the file cannot be determined."
+    IDS_NO_READY_ITEM       "All items in the list have been transcoded. Do you want to reset the state of all the items?"
+    IDS_NO_ITEM             "No items to transcode."
+    IDS_EXIT_CONFIRM        "The transcoding is in progress. Do you really want to exit?"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include <windows.h>\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Add &File\tInsert",           40011
+        MENUITEM "Add F&older\tCtrl+D",         40012
+        MENUITEM "Add &Track\tCtrl+T",          IDM_ADDTRACK
+        MENUITEM SEPARATOR
+        MENUITEM "Set &Output Folder",          40010
+        MENUITEM SEPARATOR
+        MENUITEM "&Load Preset",                IDM_LOAD_PRESET
+        MENUITEM "&Save As Preset",             IDM_SAVE_PRESET
+        MENUITEM "&Revert All Settings",        IDM_REVERT_ALL
+        MENUITEM "Save As &Default Settings",   IDM_SAVEASDEFAULT
+        MENUITEM SEPARATOR
+        MENUITEM "&Settings\tCtrl+S",           IDM_PREFERENCE
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Item"
+    BEGIN
+        MENUITEM "Re&move Selected Item\tDelete", IDM_REMOVE_ITEM
+        MENUITEM "Remove &All Items\tCtrl+Delete", 40112
+        MENUITEM SEPARATOR
+        MENUITEM "&Toggle Target Format Mode\tF9", IDM_TOGGLE_FORMAT
+        POPUP "Set Target Format Mode"
+        BEGIN
+            MENUITEM "&Private\tCtrl+F9",           IDM_SET_FORMAT_PRIVATE
+            MENUITEM "P&ublic\tCtrl+Shift+F9",      IDM_SET_FORMAT_PUBLIC
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Set State of Selected Items to"
+        BEGIN
+            MENUITEM "Undone / Ready",              IDM_SET_STATE_UNDONE
+            MENUITEM "Done / Skip",                 IDM_SET_STATE_DONE
+        END
+        MENUITEM "&Reset State of All Items",   IDM_RESET_STATE
+        MENUITEM SEPARATOR
+        MENUITEM "Load &Queue",                 IDM_LOADQUEUE
+        MENUITEM "Save Q&ueue",                 40095
+    END
+    POPUP "&Action"
+    BEGIN
+        MENUITEM "&Start Transcoding",          IDM_ENCODE
+        MENUITEM "&Transcode Audio Only",       IDM_ENCODEAUDIO
+        MENUITEM "S&top Transcoding",           IDM_STOP_ENCODE
+        MENUITEM SEPARATOR
+        MENUITEM "Toggle Statistics &Window\tF7", IDM_TOGGLE_STATS
+        MENUITEM SEPARATOR
+        MENUITEM "&Play File",                  IDM_PLAY
+        MENUITEM "Preview &Transcoded File",    IDM_PLAY_ENCODED
+        MENUITEM "&Stop Playing",               IDM_STOP_PLAY
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&Delete original file after transcoded", IDM_OPT_DELETE_ORIGINAL
+        MENUITEM "&Power off when all jobs done", IDM_OPT_POWEROFF
+        MENUITEM "&Show time in video window\tCtrl+T", IDM_SHOW_TIME
+    END
+    POPUP "Abou&t"
+    BEGIN
+        MENUITEM "&User's Guide",               IDM_HELP_DOC
+        MENUITEM "&Splash",                     IDM_SPLASH
+        MENUITEM "&Version",                    IDM_VERSION
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+mcpref.h
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,4 @@
+
+nv_type\NV_REF_PARAMETER\nv_ver_flag=0x01
+RF_nv\RF_NV_T\RF_Common_NV_T\SYSCTRL\DCDC_Bypass=0x5555
+

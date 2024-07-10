@@ -1,0 +1,86 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ResOver - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\HONGLI~1.XIN\AppData\Local\Temp\RSP988C.tmp" with contents
+[
+/nologo /MT /W4 /GX /O2 /I "../Include" /I "D:\Workspace\GDIPlus\Includes" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_UNICODE" /D "UNICODE" /FR"Release/" /Fp"Release/ResOver.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\ResBOCA_R1.16.0801\Source\GUI\BasicExcelVC6.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\BMParser.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\DlgBkmk.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\DlgNtac.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\DlgReport.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\etapp.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\excel9.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\ImgView.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\NAParser.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\ResOver.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\ResOverDlg.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\ResParser.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\SpreadSheet.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\SpreadSheetBE.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\SpreadSheetET.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\StrSet.cpp"
+"D:\ResBOCA_R1.16.0801\Source\GUI\XAboutDlg.cpp"
+]
+Creating command line "cl.exe @C:\Users\HONGLI~1.XIN\AppData\Local\Temp\RSP988C.tmp" 
+Creating temporary file "C:\Users\HONGLI~1.XIN\AppData\Local\Temp\RSP988D.tmp" with contents
+[
+/nologo /MT /W4 /GX /O2 /I "../Include" /I "D:\Workspace\GDIPlus\Includes" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_UNICODE" /D "UNICODE" /FR"Release/" /Fp"Release/ResOver.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\ResBOCA_R1.16.0801\Source\GUI\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\Users\HONGLI~1.XIN\AppData\Local\Temp\RSP988D.tmp" 
+Creating temporary file "C:\Users\HONGLI~1.XIN\AppData\Local\Temp\RSP988E.tmp" with contents
+[
+SciDllProducer.lib BZP.lib /nologo /entry:"wWinMainCRTStartup" /subsystem:windows /incremental:no /pdb:"Release/ResOver.pdb" /machine:I386 /out:"../../../../Release/ResOver/Bin/ResOver.exe" /libpath:"../../../../Common/Lib" 
+.\Release\BasicExcelVC6.obj
+.\Release\BMParser.obj
+.\Release\DlgBkmk.obj
+.\Release\DlgNtac.obj
+.\Release\DlgReport.obj
+.\Release\etapp.obj
+.\Release\excel9.obj
+.\Release\ImgView.obj
+.\Release\NAParser.obj
+.\Release\ResOver.obj
+.\Release\ResOverDlg.obj
+.\Release\ResParser.obj
+.\Release\SpreadSheet.obj
+.\Release\SpreadSheetBE.obj
+.\Release\SpreadSheetET.obj
+.\Release\StdAfx.obj
+.\Release\StrSet.obj
+.\Release\XAboutDlg.obj
+.\Release\ResOver.res
+\Common\lib\BZP.lib
+]
+Creating command line "link.exe @C:\Users\HONGLI~1.XIN\AppData\Local\Temp\RSP988E.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(39) : error C2065: 'ULONG_PTR' : undeclared identifier
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(39) : error C2065: 'token' : undeclared identifier
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(39) : error C2165: 'left-side modifier' : cannot modify pointers to data
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(39) : error C2071: 'NotificationHookProc' : illegal storage class
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(40) : error C2146: syntax error : missing ')' before identifier 'token'
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(40) : error C2165: 'left-side modifier' : cannot modify pointers to data
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(40) : error C2071: 'NotificationUnhookProc' : illegal storage class
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(40) : error C2059: syntax error : ')'
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(91) : error C2059: syntax error : 'const'
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(97) : error C2146: syntax error : missing ')' before identifier 'token'
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(97) : warning C4229: anachronism used : modifiers on data are ignored
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(97) : error C2182: 'GdiplusShutdown' : illegal use of type 'void'
+D:\Workspace\GDIPlus\Includes\GdiplusInit.h(97) : error C2059: syntax error : ')'
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+ResOver.exe - 12 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

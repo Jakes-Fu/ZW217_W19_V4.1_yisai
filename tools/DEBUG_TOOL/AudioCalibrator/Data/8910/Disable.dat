@@ -1,0 +1,705 @@
+// ------------------------------------------------------------------------------------
+// 
+// 定义平台下禁用的AT列表
+// 
+// <APMode:ITF>
+//    AT_Name
+// </>
+// 
+// ------------------------------------------------------------------------------------
+
+
+<call:0>
+   atctst_aud_codec_get_recorder_gain   
+   atctst_aud_codec_set_recorder_gain
+
+   atctst_aud_mus_get_eq
+   atctst_aud_mus_set_eq
+   
+   atctst_aud_mus_get_drc     
+   atctst_aud_mus_set_drc
+ 
+   // 只有8809平台有
+   atctst_aud_voc_get_mp3
+   atctst_aud_voc_set_mp3
+</>
+
+
+<call:1>
+   atctst_aud_codec_get_recorder_gain
+   atctst_aud_codec_set_recorder_gain
+  
+   atctst_aud_mus_get_eq
+   atctst_aud_mus_set_eq
+  
+   atctst_aud_mus_get_drc
+   atctst_aud_mus_set_drc
+   
+   // 只有8809平台有
+   atctst_aud_voc_get_mp3
+   atctst_aud_voc_set_mp3
+</>
+
+
+
+<call:2>
+   atctst_aud_codec_get_recorder_gain
+   atctst_aud_codec_set_recorder_gain
+   
+   atctst_aud_mus_get_eq
+   atctst_aud_mus_set_eq
+  
+   atctst_aud_mus_get_drc
+   atctst_aud_mus_set_drc
+   
+   // 只有8809平台有
+   atctst_aud_voc_get_mp3
+   atctst_aud_voc_set_mp3
+</>
+
+
+
+<call:3>
+   atctst_aud_codec_get_tx_gain
+   atctst_aud_codec_set_tx_gain
+   atctst_aud_codec_get_rx_gain
+   atctst_aud_codec_set_rx_gain
+   atctst_aud_codec_get_sidetone_gain
+   atctst_aud_codec_set_sidetone_gain
+   atctst_aud_codec_get_recorder_gain
+   atctst_aud_codec_set_recorder_gain
+   atctst_aud_mus_get_eq
+   atctst_aud_mus_set_eq
+   atctst_aud_mus_get_drc
+   atctst_aud_mus_set_drc
+   
+   // 只有8809平台有
+   atctst_aud_voc_get_mp3
+   atctst_aud_voc_set_mp3
+</>   
+
+
+<call:4>
+  
+   // Audio Codec AT
+   atctst_aud_codec_get_tx_gain
+   atctst_aud_codec_get_rx_gain
+   atctst_aud_codec_get_sidetone_gain
+   atctst_aud_codec_get_recorder_gain
+   
+   atctst_aud_codec_set_tx_gain
+   atctst_aud_codec_set_rx_gain
+   atctst_aud_codec_set_sidetone_gain
+   atctst_aud_codec_set_recorder_gain
+   
+   
+   // Audio Voc AT
+   atctst_aud_voc_get_hpf
+   atctst_aud_voc_get_fir_tx
+   atctst_aud_voc_get_fir_rx
+   atctst_aud_voc_get_aec
+   atctst_aud_voc_get_speex_tx
+   atctst_aud_voc_get_speex_rx
+   atctst_aud_voc_get_agc_tx
+   atctst_aud_voc_get_agc_rx
+   
+   // 2016-08-10 add
+   atctst_aud_voc_get_vad_agc_tx
+   atctst_aud_voc_get_vad_agc_rx
+   
+   atctst_aud_voc_get_eq
+   atctst_aud_voc_get_diggain
+   
+   atctst_aud_voc_set_hpf
+   atctst_aud_voc_set_fir_tx
+   atctst_aud_voc_set_fir_rx
+   atctst_aud_voc_set_aec
+   atctst_aud_voc_set_speex_tx
+   atctst_aud_voc_set_speex_rx
+   atctst_aud_voc_set_agc_tx
+   atctst_aud_voc_set_agc_rx
+   atctst_aud_voc_set_eq
+   atctst_aud_voc_set_diggain
+   
+   // Audio Music Play AT
+   atctst_aud_mus_get_eq
+   atctst_aud_mus_get_drc
+   atctst_aud_voc_get_mp3
+   
+   atctst_aud_mus_set_eq
+   atctst_aud_mus_set_drc
+   atctst_aud_voc_set_mp3
+   
+   // 2016-08-10 add
+   atctst_aud_voc_set_vad_agc_tx
+   atctst_aud_voc_set_vad_agc_rx
+   
+</>
+
+
+<call:5>  
+   // Audio Codec AT
+   atctst_aud_codec_get_tx_gain
+   atctst_aud_codec_get_rx_gain
+   atctst_aud_codec_get_sidetone_gain
+   atctst_aud_codec_get_recorder_gain
+   
+   atctst_aud_codec_set_tx_gain
+   atctst_aud_codec_set_rx_gain
+   atctst_aud_codec_set_sidetone_gain
+   atctst_aud_codec_set_recorder_gain
+   
+   
+   // Audio Voc AT
+   atctst_aud_voc_get_hpf
+   atctst_aud_voc_get_fir_tx
+   atctst_aud_voc_get_fir_rx
+   atctst_aud_voc_get_aec
+   atctst_aud_voc_get_speex_tx
+   atctst_aud_voc_get_speex_rx
+   
+   atctst_aud_voc_get_agc_tx
+   atctst_aud_voc_get_agc_rx
+   
+      
+   // 2016-08-10 add
+   atctst_aud_voc_get_vad_agc_tx
+   atctst_aud_voc_get_vad_agc_rx
+
+   atctst_aud_voc_get_eq
+   atctst_aud_voc_get_diggain
+   
+   atctst_aud_voc_set_hpf
+   atctst_aud_voc_set_fir_tx
+   atctst_aud_voc_set_fir_rx
+   atctst_aud_voc_set_aec
+   atctst_aud_voc_set_speex_tx
+   atctst_aud_voc_set_speex_rx
+   atctst_aud_voc_set_agc_tx
+   atctst_aud_voc_set_agc_rx
+   atctst_aud_voc_set_eq
+   atctst_aud_voc_set_diggain
+   
+   // Audio Music Play AT
+   atctst_aud_mus_get_eq
+   atctst_aud_mus_get_drc
+   atctst_aud_voc_get_mp3
+   
+   atctst_aud_mus_set_eq
+   atctst_aud_mus_set_drc
+   atctst_aud_voc_set_mp3
+   
+    // 2016-08-10 add
+   atctst_aud_voc_set_vad_agc_tx
+   atctst_aud_voc_set_vad_agc_rx
+</>
+
+
+
+<call:6>
+   atctst_aud_codec_get_recorder_gain
+   atctst_aud_codec_set_recorder_gain
+  
+   atctst_aud_mus_get_eq
+   atctst_aud_mus_set_eq
+  
+   atctst_aud_mus_get_drc
+   atctst_aud_mus_set_drc
+   
+   // 只有8809平台有
+   atctst_aud_voc_get_mp3
+   atctst_aud_voc_set_mp3
+</>
+
+
+
+
+<call:7>
+   atctst_aud_codec_get_tx_gain
+   atctst_aud_codec_set_tx_gain
+   atctst_aud_codec_get_rx_gain
+   atctst_aud_codec_set_rx_gain
+   atctst_aud_codec_get_sidetone_gain
+   atctst_aud_codec_set_sidetone_gain
+   atctst_aud_codec_get_recorder_gain
+   atctst_aud_codec_set_recorder_gain
+   atctst_aud_mus_get_eq
+   atctst_aud_mus_set_eq
+   atctst_aud_mus_get_drc
+   atctst_aud_mus_set_drc
+   
+   // 只有8809平台有
+   atctst_aud_voc_get_mp3
+   atctst_aud_voc_set_mp3
+</>   
+
+
+
+
+<music:10>
+   // Audio Codec AT
+   atctst_aud_codec_get_tx_gain
+   atctst_aud_codec_get_rx_gain
+   atctst_aud_codec_get_sidetone_gain
+   atctst_aud_codec_get_recorder_gain
+   
+   atctst_aud_codec_set_tx_gain
+   atctst_aud_codec_set_rx_gain
+   atctst_aud_codec_set_sidetone_gain
+   atctst_aud_codec_set_recorder_gain
+   
+   
+   // Audio Voc AT
+   atctst_aud_voc_get_hpf
+   atctst_aud_voc_get_fir_tx
+   atctst_aud_voc_get_fir_rx
+   atctst_aud_voc_get_aec
+   atctst_aud_voc_get_speex_tx
+   atctst_aud_voc_get_speex_rx
+   atctst_aud_voc_get_agc_tx
+   atctst_aud_voc_get_agc_rx
+   
+   // 2016-08-10 add
+   atctst_aud_voc_get_vad_agc_tx
+   atctst_aud_voc_get_vad_agc_rx
+    
+   atctst_aud_voc_get_eq
+   atctst_aud_voc_get_diggain
+   
+   atctst_aud_voc_set_hpf
+   atctst_aud_voc_set_fir_tx
+   atctst_aud_voc_set_fir_rx
+   atctst_aud_voc_set_aec
+   atctst_aud_voc_set_speex_tx
+   atctst_aud_voc_set_speex_rx
+   atctst_aud_voc_set_agc_tx
+   atctst_aud_voc_set_agc_rx
+   atctst_aud_voc_set_eq
+   atctst_aud_voc_set_diggain
+   
+   // Audio Music Play AT
+   atctst_aud_mus_get_eq
+   atctst_aud_mus_get_drc
+   atctst_aud_voc_get_mp3
+   
+   atctst_aud_mus_set_eq
+   atctst_aud_mus_set_drc
+   atctst_aud_voc_set_mp3
+   
+   // 2016-08-10 add
+   atctst_aud_voc_set_vad_agc_tx
+   atctst_aud_voc_set_vad_agc_rx
+
+</>
+
+
+<music:11>
+   // Audio Codec AT
+   atctst_aud_codec_get_tx_gain
+   atctst_aud_codec_set_tx_gain 
+   
+   //atctst_aud_codec_get_rx_gain
+   //atctst_aud_codec_set_rx_gain
+ 
+   atctst_aud_codec_get_sidetone_gain
+   atctst_aud_codec_set_sidetone_gain
+
+   atctst_aud_codec_get_recorder_gain
+   atctst_aud_codec_set_recorder_gain
+  
+   
+   // Audio Voc AT
+   atctst_aud_voc_get_hpf
+   atctst_aud_voc_get_fir_tx
+   atctst_aud_voc_get_fir_rx
+   atctst_aud_voc_get_aec
+   atctst_aud_voc_get_speex_tx
+   atctst_aud_voc_get_speex_rx
+   atctst_aud_voc_get_agc_tx
+   atctst_aud_voc_get_agc_rx
+   
+   // 2016-08-10 add
+   atctst_aud_voc_get_vad_agc_tx
+   atctst_aud_voc_get_vad_agc_rx
+    
+   atctst_aud_voc_get_eq
+   atctst_aud_voc_get_diggain
+   
+   atctst_aud_voc_set_hpf
+   atctst_aud_voc_set_fir_tx
+   atctst_aud_voc_set_fir_rx
+   atctst_aud_voc_set_aec
+   atctst_aud_voc_set_speex_tx
+   atctst_aud_voc_set_speex_rx
+   atctst_aud_voc_set_agc_tx
+   atctst_aud_voc_set_agc_rx
+   atctst_aud_voc_set_eq
+   atctst_aud_voc_set_diggain
+   
+   // Audio Music Play AT
+   //atctst_aud_mus_get_eq
+   //atctst_aud_mus_get_drc
+   //atctst_aud_voc_get_mp3
+   
+   //atctst_aud_mus_set_eq
+   //atctst_aud_mus_set_drc
+   //atctst_aud_voc_set_mp3
+   
+   // 2016-08-10 add
+   atctst_aud_voc_set_vad_agc_tx
+   atctst_aud_voc_set_vad_agc_rx
+
+</>
+
+
+<music:12>
+   // Audio Codec AT
+   atctst_aud_codec_get_tx_gain
+   atctst_aud_codec_set_tx_gain 
+   
+   //atctst_aud_codec_get_rx_gain
+   //atctst_aud_codec_set_rx_gain
+ 
+   atctst_aud_codec_get_sidetone_gain
+   atctst_aud_codec_set_sidetone_gain
+
+   //atctst_aud_codec_get_recorder_gain
+   //atctst_aud_codec_set_recorder_gain
+  
+   
+   // Audio Voc AT
+   atctst_aud_voc_get_hpf
+   atctst_aud_voc_get_fir_tx
+   atctst_aud_voc_get_fir_rx
+   atctst_aud_voc_get_aec
+   atctst_aud_voc_get_speex_tx
+   atctst_aud_voc_get_speex_rx
+   atctst_aud_voc_get_agc_tx
+   atctst_aud_voc_get_agc_rx
+   
+   // 2016-08-10 add
+   atctst_aud_voc_get_vad_agc_tx
+   atctst_aud_voc_get_vad_agc_rx
+ 
+   atctst_aud_voc_get_eq
+   atctst_aud_voc_get_diggain
+   
+   atctst_aud_voc_set_hpf
+   atctst_aud_voc_set_fir_tx
+   atctst_aud_voc_set_fir_rx
+   atctst_aud_voc_set_aec
+   atctst_aud_voc_set_speex_tx
+   atctst_aud_voc_set_speex_rx
+   atctst_aud_voc_set_agc_tx
+   atctst_aud_voc_set_agc_rx
+   atctst_aud_voc_set_eq
+   atctst_aud_voc_set_diggain
+   
+   // Audio Music Play AT
+   //atctst_aud_mus_get_eq
+   //atctst_aud_mus_get_drc
+   //atctst_aud_voc_get_mp3
+   
+   //atctst_aud_mus_set_eq
+   //atctst_aud_mus_set_drc
+   //atctst_aud_voc_set_mp3
+   
+   // 2016-08-10 add
+   atctst_aud_voc_set_vad_agc_tx
+   atctst_aud_voc_set_vad_agc_rx
+
+</>
+
+
+<music:13>
+   // Audio Codec AT
+   atctst_aud_codec_get_tx_gain
+   atctst_aud_codec_set_tx_gain 
+   
+   atctst_aud_codec_get_rx_gain
+   atctst_aud_codec_set_rx_gain
+ 
+   atctst_aud_codec_get_sidetone_gain
+   atctst_aud_codec_set_sidetone_gain
+
+   atctst_aud_codec_get_recorder_gain
+   atctst_aud_codec_set_recorder_gain
+  
+   
+   // Audio Voc AT
+   atctst_aud_voc_get_hpf
+   atctst_aud_voc_get_fir_tx
+   atctst_aud_voc_get_fir_rx
+   atctst_aud_voc_get_aec
+   atctst_aud_voc_get_speex_tx
+   atctst_aud_voc_get_speex_rx
+   atctst_aud_voc_get_agc_tx
+   atctst_aud_voc_get_agc_rx
+   
+   // 2016-08-10 add
+   atctst_aud_voc_get_vad_agc_tx
+   atctst_aud_voc_get_vad_agc_rx
+    
+   atctst_aud_voc_get_eq
+   atctst_aud_voc_get_diggain
+   
+   atctst_aud_voc_set_hpf
+   atctst_aud_voc_set_fir_tx
+   atctst_aud_voc_set_fir_rx
+   atctst_aud_voc_set_aec
+   atctst_aud_voc_set_speex_tx
+   atctst_aud_voc_set_speex_rx
+   atctst_aud_voc_set_agc_tx
+   atctst_aud_voc_set_agc_rx
+   atctst_aud_voc_set_eq
+   atctst_aud_voc_set_diggain
+   
+   // Audio Music Play AT
+   //atctst_aud_mus_get_eq
+   //atctst_aud_mus_get_drc
+   //atctst_aud_voc_get_mp3
+   
+   //atctst_aud_mus_set_eq
+   //atctst_aud_mus_set_drc
+   //atctst_aud_voc_set_mp3
+   
+   // 2016-08-10 add
+   atctst_aud_voc_set_vad_agc_tx
+   atctst_aud_voc_set_vad_agc_rx
+
+</>
+
+
+
+<music:14>
+  
+   // Audio Codec AT
+   atctst_aud_codec_get_tx_gain
+   //atctst_aud_codec_get_rx_gain
+   atctst_aud_codec_get_sidetone_gain
+   //atctst_aud_codec_get_recorder_gain
+   
+   atctst_aud_codec_set_tx_gain
+   //atctst_aud_codec_set_rx_gain
+   atctst_aud_codec_set_sidetone_gain
+   //atctst_aud_codec_set_recorder_gain
+   
+   
+   // Audio Voc AT
+   atctst_aud_voc_get_hpf
+   atctst_aud_voc_get_fir_tx
+   atctst_aud_voc_get_fir_rx
+   atctst_aud_voc_get_aec
+   atctst_aud_voc_get_speex_tx
+   atctst_aud_voc_get_speex_rx
+   atctst_aud_voc_get_agc_tx
+   atctst_aud_voc_get_agc_rx
+   
+   // 2016-08-10 add
+   atctst_aud_voc_get_vad_agc_tx
+   atctst_aud_voc_get_vad_agc_rx
+    
+   atctst_aud_voc_get_eq
+   atctst_aud_voc_get_diggain
+   
+   atctst_aud_voc_set_hpf
+   atctst_aud_voc_set_fir_tx
+   atctst_aud_voc_set_fir_rx
+   atctst_aud_voc_set_aec
+   atctst_aud_voc_set_speex_tx
+   atctst_aud_voc_set_speex_rx
+   atctst_aud_voc_set_agc_tx
+   atctst_aud_voc_set_agc_rx
+   atctst_aud_voc_set_eq
+   atctst_aud_voc_set_diggain
+   
+   // Audio Music Play AT
+   atctst_aud_mus_get_eq
+   atctst_aud_mus_get_drc
+   atctst_aud_voc_get_mp3
+   
+   atctst_aud_mus_set_eq
+   atctst_aud_mus_set_drc
+   atctst_aud_voc_set_mp3
+   
+   // 2016-08-10 add
+   atctst_aud_voc_set_vad_agc_tx
+   atctst_aud_voc_set_vad_agc_rx
+
+</>
+
+
+
+<music:15>
+  
+   // Audio Codec AT
+   atctst_aud_codec_get_tx_gain
+   //atctst_aud_codec_get_rx_gain
+   atctst_aud_codec_get_sidetone_gain
+   atctst_aud_codec_get_recorder_gain
+   
+   atctst_aud_codec_set_tx_gain
+   //atctst_aud_codec_set_rx_gain
+   atctst_aud_codec_set_sidetone_gain
+   atctst_aud_codec_set_recorder_gain
+   
+   
+   // Audio Voc AT
+   atctst_aud_voc_get_hpf
+   atctst_aud_voc_get_fir_tx
+   atctst_aud_voc_get_fir_rx
+   atctst_aud_voc_get_aec
+   atctst_aud_voc_get_speex_tx
+   atctst_aud_voc_get_speex_rx
+   atctst_aud_voc_get_agc_tx
+   atctst_aud_voc_get_agc_rx
+   
+   // 2016-08-10 add
+   atctst_aud_voc_get_vad_agc_tx
+   atctst_aud_voc_get_vad_agc_rx
+    
+   atctst_aud_voc_get_eq
+   atctst_aud_voc_get_diggain
+   
+   atctst_aud_voc_set_hpf
+   atctst_aud_voc_set_fir_tx
+   atctst_aud_voc_set_fir_rx
+   atctst_aud_voc_set_aec
+   atctst_aud_voc_set_speex_tx
+   atctst_aud_voc_set_speex_rx
+   atctst_aud_voc_set_agc_tx
+   atctst_aud_voc_set_agc_rx
+   atctst_aud_voc_set_eq
+   atctst_aud_voc_set_diggain
+   
+   // Audio Music Play AT
+   atctst_aud_mus_get_eq
+   atctst_aud_mus_get_drc
+   atctst_aud_voc_get_mp3
+   
+   atctst_aud_mus_set_eq
+   atctst_aud_mus_set_drc
+   atctst_aud_voc_set_mp3
+
+</>
+
+ 
+
+
+<music:16>
+   // Audio Codec AT
+   atctst_aud_codec_get_tx_gain
+   atctst_aud_codec_set_tx_gain 
+   
+   //atctst_aud_codec_get_rx_gain
+   //atctst_aud_codec_set_rx_gain
+ 
+   atctst_aud_codec_get_sidetone_gain
+   atctst_aud_codec_set_sidetone_gain
+
+   atctst_aud_codec_get_recorder_gain
+   atctst_aud_codec_set_recorder_gain
+  
+   
+   // Audio Voc AT
+   atctst_aud_voc_get_hpf
+   atctst_aud_voc_get_fir_tx
+   atctst_aud_voc_get_fir_rx
+   atctst_aud_voc_get_aec
+   atctst_aud_voc_get_speex_tx
+   atctst_aud_voc_get_speex_rx
+   atctst_aud_voc_get_agc_tx
+   atctst_aud_voc_get_agc_rx
+   
+   // 2016-08-10 add
+   atctst_aud_voc_get_vad_agc_tx
+   atctst_aud_voc_get_vad_agc_rx
+    
+   atctst_aud_voc_get_eq
+   atctst_aud_voc_get_diggain
+   
+   atctst_aud_voc_set_hpf
+   atctst_aud_voc_set_fir_tx
+   atctst_aud_voc_set_fir_rx
+   atctst_aud_voc_set_aec
+   atctst_aud_voc_set_speex_tx
+   atctst_aud_voc_set_speex_rx
+   atctst_aud_voc_set_agc_tx
+   atctst_aud_voc_set_agc_rx
+   atctst_aud_voc_set_eq
+   atctst_aud_voc_set_diggain
+   
+   // Audio Music Play AT
+   //atctst_aud_mus_get_eq
+   //atctst_aud_mus_get_drc
+   //atctst_aud_voc_get_mp3
+   
+   //atctst_aud_mus_set_eq
+   //atctst_aud_mus_set_drc
+   //atctst_aud_voc_set_mp3
+</>
+
+
+
+<music:17>
+   // Audio Codec AT
+   atctst_aud_codec_get_tx_gain
+   atctst_aud_codec_set_tx_gain 
+   
+   atctst_aud_codec_get_rx_gain
+   atctst_aud_codec_set_rx_gain
+ 
+   atctst_aud_codec_get_sidetone_gain
+   atctst_aud_codec_set_sidetone_gain
+
+   atctst_aud_codec_get_recorder_gain
+   atctst_aud_codec_set_recorder_gain
+  
+   
+   // Audio Voc AT
+   atctst_aud_voc_get_hpf
+   atctst_aud_voc_get_fir_tx
+   atctst_aud_voc_get_fir_rx
+   atctst_aud_voc_get_aec
+   atctst_aud_voc_get_speex_tx
+   atctst_aud_voc_get_speex_rx
+   atctst_aud_voc_get_agc_tx
+   atctst_aud_voc_get_agc_rx
+   
+   // 2016-08-10 add
+   atctst_aud_voc_get_vad_agc_tx
+   atctst_aud_voc_get_vad_agc_rx
+    
+   
+   atctst_aud_voc_get_eq
+   atctst_aud_voc_get_diggain
+   
+   atctst_aud_voc_set_hpf
+   atctst_aud_voc_set_fir_tx
+   atctst_aud_voc_set_fir_rx
+   atctst_aud_voc_set_aec
+   atctst_aud_voc_set_speex_tx
+   atctst_aud_voc_set_speex_rx
+   atctst_aud_voc_set_agc_tx
+   atctst_aud_voc_set_agc_rx
+   atctst_aud_voc_set_eq
+   atctst_aud_voc_set_diggain
+   
+   // Audio Music Play AT
+   //atctst_aud_mus_get_eq
+   //atctst_aud_mus_get_drc
+   //atctst_aud_voc_get_mp3
+   
+   //atctst_aud_mus_set_eq
+   //atctst_aud_mus_set_drc
+   //atctst_aud_voc_set_mp3
+   
+   // 2016-08-10 add
+   atctst_aud_voc_set_vad_agc_tx
+   atctst_aud_voc_set_vad_agc_rx
+
+</>
+
+
+
+                                                

@@ -1,0 +1,6 @@
+#ifdef MMI_ENABLE_DCD
+//dcd
+
+MENU_DEF(MENU_DCD_ITEM_SETTING_OPT, menu_dcd_item_setting_opt, GUIMENU_STYLE_THIRD, STXT_MAIN_SETTING, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_dcd_item_setting_opt))
+
+#endif

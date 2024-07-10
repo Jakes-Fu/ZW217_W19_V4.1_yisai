@@ -1,0 +1,976 @@
+# SpreadTrum NVEditor NV Module File, Format Version 1.0
+# WARNING: DO NOT EDIT OR DELETE THIS NV Module FILE!
+
+###############################################################################
+  MODULE      = NV_VARIANT_CONFIG_OTHER
+  DESCRIPTION = 
+
+################################################################################
+
+# Begin Module Item
+  BEGIN_ITEM
+    ITEM_NAME    = MENU_TREE_LIST
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 7 (STRUCT)
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 0
+    ITEM_PARENT  = -1
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = TOTAL_APP
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 1
+    ITEM_PARENT  = 0
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 5 (ARRAY)
+    ITEM_SIZE    = 50
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 2
+    ITEM_PARENT  = 0
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[0]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 3
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[1]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 4
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[2]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 5
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[3]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 6
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[4]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 7
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[5]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 8
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[6]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 9
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[7]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 10
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[8]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 11
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[9]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 12
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[10]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 13
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[11]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 14
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[12]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 15
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[13]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 16
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[14]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 17
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[15]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 18
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[16]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 19
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[17]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 20
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[18]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 21
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[19]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 22
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[20]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 23
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[21]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 24
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[22]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 25
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[23]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 26
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[24]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 27
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[25]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 28
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[26]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 29
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[27]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 30
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[28]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 31
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[29]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 32
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[30]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 33
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[31]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 34
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[32]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 35
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[33]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 36
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[34]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 37
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[35]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 38
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[36]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 39
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[37]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 40
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[38]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 41
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[39]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 42
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[40]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 43
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[41]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 44
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[42]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 45
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[43]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 46
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[44]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 47
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[45]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 48
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[46]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 49
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[47]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 50
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[48]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 51
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = APPID_LIST[49]
+    ITEM_ID      = 1980
+    ITEM_TYPE    = 4 (LONG)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 52
+    ITEM_PARENT  = 2
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = PRODUCT_TYPE
+    ITEM_ID      = 1981
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 53
+    ITEM_PARENT  = -1
+    ITEM_DESC    = BYD Top Request.config product type.0:81,1:82,2:83
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = OPERATOR_LOGO
+    ITEM_ID      = 1982
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 54
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Operator logo config.0:none 1:picture 2:picture+ring
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 6 (ASTRING)
+    ITEM_SIZE    = 32
+    ITEM_CONTENT = 
+    ITEM_INDEX   = 55
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Software Version
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[0]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 56
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[1]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 57
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[2]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 58
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[3]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 59
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[4]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 60
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[5]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 61
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[6]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 62
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[7]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 63
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[8]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 64
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[9]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 65
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[10]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 66
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[11]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 67
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[12]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 68
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[13]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 69
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[14]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 70
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[15]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 71
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[16]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 72
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[17]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 73
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[18]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 74
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[19]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 75
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[20]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 76
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[21]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 77
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[22]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 78
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[23]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 79
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[24]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 80
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[25]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 81
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[26]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 82
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[27]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 83
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[28]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 84
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[29]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 85
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[30]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 86
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = SOFTWARE_VERSION[31]
+    ITEM_ID      = 1983
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 87
+    ITEM_PARENT  = 55
+    ITEM_DESC    =  
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = 4G_ICON_DISPLAY_STYLE
+    ITEM_ID      = 1984
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 88
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Network indicator customization 0:2G/2.5G/4G 1:G/E/LTE 2:2G/4.5G
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = VOLTE_ICON_DISPLAY_STYLE
+    ITEM_ID      = 1985
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 89
+    ITEM_PARENT  = -1
+    ITEM_DESC    = LTE functions icon customization  0:VoLTE 1:HD
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = VOLTE_ICON_DISPLAY_SET
+    ITEM_ID      = 1986
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 90
+    ITEM_PARENT  = -1
+    ITEM_DESC    = LTE functions display 0:OFF 1:ON
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = VOLTE_MENU_DISPLAY_SET
+    ITEM_ID      = 1987
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 91
+    ITEM_PARENT  = -1
+    ITEM_DESC    = IMS Toggle On/Off 0:VoLTE Off VoLTE Menu Off 1:VoLTE On VoLTE Menu On 2:VoLTE On VoLTE Menu Off 
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = NETWORK_MENU_DISPLAY_STYLE
+    ITEM_ID      = 1988
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 92
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Prefer NetWork Customization 0:4G/2G/Auto 2G Only 1:4G/2G(recommended)2G
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = INDIAN_SOS_SUPPORT
+    ITEM_ID      = 1989
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 93
+    ITEM_PARENT  = -1
+    ITEM_DESC    = India Press 5 0:OFF  1:ON
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = ENABLE_MOBILE_DATA
+    ITEM_ID      = 1990
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x1
+    ITEM_INDEX   = 94
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Default data on/off 0:OFF 1:ON
+  END_ITEM
+
+  BEGIN_ITEM
+    ITEM_NAME    = NETWORK_OPN_UPDATE
+    ITEM_ID      = 1991
+    ITEM_TYPE    = 1 (CHAR)
+    ITEM_CONTENT = 0x0
+    ITEM_INDEX   = 95
+    ITEM_PARENT  = -1
+    ITEM_DESC    = Default NETWORK_OPN_UPDATE on/off 0:OFF 1:ON
+  END_ITEM
+
+
+# End Module Item
+
+################################################################################

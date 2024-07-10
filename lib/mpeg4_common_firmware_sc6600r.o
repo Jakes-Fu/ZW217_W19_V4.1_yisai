@@ -1,0 +1,6 @@
+#<SYMDEFS># ARM Linker, ADS1.2 [Build 848]: Last Updated: Tue Aug 14 10:53:23 2007
+0x40004d00 A arm_WriteDctCoeff2DCTBfr
+0x40004d28 D g_intra_max_run
+0x40004d54 D g_inter_max_run
+0x40004d68 D g_mc_16x16
+0x40004d78 D g_mc_8x8

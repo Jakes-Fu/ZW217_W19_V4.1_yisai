@@ -1,0 +1,8 @@
+//begin OTA============================    
+        
+MENU_DEF(MENU_OTA_CONFIG_SET_OPTION, menu_ota_config_set_option, GUIMENU_STYLE_POPUP, TXT_MMS_CONFIG_INFO, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_ota_config_set_option))  
+MENU_DEF(MENU_CMSBRW_PUSHMSG,menu_cmsbrw_pushmsg,GUIMENU_STYLE_POPUP,TXT_COMM_PUSH_MSG,IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_cmsbrw_pushmsg))
+#if defined (MMI_SMS_SECURITYBOX_SUPPORT)
+MENU_DEF( MENU_PUSH_SECURITY_SELECT, menu_push_security_select, GUIMENU_STYLE_POPUP, TXT_INBOX, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_push_security_select))
+#endif
+//end OTA=================================

@@ -1,0 +1,26 @@
+ROM_LOAD 0x80008600 0x100000
+{  
+   ROM_EXEC 0x80008600 0x100000
+   {
+        init.o (Init, +First)
+        __scatter*.o(+RO, +RW, +ZI)
+        __main.o(+RO)
+        __dczerorl2.o(+RO)
+        * (Region$$Table)
+        * (ZISection$$Table)
+        packet.o(+ZI) 
+        fdl_flash_cfg.o(+RO,+RW,+ZI) 
+        fdl_main.o(+RO)
+        fdl_update_fixnv.O(+RO,+RW,+ZI) 
+        fdl_main.o(NOR_FDL_STACK_SPACE)
+        .ANY(+RW,+ZI)
+        .ANY(+RO)
+  }
+
+  ROM_EXEC1 0x830000 0x10000
+  {
+	usb-serial.o(ZIDATA_AREA_4)
+	dwc2_udc.o(ZIDATA_AREA_5)
+  }
+}
+

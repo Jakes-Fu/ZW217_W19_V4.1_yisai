@@ -1,0 +1,147 @@
+#ifndef _RDA8910_LPDDR2_TIMING_H_
+#define _RDA8910_LPDDR2_TIMING_H_
+
+#define UDELAY_SYMBOL   0x41b23671
+
+struct ddr_save_pattern {
+	uint32 offs;
+	uint32 val;
+};
+
+const struct ddr_save_pattern dmc_off_val[] = {
+	{
+		REG_DMC_CTRL_FORMAT_CONTROL,
+		DMC400_ALIGN_BOUNDARY_ALIGN_BOUNDARY_2_COL_2BIT |
+		DMC400_ACC_GRANU_ACC_GRANU_2_DDR_4N |
+		DMC400_MEM_BURST_MEM_BURST_2_DDR_BL4 |
+		DMC400_MEM_WIDTH_PHY_WIDTH_32_X16_DDR
+	},
+
+	{
+		REG_DMC_CTRL_ADDRESS_CONTROL,
+		DMC400_CHANNEL_BITS_0_CHANNEL_BITS_1MEMIF |
+		DMC400_CHIP_BITS_0_CHIP_BITS_1CS |
+		DMC400_BANK_BITS_2_BANK_BITS_4BK |
+		DMC400_ROW_BITS_13_ROW_BITS | DMC400_COLUMN_BITS_10_COL_BITS
+	},
+
+	{
+		REG_DMC_CTRL_DECODE_CONTROL,
+		DMC400_STRIP_DECODE_PAGE_ADDR_12_11 |
+		DMC400_ADDR_DECODE_CHIP_BANK_ROW_CHANNEL_COL
+	},
+	{REG_DMC_CTRL_T_MRR,		0x2},
+	{REG_DMC_CTRL_T_MRW,		0x5},
+	{REG_DMC_CTRL_T_XSR,		0x001c001c},	//!
+	{REG_DMC_CTRL_T_RDDATA_EN,	0x2},		//!
+	{REG_DMC_CTRL_T_PHYWRLAT,	0x101},		//!
+	{REG_DMC_CTRL_T_RCD,		0x3},		//!
+	{REG_DMC_CTRL_T_REFI,		0xc3},		//!
+	{REG_DMC_CTRL_T_RFC,		0x00120012},	//!
+
+	{REG_DMC_CTRL_T_RAS,		0x11},
+	{REG_DMC_CTRL_T_RP,		0x8},
+	{REG_DMC_CTRL_T_RPALL,		0x8},
+	{REG_DMC_CTRL_T_RRD,		0x4},
+	{REG_DMC_CTRL_T_FAW,		0x18},
+	{REG_DMC_CTRL_READ_LATENCY,	0xe},
+	{REG_DMC_CTRL_T_RTR,		0x2},
+	{REG_DMC_CTRL_T_RTW,		0x9},
+	{REG_DMC_CTRL_T_RTP,		0x3},
+	{REG_DMC_CTRL_WRITE_LATENCY,	0xa},
+	{REG_DMC_CTRL_T_WR,		0xc},
+	{REG_DMC_CTRL_T_WTR,		0x000a000a},
+	{REG_DMC_CTRL_T_WTW,		0x000c000C}, //0x000c000c
+	{REG_DMC_CTRL_T_ECKD,		0xb},
+	{REG_DMC_CTRL_T_XCKD,		0xb},
+	{REG_DMC_CTRL_T_EP,		0x2},
+	{REG_DMC_CTRL_T_XP,		0x00030003},
+	{REG_DMC_CTRL_T_ESR,		0x2},
+	{REG_DMC_CTRL_T_SRCKD,		0xb},
+	{REG_DMC_CTRL_T_CKSRD,		0xb},
+	{0x70753159,				0x70753159},
+};
+
+const struct ddr_save_pattern dmc_cmd_off_val[] = {
+	{UDELAY_SYMBOL, 1},
+	{REG_DMC_CTRL_DIRECT_CMD, 0x0},
+	{REG_DMC_CTRL_DIRECT_CMD, 0x1000003f},
+	{REG_DMC_CTRL_DIRECT_CMD, 0x5000ff0a},
+	{UDELAY_SYMBOL, 1},
+	{REG_DMC_CTRL_DIRECT_CMD, 0x10009201},
+	{REG_DMC_CTRL_DIRECT_CMD, 0x10000102},//! MR2, RL=3, WL=1, LPDDR2-400
+	{REG_DMC_CTRL_DIRECT_CMD, 0x10000203},// MR3, 0x2: 40 ohm, 0x03: 48 ohm, 0x04: 60 ohm
+	{UDELAY_SYMBOL, 1},
+};
+
+const struct ddr_save_pattern phy_off_val[] = {
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_PHY,		0x1},
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_DLL_DL_0_WR_AC,	0x30}, //! ac line edge
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_DLL_DL_0_WR_DS0,	0x31}, //! output edge
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_DLL_DL_1_WR_DS0,	0x27}, //! input pos edge
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_DLL_DL_2_WR_DS0,	0x27}, //! input neg edge
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_DLL_DL_3_WR_DS0,	0x31}, //! gate edge
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_DLL_DL_0_WR_DS1,	0x30}, //! outupt edge
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_DLL_DL_1_WR_DS1,	0x26}, //! input pos edge
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_DLL_DL_2_WR_DS1,	0x26}, //! input neg edge
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_DLL_DL_3_WR_DS1,	0x30}, //! gate edge
+
+	{REG_LPDDR_PHY_LPDDR_DRF_CFG_REG_SEL,		0x0},
+	{REG_LPDDR_PHY_LPDDR_DRF_CFG_DQS_OE_SEL_F0,	0x1},
+	{REG_LPDDR_PHY_LPDDR_DRF_CFG_DQS_OUT_SEL_F0,	0x4},
+	{REG_LPDDR_PHY_LPDDR_DRF_CFG_DATA_OE_SEL_F0,	0x1},
+
+
+	{REG_LPDDR_PHY_LPDDR_DRF_CFG_DQS_IE_SEL_F0,	0x7f}, //!
+	{REG_LPDDR_PHY_LPDDR_DRF_CFG_DQS_GATE_SEL_F0,	0xff},//!
+	{REG_LPDDR_PHY_LPDDR_DRF_CFG_DATA_IE_SEL_F0,	0x7f}, //!
+	{REG_LPDDR_PHY_LPDDR_DRF_CFG_READ_EN_SEL_F0,	0x4}, //!
+
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_EXT,		0x401111},
+
+	{REG_LPDDR_PHY_LPDDR_DRF_CFG,			0x1},
+
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_SAMPLE_RESYNC,	0x00010002},
+	{REG_LPDDR_PHY_LPDDR_DRF_TRAIN_CFG,		LPDDR_PHY_DRF_PHYUPD_EN},
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_CLOCK_GATE,		0x1f},
+	{REG_LPDDR_PHY_LPDDR_RF_CFG_PHY,		0x3},
+
+	//{0x724 , 0},   //psram pad config
+	//{0x720 , 0},
+	//{0x728 , 0},
+	//{0x72C , 0},
+
+	
+	//{0x708 , 0},    	//io_rf_ddr_pad_cfg
+	//{0x700 , 1},      	//io_rf_ddr_rpull_cfg
+	//{0x70C , 0x2082}, 	//vref_cfg
+	//{0x710 , 0x20},   	//zq_cfg
+	
+	
+	{0x70753159,				0x70753159},
+};
+
+const struct ddr_save_pattern pad_off_val[] = {
+	{0x8801724,		0x0},
+	{0x8801720,		0x0},	
+	{0x8801728,		0x0},
+	{0x880172C,		0x0},
+	{0x8801708 ,    0},    	    //io_rf_ddr_pad_cfg
+	{0x8801700 ,    1},      	//io_rf_ddr_rpull_cfg
+	{0x880170C ,    0x2082}, 	//vref_cfg
+	{0x8801710 ,    0x20},   	//zq_cfg	
+	{0x70753159,	0x70753159},
+};
+
+const struct ddr_save_pattern cmd_off_val[] = {
+	{0x08803008,    0x3},
+	{0x50090264,	0x2},    		//IDL_DDR_LATCH
+	{0x500A0048,	0x0},    		//PWR_DDR_HOLD_CTRL
+	{0x70753159,	0x70753159}, 	//endflag
+};
+
+const uint32 basedata_off_val[] = {
+	    REG_LPDDR_PHY_BASE,		//lpddr2_phy_addr_base
+	    REG_DMC_CTRL_BASE,
+};
+#endif

@@ -1,0 +1,30 @@
+//begin of PIM,wangxiaolin
+
+MENU_DEF( MMI_PIM_MAIN_MENU, mmi_pim_main_menu, GUIMENU_STYLE_SECOND, TXT_PIM, 	\
+		IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, (sizeof(mmi_pim_main_menu)/sizeof(GUIMENU_ITEM_T)))
+		
+MENU_DEF( MMI_PIM_SYNC_ENTER_MENU, mmi_pim_sync_enter_menu, GUIMENU_STYLE_THIRD, TXT_PIM, 	\
+		IMAGE_NULL, IMAGE_NULL, IMAGE_NULL,(sizeof(mmi_pim_sync_enter_menu)/sizeof(GUIMENU_ITEM_T)) )
+
+// chenxiang 20071101 pim_setting begin
+// chenxiang 6-->5  change debug setting menu to "#*3456#"
+MENU_DEF( MMI_PIM_SETTING_MENU, mmi_pim_setting_menu, GUIMENU_STYLE_THIRD, STXT_MAIN_SETTING, 	\
+		IMAGE_NULL, IMAGE_NULL, IMAGE_NULL,(sizeof(mmi_pim_setting_menu)/sizeof(GUIMENU_ITEM_T)) )
+
+MENU_DEF( MMI_PIM_NET_SETTING_MENU, mmi_pim_net_setting_menu, GUIMENU_STYLE_THIRD, TXT_PIM_NET_SETTING, 	\
+		IMAGE_NULL, IMAGE_NULL, IMAGE_NULL,3 )
+MENU_DEF( MMI_PIM_GATEWAY_MENU, mmi_pim_gateway_menu, GUIMENU_STYLE_THIRD, TXT_PIM_GATEWAY, 	\
+		IMAGE_NULL, IMAGE_NULL, IMAGE_NULL,4 )
+// chenxiang 20080506 deleted port 5-->4
+MENU_DEF( MMI_PIM_SYNCML_SETTING_MENU, mmi_pim_syncml_setting_menu, GUIMENU_STYLE_THIRD, TXT_PIM_SYNCML_SETTING, 	\
+		IMAGE_NULL, IMAGE_NULL, IMAGE_NULL,(sizeof(mmi_pim_syncml_setting_menu)/sizeof(GUIMENU_ITEM_T)) )
+MENU_DEF( MMI_PIM_WAP_URL_MENU, mmi_pim_wap_url_menu, GUIMENU_STYLE_THIRD, TXT_PIM_WAP_URL, 	\
+		IMAGE_NULL, IMAGE_NULL, IMAGE_NULL,3 )
+// chenxiang 20071101 pim_setting end
+MENU_DEF( MMI_PIM_DEBUG_SETTING_MENU, mmi_pim_debug_setting_menu, GUIMENU_STYLE_THIRD, TXT_PIM_DEBUG_SETTING, 	\
+		IMAGE_NULL, IMAGE_NULL, IMAGE_NULL,(sizeof(mmi_pim_debug_setting_menu)/sizeof(GUIMENU_ITEM_T)) )
+MENU_DEF( MMI_PIM_CUSTOM_UA_MENU, mmi_pim_custom_ua_menu, GUIMENU_STYLE_THIRD, TXT_PIM_DEBUG_SETTING, 	\
+		IMAGE_NULL, IMAGE_NULL, IMAGE_NULL,(sizeof(mmi_pim_custom_ua_menu)/sizeof(GUIMENU_ITEM_T)) )
+MENU_DEF( MMI_PIM_DEBUG_SERVER_SETTING_MENU, mmi_pim_debug_server_setting_menu, GUIMENU_STYLE_THIRD, TXT_PIM_DEBUG_SERVER_SETTING, 	\
+		IMAGE_NULL, IMAGE_NULL, IMAGE_NULL,2 )
+//end of PIM,wangxiaolin

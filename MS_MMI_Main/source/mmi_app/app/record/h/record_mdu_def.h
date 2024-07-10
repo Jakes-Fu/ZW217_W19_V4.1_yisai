@@ -1,0 +1,196 @@
+
+#ifdef MMI_RECORD_SUPPORT
+//[[define image infomation
+#if defined (KEYPAD_TYPE_COMPACT_KEYPAD) || defined (KEYPAD_TYPE_FOUR_KEY_UNIVERSE)
+RES_ADD_IMG(IMAGE_RECORD_RECORD_AGAIN, "\\MMI_RES_##\\IMAG\\Optionsmenu_icon\\IMAGE_RECORD_RECORD_AGAIN.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_STORAGE, "\\MMI_RES_##\\IMAG\\Optionsmenu_icon\\IMAGE_RECORD_STORAGE.png", IMG_CMP_PNG_ARGB_RLE, 0)
+#endif
+
+#ifdef MMI_GUI_STYLE_TYPICAL
+RES_ADD_IMG(IMAGE_RECORD_PLAY_BG, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_PLAY_BG.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_RECORD_BTN_DIS, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_RECORD_BTN_DIS.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_RECORD_BTN_UNSEL, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_RECORD_BTN_UNSEL.png", IMG_CMP_PNG_ARGB_RLE, 0)
+#endif
+
+#if !defined (KEYPAD_TYPE_COMPACT_KEYPAD) && !defined (KEYPAD_TYPE_FOUR_KEY_UNIVERSE)
+RES_ADD_IMG(IMAGE_RECORD_OK_ICON, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_OK_ICON.png", IMG_CMP_PNG_ARGB_RLE, 0)
+#endif
+
+#if !defined MMI_GUI_STYLE_TYPICAL && !defined MMI_RECORD_MINI_SUPPORT
+
+RES_ADD_IMG(IMAGE_RECORD_NEEDLE_BG, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NEEDLE_BG.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_NEEDLE_MASK, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NEEDLE_MASK.png", IMG_CMP_PNG_ARGB_RLE, 0)
+
+#endif
+
+#if !defined MMI_GUI_STYLE_TYPICAL && !defined MMI_RECORD_MINI_SUPPORT || defined TOUCHPANEL_TYPE
+RES_ADD_IMG(IMAGE_RECORD_NEEDLE, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NEEDLE.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_VOLUME, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_VOLUME.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_VOLUME_MUTE, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_VOLUME_MUTE.png", IMG_CMP_PNG_ARGB_RLE, 0)
+
+RES_ADD_IMG(IMAGE_RECORD_RECORD_BTN_PDA_UNSEL, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_RECORD_BTN_PDA_DEFAULT.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_LIST_BTN_UNSEL, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_LIST_BTN_DEFAULT.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_BACK_BTN_UNSEL, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_BACK_BTN_UNSEL.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_OPTION_BTN_UNSEL, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_OPTION_BTN_UNSEL.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_PLAY_BTN_UNSEL, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_PLAY_BTN_DEFAULT.png", IMG_CMP_PNG_ARGB_RLE, 0)
+#endif
+#ifndef SCREEN_SHAPE_CIRCULAR
+RES_ADD_IMG(res_recorder_ic_pause, "\\MMI_RES_##\\IMAG\\res_recorder_ic_pause.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_camera_ic_setting, "\\MMI_RES_##\\IMAG\\res_camera_ic_setting.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_recorder_ic_back, "\\MMI_RES_##\\IMAG\\res_recorder_ic_back.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_recorder_ic_delete, "\\MMI_RES_##\\IMAG\\res_recorder_ic_delete.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_recorder_ic_done, "\\MMI_RES_##\\IMAG\\res_recorder_ic_done.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_recorder_ic_menu_list, "\\MMI_RES_##\\IMAG\\res_recorder_ic_menu_list.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_recorder_ic_play, "\\MMI_RES_##\\IMAG\\res_recorder_ic_play.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_recorder_ic_rec, "\\MMI_RES_##\\IMAG\\res_recorder_ic_rec.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_recorder_ic_start, "\\MMI_RES_##\\IMAG\\res_recorder_ic_start.png", IMG_CMP_PNG_ARGB_RLE, 0)
+#endif
+RES_ADD_IMG(res_notification_sound_recorder, "\\MMI_RES_##\\IMAG\\res_notification_sound_recorder.png", IMG_CMP_PNG_ARGB_RLE, 0)
+#ifdef SCREEN_SHAPE_CIRCULAR//需要注意res_aw_recorder_ic_menu_list资源带下划线
+RES_ADD_IMG(res_aw_recorder_ic_menu_list, "\\MMI_RES_##\\IMAG\\res_aw_recorder_ic_menu_list.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_aw_recorder_ic_start, "\\MMI_RES_##\\IMAG\\res_aw_recorder_ic_start.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_aw_recorder_ic_play, "\\MMI_RES_##\\IMAG\\res_aw_recorder_ic_play.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_aw_recorder_ic_delete, "\\MMI_RES_##\\IMAG\\res_aw_recorder_ic_delete.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_aw_recorder_ic_done, "\\MMI_RES_##\\IMAG\\res_aw_recorder_ic_done.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_aw_recorder_ic_pause, "\\MMI_RES_##\\IMAG\\res_aw_recorder_ic_pause.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_aw_recorder_ic_back, "\\MMI_RES_##\\IMAG\\res_aw_recorder_ic_back.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(res_aw_recorder_ic_rec, "\\MMI_RES_##\\IMAG\\res_aw_recorder_ic_rec.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(image_watch_warning_info, "\\MMI_RES_##\\IMAG\\res_aw_ic_warning_info.png", IMG_CMP_PNG_ARGB_RLE, 0)
+
+#ifndef ADULT_WATCH_SUPPORT
+RES_ADD_IMG(res_recorder_ic_stop, "\\MMI_RES_##\\IMAG\\res_recorder_ic_stop.png", IMG_CMP_PNG_ARGB_RLE, 0)
+#endif
+#endif
+#ifndef MMI_GUI_STYLE_TYPICAL
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_0, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_0.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_1, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_1.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_2, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_2.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_3, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_3.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_4, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_4.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_5, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_5.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_6, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_6.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_7, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_7.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_8, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_8.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_9, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_9.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_POINT, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_POINT.png", IMG_CMP_PNG_ARGB_RLE, 0)
+
+#if (!defined RECORD_BARPHONE_UI_STYLE_SUPPORT) || (defined MMI_RECORD_MINI_SUPPORT)
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_BG, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_BG.png", IMG_CMP_PNG_SABM_RLE | SABM_HOR_STRETCH, 0)
+#else
+RES_ADD_IMG(IMAGE_RECORD_NUMBER_BG, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_NUMBER_BG_NEWBARUI.png", IMG_CMP_PNG_SABM_RLE | SABM_HOR_STRETCH, 0)
+#endif
+
+RES_ADD_IMG(IMAGE_RECORD_PLAY_BK_BG, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_OSD_BG.png", IMG_CMP_PNG_SABM_RLE | SABM_HOR_STRETCH, 0)
+RES_ADD_IMG(IMAGE_RECORD_RECORD_BG, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_RECORD_BG.png", IMG_CMP_PNG_SABM_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_RECORD_PDA_BG, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_BG.png", IMG_CMP_PNG_SABM_RLE | SABM_TILE, 0)
+
+RES_ADD_IMG(IMAGE_RECORD_BG_ANIM_FRAME_1, "\\MMI_RES_##\\ANIM\\ANIM_RECORD_PLAY\\1.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_BG_ANIM_FRAME_2, "\\MMI_RES_##\\ANIM\\ANIM_RECORD_PLAY\\2.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_BG_ANIM_FRAME_3, "\\MMI_RES_##\\ANIM\\ANIM_RECORD_PLAY\\3.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_BG_ANIM_FRAME_4, "\\MMI_RES_##\\ANIM\\ANIM_RECORD_PLAY\\4.png", IMG_CMP_PNG_ARGB_RLE, 0)
+#endif
+
+#if !defined MMI_GUI_STYLE_TYPICAL && !defined MMI_RECORD_MINI_SUPPORT
+//#ifndef RECORD_BARPHONE_UI_STYLE_SUPPORT
+RES_ADD_IMG(IMAGE_RECORD_PLAY_BTN_FOCUSE, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_PLAY_BTN_PRESSED.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_PLAY_STOP_BTN_FOCUS, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_PLAY_STOP_BTN_PRESSED.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_PLAY_STOP_BTN_UNSEL, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_PLAY_STOP_BTN_DEFAULT.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_RECORD_BTN_PDA_DIS, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_RECORD_BTN_PDA_DISABLED.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_RECORD_BTN_PDA_FOCUS, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_RECORD_BTN_PDA_PRESSED.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_RECORD_PAUSE_BTN_FOCUS, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_RECORD_PAUSE_BTN_PRESSED.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_RECORD_PAUSE_BTN_UNSEL, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_RECORD_PAUSE_BTN_DEFAULT.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_STOP_BTN_DIS, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_STOP_BTN_DISABLED.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_STOP_BTN_FOCUS, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_STOP_BTN_PREESED.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_STOP_BTN_UNSEL, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_STOP_BTN_DEFAULT.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_LIST_BTN_DIS, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_LIST_BTN_DISABLED.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_LIST_BTN_FOCUS, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_LIST_BTN_PRESSED.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_OPTION_BTN_FOCUS, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_OPTION_BTN_FOCUS.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_OPTION_BTN_DIS, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_OPTION_BTN_DIS.png", IMG_CMP_PNG_ARGB_RLE, 0)
+RES_ADD_IMG(IMAGE_RECORD_BACK_BTN_FOCUS, "\\MMI_RES_##\\IMAG\\IMAGE_RECORD_BACK_BTN_FOCUS.png", IMG_CMP_PNG_ARGB_RLE, 0)
+//#endif
+#endif
+//]]define image infomation
+
+
+//[[define anim infomation
+//]]define anim infomation
+
+
+//[[define string infomation
+//RES_ADD_STRING(TXT_RECORD_NULL,"")          //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_FILENAME,"File name")        //case3：defined but not used
+RES_ADD_STRING(TXT_RECORD_OPTION, "Record option")
+//RES_ADD_STRING(TXT_RECORD_START,"Start record")      //replaced by common ID TXT_CC_STARTRECORD
+//RES_ADD_STRING(TXT_RECORD_LIST,"Record list")            //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_PLAY,"Play record")        //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_APPEND,"Append record")        //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_DETAIL,"Detail")           //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_RENAME,"Rename")     //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_SETTORING,"Set as call ring")      //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_SETTOLEAVEWORD,"Set to leave word")        //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_DELETE,"Delete")          //replaced by common ID TXT_DELETE
+//RES_ADD_STRING(TXT_RECORD_DELETEALL,"Delete all")          //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_PAUSE,"Pause")    //replaced by common ID  TXT_PAUSE
+//RES_ADD_STRING(TXT_RECORD_RESUME,"Resume")     //replaced by common ID TXT_COMMON_COMMON_CONTINUE
+//RES_ADD_STRING(TXT_RECORD_STOP,"Stop")    //replaced by common ID  STXT_STOP
+//RES_ADD_STRING(TXT_RECORD_HEADERROR,"Head error")      //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_WRITEERROR,"Write error")     //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_PLAYCOMPLETE,"Play complete")       //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_PLAYERROR,"Play error")      //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_EMPTYNAME,"Name is null")        //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_SAMENAME,"Same name")         //case3：defined but not used
+RES_ADD_STRING(TXT_RECORD_NORECORD,"No record")          //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_UDISKNORECORD,"No record")    //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_RECORDING,"Recording")       //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_PAUSED,"Paused")        //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_PLAYING,"Playing")       //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_MAX_FILE,"Max file")         //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_TERMINATED,"Record terminated!")        //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_STORAGE_SETTING,"Record storage")         //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_STORAGE_UDISK,"Phone")       //replaced by common ID TXT_COMMON_UDISK
+//RES_ADD_STRING(TXT_RECORD_STORAGE_SDCARD,"Storage card")  //replaced by common ID TXT_COMMON_SD_CARD
+//RES_ADD_STRING(TXT_RECORD_LEAVEWORD,"Leav")        //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_LEAVEWORD_OPTION,"Option")       //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_LEAVEWORD_ITEM,"Select")        //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_LEAVEWORD_RECORD,"Listen")      //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_LEAVEWORD_ITEM1,"Leave word 1")      //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_LEAVEWORD_ITEM2,"Leave word 2")      //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_LEAVEWORD_OWN,"Own leave word")     //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_LEAVEWORD_PLAY,"Play")       //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_LEAVEWORD_DETAIL,"Detail")        //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_LEAVEWORD_DELETE,"Delete")      //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_FILE_LIST,"Record file list")    //replaced by common ID TXT_COMMON_RECORD_FILE_LIST
+RES_ADD_STRING(TXT_RECORD_AGAIN, "Record again")
+//RES_ADD_STRING(TXT_RECORD_SEND,"Send")   //replaced by common ID TXT_SEND
+//RES_ADD_STRING(TXT_RECORD_FILE,"Record files")      //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_SAVEASASPRING,"Save successfully,if set it as asp ring now?")         //case3：defined but not used
+//RES_ADD_STRING(TXT_RECORD_STORE_FORMAT,"File formats")//andy.he_record  format style    //replaced by common ID TXT_FILE_FORMAT
+RES_ADD_STRING(TXT_RECORD_FORMATWAV, "wav")
+RES_ADD_STRING(TXT_RECORD_FORMATMP3, "mp3")
+RES_ADD_STRING(TXT_RECORD_FORMATAMR, "AMR")
+RES_ADD_STRING(TXT_RECORD_SAVEASCALENDARRING, "Save successfully,if set it as calendar ring now?")
+
+RES_ADD_STRING(TXT_RECORD_SAVEASALARM, "Save successfully,if set it as alarm ring now?")
+RES_ADD_STRING(TXT_RECORD_SAVEAINSERTRECORD, "Save successfully,if set it as inserted record now?")
+RES_ADD_STRING(TXT_RECORD_SAVEAINSERTRECORD_TIMEOUT, "Time out!Save successfully,if set it as inserted record now?")
+//RES_ADD_STRING(TXT_RECORD_SAVEAINSERTRECORD_SIZEOUT,"Size out!Save successfully,if set it as inserted record now?")        //case3：defined but not used
+RES_ADD_STRING(TXT_RECORD_INSERT, "Insert Record")
+RES_ADD_STRING(TXT_WATCH_RECORD_BACK_SOFT_KEY, "Back")
+RES_ADD_STRING(TXT_WATCH_RECORD_RECORD, "Record")
+RES_ADD_STRING(TXT_WATCH_RECORD_RESUME, "Resume")
+RES_ADD_STRING(TXT_WATCH_RECORD_FORMATWAV, "WAV")
+RES_ADD_STRING(TXT_WATCH_RECORD_FORMATMP3, "MP3")
+RES_ADD_STRING(TXT_WATCH_RECORD_FORMATAMR, "AMR")
+RES_ADD_STRING(TXT_WATCH_RECORD_PLAYING, "Please stop playing first")
+RES_ADD_STRING(TXT_RECORD_DELETE_OR_NOT, "Delete?")
+RES_ADD_STRING(TXT_RECORD_FILE_DELETED, "deleted")
+#if defined(ADULT_WATCH_SUPPORT)||defined(SCREEN_SHAPE_CIRCULAR)
+RES_ADD_STRING(TXT_RECORD_SPACE_NOT_ENOUGH, "Space not enough")
+RES_ADD_STRING(TXT_RECORD_SPACE_NOT_ENOUGH_SAVED, "Space not enough,file saved.")
+RES_ADD_STRING(TXT_RECORD_NO_FILE, "no file")
+#endif
+//]]define string infomation
+//#endif
+#endif
+//[[define data infomation
+//]]define data infomation

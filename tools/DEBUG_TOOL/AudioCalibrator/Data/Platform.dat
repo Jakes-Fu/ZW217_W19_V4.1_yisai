@@ -1,0 +1,135 @@
+// ----------------------------------------------
+// 
+// 平台信息定义
+// 
+// <PlatformName>
+//    PlatFlag: value
+//    BaseAddress: value
+//    VerOffset:value
+//
+//    CfpConfig:beginAddress-EndAddress
+// </PlatformName>
+//
+// PlatFlag value定义
+//         Feature: 功能机
+//         Smart:   智能机
+//
+// BaseAddress: 平台内存基地址
+// VerOffset: 版本信息偏移地址
+// CfpConfig: 数据转换地址段定义
+// 
+// e.g:
+//   <8809>
+//      PlatFlag:Feature
+//      BaseAddress:083FA000
+//      VerOffset:0
+//
+//      CfpConfig:0x00001388-0x00001ce8
+//   </8809>
+// 
+// ----------------------------------------------
+
+
+
+<8809>
+   PlatFlag:Feature
+   BaseAddress: 083FA000
+   VerOffset:0
+   
+   // CFP文件数据转换地址段定义
+   CfpConfig:0x00001388-0x00001ce8
+   CfpConfig:0x00001cf4-0x00001cf8
+   CfpConfig:0x00001cfc-0x00001dec
+   CfpConfig:0x00006000-0x00008000
+</8809>
+
+
+<8955>
+   PlatFlag:Feature
+   BaseAddress: 083FA000
+   VerOffset:0
+   
+   CfpConfig:0x00001388-0x00001ce8
+   CfpConfig:0x00001cf4-0x00001cf8
+   CfpConfig:0x00001cfc-0x00001dec
+   CfpConfig:0x00006000-0x00008000
+</8955>
+
+
+
+<8810>
+   PlatFlag:Smart
+   BaseAddress: 023fc000
+   VerOffset:6000
+   
+   CfpConfig:0x00001388-0x00001ce8
+   CfpConfig:0x00001cf4-0x00001cf8
+   CfpConfig:0x00001cfc-0x00001dec
+   CfpConfig:0x00006000-0x00008000   
+</8810>
+
+
+
+<8850E-2G>
+   PlatFlag:Smart
+   BaseAddress: 02ffa000
+   VerOffset:6000
+   
+   CfpConfig:0x00001388-0x00001ce8
+   CfpConfig:0x00001cf4-0x00001cf8
+   CfpConfig:0x00001cfc-0x00001dec
+   CfpConfig:0x00006000-0x00008000
+</8850E-2G>
+
+
+
+<8850E-3G>
+   PlatFlag:Smart
+   BaseAddress:02ff6000
+   VerOffset:E000
+   
+   CfpConfig:0x00005388-0x00005ce8
+   CfpConfig:0x00005cf4-0x00005cf8
+   CfpConfig:0x00005cfc-0x00005dec
+   CfpConfig:0x0000e000-0x00010000  
+</8850E-2G>
+
+
+
+
+<8910-RDA>
+   PlatFlag:Feature
+   BaseAddress:083FA000
+   VerOffset:0
+   
+//   CfpConfig:0x00001388-0x00001ce8
+//   CfpConfig:0x00001cf4-0x00001cf8
+//   CfpConfig:0x00001cfc-0x00001dec
+//   CfpConfig:0x00006000-0x00008000
+</8910-RDA>
+
+
+<8910-NXP>
+   PlatFlag:Feature
+   BaseAddress:083FA000
+   VerOffset:0
+   
+//   CfpConfig:0x00001388-0x00001ce8
+//   CfpConfig:0x00001cf4-0x00001cf8
+//   CfpConfig:0x00001cfc-0x00001dec
+//   CfpConfig:0x00006000-0x00008000
+</8910-RDA>
+
+
+<8909>
+   PlatFlag:Feature
+   BaseAddress: 083FA000
+   VerOffset:0
+   
+   CfpConfig:0x00001388-0x00001ce8
+   CfpConfig:0x00001cf4-0x00001cf8
+   CfpConfig:0x00001cfc-0x00001dec
+   CfpConfig:0x00006000-0x00008000
+</8909>
+
+

@@ -1,0 +1,193 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CTRLPAN_DLG DIALOGEX 0, 0, 330, 340
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "File System"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_DEVICE,61,14,64,54,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Register",IDC_BUTTON_REGISTER,139,14,49,14
+    PUSHBUTTON      "UnRegister",IDC_BUTTON_UNREGISTER,198,14,49,14
+    PUSHBUTTON      "Format Disk",IDC_BUTTON_FORMAT,256,14,49,14
+    CONTROL         "List1",IDC_LIST_DISK,"SysListView32",LVS_SINGLESEL | 
+                    LVS_ALIGNLEFT | WS_TABSTOP,13,48,302,42,WS_EX_STATICEDGE
+    EDITTEXT        IDC_EDIT_IMGSIZE,187,106,53,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Create Img",IDC_BUTTON_CREATEIMG,258,105,50,14
+    CONTROL         "Tree1",IDC_TREE_DIR,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP,12,135,122,
+                    191,WS_EX_ACCEPTFILES
+    CONTROL         "List1",IDC_LIST_FILE,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,137,135,180,191,
+                    WS_EX_ACCEPTFILES
+    LTEXT           "Device:",IDC_STATIC,23,16,30,12
+    GROUPBOX        "Register Device",IDC_STATIC,5,1,319,36
+    GROUPBOX        "Files Brower",IDC_STATIC,5,124,319,208
+    LTEXT           "Device Space:",IDC_STATIC_INFO,16,92,89,27
+    GROUPBOX        "Disk Info",IDC_STATIC,5,38,319,85
+    LTEXT           "Create Image File:",IDC_STATIC,141,92,84,12
+    LTEXT           "M",IDC_STATIC,245,108,8,9
+    LTEXT           "File Size:",IDC_STATIC,141,108,45,10
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CTRLPAN_DLG DLGINIT
+BEGIN
+    IDC_COMBO_DEVICE, 0x403, 6, 0
+0x4455, 0x7369, 0x006b, 
+    IDC_COMBO_DEVICE, 0x403, 8, 0
+0x4453, 0x4320, 0x7261, 0x0064, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_FILESYS      BITMAP  DISCARDABLE     "bitmap1.bmp"
+IDB_BITMAP_DISK         BITMAP  DISCARDABLE     "bitmap2.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_CONTEXT MENU DISCARDABLE 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Create Dir",                  ID_MENUITEM_NEWDIR
+        MENUITEM "Delete Dir",                  ID_MENUITEM_DELDIR
+        MENUITEM SEPARATOR
+        MENUITEM "File -> PC...",               ID_MENUITEM_FILETOPC
+        MENUITEM "File <- PC...",               ID_MENUITEM_FILEFROMPC
+        MENUITEM SEPARATOR
+        MENUITEM "Open  Txt",                   ID_MENUITEM_OPENTXT
+        MENUITEM "Delete File",                 ID_MENUITEM_DELFILE
+        MENUITEM SEPARATOR
+        MENUITEM "Attribute...",                ID_MENUITEM_ATTR
+    END
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,0,1
+ PRODUCTVERSION 1,1,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", " \0"
+            VALUE "FileDescription", "filesys\0"
+            VALUE "FileVersion", "1, 1, 0, 1\0"
+            VALUE "InternalName", "filesys\0"
+            VALUE "LegalCopyright", "Copyright ? 2006\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "filesys.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "  filesys\0"
+            VALUE "ProductVersion", "1, 1, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

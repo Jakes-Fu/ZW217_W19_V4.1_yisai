@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.style1 {font-family: Verdana, Arial, Helvetica, sans-serif}
+-->
+</style>
+</head>
+
+<body>
+<h1 class="style1"><u>MediaCoder User's Guide</u></h1>
+<h2 class="style1"><a name="interface"></a></h2>
+<h2 class="style1">User Interface</h2>
+<h2 class="style1"><img src="main2.png" width="662" height="561"></h2>
+<p class="style1">&nbsp;</p>
+<p class="style1"><img src="main1.png" width="815" height="561"></p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a name="toolbar"></a></p>
+<h2 class="style1"><u>Toolbar</u></h2>
+<p class="style1">The toolbar contains buttons for common functions, as explained following:</p>
+<p class="style1"><img src="addfile.png" width="40" height="40"></p>
+<p class="style1">Add files into the transcoding queue</p>
+<p class="style1"><img src="addfolder.png" width="40" height="40"></p>
+<p class="style1">Add a folder and all files in its sub-folder into the transocoding queue</p>
+<p class="style1"><img src="remove.png" width="40" height="40"></p>
+<p class="style1">Remove selected item from the transcoding queue</p>
+<p class="style1"><img src="clear.png" width="40" height="40"></p>
+<p class="style1">Remove all the items in the transcoding queue</p>
+<p class="style1"><img src="play.png" width="40" height="40"></p>
+<p class="style1">Start playback of the selected item in a poped up window </p>
+<p class="style1"><img src="start.png" width="40" height="40"></p>
+<p class="style1">Start transcoding tasks</p>
+<p class="style1"><a name="dialogs"></a></p>
+<h2 class="style1"><u>Controls</u></h2>
+<p class="style1"><strong>Transcoding Queue List </strong></p>
+<p class="style1"><img src="list.png" width="641" height="131"></p>
+<p class="style1">The items in the list will be transcoded one after another. The list also shows some information of the files to be transcoded. Column &quot;File Name&quot; is the file name without path of the file to be transcoded. Column &quot;File Size&quot; shows the size of the file. Column &quot;File Type&quot; shows the file type identified with file extension name. Column &quot;State&quot; shows the state of the file, indicating whether it's to be processed or skipped (refer to <a href="#item_states">Item States</a>). </p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><strong>Playback Control</strong></p>
+<p class="style1"><img src="player1.png" width="171" height="180"></p>
+<p class="style1">There are 2 set of playback controls on the interface. One plays back original file and the other plays the transcoded file.</p>
+<p class="style1"><img src="player2.png" width="171" height="180"></p>
+<p class="style1">Once &quot;Play&quot; button is clicked, the &quot;Pause&quot; and &quot;Stop&quot; buttons are enabled, which can be used to do corresponding operations. Slide bar shows the position of the playback and can be used to seek to any position within the file (as long as the file supports seek).</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><strong>Source Information</strong></p>
+<p class="style1"><img src="summary.png" width="190" height="106"></p>
+<p class="style1">The Source Information frame displays some detail information of the selected file in the list, including duration, video/audio bitrate, container format, resolution, video/audio compression format etc.</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><strong>Video Settings</strong></p>
+<p class="style1"><img src="video_settings.png" width="245" height="172"></p>
+<p class="style1">Video related settings can be adjusted in the Video Settings frame. The bit rate slider bar specifies  the bit rate of transcoded video. Three modes of encoding are available, <strong>Fixed Quality</strong>, <strong>Fixed Bit Rate</strong> and <strong>2-Pass</strong> (refer to <a href="#bitrate">Bit Rate</a>, <a href="#bit_rate_mode">Bit Rate Mode</a>) and can be chosen to use by clicking on the corresponding radio box. The <strong>Format</strong> combo box specifies target video format(refer to <a href="#video_compression_method">Video Compression Method</a>). Different MPEG-4 profile can be chosen here too (see <a href="mpeg4_profile">MPEG-4 profiles</a>). The <strong>Rotation</strong> combox specifies whether and how to do rotation on the video (refer to <a href="#video_rotation">Video Rotation</a>). The <strong>Resize</strong> check box specifies whether to resize to video into a different resolution (refer to <a href="#video_res">Video Resolution</a>). Once it is selected, a resolution can be picked from the combo box at the right. If you can't find a resolution meets your need, you can simply enter your desired width and height in the combo box, e.g. 320x160. The <strong>FPS</strong> combo box specifies the output frame rate (refer to <a href="#frame_rate">Frame Rate</a>). The <strong>Crop</strong> check box specifies whether to do cropping on the video (refer to <a href="#cropping">Cropping</a>). There are two ways to specify cropping parameters - entering left, top, width and height of the cropping rectangle in the text field, or using Easy Cropper.</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><strong>Audio Settings</strong></p>
+<p class="style1"><img src="audio_settings.png" width="243" height="83"></p>
+<p class="style1">Audio related settings can be adjusted in the Audio Settings frame. The <strong>Format</strong> combo box specifies the format of audio (refer to <a href="#audio_format">Audio Format</a>). The sampling rate combo box specifies whether to resample and what sampling rate to use (refer to <a href="#sampling_rate">sampling rate</a>). The <strong>Bit Rate</strong> slider bar specifies the audio bit rate (refer to <a href="#bitrate">Bit Rate</a>). The <strong>Auto</strong> check box specify whether to use quality based mode. The <strong>Keep Single Channel</strong> check box specifies whether to do stereo to mono converting and which channel to use.</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><strong>Output Folder </strong> </p>
+<p class="style1"><img src="output_folder.png" width="190" height="106"></p>
+<p class="style1">The output folder is the folder which target files are created in. The <strong>Browse</strong> button pops up a folder selection dialog to let you choose a folder. You can also type or paste the folder name directly in the text field. The <strong>Open</strong> button opens the output folder with Windows Explorer. The <strong>Output Folder Structure</strong> check box specifies whether to preserved folder structure of the original fiiles. </p>
+<p class="style1"><a name="menu"></a></p>
+<h2 class="style1"><u>Menu</u></h2>
+<p class="style1">&nbsp;</p>
+<ul class="style1">
+  <li><strong><u>File</u> </strong>
+      <ul>
+        <li><strong><u>Add File</u></strong> - add files into the transcoding queue</li>
+        <li><strong><u>Add Folder</u></strong> - add a folder and all files in its sub-folder into the transocoding queue</li>
+        <li><strong><u>Add Track</u></strong> - add a CD/DVD/VCD/Cue sheets tracks into the transocoding queue</li>
+        <li><u><strong>Set Output Folder</strong></u> - choose the folder where transcoded files are created </li>
+        <li><u><strong>Load Preset</strong></u> - load a preset file as current settings (see <a href="#preset_file">Preset File</a>)</li>
+        <li><u><strong>Save Preset</strong></u> - save current settings to a preset file</li>
+        <li><u><strong>Revert All Settings</strong></u> - revert all settings to default values</li>
+        <li><u><strong>Keep Current Settings</strong></u> - save current settings (this is automatically done on exit)</li>
+        <li><u><strong>Settings</strong></u> - pop up the &quot;Setting&quot; dialog</li>
+        <li><u><strong>Exit</strong></u> - Shut down MediaCoder</li>
+      </ul>
+  </li>
+  <li><strong><u>Item</u> </strong>
+      <ul>
+        <li><u><strong>Remove Selected Item</strong></u> - remove selected item from the transcoding queue</li>
+        <li><u><strong>Remove All Items</strong></u> - remove all the items in the transcoding queue</li>
+        <li> </li>
+      </ul>
+      <u><strong>Set Target Format Mode</strong></u> - set target format to private or public mode (see <a href="target_format_mode.htm">Target Format Mode</a>)
+      <ul>
+        <li><u><strong>Toggle Target Format Mode</strong></u> - toggle between private and public mode </li>
+        <li><u><strong>Set Item State</strong></u> - set item state to &quot;Undone&quot; or &quot;Done&quot; (see <a href="item_states.htm">Item State</a>) </li>
+        <li><u><strong>Reset State of All Items</strong></u> - set state of all the items to &quot;Undone&quot;</li>
+        <li><u><strong>Load Queue</strong></u> - load transcoding queue from a file (see <a href="queue_file.htm">Queue File)</a> </li>
+        <li><u><strong>Save Queue</strong></u> - save transcoding queue to a file </li>
+        <li><u><strong>Show Item Details</strong></u> - pop up a dialog with details of the selected item shown </li>
+      </ul>
+  </li>
+  <li><strong><u>Action</u></strong>
+      <ul>
+        <li><u><strong>Start Transcoding </strong></u> - start transcoding tasks</li>
+        <li><u><strong>Transcoding Audio Only </strong></u> - do audio only transcoding with the tasks</li>
+        <li><u><strong>Stop Transcoding </strong></u> - stop transcoding. State of all the transcoded items will be marked as Done, Skipped or Error and the state of the current item will be marked Ready.</li>
+        <li> <u><strong>Toggle Console Window </strong></u> - show/hide console window</li>
+        <li> <u><strong>Toggle Statistics Window </strong></u> - show/hide statistics window</li>
+        <li><strong><u>Clear Log</u></strong> - clear the log data (won't affect the data written to log file)</li>
+        <li> <u><strong>Show Audio Encoder Version</strong></u> - show version information of current audio encoder </li>
+        <li></li>
+      </ul>
+      <u><strong>Show Video Encoder Version</strong></u> - show version information of current video encoder
+      <ul>
+        <li><u><strong>Show Container Muxer Version</strong></u> - show version information of current container muxer</li>
+        <li><u><strong>Configure DSP Plugins</strong></u> - pop up a list of DSP plugins to configure</li>
+      </ul>
+  </li>
+  <li><strong><u>Playback</u></strong>
+      <ul>
+        <li><u><strong>Play Item </strong></u> - start playback of the selected item in a poped up window</li>
+        <li><u><strong>Preview Transcoded Item </strong></u> - start playback of the transcoded item if the transcoded part can be played </li>
+        <li></li>
+      </ul>
+      <u><strong>Stop Playing</strong></u> - stop playback
+      <ul>
+        <li><u><strong>Audio</strong></u> - audio settings of playback</li>
+        <li><strong><u>Controls</u></strong> - controls various behavior of playback</li>
+      </ul>
+  </li>
+  <li><u><strong>Options </strong></u>
+      <ul>
+        <li><strong>Delete original file after transcoded</strong></li>
+        <li><strong>Power off when all jobs done</strong></li>
+      </ul>
+  </li>
+  <li><u><strong>About</strong></u>
+      <ul>
+        <li><u><strong>MediaCoder Web Site</strong></u> - open MediaCoder web site</li>
+        <li><u><strong>Check for update</strong></u> - connect to MediaCoder web site to check for avaiable update</li>
+        <li><u><strong>Splash</strong></u> - show splash window</li>
+        <li><u><strong>Version</strong></u> - show version information</li>
+      </ul>
+  </li>
+</ul>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a name="preset_file"></a></p>
+<h2 class="style1"><u>Preset File </u></h2>
+<p class="style1">Preset files contain some or all MediaCoder's settings, to set MediaCoder ready to do a certain type of transocding. You can also save your current settings into a preset file to load it later</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a name="item_states"></a></p>
+<h2 class="style1"><u>Item States</u></h2>
+<p class="style1">Available item states:</p>
+<ul class="style1">
+  <li>Ready - items marked as ready will be transcoded</li>
+  <li>Done - items are marked as Done when they are successfully transcoded </li>
+  <li>Skipped - items are marked as Skipped when they have already been successfully transcoded once, or are chosen to be skipped by user during transcoding </li>
+  <li>Error - items are marked as Error when error is encountered during transcoding</li>
+  <li></li>
+</ul>
+<p class="style1"><a name="target_format_mode"></a></p>
+<h2 class="style1"><u>Target Format Mode</u></h2>
+<p class="style1">Usually you choose target audio format and/or target video format you want and then start transocding your files. You may also specify target formats for a certain or a group of files in the transcoding list. Following is the steps:</p>
+<p class="style1">1. Choose the items you want to specify target formats different from other items.<br>
+  2. Make the audio/video/container settings.<br>
+  3. Choose menu <strong>Item</strong> -&gt; <strong>Set Target Format Mode</strong> -&gt; <strong>Private</strong>, or simply press Ctrl + F9, and you will see the settings in the target format column of the list. To change it back to public settings, choose menu <strong>Item</strong> -&gt; <strong>Set Target Format Mode</strong> -&gt; <strong>Private</strong>, or simply press Ctrl + Shift + F9.<br>
+  4. Don't forget to change the audio/video/container settings back as these are the public settings, for the rest of the files</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a name="queue_file"></a></p>
+<h2 class="style1"><u>Queue File</u></h2>
+<p class="style1">Queue file is a file that keeps the transcoding list and some details of the items in the list. Queue file saved by MediaCoder is in the form of a M3U file, with some extension information. MediaCoder can load either a text file (with file names listed line after line) or a M3U file as a queue file.</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a name="bitrate"></a></p>
+<h2 class="style1"><u>Bit Rate</u></h2>
+<p class="style1">The formal abbreviation for &quot;bit per second&quot; is &quot;bit/s&quot; (not &quot;bits/s&quot;). In less formal contexts the abbreviations &quot;b/s&quot; or &quot;bps&quot; are often used, though this risks confusion with &quot; bytes per second&quot; (&quot;B/s&quot;, &quot;Bps&quot;). Even less formally, it is common to drop the &quot;per second&quot;, and simply refer to &quot;a 128 kilobit audio stream&quot; or &quot;a 100 megabit network&quot;. </p>
+<p class="style1">&quot;Bit rate&quot; is sometimes used interchangeably with &quot; baud rate&quot;, which is correct only when each modulation transition of a data transmission system carries exactly one bit of data (something not true for modern modem modulation systems, for example). Similarly, hertz , the SI unit of frequency, is not precise without some context, such as the number of bits carried per cycle. </p>
+<p class="style1">For large bit rates, SI prefixes are used: </p>
+<p class="style1">1,000 bit/s = 1 kbit/s (one kilobit or one thousand bits per second) </p>
+<p class="style1">1,000,000 bit/s = 1 Mbit/s (one megabit or one million bits per second) </p>
+<p class="style1">1,000,000,000 bit/s = 1 Gbit/s (one gigabit or one billion bits per second) </p>
+<p class="style1">When describing bit rates, binary prefixes are almost never used and SI prefixes are almost always used with the standard, decimal meanings, not the computer-oriented binary meanings. There are exceptions in some specialty areas such as bus transfer rates. Binary usage is more often seen when the unit is the byte/s, and is not typical for telecommunication links. Sometimes it is necessary to seek clarification of the units used in a particular context. </p>
+<p class="style1">Bit rate represents the amount of information, or detail, that is stored per unit of time of a recording. The bit rate depends on several factors: </p>
+<ul class="style1">
+  <li>The original material may be sampled at different frequencies. </li>
+  <li>The samples may use different numbers of bits. </li>
+  <li>The data may be encoded by different schemes. </li>
+  <li>The information may be digitally compressed by different algorithms or to different degrees. </li>
+</ul>
+<p class="style1">Generally, choices are made about the above factors in order to achieve the desired trade-off between minimizing the bit rate and maximizing the quality of the material when it is played. </p>
+<p class="style1">If lossy data compression is used on audio or visual data, differences from the original signal will be introduced; if the compression is substantial, or lossy data is decompressed and recompressed, this may become noticeable in the form of compression artifacts . Whether these affect the perceived quality, and if so how much, depends on the compression scheme, encoder power, the characteristics of the input data, the listener's perceptions, the listener's familiarity with artifacts, and the listening or viewing environment. </p>
+<p class="style1">Experts and audiophiles may detect artifacts in many cases in which the average listener would not. Some musicians enjoy the distinct artifacts of low bit rate (sub-FM quality) encoding and there is a growing scene of net labels distributing stylized low bit music. </p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a name="frame_rate"></a></p>
+<h2 class="style1"><u>Frame Rate</u></h2>
+<p class="style1">Frame rate is the number of still pictures per unit of time of video, ranges from six or eight frames per second (fps) for old mechanical cameras to 120 or more frames per second for new professional cameras. PAL (Europe, Asia, Australia, etc.) and SECAM (France, Russia, parts of Africa etc.) standards specify 25 fps, while NTSC (USA, Canada, Japan, etc.) specifies 29.97 fps. To achieve the illusion of a moving image, the minimum frame rate is about ten frames per second. Film is shot at the slower frame rate of 24fps.</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a name="video_res"></a></p>
+<h2 class="style1"><u>Video Resolution </u></h2>
+<span class="style1">The size of a video image is measured in pixels for digital video or horizontal scan lines for analog video. Standard-definition television (SDTV) is specified as 640×480i60 for NTSC and 720×576i50 for PAL or SéCAM resolution. New high-definition televisions (HDTV) are capable of resolutions up to 1920×1080p60, i.e. 1920 pixels per scan line by 1080 scan lines, progressive, at 60 frames per second.
+</span>
+<p class="style1">Video resolution for 3D-video is measured in voxels (volume picture element, representing a value in three dimensional space). For example 512×512×512 voxels resolution, now used for simple 3D-video, can be displayed even on some PDAs.</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a name="cropping"></a></p>
+<h2 class="style1"><u>Cropping</u></h2>
+<p class="style1">Cropping is a method to remove parts of the left and right sides of a widescreen movie so that it fits into another aspect ratio, without stretching the image or filling the blank spaces with letterbox bars.</p>
+<p class="style1">With the advent of widescreen television, a similar process, removing large chunks from the top &amp; bottom to make a standard 4:3 image fit a 16:9 one, losing 25% of the original image, is coming into use. This process has unfortunately become standard in the United Kingdom, at least in TV shows where many archive clips are used, which gives them a zoomed in, cramped image with much important picture information missing and with blurry picture because of the reduced resolution. This is preferred to a process called pillarboxing, where black bands are placed down the sides of the screen and allows the complete image to be shown. Due to the fact that many viewers dislike black bands on their screen, this process is seldom used. This was, at least, public opinion in the mid-90s, when widescreen TV first arrived, but letterboxing and pillarboxing is much more accepted by the public, production techniques have yet to change to reflect this.</p>
+<p class="style1">Less specifically, cropping simply refers to removing unwanted areas from an image. One of the most basic photo manipulation processes, it can be used, for instance, to remove an unwanted subject or irrelevant portion from a photo, or to improve composition.</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a name="aspect_ratio"></a></p>
+<h2 class="style1"><u>Aspect ratio </u></h2>
+<p class="style1"> Aspect ratio describes the dimensions of video screens and video picture elements. The screen aspect ratio of a traditional television screen is 4:3, or 1.33:1. High definition televisions use an aspect ratio of 16:9, or about 1.78:1. The aspect ratio of a full 35 mm film frame with soundtrack (also known as &quot;Academy standard&quot;) is around 1.37:1.</p>
+<p class="style1">Pixels on computer monitors are usually square, but pixels used in digital video have non-square aspect ratios, such as those used in the PAL and NTSC variants of the CCIR 601 digital video standard, and the corresponding anamorphic widescreen formats.</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a name="video_compression_method"></a></p>
+<h2 class="style1"><u>Video Compression Method </u></h2>
+<p class="style1">A wide variety of methods are used to compress video streams. Video data contains spatial and temporal redundancy, making uncompressed video streams extremely inefficient. Broadly speaking, spatial redundancy is reduced by registering differences between parts of a single frame; this task is known as intraframe compression and is closely related to image compression. Likewise, temporal redundancy can be reduced by registering differences between frames; this task is known as interframe compression, including motion compensation and other techniques. The most common modern standards are MPEG-2, used for DVD and satellite television, and MPEG-4, used for home video.
+</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a name="mpeg4_profile"></a></p>
+<h2 class="style1"><u>MPEG-4 Profiles</u></h2>
+<h3 class="style1">Simple Profile </h3>
+<p class="style1"><strong>Simple Profile </strong> is mostly aimed for use in situations where low bit rate and low resolution are mandated by other conditions of the applications, like network bandwidth, device size etc etc. Examples are cell phones, some low end video conferencing systems, surveillance systems etc. </p>
+<h3 class="style1">Advanced Simple Profile </h3>
+<p class="style1">Advanced Simple Profile (ASP) is a &quot;profile&quot; defined in the digital compression codec standard MPEG-4 Part 2 (Visual) . </p>
+<p class="style1">MPEG-4 Visual is essentially still a Discrete Cosine Transform (DCT) compression standard, similar to previous standards such as MPEG-1 and MPEG-2 . </p>
+<p class="style1">Notable technical features of ASP relative to the Simple Profile, which is roughly similar to H.263 , include: </p>
+<ul class="style1">
+  <li>Support for mpeg quantization </li>
+  <li>Support for interlaced video </li>
+  <li>Support for B pictures </li>
+  <li>Quarter-sample motion compensation (QPel) </li>
+  <li>Global motion compensation (GMC) </li>
+</ul>
+<p class="style1">The mpeg quantization is designed in a basically similar way to the way it is found in MPEG-2 Part 2. </p>
+<p class="style1">The interlace support is designed in a basically similar way to the way it is found in MPEG-2 Part 2. </p>
+<p class="style1">The B picture support is designed in a basically similar way to the way it is found in MPEG-2 Part 2 and H.263v2 . </p>
+<p class="style1">The optional quarter-pixel motion compensation feature of ASP was innovative, and was later also included (in somewhat different forms) in MPEG-4 Part 10 and VC-1 . Many implementations omit support for this feature, because it has a significant harmful effect on speed, and it often does not help quality. </p>
+<p class="style1">The global motion compensation feature is not actually supported in most implementations although the standard officially requires decoders to support it. Most encoders do not support it either, and some experts say that it does not ordinarily provide any compression benefit. When used, ASP's global motion compensation has a large unfavorable impact on speed, and adds considerable complexity to the implementation. </p>
+<p class="style1">See also: Definition of Levels for Video Profiles</p>
+<p class="style1">&nbsp;</p>
+<p class="style1"><a name="audio_format"></a></p>
+<h2 class="style1"><u>Audio Format</u></h2>
+<p class="style1">An audio format is a medium for storing sound and music. The term is applied to both the physical medium and the format of the content – in computer science it is often limited to the file format, but its wider use usually refers to the physical method used to store the data.</p>
+<p class="style1">Music is recorded and distributed using a variety of audio formats, some of which store additional information.</p>
+<p class="style1">&nbsp;</p>
+<h1 class="style1"><a name="sampling_rate"></a></h1>
+<h2 class="style1"><u>Sampling Rate</u> </h2>
+<p class="style1">The sampling frequency or sampling rate defines the number of samples per second taken from a continuous signal to make a discrete signal . It is measured in hertz (Hz). The inverse of the sampling frequency is the sampling period or sampling time , which is the time between samples . </p>
+<p class="style1">The sampling frequency can only be applied to samplers in which each sample is periodically taken. There is no rule that limits a sampler from taking a sample at a non-periodic rate. </p>
+<p class="style1">In digital audio , common sampling rates are: </p>
+<ul class="style1">
+  <li>8,000 Hz - telephone , adequate for human speech </li>
+  <li>11,025 Hz </li>
+  <li>22,050 Hz - radio</li>
+  <li>32,000 Hz - miniDV digital video camcorder </li>
+  <li>44,100 Hz - audio CD , also most commonly used with MPEG-1 audio ( VCD, SVCD, MP3) </li>
+  <li>47,250 Hz - world's first commercial PCM  sound recorder by Nippon Columbia (Denon) </li>
+  <li>48,000 Hz - digital sound used for digital TV , DVD , DAT, films and professional audio </li>
+  <li>50,000 Hz - first commercial digital audio recorders from the late 70's from 3M and Soundstream </li>
+  <li>50,400 Hz - sampling rate used by the Mitsubishi X-80 digital audio recorder </li>
+  <li>96,000 or 192,400 Hz - DVD-Audio , some LPCM DVD tracks, BD-ROM  (Blu-ray Disc) audio tracks, and HD-DVD (High-Definition DVD) audio tracks </li>
+  <li>2.8224 MHz - SACD, 1-bit sigma-delta modulation process known as Direct Stream Digital, co-developed by Sony and Philips</li>
+</ul>
+<p class="style1">&nbsp; </p>
+</body>
+</html>

@@ -1,0 +1,372 @@
+
+//#ifdef JPG_DEC_SUPPORT_JPG_HW
+#ifdef MMIAP_LYRIC_SUPPORT 
+RES_ADD_IMG(IMAGE_MP3_MAIN_BG,"\\MMI_RES_##\\IMAG\\Panel\\IMAGE_MP3_MAIN_BG.jpg",IMG_CMP_JPG_SCI,0)
+#endif
+#ifndef MMI_PDA_SUPPORT
+//RES_ADD_ANIM(MP3_IMAGE_PLAY_ANIM,"\\MMI_RES_##\\ANIM\\MP3_IMAGE_PLAY_ANIM",ANIM_CMP_PNG_ARGB,0,0x000000)
+#endif
+
+#ifdef MMI_AUDIO_PLAYER_SUPPORT
+//[[define image infomation
+//Button sub directory;
+#ifdef MMI_AUDIOPLAYER_REVIEW_SUPPORT
+RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_DEFAULT.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW_GREY,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_DISABLED.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW_PLAY,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_PLAY_DEFAULT.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW_SET,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_SET_DEFAULT.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW_START,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_START_DEFAULT.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW_STOP,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_STOP_DEFAULT.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW_CANCEL,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_CANCEL_DEFAULT.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW_FOCUS,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_PRESSED.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW_PLAY_FOCUS,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_PLAY_PRESSED.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW_SET_FOCUS,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_SET_PRESSED.png",IMG_CMP_PNG_ARGB_RLE,0)
+#endif
+//RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW_START_FOCUS,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_START_PRESSED.png",IMG_CMP_PNG_ARGB_RLE,0)
+//RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW_STOP_FOCUS,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_STOP_PRESSED.png",IMG_CMP_PNG_ARGB_RLE,0)
+//RES_ADD_IMG(IMAGE_MP3_BTN_REVIEW_CANCEL_FOCUS,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_REVIEW_CANCEL_PRESSED.png",IMG_CMP_PNG_ARGB_RLE,0)
+
+//pda sub directory;
+//RES_ADD_IMG(IMAGE_MP3_H_BTN_BG,"\\MMI_RES_##\\IMAG\\Pda\\IMAGE_AP_H_BTN_BG.jpg",IMG_CMP_JPG_SCI,0)
+RES_ADD_IMG(IMAGE_MP3_ALBUM_BG,"\\MMI_RES_##\\IMAG\\Pda\\IMAGE_AP_ALBUM_BG.png",IMG_CMP_PNG_SABM_RLE |SABM_TILE,0)
+#ifdef BRIGHT_EFFECT_SUPPORT
+RES_ADD_IMG(IMAGE_MP3_DEFAULT_ALBUM_IMG,"\\MMI_RES_##\\IMAG\\Pda\\IMAGE_AP_DEFAULT_ALBUM_IMG_BRIGHT.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_TITLE_BG,"\\MMI_RES_##\\IMAG\\Pda\\IMAGE_AP_TITLE_BG_BRIGHT.png",IMG_CMP_PNG_ARGB_RLE,0)
+#else
+RES_ADD_IMG(IMAGE_MP3_DEFAULT_ALBUM_IMG,"\\MMI_RES_##\\IMAG\\Pda\\IMAGE_AP_DEFAULT_ALBUM_IMG.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_TITLE_BG,"\\MMI_RES_##\\IMAG\\Pda\\IMAGE_AP_TITLE_BG.png",IMG_CMP_PNG_SABM_RLE |SABM_HOR_STRETCH,0)
+#endif
+RES_ADD_IMG(IMAGE_MP3_OSD_BG_DOWN,"\\MMI_RES_##\\IMAG\\Pda\\IMAGE_AP_OSD_BG_DOWN.png",IMG_CMP_PNG_SABM_RLE |SABM_CEN_STRETCH,0)
+#ifndef MMI_RES_LOW_COST
+RES_ADD_IMG(IMAGE_MP3_OSD_BG_UP,"\\MMI_RES_##\\IMAG\\Pda\\IMAGE_AP_OSD_BG_UP.png",IMG_CMP_PNG_SABM_RLE |SABM_HOR_STRETCH,0)
+#endif
+#ifdef MMI_AUDIOPLAYER_REVIEW_SUPPORT
+RES_ADD_IMG(IMAGE_MP3_PROCESS_REVIEW,"\\MMI_RES_##\\IMAG\\Pda\\IMAGE_AP_PROCESS_REVIEW.png",IMG_CMP_PNG_SABM_RLE |SABM_HOR_STRETCH, 0)
+RES_ADD_IMG(IMAGE_MP3_PROCESS_SLIDE_REVIEW,"\\MMI_RES_##\\IMAG\\Pda\\IMAGE_AP_PROCESS_SLIDE_REVIEW.png",IMG_CMP_PNG_ARGB_RLE,0)
+#endif
+#ifdef MMI_PDA_SUPPORT
+RES_ADD_IMG(IMAGE_MP3_H_BTN_BG,"\\MMI_RES_##\\IMAG\\Pda\\IMAGE_AP_BTN_BG.png",IMG_CMP_PNG_SABM_RLE |SABM_HOR_STRETCH,0)
+#endif
+
+#ifdef MMI_PDA_SUPPORT
+//Button sub directory;
+RES_ADD_IMG(IMAGE_MP3_ISTYLE_BTN_OPTION,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_OPTION_DEFAULT.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_ISTYLE_BTN_OPTION_FOCUS,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_OPTION_PRESSED.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_ISTYLE_BTN_OPTION_GREY,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_OPTION_DISABLED.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_ISTYLE_BTN_RETURN,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_RETURN_DEFAULT.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_ISTYLE_BTN_RETURN_FOCUS,"\\MMI_RES_##\\IMAG\\Button\\IMAGE_AP_BTN_RETURN_PRESSED.png",IMG_CMP_PNG_ARGB_RLE,0)
+//Optionsmenu_icon sub directory;
+RES_ADD_IMG(IMAGE_MP3_MENU_SET_CALL_RING,"\\MMI_RES_##\\IMAG\\Optionsmenu_icon\\IMAGE_MP3_MENU_SET_CALL_RING.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_MENU_ADD_TO_PLAY_LIST,"\\MMI_RES_##\\IMAG\\Optionsmenu_icon\\IMAGE_MP3_MENU_ADD_TO_PLAY_LIST.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_MENU_DISPLAY_SETTING,"\\MMI_RES_##\\IMAG\\Optionsmenu_icon\\IMAGE_MP3_MENU_DISPLAY_SETTING.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_MENU_MUSIC_LIST,"\\MMI_RES_##\\IMAG\\Optionsmenu_icon\\IMAGE_MP3_MENU_MUSIC_LIST.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_MENU_MUSIC_MARK,"\\MMI_RES_##\\IMAG\\Optionsmenu_icon\\IMAGE_MP3_MENU_MUSIC_MARK.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_MENU_LIST_ADD,"\\MMI_RES_##\\IMAG\\Optionsmenu_icon\\IMAGE_MP3_MENU_LIST_ADD.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_MENU_NEW_LIST,"\\MMI_RES_##\\IMAG\\Optionsmenu_icon\\IMAGE_MP3_MENU_NEW_LIST.png",IMG_CMP_PNG_ARGB_RLE,0)
+#endif //MMI_PDA_SUPPORT
+
+//icon sub directory;
+RES_ADD_IMG(IMAGE_MP3_ALL_MUSIC_ICON,"\\MMI_RES_##\\IMAG\\Icon\\IMAGE_MP3_ALL_MUSIC_ICON.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_FILE_SD_ICON,"\\MMI_RES_##\\IMAG\\Icon\\IMAGE_MP3_FILE_SD_ICON.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_FILE_UDISK_ICON,"\\MMI_RES_##\\IMAG\\Icon\\IMAGE_MP3_FILE_UDISK_ICON.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_LIST_SD_ICON,"\\MMI_RES_##\\IMAG\\Icon\\IMAGE_MP3_LIST_SD_ICON.png",IMG_CMP_PNG_ARGB_RLE,0)
+RES_ADD_IMG(IMAGE_MP3_LIST_UDISK_ICON,"\\MMI_RES_##\\IMAG\\Icon\\IMAGE_MP3_LIST_UDISK_ICON.png",IMG_CMP_PNG_ARGB_RLE,0)
+#ifdef MMIAP_MUSICMARK_SUPPORT
+RES_ADD_IMG(IMAGE_MP3_MUSIC_MARK_ICON,"\\MMI_RES_##\\IMAG\\Icon\\IMAGE_MP3_MUSIC_MARK_ICON.png",IMG_CMP_PNG_ARGB_RLE,0)
+#endif
+RES_ADD_IMG(IMAGE_MP3_MUSIC_PLAYING_ICON,"\\MMI_RES_##\\IMAG\\Icon\\IMAGE_MP3_MUSIC_PLAYING_ICON.png",IMG_CMP_PNG_ARGB_RLE,0)
+#ifdef AUDIOPLAYER_DEMOAPP_SUPPORT
+#include "audioplayer_demoapp_mdu_def.h"
+#endif
+//]]define image infomation
+
+
+//[[define string infomation
+
+#if 1
+//RES_ADD_STRING(TXT_MP3_NO_SUPPORT,"Not support")          //replaced by common ID TXT_COMMON_NO_SUPPORT
+//RES_ADD_STRING(TXT_MP3,"MP3 player")    //replaced by common ID TXT_AUDIO
+//RES_ADD_STRING(TXT_MP3_NO_MP3,"No music")          //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_FILE_ERROR,"Music error")     //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_SOFT_R,"Return")  //replaced by common ID STXT_RETURN
+
+//RES_ADD_STRING(TXT_MP3_PLAY_MODE,"Play mode")         //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_PLAY,"Play") //replaced by common ID TXT_COMMON_PLAY
+
+//RES_ADD_STRING(TXT_MP3_PAUSE,"Pause")           //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_STOP,"Stop")       //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_EQ_SETTING,"EQ setting")   //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_DETAIL_NAME,"Name:")   //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_DETAIL_TYPE,"Format:")   //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_DETAIL_PIXEL,"Resolution:")     //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_DETAIL_SIZE,"Size:")    //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_DETAIL_POS,"Pos:")      //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_DETAIL_DATE,"Date:")       //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_DETAIL_TIME,"Time:")   //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_DETAIL_DURATION,"Period:")    //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_DETAIL_LOCATION,"Locate:")   //case3：defined but not used
+
+RES_ADD_STRING(TXT_MP3_SINGER,"Singer:")
+
+RES_ADD_STRING(TXT_MP3_SONG,"Song:")
+
+//RES_ADD_STRING(TXT_MP3_REGULAR_EQ,"Regular")  //replaced by common ID TXT_COMM_REGULAR
+
+//RES_ADD_STRING(TXT_MP3_CLASSIC_EQ,"Classic")       //replaced by common ID TXT_COMMON_CLASSICAL 
+
+//RES_ADD_STRING(TXT_MP3_ODEUM_EQ,"Odeum")    //replaced by common ID TXT_ODEUM_EQ
+
+//RES_ADD_STRING(TXT_MP3_JAZZ_EQ,"Jazz")      //replaced by common ID TXT_COMMON_EQ_JAZZ 
+
+//RES_ADD_STRING(TXT_MP3_ROCK_EQ,"Rock")    //replaced by common ID TXT_ROCK_EQ
+
+//RES_ADD_STRING(TXT_MP3_SOFT_ROCK_EQ,"Soft Rock")     //replaced by common ID TXT_COMMON_SOFT_ROCK_EQ
+#ifdef MMIAP_LYRIC_SUPPORT
+//RES_ADD_STRING(TXT_MP3_LYRIC_SET,"Lyric set")        //case3：defined but not used
+#endif
+//RES_ADD_STRING(TXT_MP3_BT_NOT_SUPPORT_EQ,"Bluetooth doesnot support EQ!")      //replaced by common ID TXT_COMMON_BT_NOT_SUPPORT_EQ
+
+//RES_ADD_STRING(TXT_MP3_OPEN,"Open")      //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_OPEN_CUR_LIST,"Current play list")     //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_PLAY_LIST_MENU,"Play list")     //case3：defined but not used
+
+RES_ADD_STRING(TXT_MP3_SET_RING,"Set ring")
+
+//RES_ADD_STRING(TXT_MP3_ADD_TO_LIST,"Add to list")       //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_ADD_MUSIC_MARK,"Add music mark")    //replaced by common ID TXT_ADD_BOOKMARK
+
+
+//RES_ADD_STRING(TXT_MP3_EQ_SET,"EQ setting")    //replaced by common ID TXT_COMMON_EQ_SET
+
+//RES_ADD_STRING(TXT_MP3_SETTINGS,"Settings")    //replaced by common ID STXT_MAIN_SETTING
+
+//RES_ADD_STRING(TXT_MP3_SET_CALL_RING,"Set call ring")      //replaced by common ID TXT_COMMON_SET_CALL_RING
+
+RES_ADD_STRING(TXT_MP3_SET_ALARM_RING,"Set alarm ring")
+
+RES_ADD_STRING(TXT_MP3_ADD,"Add music")
+
+RES_ADD_STRING(TXT_MP3_DEL_FROM_LIST,"Delete from list")
+
+//RES_ADD_STRING(TXT_MP3_SAVE_LIST,"Save list")         //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_CLEAR_CUR_PLAY,"Clear current play list")      //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_MULTI_DEL,"Multi delete")    //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_SEND,"Send")  //replaced by common ID TXT_SEND
+
+//RES_ADD_STRING(TXT_MP3_DETAIL,"Details")    //replaced by common ID STXT_DETAIL
+
+//RES_ADD_STRING(TXT_MP3_LIST_VIEW,"View")    //replaced by common ID TXT_BROWSE
+
+RES_ADD_STRING(TXT_MP3_LIST_DEL,"Delete")
+
+RES_ADD_STRING(TXT_MP3_LIST_NEW,"New list")
+
+//RES_ADD_STRING(TXT_MP3_LIST_RENAME,"Rename")  //replaced by common ID TXT_COMMON_RENAME
+
+//RES_ADD_STRING(TXT_MP3_LIST_COPY,"Copy")         //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_LIST_REFRESH,"Refresh")     //case3：defined but not used
+#ifdef MMIAP_LYRIC_SUPPORT
+//RES_ADD_STRING(TXT_MP3_SET_LYRIC,"Set lyric")     //case3：defined but not used
+#endif
+//RES_ADD_STRING(TXT_MP3_SET_REPEAT,"Repeat")  //replaced by common ID TXT_COMMON_REPEAT
+
+//RES_ADD_STRING(TXT_MP3_SET_SHUFFLE,"Shuffle")    //replaced by common ID TXT_SET_SHUFFLE
+#ifdef MMIAP_LYRIC_SUPPORT
+RES_ADD_STRING(TXT_MP3_LYRIC_ON_WITH_BACKLIGHT,"Lyric on and backlight on")
+
+RES_ADD_STRING(TXT_MP3_LYRIC_ON,"Lyric on")
+
+//RES_ADD_STRING(TXT_MP3_LYRIC_OFF,"Lyric off")    //case3：defined but not used
+#endif
+//RES_ADD_STRING(TXT_MP3_REPEAT_ON,"On")          //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_REPEAT_OFF,"Off")         //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_SHUFFLE_ON,"On")     //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_SHUFFLE_OFF,"Off")   //case3：defined but not used
+#ifdef MMIAP_MUSICMARK_SUPPORT
+RES_ADD_STRING(TXT_MP3_ALL_MP3,"All music")
+#endif
+
+RES_ADD_STRING(TXT_MP3_INPUT_LIST_NAME,"Input list name")
+#ifdef MMI_AUDIO_PLAYER_SUPPORT
+RES_ADD_STRING(TXT_MP3_FILE_EXIST,"File exists!")
+#endif
+#ifdef MMIAP_MUSICMARK_SUPPORT
+
+//RES_ADD_STRING(TXT_MP3_CREATE_NEW_LIST_SUCCESS,"Success")
+
+//RES_ADD_STRING(TXT_MP3_NO_SPACE,"No space!")  //replaced by common ID TXT_NO_SPACE
+
+//RES_ADD_STRING(TXT_MP3_EMPTY_LIST,"(Empty list)")     //replaced by common ID TXT_COMMON_COMMON_EMPTY_LIST
+
+RES_ADD_STRING(TXT_MP3_MUSIC_FILE_NOT_EXIST,"Music file not exist!")
+
+RES_ADD_STRING(TXT_MP3_MARK_MUSIC_LIST_NOT_EXIST,"Music list not exist!")
+RES_ADD_STRING(TXT_MP3_MARK_DETAIL_NAME,"Mark name:")
+
+RES_ADD_STRING(TXT_MP3_MARK_DETAIL_SONG_NAME,"Song name:")
+RES_ADD_STRING(TXT_MP3_MARK_DETAIL_LIST_NAME,"List name:")
+
+RES_ADD_STRING(TXT_MP3_MARK_DETAIL_TIME,"Mark time:")
+RES_ADD_STRING(TXT_MP3_NO_MARK,"(No music mark)")
+
+//RES_ADD_STRING(TXT_MP3_ADD_SUCCESS,"Success!")    //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_ADD_FAIL,"Fail to add!")    //replaced by common ID TXT_ADD_FAIL
+
+//RES_ADD_STRING(TXT_MP3_DEL_SUCCESS,"Success!")     //replaced by common ID TXT_COMMON_DELETESUCESS
+
+//RES_ADD_STRING(TXT_MP3_DEL_FAIL,"Fail to Delete!")  //replaced by common ID TXT_COMMON_DEL_FAIL
+
+//RES_ADD_STRING(TXT_MP3_FOLDER_FULL,"Folder Full!")     //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_UDISK_FOLDER_FULL,"Udisk Folder Full!")           //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_CARD_FOLDER_FULL,"Memory Card Folder Full!")       //case3：defined but not used
+RES_ADD_STRING(TXT_MP3_MUSIC_MARK_MENU,"Music mark")
+
+RES_ADD_STRING(TXT_MP3_NO_PLAY_INFO,"No playing info!")
+RES_ADD_STRING(TXT_MP3_INPUT_MARK_NAME,"Input mark name")
+#endif
+//RES_ADD_STRING(TXT_MP3_MARK_FULL,"Total number 50!")  //replaced by common ID TXT_COMON_BOOKMARK_FULL
+
+RES_ADD_STRING(TXT_MP3_CUR_LIST_NOT_SUPPORT_OPERATION,"The operation is not supported in current list!")
+
+RES_ADD_STRING(TXT_MP3_NOT_SUPPORT_A2DP,"A2DP is not supported!")
+
+//]]define string infomation
+//RES_ADD_STRING(TXT_MP3_ADD_TO,"Add")  //replaced by common ID STXT_ADD
+
+RES_ADD_STRING(TXT_MP3_ADD_TO_SAVED_LIST,"To saved list")
+
+RES_ADD_STRING(TXT_MP3_ADD_TO_NEW_LIST,"To new list")
+#ifdef MMIAP_MUSICMARK_SUPPORT
+RES_ADD_STRING(TXT_MP3_ADD_TO_MUSIC_MARK,"To music mark")
+#endif
+//RES_ADD_STRING(TXT_MP3_REPEAT_ONE_ON,"Repeat One")  //replaced by common ID TXT_COMM_REPEAT_ONE
+
+//RES_ADD_STRING(TXT_MP3_REPEAT_ALL_ON,"Repeat All")       //replaced by common ID TXT_COMMON_SET_REPEAT_ALL
+#ifdef MMIAP_SPECTRUM_SUPPORT        
+RES_ADD_STRING(TXT_MP3_SPECTRUM,"Spectrum")
+#endif
+//RES_ADD_STRING(TXT_MP3_REVIEW_START,"Spectrum")       //replaced by common ID TXT_COMMON_START
+
+//RES_ADD_STRING(TXT_MP3_REVIEW_STOP,"Spectrum")    //replaced by common ID  STXT_STOP
+#ifdef MMI_AUDIO_PLAYER_SUPPORT
+RES_ADD_STRING(TXT_MP3_REVIEW_OPEN,"Spectrum")
+RES_ADD_STRING(TXT_MP3_REVIEW_CLOSE,"Spectrum")
+#endif
+RES_ADD_STRING(TXT_MP3_LIST_1,"List 1")
+
+RES_ADD_STRING(TXT_MP3_LIST_2,"List 2")
+
+RES_ADD_STRING(TXT_MP3_LIST_3,"List 3")
+
+//RES_ADD_STRING(TXT_MP3_SPECIAL_VIEW,"Special view")      //case3：defined but not used
+
+//RES_ADD_STRING(TXT_MP3_EXIT,"Exit")    //replaced by common ID  STXT_EXIT
+
+RES_ADD_STRING(TXT_MP3_MY_MUSIC,"My music")
+
+RES_ADD_STRING(TXT_MP3_SEARCH_ALL_MUSIC,"Search all music")
+#ifdef MMIAP_SORT_SUPPORT
+//RES_ADD_STRING(TXT_MP3_SORT,"Sort")      //replaced by common ID TXT_COMMON_SORT
+
+//RES_ADD_STRING(TXT_MP3_SORT_BY_TIME,"Time")  //replaced by common ID TXT_TIME
+
+//RES_ADD_STRING(TXT_MP3_SORT_BY_SIZE,"Size")  //replaced by common ID TXT_COMMON_SIZE
+
+RES_ADD_STRING(TXT_MP3_SORT_BY_TITLE,"Title")
+
+RES_ADD_STRING(TXT_MP3_SORT_BY_NONE,"None")
+#endif
+RES_ADD_STRING(TXT_MP3_LIST_COPY_TO_UDISK,"Copy to phone")
+
+RES_ADD_STRING(TXT_MP3_LIST_COPY_TO_SDCARD,"Copy to memory card")
+#ifdef MMIAP_MUSICMARK_SUPPORT
+RES_ADD_STRING(TXT_MP3_MUSIC_FILE_NOT_IN_LIST,"Music file is not in list!")
+#endif
+//RES_ADD_STRING(TXT_MP3_DEL,"Delete")      //replaced by common ID TXT_DELETE
+
+RES_ADD_STRING(TXT_MP3_MUSIC_LIST,"Music list")
+
+RES_ADD_STRING(TXT_MP3_RETURN_TO_PLAY_WIN,"Return to play")//返回播放界面
+
+RES_ADD_STRING(TXT_MP3_SUCCESS_ADD_TO_NEW_LIST,"Success to add to new list!")//歌曲已添加至所建列表
+
+//RES_ADD_STRING(TXT_MP3_ANIM,"Animation")//动画  //replaced by common ID TXT_COMM_ANIMATION
+
+RES_ADD_STRING(TXT_MP3_NEED_ADD_MUSIC,"Add music now?")     //是否现在添加曲目？
+
+RES_ADD_STRING(TXT_MP3_DEL_REAL_MUSIC,"Delete Real Music")  //永久删除
+
+RES_ADD_STRING(TXT_MP3_DEL_REAL_MUSIC_QUERY,"Delete Real Music?") //永久删除将无法恢复，确认继续?
+
+RES_ADD_STRING(TXT_MP3_SUCCESS_ADD_TO_CHOSEN_LIST,"Success to add to chosen list!") //歌曲已添加至所选列表
+#ifdef MMIAP_MUSICMARK_SUPPORT
+RES_ADD_STRING(TXT_MP3_SUCCESS_ADD_TO_MUSIC_MARK,"Success to add to music mark!")   //书签添加成功
+#endif
+RES_ADD_STRING(TXT_MP3_CHOOSE_MUSIC_LIST,"Choose music list")                       //选择播放列表
+
+RES_ADD_STRING(TXT_MP3_DEL_OPENED_MUSIC_FAIL,"Cannot delete an opened file!")       //无法删除已经打开的文件
+
+RES_ADD_STRING(TXT_MP3_LIST_FILE_DAMAGED,"Music list file damaged!")       //音乐列表文件已损坏!
+
+//RES_ADD_STRING(TXT_MP3_DISPLAY_SET,"Display Setting")       //显示设置    //replaced by common ID TXT_DISPLAY_SET
+//RES_ADD_STRING(TXT_MP3_DISPLAY_NORMAL,"Normal")             //普通     //replaced by common ID TXT_COMMON_COMMON_NORMAL
+
+#ifdef CMCC_UI_STYLE
+RES_ADD_STRING(TXT_MP3_PLAY_SEQUENCE,"Play Sequence")       //播放顺序
+RES_ADD_STRING(TXT_MP3_SET_ORDER_PLAY,"Order Play")         //顺序播放
+#endif
+
+RES_ADD_STRING(TXT_MP3_BT_HEADSET_SET,"Bluetooth set")      //蓝牙立体声输出
+
+RES_ADD_STRING(TXT_MP3_BT_HEADSET_LIST,"Bluetooth headset") //蓝牙立体声耳机
+
+RES_ADD_STRING(TXT_MP3_BT_HEADSET_MUST_SELECT,"Must select a bt headset") //必须选择一个蓝牙耳机
+
+#ifdef MMI_PDA_SUPPORT
+//RES_ADD_STRING(TXT_MP3_SEND_BY_MMS,"Send via MMS")      //彩信发送  //replaced by common ID TXT_COMM_MMS_SEND
+//RES_ADD_STRING(TXT_MP3_SEND_BY_BT,"Send via bluetooth") //蓝牙发送            //replaced by common ID TXT_COMMON_SEND_BY_BT
+//RES_ADD_STRING(TXT_MP3_SELECT_BT_HEADSET_DEV,"Select a bluetooth headset")  //选择蓝牙设备   //case3：defined but not used
+RES_ADD_STRING(TXT_MP3_PDA_ADD_TO_SAVED_LIST,"Add to saved list")   //添加至已存播放列表
+RES_ADD_STRING(TXT_MP3_PDA_ADD_TO_NEW_LIST,"Add to new list")       //添加至新建播放列表
+RES_ADD_STRING(TXT_MP3_PDA_ADD_TO_MUSIC_MARK,"Add to music mark")   //添加至音乐书签
+#endif
+#if defined ( MMI_AUDIOPLAYER_ALBUM_SUPPORT )
+RES_ADD_STRING(TXT_MP3_ALBUM,"Album")   //专辑
+#endif
+#endif
+#endif
+//[[define data infomation
+
+//]]define data infomation
+
+#ifdef BT_AV_SNK_SUPPORT
+RES_ADD_STRING(TXT_MP3_BT_MODE,"BT music")
+RES_ADD_STRING(TXT_MP3_LOCAL_MODE,"Local music")
+#endif

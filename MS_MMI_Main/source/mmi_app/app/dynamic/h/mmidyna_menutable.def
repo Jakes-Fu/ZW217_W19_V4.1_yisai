@@ -1,0 +1,2 @@
+//dyna list option menu
+MENU_DEF(MENU_DYNA_MYAPP_OPT, menu_dyna_myapp_opt, GUIMENU_STYLE_POPUP,STXT_OPTION,IMAGE_NULL,IMAGE_NULL,IMAGE_NULL,GUIMENU_ITEM_NUM(menu_dyna_myapp_opt))

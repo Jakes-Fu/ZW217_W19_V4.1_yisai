@@ -1,0 +1,1039 @@
+
+ifeq ($(strip $(lite)), 1)
+    SPRD_CUSTOMER=TRUE
+endif
+ifeq ($(strip $(LITE)), 1)
+    SPRD_CUSTOMER=TRUE
+endif
+
+ifeq ($(strip $(WAP_SUPPORT)),NONE)
+    TCPIP_SUPPORTT=FALSE
+endif
+
+ifeq ($(strip $(TCPIP_SUPPORT)),FALSE)
+    PCLINK_SUPPORT=FALSE
+endif
+
+ifeq ($(strip $(HTTP_SUPPORT)),FALSE)
+    OMADL_SUPPORT=FALSE
+endif
+
+ifeq ($(strip $(XML_SUPPORT)),FALSE)
+    OMADL_SUPPORT=FALSE
+endif
+
+ifeq ($(strip $(CALENDAR_SUPPORT)),FALSE)
+    SCHEDULE_SUPPORT=FALSE
+endif
+
+ifeq ($(strip $(BT_DIALER_SUPPORT)),TRUE)
+ifeq ($(strip $(MULTI_SIM_SYS)),NONE)
+		BT_DIALER_NXP_RX_15=TRUE
+		BT_DIALER_SET_VOLGAIN=TRUE
+endif
+endif
+#****************************************************************************************#
+#  Segment: CTA MACRO
+#  Description: 客户可根据各自过CTA情况，控制相关的CTA宏定义
+#  1. 双卡单待宏定义:MULTI_SIM_GSM_CTA_SUPPORT = TRUE
+#  2. 关闭GPRS宏定义:
+#  MMS_SUPPORT = NONE; BROWSER_SUPPORT = FALSE; BROWSER_SUPPORT_DORADO = FALSE; UPDATE_TIME_SUPPORT = FALSE
+#  MMS_SMS_IN_1_SUPPORT = FALSE; OPERA_MINI_SUPPORT = NONE; CHATMODE_ONLY_SUPPORT = FALSE; SMS_CHAT_SUPPORT = FALSE
+#  WRE_SUPPORT = FALSE; WRE_WREKERNEL_NORFLASH = FALSE; WRE_WRESTORE_PRELOAD = FALSE; WRE_VIRTUALDISK_SUPPORT = FALSE; SNS_SUPPORT = FALSE
+#  NES_SUPPORT = FALSE; WRE_FACEBOOK_SUPPORT = FALSE; WRE_WEIBO_SUPPORT = FALSE; WRE_TWITTER_SUPPORT = FALSE;
+#  WRE_CONTRA_SUPPORT = FALSE; WRE_SUPERMARIO_SUPPORT = FALSE; WRE_TSLAND_SUPPORT
+#  WEATHER_SUPPORT = FALSE; WEATHER_INFORMATION_BUFFER_STORE_SUPPORT = FALSE; MMIEMAIL_SUPPORT = FALSE;
+#  另外需要在release_app_macro.mk中屏蔽MMI_GPRS_SUPPORT(#MCFLAG_OPT		+=  -DMMI_GPRS_SUPPORT)
+#  3. 屏蔽频段宏定义:BAND_FILTER_CTA_SUPPORT = TRUE
+#  4. 电话本精确匹配宏定义:  PB_PRECISE_MATCH_CTA_SUPPORT = TRUE
+#****************************************************************************************#
+ifeq ($(strip $(CTA_SUPPORT)),TRUE) 
+    MMS_SUPPORT=FALSE
+    BROWSER_SUPPORT=FALSE
+    BROWSER_SUPPORT_DORADO=FALSE
+    UPDATE_TIME_SUPPORT=FALSE
+    MMS_SMS_IN_1_SUPPORT=FALSE
+    OPERA_MINI_SUPPORT=FALSE
+    CHATMODE_ONLY_SUPPORT=FALSE
+    SMS_CHAT_SUPPORT=FALSE
+    WRE_SUPPORT=FALSE
+    WRE_WREKERNEL_NORFLASH=FALSE
+    WRE_WRESTORE_PRELOAD=FALSE
+    WRE_VIRTUALDISK_SUPPORT=FALSE
+    SNS_SUPPORT=FALSE
+    NES_SUPPORT=FALSE
+    WRE_FACEBOOK_SUPPORT=FALSE
+    WRE_WEIBO_SUPPORT=FALSE
+    WRE_TWITTER_SUPPORT=FALSE
+    WRE_CONTRA_SUPPORT=FALSE
+    WRE_SUPERMARIO_SUPPORT=FALSE
+    WRE_TSLAND_SUPPORT=FALSE
+    WEATHER_SUPPORT=FALSE
+    WEATHER_INFORMATION_BUFFER_STORE_SUPPORT=FALSE 
+    MMIEMAIL_SUPPORT=FALSE
+    MULTI_SIM_GSM_CTA_SUPPORT = TRUE
+    BAND_FILTER_CTA_SUPPORT = TRUE
+    PB_PRECISE_MATCH_CTA_SUPPORT = TRUE
+      
+endif 
+
+#****************************************************************************************#
+# TOUCHPANEL_TYPE
+# 在6530版本上，如果关闭触摸屏就关闭下拉菜单
+#****************************************************************************************#
+ifeq ($(strip $(TOUCHPANEL_TYPE)),NONE) 
+    PDA_UI_DROPDOWN_WIN = FALSE
+endif 
+
+ifeq ($(strip $(BLUETOOTH_SUPPORT)),SPRD_BT) 
+    BLUETOOTH_BT_PS_V3X = TRUE
+endif 
+
+ifeq ($(strip $(BLUETOOTH_SUPPORT)),NONE)
+    BT_OPP_SUPPORT=FALSE
+    BT_FTS_SUPPORT=FALSE
+    BT_DUN_SUPPORT=FALSE
+    BT_SPP_SUPPORT=FALSE
+    BT_HFG_SUPPORT=FALSE
+    BT_A2DP_SUPPORT=FALSE
+    BT_A2DP_SAMPLERATE_RECONFIG_SUPPORT=FALSE
+    BT_AVRCP_SUPPORT=FALSE
+    MP3_A2DP_SUPPORT=FALSE
+    AAC_A2DP_SUPPORT=FALSE
+    WMA_A2DP_SUPPORT=FALSE
+    BT_DIALER_SUPPORT=FALSE
+    BT_HFU_SUPPORT=FALSE
+    BT_PBAP_SUPPORT=FALSE
+endif
+
+ifeq ($(strip $(BT_DIALER_SUPPORT)),TRUE)
+    BT_HFU_SUPPORT=TRUE
+    BT_PBAP_SUPPORT=TRUE
+endif
+
+ifeq ($(strip $(BLUETOOTH_SUPPORT)),RTL8723)
+    BT_DUN_SUPPORT=FALSE
+    BT_SPP_SUPPORT=FALSE
+endif
+
+ifeq ($(strip $(BLUETOOTH_SUPPORT)),IS1662)
+    BT_DUN_SUPPORT=FALSE
+    BT_SPP_SUPPORT=FALSE
+endif
+
+ifeq ($(strip $(MP3_SUPPORT)),FALSE)
+    MP3_A2DP_SUPPORT=FALSE
+    MP3_EQ_SUPPORT=FALSE
+    MP3_SEEK_SUPPORT=FALSE
+    MP3_BACKGROUND_SUPPORT=FALSE
+endif
+
+ifeq ($(strip $(AAC_SUPPORT)),FALSE)
+    AAC_A2DP_SUPPORT=FALSE
+    AAC_BACKGROUND_SUPPORT=FALSE
+    AAC_SEEK_SUPPORT=FALSE
+endif
+
+ifeq ($(strip $(GAME_SUPPORT)),FALSE)
+    GAME_BOXMAN_SUPPORT=FALSE
+    GAME_LINK_SUPPORT=FALSE
+endif
+
+ifeq ($(strip $(WIFI_SUPPORT)), NONE)
+    WLAN_PORTAL_SUPPORT=FALSE
+    WLAN_RESELECT_SUPPORT=FALSE
+    WIFI_VENDOR=NONE
+endif
+
+ifeq ($(findstring CSR, $(WIFI_SUPPORT)), CSR)
+		WIFI_VENDOR = CSR
+endif
+
+ifeq ($(findstring AR, $(WIFI_SUPPORT)), AR)
+		WIFI_VENDOR = ATHEROS
+endif	
+
+ifeq ($(findstring RTL, $(WIFI_SUPPORT)), RTL)
+		WIFI_VENDOR = REALTEK
+endif
+
+ifeq ($(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT)),FALSE)
+		LIGHTGRID_WALLPAPER_SUPPORT = FALSE
+		LINEAR_WALLPAPER_SUPPORT = FALSE
+		GALAXY_WALLPAPER_SUPPORT = FALSE
+		COLLISION_WALLPAPER_SUPPORT = FALSE
+		COLLISION_BALLOON_WALLPAPER_SUPPORT = FALSE
+		COLLISION_MENU_WALLPAPER_SUPPORT = FALSE
+		POP_WALLPAPER_SUPPORT = FALSE
+		BEE_WALLPAPER_SUPPORT = FALSE
+		SAKURA_WALLPAPER_SUPPORT = FALSE
+		SEAWORLD_WALLPAPER_SUPPORT = FALSE
+		RIPPLE_WALLPAPER_SUPPORT = FALSE
+		LITTLECAT_WALLPAPER_SUPPORT = FALSE
+		WINDMILL_WALLPAPER_SUPPORT = FALSE
+		RAINBOWCITY_WALLPAPER_SUPPORT = FALSE
+		PAPERTOWN_WALLPAPER_SUPPORT = FALSE
+		AQUARIUM_WALLPAPER_SUPPORT = FALSE
+		GIRLSWING_WALLPAPER_SUPPORT = FALSE   			
+else
+	ifeq ($(strip $(LIGHTGRID_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(LINEAR_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(GALAXY_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(COLLISION_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(COLLISION_BALLOON_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(COLLISION_MENU_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(POP_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(BEE_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(SAKURA_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(SEAWORLD_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(RIPPLE_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(LITTLECAT_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(WINDMILL_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(RAINBOWCITY_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(PAPERTOWN_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(AQUARIUM_WALLPAPER_SUPPORT)),FALSE)
+	ifeq ($(strip $(GIRLSWING_WALLPAPER_SUPPORT)),FALSE)
+		$(error Not Support Any liveWallpaper instance )
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+endif
+
+
+
+
+ifeq ($(strip $(MET_MEX_SUPPORT)),FALSE)
+                MET_MEX_MERIG_SUPPORT = FALSE
+                MET_MEX_QQ_SUPPORT = FALSE
+                MET_MEX_TB_SUPPORT = FALSE
+                MET_MEX_ZT_SUPPORT = FALSE
+                MET_MEX_AB_SUPPORT = FALSE
+                MET_MEX_MSN_SUPPORT = FALSE
+                MET_MEX_FETION_SUPPORT = FALSE
+                MET_MEX_AQ_SUPPORT = FALSE
+                MET_MEX_DOUBLE_QQ_SUPPORT = FALSE
+                MET_PLAT_CMOTION_SUPPORT = FALSE
+                MEX_G7_UI_SUPPORT = FALSE
+                MET_MEX_CQZ_SUPPORT = FALSE
+                MET_MEX_JSCB_SUPPORT = FALSE
+                MET_MEX_TOMCAT_SUPPORT = FALSE
+                MET_MEX_WEIBO_SUPPORT = FALSE
+                MET_MEX_WOMIVIDEO_SUPPORT = FALSE
+endif	
+
+ifeq ($(strip $(MRAPP_SUPPORT)),FALSE)
+	  SKY_CAT_SUPPORT = FALSE
+	  SKY_SKIRT_SUPPORT = FALSE
+endif
+
+#****************************************************************************************#
+# GPRS_SUPPORT
+# 在6530版本上，只有当GPRS_SUPPORT = TRUE时，下面功能才起效果
+#****************************************************************************************#
+ifeq ($(strip $(SNTP_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(GPRS_SUPPORT))),$(error SNTP_SUPPORT is error for GPRS_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(DCD_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(GPRS_SUPPORT))),$(error DCD_SUPPORT is error for GPRS_SUPPORT = FALSE))
+endif
+ifneq ($(strip $(MMS_SUPPORT)),NONE)
+    $(if $(filter FALSE,$(strip $(GPRS_SUPPORT))),$(error MMS_SUPPORT is error for GPRS_SUPPORT = FALSE))
+endif
+ifneq ($(strip $(JAVA_SUPPORT)),NONE)
+    $(if $(filter FALSE,$(strip $(GPRS_SUPPORT))),$(error JAVA_SUPPORT is error for GPRS_SUPPORT = FALSE))    
+endif
+ifeq ($(strip $(MCARE_MINI_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(GPRS_SUPPORT))),$(error MCARE_MINI_SUPPORT is error for GPRS_SUPPORT = FALSE))    
+endif
+ifeq ($(strip $(MCARE_USE_HTTP_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(GPRS_SUPPORT))),$(error MCARE_USE_HTTP_SUPPORT is error for GPRS_SUPPORT = FALSE))    
+endif
+ifeq ($(strip $(EMAIL_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(GPRS_SUPPORT))),$(error EMAIL_SUPPORT is error for GPRS_SUPPORT = FALSE))    
+endif
+ifneq ($(strip $(BROWSER_SUPPORT)),FALSE)
+    $(if $(filter FALSE,$(strip $(GPRS_SUPPORT))),$(error BROWSER_SUPPORT is error for GPRS_SUPPORT = FALSE))    
+endif
+ifeq ($(strip $(DEV_MANAGE_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(GPRS_SUPPORT))),$(error DEV_MANAGE_SUPPORT is error for GPRS_SUPPORT = FALSE))    
+endif
+ifeq ($(strip $(PIM_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(GPRS_SUPPORT))),$(error PIM_SUPPORT is error for GPRS_SUPPORT = FALSE))    
+endif
+ifeq ($(strip $(MBBMS_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(GPRS_SUPPORT))),$(error MBBMS_SUPPORT is error for GPRS_SUPPORT = FALSE))    
+endif
+ifeq ($(strip $(DATA_ROAMING_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(GPRS_SUPPORT))),$(error DATA_ROAMING_SUPPORT is error for GPRS_SUPPORT = FALSE))    
+endif
+
+#****************************************************************************************#
+# BROWSER
+# 在6530版本上，只有当BROWSER_SUPPORT != NONE 时，下面功能才起效果
+#****************************************************************************************#
+ifeq ($(strip $(WEATHER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(BROWSER_SUPPORT))),$(error WEATHER_SUPPORT is error for BROWSER_SUPPORT = FALSE))    
+endif
+ifeq ($(strip $(MMIEMAIL_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(BROWSER_SUPPORT))),$(error MMIEMAIL_SUPPORT is error for BROWSER_SUPPORT = FALSE))    
+endif
+ifeq ($(strip $(WRE_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(BROWSER_SUPPORT))),$(error WRE_SUPPORT is error for BROWSER_SUPPORT = FALSE))    
+endif
+ifneq ($(strip $(BROWSER_SUPPORT)),FALSE)
+ifeq ($(strip $(CSS_SUPPORT)),TRUE)
+#    $(if $(filter FALSE,$(strip $(BROWSER_SUPPORT_DORADO))),$(error CSS_SUPPORT is error for BROWSER_SUPPORT_DORADO = FALSE))    
+endif
+endif
+ifeq ($(strip $(BROWSER_SUPPORT_DORADO)),TRUE)
+    $(if $(filter FALSE,$(strip $(BROWSER_SUPPORT))),$(error BROWSER_SUPPORT_DORADO is error for BROWSER_SUPPORT = FALSE))    
+endif
+ifeq ($(strip $(BROWSER_SUPPORT_NETFRONT)),TRUE)
+    $(if $(filter FALSE,$(strip $(BROWSER_SUPPORT))),$(error BROWSER_SUPPORT_NETFRONT is error for BROWSER_SUPPORT = FALSE))    
+endif
+ifneq ($(strip $(NETFRONT_SUPPORT)),NONE)
+    $(if $(filter FALSE,$(strip $(BROWSER_SUPPORT_NETFRONT))),$(error NETFRONT_SUPPORT is error for BROWSER_SUPPORT_NETFRONT = FALSE))    
+endif
+
+#****************************************************************************************#
+# DUAL_BATTERY_SUPPORT
+# 在6530版本上，由于openphone上gpio的资源有限，
+#所以硬件做demo板的时候将双电池的GPIO和其他功能的pin共用了，
+#所以双电池功能打开的时候SIM_PLUG_IN_SUPPORT和TOUCHPANEL_TYPE_MULTITP宏不能被定义   
+#****************************************************************************************#
+ifeq ($(strip $(DUAL_BATTERY_SUPPORT)),TRUE)
+    $(if $(filter TRUE,$(strip $(SIM_PLUG_IN_SUPPORT))),$(error SIM_PLUG_IN_SUPPORT is error for DUAL_BATTERY_SUPPORT = TRUE))
+endif
+
+ifeq ($(strip $(DUAL_BATTERY_SUPPORT)),TRUE)
+    $(if $(filter MULTITP,$(strip $(TOUCHPANEL_TYPE))),$(error TOUCHPANEL_TYPE is error for DUAL_BATTERY_SUPPORT = TRUE))
+endif
+
+#****************************************************************************************#
+# KEYPAD_TYPE
+# 在6530版本上，只有当KEYPAD_TYPE = FOUR_KEY_UNIVERSE时，MMI_PDA_SUPPORT=TRUE, MMI_GRID_IDLE_SUPPORT = TRUE
+# 只有当KEYPAD_TYPE = QWERTY_KEYPAD时，QWERTY_KEYPAD != NONE
+#****************************************************************************************#
+ifeq ($(strip $(KEYPAD_TYPE)),FOUR_KEY_UNIVERSE)
+    $(if $(filter FALSE,$(strip $(MMI_PDA_SUPPORT))),$(error MMI_PDA_SUPPORT is error for KEYPAD_TYPE = FOUR_KEY_UNIVERSE))
+endif
+
+ifeq ($(strip $(KEYPAD_TYPE)),QWERTY_KEYPAD)
+    $(if $(filter NONE,$(strip $(QWERTY_KEYPAD))),$(error QWERTY_KEYPAD is error for KEYPAD_TYPE = QWERTY_KEYPAD))
+endif
+
+#****************************************************************************************#
+# WIFI_SUPPORT
+# 在6530版本上，WLAN_SUPPORT = TRUE时, WIFI_SUPPORT != NONE
+#****************************************************************************************#
+ifeq ($(strip $(WLAN_PORTAL_SUPPORT)),TRUE)
+    $(if $(filter NONE,$(strip $(WIFI_SUPPORT))),$(error WLAN_PORTAL_SUPPORT is error for WIFI_SUPPORT = NONE))
+endif
+ifeq ($(strip $(WLAN_RESELECT_SUPPORT)),TRUE)
+    $(if $(filter NONE,$(strip $(WIFI_SUPPORT))),$(error WLAN_RESELECT_SUPPORT is error for WIFI_SUPPORT = NONE))    
+endif
+
+#****************************************************************************************#
+# UDISK_SUPPORT
+# 在6530版本上，只有当UDISK_PC_CONNECT = TRUE时，UMEM_SUPPORT = TRUE
+#****************************************************************************************#
+ifeq ($(strip $(UDISK_PC_CONNECT)),TRUE)
+    $(if $(filter FALSE,$(strip $(UMEM_SUPPORT))),$(error UDISK_PC_CONNECT is error for UMEM_SUPPORT = TRUE))
+endif
+
+#****************************************************************************************#
+# WEATHER_SUPPORT
+# 在6530版本上，只有当 WEATHER_SUPPORT = TRUE时，WEATHER_INFORMATION_BUFFER_STORE_SUPPORT = TRUE
+#****************************************************************************************#
+ifeq ($(strip $(WEATHER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(WEATHER_INFORMATION_BUFFER_STORE_SUPPORT))),$(error WEATHER_INFORMATION_BUFFER_STORE_SUPPORT is error for WEATHER_SUPPORT = TRUE))
+endif
+ifeq ($(strip $(WEATHER_INFORMATION_BUFFER_STORE_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(WEATHER_SUPPORT))),$(error WEATHER_SUPPORT is error for WEATHER_INFORMATION_BUFFER_STORE_SUPPORT = FALSE))
+endif
+
+#****************************************************************************************#
+# CSC_XML_SUPPORT
+# 在6530版本上，只有当 CSC_SUPPORT = TRUE XML_SUPPORT = TRUE时 CSC_XML_SUPPORT = TRUE
+#****************************************************************************************#
+ifeq ($(strip $(CSC_XML_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(CSC_SUPPORT))),$(error CSC_SUPPORT is error for CSC_XML_SUPPORT = TRUE))
+endif
+ifeq ($(strip $(CSC_XML_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(XML_SUPPORT))),$(error XML_SUPPORT is error for CSC_XML_SUPPORT = TRUE))
+endif
+
+#****************************************************************************************#
+# PUSH_EMAIL_SUPPORT
+# 在6530版本上，只有当 PUSH_EMAIL_SUPPORT = TRUE时 PUSH_EMAIL_3_IN_1_SUPPORT = TRUE
+#****************************************************************************************#
+ifeq ($(strip $(PUSH_EMAIL_3_IN_1_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(PUSH_EMAIL_SUPPORT))),$(error PUSH_EMAIL_SUPPORT is error for PUSH_EMAIL_3_IN_1_SUPPORT = TRUE))
+endif
+
+#****************************************************************************************#
+# CMMB_SUPPORT
+# 在6530版本上，只有当 CMMB_SUPPORT = TRUE时 MTV_MIDDLEWARE_ON_BB = TRUE DEMOD_HW = TRUE
+#****************************************************************************************#
+#ifeq ($(strip $(MTV_MIDDLEWARE_ON_BB)),TRUE)
+#    $(if $(filter FALSE,$(strip $(CMMB_SUPPORT))),$(error MTV_MIDDLEWARE_ON_BB is error for CMMB_SUPPORT = FALSE))
+#endif
+#ifneq ($(strip $(DEMOD_HW)),NONE)
+#    $(if $(filter FALSE,$(strip $(CMMB_SUPPORT))),$(error DEMOD_HW is error for CMMB_SUPPORT = FALSE))
+#endif
+
+#****************************************************************************************#
+# STACK_CHECK_SUPPORT
+# 在6530版本上，只有当 COMPILER = RVCT时 STACK_CHECK_SUPPORT = FALSE
+#****************************************************************************************#
+ifeq ($(strip $(STACK_CHECK_SUPPORT)),FALSE)
+    $(if $(filter ADS,$(strip $(COMPILER))),$(error STACK_CHECK_SUPPORT is error for COMPILER = ADS))
+endif
+ifeq ($(strip $(STACK_CHECK_SUPPORT)),TRUE)
+    $(if $(filter RVCT,$(strip $(COMPILER))),$(error STACK_CHECK_SUPPORT is error for COMPILER = RVCT))
+endif
+
+#****************************************************************************************#
+# MAINLCD_LOGIC_ANGLE
+# 
+#****************************************************************************************#
+ifeq ($(strip $(MAINLCD_LOGIC_ANGLE)),90)
+    $(if $(filter PORTRAIT,$(strip $(MMI_RES_ORIENT))),$(error MAINLCD_LOGIC_ANGLE is error for MMI_RES_ORIENT != LANDSCAPE))
+endif
+ifeq ($(strip $(MAINLCD_LOGIC_ANGLE)),0)
+    $(if $(filter LANDSCAPE,$(strip $(MMI_RES_ORIENT))),$(error MAINLCD_LOGIC_ANGLE is error for MMI_RES_ORIENT != PORTRAIT))
+endif
+
+#****************************************************************************************#
+# SNS_SUPPORT
+# 在6530版本上，
+#****************************************************************************************#
+ifeq ($(strip $(SNS_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(SQLITE_SUPPORT))),$(error SNS_SUPPORT is error for SQLITE_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(SNS_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(WRE_SUPPORT))),$(error SNS_SUPPORT is error for WRE_SUPPORT = FALSE))
+endif
+
+#****************************************************************************************#
+# PDA_SUPPORT
+# 在6530版本上，只有当MMI_PDA_SUPPORT = TRUE时，下面功能才开放
+#****************************************************************************************#
+ifeq ($(strip $(CHATMODE_ONLY_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(MMS_SMS_IN_1_SUPPORT))),$(error CHATMODE_ONLY_SUPPORT is error for MMS_SMS_IN_1_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(CHATMODE_ONLY_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(SMS_CHAT_SUPPORT))),$(error CHATMODE_ONLY_SUPPORT is error for SMS_CHAT_SUPPORT = FALSE))
+endif
+
+ifeq ($(strip $(MMS_SMS_IN_1_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(CHATMODE_ONLY_SUPPORT))),$(error MMS_SMS_IN_1_SUPPORT is error for CHATMODE_ONLY_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(MMS_SMS_IN_1_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(SMS_CHAT_SUPPORT))),$(error MMS_SMS_IN_1_SUPPORT is error for SMS_CHAT_SUPPORT = FALSE))
+endif
+
+ifeq ($(strip $(MMI_ANDROID_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(MMI_PDA_SUPPORT))),$(error MMI_ANDROID_SUPPORT is error for MMI_PDA_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(MMI_ISTYLE_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(MMI_PDA_SUPPORT))),$(error MMI_ISTYLE_SUPPORT is error for MMI_PDA_SUPPORT = FALSE))
+endif
+
+#****************************************************************************************#
+# PDA_SUPPORT
+# 在6530版本上，当MMI_PDA_SUPPORT = TRUE时，下面功能不可以打开
+#****************************************************************************************#
+ifeq ($(strip $(MMI_PDA_SUPPORT)),TRUE)
+    $(if $(filter TRUE,$(strip $(MMI_GUI_STYLE_TYPICAL))),$(error MMI_GUI_STYLE_TYPICAL is error for MMI_PDA_SUPPORT = TRUE))
+endif
+ifeq ($(strip $(MMI_PDA_SUPPORT)),TRUE)
+    $(if $(filter NONE,$(strip $(TOUCHPANEL_TYPE))),$(error TOUCHPANEL_TYPE is error for MMI_PDA_SUPPORT = TRUE))
+endif
+
+#****************************************************************************************#
+# MMI_ISTYLE_SUPPORT
+# 在6530版本上，只有当MMI_RES_ORIENT 不等于 LANDSCAPE时，下面功能才开放
+#****************************************************************************************#
+ifeq ($(strip $(MMI_ISTYLE_SUPPORT)),TRUE)
+    $(if $(filter LANDSCAPE,$(strip $(MMI_RES_ORIENT))),$(error MMI_ISTYLE_SUPPORT is error for MMI_RES_ORIENT = LANDSCAPE))
+endif
+
+#****************************************************************************************#
+# U_CAMERA_SUPPORT
+# 在6530版本上，只有当CAMERA_SUPPORT = TRUE时，IMG_EDITER_SUPPORT = TRUE时 下面功能才开放
+#****************************************************************************************#
+ifeq ($(strip $(U_CAMERA_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(CAMERA_SUPPORT))),$(error U_CAMERA_SUPPORT is error for CAMERA_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(U_CAMERA_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(IMG_EDITER_SUPPORT))),$(error U_CAMERA_SUPPORT is error for IMG_EDITER_SUPPORT = FALSE))
+endif
+
+#****************************************************************************************#
+# live wallpaper effect
+# 在6530版本上，只有当SE_GRID_SUPPORT = TRUE时，LIVE_WALLPAPER_SUPPORT_LIGHTGRID = TRUE
+#****************************************************************************************#
+ifeq ($(strip $(LIGHTGRID_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(SE_GRID_SUPPORT))),$(error LIGHTGRID_WALLPAPER_SUPPORT is error for SE_GRID_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(COLLISION_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(CM_SUPPORT))),$(error COLLISION_WALLPAPER_SUPPORT is error for CM_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(COLLISION_BALLOON_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(CM_SUPPORT))),$(error COLLISION_BALLOON_WALLPAPER_SUPPORT is error for CM_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(COLLISION_MENU_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(CM_SUPPORT))),$(error COLLISION_MENU_WALLPAPER_SUPPORT is error for CM_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(LIGHTGRID_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error LIGHTGRID_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(LINEAR_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error LINEAR_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(GALAXY_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error GALAXY_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(COLLISION_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error COLLISION_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(POP_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error POP_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(BEE_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error BEE_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(SAKURA_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error SAKURA_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(SEAWORLD_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error SEAWORLD_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(RIPPLE_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error RIPPLE_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(LITTLECAT_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error LITTLECAT_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(SWEETTREE_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error SWEETTREE_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(WINDMILL_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error WINDMILL_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(RAINBOWCITY_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error RAINBOWCITY_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(PAPERTOWN_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error PAPERTOWN_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(AQUARIUM_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error AQUARIUM_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(GIRLSWING_WALLPAPER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(LIVE_WALLPAPER_FRAMEWORK_SUPPORT))),$(error GIRLSWING_WALLPAPER_SUPPORT is error for LIVE_WALLPAPER_FRAMEWORK_SUPPORT = FALSE))
+endif
+
+#****************************************************************************************#
+# DRM
+# 在6530版本上，当DRM_SUPPORT = UPDATE_TIME_SUPPORT = TRUE SNTP_SUPPORT = TRUE
+#****************************************************************************************#
+ifeq ($(strip $(DRM_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(UPDATE_TIME_SUPPORT))),$(error DRM_SUPPORT is error for UPDATE_TIME_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(DRM_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(SNTP_SUPPORT))),$(error DRM_SUPPORT is error for SNTP_SUPPORT = FALSE))
+endif
+
+#****************************************************************************************#
+# BT
+# 在6530版本上，BT与WIFI的关系
+#****************************************************************************************#
+ifneq ($(strip $(WIFI_SUPPORT)),NONE)
+    $(if $(filter CSR_BC4_6_LOW_MEM,$(strip $(BLUETOOTH_SUPPORT))),$(error BLUETOOTH_SUPPORT is error for WIFI_SUPPORT != NONE))
+endif
+ifneq ($(strip $(WIFI_SUPPORT)),NONE)
+    $(if $(filter IS1662,$(strip $(BLUETOOTH_SUPPORT))),$(error BLUETOOTH_SUPPORT is error for WIFI_SUPPORT != NONE))
+endif
+ifeq ($(strip $(BLUETOOTH_SUPPORT)),CSR_BC4_6)
+    $(if $(filter RTL8723 RTL8189,$(strip $(WIFI_SUPPORT))),$(error BLUETOOTH_SUPPORT is error for WIFI_SUPPORT = RTL***))
+endif
+ifeq ($(strip $(BLUETOOTH_SUPPORT)),RTL8723)
+    $(if $(filter CSR6030 CSR6027A05 CSR6027B07,$(strip $(WIFI_SUPPORT))),$(error BLUETOOTH_SUPPORT is error for WIFI_SUPPORT = CSR***))
+endif
+
+#****************************************************************************************#
+# WRE
+# 在6530版本上，当WRE_SUPPORT = FALSE
+#****************************************************************************************#
+ifeq ($(strip $(WRE_VIRTUALDISK_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(WRE_SUPPORT))),$(error WRE_VIRTUALDISK_SUPPORT is error for WRE_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(WRE_FACEBOOK_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(WRE_VIRTUALDISK_SUPPORT))),$(error WRE_FACEBOOK_SUPPORT is error for WRE_VIRTUALDISK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(WRE_WEIBO_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(WRE_VIRTUALDISK_SUPPORT))),$(error WRE_WEIBO_SUPPORT is error for WRE_VIRTUALDISK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(WRE_TWITTER_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(WRE_VIRTUALDISK_SUPPORT))),$(error WRE_TWITTER_SUPPORT is error for WRE_VIRTUALDISK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(NES_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(WRE_SUPPORT))),$(error NES_SUPPORT is error for WRE_SUPPORT = FALSE))
+endif
+
+#****************************************************************************************#
+# NES
+# 在6530版本上，当NES_SUPPORT = FALSE
+#****************************************************************************************#
+ifeq ($(strip $(WRE_CONTRA_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(NES_SUPPORT))),$(error WRE_CONTRA_SUPPORT is error for NES_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(WRE_SUPERMARIO_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(NES_SUPPORT))),$(error WRE_SUPERMARIO_SUPPORT is error for NES_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(WRE_TSLAND_SUPPORT)),TRUE)
+    $(if $(filter FALSE,$(strip $(NES_SUPPORT))),$(error WRE_TSLAND_SUPPORT is error for NES_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(WRE_VIRTUALDISK_SUPPORT)),FALSE)
+    $(if $(filter TRUE,$(strip $(WRE_CONTRA_SUPPORT))),$(error WRE_CONTRA_SUPPORT is error for WRE_VIRTUALDISK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(WRE_VIRTUALDISK_SUPPORT)),FALSE)
+    $(if $(filter TRUE,$(strip $(WRE_SUPERMARIO_SUPPORT))),$(error WRE_SUPERMARIO_SUPPORT is error for WRE_VIRTUALDISK_SUPPORT = FALSE))
+endif
+ifeq ($(strip $(WRE_VIRTUALDISK_SUPPORT)),FALSE)
+    $(if $(filter TRUE,$(strip $(WRE_TSLAND_SUPPORT))),$(error WRE_TSLAND_SUPPORT is error for WRE_VIRTUALDISK_SUPPORT = FALSE))
+endif
+
+#****************************************************************************************#
+# HANDWRITING
+# 在6530版本上，当IM_HANDWRITING = NONE
+#****************************************************************************************#
+ifeq ($(strip $(MMIIM_HW_FULLSCREEN_SUPPORT)),TRUE) 
+    $(if $(filter NONE,$(strip $(IM_HANDWRITING))),$(error MMIIM_HW_FULLSCREEN_SUPPORT is error for IM_HANDWRITING = NONE)) 
+endif 
+ifeq ($(strip $(TOUCHPANEL_TYPE)),HW)
+    $(if $(filter NONE,$(strip $(TPC_TYPE))),$(error TOUCHPANEL_TYPE is error for TPC_TYPE = NONE))
+endif
+#****************************************************************************************#
+# MMI_MULTI_SIM_SYS
+# 在6530版本上，MMI_MULTI_SIM_SYS的值不能大于MULTI_SIM_SYS
+#****************************************************************************************#
+ifeq ($(strip $(MULTI_SIM_SYS)),TRI) 
+    $(if $(filter QUAD,$(strip $(MMI_MULTI_SIM_SYS))),$(error MMI_MULTI_SIM_SYS is error for MULTI_SIM_SYS = TRI)) 
+endif 
+ifeq ($(strip $(MULTI_SIM_SYS)),DUAL) 
+    $(if $(filter QUAD,$(strip $(MMI_MULTI_SIM_SYS))),$(error MMI_MULTI_SIM_SYS is error for MULTI_SIM_SYS = DUAL)) 
+endif 
+ifeq ($(strip $(MULTI_SIM_SYS)),DUAL) 
+    $(if $(filter TRI,$(strip $(MMI_MULTI_SIM_SYS))),$(error MMI_MULTI_SIM_SYS is error for MULTI_SIM_SYS = DUAL)) 
+endif 
+ifeq ($(strip $(MULTI_SIM_SYS)),SINGLE) 
+    $(if $(filter QUAD,$(strip $(MMI_MULTI_SIM_SYS))),$(error MMI_MULTI_SIM_SYS is error for MULTI_SIM_SYS = SINGLE)) 
+endif 
+ifeq ($(strip $(MULTI_SIM_SYS)),SINGLE) 
+    $(if $(filter TRI,$(strip $(MMI_MULTI_SIM_SYS))),$(error MMI_MULTI_SIM_SYS is error for MULTI_SIM_SYS = SINGLE)) 
+endif 
+ifeq ($(strip $(MULTI_SIM_SYS)),SINGLE) 
+    $(if $(filter DUAL,$(strip $(MMI_MULTI_SIM_SYS))),$(error MMI_MULTI_SIM_SYS is error for MULTI_SIM_SYS = SINGLE)) 
+endif 
+
+
+#****************************************************************************************#
+# QBTHEME
+# 在6530版本上，当QBTHEME_SUPPORT = TRUE 时MMI_GRID_IDLE_SUPPORT必须打开
+#****************************************************************************************#
+ifeq ($(strip $(QBTHEME_SUPPORT)),TRUE) 
+    $(if $(filter FALSE,$(strip $(MMI_GRID_IDLE_SUPPORT))),$(error QBTHEME_SUPPORT is error for MMI_GRID_IDLE_SUPPORT = FALSE)) 
+endif 
+ifeq ($(strip $(QBTHEME_SUPPORT)),TRUE) 
+    $(if $(filter FALSE,$(strip $(PDA_UI_SUPPORT_MANIMENU_GO))),$(error QBTHEME_SUPPORT is error for PDA_UI_SUPPORT_MANIMENU_GO = FALSE)) 
+endif 
+
+#****************************************************************************************#
+# FONT_HAN_SIMP_ONLY
+# 在6530版本上，当IM_TRAD_CHINESE_SUPPORT = TRUE 时FONT_HAN_SIMP_ONLY不能打开
+#****************************************************************************************#
+ifeq ($(strip $(FONT_HAN_SIMP_ONLY)),TRUE) 
+    $(if $(filter TRUE,$(strip $(IM_TRAD_CHINESE_SUPPORT))),$(error FONT_HAN_SIMP_ONLY is error for IM_TRAD_CHINESE_SUPPORT = TRUE)) 
+endif 
+
+#****************************************************************************************#
+# DEMOD_HW
+# 在6530版本上，当DEMOD_HW != NONE 时CMMB_SUPPORT必须打开
+#****************************************************************************************#
+ifneq ($(strip $(DEMOD_HW)),NONE) 
+    $(if $(filter FALSE,$(strip $(CMMB_SUPPORT))),$(error DEMOD_HW is error for CMMB_SUPPORT = FALSE)) 
+endif 
+
+#****************************************************************************************#
+# VECTOR_FONT_SUPPORT
+# 在6530版本上，当VECTOR_FONT_SUPPORT != NONE 时CMMB_SUPPORT必须打开
+#				当FONT_TYPE_SUPPORT = VECTOR时，VECTOR_FONT_SUPPORT不能为NONE
+#****************************************************************************************#
+ifneq ($(strip $(VECTOR_FONT_SUPPORT)),NONE) 
+    $(if $(filter GRAY,$(strip $(FONT_TYPE_SUPPORT))),$(error VECTOR_FONT_SUPPORT is error for FONT_TYPE_SUPPORT = GRAY)) 
+endif
+
+ifneq ($(strip $(VECTOR_FONT_SUPPORT)),NONE) 
+    $(if $(filter NONE,$(strip $(FONT_TYPE_SUPPORT))),$(error VECTOR_FONT_SUPPORT is error for FONT_TYPE_SUPPORT = NONE)) 
+endif
+
+ifeq ($(strip $(FONT_TYPE_SUPPORT)),VECTOR) 
+    $(if $(filter NONE,$(strip $(VECTOR_FONT_SUPPORT))),$(error FONT_TYPE_SUPPORT is error for VECTOR_FONT_SUPPORT = NONE)) 
+endif
+
+#****************************************************************************************#
+# IM_ENGINE
+# 在6530版本上，当IM_ENGINE = CSTAR时，IM_HANDWRITING不能置为SOGOU，反之亦然
+#****************************************************************************************#
+ifeq ($(strip $(IM_ENGINE)),CSTAR) 
+    $(if $(filter SOGOU,$(strip $(IM_HANDWRITING))),$(error IM_ENGINE is error for IM_HANDWRITING = SOGOU)) 
+endif
+
+ifeq ($(strip $(IM_ENGINE)),SOGOU) 
+    $(if $(filter HANWANG,$(strip $(IM_HANDWRITING))),$(error IM_ENGINE is error for IM_HANDWRITING = HANWANG)) 
+endif
+
+ifeq ($(strip $(IM_ENGINE)),NONE) 
+##    $(if $(filter TRUE,$(strip $(IM_SIMP_CHINESE_SUPPORT))),$(error IM_ENGINE is error for IM_SIMP_CHINESE_SUPPORT = TRUE)) 
+endif
+
+ifeq ($(strip $(MMI_DISPLAY_SIMP_CHINESE_SUPPORT)),TRUE) 
+    $(if $(filter FALSE,$(strip $(IM_SIMP_CHINESE_SUPPORT))),$(error IM_SIMP_CHINESE_SUPPORT is error for MMI_DISPLAY_SIMP_CHINESE_SUPPORT = TRUE)) 
+endif
+
+ifeq ($(strip $(MMI_DISPLAY_TRAD_CHINESE_SUPPORT)),TRUE) 
+    $(if $(filter FALSE,$(strip $(IM_TRAD_CHINESE_SUPPORT))),$(error IM_TRAD_CHINESE_SUPPORT is error for MMI_DISPLAY_TRAD_CHINESE_SUPPORT = TRUE)) 
+endif
+
+#****************************************************************************************#
+# KEYPDA_TYPE
+# 在6530版本上，当触摸屏没有打开时，按键只能使用9键或26键输入，不能使用compact等
+#****************************************************************************************#
+ifeq ($(strip $(TOUCHPANEL_TYPE)),NONE) 
+    $(if $(filter COMPACT_KEYPAD,$(strip $(KEYPAD_TYPE))),$(error KEYPAD_TYPE is error for TOUCHPANEL_TYPE = NONE)) 
+endif
+
+ifeq ($(strip $(TOUCHPANEL_TYPE)),NONE) 
+    $(if $(filter FOUR_KEY_UNIVERSE,$(strip $(KEYPAD_TYPE))),$(error KEYPAD_TYPE is error for TOUCHPANEL_TYPE = NONE)) 
+endif
+
+ifeq ($(strip $(TOUCHPANEL_TYPE)),NONE) 
+    $(if $(filter SINGLE_KEY_UNIVERSE,$(strip $(KEYPAD_TYPE))),$(error KEYPAD_TYPE is error for TOUCHPANEL_TYPE = NONE)) 
+endif
+#****************************************************************************************#
+#TOUCHPANEL_TYPE指示当前支持的为电阻屏(HW),电容屏(MULTITP)，或不支持触屏功能；
+
+#TPC_TYPE指示了当为电阻屏时，是否支持多点还是单点功能；
+
+#因此，有关TOUCHPANEL_TYPE和TPC_TYPE的组合原则可能如下：
+
+#1.TOUCHPANEL_TYPE=HW,TPC_TYPE=DOUBLE
+
+#2.TOUCHPANEL_TYPE=HW,TPC_TYPE=SINGLE
+
+#3.TOUCHPANEL_TYPE=HW,TPC_TYPE=NONE--------------不允许
+
+#4.TOUCHPANEL_TYPE=NONE,TPC_TYPE=NONE
+#****************************************************************************************#
+
+ifeq ($(strip $(TOUCHPANEL_TYPE)),HW) 
+    $(if $(filter NONE,$(strip $(TPC_TYPE))),$(error TPC_TYPE is error for TOUCHPANEL_TYPE = HW)) 
+endif
+
+
+#****************************************************************************************#
+# GPIO_SIMULATE_SPI_SUPPORT，GPIO_SPI_SUPPORT
+# 在6530版本上，只有当MMI_MULTI_SIM_SYS = QUAD时，GPIO_SIMULATE_SPI_SUPPORT/GPIO_SPI_SUPPORT才能置为TRUE
+#****************************************************************************************#
+ifeq ($(strip $(GPIO_SIMULATE_SPI_SUPPORT)),TRUE) 
+    $(if $(filter-out QUAD,$(strip $(MMI_MULTI_SIM_SYS))),$(error GPIO_SIMULATE_SPI_SUPPORT is error for MMI_MULTI_SIM_SYS != QUAD)) 
+endif
+
+#ifneq ($(strip $(GPIO_SPI_SUPPORT)),NONE) 
+#    $(if $(filter-out QUAD,$(strip $(MMI_MULTI_SIM_SYS))),$(error GPIO_SPI_SUPPORT is error for IMMI_MULTI_SIM_SYS != QUAD)) 
+#endif
+
+#****************************************************************************************#
+# SOUNDBANK_MODE
+# 在6530版本上，只有当SOUNDBANK_MODE = COMPACT时，SOUNDBANK_VER不能等于以下值
+#****************************************************************************************#
+ifeq ($(strip $(SOUNDBANK_MODE)),COMPACT) 
+    $(if $(filter ARM_512KB,$(strip $(SOUNDBANK_VER))),$(error SOUNDBANK_VER is error for SOUNDBANK_MODE = COMPACT)) 
+endif
+
+ifeq ($(strip $(SOUNDBANK_MODE)),COMPACT) 
+    $(if $(filter NEWMIDI_75KB,$(strip $(SOUNDBANK_VER))),$(error SOUNDBANK_VER is error for SOUNDBANK_MODE = COMPACT)) 
+endif
+
+ifeq ($(strip $(SOUNDBANK_MODE)),COMPACT) 
+    $(if $(filter NEWMIDI_170KB,$(strip $(SOUNDBANK_VER))),$(error SOUNDBANK_VER is error for SOUNDBANK_MODE = COMPACT)) 
+endif
+
+ifeq ($(strip $(SOUNDBANK_MODE)),COMPACT) 
+    $(if $(filter NEWMIDI_400KB,$(strip $(SOUNDBANK_VER))),$(error SOUNDBANK_VER is error for SOUNDBANK_MODE = COMPACT)) 
+endif
+
+#****************************************************************************************#
+# 设置MENU_SWEETS_SUPPORT=TRUE，需同时设置宏UI_MULTILAYER_SUPPORT =TRUE
+#****************************************************************************************#
+ifeq ($(strip $(MENU_SWEETS_SUPPORT)),TRUE) 
+    $(if $(filter FALSE,$(strip $(UI_MULTILAYER_SUPPORT))),$(error MENU_SWEETS_SUPPORT is error for UI_MULTILAYER_SUPPORT = FALSE)) 
+endif
+
+#****************************************************************************************#
+# 设置MMI_GRID_IDLE_SUPPORT=TRUE，需同时设置宏UI_MULTILAYER_SUPPORT =TRUE
+#****************************************************************************************#
+ifeq ($(strip $(MMI_GRID_IDLE_SUPPORT)),TRUE) 
+    $(if $(filter FALSE,$(strip $(UI_MULTILAYER_SUPPORT))),$(error MMI_GRID_IDLE_SUPPORT is error for UI_MULTILAYER_SUPPORT = FALSE)) 
+endif
+
+#****************************************************************************************#
+# 设置UI_P3D_SUPPORT=TRUE，需同时设置宏UI_MULTILAYER_SUPPORT =TRUE
+#****************************************************************************************#
+ifeq ($(strip $(UI_P3D_SUPPORT)),TRUE) 
+    $(if $(filter FALSE,$(strip $(UI_MULTILAYER_SUPPORT))),$(error UI_P3D_SUPPORT is error for UI_MULTILAYER_SUPPORT = FALSE)) 
+endif
+
+
+#****************************************************************************************#
+# BROWSER
+# 在6530版本上，当BROWSER_SUPPORT = TRUE 时，下面两种宏至少有一个必须打开
+#****************************************************************************************#
+ifeq ($(strip $(BROWSER_SUPPORT)),TRUE)
+    ifeq ($(strip $(OPERA_MINI_SUPPORT)),NONE)  
+        $(if $(filter FALSE,$(strip $(BROWSER_SUPPORT_DORADO))),$(error BROWSER_SUPPORT_DORADO is error for BROWSER_SUPPORT = TRUE))
+    endif 				
+endif
+
+ifeq ($(strip $(BROWSER_SUPPORT)),TRUE)
+    ifeq ($(strip $(BROWSER_SUPPORT_DORADO)),FALSE)  
+        $(if $(filter NONE,$(strip $(OPERA_MINI_SUPPORT))),$(error OPERA_MINI_SUPPORT is error for BROWSER_SUPPORT = TRUE))
+    endif 				
+endif
+
+#****************************************************************************************#
+# video wallpaper support
+# 在6530版本上，当VIDEO_PLAYER_SUPPORT = TRUE 时VIDEO_PLAYER_SUPPORT必须打开
+#****************************************************************************************#
+ifeq ($(strip $(MMI_VIDEOWALLPAPER_SUPPORT)),TRUE) 
+    $(if $(filter FALSE,$(strip $(VIDEO_PLAYER_SUPPORT))),$(error MMI_VIDEOWALLPAPER_SUPPORT is error for VIDEO_PLAYER_SUPPORT = FALSE)) 
+endif 
+
+#****************************************************************************************#
+# UPB
+# 在6530版本上，当UPB_IDLE_SUPPORT = TRUE 时MMI_GRID_IDLE_SUPPORT必须打开
+#****************************************************************************************#
+ifeq ($(strip $(UPB_IDLE_SUPPORT)),TRUE) 
+    $(if $(filter FALSE,$(strip $(MMI_GRID_IDLE_SUPPORT))),$(error UPB_IDLE_SUPPORT is error for MMI_GRID_IDLE_SUPPORT = FALSE)) 
+endif 
+
+
+#****************************************************************************************#
+# Myriad java
+# 在6530版本上，当JAVA_SUPPORT = MYRIAD 时JAVA_SUPPORT_TYPE必须为SVM或MVM,不能为NONE 
+#****************************************************************************************#
+ifeq ($(strip $(JAVA_SUPPORT)),MYRIAD)
+	ifneq ($(strip $(JAVA_SUPPORT_TYPE)),SVM)
+       ifneq ($(strip $(JAVA_SUPPORT_TYPE)),MVM)
+       		$(error JAVA_SUPPORT_TYPE should be SVM or MVM for JAVA_SUPPORT = MYRIAD)
+       endif
+    endif  
+endif 
+
+#****************************************************************************************#
+# CARDLOG
+# 在6530,6531版本上，CARD_LOG与SPRD_RAW_CARD_LOG同为TRUE或FALSE
+#****************************************************************************************#
+#ifeq ($(strip $(CARD_LOG)),TRUE) 
+#    $(if $(filter FALSE,$(strip $(SPRD_RAW_CARD_LOG))),$(error SPRD_RAW_CARD_LOG is error for CARD_LOG = TRUE)) 
+#endif
+
+#ifeq ($(strip $(CARD_LOG)),FALSE) 
+#    $(if $(filter TRUE,$(strip $(SPRD_RAW_CARD_LOG))),$(error SPRD_RAW_CARD_LOG is error for CARD_LOG = FALSE)) 
+#endif
+
+# WIFI_SUPPORT
+
+
+
+# 在6530版本上，当FLASH_SIZE和SRAM_SIZE中有任何一个是16或者32时，WIFI_SUPPORT宏必须是NONE
+#****************************************************************************************#
+ifneq ($(strip $(WIFI_SUPPORT)),NONE)
+ifneq ($(strip $(WIFI_SUPPORT)),UNISOC_RX)
+    $(if $(filter 32X64,$(strip $(LOW_MEMORY_SUPPORT))),$(error WIFI_SUPPORT is error for LOW_MEMORY_SUPPORT = 32X64))
+    $(if $(filter 32X32,$(strip $(LOW_MEMORY_SUPPORT))),$(error WIFI_SUPPORT is error for LOW_MEMORY_SUPPORT = 32X32))  
+    $(if $(filter 32X16,$(strip $(LOW_MEMORY_SUPPORT))),$(error WIFI_SUPPORT is error for LOW_MEMORY_SUPPORT = 32X16))  
+    $(if $(filter 16X16,$(strip $(LOW_MEMORY_SUPPORT))),$(error WIFI_SUPPORT is error for LOW_MEMORY_SUPPORT = 16X16))    
+endif
+endif
+
+# SPECIAL_EFFECT_ICON_SIZE
+# 在6530 12C版本上，SPECIAL_EFFECT_ICON_SIZE 必须为 48X48，因为12C 没有 HVGA
+#****************************************************************************************#
+ifneq ($(strip $(SPECIAL_EFFECT_ICON_SIZE)),48X48)
+  ifneq ($(strip $(MODEM_PLATFORM)),TRUE) 
+     $(error SPECIAL_EFFECT_ICON_SIZE is error for SPECIAL_EFFECT_ICON_SIZE != 48X48)
+  endif
+endif
+
+# MRAPP
+# 在6530 12C版本上，MRAPP_SUPPORT=TRUE 不支持320X240分辨率
+#****************************************************************************************#
+#ifeq ($(strip $(MRAPP_SUPPORT)),TRUE)
+#  ifeq ($(strip $(MAINLCD_DEV_SIZE)),320X240) 
+#     $(error MRAPP_SUPPORT = TRUE is not supported for MAINLCD_DEV_SIZE = 320X240)
+#  endif
+#endif
+
+#****************************************************************************************#
+# Get all Feature Options
+#****************************************************************************************#
+
+ifneq ($(strip $(MAKECMDGOALS)),SPRD_MACRO_LIST)
+
+C_MACRO := $(call GET_C_MACRO)
+A_MACRO := $(call GET_A_MACRO)
+SPRD_MACRO_LIST:= $(shell $(MAKE) -f Makefile.rules -f ./project_$(PROJECT).mk -f ./Makefile.verify  SPRD_MACRO_LIST)
+SPRD_MACRO:= $(call GET_SPRD_MACRO)
+ALL_MACRO_LIST:= $(call GET_ALLMACRO_LIST)
+
+else
+SPRD_MACRO_LIST:	
+	@$(ECHO)  $(call GET_SPRD_MACRO_LIST)
+endif
+
+
+#****************************************************************************************#
+# LIVE_WALLPAPER
+# 在6530版本上，以下几种壁纸打开时MMI_GRID_IDLE_SUPPORT必须打开
+#****************************************************************************************#
+ifeq ($(strip $(SEAWORLD_WALLPAPER_SUPPORT)),TCARD) 
+    $(if $(filter FALSE,$(strip $(MMI_GRID_IDLE_SUPPORT))),$(error SEAWORLD_WALLPAPER_SUPPORT is error for MMI_GRID_IDLE_SUPPORT = FALSE)) 
+endif 
+ifeq ($(strip $(SEAWORLD_WALLPAPER_SUPPORT)),ROM) 
+    $(if $(filter FALSE,$(strip $(MMI_GRID_IDLE_SUPPORT))),$(error SEAWORLD_WALLPAPER_SUPPORT is error for MMI_GRID_IDLE_SUPPORT = FALSE)) 
+endif 
+ifeq ($(strip $(SAKURA_WALLPAPER_SUPPORT)),TCARD) 
+    $(if $(filter FALSE,$(strip $(MMI_GRID_IDLE_SUPPORT))),$(error SAKURA_WALLPAPER_SUPPORT is error for MMI_GRID_IDLE_SUPPORT = FALSE)) 
+endif 
+ifeq ($(strip $(SAKURA_WALLPAPER_SUPPORT)),ROM) 
+    $(if $(filter FALSE,$(strip $(MMI_GRID_IDLE_SUPPORT))),$(error SAKURA_WALLPAPER_SUPPORT is error for MMI_GRID_IDLE_SUPPORT = FALSE)) 
+endif 
+ifeq ($(strip $(LITTLECAT_WALLPAPER_SUPPORT)),TCARD) 
+    $(if $(filter FALSE,$(strip $(MMI_GRID_IDLE_SUPPORT))),$(error LITTLECAT_WALLPAPER_SUPPORT is error for MMI_GRID_IDLE_SUPPORT = FALSE)) 
+endif 
+ifeq ($(strip $(LITTLECAT_WALLPAPER_SUPPORT)),ROM) 
+    $(if $(filter FALSE,$(strip $(MMI_GRID_IDLE_SUPPORT))),$(error LITTLECAT_WALLPAPER_SUPPORT is error for MMI_GRID_IDLE_SUPPORT = FALSE)) 
+endif 
+#****************************************************************************************#
+# PDA_UI_SUPPORT_U_IDLE
+# 在6530版本上，以下几种壁纸打开时MMI_GRID_IDLE_SUPPORT PDA_UI_SUPPORT_MANIMENU_GO必须打开
+#****************************************************************************************#
+ifeq ($(strip $(PDA_UI_SUPPORT_U_IDLE)),TRUE) 
+    $(if $(filter FALSE,$(strip $(MMI_GRID_IDLE_SUPPORT))),$(error PDA_UI_SUPPORT_U_IDLE is error for MMI_GRID_IDLE_SUPPORT = FALSE)) 
+endif 
+ifeq ($(strip $(PDA_UI_SUPPORT_U_IDLE)),TRUE) 
+    $(if $(filter FALSE,$(strip $(PDA_UI_SUPPORT_MANIMENU_GO))),$(error PDA_UI_SUPPORT_U_IDLE is error for PDA_UI_SUPPORT_MANIMENU_GO = FALSE)) 
+endif
+
+#****************************************************************************************#
+#record和其他两个中任何一个共用sharemomory时，需要开启：NXP_RECORD_SHARE_MEMORY。
+#蓝牙通话和nxp共用sharemomory时，需要开启宏：BT_ARM_NXP_ENABLE:
+#****************************************************************************************#
+ifeq ($(strip $(NXP_LVVE_SUPPORT)),TRUE) 
+   ifeq ($(strip $(RECORD_SUPPORT)),TRUE) 
+    $(if $(filter FALSE,$(strip $(NXP_RECORD_SHARE_MEMORY))),$(error NXP_LVVE_SUPPORT is error for NXP_RECORD_SHARE_MEMORY = FALSE)) 
+   endif
+   ifneq ($(strip $(BLUETOOTH_SUPPORT)),NONE) 
+   ifneq ($(strip $(MULTI_SIM_SYS)),NONE)
+       $(if $(filter FALSE,$(strip $(BT_ARM_NXP_ENABLE))),$(error NXP_LVVE_SUPPORT is error for BT_ARM_NXP_ENABLE = FALSE)) 
+   endif
+   endif   
+endif 
+ifeq ($(strip $(RECORD_SUPPORT)),TRUE) 
+   ifneq ($(strip $(BLUETOOTH_SUPPORT)),NONE) 
+    $(if $(filter FALSE,$(strip $(NXP_RECORD_SHARE_MEMORY))),$(error BLUETOOTH_SUPPORT is error for NXP_RECORD_SHARE_MEMORY = FALSE)) 
+   endif
+endif 
+#****************************************************************************************#
+#12C NXP and IQ can not open in the same time ,without SP,dsp log not needed
+#****************************************************************************************#
+ifeq ($(strip $(NXP_LVVE_SUPPORT)),TRUE) 
+	ifneq ($(strip $(MULTI_SIM_SYS)),NONE) 
+    $(if $(filter TRUE,$(strip $(CARD_LOG))),$(error NXP_LVVE_SUPPORT and CARD_LOG can not be TRUE in the same time)) 
+	endif
+endif 
+#****************************************************************************************#
+# BAR_PHONE_WIDGET  
+# 在6530版本上，MMI_GRID_IDLE_SUPPORT 在TOUCHPANEL_TYPE = NONE 以下idle打开时MMI_SMART_IDLE_SUPPORT MMI_COMMON_IDLE_SUPPORT必须打开一个
+#****************************************************************************************#
+ifeq ($(strip $(TOUCHPANEL_TYPE)),NONE) 
+   ifeq ($(strip $(MMI_SMART_IDLE_SUPPORT)),NONE)
+   ifeq ($(strip $(MMI_COMMON_IDLE_SUPPORT)),FALSE)  
+    $(if $(filter TRUE,$(strip $(MMI_GRID_IDLE_SUPPORT))),$(error when MMI_SMART_IDLE_SUPPORT = NONE  MMI_COMMON_IDLE_SUPPORT = FALSE  MMI_GRID_IDLE_SUPPORT is error for TOUCHPANEL_TYPE = NONE)) 
+   endif
+   endif
+endif 
+
+#****************************************************************************************#
+# TTS_SUPPORT_EJ_ROM
+# 在6530版本上，TTS_SUPPORT = EJ时才支持TTS_SUPPORT_EJ_ROM
+#****************************************************************************************#
+ifeq ($(strip $(TTS_SUPPORT_EJ_ROM)),TRUE)
+  ifneq ($(strip $(TTS_SUPPORT)),EJ) 
+     $(error TTS_SUPPORT_EJ_ROM = TRUE is not supported for TTS_SUPPORT != EJ)
+  endif
+endif
+
+#****************************************************************************************#
+# LIVE_WALLPAPER
+# 在6530版本上，LIGHTGRID_WALLPAPER_SUPPORT 必须打开 SE_GRID_SUPPORT 
+#****************************************************************************************#
+ifeq ($(strip $(LIGHTGRID_WALLPAPER_SUPPORT)),TCARD) 
+    $(if $(filter FALSE,$(strip $(SE_GRID_SUPPORT))),$(error LIGHTGRID_WALLPAPER_SUPPORT is error for SE_GRID_SUPPORT = FALSE)) 
+endif 
+ifeq ($(strip $(LIGHTGRID_WALLPAPER_SUPPORT)),ROM) 
+    $(if $(filter FALSE,$(strip $(SE_GRID_SUPPORT))),$(error LIGHTGRID_WALLPAPER_SUPPORT is error for SE_GRID_SUPPORT = FALSE)) 
+endif 
+
+#****************************************************************************************#
+# PIC_EDITOR_SUPPORT
+# 在6530 12C版本上，PIC_EDITOR_SUPPORTT=TRUE 不支持128X16,176X220分辨率
+#****************************************************************************************#
+ifeq ($(strip $(PIC_EDITOR_SUPPORT)),TRUE)
+  ifeq ($(strip $(MAINLCD_DEV_SIZE)),128X160) 
+     $(error PIC_EDITOR_SUPPORT = TRUE is not supported for MAINLCD_DEV_SIZE = 128X160)
+  endif
+endif
+ifeq ($(strip $(PIC_EDITOR_SUPPORT)),TRUE)
+  ifeq ($(strip $(MAINLCD_DEV_SIZE)),160X128) 
+     $(error PIC_EDITOR_SUPPORT = TRUE is not supported for MAINLCD_DEV_SIZE = 160X128)
+  endif
+endif
+ifeq ($(strip $(PIC_EDITOR_SUPPORT)),TRUE)
+  ifeq ($(strip $(MAINLCD_DEV_SIZE)),176X220) 
+     $(error PIC_EDITOR_SUPPORT = TRUE is not supported for MAINLCD_DEV_SIZE = 176X220)
+  endif
+endif
+ifeq ($(strip $(PIC_EDITOR_SUPPORT)),TRUE)
+  ifeq ($(strip $(MAINLCD_DEV_SIZE)),220X176) 
+     $(error PIC_EDITOR_SUPPORT = TRUE is not supported for MAINLCD_DEV_SIZE = 220X176)
+  endif
+endif

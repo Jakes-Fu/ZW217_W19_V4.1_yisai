@@ -1,0 +1,18 @@
+//8910 v4 catm Ver:0102
+//开启双trace
+AT+NVPC=3,1,0,4,"87000000"
+//关闭通道A的dsp跟踪
+AT+NVPC=3,1,16,4,"00000000"
+//开启通道B的dsp基本一级跟踪
+//TRA_MPHY_CATM_BM_MSG
+//TRA_MPHY_CATM_BM_TASK
+//TRA_MPHY_CATM_TRACE_INFO
+AT+NVPC=3,1,172,4,"10040021"
+//开启BM_TASK基本二级跟踪
+AT+NVPC=3,1,72,4,"ffff87ff"
+//开启TRACE_INFO基本二级跟踪
+AT+NVPC=3,1,128,4,"ffbfffff"
+//双中断  catm v4自动识别fpga平台，必开启双中断
+//AT+NVPC=2,109,1524,16,"01000000000000000000010000000000"
+//烧写入FLASH
+AT+NVPC=0,2

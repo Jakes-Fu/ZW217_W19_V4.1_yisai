@@ -1,0 +1,100 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: VNetSetting - Win32 Self Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"VNetSetting___Win32_Self_Debug/VNetSetting.res" /d "_DEBUG" /d "_AFXDLL" "F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\VNetSetting.rc"" 
+Creating temporary file "C:\DOCUME~1\YIFENG~1.WAN\LOCALS~1\Temp\RSP24B.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I ".\include" /I ".\include\net" /I ".\include\winpcap" /I "..\..\..\..\..\..\Ms_Ref\export\inc" /I "..\..\..\..\..\..\RTOS\export\inc" /I "..\..\..\..\..\..\common\export\inc" /I "..\..\..\..\..\..\DAPS\export\inc" /I "..\..\common" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "HAVE_REMOTE" /D "WPCAP" /Fp"VNetSetting___Win32_Self_Debug/VNetSetting.pch" /Yu"stdafx.h" /Fo"VNetSetting___Win32_Self_Debug/" /Fd"VNetSetting___Win32_Self_Debug/" /FD /GZ /c 
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\CloseWaitDlg.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\Common\FeatureDLL.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\IpSearchDlg.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\IpTestingDlg.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\MacTestingDlg.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\VNetSetting.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\VNetSettingDLL.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\NetsettingDlg.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\NetstateDlg.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\CButtonST\BCMenu.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\CButtonST\BtnST.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\source\config_file.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\source\file_path.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\source\HexEdit.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\source\msdev_param.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\source\msnet_param.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\source\net_driver.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\source\net_test.cpp"
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\source\RegOpt.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\YIFENG~1.WAN\LOCALS~1\Temp\RSP24B.tmp" 
+Creating temporary file "C:\DOCUME~1\YIFENG~1.WAN\LOCALS~1\Temp\RSP24C.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I ".\include" /I ".\include\net" /I ".\include\winpcap" /I "..\..\..\..\..\..\Ms_Ref\export\inc" /I "..\..\..\..\..\..\RTOS\export\inc" /I "..\..\..\..\..\..\common\export\inc" /I "..\..\..\..\..\..\DAPS\export\inc" /I "..\..\common" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "HAVE_REMOTE" /D "WPCAP" /Fp"VNetSetting___Win32_Self_Debug/VNetSetting.pch" /Yc"stdafx.h" /Fo"VNetSetting___Win32_Self_Debug/" /Fd"VNetSetting___Win32_Self_Debug/" /FD /GZ /c 
+"F:\yifeng.wang_mocor_nettest\MS_Code\MS_MMI\source\winsimulator_tp\win_platform\MSDevNetSetting\VNetSetting\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\YIFENG~1.WAN\LOCALS~1\Temp\RSP24C.tmp" 
+Creating temporary file "C:\DOCUME~1\YIFENG~1.WAN\LOCALS~1\Temp\RSP24D.tmp" with contents
+[
+IPHlpApi.Lib ws2_32.lib packet.lib wininet.lib /nologo /subsystem:windows /dll /incremental:yes /pdb:"VNetSetting___Win32_Self_Debug/VNetSetting.pdb" /debug /machine:I386 /def:".\VNetSetting.def" /out:"..\VNetTest\Debug\VNetSetting.dll" /implib:"VNetSetting___Win32_Self_Debug/VNetSetting.lib" /pdbtype:sept /libpath:".\library\net" /libpath:".\library\winpcap" 
+.\VNetSetting___Win32_Self_Debug\CloseWaitDlg.obj
+.\VNetSetting___Win32_Self_Debug\FeatureDLL.obj
+.\VNetSetting___Win32_Self_Debug\IpSearchDlg.obj
+.\VNetSetting___Win32_Self_Debug\IpTestingDlg.obj
+.\VNetSetting___Win32_Self_Debug\MacTestingDlg.obj
+.\VNetSetting___Win32_Self_Debug\StdAfx.obj
+.\VNetSetting___Win32_Self_Debug\VNetSetting.obj
+.\VNetSetting___Win32_Self_Debug\VNetSettingDLL.obj
+.\VNetSetting___Win32_Self_Debug\NetsettingDlg.obj
+.\VNetSetting___Win32_Self_Debug\NetstateDlg.obj
+.\VNetSetting___Win32_Self_Debug\BCMenu.obj
+.\VNetSetting___Win32_Self_Debug\BtnST.obj
+.\VNetSetting___Win32_Self_Debug\config_file.obj
+.\VNetSetting___Win32_Self_Debug\file_path.obj
+.\VNetSetting___Win32_Self_Debug\HexEdit.obj
+.\VNetSetting___Win32_Self_Debug\msdev_param.obj
+.\VNetSetting___Win32_Self_Debug\msnet_param.obj
+.\VNetSetting___Win32_Self_Debug\net_driver.obj
+.\VNetSetting___Win32_Self_Debug\net_test.obj
+.\VNetSetting___Win32_Self_Debug\RegOpt.obj
+.\VNetSetting___Win32_Self_Debug\VNetSetting.res
+]
+Creating command line "link.exe @C:\DOCUME~1\YIFENG~1.WAN\LOCALS~1\Temp\RSP24D.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+CloseWaitDlg.cpp
+FeatureDLL.cpp
+IpSearchDlg.cpp
+IpTestingDlg.cpp
+MacTestingDlg.cpp
+VNetSetting.cpp
+VNetSettingDLL.cpp
+NetsettingDlg.cpp
+NetstateDlg.cpp
+BCMenu.cpp
+BtnST.cpp
+config_file.cpp
+file_path.cpp
+HexEdit.cpp
+msdev_param.cpp
+msnet_param.cpp
+net_driver.cpp
+net_test.cpp
+RegOpt.cpp
+Generating Code...
+Linking...
+   Creating library VNetSetting___Win32_Self_Debug/VNetSetting.lib and object VNetSetting___Win32_Self_Debug/VNetSetting.exp
+
+
+
+<h3>Results</h3>
+VNetSetting.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,228 @@
+/******************************************************************************
+ ** File Name:      oscfg.c                                                   *
+ ** Author:         Benjamin.Wang                                             *
+ ** DATE:           11/08/2006                                                *
+ ** Copyright:      2006 Spreadtrum, Incorporated. All Rights Reserved.       *
+ ** Description:    This file defines most of system's static tasks.          *
+ ******************************************************************************
+
+ ******************************************************************************
+ **                        Edit History                                       *
+ ** ------------------------------------------------------------------------- *
+ ** DATE           NAME             DESCRIPTION                               *
+ ** 11/08/2006     Benjamin.Wang    Create.                                   *
+ ******************************************************************************/
+
+/**---------------------------------------------------------------------------*
+ **                         Dependencies                                      *
+ **---------------------------------------------------------------------------*/
+#include "os_api.h"
+#include "priority_base.h"
+/**---------------------------------------------------------------------------*
+ **                         Compiler Flag                                     *
+ **---------------------------------------------------------------------------*/
+#ifdef   __cplusplus
+    extern   "C" 
+    {
+#endif                 
+
+
+const uint32 kal_priority_map_g[] = /*lint -esym(765,kal_priority_map_g)*/
+{
+//SCI_BASE_PRI(0),              /* SCI_PRIORITY_KERNEL */
+	SCI_BASE_PRI(1),              /* KAL_HEIGHEST_PRIORITY */
+	SCI_BASE_PRI(2),              /* KAL_PRIORITY_ONE */
+	SCI_BASE_PRI(3),              /* KAL_PRIORITY_TWO */
+	SCI_BASE_PRI(4),              /* KAL_PRIORITY_THREE */
+	SCI_BASE_PRI(5),              /* KAL_PRIORITY_FOUR == SCI_PRIORITY_TIME_CRITICAL */
+	SCI_BASE_PRI(6),              /* KAL_PRIORITY_FIVE */
+	SCI_BASE_PRI(7),              /* KAL_PRIORITY_SIX */
+	SCI_BASE_PRI(8),              /* KAL_PRIORITY_SEVEN */
+	SCI_BASE_PRI(9),              /* KAL_PRIORITY_OFFSETIGHT */
+	SCI_BASE_PRI(10),             /* KAL_PRIORITY_NINE == SCI_PRIORITY_HIGHEST */
+	SCI_BASE_PRI(11),             /* KAL_PRIORITY_TEN */
+	                    					/* 15 == SCI_PRIORITY_ABOVE_NORMAL */
+	SCI_BASE_PRI(18),             /* KAL_PRIORITY_OFFSETLEVEN */
+	SCI_BASE_PRI(19),             /* KAL_PRIORITY_TWELVE */
+	SCI_BASE_PRI(20),             /* KAL_PRIORITY_THIRTEEN == SCI_PRIORITY_NORMAL */
+	SCI_BASE_PRI(21),             /* KAL_PRIORITY_FOURTEEN */
+	SCI_BASE_PRI(22),             /* KAL_PRIORITY_FIFTEEN */
+	SCI_BASE_PRI(25),             /* KAL_PRIORITY_SIXTEEN == SCI_PRIORITY_BELOW_NORMAL */
+	SCI_BASE_PRI(28),             /* KAL_PRIORITY_SEVENTEEN == SCI_PRIORITY_LOWEST */
+	SCI_BASE_PRI(30),             /* KAL_PRIORITY_OFFSETIGHTEEN */
+	SCI_BASE_PRI(31)              /* KAL_LOWEST_PRIORITY == SCI_PRIORITY_IDLE */
+};
+
+enum
+{
+    PRI_HEIGHEST_PRIORITY_OFFSET    =  1,
+    PRI_PRIORITY_ONE_OFFSET         =  2,
+    PRI_PRIORITY_TWO_OFFSET         =  3,
+    PRI_PRIORITY_THREE_OFFSET       =  4,
+    PRI_PRIORITY_FOUR_OFFSET        =  5,
+    PRI_PRIORITY_FIVE_OFFSET        =  6,
+    PRI_PRIORITY_SIX_OFFSET         =  7,
+    PRI_PRIORITY_SEVEN_OFFSET       =  8,
+    PRI_PRIORITYIGHT_OFFSET         =  9,
+    PRI_PRIORITY_NINE_OFFSET        =  10,
+    PRI_PRIORITY_TEN_OFFSET         =  11,
+    PRI_PRIORITYLEVEN_OFFSET        =  18,
+    PRI_PRIORITY_TWELVE_OFFSET      =  19,
+    PRI_PRIORITY_THIRTEEN_OFFSET    =  20,
+    PRI_PRIORITY_FOURTEEN_OFFSET    =  21,
+    PRI_PRIORITY_FIFTEEN_OFFSET     =  22,
+    PRI_PRIORITY_SIXTEEN_OFFSET     =  25,
+    PRI_PRIORITY_SEVENTEEN_OFFSET   =  28,
+    PRI_PRIORITYIGHTEEN_OFFSET      =  30,
+    PRI_LOWEST_PRIORITY_OFFSET      =  31,
+    PRI_DLC_TASK_OFFSET             =  4,
+    PRI_BASE_LAYER1_OFFSET               =  5,
+    PRI_Llentity_TASK_OFFSET        =  8,
+    PRI_TESTPSTOL1_OFFSET           =  10,
+    PRI_TESTDSPTOL1_OFFSET          =  10,
+    PRI_CALIBRATION_OFFSET          =  10,
+    PRI_TDD_CALIBRATION1_OFFSET     =  10,
+    PRI_TDD_CALIBRATION2_OFFSET     =  10,
+    PRI_MUX_RECV_TASK1_OFFSET       =  11,
+    PRI_MUX_RECV_TASK2_OFFSET       =  11,
+    PRI_RRA_OFFSET                  =  5,
+    PRI_DLR_OFFSET                  =  4,
+    PRI_MAC_OFFSET                  =  4,
+    PRI_RLC_OFFSET                  =  4,
+    PRI_RRC_1_OFFSET                =  6,
+    PRI_RRC_2_OFFSET                =  6,
+    PRI_RRC_3_OFFSET                =  6,
+    PRI_RRC_4_OFFSET                =  6,
+    PRI_L1main_OFFSET               =  6,
+    PRI_L1C_DUMP_MEM_OFFSET         =  15,
+    PRI_CM_OFFSET                   =  16,
+    PRI_DIAG_OFFSET                 =  16,
+    PRI_PROCESSMM_1_OFFSET          =  16,
+    PRI_PROCESSMM_2_OFFSET          =  16,
+    PRI_PROCESSMM_3_OFFSET          =  16,
+    PRI_PROCESSMM_4_OFFSET          =  16,
+    PRI_GMM_1_OFFSET                =  16,
+    PRI_GMM_2_OFFSET                =  16,
+    PRI_GMM_3_OFFSET                =  16,
+    PRI_GMM_4_OFFSET                =  16,
+    PRI_R1ROUTER_1_OFFSET           =  18,
+    PRI_R1ROUTER_2_OFFSET           =  18,
+    PRI_R1ROUTER_3_OFFSET           =  18,
+    PRI_R1ROUTER_4_OFFSET           =  18,
+    PRI_CMROUTER_1_OFFSET           =  18,
+    PRI_CMROUTER_2_OFFSET           =  18,
+    PRI_CMROUTER_3_OFFSET           =  18,
+    PRI_CMROUTER_4_OFFSET           =  18,
+    PRI_SCT_OFFSET                  =  18,
+    PRI_SMmain_OFFSET               =  18,
+    PRI_SNDCPMain_OFFSET            =  18,
+    PRI_BASE_SIMAT_DUM_OFFSET       =  20,
+    PRI_PSDummy_TASK_OFFSET         =  20,
+    PRI_BASE_SIM_OFFSET             =  22,
+    PRI_BASE_NVSMS_OFFSET           =  22,
+    PRI_BASE_MN_OFFSET              =  22,
+    PRI_BASE_ATC_TASK_OFFSET        =  22,
+    PRI_CPANEL_TASK_OFFSET          =  25,
+    PRI_CSVTRX_TASK_OFFSET          =  27,
+    PRI_CSVTTX_TASK_OFFSET          =  27,
+    PRI_LOG_SAVE_TASK_OFFSET        =  30,
+    PRI_SIM_WIN_DUMMY_TASK_OFFSET   =  31,
+    PRI_DUMMY_RRC_TASK_OFFSET       =  15,
+    PRI_BASE_CCENTITY_OFFSET        =  18,
+    PRI_BASE_SMSCMENTITY_OFFSET     =  18,
+    PRI_BASE_RLENTITY_OFFSET        =  18,
+    PRI_BASE_SSENTITY_OFFSET        =  18,
+    PRI_BASE_SMENTITY_OFFSET        =  18,    
+    MAX_BASE_PRIORITY_OFFSET        = MAX_BASE_PRI_NUM
+};
+
+                                                                                      
+//Base Task                                                                           
+SCI_DEFINE_TASK_PRI(PRI_HEIGHEST_PRIORITY 	, SCI_BASE_PRI(PRI_HEIGHEST_PRIORITY_OFFSET ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_ONE 		, SCI_BASE_PRI(PRI_PRIORITY_ONE_OFFSET      ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_TWO 		, SCI_BASE_PRI(PRI_PRIORITY_TWO_OFFSET      ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_THREE 		, SCI_BASE_PRI(PRI_PRIORITY_THREE_OFFSET    ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_FOUR 		, SCI_BASE_PRI(PRI_PRIORITY_FOUR_OFFSET     ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_FIVE 		, SCI_BASE_PRI(PRI_PRIORITY_FIVE_OFFSET     ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_SIX 		, SCI_BASE_PRI(PRI_PRIORITY_SIX_OFFSET      ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_SEVEN 		, SCI_BASE_PRI(PRI_PRIORITY_SEVEN_OFFSET    ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITYIGHT 		, SCI_BASE_PRI(PRI_PRIORITYIGHT_OFFSET      ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_NINE 		, SCI_BASE_PRI(PRI_PRIORITY_NINE_OFFSET     ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_TEN 		, SCI_BASE_PRI(PRI_PRIORITY_TEN_OFFSET      ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITYLEVEN 		, SCI_BASE_PRI(PRI_PRIORITYLEVEN_OFFSET     ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_TWELVE 	, SCI_BASE_PRI(PRI_PRIORITY_TWELVE_OFFSET   ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_THIRTEEN 	, SCI_BASE_PRI(PRI_PRIORITY_THIRTEEN_OFFSET ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_FOURTEEN 	, SCI_BASE_PRI(PRI_PRIORITY_FOURTEEN_OFFSET ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_FIFTEEN 	, SCI_BASE_PRI(PRI_PRIORITY_FIFTEEN_OFFSET  ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_SIXTEEN 	, SCI_BASE_PRI(PRI_PRIORITY_SIXTEEN_OFFSET  ));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITY_SEVENTEEN 	, SCI_BASE_PRI(PRI_PRIORITY_SEVENTEEN_OFFSET));
+SCI_DEFINE_TASK_PRI(PRI_PRIORITYIGHTEEN 	, SCI_BASE_PRI(PRI_PRIORITYIGHTEEN_OFFSET   ));
+SCI_DEFINE_TASK_PRI(PRI_LOWEST_PRIORITY 	, SCI_BASE_PRI(PRI_LOWEST_PRIORITY_OFFSET   ));
+SCI_DEFINE_TASK_PRI(PRI_DLC_TASK 			, SCI_BASE_PRI(PRI_DLC_TASK_OFFSET          ));
+SCI_DEFINE_TASK_PRI(PRI_BASE_LAYER1 				, SCI_BASE_PRI(PRI_BASE_LAYER1_OFFSET            ));
+SCI_DEFINE_TASK_PRI(PRI_Llentity_TASK 		, SCI_BASE_PRI(PRI_Llentity_TASK_OFFSET     ));
+SCI_DEFINE_TASK_PRI(PRI_TESTPSTOL1 			, SCI_BASE_PRI(PRI_TESTPSTOL1_OFFSET        ));
+SCI_DEFINE_TASK_PRI(PRI_TESTDSPTOL1 		, SCI_BASE_PRI(PRI_TESTDSPTOL1_OFFSET       ));
+SCI_DEFINE_TASK_PRI(PRI_CALIBRATION 		, SCI_BASE_PRI(PRI_CALIBRATION_OFFSET       ));
+SCI_DEFINE_TASK_PRI(PRI_TDD_CALIBRATION1	, SCI_BASE_PRI(PRI_TDD_CALIBRATION1_OFFSET  ));
+SCI_DEFINE_TASK_PRI(PRI_TDD_CALIBRATION2	, SCI_BASE_PRI(PRI_TDD_CALIBRATION2_OFFSET  ));
+SCI_DEFINE_TASK_PRI(PRI_MUX_RECV_TASK1 		, SCI_BASE_PRI(PRI_MUX_RECV_TASK1_OFFSET    ));
+SCI_DEFINE_TASK_PRI(PRI_MUX_RECV_TASK2 		, SCI_BASE_PRI(PRI_MUX_RECV_TASK2_OFFSET    ));
+SCI_DEFINE_TASK_PRI(PRI_RRA 				, SCI_BASE_PRI(PRI_RRA_OFFSET               ));
+SCI_DEFINE_TASK_PRI(PRI_DLR 				, SCI_BASE_PRI(PRI_DLR_OFFSET               ));
+SCI_DEFINE_TASK_PRI(PRI_MAC 				, SCI_BASE_PRI(PRI_MAC_OFFSET               ));
+SCI_DEFINE_TASK_PRI(PRI_RLC 				, SCI_BASE_PRI(PRI_RLC_OFFSET               ));
+SCI_DEFINE_TASK_PRI(PRI_RRC_1 				, SCI_BASE_PRI(PRI_RRC_1_OFFSET             ));
+SCI_DEFINE_TASK_PRI(PRI_RRC_2 				, SCI_BASE_PRI(PRI_RRC_2_OFFSET             ));
+SCI_DEFINE_TASK_PRI(PRI_RRC_3 				, SCI_BASE_PRI(PRI_RRC_3_OFFSET             ));
+SCI_DEFINE_TASK_PRI(PRI_RRC_4 				, SCI_BASE_PRI(PRI_RRC_4_OFFSET             ));
+SCI_DEFINE_TASK_PRI(PRI_L1main 				, SCI_BASE_PRI(PRI_L1main_OFFSET            ));
+SCI_DEFINE_TASK_PRI(PRI_L1C_DUMP_MEM 		, SCI_BASE_PRI(PRI_L1C_DUMP_MEM_OFFSET      ));
+SCI_DEFINE_TASK_PRI(PRI_CM   				, SCI_BASE_PRI(PRI_CM_OFFSET                ));
+SCI_DEFINE_TASK_PRI(PRI_DIAG 				, SCI_BASE_PRI(PRI_DIAG_OFFSET              ));
+SCI_DEFINE_TASK_PRI(PRI_PROCESSMM_1 		, SCI_BASE_PRI(PRI_PROCESSMM_1_OFFSET       ));
+SCI_DEFINE_TASK_PRI(PRI_PROCESSMM_2 		, SCI_BASE_PRI(PRI_PROCESSMM_2_OFFSET       ));
+SCI_DEFINE_TASK_PRI(PRI_PROCESSMM_3 		, SCI_BASE_PRI(PRI_PROCESSMM_3_OFFSET       ));
+SCI_DEFINE_TASK_PRI(PRI_PROCESSMM_4 		, SCI_BASE_PRI(PRI_PROCESSMM_4_OFFSET       ));
+SCI_DEFINE_TASK_PRI(PRI_GMM_1 				, SCI_BASE_PRI(PRI_GMM_1_OFFSET             ));
+SCI_DEFINE_TASK_PRI(PRI_GMM_2 				, SCI_BASE_PRI(PRI_GMM_2_OFFSET             ));
+SCI_DEFINE_TASK_PRI(PRI_GMM_3 				, SCI_BASE_PRI(PRI_GMM_3_OFFSET             ));
+SCI_DEFINE_TASK_PRI(PRI_GMM_4 				, SCI_BASE_PRI(PRI_GMM_4_OFFSET             ));
+SCI_DEFINE_TASK_PRI(PRI_R1ROUTER_1 			, SCI_BASE_PRI(PRI_R1ROUTER_1_OFFSET        ));
+SCI_DEFINE_TASK_PRI(PRI_R1ROUTER_2 			, SCI_BASE_PRI(PRI_R1ROUTER_2_OFFSET        ));
+SCI_DEFINE_TASK_PRI(PRI_R1ROUTER_3 			, SCI_BASE_PRI(PRI_R1ROUTER_3_OFFSET        ));
+SCI_DEFINE_TASK_PRI(PRI_R1ROUTER_4 			, SCI_BASE_PRI(PRI_R1ROUTER_4_OFFSET        ));
+SCI_DEFINE_TASK_PRI(PRI_CMROUTER_1 			, SCI_BASE_PRI(PRI_CMROUTER_1_OFFSET        ));
+SCI_DEFINE_TASK_PRI(PRI_CMROUTER_2 			, SCI_BASE_PRI(PRI_CMROUTER_2_OFFSET        ));
+SCI_DEFINE_TASK_PRI(PRI_CMROUTER_3 			, SCI_BASE_PRI(PRI_CMROUTER_3_OFFSET        ));
+SCI_DEFINE_TASK_PRI(PRI_CMROUTER_4 			, SCI_BASE_PRI(PRI_CMROUTER_4_OFFSET        ));
+SCI_DEFINE_TASK_PRI(PRI_SCT 				, SCI_BASE_PRI(PRI_SCT_OFFSET               ));
+SCI_DEFINE_TASK_PRI(PRI_SMmain 				, SCI_BASE_PRI(PRI_SMmain_OFFSET            ));
+SCI_DEFINE_TASK_PRI(PRI_SNDCPMain 			, SCI_BASE_PRI(PRI_SNDCPMain_OFFSET         ));
+SCI_DEFINE_TASK_PRI(PRI_BASE_SIMAT_DUM 		, SCI_BASE_PRI(PRI_BASE_SIMAT_DUM_OFFSET    ));
+SCI_DEFINE_TASK_PRI(PRI_PSDummy_TASK 		, SCI_BASE_PRI(PRI_PSDummy_TASK_OFFSET      ));
+SCI_DEFINE_TASK_PRI(PRI_BASE_SIM 			, SCI_BASE_PRI(PRI_BASE_SIM_OFFSET          ));
+SCI_DEFINE_TASK_PRI(PRI_BASE_NVSMS  		, SCI_BASE_PRI(PRI_BASE_NVSMS_OFFSET        ));
+SCI_DEFINE_TASK_PRI(PRI_BASE_MN  			, SCI_BASE_PRI(PRI_BASE_MN_OFFSET           ));
+SCI_DEFINE_TASK_PRI(PRI_BASE_ATC_TASK  		, SCI_BASE_PRI(PRI_BASE_ATC_TASK_OFFSET     ));
+SCI_DEFINE_TASK_PRI(PRI_CPANEL_TASK    		, SCI_BASE_PRI(PRI_CPANEL_TASK_OFFSET       ));
+SCI_DEFINE_TASK_PRI(PRI_CSVTRX_TASK 		, SCI_BASE_PRI(PRI_CSVTRX_TASK_OFFSET       ));
+SCI_DEFINE_TASK_PRI(PRI_CSVTTX_TASK 		, SCI_BASE_PRI(PRI_CSVTTX_TASK_OFFSET       ));
+SCI_DEFINE_TASK_PRI(PRI_LOG_SAVE_TASK  		, SCI_BASE_PRI(PRI_LOG_SAVE_TASK_OFFSET     ));
+SCI_DEFINE_TASK_PRI(PRI_SIM_WIN_DUMMY_TASK 	, SCI_BASE_PRI(PRI_SIM_WIN_DUMMY_TASK_OFFSET));
+SCI_DEFINE_TASK_PRI(PRI_DUMMY_RRC_TASK 		, SCI_BASE_PRI(PRI_DUMMY_RRC_TASK_OFFSET    ));
+SCI_DEFINE_TASK_PRI(PRI_BASE_CCENTITY 		, SCI_BASE_PRI(PRI_BASE_CCENTITY_OFFSET     ));
+SCI_DEFINE_TASK_PRI(PRI_BASE_SMSCMENTITY 	, SCI_BASE_PRI(PRI_BASE_SMSCMENTITY_OFFSET  ));
+SCI_DEFINE_TASK_PRI(PRI_BASE_RLENTITY 		, SCI_BASE_PRI(PRI_BASE_RLENTITY_OFFSET     ));
+SCI_DEFINE_TASK_PRI(PRI_BASE_SSENTITY 		, SCI_BASE_PRI(PRI_BASE_SSENTITY_OFFSET     ));
+SCI_DEFINE_TASK_PRI(PRI_BASE_SMENTITY 		, SCI_BASE_PRI(PRI_BASE_SMENTITY_OFFSET     ));
+
+
+/**---------------------------------------------------------------------------*
+ **                         Compiler Flag                                     *
+ **---------------------------------------------------------------------------*/
+#ifdef   __cplusplus
+    }
+#endif 
+
+//End of oscfg.c

@@ -1,0 +1,29 @@
+    <Div background-color="0x0000" align-items="center" padding="5">
+
+        <Label value="{{singer}}" class="text" font-size=16></Label>
+        <Label value="{{song}}" class="text" font-size=16></Label>
+
+        <Progressbar id="pgbar" width=99 height=6 step=0 type='HORIZONTAL' prg_bg_color=0x8410 prg_fg_color=0x8000 is_slide=false>
+        </Progressbar>
+        <Div flex-direction="row" justify-content="center" padding=6>
+            <Image width=40 height=40 src="{{$r('img:res_aw_music_prev.png')}}"
+                on:click=preClicked></Image>
+            <Image id="play" width=70 height=70 src="{{$r('img:res_aw_music_play.png')}}"
+                on:click=playClicked></Image>
+            <Image width=40 height=40 src="{{$r('img:res_aw_music_next.png')}}"
+                on:click=nextClicked></Image>
+        </Div>
+        <Div flex-direction="row" justify-content="center" padding=6>
+        <Image height=36 src="{{$r('img:res_aw_music_fav.png')}}"></Image>
+
+        <Image is_tp_enable=true height=36 src="{{$r('img:res_aw_music_speaker.png')}}"
+            on:click=volumeClicked></Image>
+
+        <Image  height=36 src="{{$r('img:res_aw_music_download.png')}}"></Image>
+    </Div>
+    <Div flex-direction="row" justify-content="center"  padding=6>
+    <Image width=9 height=9 src="{{$r('img:res_aw_music_indicator.png')}}"></Image>
+    <Image width=9 height=9 src="{{$r('img:res_aw_music_list_indicator.png')}}"></Image>
+    </Div>
+    </Div>
+    <Audio id="audio" volume="50" autoplay=false on:play=onPlay on:pause=onPause on:ended=onEnded on:error=onError on:timeUpdate=onTimeUpdate></Audio>

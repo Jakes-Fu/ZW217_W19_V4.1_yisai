@@ -1,0 +1,382 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// 描述：NB LTE L3 NAS 消息定义文件
+// 作者：Kailin
+// 日期：2016-08-17
+// 版本：V0.0.1
+// 版权：CopyRight(c) 2016.07 By RDA
+// 
+// 消息定义格式：
+//    <MsgID MsgName>
+//         参数名      参数类型      参数基类型        参数含义         参数选项
+//    </MsgID MsgName>
+//Bit
+// 子结构定义
+//    <Sub T_Temp>
+//         参数名      参数类型      参数基类型        参数含义         参数选项
+//    </Sub T_Temp>
+//
+//  一个参数的bit位定义
+//    <Bit T_Var>
+//         成员名      在参数中的Bit位起始位置         成员长度(Bit数)         成员含义       成员选项
+//    </Bit T_Var>
+//
+//  指针类型参数定义
+//     参数名          Ptr           参数基类型         参数含义
+//  e.g:
+//      u8   *pPdschPointer;             ===> pPdschPointer      Ptr   u8              pPdschPointer 
+//      T_PDSCH_MEM  *pPdschMapPointer;  ===> pPdschMapPointer   Ptr   T_PDSCH_MEM     pPdschMapPointer
+//
+//
+// 选项定义：
+//    |input;|                       参数值允许输入
+//    |nochange;|                    参数值不允许改变
+//    |select;值1:含义;值2:含义;|    参数值只能选择
+//    |dismember;名称;|              参数bit定义
+//    |multiedit;|                   数组输入
+//              
+//  注意：
+//      1. 不支持union类型
+//      2. ..:取值范围定义,e.g: 1..5,表示1到5范围
+//      3. 空格符作为各列间的分隔符，如内容中有空格符，使用Tab符代替.
+//      4. 参数基类型，支持u8、u16、u32，s8，s16，s32，自定义子结构、数组、指针类型(Ptr)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// --------------------------------------------------------------------
+// channel = 0x02 
+// --------------------------------------------------------------------
+<0x02c2 ACTIVATE_DEFAULT_EPS_BEARER_CONTEXT_ACCEPT>
+
+</0x02c2 ACTIVATE_DEFAULT_EPS_BEARER_CONTEXT_ACCEPT>
+
+
+<0x02c3 ACTIVATE_DEFAULT_EPS_BEARER_CONTEXT_REJECT>
+
+</0x02c3 ACTIVATE_DEFAULT_EPS_BEARER_CONTEXT_REJECT>
+
+
+<0x02c6 ACTIVATE_DEDICATED_EPS_BEARER_CONTEXT_ACCEPT>
+
+</0x02c6 ACTIVATE_DEDICATED_EPS_BEARER_CONTEXT_ACCEPT>
+
+
+<0x02c7 ACTIVATE_DEDICATED_EPS_BEARER_CONTEXT_REJECT>
+
+</0x02c7 ACTIVATE_DEDICATED_EPS_BEARER_CONTEXT_REJECT>
+
+
+<0x02ca MODIFY_EPS_BEARER_CONTEXT_ACCEPT>
+
+</0x02ca MODIFY_EPS_BEARER_CONTEXT_ACCEPT>
+
+
+<0x02cb MODIFY_EPS_BEARER_CONTEXT_REJECT>
+
+</0x02cb MODIFY_EPS_BEARER_CONTEXT_REJECT>
+
+
+<0x02ce DEACTIVATE_EPS_BEARER_CONTEXT_REQUEST>
+
+</0x02ce DEACTIVATE_EPS_BEARER_CONTEXT_REQUEST>
+
+
+<0x02d0 PDN_CONNECTIVITY_REQUEST>
+
+</0x02d0 PDN_CONNECTIVITY_REQUEST>
+
+
+<0x02d2 PDN_DISCONNECT_REQUEST>
+
+</0x02d2 PDN_DISCONNECT_REQUEST>
+
+
+<0x02d4 BEARER_RESOURCE_ALLOCATION_REQUEST>
+
+</0x02d4 BEARER_RESOURCE_ALLOCATION_REQUEST>
+
+
+<0x02d6 BEARER_RESOURCE_MODIFICATION_REQUEST>
+
+</0x02d6 BEARER_RESOURCE_MODIFICATION_REQUEST>
+
+
+<0x02da ESM_INFORMATION_RESPONSE>
+
+</0x02da ESM_INFORMATION_RESPONSE>
+
+
+<0x02e8 ESM_STATUS_UL>
+
+</0x02e8 ESM_STATUS_UL>
+
+
+<0x02ec ESM_DUMMY_MSG_UL>
+
+</0x02ec ESM_DUMMY_MSG_UL>
+
+
+<0x02eb ESM_DATA_TRANS_UL>
+
+</0x02eb ESM_DATA_TRANS_UL>
+
+
+// -------------------------------------------------------------------
+// channel = 0x07
+// -------------------------------------------------------------------
+<0x0741 EMM_ATTACH_REQUEST>
+
+</0x0741 EMM_ATTACH_REQUEST>
+
+
+<0x0743 EMM_ATTACH_COMPLETE>
+
+</0x0743 EMM_ATTACH_COMPLETE>
+
+
+<0x0745 EMM_DETACH_REQUEST_UL>
+
+</0x0745 EMM_DETACH_REQUEST_UL>
+
+
+<0x0746 EMM_DETACH_ACCEPT_UL>
+
+</0x0746 EMM_DETACH_ACCEPT_UL>
+
+
+<0x0748 TRACKING_AREA_UPDATE_REQUEST>
+
+</0x0748 TRACKING_AREA_UPDATE_REQUEST>
+
+
+<0x074a TRACKING_AREA_UPDATE_COMPLETE>
+
+</0x074a TRACKING_AREA_UPDATE_COMPLETE>
+
+
+<0x074c EXTENDED_SERVICE_REQUEST>
+
+</0x074c EXTENDED_SERVICE_REQUEST>
+
+
+<0x074d EMM_CONTROL_PLANE_SERVICE_REQ>
+
+</0x074d EMM_CONTROL_PLANE_SERVICE_REQ>
+
+
+<0x0751 GUTI_REALLOCATION_COMPLETE>
+
+</0x0751 GUTI_REALLOCATION_COMPLETE>
+
+
+<0x0753 EMM_AUTHENTICATION_RESPONSE>
+
+</0x0753 EMM_AUTHENTICATION_RESPONSE>
+
+
+<0x0756 EMM_IDENTITY_RESPONSE>
+
+</0x0756 EMM_IDENTITY_RESPONSE>
+
+
+<0x075c EMM_AUTHENTICATION_FAULURE>
+
+</0x075c EMM_AUTHENTICATION_FAULURE>
+
+
+<0x075e SECURITY_MODE_COMPLETE>
+
+</0x075e SECURITY_MODE_COMPLETE>
+
+
+<0x0769 UPLINK_GENERIC_NAS_TRANSPORT>
+
+</0x0769 UPLINK_GENERIC_NAS_TRANSPORT>
+
+
+<0x074d CONTROL_PLANE_SERVICE_REQ>
+
+</0x074d CONTROL_PLANE_SERVICE_REQ>
+
+
+<0x0763 UPLINK_NAS_TRANSPORT>
+
+</0x0763 UPLINK_NAS_TRANSPORT>
+
+
+<0x07fe EMM_SERVICE_REQUEST>
+
+</0x07fe EMM_SERVICE_REQUEST>
+
+
+
+
+
+
+// ----------------------------------------------------------------------------
+// channel = 0x82
+// ----------------------------------------------------------------------------
+<0x82c1 ACTIVATE_DEFAULT_EPS_BEARER_CONTEXT_REQUEST>
+
+</0x82c1 ACTIVATE_DEFAULT_EPS_BEARER_CONTEXT_REQUEST>
+
+
+<0x82c5 ACTIVATE_DEDICATED_EPS_BEARER_CONTEXT_REQUEST>
+
+</0x82c5 ACTIVATE_DEDICATED_EPS_BEARER_CONTEXT_REQUEST>
+
+
+<0x82c9 MODIFY_EPS_BEARER_CONTEXT_REQUEST>
+
+</0x82c9 MODIFY_EPS_BEARER_CONTEXT_REQUEST>
+
+
+<0x82ce DEACTIVATE_EPS_BEARER_CONTEXT_ACCEPT>
+
+</0x82ce DEACTIVATE_EPS_BEARER_CONTEXT_ACCEPT>
+
+
+<0x82d1 PDN_CONNECTIVITY_REJECT>
+
+</0x82d1 PDN_CONNECTIVITY_REJECT>
+
+
+<0x82d3 PDN_DISCONNECT_REJECT>
+
+</0x82d3 PDN_DISCONNECT_REJECT>
+
+
+<0x82d5 BEARER_RESOURCE_ALLOCATION_REJECT>
+
+</0x82d5 BEARER_RESOURCE_ALLOCATION_REJECT>
+
+
+<0x82d7 BEARER_RESOURCE_MODIFICATION_REJECT>
+
+</0x82d7 BEARER_RESOURCE_MODIFICATION_REJECT>
+
+
+<0x82d9 ESM_INFORMATION_REQUEST>
+
+</0x82d9 ESM_INFORMATION_REQUEST>
+
+
+<0x82db ESM_NOTIFICATION>
+
+</0x82db ESM_NOTIFICATION>
+
+
+<0x82e8 ESM_STATUS_DL>
+
+</0x82e8 ESM_STATUS_DL>
+
+
+<0x82ea ESM_DUMMY_MSG_DL>
+
+</0x82ea ESM_DUMMY_MSG_DL>
+
+
+<0x82eb ESM_DATA_TRANS_DL>
+
+</0x82eb ESM_DATA_TRANS_DL>
+
+
+
+// --------------------------------------------------------------------------
+// channel = 0x87
+// --------------------------------------------------------------------------
+<0x8742 EMM_ATTACH_ACCEPT>
+
+</0x8742 EMM_ATTACH_ACCEPT>
+
+
+<0x8744 EMM_ATTACH_REJECT>
+
+</0x8744 EMM_ATTACH_REJECT>
+
+
+<0x8745 EMM_DETACH_REQUEST_DL>
+
+</0x8745 EMM_DETACH_REQUEST_DL>
+
+
+<0x8746 EMM_DETACH_ACCEPT_DL>
+
+</0x8746 EMM_DETACH_ACCEPT_DL>
+
+
+<0x8749 TRACKING_AREA_UPDATE_ACCEPT>
+
+</0x8749 TRACKING_AREA_UPDATE_ACCEPT>
+
+
+<0x874B TRACK_AREA_UPDATE_REJECT>
+
+</0x874B TRACK_AREA_UPDATE_REJECT>
+
+
+<0x874E EMM_SERVICE_REJECT>
+
+</0x874E EMM_SERVICE_REJECT>
+
+
+<0x8750 GUTI_REALLOCATION_COMMAND>
+
+</0x8750 GUTI_REALLOCATION_COMMAND>
+
+
+<0x8752 EMM_AUTHENTICATION_REQUEST>
+
+</0x8752 EMM_AUTHENTICATION_REQUEST>
+
+
+<0x8754 EMM_AUTHENTICATION_REJECT>
+
+</0x8754 EMM_AUTHENTICATION_REJECT>
+
+
+<0x8755 EMM_IDENTITY_REQUEST>
+
+</0x8755 EMM_IDENTITY_REQUEST>
+
+
+<0x875d SECURITY_MODE_COMMAND>
+
+</0x875d SECURITY_MODE_COMMAND>
+
+
+<0x8760 EMM_STATUS>
+
+</0x8760 EMM_STATUS>
+
+
+<0x8761 EMM_INFORMATION>
+
+</0x8761 EMM_INFORMATION>
+
+
+<0x8762 DOWNLINK_NAS_TRANSPORT>
+
+</0x8762 DOWNLINK_NAS_TRANSPORT>
+
+
+<0x8764 CS_SERVICE_NOTIFICATION>
+
+</0x8764 CS_SERVICE_NOTIFICATION>
+
+
+<0x8768 DOWNLINK_GENERIC_NAS_TRANSPORT>
+
+</0x8768 DOWNLINK_GENERIC_NAS_TRANSPORT>
+
+
+
+
+
+
+
+
+
+
+
+

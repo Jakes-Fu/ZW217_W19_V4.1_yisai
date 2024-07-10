@@ -1,0 +1,7 @@
+
+S_SRC := 
+C_SRC += halo_verify.c \
+		halo_verify_common.c \
+		halo_verify_cp.c \
+    
+   

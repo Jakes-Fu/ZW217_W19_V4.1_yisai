@@ -1,0 +1,17 @@
+ROM_LOAD 0x40000000 0x6800
+{
+     ROM_EXEC  0x40000000 0x6800
+     {
+          init.o (Init, +First)
+          *.o (+RO)
+          *.o(+RW,+ZI)
+     }
+     
+     RAM_EXEC  0x30800000 0x10000
+     {
+          drv_usb.o(+RW,+ZI)
+          usb_boot.o(+RW,+ZI)
+          packet.o(+RW,+ZI) 
+     }
+}
+

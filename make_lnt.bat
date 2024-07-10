@@ -1,0 +1,1 @@
+make\make_cmd\make -r -R -f win_simulator_lnt.mk %*

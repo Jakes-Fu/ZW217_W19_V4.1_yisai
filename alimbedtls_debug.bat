@@ -1,0 +1,1 @@
+make p=UWS6121E_WC_1H00_NoGNSS m=alimbedtls update job=8

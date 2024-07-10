@@ -1,0 +1,803 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ControlPanel2.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,1,1
+ PRODUCTVERSION 1,2,1,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "ControlPanel2 DLL\0"
+            VALUE "FileVersion", "1, 2, 1, 1\0"
+            VALUE "InternalName", "ControlPanel2\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2009-2010\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ControlPanel2.DLL\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "ControlPanel2 Dynamic Link Library\0"
+            VALUE "ProductVersion", "1, 2, 1, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG_CALLCON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 323
+    END
+
+    IDD_DIALOG_SMSCON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 327
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 351
+    END
+
+    IDD_DIALOG_SYSINFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 325
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 353
+    END
+
+    IDD_DIALOG_MSGFLOW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 323
+    END
+
+    IDD_DIALOG_SSCON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 323
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_DIALOG_CBCON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 323
+    END
+
+    IDD_DIALOG_SMSINFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+
+    IDD_DIALOG_ATEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 334
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_CALLCON DIALOGEX 0, 0, 330, 330
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Call Control"
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_LIST_CALL,"SysListView32",LVS_REPORT | 
+                    LVS_AUTOARRANGE | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,
+                    22,18,290,100,WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_EDIT_SELFNUM,116,128,76,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "7",IDC_STATIC_TOTCALLNUM,116,157,76,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_STATIC_ACTCALLNUM,116,186,76,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_COMBO_CALLNO,116,215,76,89,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_DIALNUM,116,244,76,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_EDIT_REMNUM,116,273,76,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "",IDC_STATIC_CALLSTATUS,116,302,125,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Make Call",IDC_BUTTON_MAKECALL,257,215,55,12
+    PUSHBUTTON      "Answer",IDC_BUTTON_ANSWER,257,244,55,12,WS_DISABLED
+    PUSHBUTTON      "Disconnect",IDC_BUTTON_DISCONNECT,257,273,55,12,
+                    WS_DISABLED
+    CONTROL         "Mute",IDC_CHECK_SILCALLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,257,302,55,12,WS_EX_STATICEDGE
+    LTEXT           "Dial Phone Number",IDC_STATIC,22,244,86,12,
+                    SS_CENTERIMAGE
+    LTEXT           "Status",IDC_STATIC,22,302,86,12,SS_CENTERIMAGE
+    GROUPBOX        "Call",IDC_STATIC,7,7,316,316
+    LTEXT           "Self Phone Number",IDC_STATIC,22,128,86,12,
+                    SS_CENTERIMAGE
+    LTEXT           "Remote Phone Number",IDC_STATIC,22,273,86,12,
+                    SS_CENTERIMAGE
+    LTEXT           "Total Call Number",IDC_STATIC,22,157,86,12,
+                    SS_CENTERIMAGE
+    LTEXT           "Active Call Number",IDC_STATIC,22,186,86,12,
+                    SS_CENTERIMAGE
+    LTEXT           "Select Call No.",IDC_STATIC,22,215,86,12,SS_CENTERIMAGE
+    ICON            "",IDC_CALL_IMAGE,274,178,20,20,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+END
+
+IDD_DIALOG_SMSCON DIALOG DISCARDABLE  0, 0, 330, 358
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "SMS Control"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT_SMS_LOCAL_SC,91,21,65,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_SENDFROM,250,21,67,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    PUSHBUTTON      "Send",IDC_BUTTON_SEND,270,40,46,14
+    CONTROL         "ASCII",IDC_RADIO_SMS_DATATYPE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,89,42,33,10
+    CONTROL         "Binary",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,130,42,
+                    38,10
+    CONTROL         "PDU",IDC_RADIO_PDU,"Button",BS_AUTORADIOBUTTON,174,42,
+                    31,10
+    EDITTEXT        IDC_EDIT_SMSSEND,91,57,228,50,ES_MULTILINE | 
+                    ES_AUTOVSCROLL
+    EDITTEXT        IDC_EDIT_SMS_REMOTE_SC,84,131,65,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER
+    EDITTEXT        IDC_STATIC_TIP1,50,314,162,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_RCVEDSMS,84,163,237,45,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN
+    LTEXT           "Message Contents",IDC_STATIC,17,40,64,12,SS_CENTERIMAGE
+    GROUPBOX        "Remote SMS Information",IDC_STATIC,7,118,320,98
+    LTEXT           "Destination Phone Number",IDC_STATIC,151,132,98,8
+    LTEXT           "Message Contents",IDC_STATIC,17,160,65,12
+    LTEXT           "Self Phone Number",IDC_STATIC,164,20,77,12,
+                    SS_CENTERIMAGE
+    LTEXT           "Service Center",IDC_STATIC,17,20,62,12,SS_CENTERIMAGE
+    GROUPBOX        "Local SMS Information",IDC_STATIC,7,7,320,106
+    LTEXT           "Service Center",IDC_STATIC,17,132,62,12,SS_CENTERIMAGE
+    CONTROL         "Normal",IDC_RADIO_SMS_SC_STATUS,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,81,150,40,10
+    CONTROL         "Abnormal",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,159,
+                    151,49,10
+    PUSHBUTTON      "Send",IDC_BUTTON_SEND_SR,273,312,43,13
+    EDITTEXT        IDC_SC_RECEIVE_TIME,108,251,74,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "SC receive time",IDC_STATIC,17,249,80,12
+    EDITTEXT        IDC_SME_RECEIVE_TIME,108,268,74,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Dest SME receive time",IDC_STATIC,17,264,85,13
+    CONTROL         "receive by SME",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,223,244,92,10
+    CONTROL         "not conform by SME",IDC_RADIO4,"Button",
+                    BS_AUTORADIOBUTTON,223,255,92,10
+    CONTROL         "replaced by SC",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON,
+                    223,266,92,10
+    CONTROL         "send later",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON,223,
+                    277,92,10
+    CONTROL         "not send again",IDC_RADIO7,"Button",BS_AUTORADIOBUTTON,
+                    223,288,92,10
+    CONTROL         "invalid status report",IDC_RADIO8,"Button",
+                    BS_AUTORADIOBUTTON,223,299,92,10
+    LTEXT           "status of previous mo sms",IDC_STATIC,215,232,103,12
+    EDITTEXT        IDC_MR,108,285,74,13,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "Message Reference",IDC_STATIC,17,280,85,12
+    EDITTEXT        IDC_DEST_ADDR_NUM,108,234,74,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Dest Address Number",IDC_DA_ADDR_NUM,17,234,82,12
+    LTEXT           "Status",IDC_STATIC,16,314,23,9
+    EDITTEXT        IDC_EDIT_RCVEDFROM2,251,130,68,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    GROUPBOX        "Status Report",IDC_STATIC,7,220,320,113
+    PUSHBUTTON      "SMS Format Set",IDC_BUTTON_FormatSet,19,58,57,14
+END
+
+IDD_DIALOG_SYSINFO DIALOGEX 0, 0, 330, 360
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "System Info"
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_PLMN_MCC,36,9,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLMN_MNC,107,9,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLMN_LAC,187,9,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLMN_CELL,270,9,46,12,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_SLIDER_SIGLEV,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,59,
+                    24,81,13
+    COMBOBOX        IDC_COMBO_PLMN_SVRSTATE,232,24,85,53,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Apply",IDC_BUTTON_APPLY,12,38,65,13
+    PUSHBUTTON      "Cancel",IDC_BUTTON_CANCEL,89,38,65,13
+    CONTROL         "Slider2",IDC_SLIDER_BATTERY,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,59,
+                    250,81,11
+    COMBOBOX        IDC_COMBO_CHARGE_STATUS,232,251,85,45,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Apply",IDC_BUTTON_APPLY1,12,265,65,13
+    PUSHBUTTON      "Cancel",IDC_BUTTON_CANCEL1,89,264,65,13
+    PUSHBUTTON      "Reject",IDC_BUTTON_SIMCARD,12,300,65,13
+    PUSHBUTTON      "Settings",IDC_BUTTON_SETSIMCARD,12,316,65,13
+    CONTROL         "Signal Level",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,12,25,44,8
+    LTEXT           "Battery Cell",IDC_STATIC,12,252,48,8
+    GROUPBOX        "SIM Card ",IDC_STATIC,7,290,75,43
+    LTEXT           "63",IDC_STATIC_SIGLEV,142,26,11,8,SS_CENTERIMAGE
+    LTEXT           "63",IDC_STATIC_BATTERY,142,252,11,8
+    LTEXT           "MNC",IDC_STATIC,87,11,18,8,SS_CENTERIMAGE
+    LTEXT           "MCC",IDC_STATIC,12,11,17,8,SS_CENTERIMAGE
+    LTEXT           "Service Status",IDC_STATIC,168,25,59,8
+    GROUPBOX        "PLMN ",IDC_STATIC,7,1,318,54
+    GROUPBOX        "Battery",IDC_STATIC,7,242,318,41
+    CONTROL         "Power Status",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,168,40,57,8
+    CONTROL         "OFF",IDC_STATIC_POWER,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,232,40,23,10,WS_EX_STATICEDGE
+    CONTROL         "Automatically jump to the specified page when receiving a message",
+                    IDC_CHECK_AUTOPAGE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    7,340,315,13,WS_EX_STATICEDGE
+    LTEXT           "LAC",IDC_STATIC,168,11,14,8,SS_CENTERIMAGE
+    CONTROL         "Cell ID",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,239,11,28,8
+    CONTROL         "Charge Status",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,168,252,55,8
+    PUSHBUTTON      "Reject",IDC_BUTTON_SIMCARD2,92,300,65,13
+    PUSHBUTTON      "Settings",IDC_BUTTON_SETSIMCARD2,92,316,65,13
+    GROUPBOX        "SIM Card 2",IDC_STATIC,88,290,75,43
+    EDITTEXT        IDC_EDIT_PLMN_MCC2,36,68,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLMN_MNC2,107,68,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLMN_LAC2,187,68,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLMN_CELL2,270,68,46,12,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_SLIDER_SIGLEV2,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,59,
+                    82,81,13
+    COMBOBOX        IDC_COMBO_PLMN_SVRSTATE2,232,83,85,53,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Apply",IDC_BUTTON_APPLY2,12,96,65,13
+    PUSHBUTTON      "Cancel",IDC_BUTTON_CANCEL2,89,96,65,13
+    CONTROL         "Signal Level",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,12,84,45,8
+    LTEXT           "63",IDC_STATIC_SIGLEV2,142,84,11,8,SS_CENTERIMAGE
+    LTEXT           "MNC",IDC_STATIC,87,70,18,8,SS_CENTERIMAGE
+    LTEXT           "MCC",IDC_STATIC,12,70,17,8,SS_CENTERIMAGE
+    LTEXT           "Service Status",IDC_STATIC,168,84,59,8
+    GROUPBOX        "PLMN 2",IDC_STATIC,7,60,318,53
+    CONTROL         "Power Status",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,168,98,57,8
+    CONTROL         "OFF",IDC_STATIC_POWER2,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,232,98,23,10,WS_EX_STATICEDGE
+    LTEXT           "LAC",IDC_STATIC,168,70,14,8,SS_CENTERIMAGE
+    CONTROL         "Cell ID",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,239,70,28,8
+    EDITTEXT        IDC_EDIT_PLMN_MCC3,36,126,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLMN_MNC3,107,126,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLMN_LAC3,187,126,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLMN_CELL3,270,126,46,12,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_SLIDER_SIGLEV3,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,59,
+                    140,81,13
+    COMBOBOX        IDC_COMBO_PLMN_SVRSTATE3,232,141,85,53,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Apply",IDC_BUTTON_APPLY3,12,154,65,13
+    PUSHBUTTON      "Cancel",IDC_BUTTON_CANCEL3,89,154,65,13
+    CONTROL         "Signal Level",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,12,142,50,8
+    LTEXT           "63",IDC_STATIC_SIGLEV3,142,142,11,8,SS_CENTERIMAGE
+    LTEXT           "MNC",IDC_STATIC,87,127,17,8,SS_CENTERIMAGE
+    LTEXT           "MCC",IDC_STATIC,12,127,17,8,SS_CENTERIMAGE
+    LTEXT           "Service Status",IDC_STATIC,168,142,59,8
+    GROUPBOX        "PLMN 3",IDC_STATIC,7,118,318,55
+    CONTROL         "Power Status",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,168,156,57,8
+    CONTROL         "OFF",IDC_STATIC_POWER3,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,232,157,23,10,WS_EX_STATICEDGE
+    LTEXT           "LAC",IDC_STATIC,168,127,14,8,SS_CENTERIMAGE
+    CONTROL         "Cell ID",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,239,127,27,8
+    PUSHBUTTON      "Reject",IDC_BUTTON_SIMCARD3,173,300,65,13
+    PUSHBUTTON      "Settings",IDC_BUTTON_SETSIMCARD3,173,316,65,13
+    GROUPBOX        "SIM Card 3",IDC_STATIC,168,290,75,43
+    EDITTEXT        IDC_EDIT_PLMN_MCC4,36,188,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLMN_MNC4,107,188,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLMN_LAC4,187,188,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLMN_CELL4,270,188,46,12,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_SLIDER_SIGLEV4,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,59,
+                    202,81,13
+    COMBOBOX        IDC_COMBO_PLMN_SVRSTATE4,232,203,85,53,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Apply",IDC_BUTTON_APPLY4,12,216,65,13
+    PUSHBUTTON      "Cancel",IDC_BUTTON_CANCEL4,89,216,65,13
+    CONTROL         "Signal Level",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,12,204,50,8
+    LTEXT           "63",IDC_STATIC_SIGLEV4,142,204,11,8,SS_CENTERIMAGE
+    LTEXT           "MNC",IDC_STATIC,87,189,17,8,SS_CENTERIMAGE
+    LTEXT           "MCC",IDC_STATIC,12,189,17,8,SS_CENTERIMAGE
+    LTEXT           "Service Status",IDC_STATIC,168,204,59,8
+    GROUPBOX        "PLMN 4",IDC_STATIC,7,180,318,55
+    CONTROL         "Power Status",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,168,219,57,8
+    CONTROL         "OFF",IDC_STATIC_POWER4,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,232,219,23,10,WS_EX_STATICEDGE
+    LTEXT           "LAC",IDC_STATIC,168,189,14,8,SS_CENTERIMAGE
+    CONTROL         "Cell ID",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,239,189,27,8
+    PUSHBUTTON      "Reject",IDC_BUTTON_SIMCARD4,255,300,65,13
+    PUSHBUTTON      "Settings",IDC_BUTTON_SETSIMCARD4,255,316,65,13
+    GROUPBOX        "SIM Card 4",IDC_STATIC,250,290,75,43
+END
+
+IDD_DIALOG_MSGFLOW DIALOG DISCARDABLE  0, 0, 330, 330
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Message Flow"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT_LOGFILE,48,306,168,13,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN
+    PUSHBUTTON      "Open",IDC_BUTTON_OPENFILE,228,306,27,13
+    PUSHBUTTON      "Save",IDC_BUTTON_SAVEFILE,263,306,27,13
+    LTEXT           "LogFile:",IDC_STATIC,13,306,31,13,SS_CENTERIMAGE
+    COMBOBOX        IDC_COMBO_RECSFILES,296,307,16,51,CBS_DROPDOWN | 
+                    CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Scroll to end when receive a new message",
+                    IDC_CHECK_SCREND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    13,290,241,10
+END
+
+IDD_DIALOG_SSCON DIALOG DISCARDABLE  0, 0, 330, 330
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "SS Control"
+FONT 10, "System"
+BEGIN
+    COMBOBOX        IDC_COMBO_CF_1,70,17,84,70,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_CF_PHONUM_1,229,17,84,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    COMBOBOX        IDC_COMBO_CF_2,70,31,84,74,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_CF_PHONUM_2,229,31,84,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    COMBOBOX        IDC_COMBO_CF_3,70,45,84,93,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_CF_PHONUM_3,229,45,84,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    COMBOBOX        IDC_COMBO_CF_4,70,59,84,64,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_CF_PHONUM_4,229,59,84,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    COMBOBOX        IDC_COMBO_CF_5,70,73,84,83,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_CF_PHONUM_5,229,73,84,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_CF_NOREPTIM,229,87,84,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    COMBOBOX        IDC_COMBO_CF_6,70,101,84,74,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_CF_PHONUM_6,229,101,84,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    COMBOBOX        IDC_COMBO_CB_1,70,132,84,73,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CB_2,70,146,84,86,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CB_3,70,160,84,84,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CB_4,70,174,84,86,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CB_5,70,188,84,84,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_LISS_1,70,264,84,70,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_LISS_2,70,278,84,71,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_LISS_3,229,264,84,85,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_LISS_4,229,278,84,82,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CW_1,70,306,84,72,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "ACF",IDC_STATIC,15,19,24,8
+    LTEXT           "CFU",IDC_STATIC,15,33,24,8
+    LTEXT           "ACCF",IDC_STATIC,15,45,24,12
+    LTEXT           "CFNRC",IDC_STATIC,15,103,24,8
+    GROUPBOX        "Call Forward ",IDC_STATIC,7,7,315,112
+    GROUPBOX        "Call Barrier ",IDC_STATIC,7,122,315,127
+    LTEXT           "BOIC",IDC_STATIC,15,134,26,8
+    LTEXT           "BAOC",IDC_STATIC,15,148,26,8
+    LTEXT           "BOIC_ExHC",IDC_STATIC,15,162,39,8
+    LTEXT           "BAIC",IDC_STATIC,15,176,26,8
+    LTEXT           "BICRoam",IDC_STATIC,15,190,36,8
+    GROUPBOX        "Line Identification Supplementary Service (LISS) ",
+                    IDC_STATIC,7,252,315,43
+    LTEXT           "CLIP",IDC_STATIC,15,266,26,8
+    LTEXT           "CLIR",IDC_STATIC,15,280,26,8
+    LTEXT           "COLR",IDC_STATIC,170,280,26,8
+    LTEXT           "COLP",IDC_STATIC,170,266,26,8
+    GROUPBOX        "Call Wait ",IDC_STATIC,7,297,315,26
+    LTEXT           "Call Wait",IDC_STATIC,15,308,36,8
+    LTEXT           "CFB",IDC_STATIC,15,61,24,8
+    LTEXT           "CFNRY",IDC_STATIC,15,75,24,8
+    LTEXT           "PhoneNum",IDC_STATIC,170,19,40,8
+    LTEXT           "No Reply Time",IDC_STATIC,170,89,56,8
+    LTEXT           "PhoneNum",IDC_STATIC,170,33,40,8
+    LTEXT           "PhoneNum",IDC_STATIC,170,47,40,8
+    LTEXT           "PhoneNum",IDC_STATIC,170,61,40,8
+    LTEXT           "PhoneNum",IDC_STATIC,170,103,40,8
+    LTEXT           "PhoneNum",IDC_STATIC,170,75,40,8
+    EDITTEXT        IDC_EDIT_CB_PWD_1,229,159,84,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "Password",IDC_STATIC,170,161,44,8
+    COMBOBOX        IDC_COMBO_CB_6,70,202,84,84,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "ABS",IDC_STATIC,15,204,31,8
+    COMBOBOX        IDC_COMBO_CB_7,70,217,84,84,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Bar Outgoing",IDC_STATIC,15,219,51,8
+    COMBOBOX        IDC_COMBO_CB_8,70,231,84,84,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Bar Incoming",IDC_STATIC,15,233,51,8
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 237, 67
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About ConPan"
+FONT 9, "宋体"
+BEGIN
+    ICON            128,IDC_STATIC,11,17,21,21
+    LTEXT           "ConPan Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,180,7,50,14,WS_GROUP
+END
+
+IDD_DIALOG_CBCON DIALOG DISCARDABLE  0, 0, 330, 330
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "Cell BroadCast"
+FONT 10, "System"
+BEGIN
+    LTEXT           "Message type",IDC_STATIC,22,17,54,8
+    CONTROL         "Traffic",IDC_RADIO_MSGTYPE_1,"Button",
+                    BS_AUTORADIOBUTTON,152,17,64,10
+    CONTROL         "Wheather",IDC_RADIO_MSGTYPE_2,"Button",
+                    BS_AUTORADIOBUTTON,152,30,64,10
+    CONTROL         "Bussiness",IDC_RADIO_MSGTYPE_3,"Button",
+                    BS_AUTORADIOBUTTON,152,43,64,10
+    CONTROL         "Advertisement ",IDC_RADIO_MSGTYPE_4,"Button",
+                    BS_AUTORADIOBUTTON,152,56,64,10
+    EDITTEXT        IDC_EDIT_PERIOD,152,120,57,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Period (minues)",IDC_STATIC,22,124,71,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_CONTENT,152,142,154,40,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "Contents",IDC_STATIC,22,142,34,8
+    PUSHBUTTON      "Apply",IDC_BUTTON_APPLY,227,191,34,12
+    CONTROL         "Disable all message types",IDC_CHECK_DISALL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,22,191,112,12
+    CONTROL         "Enable this message type",IDC_CHECK_ENATHIS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,22,70,112,8
+    PUSHBUTTON      "Canel",IDC_BUTTON_CANCEL,272,191,34,12
+    EDITTEXT        IDC_EDIT_LOG,22,231,284,84,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+    EDITTEXT        IDC_EDIT_MSGCODE,152,102,57,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER | WS_DISABLED
+    LTEXT           "Message Code",IDC_STATIC,22,106,55,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_MSGID,152,84,57,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    LTEXT           "Message ID",IDC_STATIC,22,88,55,8,SS_CENTERIMAGE
+    GROUPBOX        "Message ",IDC_STATIC,8,4,315,206
+    GROUPBOX        "Message ",IDC_STATIC,7,218,316,105
+END
+
+IDD_DIALOG_SMSINFO DIALOGEX 0, 0, 309, 199
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SMS FORMAT"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "CLASS",IDC_RADIO_CLASS,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,29,21,38,10
+    CONTROL         "MSGWAIT",IDC_RADIO_MSGWAIT,"Button",BS_AUTORADIOBUTTON,
+                    29,36,49,10
+    COMBOBOX        IDC_COMBO_CLASS,80,20,64,30,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "SAVE",IDC_RADIO_SAVE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED | WS_GROUP,39,54,33,10
+    CONTROL         "DISCARD",IDC_RADIO_DISCARD,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,39,64,46,10
+    CONTROL         "ACTIVE",IDC_RADIO_ACTIVE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED | WS_GROUP,103,54,39,10
+    CONTROL         "INACTIVE",IDC_RADIO_INACTIVE,"Button",
+                    BS_AUTORADIOBUTTON | WS_DISABLED,103,65,46,10
+    LTEXT           "MSG Waiting Type",IDC_STATIC,180,51,62,8
+    COMBOBOX        IDC_COMBO_MSGTYPE,181,63,91,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "8 BIT",IDC_RADIO_CAT8,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,36,114,33,10
+    CONTROL         "16 BIT",IDC_RADIO_CAT16,"Button",BS_AUTORADIOBUTTON,36,
+                    125,37,10
+    CONTROL         "8 BIT",IDC_RADIO_PORT8,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED | WS_GROUP,129,114,33,10
+    CONTROL         "16 BIT",IDC_RADIO_PORT16,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,129,125,37,10
+    EDITTEXT        IDC_EDIT_SOURPORT,181,122,39,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_DESTPORT,244,122,40,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    CONTROL         "Include PID",IDC_CHECK_PID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,8,154,60,10
+    COMBOBOX        IDC_COMBO_PID,81,151,104,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",ID_SET,101,177,30,14
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,151,177,27,14
+    GROUPBOX        "Port Address",IDC_STATIC,123,103,177,35
+    LTEXT           "Source Port",IDC_STATIC,180,112,39,8
+    GROUPBOX        "DCS",IDC_STATIC,7,7,295,74
+    GROUPBOX        "save pro",IDC_STATIC,28,45,61,33,0,WS_EX_TRANSPARENT
+    GROUPBOX        "active pro",IDC_STATIC,95,45,64,33,0,WS_EX_TRANSPARENT
+    GROUPBOX        "User Header",IDC_STATIC,7,84,295,65
+    GROUPBOX        "Catecate Header",IDC_STATIC,28,103,82,35
+    LTEXT           "Dest Port",IDC_STATIC,244,112,31,8
+    CONTROL         "Include Port",IDC_CHECK_PORT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,123,93,69,10
+END
+
+IDD_DIALOG_ATEST DIALOGEX 0, 0, 330, 341
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ATest Control"
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "OTA Auto Testing",IDC_STATIC_TITLE_OTA,7,7,316,51
+    GROUPBOX        "Location Auto Testing",IDC_STATIC_TITLE_LOCATION,7,63,
+                    316,52
+    GROUPBOX        "Multi-Proj Combo Testing",IDC_STATIC_TITLE_MULTI_PROJ,7,
+                    180,316,50
+    LTEXT           " OTA Result Path : D: \\ ATEST \\ OTA",
+                    IDC_STATIC_OTA_RESULT_PATH,16,20,189,16,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "OTA Run",IDC_BUTTON_RUN_OTA_TEST,221,20,93,16
+    LTEXT           " Location Result Path : D: \\ ATEST \\ Location",
+                    IDC_STATIC_LOCATION_RESULT_PATH,16,75,189,16,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    PUSHBUTTON      "Location Run",IDC_BUTTON_LOCATION_RUN,221,75,93,16
+    PUSHBUTTON      "AutoTest PB Run",IDC_BUTTON_PB_RUN,15,154,63,14
+    PUSHBUTTON      "Self Cases Test",IDC_BUTTON_SELF_TEST,94,154,63,14
+    PUSHBUTTON      "R8 Run",IDC_BUTTON_R8_RUN,173,154,63,14
+    PUSHBUTTON      "Multi-Proj Combo Run",IDC_BUTTON_COMBO_RUN,221,191,93,
+                    16
+    CONTROL         "XLS File",IDC_RADIO_XLS_FORMAT,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,16,37,48,15
+    CONTROL         "XML File",IDC_RADIO_XML_FORMAT,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,72,37,59,15
+    CONTROL         "ALL",IDC_RADIO_LOCATION_ALL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,16,95,40,15
+    CONTROL         "MobilePhone",IDC_RADIO_LOCATION_MP,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,49,95,59,15
+    CONTROL         "Fixed-line",IDC_RADIO_LOCATION_FL,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,136,95,55,15
+    CONTROL         "Chinese Version",IDC_RADIO_CHINESE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,16,191,72,16
+    CONTROL         "Multilingual Version",IDC_RADIO_MULTILINGUAL,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,103,191,93,16
+    CONTROL         "OTA",IDC_CHECK_OTA,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,215,35,9
+    CONTROL         "LOCATION",IDC_CHECK_LOCATION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,63,215,48,9
+    CONTROL         "PB",IDC_CHECK_PHONEBOOK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,118,215,36,9
+    CONTROL         "R8",IDC_CHECK_R8_CODE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,153,215,37,9
+    GROUPBOX        "Multi-Lang Coding Auto Test",IDC_STATIC_TITLE_MULTI_LAN,
+                    7,122,316,51
+    LTEXT           "Multi-Lang coding test path:",IDC_MULTI_LAN_PATH,13,137,
+                    94,13
+    LTEXT           "Multi-Lang Coding Result Path : D:\\ ATEST \\",
+                    IDC_STATIC_MULTI_LAN_PATH,115,134,202,15,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "IM Run",IDC_BUTTON_IM_RUN,252,154,63,14
+    CONTROL         "IM",IDC_CHECK_IM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    190,214,24,10
+    GROUPBOX        "Calendar Lunar Testing",IDC_STATIC_TITLE_CALENDAR_PROJ,
+                    7,237,316,43
+    LTEXT           " Calendar Lunar Result Path : D:\\ ATEST \\",
+                    IDC_STATIC_CALENDAR_PATH,13,250,141,15,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Calendar Lunar Run",IDC_BUTTON_CALENDAR_RUN,219,251,96,
+                    14
+    GROUPBOX        "PLMN Testing",IDC_STATIC_TITLE_PLMN_PROJ,7,287,316,47
+    LTEXT           " PLMN Result Path : D:\\ ATEST \\",IDC_STATIC_PLMN_PATH,
+                    14,304,141,15,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    PUSHBUTTON      "PLMN Run",IDC_BUTTON_PLMN_RUN,219,303,96,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_CALLEDPHONE_1 BITMAP  DISCARDABLE     "CallImage1.bmp"
+IDB_BITMAP_CALLEDPHONE_2 BITMAP  DISCARDABLE     "CallImage2.bmp"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG_GSENSOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 324
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 363
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_GSENSOR DIALOG DISCARDABLE  0, 0, 331, 370
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "G-Sensor"
+FONT 10, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,7,317,27
+    COMBOBOX        IDC_GSP_CMB_GSENSOR,77,16,238,233,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "GSensor Status:",IDC_STATIC,13,18,61,8
+    PUSHBUTTON      "Test DM",IDC_BTN_TESTDM,7,39,65,14
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\ControlPanel2.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,12 @@
+ROM_LOAD 0x1000000 0x14000
+{
+     ROM_EXEC  0x1000000 0x14000
+     {
+          boot1_entry.o (Reset, +First)
+          *.o (+RO,+RW)
+     }
+     RAM_EXEC  0x0300000 0x200000
+     {
+          *.o (+ZI)
+     }
+}

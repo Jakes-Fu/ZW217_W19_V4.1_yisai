@@ -1,0 +1,2383 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// 描述：消息数据结构定义文件
+// 作者：LaoTan
+// 日期：2018-03-27 17:21:28
+// 版本：V0.0.1
+// 版权：CopyRight(c) By RDA
+// 
+// 消息定义格
+//    <MsgID MsgName>
+//         参数名      参数类型      参数基类型        参数含义         参数选项
+//    </MsgID MsgName>
+//
+// 子结构定义
+//    <Sub T_Temp>
+//         参数名      参数类型      参数基类型        参数含义         参数选项
+//    </Sub T_Temp>
+//
+//  一个参数的bit位定义
+//    <Bit T_Var>
+//         成员名      在参数中的Bit位起始位置         成员长度(Bit数)         成员含义       成员选项
+//    </Bit T_Var>
+//
+//  指针类型参数定义
+//     参数名          Ptr           参数基类型         参数含义
+//  e.g:
+//      u16  *pPdschPointer;             ===> pPdschPointer      Ptr   u16             pPdschPointer 
+//      T_PDSCH_MEM  *pPdschMapPointer;  ===> pPdschMapPointer   Ptr   T_PDSCH_MEM     pPdschMapPointer
+//
+//
+// 选项定义：
+//    |input;|                       参数值允许输入
+//    |nochange;|                    参数值不允许改变
+//    |select;值1:含义;值2:含义;|    参数值只能选择
+//    |dismember;名称;|              参数bit定义
+//    |multiedit;|                   数组输入
+//         
+//  注意：
+//      1. 不支持union类型
+//      2. ..:取值范围定义,e.g: 1..5,表示1到5范围
+//      3. 空格符作为各列间的分隔符，如内容中有空格符，使用Tab符代替.
+//      4. 参数基类型，支持u8、u16、u32，s8，s16，s32，自定义子结构、数组、指针类型(Ptr)
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+#define  hiPDSCHidentities  0x1
+#define  hiPUSCHidentities  0x1
+#define  hiRM  0x100
+#define  maxAC  0x10
+#define  maxAdditionalMeas  0x4
+#define  maxASC  0x8
+#define  maxASCmap  0x7
+#define  maxASCpersist  0x6
+#define  maxCCTrCH  0x1
+#define  maxCellMeas  0x20
+#define  maxCellMeas_1  0x1f
+#define  maxCNdomains  0x2
+#define  maxCPCHsets  0x1
+#define  maxDPCH_DLchan  0x8
+#define  maxDPDCH_UL  0x6
+#define  maxDRACclasses  0x1
+#define  maxFACHPCH  0x8
+#define  maxFreq  0x8
+#define  maxFreqBandsFDD  0x1
+#define  maxFreqBandsTDD  0x4
+#define  maxFreqBandsGSM  0x1
+#define  maxHProcesses  0x8
+#define  maxHSSCCHs  0x4
+#define  maxInterSysMessages  0x4
+#define  maxLoCHperRLC  0x2
+#define  maxMAC_d_PDUsizes  0x8
+#define  maxMeasEvent  0x8
+#define  maxMeasIntervals  0x3
+#define  maxMeasParEvent  0x2
+#define  maxNumCDMA2000Freqs  0x1
+#define  maxNumGSMFreqRanges  0x1
+#define  maxNumFDDFreqs  0x1
+#define  maxNumTDDFreqs  0x8
+#define  maxNoOfMeas  0x10
+#define  maxOtherRAT  0x1
+#define  maxOtherRAT_16  0x1
+#define  maxPage1  0x8
+#define  maxPCPCH_APsig  0x1
+#define  maxPCPCH_APsubCh  0x1
+#define  maxPCPCH_CDsig  0x1
+#define  maxPCPCH_CDsubCh  0x1
+#define  maxPCPCH_SF  0x1
+#define  maxPCPCHs  0x1
+#define  maxPDCPAlgoType  0x8
+#define  maxPDSCH  0x1
+#define  maxPDSCH_TFCIgroups  0x1
+#define  maxPRACH  0x10
+#define  maxPRACH_FPACH  0x8
+#define  maxPredefConfig  0x10
+#define  maxPUSCH  0x1
+#define  maxRABsetup  0x10
+#define  maxQueueIDs  0x8
+#define  maxRAT  0x1
+#define  maxRB  0xa
+#define  maxRBallRABs  0x1b
+#define  maxRBMuxOptions  0x4
+#define  maxRBperRAB  0x3
+#define  maxReportedGSMCells  0x8
+#define  maxRL  0x1
+#define  maxRL_1  0x1
+#define  maxROHC_PacketSizes_r4  0x10
+#define  maxROHC_Profile_r4  0x10
+#define  maxSat  0x10
+#define  maxSCCPCH  0x10
+#define  maxSIB  0x20
+#define  maxSIB_FACH  0x8
+#define  maxSIBperMsg  0x10
+#define  maxSRBsetup  0x8
+#define  maxSystemCapability  0x1
+#define  maxTDD128Carrier  0x6
+#define  maxTF  0x18
+#define  maxTF_CPCH  0x1
+#define  MAX_SIB16_INSTANCE  0x10
+#define  maxTFC  0x80
+#define  maxTFC  0x20
+#define  maxTFCsub  0x3c
+#define  maxTFCI_2_Combs  0x1
+#define  maxTGPS  0x1
+#define  maxTrCH  0x6
+#define  maxTrCHpreconf  0x6
+#define  maxTS  0x6
+#define  maxTS_1  0x5
+#define  maxTS_LCR  0x6
+#define  maxTS_LCR_1  0x5
+#define  maxURA  0x8
+#define  MAX_TDM_NUM  0x6
+#define  maxMacDFlow  0x8
+#define  maxBeta  0x8
+#define  maxEagch  0x4
+#define  maxEhich  0x4
+#define  maxPrach  0x2
+#define  maxE_DCHMACdFlow  0x8
+#define  maxNumEagch  0x4
+#define  maxNumEhich  0x4
+#define  maxRlcPduSize  0x20
+#define  maxBands  0x40
+#define  maxCDMA_BandClass  0x20
+#define  maxCellBlack  0x10
+#define  maxCellInter  0x10
+#define  maxCellIntra  0x10
+#define  maxCellMeas  0x20
+#define  maxCellReport  0x8
+#define  maxDRB  0xb
+#define  maxEARFCN  0xffff
+#define  maxFreq  0x8
+#define  maxGERAN_SI  0xa
+#define  maxGNFG  0x10
+#define  maxMBSFN_Allocations  0x8
+#define  maxMCS_1  0x10
+#define  maxMeasId  0x20
+#define  maxObjectId  0x20
+#define  maxPageRec  0x10
+#define  maxPNOffset  0x1ff
+#define  maxRAT_Capabilities  0x8
+#define  maxReportConfigId  0x20
+#define  maxSIB  0x20
+#define  maxSIB_1  0x1f
+#define  maxSI_Message  0x20
+#define  maxUTRA_FDD_Carrier  0x10
+#define  maxUTRA_TDD_Carrier  0x10
+#define  maxMultiBands  0x8
+#define  EAS_MAX_LTE_CELL_NUM  0x60
+#define  EAS_MAX_LTE_FREQ_NUM  0x9
+#define  EAS_MAX_N1_PUCCH_NUM  0x4
+#define  EAS_MAX_IDL_BLACKCELL_NUM  0x10
+#define  EAS_MAX_DCH_BLACKCELL_NUM  0x20
+#define  EAS_MAX_SI_DATA_LENGTH  0x200
+#define  EAS_MAX_ICS_CELL_NUM  0x40
+#define  EAS_MAX_SWEEP_POINT  0x2d
+#define  EAS_MAX_IDL_UTRA_FREQ_NUM  0x10
+#define  EAS_MAX_DCH_UTRA_FREQ_NUM  0xc
+#define  EAS_MAX_UTRA_CELL_NUM  0x40
+#define  EAS_MAX_GGE_CELL_NUM  0x20
+#define  EAS_MAX_PCH_INFO_LENGTH  0x100
+#define  EAS_MAX_SI_NUM  0x20
+#define  EAS_MAX_BSIC_CELL_NUM  0x8
+#define  EAS_MAX_SETUP_RB_NUM  0x10
+#define  EAS_MAX_MSG3_LENGTH  0xc
+#define  EAS_MAX_CCCH_DATA_LEN  0x64
+#define  EAS_MAX_CGI_DATA_LENTH  0x200
+#define  EAS_MAX_CELL_NUM_EACH_FREQ  0x20
+#define  EAS_MAX_MBSFN_NUM  0x8
+#define  EAS_MAX_SCELL_NUM  0x7
+#define  LTE_TO_TDS_START  0x1
+#define  LTE_TO_GGE_START  0x2
+#define  TDS_TO_LTE_FAIL  0x3
+#define  GGE_TO_LTE_FAIL  0x4
+#define  LTE_TO_TDS_HO_START  0x5
+#define  LTE_TO_GGE_HO_START  0x6
+#define  LTE_TO_WCDMA_START  0x7
+#define  WCDMA_TO_LTE_FAIL  0x8
+#define  LTE_TO_WCDMA_HO_START  0x9
+#define  PDSCH_CANNOT_DECODE  0x1
+#define  LOSS_COVERAGE_LTE  0x2
+#define  PCH_CANNOT_DECODE_LTE  0x3
+#define  BCH_CANNOT_DECODE_LTE  0x4
+#define  PLMN_FINE_PWR_FAILURE  0x5
+#define  NO_GAP_FOR_SERVING_CELL  0x6
+#define  NORMAL_ABORT  0x0
+#define  MMC_ABORT  0x1
+#define  SI_CHANGE_ABORT  0x2
+#define  ACC_INITIAL_ABORT  0x3
+#define  CELL_RES_ABORT  0x4
+#define  POWER_OFF_LTE  0x5
+#define  ABORT_IRAT_PLMN_SERACH  0x6
+#define  IRAT_RES_ABORT  0x7
+#define  GSM_ABORT_LTE_PLMN  0x8
+#define  GSM_ABORT_LTE_MEAS  0x9
+#define  TDS_ABORT_LTE_MEAS  0xa
+#define  EL1_RELEASE_RF_SOURCE  0xb
+#define  ERRC_POWER_OFF  0x1
+#define  ERRC_NAS_MODE_SWITCH  0x2
+#define  ERRC_NO_AVAILIABLE_CELL  0x3
+#define  ERRC_CCO_HO_SUCCESS  0x4
+#define  T310_EXPIRE  0x0
+#define  TAT_EXPIRE  0x1
+#define  SR_TRANSCOUNTER_TO_MAX  0x2
+#define  CELL_SELECT_LTE  0x0
+#define  CELL_RESELECT_LTE  0x1
+#define  ONLY_MEAS_LTE  0x2
+#define  ONLY_RECEIVED_SIB1_LTE  0x3
+#define  FINE_PWR_SWEEP  0x4
+#define  FINE_PWR_RESULT  0x1
+#define  PWR_RESULT  0x2
+#define  CELL_SEARCH_FOLLOW_FINE_PWR  0x3
+#define  BA_MEAS_FOR_SEL_FREQ  0x4
+#define  BA_MEAS_FOR_SEL_CELL  0x5
+#define  PLMN_PWR_SWEEP  0x0
+#define  PLMN_FINE_PWR_SWEEP  0x1
+#define  PLMN_NCELL_SI_GET  0x2
+#define  PLMN_READ_SI  0x3
+#define  NO_PLMN_TASK  0x4
+#define  MAX_SDU_SEGMENT_NUM  0x8
+#define  MAX_WINDOW_SIZE_LTE  0x200
+#define  MAX_WINDOW_SIZE_LTE_1  0x1ff
+#define  MAX_CTRL_SDU_BUFF_NUM  0xa
+#define  MAX_USER_PDU_BUFF_LEN_LTE  0x200
+#define  MAX_AM_SN_LTE  0x400
+#define  MAX_AM_SN_LTE_1  0x3ff
+#define  MAX_AM_RESTRICT_WINDOW_SIZE  0x20
+#define  MAX_AM_RESTRICT_WINDOW_SIZE  0x200
+#define  ERLC_ESTABLISH  0x1
+#define  ERLC_RECONFIG  0x2
+#define  ERLC_REESTABLISH  0x4
+#define  ERLC_RECONFIG_FULLCONFIG  0x8
+#define  ERLC_SUSPEND  0x1
+#define  ERLC_RESUME  0x2
+#define  ERLC_TM_MODE  0x0
+#define  ERLC_UM_MODE  0x1
+#define  ERLC_AM_MODE  0x2
+#define  MAX_FREQUENCY_NUM_LTE  0x9
+#define  TMD_PDU_TYPE  0x0
+#define  UMD_PDU5_TYPE  0x1
+#define  UMD_PDU10_TYPE  0x2
+#define  AMD_PDU_TYPE  0x3
+#define  AMD_PDU_SEGMENT_TYPE  0x4
+#define  STATUS_PDU_TYPE  0x5
+#define  MAX_RB_SETUP_LTE  0x10
+#define  MAX_RB_SETUP_LTE  0x4
+#define  IDL_MODE  0x0
+#define  CONNECTED_MODE  0x1
+#define  PDCP_HEAD_RESERVED_LEN  0x2
+#define  L1DMA_DEST_START_ADDR  0x0
+#define  L1DMA_CONFIG_INFO  0x2
+#define  L1DMA_LAST_CONFIG_INFO  0x222
+#define  LTE_DHI_SIGNAL  0x0
+#define  TDS_DHI_SIGNAL  0x1
+#define  GGE_DHI_SIGNAL  0x2
+#define  GGE_LTE_DHI_TAG  0x3
+#define  GLOBAL  0x0
+#define  EMAC_WAKEUP_L1C  0x0
+#define  ERRC_WAKEUP_L1C  0x0
+#define  ERRC_SEND_SIGNAL_TO_GGE  0x0
+#define  ERRC_SEND_SIGNAL_TO_GGE  0x0
+#define  ERRC_SEND_SIGNAL_TO_GGE  0x0
+#define  ERLC_FILL_SIGNAL_HEADER  0x0
+#define  ERLC_APPLY_MEMORY  0x0
+#define  ERLC_SEND_SIGNAL  0x0
+#define  ERLC_SEND_MESSAGE_PRIOR  0x0
+#define  ERLC_APPLY_MEMORY  0x0
+#define  ERLC_SEND_SIGNAL  0x0
+#define  ERLC_SEND_MESSAGE_PRIOR  0x0
+#define  EPDC_FILL_SIGNAL_HEADER  0x0
+#define  EPDC_PRINT_BRANCH  0x0
+#define  EPDC_APPLY_MEMORY  0x0
+#define  EPDC_SEND_SIGNAL  0x0
+#define  EPDC_FREE_MEMORY  0x0
+#define  EPDC_APPLY_MEMORY  0x0
+#define  EPDC_SEND_SIGNAL  0x0
+#define  EPDC_FREE_MEMORY  0x0
+#define  ERRC_FILL_SIGNAL_HEADER  0x0
+#define  ERRC_FILL_SIGNAL_HEADER_SIM2  0x0
+#define  ERRC_APPLY_MEMORY  0x0
+#define  ERRC_APPLY_MEMORY  0x0
+#define  ERRC_SEND_SIGNAL  0x0
+#define  ERRC_SEND_SIGNAL  0x0
+#define  ERRC_SEND_SIGNAL_PRIOR  0x0
+#define  ERRC_SEND_SIGNAL  0x0
+#define  ERRC_SEND_SIGNAL_PRIOR  0x0
+#define  EMAC_FILL_SIGNAL_HEADER  0x0
+#define  EMAC_APPLY_MEMORY  0x0
+#define  EMAC_APPLY_MEMORY  0x0
+#define  EMAC_GET_SIGNALENTITY  0x0
+#define  EMAC_SEND_SIGNAL  0x0
+#define  EMAC_SEND_SIGNAL  0x0
+#define  EMAC_FREE_MEMORY  0x0
+#define  EMAC_FREE_MEMORY  0x0
+#define  EMAC_PRACH_INITIAL_ACCESS  0x1
+#define  EMAC_PRACH_UL_DATA  0x2
+#define  EMAC_PRACH_PDCCH_ORDER  0x3
+#define  EMAC_MAX_UL_TB_LEN  0x7d
+#define  EMAC_MAX_DL_TB_LEN  0x55
+#define  EAS_MAX_BLACKCELL_NUM  0x8
+#define  MAX_FREQ_SEARCH_NUM  0x10
+#define  MAX_CELL_SEARCH_NUM  0x10
+#define  MAX_RSRP_RANGE_NB  0x2
+#define  MAX_NPRACH_RESOURCES_NB  0x3
+#define  MAX_SI_SCHEDULE_NUM  0x8
+#define  MAX_BCCH_DATA_BYTE_LEN  0x55
+#define  MAX_PCCH_DATA_BYTE_LEN  0x55
+#define  MAX_CELL_ID  0x1f7
+#define  maxPLMN  0x6
+#define  MAX_BAND_NUM  0x8
+#define  MAX_FREQ_SCAN_FREQ_NUM  0x10
+#define  MAX_PLMN_SCAN_FREQ_NUM  0x30
+#define  EAS_MAX_LTE_FREQ_NUM  0x64
+#define  EAS_MAX_LTE_CELL_NUM  0x64
+#define  maxCellIntra  0x64
+#define  maxCellBlack  0x64
+#define  maxFreq  0x64
+#define  maxSIB  0x64
+#define  EAS_MAX_IDL_BLACKCELL_NUM  0x64
+#define  EMAC_MAX_UL_HEADER_LEN  0x7d
+#define  DEFAULT_PROHIBIT_TIMER  0x0
+#define  DEFAULT_PROHIBIT_TIMER  0x7
+#define  MAX_CELL_STATS_RPT_NUM  0x5
+#define  QUEUE_CMC  0x0
+#define  QUEUE_RAB  0x0
+#define  QUEUE_RCO  0x0
+#define  QUEUE_ERLC  0x0
+#define  QUEUE_EPDC  0x0
+#define  QUEUE_ERRC  0x0
+#define  QUEUE_EMAC  0x0
+#define  QUEUE_ESM  0x0
+#define  QUEUE_EMM  0x0
+#define  QUEUE_MMC  0x0
+#define  QUEUE_L1C  0x0
+#define  QUEUE_L1CD  0x0
+#define  QUEUE_TC  0x0
+#define  QUEUE_L1C_MEAS  0x0
+#define  QUEUE_API  0xffffffff
+#define  QUEUE_ADP  0x0
+#define  QUEUE_EL2TEST  0x0
+
+
+
+<sub T_L1DMA_BLOCK_INFO>
+    sourceAddr1                   Ptr     u8      
+    length                        u32     u32     length                        |input;|
+    pNext                         Ptr     T_L1DMA_BLOCK_INFO_Tag
+</sub T_L1DMA_BLOCK_INFO>
+
+
+<sub T_RRC_CgiInfo>
+    plmnNum                          u8      u8      plmnNum                          |input;|
+    tac[2]                           array   u8      tac                              |multiedit;|
+    cellIdentity[4]                  array   u8      cellIdentity                     |multiedit;|
+    plmnIdentity[MAX_CELL_PLMN_NUM]  array   T_Plmn  plmnIdentity                     |multiedit;|
+</sub T_RRC_CgiInfo>
+
+
+<sub T_sourceCellInfo>
+    frequency  u16  u16  frequency  |input;|
+    phyCellId  u16  u16  phyCellId  |input;|
+</sub T_sourceCellInfo>
+
+
+<sub T_ueMobilityStateInfo>
+    validFlag       u8                u8                validFlag       |input;|
+    cellChangeNum   u8                u8                cellChangeNum   |input;|
+    reserved2[2]    array             u8                reserved2       |multiedit;|
+    crMaxLen        u32               u32               crMaxLen        |input;|
+    crMaxRemainLen  u32               u32               crMaxRemainLen  |input;|
+    sourceCell1     struct            T_sourceCellInfo  
+    sourceCell2     struct            T_sourceCellInfo  
+</sub T_ueMobilityStateInfo>
+
+
+<sub T_ERRC_CgiInfo>
+    plmnNum              u8      u8      plmnNum              |input;|
+    decodeResult         u8      u8      decodeResult         |input;|
+    racValidFlag         u8      u8      racValidFlag         |input;|
+    routingAreaCode      u8      u8      routingAreaCode      |input;|
+    locationAreaCode[2]  array   u8      locationAreaCode     |multiedit;|
+    cellIdentity[4]      array   u8      cellIdentity         |multiedit;|
+    cellGlobalPlmnId     struct  T_Plmn  
+    plmnIdList[5]        array   T_Plmn  plmnIdList           |multiedit;|
+</sub T_ERRC_CgiInfo>
+
+
+<sub T_DigitList>
+    next                  Ptr     T_DigitList_Tag
+    value                 u16     u16     value                 |input;|
+</sub T_DigitList>
+
+
+<sub T_ERLC_DlPduInfo>
+    rbIdentity                       u8           u8           rbIdentity                       |input;|
+    reserved3[3]                     array        u8           reserved3                        |multiedit;|
+    pduLen                           u16          u16          pduLen                           |input;|
+    pduOffset                        u16          u16          pduOffset                        |input;|
+    pPdschPointer                    Ptr          u8           
+    pPdschMapPointer                 Ptr          T_PDSCH_MEM  
+    pDlPduNext                       Ptr          T_ERLC_DlPduInfo_Tag
+</sub T_ERLC_DlPduInfo>
+
+
+<sub T_EL1_PDCCH_ORDER>
+    usPdcchOrderRecvSfn  u16  u16  usPdcchOrderRecvSfn  |input;|
+    ucPdcchOrderRecvSf   u8   u8   ucPdcchOrderRecvSf   |input;|
+    ucPdcchOrderData     u8   u8   ucPdcchOrderData     |input;|
+</sub T_EL1_PDCCH_ORDER>
+
+
+<sub T_EL1_PRACH_SEND_REQ>
+    usPrachType   u16                u16                usPrachType   |input;|
+    reserved[2]   array              u8                 reserved      |multiedit;|
+    stPdcchOrder  struct             T_EL1_PDCCH_ORDER  
+</sub T_EL1_PRACH_SEND_REQ>
+
+
+<sub T_EL1_RAR_RESULT_IND>
+    ucPHR          u8     u8     ucPHR          |input;|
+    reserved[3]    array  u8     reserved       |multiedit;|
+    usSuccessFlag  u16    u16    usSuccessFlag  |input;|
+    usTbSize       u16    u16    usTbSize       |input;|
+    ulTempCrnti    u32    u32    ulTempCrnti    |input;|
+</sub T_EL1_RAR_RESULT_IND>
+
+
+<sub T_EL1_SEND_MSG3_REQ>
+    ulTempCrnti  u32  u32  ulTempCrnti  |input;|
+    ulCRnti      u32  u32  ulCRnti      |input;|
+</sub T_EL1_SEND_MSG3_REQ>
+
+
+<sub T_EL1_PDCCH_ORDER_IND>
+    stPdcchOrder  struct             T_EL1_PDCCH_ORDER  
+</sub T_EL1_PDCCH_ORDER_IND>
+
+
+<sub T_EL1_PRACH_CR_IND>
+    ucCrResult  struct           E_El1_Cr_Result  
+</sub T_EL1_PRACH_CR_IND>
+
+
+<sub T_EL1_HARQ_INFO_IND>
+    ulUlgrantSize  u32  u32  ulUlgrantSize  |input;|
+</sub T_EL1_HARQ_INFO_IND>
+
+
+<sub T_EL1_PDSCH_DLSCH_READ_IND>
+    ulPduSize  u32  u32  ulPduSize  |input;|
+    pucData    Ptr  u8   
+</sub T_EL1_PDSCH_DLSCH_READ_IND>
+
+
+<sub T_EL1_AJUST_TA_REQ>
+    ulTaVaule  u32  u32  ulTaVaule  |input;|
+</sub T_EL1_AJUST_TA_REQ>
+
+
+<sub T_EL1_PP_TIMEOUT_IND>
+    ucTimerId  struct              E_Emac_Pp_Timer_Id  
+</sub T_EL1_PP_TIMEOUT_IND>
+
+
+<0x2402 OP_EL1_PRACH_SEND_REQ_NB>
+    signalHeader        struct                T_MsgHeader           
+    EL1_PRACH_SEND_REQ  struct                T_EL1_PRACH_SEND_REQ  
+</0x2402 OP_EL1_PRACH_SEND_REQ_NB>
+
+
+<0x2403 OP_EL1_RAR_RESULT_IND_NB>
+    signalHeader        struct                T_MsgHeader           
+    EL1_RAR_RESULT_IND  struct                T_EL1_RAR_RESULT_IND  
+</0x2403 OP_EL1_RAR_RESULT_IND_NB>
+
+
+<0x2404 OP_EL1_SEND_MSG3_REQ_NB>
+    signalHeader       struct               T_MsgHeader          
+    EL1_SEND_MSG3_REQ  struct               T_EL1_SEND_MSG3_REQ  
+</0x2404 OP_EL1_SEND_MSG3_REQ_NB>
+
+
+<0x2405 OP_EL1_PDCCH_ORDER_IND_NB>
+    signalHeader         struct                 T_MsgHeader            
+    EL1_PDCCH_ORDER_IND  struct                 T_EL1_PDCCH_ORDER_IND  
+</0x2405 OP_EL1_PDCCH_ORDER_IND_NB>
+
+
+<0x2406 OP_EL1_PRACH_CR_IND_NB>
+    signalHeader      struct              T_MsgHeader         
+    EL1_PRACH_CR_IND  struct              T_EL1_PRACH_CR_IND  
+</0x2406 OP_EL1_PRACH_CR_IND_NB>
+
+
+<0x2407 OP_EL1_HARQ_INFO_IND_NB>
+    signalHeader       struct               T_MsgHeader          
+    EL1_HARQ_INFO_IND  struct               T_EL1_HARQ_INFO_IND  
+</0x2407 OP_EL1_HARQ_INFO_IND_NB>
+
+
+<0x2408 OP_EL1_PDSCH_DLSCH_READ_IND_NB>
+    signalHeader              struct                      T_MsgHeader                 
+    EL1_PDSCH_DLSCH_READ_IND  struct                      T_EL1_PDSCH_DLSCH_READ_IND  
+</0x2408 OP_EL1_PDSCH_DLSCH_READ_IND_NB>
+
+
+<0x2409 OP_EL1_AJUST_TA_REQ_NB>
+    signalHeader      struct              T_MsgHeader         
+    EL1_AJUST_TA_REQ  struct              T_EL1_AJUST_TA_REQ  
+</0x2409 OP_EL1_AJUST_TA_REQ_NB>
+
+
+<0x240a OP_EL1_MAC_RESET_IND_NB>
+    signalHeader  struct       T_MsgHeader  
+</0x240a OP_EL1_MAC_RESET_IND_NB>
+
+
+<0x240b OP_EL1_TA_TIMEOUT_IND_NB>
+    signalHeader  struct       T_MsgHeader  
+</0x240b OP_EL1_TA_TIMEOUT_IND_NB>
+
+
+<0x240c OP_EL1_DRX_CMD_IND_NB>
+    signalHeader  struct       T_MsgHeader  
+</0x240c OP_EL1_DRX_CMD_IND_NB>
+
+
+<0x240d OP_EL1_PP_TIMEOUT_IND_NB>
+    signalHeader        struct                T_MsgHeader           
+    EL1_PP_TIMEOUT_IND  struct                T_EL1_PP_TIMEOUT_IND  
+</0x240d OP_EL1_PP_TIMEOUT_IND_NB>
+
+
+<sub T_BackFreqInfo>
+    freq                              struct           T_CarrierFreqNB  
+    intraCellNum                      u8               u8               intraCellNum                      |input;|
+    intraCellId[MAX_CELL_SEARCH_NUM]  array            u16              intraCellId                       |multiedit;|
+    band                              u8               u8               band                              |input;|
+</sub T_BackFreqInfo>
+
+
+<sub T_DlBitmapInfo>
+    choice            u8     u8     choice            |input;|
+    patternBitmap[5]  array  u8     patternBitmap     |multiedit;|
+    reserved[2]       array  u8     reserved          |multiedit;|
+</sub T_DlBitmapInfo>
+
+
+<sub T_DlGapCfgInfo>
+    dlGapThreshold       u8  u8  dlGapThreshold       |input;|
+    dlGapPeriod          u8  u8  dlGapPeriod          |input;|
+    dlGapDuriationCoeff  u8  u8  dlGapDuriationCoeff  |input;|
+    reserved             u8  u8  reserved             |input;|
+</sub T_DlGapCfgInfo>
+
+
+<sub T_DlBitmapNonAnchorInfo>
+    choiceFlag           u8              u8              choiceFlag           |input;|
+    reserved[3]          array           u8              reserved             |multiedit;|
+    dlExplicitBitmapCfg  struct          T_DlBitmapInfo  
+</sub T_DlBitmapNonAnchorInfo>
+
+
+<sub T_DlGapNonAnchorInfo>
+    choiceFlag        u8              u8              choiceFlag        |input;|
+    reserved[3]       array           u8              reserved          |multiedit;|
+    dlExplicitGapCfg  struct          T_DlGapCfgInfo  
+</sub T_DlGapNonAnchorInfo>
+
+
+<sub T_InBandCarrierInfo>
+    samePciInd           u8  u8  samePciInd           |input;|
+    indexToMidPRB        u8  u8  indexToMidPRB        |input;|
+    eutraNumCrsPorts     u8  u8  eutraNumCrsPorts     |input;|
+    eutraControlRegSize  u8  u8  eutraControlRegSize  |input;|
+</sub T_InBandCarrierInfo>
+
+
+<sub T_DlCarrierDedCfgInfo>
+    dlCarrierFreqNB               struct                   T_CarrierFreqNB          
+    validFlag                     u8                       u8                       validFlag                     |input;|
+    reserved[2]                   array                    u8                       reserved                      |multiedit;|
+    nrsPowerOffsetNonAnchorV1300  u8                       u8                       nrsPowerOffsetNonAnchorV1300  |input;|
+    dlBitmapNonAnchor             struct                   T_DlBitmapNonAnchorInfo  
+    dlGapNonAnchor                struct                   T_DlGapNonAnchorInfo     
+    inBandCarrierInfo             struct                   T_InBandCarrierInfo      
+</sub T_DlCarrierDedCfgInfo>
+
+
+<sub T_UlCarrierDedCfgInfo>
+    ulCarrierFreqValid  u8               u8               ulCarrierFreqValid  |input;|
+    reserved[3]         array            u8               reserved            |multiedit;|
+    ulCarrierFreqNB     struct           T_CarrierFreqNB  
+</sub T_UlCarrierDedCfgInfo>
+
+
+<sub T_NPdcchDedCfgInfo>
+    maxNumRep   u8  u8  maxNumRep   |input;|
+    startSfUss  u8  u8  startSfUss  |input;|
+    offsetUss   u8  u8  offsetUss   |input;|
+    reserved    u8  u8  reserved    |input;|
+</sub T_NPdcchDedCfgInfo>
+
+
+<sub T_NPuschDedCfgInfo>
+    ackNackRepFlag           u8  u8  ackNackRepFlag           |input;|
+    ackNackRep               u8  u8  ackNackRep               |input;|
+    npuschAllSym             u8  u8  npuschAllSym             |input;|
+    groupHoppingDisableFlag  u8  u8  groupHoppingDisableFlag  |input;|
+</sub T_NPuschDedCfgInfo>
+
+
+<sub T_NbRachInfo>
+    raResponseWz        u8   u8   raResponseWz        |input;|
+    macContentionTimer  u8   u8   macContentionTimer  |input;|
+    reserved            u16  u16  reserved            |input;|
+</sub T_NbRachInfo>
+
+
+<sub T_RandAccessInfo>
+    maxPreambleNum                       u8            u8            maxPreambleNum                       |input;|
+    pwRampStep                           u8            u8            pwRampStep                           |input;|
+    preamInitRecTargetPw                 u8            u8            preamInitRecTargetPw                 |input;|
+    nbRachNum                            u8            u8            nbRachNum                            |input;|
+    nbRachInfo[MAX_NPRACH_RESOURCES_NB]  array         T_NbRachInfo  nbRachInfo                           |multiedit;|
+</sub T_RandAccessInfo>
+
+
+<sub T_RachCfgCommonInfo>
+    randAccessInfo            struct            T_RandAccessInfo  
+    connEstFailOffsetPresent  u8                u8                connEstFailOffsetPresent  |input;|
+    connEstFailOffset         u8                u8                connEstFailOffset         |input;|
+</sub T_RachCfgCommonInfo>
+
+
+<sub T_BcchCfgInfo>
+    modificationPeriodCoeff  u8     u8     modificationPeriodCoeff  |input;|
+    reserved[3]              array  u8     reserved                 |multiedit;|
+</sub T_BcchCfgInfo>
+
+
+<sub T_PcchCfgInfo>
+    defaultPagingCycle         u8  u8  defaultPagingCycle         |input;|
+    nB                         u8  u8  nB                         |input;|
+    nPdcchNumRepetitionPaging  u8  u8  nPdcchNumRepetitionPaging  |input;|
+    reserved                   u8  u8  reserved                   |input;|
+</sub T_PcchCfgInfo>
+
+
+<sub T_NPrachParametersNbInfo>
+    nprachPeriodicity                 u8     u8     nprachPeriodicity                 |input;|
+    nprachStartTime                   u8     u8     nprachStartTime                   |input;|
+    nprachSubcarrierOffset            u8     u8     nprachSubcarrierOffset            |input;|
+    nprachNumSubCarriers              u8     u8     nprachNumSubCarriers              |input;|
+    nprachSubcarrierMSG3RangeStart    u8     u8     nprachSubcarrierMSG3RangeStart    |input;|
+    maxNumPreambleAttemptCE           u8     u8     maxNumPreambleAttemptCE           |input;|
+    numRepetitionsPerPreambleAttempt  u8     u8     numRepetitionsPerPreambleAttempt  |input;|
+    npdcchMaxNumRepetitionRA          u8     u8     npdcchMaxNumRepetitionRA          |input;|
+    npdcchStartSfCssRa                u8     u8     npdcchStartSfCssRa                |input;|
+    npdcchOffsetRa                    u8     u8     npdcchOffsetRa                    |input;|
+    reserved[2]                       array  u8     reserved                          |multiedit;|
+</sub T_NPrachParametersNbInfo>
+
+
+<sub T_NPrachCfgInfo>
+    nprachCPLength                           u8                        u8                        nprachCPLength                           |input;|
+    rsrpRangeNbNum                           u8                        u8                        rsrpRangeNbNum                           |input;|
+    rsrpRangeNb[MAX_RSRP_RANGE_NB]           array                     u16                       rsrpRangeNb                              |multiedit;|
+    nPrachParaNum                            u8                        u8                        nPrachParaNum                            |input;|
+    reserved                                 u8                        u8                        reserved                                 |input;|
+    nPrachParaList[MAX_NPRACH_RESOURCES_NB]  array                     T_NPrachParametersNbInfo  nPrachParaList                           |multiedit;|
+</sub T_NPrachCfgInfo>
+
+
+<sub T_NPdschCfgCommonInfo>
+    nrsPower     s8     s8     nrsPower     |input;|
+    reserved[3]  array  u8     reserved     |multiedit;|
+</sub T_NPdschCfgCommonInfo>
+
+
+<sub T_DmrsCfgInfo>
+    threeToneBaseSequence   u8     u8     threeToneBaseSequence   |input;|
+    threeToneCyclicShift    u8     u8     threeToneCyclicShift    |input;|
+    sixToneBaseSequence     u8     u8     sixToneBaseSequence     |input;|
+    sixToneCyclicShift      u8     u8     sixToneCyclicShift      |input;|
+    twelveToneBaseSequence  u8     u8     twelveToneBaseSequence  |input;|
+    reserved[3]             array  u8     reserved                |multiedit;|
+</sub T_DmrsCfgInfo>
+
+
+<sub T_UlReferenceSignalsNB>
+    groupHoppingEnabled    u8     u8     groupHoppingEnabled    |input;|
+    groupAssignmentNPUSCH  u8     u8     groupAssignmentNPUSCH  |input;|
+    reserved[2]            array  u8     reserved               |multiedit;|
+</sub T_UlReferenceSignalsNB>
+
+
+<sub T_NPuschCfgCommonInfo>
+    ackNackNum                                          u8                      u8                      ackNackNum                                          |input;|
+    ackNackNumRepetitionsMsg4[MAX_NPRACH_RESOURCES_NB]  array                   u8                      ackNackNumRepetitionsMsg4                           |multiedit;|
+    srsSubFrameConfigFlag                               u8                      u8                      srsSubFrameConfigFlag                               |input;|
+    srsSubFrameConfig                                   u8                      u8                      srsSubFrameConfig                                   |input;|
+    dmrsConfigPresent                                   u8                      u8                      dmrsConfigPresent                                   |input;|
+    reserved                                            u8                      u8                      reserved                                            |input;|
+    dmrsConfig                                          struct                  T_DmrsCfgInfo           
+    ulRefSigs                                           struct                  T_UlReferenceSignalsNB  
+</sub T_NPuschCfgCommonInfo>
+
+
+<sub T_UplinkPowerControlCommonInfo>
+    p0NominalNPusch    s8  s8  p0NominalNPusch    |input;|
+    alpha              u8  u8  alpha              |input;|
+    deltaPreambleMsg3  s8  s8  deltaPreambleMsg3  |input;|
+    reserved           u8  u8  reserved           |input;|
+</sub T_UplinkPowerControlCommonInfo>
+
+
+<sub T_InbandSamePciNBInfo>
+    eutraCrsSequenceInfo  u8     u8     eutraCrsSequenceInfo  |input;|
+    reserved[3]           array  u8     reserved              |multiedit;|
+</sub T_InbandSamePciNBInfo>
+
+
+<sub T_InbandDifferentPciNBInfo>
+    eutraNumCrsPorts  u8     u8     eutraNumCrsPorts  |input;|
+    rasterOffset      u8     u8     rasterOffset      |input;|
+    reserved[2]       array  u8     reserved          |multiedit;|
+</sub T_InbandDifferentPciNBInfo>
+
+
+<sub T_GuardbandNBInfo>
+    rasterOffset  u8     u8     rasterOffset  |input;|
+    reserved[3]   array  u8     reserved      |multiedit;|
+</sub T_GuardbandNBInfo>
+
+
+<sub T_StandaloneNBInfo>
+    reserved  u32  u32  reserved  |input;|
+</sub T_StandaloneNBInfo>
+
+
+<union T_OperationModeUnion>
+    inbandSamePci       struct                      T_InbandSamePciNBInfo       
+    inbandDifferentPci  struct                      T_InbandDifferentPciNBInfo  
+    guardband           struct                      T_GuardbandNBInfo           
+    standalone          struct                      T_StandaloneNBInfo          
+</union T_OperationModeUnion>
+
+
+<sub T_OperationModeInfo>
+    choice       u8                    u8                    choice       |input;|
+    reserved[3]  array                 u8                    reserved     |multiedit;|
+    opModeUnion  union                 T_OperationModeUnion  
+</sub T_OperationModeInfo>
+
+
+<sub T_IdlMeasFreqResultNB>
+    intraCellNum    u8               u8               intraCellNum    |input;|
+    resultTypeFlag  u8               u8               resultTypeFlag  |input;|
+    reserved        u16              u16              reserved        |input;|
+    frequency       struct           T_CarrierFreqNB  
+</sub T_IdlMeasFreqResultNB>
+
+
+<sub T_IdlMeasFreqInfoNB>
+    frequency                               struct           T_CarrierFreqNB  
+    cellNum                                 u8               u8               cellNum                                 |input;|
+    blackCellNum                            u8               u8               blackCellNum                            |input;|
+    reserved[2]                             array            u8               reserved                                |multiedit;|
+    blackPhyId[EAS_MAX_BLACKCELL_NUM]       array            u16              blackPhyId                              |multiedit;|
+    blackPhyIdRange[EAS_MAX_BLACKCELL_NUM]  array            u16              blackPhyIdRange                         |multiedit;|
+</sub T_IdlMeasFreqInfoNB>
+
+
+<sub T_CsResultInfo>
+    phyCellId  u16  u16  phyCellId  |input;|
+    rsrp       u8   u8   rsrp       |input;|
+    rsrq       u8   u8   rsrq       |input;|
+</sub T_CsResultInfo>
+
+
+<sub T_MibRecvStoreInfo>
+    antPortNum     u8     u8     antPortNum     |input;|
+    operationMode  u8     u8     operationMode  |input;|
+    reserved[2]    array  u8     reserved       |multiedit;|
+</sub T_MibRecvStoreInfo>
+
+
+<sub T_SiScheduleInfo>
+    siPeriod      u8  u8  siPeriod      |input;|
+    nValue        u8  u8  nValue        |input;|
+    siRepPattern  u8  u8  siRepPattern  |input;|
+    siTBS         u8  u8  siTBS         |input;|
+</sub T_SiScheduleInfo>
+
+
+<sub T_MibNbInfo>
+    sysFrameNumMsb       u8                   u8                   sysFrameNumMsb       |input;|
+    hyperSfnLsb          u8                   u8                   hyperSfnLsb          |input;|
+    schedulingInfoSib1   u8                   u8                   schedulingInfoSib1   |input;|
+    systemInfoValueTage  u8                   u8                   systemInfoValueTage  |input;|
+    abEnabled            u8                   u8                   abEnabled            |input;|
+    reserved[3]          array                u8                   reserved             |multiedit;|
+    operationModeInfo    struct               T_OperationModeInfo  
+</sub T_MibNbInfo>
+
+
+<sub T_PlmnIdentityInfoNB>
+    plmnIdentity          struct  T_Plmn  
+    reservedForOpera      u8      u8      reservedForOpera      |input;|
+    attachWithoutPdnConn  u8      u8      attachWithoutPdnConn  |input;|
+</sub T_PlmnIdentityInfoNB>
+
+
+<sub T_CellAcessRelatedInfoNB>
+    plmnNum                u8                    u8                    plmnNum                |input;|
+    plmnInfoList[maxPLMN]  array                 T_PlmnIdentityInfoNB  plmnInfoList           |multiedit;|
+    tac[2]                 array                 u8                    tac                    |multiedit;|
+    cellIdentity[4]        array                 u8                    cellIdentity           |multiedit;|
+    cellBarred             u8                    u8                    cellBarred             |input;|
+    intraFreqReselection   u8                    u8                    intraFreqReselection   |input;|
+</sub T_CellAcessRelatedInfoNB>
+
+
+<sub T_CellSelectionInfoNB>
+    qRxLevMin  s16  s16  qRxLevMin  |input;|
+    qQualmin   s8   s8   qQualmin   |input;|
+</sub T_CellSelectionInfoNB>
+
+
+<sub T_NsPmaxValueNB>
+    additionalPmaxPresent       s8  s8  additionalPmaxPresent       |input;|
+    additionalPmax              s8  s8  additionalPmax              |input;|
+    additionalSpectrumEmission  u8  u8  additionalSpectrumEmission  |input;|
+</sub T_NsPmaxValueNB>
+
+
+<sub T_NsPmaxListNB>
+    num               u8               u8               num               |input;|
+    nsPmaxValueNB[4]  array            T_NsPmaxValueNB  nsPmaxValueNB     |multiedit;|
+</sub T_NsPmaxListNB>
+
+
+<sub T_MultiBandInfoNB>
+    fbIndPresent       u8              u8              fbIndPresent       |input;|
+    freqBandIndicator  u8              u8              freqBandIndicator  |input;|
+    fbInfoPresent      u8              u8              fbInfoPresent      |input;|
+    freqBandInfo       struct          T_NsPmaxListNB  
+</sub T_MultiBandInfoNB>
+
+
+<sub T_MultiBandInfoListNB>
+    num               u8                 u8                 num               |input;|
+    multiBandInfo[8]  array              T_MultiBandInfoNB  multiBandInfo     |multiedit;|
+</sub T_MultiBandInfoListNB>
+
+
+<sub T_MultiBandInfoListR13>
+    num              u8              u8              num              |input;|
+    nsPmaxListNb[8]  array           T_NsPmaxListNB  nsPmaxListNb     |multiedit;|
+</sub T_MultiBandInfoListR13>
+
+
+<sub T_SibMappingInfo>
+    sibNum           u8     u8     sibNum           |input;|
+    sibType[maxSIB]  array  u8     sibType          |multiedit;|
+</sub T_SibMappingInfo>
+
+
+<sub T_ErrcSiScheduleInfo>
+    siPeriod      u8                u8                siPeriod      |input;|
+    mappingInfo   struct            T_SibMappingInfo  
+    siRepPattern  u8                u8                siRepPattern  |input;|
+    siTBS         u8                u8                siTBS         |input;|
+</sub T_ErrcSiScheduleInfo>
+
+
+<sub T_Sib1NbInfo>
+    hsfnMSB                                  u8                     u8                     hsfnMSB                                  |input;|
+    plmnNum                                  u8                     u8                     plmnNum                                  |input;|
+    plmnInfoList[maxPLMN]                    array                  T_PlmnIdentityInfoNB   plmnInfoList                             |multiedit;|
+    tac[2]                                   array                  u8                     tac                                      |multiedit;|
+    cellIdentity[4]                          array                  u8                     cellIdentity                             |multiedit;|
+    cellBarred                               u8                     u8                     cellBarred                               |input;|
+    intraFreqReselection                     u8                     u8                     intraFreqReselection                     |input;|
+    qRxLevMin                                s16                    s16                    qRxLevMin                                |input;|
+    qQualmin                                 s8                     s8                     qQualmin                                 |input;|
+    pMax                                     s8                     s8                     pMax                                     |input;|
+    freqBandIndicator                        u8                     u8                     freqBandIndicator                        |input;|
+    freqBandInfo                             struct                 T_NsPmaxListNB         
+    multiBandInfoList                        struct                 T_MultiBandInfoListNB  
+    dlBitMapPresent                          u8                     u8                     dlBitMapPresent                          |input;|
+    dlBitmap                                 struct                 T_DlBitmapInfo         
+    eutraControlRegionSize                   u8                     u8                     eutraControlRegionSize                   |input;|
+    nrsCrsPowerOffset                        u8                     u8                     nrsCrsPowerOffset                        |input;|
+    siNum                                    u8                     u8                     siNum                                    |input;|
+    siScheduleInfoList[MAX_SI_SCHEDULE_NUM]  array                  T_ErrcSiScheduleInfo   siScheduleInfoList                       |multiedit;|
+    siValueTag[MAX_SI_SCHEDULE_NUM]          array                  u8                     siValueTag                               |multiedit;|
+    siBitmap[MAX_SI_SCHEDULE_NUM]            array                  u8                     siBitmap                                 |multiedit;|
+    siWindowLen                              u8                     u8                     siWindowLen                              |input;|
+    siRFOffset                               u8                     u8                     siRFOffset                               |input;|
+</sub T_Sib1NbInfo>
+
+
+<sub T_NPrachParaV1330>
+    nprachNumCBRAStartSubcarriers  u8     u8     nprachNumCBRAStartSubcarriers  |input;|
+    reserved[3]                    array  u8     reserved                       |multiedit;|
+</sub T_NPrachParaV1330>
+
+
+<sub T_NPrachCfgSibNbV1330>
+    nprachParaV1330Num                        u8                 u8                 nprachParaV1330Num                        |input;|
+    reserved[3]                               array              u8                 reserved                                  |multiedit;|
+    nprachParaV1330[MAX_NPRACH_RESOURCES_NB]  array              T_NPrachParaV1330  nprachParaV1330                           |multiedit;|
+</sub T_NPrachCfgSibNbV1330>
+
+
+<sub T_RadioResourceConfigCommonSibNB>
+    rachCfg                struct                          T_RachCfgCommonInfo             
+    bcchCfg                struct                          T_BcchCfgInfo                   
+    pcchCfg                struct                          T_PcchCfgInfo                   
+    nprachCfg              struct                          T_NPrachCfgInfo                 
+    npdschCfgComm          struct                          T_NPdschCfgCommonInfo           
+    npuschCfgComm          struct                          T_NPuschCfgCommonInfo           
+    dlGapPresent           u8                              u8                              dlGapPresent           |input;|
+    dlGapCfg               struct                          T_DlGapCfgInfo                  
+    uplinkPowerCtrlComm    struct                          T_UplinkPowerControlCommonInfo  
+    nprachCfgV1330Present  u8                              u8                              nprachCfgV1330Present  |input;|
+    nprachCfgV1330         struct                          T_NPrachCfgSibNbV1330           
+</sub T_RadioResourceConfigCommonSibNB>
+
+
+<sub T_UeTimersAndConstantsNB>
+    t300  u8  u8  t300  |input;|
+    t301  u8  u8  t301  |input;|
+    t310  u8  u8  t310  |input;|
+    n310  u8  u8  n310  |input;|
+    t311  u8  u8  t311  |input;|
+    n311  u8  u8  n311  |input;|
+</sub T_UeTimersAndConstantsNB>
+
+
+<sub T_FreqInfoNB>
+    ulCarrierFreqPresent        u8               u8               ulCarrierFreqPresent        |input;|
+    ulCarrierFreq               struct           T_CarrierFreqNB  
+    additionalSpectrumEmission  u8               u8               additionalSpectrumEmission  |input;|
+</sub T_FreqInfoNB>
+
+
+<sub T_Sib2NbInfo>
+    radioResourceConfigCommon  struct                            T_RadioResourceConfigCommonSibNB  
+    t300                       u8                                u8                                t300                       |input;|
+    t301                       u8                                u8                                t301                       |input;|
+    t310                       u8                                u8                                t310                       |input;|
+    n310                       u8                                u8                                n310                       |input;|
+    t311                       u8                                u8                                t311                       |input;|
+    n311                       u8                                u8                                n311                       |input;|
+    t311_v1350_present         u8                                u8                                t311_v1350_present         |input;|
+    t311_v1350                 u8                                u8                                t311_v1350                 |input;|
+    freqInfo                   struct                            T_FreqInfoNB                      
+    timeAlignmentTimerCommon   u8                                u8                                timeAlignmentTimerCommon   |input;|
+    num                        u8                                u8                                num                        |input;|
+    multiBandInfo[8]           array                             u8                                multiBandInfo              |multiedit;|
+    cpReestabSupport           u8                                u8                                cpReestabSupport           |input;|
+</sub T_Sib2NbInfo>
+
+
+<sub T_Sib3NbInfo>
+    qHyst              s8                      s8                      qHyst              |input;|
+    sNonIntraSearch    u8                      u8                      sNonIntraSearch    |input;|
+    qRxLevMin          s16                     s16                     qRxLevMin          |input;|
+    qQualmin           s8                      s8                      qQualmin           |input;|
+    pMax               s8                      s8                      pMax               |input;|
+    sIntraSearch       u8                      u8                      sIntraSearch       |input;|
+    tReselection       u16                     u16                     tReselection       |input;|
+    freqBandInfo       struct                  T_NsPmaxListNB          
+    multiBandInfoList  struct                  T_MultiBandInfoListR13  
+</sub T_Sib3NbInfo>
+
+
+<sub T_Sib4NbInfo>
+    intraCellNum                    u8     u8     intraCellNum                    |input;|
+    intraCellPhyId[maxCellIntra]    array  u16    intraCellPhyId                  |multiedit;|
+    intraCellQoffset[maxCellIntra]  array  u8     intraCellQoffset                |multiedit;|
+    BlackCellNum                    u8     u8     BlackCellNum                    |input;|
+    blackCellStartId[maxCellBlack]  array  u16    blackCellStartId                |multiedit;|
+    blackCellRange[maxCellBlack]    array  u16    blackCellRange                  |multiedit;|
+</sub T_Sib4NbInfo>
+
+
+<sub T_InterFreqCarrierInfoNB>
+    dlCarrierFreq              struct                 T_CarrierFreqNB        
+    band                       u8                     u8                     band                       |input;|
+    qRexlevMin                 s16                    s16                    qRexlevMin                 |input;|
+    qQualmin                   s8                     s8                     qQualmin                   |input;|
+    pMax                       s8                     s8                     pMax                       |input;|
+    qOffsetFreq                u8                     u8                     qOffsetFreq                |input;|
+    intraCellNum               u8                     u8                     intraCellNum               |input;|
+    intraCellId[maxCellIntra]  array                  u16                    intraCellId                |multiedit;|
+    blackCellNum               u8                     u8                     blackCellNum               |input;|
+    blackCellId[maxCellBlack]  array                  u16                    blackCellId                |multiedit;|
+    multiBandInfoList          struct                 T_MultiBandInfoListNB  
+</sub T_InterFreqCarrierInfoNB>
+
+
+<sub T_Sib5NbInfo>
+    interFreqNum            u8                        u8                        interFreqNum            |input;|
+    interFreqList[maxFreq]  array                     T_InterFreqCarrierInfoNB  interFreqList           |multiedit;|
+    tReselection            u16                       u16                       tReselection            |input;|
+</sub T_Sib5NbInfo>
+
+
+<sub T_AbConfigNB>
+    abCategory                 u8   u8   abCategory                 |input;|
+    abBarringBitmap            u16  u16  abBarringBitmap            |input;|
+    abBarringForExceptionData  u8   u8   abBarringForExceptionData  |input;|
+    abBarringForSpecialAC      u8   u8   abBarringForSpecialAC      |input;|
+</sub T_AbConfigNB>
+
+
+<sub T_AbConfigPerPLMN>
+    abConfigPlmnValid  u8            u8            abConfigPlmnValid  |input;|
+    abConfigPlmn       struct        T_AbConfigNB  
+</sub T_AbConfigPerPLMN>
+
+
+<sub T_Sib14NbInfo>
+    choice                  u8                 u8                 choice                  |input;|
+    abCommon                struct             T_AbConfigNB       
+    abPerPlmnList[maxPLMN]  array              T_AbConfigPerPLMN  abPerPlmnList           |multiedit;|
+</sub T_Sib14NbInfo>
+
+
+<sub T_Sib16NbInfo>
+    timerInfoUtc     structu64  
+    dayLightSavTime  u8   u8   dayLightSavTime  |input;|
+    leapSec          s16  s16  leapSec          |input;|
+    localTimeOffset  s16  s16  localTimeOffset  |input;|
+</sub T_Sib16NbInfo>
+
+
+<sub T_DrxConfigInfo>
+    onDurationTimer  u8     u8     onDurationTimer  |input;|
+    inactiveTimer    u8     u8     inactiveTimer    |input;|
+    reTranTimer      u8     u8     reTranTimer      |input;|
+    ulretrantimer    u8     u8     ulretrantimer    |input;|
+    drxCycle         u8     u8     drxCycle         |input;|
+    drxStartOffset   u8     u8     drxStartOffset   |input;|
+    reserved[2]      array  u8     reserved         |multiedit;|
+</sub T_DrxConfigInfo>
+
+
+<sub T_EL1_FREQ_SEARCH_REQ>
+    freqNum                        u16              u16              freqNum                        |input;|
+    backGroundFlag                 u8               u8               backGroundFlag                 |input;|
+    reserved                       u8               u8               reserved                       |input;|
+    freqList[MAX_FREQ_SEARCH_NUM]  array            T_CarrierFreqNB  freqList                       |multiedit;|
+</sub T_EL1_FREQ_SEARCH_REQ>
+
+
+<0x2438 OP_EL1_FREQ_SEARCH_REQ_NB>
+    signalHeader         struct                 T_MsgHeader            
+    EL1_FREQ_SEARCH_REQ  struct                 T_EL1_FREQ_SEARCH_REQ  
+</0x2438 OP_EL1_FREQ_SEARCH_REQ_NB>
+
+
+<sub T_EL1_FREQ_SEARCH_CNF>
+    freqNum                        u16              u16              freqNum                        |input;|
+    reserved                       u16              u16              reserved                       |input;|
+    freqList[MAX_FREQ_SEARCH_NUM]  array            T_CarrierFreqNB  freqList                       |multiedit;|
+</sub T_EL1_FREQ_SEARCH_CNF>
+
+
+<0x2440 OP_EL1_FREQ_SEARCH_CNF_NB>
+    signalHeader         struct                 T_MsgHeader            
+    EL1_FREQ_SEARCH_CNF  struct                 T_EL1_FREQ_SEARCH_CNF  
+</0x2440 OP_EL1_FREQ_SEARCH_CNF_NB>
+
+
+<sub T_EL1_CELL_SEARCH_REQ_NB>
+    searchType                          u8               u8               searchType                          |input;|
+    backGroundFlag                      u8               u8               backGroundFlag                      |input;|
+    cellNum                             u16              u16              cellNum                             |input;|
+    phyCellIdList[MAX_CELL_SEARCH_NUM]  array            u16              phyCellIdList                       |multiedit;|
+    freq                                struct           T_CarrierFreqNB  
+</sub T_EL1_CELL_SEARCH_REQ_NB>
+
+
+<0x2439 OP_EL1_CELL_SEARCH_REQ_NB>
+    signalHeader         struct                    T_MsgHeader               
+    EL1_CELL_SEARCH_REQ  struct                    T_EL1_CELL_SEARCH_REQ_NB  
+</0x2439 OP_EL1_CELL_SEARCH_REQ_NB>
+
+
+<sub T_EL1_CELL_SEARCH_CNF_NB>
+    freq                               struct           T_CarrierFreqNB  
+    cellNum                            u16              u16              cellNum                            |input;|
+    reserved                           u16              u16              reserved                           |input;|
+    csResultInfo[MAX_CELL_SEARCH_NUM]  array            T_CsResultInfo   csResultInfo                       |multiedit;|
+</sub T_EL1_CELL_SEARCH_CNF_NB>
+
+
+<0x2441 OP_EL1_CELL_SEARCH_CNF_NB>
+    signalHeader         struct                    T_MsgHeader               
+    EL1_CELL_SEARCH_CNF  struct                    T_EL1_CELL_SEARCH_CNF_NB  
+</0x2441 OP_EL1_CELL_SEARCH_CNF_NB>
+
+
+<sub T_EL1_MIB_RECEIVE_REQ>
+    cellDesc          struct              T_CellDescNB        
+    cause             u16                 u16                 cause             |input;|
+    storeInfoFlag     u16                 u16                 storeInfoFlag     |input;|
+    mibRecvStoreInfo  struct              T_MibRecvStoreInfo  
+</sub T_EL1_MIB_RECEIVE_REQ>
+
+
+<0x243a OP_EL1_MIB_RECEIVE_REQ_NB>
+    signalHeader         struct                 T_MsgHeader            
+    EL1_MIB_RECEIVE_REQ  struct                 T_EL1_MIB_RECEIVE_REQ  
+</0x243a OP_EL1_MIB_RECEIVE_REQ_NB>
+
+
+<sub T_EL1_SIB1_RECEIVE_REQ>
+    cellDesc            struct        T_CellDescNB  
+    schedulingInfoSib1  u8            u8            schedulingInfoSib1  |input;|
+    backGroundFlag      u8            u8            backGroundFlag      |input;|
+    reserved[2]         array         u8            reserved            |multiedit;|
+</sub T_EL1_SIB1_RECEIVE_REQ>
+
+
+<0x243b OP_EL1_SIB1_RECEIVE_REQ_NB>
+    signalHeader          struct                  T_MsgHeader             
+    EL1_SIB1_RECEIVE_REQ  struct                  T_EL1_SIB1_RECEIVE_REQ  
+</0x243b OP_EL1_SIB1_RECEIVE_REQ_NB>
+
+
+<sub T_EL1_SI_RECEIVE_REQ>
+    cellDesc                                 struct            T_CellDescNB      
+    eutraControlRegionSize                   u8                u8                eutraControlRegionSize                   |input;|
+    nrsCrsPowerOffset                        u8                u8                nrsCrsPowerOffset                        |input;|
+    reserved[2]                              array             u8                reserved                                 |multiedit;|
+    dlBitMapPresent                          u8                u8                dlBitMapPresent                          |input;|
+    siWindowLen                              u8                u8                siWindowLen                              |input;|
+    siRFOffset                               u8                u8                siRFOffset                               |input;|
+    siNum                                    u8                u8                siNum                                    |input;|
+    dlBitMap                                 struct            T_DlBitmapInfo    
+    siScheduleInfoList[MAX_SI_SCHEDULE_NUM]  array             T_SiScheduleInfo  siScheduleInfoList                       |multiedit;|
+</sub T_EL1_SI_RECEIVE_REQ>
+
+
+<0x243c OP_EL1_SI_RECEIVE_REQ_NB>
+    signalHeader        struct                T_MsgHeader           
+    EL1_SI_RECEIVE_REQ  struct                T_EL1_SI_RECEIVE_REQ  
+</0x243c OP_EL1_SI_RECEIVE_REQ_NB>
+
+
+<sub T_EL1_BCCH_STOP_IND>
+    cellDesc  struct        T_CellDescNB  
+</sub T_EL1_BCCH_STOP_IND>
+
+
+<0x243d OP_EL1_BCCH_STOP_IND_NB>
+    signalHeader       struct               T_MsgHeader          
+    EL1_BCCH_STOP_IND  struct               T_EL1_BCCH_STOP_IND  
+</0x243d OP_EL1_BCCH_STOP_IND_NB>
+
+
+<sub T_EL1_BCCH_DATA_IND>
+    cellDesc                          struct        T_CellDescNB  
+    bcchDataType                      u16           u16           bcchDataType                      |input;|
+    result                            u16           u16           result                            |input;|
+    antPortNum                        u8            u8            antPortNum                        |input;|
+    rsrp                              u8            u8            rsrp                              |input;|
+    rsrq                              u8            u8            rsrq                              |input;|
+    bcchDataLen                       u8            u8            bcchDataLen                       |input;|
+    bcchData[MAX_BCCH_DATA_BYTE_LEN]  array         u8            bcchData                          |multiedit;|
+    reserved[3]                       array         u8            reserved                          |multiedit;|
+</sub T_EL1_BCCH_DATA_IND>
+
+
+<0x2442 OP_EL1_BCCH_DATA_IND_NB>
+    signalHeader       struct               T_MsgHeader          
+    EL1_BCCH_DATA_IND  struct               T_EL1_BCCH_DATA_IND  
+</0x2442 OP_EL1_BCCH_DATA_IND_NB>
+
+
+<sub T_EL1_HSFN_UPDATE_IND>
+    cellDesc     struct        T_CellDescNB  
+    hsfnMSB      u8            u8            hsfnMSB      |input;|
+    reserved[3]  array         u8            reserved     |multiedit;|
+</sub T_EL1_HSFN_UPDATE_IND>
+
+
+<0x243e OP_EL1_HSFN_UPDATE_IND_NB>
+    signalHeader         struct                 T_MsgHeader            
+    EL1_HSFN_UPDATE_IND  struct                 T_EL1_HSFN_UPDATE_IND  
+</0x243e OP_EL1_HSFN_UPDATE_IND_NB>
+
+
+<sub T_EL1_IDL_CFG_REQ>
+    cellDesc                                 struct                          T_CellDescNB                    
+    operationModeInfo                        struct                          T_OperationModeInfo             
+    schedulingInfoSib1                       u8                              u8                              schedulingInfoSib1                       |input;|
+    eutraControlRegionSize                   u8                              u8                              eutraControlRegionSize                   |input;|
+    nrsCrsPowerOffset                        u8                              u8                              nrsCrsPowerOffset                        |input;|
+    reserved1                                u8                              u8                              reserved1                                |input;|
+    ueId                                     u16                             u16                             ueId                                     |input;|
+    pMax                                     s8                              s8                              pMax                                     |input;|
+    qualMin                                  s8                              s8                              qualMin                                  |input;|
+    qRxLevMin                                s16                             s16                             qRxLevMin                                |input;|
+    intraSearchP                             u8                              u8                              intraSearchP                             |input;|
+    nonIntraSearchP                          u8                              u8                              nonIntraSearchP                          |input;|
+    qoffsetTemp                              u8                              u8                              qoffsetTemp                              |input;|
+    addPmaxSupportFlag                       u8                              u8                              addPmaxSupportFlag                       |input;|
+    pemax1                                   u8                              u8                              pemax1                                   |input;|
+    pemax2                                   u8                              u8                              pemax2                                   |input;|
+    siWindowLen                              u8                              u8                              siWindowLen                              |input;|
+    siRFOffset                               u8                              u8                              siRFOffset                               |input;|
+    siNum                                    u8                              u8                              siNum                                    |input;|
+    measFreqNum                              u8                              u8                              measFreqNum                              |input;|
+    measFreqInfoList[EAS_MAX_LTE_FREQ_NUM]   array                           T_IdlMeasFreqInfoNB             measFreqInfoList                         |multiedit;|
+    measCellIdList[EAS_MAX_LTE_CELL_NUM]     array                           u16                             measCellIdList                           |multiedit;|
+    siScheduleInfoList[MAX_SI_SCHEDULE_NUM]  array                           T_SiScheduleInfo                siScheduleInfoList                       |multiedit;|
+    ulCarrierFreqPresent                     u8                              u8                              ulCarrierFreqPresent                     |input;|
+    dlBitMapPresent                          u8                              u8                              dlBitMapPresent                          |input;|
+    dlGapCfgPresent                          u8                              u8                              dlGapCfgPresent                          |input;|
+    nprachCfgV1330Present                    u8                              u8                              nprachCfgV1330Present                    |input;|
+    addSpecEmi                               u8                              u8                              addSpecEmi                               |input;|
+    reserved3[3]                             array                           u8                              reserved3                                |multiedit;|
+    ulCarrierFreq                            struct                          T_CarrierFreqNB                 
+    dlBitMap                                 struct                          T_DlBitmapInfo                  
+    bcchCfg                                  struct                          T_BcchCfgInfo                   
+    pcchCfg                                  struct                          T_PcchCfgInfo                   
+    nprachCfg                                struct                          T_NPrachCfgInfo                 
+    nprachCfgV1330                           struct                          T_NPrachCfgSibNbV1330           
+    npdschCfgComm                            struct                          T_NPdschCfgCommonInfo           
+    npuschCfgComm                            struct                          T_NPuschCfgCommonInfo           
+    dlGapCfg                                 struct                          T_DlGapCfgInfo                  
+    uplinkPowerCtrlComm                      struct                          T_UplinkPowerControlCommonInfo  
+    randAccessInfo                           struct                          T_RandAccessInfo                
+</sub T_EL1_IDL_CFG_REQ>
+
+
+<0x243f OP_EL1_IDL_CFG_REQ_NB>
+    signalHeader     struct             T_MsgHeader        
+    EL1_IDL_CFG_REQ  struct             T_EL1_IDL_CFG_REQ  
+</0x243f OP_EL1_IDL_CFG_REQ_NB>
+
+
+<sub T_EL1_IDL_CFG_CNF>
+    result             u8     u8     result             |input;|
+    supportBgPlmnFlag  u8     u8     supportBgPlmnFlag  |input;|
+    reserved[2]        array  u8     reserved           |multiedit;|
+</sub T_EL1_IDL_CFG_CNF>
+
+
+<0x2443 OP_EL1_IDL_CFG_CNF_NB>
+    signalHeader     struct             T_MsgHeader        
+    EL1_IDL_CFG_CNF  struct             T_EL1_IDL_CFG_CNF  
+</0x2443 OP_EL1_IDL_CFG_CNF_NB>
+
+
+<sub T_EL1_PCCH_DATA_IND>
+    pcchDataType                      u16    u16    pcchDataType                      |input;|
+    pcchDataLen                       u16    u16    pcchDataLen                       |input;|
+    pcchData[MAX_PCCH_DATA_BYTE_LEN]  array  u8     pcchData                          |multiedit;|
+    reserved[3]                       array  u8     reserved                          |multiedit;|
+</sub T_EL1_PCCH_DATA_IND>
+
+
+<0x2444 OP_EL1_PCCH_DATA_IND_NB>
+    signalHeader       struct               T_MsgHeader          
+    EL1_PCCH_DATA_IND  struct               T_EL1_PCCH_DATA_IND  
+</0x2444 OP_EL1_PCCH_DATA_IND_NB>
+
+
+<sub T_EL1_IDLE_MEAS_RESULT_IND>
+    freqNum                           u16                    u16                    freqNum                           |input;|
+    serveRsrp                         u8                     u8                     serveRsrp                         |input;|
+    serveRsrq                         u8                     u8                     serveRsrq                         |input;|
+    freqList[EAS_MAX_LTE_FREQ_NUM]    array                  T_IdlMeasFreqResultNB  freqList                          |multiedit;|
+    cellIdList[EAS_MAX_LTE_CELL_NUM]  array                  u16                    cellIdList                        |multiedit;|
+    rsrpList[EAS_MAX_LTE_CELL_NUM]    array                  u8                     rsrpList                          |multiedit;|
+    rsrqList[EAS_MAX_LTE_CELL_NUM]    array                  u8                     rsrqList                          |multiedit;|
+</sub T_EL1_IDLE_MEAS_RESULT_IND>
+
+
+<0x2445 OP_EL1_IDLE_MEAS_RESULT_IND_NB>
+    signalHeader              struct                      T_MsgHeader                 
+    EL1_IDLE_MEAS_RESULT_IND  struct                      T_EL1_IDLE_MEAS_RESULT_IND  
+</0x2445 OP_EL1_IDLE_MEAS_RESULT_IND_NB>
+
+
+<sub T_EL1_DRX_CFG_IND>
+    edrxCfgType  u16  u16  edrxCfgType  |input;|
+    ptw          u8   u8   ptw          |input;|
+    edrxValue    u8   u8   edrxValue    |input;|
+    ueId_H       u16  u16  ueId_H       |input;|
+    reserved     u16  u16  reserved     |input;|
+</sub T_EL1_DRX_CFG_IND>
+
+
+<0x2446 OP_EL1_DRX_CFG_IND_NB>
+    signalHeader     struct             T_MsgHeader        
+    EL1_DRX_CFG_IND  struct             T_EL1_DRX_CFG_IND  
+</0x2446 OP_EL1_DRX_CFG_IND_NB>
+
+
+<0x2447 OP_EL1_OUT_OF_SERVICE_IND_NB>
+    signalHeader  struct       T_MsgHeader  
+</0x2447 OP_EL1_OUT_OF_SERVICE_IND_NB>
+
+
+<sub T_EL1_DEACT_REQ>
+    deactType  u32  u32  deactType  |input;|
+</sub T_EL1_DEACT_REQ>
+
+
+<0x2448 OP_EL1_DEACT_REQ_NB>
+    signalHeader   struct           T_MsgHeader      
+    EL1_DEACT_REQ  struct           T_EL1_DEACT_REQ  
+</0x2448 OP_EL1_DEACT_REQ_NB>
+
+
+<0x2449 OP_EL1_DEACT_CNF_NB>
+    signalHeader  struct       T_MsgHeader  
+</0x2449 OP_EL1_DEACT_CNF_NB>
+
+
+<sub T_EL1_DCH_CONFIG_REQ>
+    cellDesc          struct                 T_CellDescNB           
+    n310              u8                     u8                     n310              |input;|
+    n311              u8                     u8                     n311              |input;|
+    t310              u8                     u8                     t310              |input;|
+    validBitmap       u8                     u8                     validBitmap       |input;|
+    dlCarrierDedCfg   struct                 T_DlCarrierDedCfgInfo  
+    ulCarrierDedCfg   struct                 T_UlCarrierDedCfgInfo  
+    npdcchDedCfgInfo  struct                 T_NPdcchDedCfgInfo     
+    npuschDedCfgInfo  struct                 T_NPuschDedCfgInfo     
+    p0UeNpusch        u8                     u8                     p0UeNpusch        |input;|
+    drxFlag           u8                     u8                     drxFlag           |input;|
+    reserved[2]       array                  u8                     reserved          |multiedit;|
+    nbdrxConfig       struct                 T_DrxConfigInfo        
+</sub T_EL1_DCH_CONFIG_REQ>
+
+
+<0x244a OP_EL1_DCH_CONFIG_REQ_NB>
+    signalHeader        struct                T_MsgHeader           
+    EL1_DCH_CONFIG_REQ  struct                T_EL1_DCH_CONFIG_REQ  
+</0x244a OP_EL1_DCH_CONFIG_REQ_NB>
+
+
+<sub T_EL1_DCH_CONFIG_CNF>
+    rslt         u8     u8     rslt         |input;|
+    reserved[3]  array  u8     reserved     |multiedit;|
+</sub T_EL1_DCH_CONFIG_CNF>
+
+
+<0x244b OP_EL1_DCH_CONFIG_CNF_NB>
+    signalHeader        struct                T_MsgHeader           
+    EL1_DCH_CONFIG_CNF  struct                T_EL1_DCH_CONFIG_CNF  
+</0x244b OP_EL1_DCH_CONFIG_CNF_NB>
+
+
+<0x244c OP_EL1_OUT_OF_SYNC_IND_NB>
+    signalHeader  struct       T_MsgHeader  
+</0x244c OP_EL1_OUT_OF_SYNC_IND_NB>
+
+
+<sub T_EL1_BAND_SEARCH_REQ>
+    searchType              u8     u8     searchType              |input;|
+    reserved[2]             array  u8     reserved                |multiedit;|
+    bandNum                 u8     u8     bandNum                 |input;|
+    bandList[MAX_BAND_NUM]  array  u8     bandList                |multiedit;|
+</sub T_EL1_BAND_SEARCH_REQ>
+
+
+<0x244d OP_EL1_BAND_SEARCH_REQ_NB>
+    signalHeader         struct                 T_MsgHeader            
+    EL1_BAND_SEARCH_REQ  struct                 T_EL1_BAND_SEARCH_REQ  
+</0x244d OP_EL1_BAND_SEARCH_REQ_NB>
+
+
+<sub T_EL1_BAND_SEARCH_CNF>
+    responseType                      u8               u8               responseType                      |input;|
+    reserved[2]                       array            u8               reserved                          |multiedit;|
+    freqNum                           u8               u8               freqNum                           |input;|
+    freqList[MAX_PLMN_SCAN_FREQ_NUM]  array            T_CarrierFreqNB  freqList                          |multiedit;|
+</sub T_EL1_BAND_SEARCH_CNF>
+
+
+<0x244e OP_EL1_BAND_SEARCH_CNF_NB>
+    signalHeader         struct                 T_MsgHeader            
+    EL1_BAND_SEARCH_CNF  struct                 T_EL1_BAND_SEARCH_CNF  
+</0x244e OP_EL1_BAND_SEARCH_CNF_NB>
+
+
+<sub T_EL1_CANCEL_ONGOING_PROC_REQ>
+    procType        u8            u8            procType        |input;|
+    backGroundFlag  u8            u8            backGroundFlag  |input;|
+    reserved[2]     array         u8            reserved        |multiedit;|
+    cellDesc        struct        T_CellDescNB  
+</sub T_EL1_CANCEL_ONGOING_PROC_REQ>
+
+
+<0x244f OP_EL1_CANCEL_ONGOING_PROC_REQ_NB>
+    signalHeader                 struct                         T_MsgHeader                    
+    EL1_CANCEL_ONGOING_PROC_REQ  struct                         T_EL1_CANCEL_ONGOING_PROC_REQ  
+</0x244f OP_EL1_CANCEL_ONGOING_PROC_REQ_NB>
+
+
+<sub T_EL1_CANCEL_ONGOING_PROC_CNF>
+    result       u8     u8     result       |input;|
+    reserved[3]  array  u8     reserved     |multiedit;|
+</sub T_EL1_CANCEL_ONGOING_PROC_CNF>
+
+
+<0x2450 OP_EL1_CANCEL_ONGOING_PROC_CNF_NB>
+    signalHeader                 struct                         T_MsgHeader                    
+    EL1_CANCEL_ONGOING_PROC_CNF  struct                         T_EL1_CANCEL_ONGOING_PROC_CNF  
+</0x2450 OP_EL1_CANCEL_ONGOING_PROC_CNF_NB>
+
+
+<sub T_MAC_DATA_IND_LTE>
+    rbIdentity    u8                u8                rbIdentity    |input;|
+    reserved3[3]  array             u8                reserved3     |multiedit;|
+    pPduPointer   Ptr               T_ERLC_DlPduInfo  
+</sub T_MAC_DATA_IND_LTE>
+
+
+<sub T_ERLC_UL_PDU>
+    pduLen                  u16     u16     pduLen                  |input;|
+    sduLen                  u16     u16     sduLen                  |input;|
+    data[125]               array   u8      data                    |multiedit;|
+    next                    Ptr     T_ERLC_UL_PDU_tag
+</sub T_ERLC_UL_PDU>
+
+
+<sub T_MAC_DATA_REQ_LTE>
+    rbIdentity    u8             u8             rbIdentity    |input;|
+    reserved3[3]  array          u8             reserved3     |multiedit;|
+    pdu           Ptr            T_ERLC_UL_PDU  
+</sub T_MAC_DATA_REQ_LTE>
+
+
+<sub T_L1DMA_BUFF_INFO>
+    used_len                      u16    u16    used_len                      |input;|
+    total_len                     u16    u16    total_len                     |input;|
+    buff[512]                     array  u8     buff                          |multiedit;|
+    buff[EMAC_MAX_UL_HEADER_LEN]  array  u8     buff                          |multiedit;|
+</sub T_L1DMA_BUFF_INFO>
+
+
+<sub T_MAC_STATUS_IND_LTE>
+    rbIdentity   u8                 u8                 rbIdentity   |input;|
+    flagLastPdu  u8                 u8                 flagLastPdu  |input;|
+    pduSize      u16                u16                pduSize      |input;|
+    head_buff    Ptr                T_L1DMA_BUFF_INFO  
+</sub T_MAC_STATUS_IND_LTE>
+
+
+<0x2415 OP_MAC_DATA_IND_LTE>
+    signalHeader      struct              T_MsgHeader         
+    MAC_DATA_IND_LTE  struct              T_MAC_DATA_IND_LTE  
+</0x2415 OP_MAC_DATA_IND_LTE>
+
+
+<0x2191 OP_MAC_DATA_REQ_LTE>
+    signalHeader      struct              T_MsgHeader         
+    MAC_DATA_REQ_LTE  struct              T_MAC_DATA_REQ_LTE  
+</0x2191 OP_MAC_DATA_REQ_LTE>
+
+
+<0x2183 OP_MAC_STATUS_IND_LTE>
+    signalHeader        struct                T_MsgHeader           
+    MAC_STATUS_IND_LTE  struct                T_MAC_STATUS_IND_LTE  
+</0x2183 OP_MAC_STATUS_IND_LTE>
+
+
+<sub T_RbInforSetup>
+    instId           u8  u8  instId           |input;|
+    lcSrProhibit     u8  u8  lcSrProhibit     |input;|
+    logicalChID      u8  u8  logicalChID      |input;|
+    logicalPriority  u8  u8  logicalPriority  |input;|
+</sub T_RbInforSetup>
+
+
+<sub T_MacMainInfo>
+    periodBsrTimer     u8  u8  periodBsrTimer     |input;|
+    retxBsrTimer       u8  u8  retxBsrTimer       |input;|
+    timeAlignTimer     u8  u8  timeAlignTimer     |input;|
+    lcSrProhibitTimer  u8  u8  lcSrProhibitTimer  |input;|
+</sub T_MacMainInfo>
+
+
+<sub T_EMAC_RANDOM_ACC_REQ>
+    msg5size                   u16    u16    msg5size                   |input;|
+    timeAlignTimer             u8     u8     timeAlignTimer             |input;|
+    msg3length                 u8     u8     msg3length                 |input;|
+    msg3[EAS_MAX_MSG3_LENGTH]  array  u8     msg3                       |multiedit;|
+    cause                      u8     u8     cause                      |input;|
+</sub T_EMAC_RANDOM_ACC_REQ>
+
+
+<sub T_EMAC_ACC_STATUS_IND>
+    accessStatus                 u8     u8     accessStatus                 |input;|
+    reserved1                    u8     u8     reserved1                    |input;|
+    dataLenth                    u16    u16    dataLenth                    |input;|
+    cRnti                        u32    u32    cRnti                        |input;|
+    mess[EAS_MAX_CCCH_DATA_LEN]  array  u8     mess                         |multiedit;|
+</sub T_EMAC_ACC_STATUS_IND>
+
+
+<sub T_EMAC_DCH_CONFIG_REQ>
+    periodBsrTimer                     u8              u8              periodBsrTimer                     |input;|
+    retxBsrTimer                       u8              u8              retxBsrTimer                       |input;|
+    timeAlignTimer                     u8              u8              timeAlignTimer                     |input;|
+    lcSrProhibitTimer                  u8              u8              lcSrProhibitTimer                  |input;|
+    rbNum                              u8              u8              rbNum                              |input;|
+    reserved[3]                        array           u8              reserved                           |multiedit;|
+    rbInfoSetupList[MAX_RB_SETUP_LTE]  array           T_RbInforSetup  rbInfoSetupList                    |multiedit;|
+</sub T_EMAC_DCH_CONFIG_REQ>
+
+
+<sub T_EMAC_RESET_REQ>
+    configCause  u8     u8     configCause  |input;|
+    reserved[3]  array  u8     reserved     |multiedit;|
+</sub T_EMAC_RESET_REQ>
+
+
+<0x240f OP_EMAC_RANDOM_ACC_REQ_NB>
+    signalHeader         struct                 T_MsgHeader            
+    EMAC_RANDOM_ACC_REQ  struct                 T_EMAC_RANDOM_ACC_REQ  
+</0x240f OP_EMAC_RANDOM_ACC_REQ_NB>
+
+
+<0x2410 OP_EMAC_ACC_STATUS_IND_NB>
+    signalHeader         struct                 T_MsgHeader            
+    EMAC_ACC_STATUS_IND  struct                 T_EMAC_ACC_STATUS_IND  
+</0x2410 OP_EMAC_ACC_STATUS_IND_NB>
+
+
+<0x2411 OP_EMAC_DCH_CONFIG_REQ_NB>
+    signalHeader         struct                 T_MsgHeader            
+    EMAC_DCH_CONFIG_REQ  struct                 T_EMAC_DCH_CONFIG_REQ  
+</0x2411 OP_EMAC_DCH_CONFIG_REQ_NB>
+
+
+<0x2412 OP_EMAC_RESET_REQ_NB>
+    signalHeader    struct            T_MsgHeader       
+    EMAC_RESET_REQ  struct            T_EMAC_RESET_REQ  
+</0x2412 OP_EMAC_RESET_REQ_NB>
+
+
+<sub T_securityAlgorithm>
+    integrityAlgorithm  u8     u8     integrityAlgorithm  |input;|
+    ciperAlgorithm      u8     u8     ciperAlgorithm      |input;|
+    reserved2[2]        array  u8     reserved2           |multiedit;|
+</sub T_securityAlgorithm>
+
+
+<sub T_securityKey>
+    keyRrcInt[16]  array  u8     keyRrcInt      |multiedit;|
+    keyRrcEnc[16]  array  u8     keyRrcEnc      |multiedit;|
+    keyUpEnc[16]   array  u8     keyUpEnc       |multiedit;|
+    keyEnb[32]     array  u8     keyEnb         |multiedit;|
+</sub T_securityKey>
+
+
+<sub T_CPDCP_CONFIG_REQ_LTE>
+    rbId                 u8                   u8                   rbId                 |input;|
+    configCause          u8                   u8                   configCause          |input;|
+    discardTimer         u8                   u8                   discardTimer         |input;|
+    heaComFlag           u8                   u8                   heaComFlag           |input;|
+    drbContinueRohcFlag  u8                   u8                   drbContinueRohcFlag  |input;|
+    pCurrentErlcSduPos   u32                  u32                  pCurrentErlcSduPos   |input;|
+    headComInfo          struct               T_headComInfo        
+    securityAlgorithm    struct               T_securityAlgorithm  
+    securityKey          struct               T_securityKey        
+</sub T_CPDCP_CONFIG_REQ_LTE>
+
+
+<sub T_CPDCP_RELEASE_REQ_LTE>
+    rbId          u8     u8     rbId          |input;|
+    relCause      u8     u8     relCause      |input;|
+    reserved2[2]  array  u8     reserved2     |multiedit;|
+</sub T_CPDCP_RELEASE_REQ_LTE>
+
+
+<sub T_CPDCP_INTEGRITY_IND_LTE>
+    rbId           u8     u8     rbId           |input;|
+    integrityFlag  u8     u8     integrityFlag  |input;|
+    mess[5]        array  u8     mess           |multiedit;|
+    reserved1      u8     u8     reserved1      |input;|
+</sub T_CPDCP_INTEGRITY_IND_LTE>
+
+
+<sub T_CPDCP_DATA_CNF_LTE>
+    stateFlag  u8  u8  stateFlag  |input;|
+    cnfNum     u8  u8  cnfNum     |input;|
+    nasMsgSn   u8  u8  nasMsgSn   |input;|
+    reserved1  u8  u8  reserved1  |input;|
+</sub T_CPDCP_DATA_CNF_LTE>
+
+
+<sub T_CPDCP_DATA_REQ_LTE>
+    rbId          u8           u8           rbId          |input;|
+    cipherFlag    u8           u8           cipherFlag    |input;|
+    reserved2[2]  array        u8           reserved2     |multiedit;|
+    pduData       Ptr          T_ComPduLte  
+</sub T_CPDCP_DATA_REQ_LTE>
+
+
+<sub T_CPDCP_DATA_IND_LTE>
+    rbId       u8           u8           rbId       |input;|
+    reserved1  u8           u8           reserved1  |input;|
+    pduLen     u16          u16          pduLen     |input;|
+    pduData    Ptr          T_ComSduLte  
+    cookie     u32          u32          cookie     |input;|
+</sub T_CPDCP_DATA_IND_LTE>
+
+
+<sub T_CPDCP_CHECK_RESUME_MSG_REQ_LTE>
+    securityAlgorithm  struct               T_securityAlgorithm  
+    securityKey        struct               T_securityKey        
+    pduLen             u16                  u16                  pduLen             |input;|
+    reserved2[2]       array                u8                   reserved2          |multiedit;|
+    pduData            Ptr                  T_ComSduLte          
+    cookie             u32                  u32                  cookie             |input;|
+</sub T_CPDCP_CHECK_RESUME_MSG_REQ_LTE>
+
+
+<sub T_CPDCP_CHECK_RESUME_MSG_CNF_LTE>
+    rslt          u8     u8     rslt          |input;|
+    reserved3[3]  array  u8     reserved3     |multiedit;|
+</sub T_CPDCP_CHECK_RESUME_MSG_CNF_LTE>
+
+
+<sub T_CPDCP_CREATE_INSTANCE_IND_LTE>
+    processID     u8     u8     processID     |input;|
+    reserved3[3]  array  u8     reserved3     |multiedit;|
+</sub T_CPDCP_CREATE_INSTANCE_IND_LTE>
+
+
+<0x2427 OP_CPDCP_CONFIG_REQ_LTE>
+    signalHeader          struct                  T_MsgHeader             
+    CPDCP_CONFIG_REQ_LTE  struct                  T_CPDCP_CONFIG_REQ_LTE  
+</0x2427 OP_CPDCP_CONFIG_REQ_LTE>
+
+
+<0x2428 OP_CPDCP_RELEASE_REQ_LTE>
+    signalHeader           struct                   T_MsgHeader              
+    CPDCP_RELEASE_REQ_LTE  struct                   T_CPDCP_RELEASE_REQ_LTE  
+</0x2428 OP_CPDCP_RELEASE_REQ_LTE>
+
+
+<0x242b OP_CPDCP_INTEGRITY_IND_LTE>
+    signalHeader             struct                     T_MsgHeader                
+    CPDCP_INTEGRITY_IND_LTE  struct                     T_CPDCP_INTEGRITY_IND_LTE  
+</0x242b OP_CPDCP_INTEGRITY_IND_LTE>
+
+
+<0x242c OP_CPDCP_DATA_CNF_LTE>
+    signalHeader        struct                T_MsgHeader           
+    CPDCP_DATA_CNF_LTE  struct                T_CPDCP_DATA_CNF_LTE  
+</0x242c OP_CPDCP_DATA_CNF_LTE>
+
+
+<0x242a OP_CPDCP_DATA_REQ_LTE>
+    signalHeader        struct                T_MsgHeader           
+    CPDCP_DATA_REQ_LTE  struct                T_CPDCP_DATA_REQ_LTE  
+</0x242a OP_CPDCP_DATA_REQ_LTE>
+
+
+<0x242d OP_CPDCP_DATA_IND_LTE>
+    signalHeader        struct                T_MsgHeader           
+    CPDCP_DATA_IND_LTE  struct                T_CPDCP_DATA_IND_LTE  
+</0x242d OP_CPDCP_DATA_IND_LTE>
+
+
+<0x242e OP_CPDCP_CHECK_RESUME_MSG_REQ_LTE>
+    signalHeader                    struct                            T_MsgHeader                       
+    CPDCP_CHECK_RESUME_MSG_REQ_LTE  struct                            T_CPDCP_CHECK_RESUME_MSG_REQ_LTE  
+</0x242e OP_CPDCP_CHECK_RESUME_MSG_REQ_LTE>
+
+
+<0x242f OP_CPDCP_CHECK_RESUME_MSG_CNF_LTE>
+    signalHeader                    struct                            T_MsgHeader                       
+    CPDCP_CHECK_RESUME_MSG_CNF_LTE  struct                            T_CPDCP_CHECK_RESUME_MSG_CNF_LTE  
+</0x242f OP_CPDCP_CHECK_RESUME_MSG_CNF_LTE>
+
+
+<0x2430 OP_CPDCP_CREATE_INSTANCE_IND_LTE>
+    signalHeader                   struct                           T_MsgHeader                      
+    CPDCP_CREATE_INSTANCE_IND_LTE  struct                           T_CPDCP_CREATE_INSTANCE_IND_LTE  
+</0x2430 OP_CPDCP_CREATE_INSTANCE_IND_LTE>
+
+
+<0x2421 OP_RLC_AM_DATA_REQ_LTE>
+</0x2421 OP_RLC_AM_DATA_REQ_LTE>
+
+
+<0x2422 OP_RLC_UM_DATA_REQ_LTE>
+</0x2422 OP_RLC_UM_DATA_REQ_LTE>
+
+
+<0x241a OP_RLC_UM_DATA_IND_LTE>
+</0x241a OP_RLC_UM_DATA_IND_LTE>
+
+
+<0x2420 OP_RLC_STATUS_IND_LTE>
+</0x2420 OP_RLC_STATUS_IND_LTE>
+
+
+<sub T_RLC_AM_DATA_IND_LTE>
+    rbIdentity    u8             u8             rbIdentity    |input;|
+    reestFlag     u8             u8             reestFlag     |input;|
+    reserved2[2]  array          u8             reserved2     |multiedit;|
+    sdu_list      Ptr            T_ERLC_DL_SDU  
+</sub T_RLC_AM_DATA_IND_LTE>
+
+
+<sub T_RLC_AM_DATA_CNF_LTE>
+    rbIdentity    u8     u8     rbIdentity    |input;|
+    reserved3[3]  array  u8     reserved3     |multiedit;|
+    firstCnfSn    u16    u16    firstCnfSn    |input;|
+    cnfPduNum     u16    u16    cnfPduNum     |input;|
+</sub T_RLC_AM_DATA_CNF_LTE>
+
+
+<0x2419 OP_RLC_AM_DATA_IND_LTE>
+    signalHeader         struct                 T_MsgHeader            
+    RLC_AM_DATA_IND_LTE  struct                 T_RLC_AM_DATA_IND_LTE  
+</0x2419 OP_RLC_AM_DATA_IND_LTE>
+
+
+<0x241b OP_RLC_AM_DATA_CNF_LTE>
+    signalHeader         struct                 T_MsgHeader            
+    RLC_AM_DATA_CNF_LTE  struct                 T_RLC_AM_DATA_CNF_LTE  
+</0x241b OP_RLC_AM_DATA_CNF_LTE>
+
+
+<sub T_AmUpParasLte>
+    maxRetxThreshold     u8     u8     maxRetxThreshold     |input;|
+    timerPollRetransmit  u8     u8     timerPollRetransmit  |input;|
+    reserved2[2]         array  u8     reserved2            |multiedit;|
+</sub T_AmUpParasLte>
+
+
+<sub T_AmDwParasLte>
+    bStatusReportSNGap  u8     u8     bStatusReportSNGap  |input;|
+    reserved3[3]        array  u8     reserved3           |multiedit;|
+</sub T_AmDwParasLte>
+
+
+<sub T_CRLC_STATUS_IND_LTE>
+    statusCode    u8     u8     statusCode    |input;|
+    reserved3[3]  array  u8     reserved3     |multiedit;|
+</sub T_CRLC_STATUS_IND_LTE>
+
+
+<sub T_CRLC_CONFIG_REQ_LTE>
+    rbIdentity     u8              u8              rbIdentity     |input;|
+    configCause    u8              u8              configCause    |input;|
+    suspendResume  u8              u8              suspendResume  |input;|
+    reserved1      u8              u8              reserved1      |input;|
+    amUpParas      struct          T_AmUpParasLte  
+    amDwParas      struct          T_AmDwParasLte  
+</sub T_CRLC_CONFIG_REQ_LTE>
+
+
+<sub T_CRLC_DEACT_REQ_LTE>
+    rbIdentity    u8     u8     rbIdentity    |input;|
+    reserved3[3]  array  u8     reserved3     |multiedit;|
+</sub T_CRLC_DEACT_REQ_LTE>
+
+
+<0x241c OP_CRLC_STATUS_IND_LTE>
+    signalHeader         struct                 T_MsgHeader            
+    CRLC_STATUS_IND_LTE  struct                 T_CRLC_STATUS_IND_LTE  
+</0x241c OP_CRLC_STATUS_IND_LTE>
+
+
+<0x2416 OP_CRLC_CONFIG_REQ_LTE>
+    signalHeader         struct                 T_MsgHeader            
+    CRLC_CONFIG_REQ_LTE  struct                 T_CRLC_CONFIG_REQ_LTE  
+</0x2416 OP_CRLC_CONFIG_REQ_LTE>
+
+
+<0x2417 OP_CRLC_DEACT_REQ_LTE>
+    signalHeader        struct                T_MsgHeader           
+    CRLC_DEACT_REQ_LTE  struct                T_CRLC_DEACT_REQ_LTE  
+</0x2417 OP_CRLC_DEACT_REQ_LTE>
+
+
+<sub T_UE_RADIO_STATS_RPT>
+    signal_power       s8   s8   signal_power       |input;|
+    total_power        s8   s8   total_power        |input;|
+    cur_TX_power       s8   s8   cur_TX_power       |input;|
+    ttl_TX_time        structu64  
+    ttl_RX_time        structu64  
+    last_SIB1_cell_id  u32  u32  last_SIB1_cell_id  |input;|
+    last_ECL_val       u8   u8   last_ECL_val       |input;|
+    last_snr_val       s8   s8   last_snr_val       |input;|
+    last_earfcn        u16  u16  last_earfcn        |input;|
+    last_pci_val       u16  u16  last_pci_val       |input;|
+    rsrq               u8   u8   rsrq               |input;|
+</sub T_UE_RADIO_STATS_RPT>
+
+
+<sub T_UE_CELL_STATS_RPT>
+    earfcn       u16  u16  earfcn       |input;|
+    phy_cell_id  u16  u16  phy_cell_id  |input;|
+    pri_cell     u8   u8   pri_cell     |input;|
+    rsrp         u8   u8   rsrp         |input;|
+    rsrq         u8   u8   rsrq         |input;|
+    rssi         s16  s16  rssi         |input;|
+    snr          s8   s8   snr          |input;|
+</sub T_UE_CELL_STATS_RPT>
+
+
+<sub T_UE_BLER_STATS_RPT>
+    rlc_ul_bler          u16  u16  rlc_ul_bler          |input;|
+    rlc_dl_bler          u16  u16  rlc_dl_bler          |input;|
+    mac_ul_bler          u16  u16  mac_ul_bler          |input;|
+    mac_dl_bler          u16  u16  mac_dl_bler          |input;|
+    ttl_bytes_tx         structu64  
+    ttl_bytes_rx         structu64  
+    tb_num_tx            u32  u32  tb_num_tx            |input;|
+    tb_num_rx            u32  u32  tb_num_rx            |input;|
+    tb_num_retx          u32  u32  tb_num_retx          |input;|
+    ttl_ack_nack_msg_rx  u32  u32  ttl_ack_nack_msg_rx  |input;|
+</sub T_UE_BLER_STATS_RPT>
+
+
+<sub T_UE_THROUPUT_STATS_RPT>
+    rlc_ul_bps  u32  u32  rlc_ul_bps  |input;|
+    rlc_dl_bps  u32  u32  rlc_dl_bps  |input;|
+    mac_ul_bps  u32  u32  mac_ul_bps  |input;|
+    mac_dl_bps  u32  u32  mac_dl_bps  |input;|
+</sub T_UE_THROUPUT_STATS_RPT>
+
+
+<sub T_UE_STATS_RPT>
+    cellNum                            u8                       u8                       cellNum                            |input;|
+    radioStats                         struct                   T_UE_RADIO_STATS_RPT     
+    cellStats[MAX_CELL_STATS_RPT_NUM]  array                    T_UE_CELL_STATS_RPT      cellStats                          |multiedit;|
+    blerStats                          struct                   T_UE_BLER_STATS_RPT      
+    throughputStats                    struct                   T_UE_THROUPUT_STATS_RPT  
+</sub T_UE_STATS_RPT>
+
+
+<sub T_EMMAS_ESTABLISH_REQ>
+    establishCause                               u8     u8     establishCause                               |input;|
+    callType                                     u8     u8     callType                                     |input;|
+    length                                       u16    u16    length                                       |input;|
+    registFlag                                   u8     u8     registFlag                                   |input;|
+    nasMsgSn                                     u8     u8     nasMsgSn                                     |input;|
+    eabFlag                                      u8     u8     eabFlag                                      |input;|
+    campInd                                      u8     u8     campInd                                      |input;|
+    piggybackeOnResumeFlag                       u8     u8     piggybackeOnResumeFlag                       |input;|
+    gummeidType                                  u8     u8     gummeidType                                  |input;|
+    CIoTProcInd                                  u16    u16    CIoTProcInd                                  |input;|
+    nasMessage[MAX_NAS_MSG_LEN]                  array  u8     nasMessage                                   |multiedit;|
+    attachWithoutPdn                             u8     u8     attachWithoutPdn                             |input;|
+    upCiot                                       u8     u8     upCiot                                       |input;|
+    resumeFallbackedlength                       u16    u16    resumeFallbackedlength                       |input;|
+    nasMessageResumeFallbacked[MAX_NAS_MSG_LEN]  array  u8     nasMessageResumeFallbacked                   |multiedit;|
+</sub T_EMMAS_ESTABLISH_REQ>
+
+
+<sub T_EMMAS_ESTABLISH_CNF>
+    resumeFallbackedFlag  u8  u8  resumeFallbackedFlag  |input;|
+</sub T_EMMAS_ESTABLISH_CNF>
+
+
+<sub T_EMMAS_RELEASE_REQ>
+    cause  u8  u8  cause  |input;|
+</sub T_EMMAS_RELEASE_REQ>
+
+
+<sub T_ERR_CE_MODE_IND>
+    ceMode  u8  u8  ceMode  |input;|
+</sub T_ERR_CE_MODE_IND>
+
+
+<sub T_EMMAS_RELEASE_IND>
+    releaseCause      u8   u8   releaseCause      |input;|
+    suspendFlag       u8   u8   suspendFlag       |input;|
+    extendedWaitTime  u16  u16  extendedWaitTime  |input;|
+</sub T_EMMAS_RELEASE_IND>
+
+
+<sub T_EMMAS_PAGE_IND>
+    ueIdType     u8  u8  ueIdType     |input;|
+    pagingCause  u8  u8  pagingCause  |input;|
+</sub T_EMMAS_PAGE_IND>
+
+
+<sub T_EMMAS_SYNC_IND>
+    syncCause  u8  u8  syncCause  |input;|
+</sub T_EMMAS_SYNC_IND>
+
+
+<sub T_EMMAS_DATA_REQ>
+    length                       u16    u16    length                       |input;|
+    dummy                        u8     u8     dummy                        |input;|
+    nasMsgSn                     u8     u8     nasMsgSn                     |input;|
+    nasMessage[MAX_NAS_MSG_LEN]  array  u8     nasMessage                   |multiedit;|
+</sub T_EMMAS_DATA_REQ>
+
+
+<sub T_EMMAS_DATA_IND>
+    length         u16    u16    length         |input;|
+    dummy          u16    u16    dummy          |input;|
+    nasMessage[0]  array  u8     nasMessage     |multiedit;|
+</sub T_EMMAS_DATA_IND>
+
+
+<sub T_EMMAS_DATA_CNF>
+    stateFlag  u8  u8  stateFlag  |input;|
+    cnfNum     u8  u8  cnfNum     |input;|
+    nasMsgSn   u8  u8  nasMsgSn   |input;|
+</sub T_EMMAS_DATA_CNF>
+
+
+<0x205f OP_ERR_CE_MODE_IND>
+    signalHeader     struct             T_MsgHeader        
+    ERR_CE_MODE_IND  struct             T_ERR_CE_MODE_IND  
+</0x205f OP_ERR_CE_MODE_IND>
+
+
+<0x2021 OP_EMMAS_ESTABLISH_REQ>
+    signalHeader         struct                 T_MsgHeader            
+    EMMAS_ESTABLISH_REQ  struct                 T_EMMAS_ESTABLISH_REQ  
+</0x2021 OP_EMMAS_ESTABLISH_REQ>
+
+
+<0x202c OP_EMMAS_ESTABLISH_CNF>
+    signalHeader         struct                 T_MsgHeader            
+    EMMAS_ESTABLISH_CNF  struct                 T_EMMAS_ESTABLISH_CNF  
+</0x202c OP_EMMAS_ESTABLISH_CNF>
+
+
+<0x2022 OP_EMMAS_RELEASE_REQ>
+    signalHeader       struct               T_MsgHeader          
+    EMMAS_RELEASE_REQ  struct               T_EMMAS_RELEASE_REQ  
+</0x2022 OP_EMMAS_RELEASE_REQ>
+
+
+<0x2027 OP_EMMAS_RELEASE_IND>
+    signalHeader       struct               T_MsgHeader          
+    EMMAS_RELEASE_IND  struct               T_EMMAS_RELEASE_IND  
+</0x2027 OP_EMMAS_RELEASE_IND>
+
+
+<0x202b OP_EMMAS_PAGE_IND>
+    signalHeader    struct            T_MsgHeader       
+    EMMAS_PAGE_IND  struct            T_EMMAS_PAGE_IND  
+</0x202b OP_EMMAS_PAGE_IND>
+
+
+<0x2028 OP_EMMAS_SYNC_IND>
+    signalHeader    struct            T_MsgHeader       
+    EMMAS_SYNC_IND  struct            T_EMMAS_SYNC_IND  
+</0x2028 OP_EMMAS_SYNC_IND>
+
+
+<0x2023 OP_EMMAS_DATA_REQ>
+    signalHeader    struct            T_MsgHeader       
+    EMMAS_DATA_REQ  struct            T_EMMAS_DATA_REQ  
+</0x2023 OP_EMMAS_DATA_REQ>
+
+
+<0x2029 OP_EMMAS_DATA_IND>
+    signalHeader    struct            T_MsgHeader       
+    EMMAS_DATA_IND  struct            T_EMMAS_DATA_IND  
+</0x2029 OP_EMMAS_DATA_IND>
+
+
+<0x202a OP_EMMAS_DATA_CNF>
+    signalHeader    struct            T_MsgHeader       
+    EMMAS_DATA_CNF  struct            T_EMMAS_DATA_CNF  
+</0x202a OP_EMMAS_DATA_CNF>
+
+
+<sub T_EMMAS_PS_SIGNALLING_START_REQ>
+    type  u8  u8  type  |input;|
+</sub T_EMMAS_PS_SIGNALLING_START_REQ>
+
+
+<0x2024 OP_EMMAS_PS_SIGNALLING_START_REQ>
+    signalHeader                   struct                           T_MsgHeader                      
+    EMMAS_PS_SIGNALLING_START_REQ  struct                           T_EMMAS_PS_SIGNALLING_START_REQ  
+</0x2024 OP_EMMAS_PS_SIGNALLING_START_REQ>
+
+
+<0x2025 OP_EMMAS_PS_SIGNALLING_END_REQ>
+    signalHeader  struct       T_MsgHeader  
+</0x2025 OP_EMMAS_PS_SIGNALLING_END_REQ>
+
+
+<sub T_EMMAS_STATUS_IND>
+    status  u8  u8  status  |input;|
+</sub T_EMMAS_STATUS_IND>
+
+
+<0x202d OP_EMMAS_STATUS_IND>
+    signalHeader      struct              T_MsgHeader         
+    EMMAS_STATUS_IND  struct              T_EMMAS_STATUS_IND  
+</0x202d OP_EMMAS_STATUS_IND>
+
+
+<sub T_EMMAS_CP_REESTAB_REQ>
+    cellIdentity[4]  array  u8     cellIdentity     |multiedit;|
+</sub T_EMMAS_CP_REESTAB_REQ>
+
+
+<sub T_EMMAS_CP_REESTAB_CNF>
+    result        u8     u8     result        |input;|
+    ulNASCount    u8     u8     ulNASCount    |input;|
+    reserved2[2]  array  u8     reserved2     |multiedit;|
+    ulNASMAC[2]   array  u8     ulNASMAC      |multiedit;|
+    xDlNASMAC[2]  array  u8     xDlNASMAC     |multiedit;|
+</sub T_EMMAS_CP_REESTAB_CNF>
+
+
+<0x2400 OP_EMMAS_CP_REESTAB_REQ>
+    signalHeader          struct                  T_MsgHeader             
+    EMMAS_CP_REESTAB_REQ  struct                  T_EMMAS_CP_REESTAB_REQ  
+</0x2400 OP_EMMAS_CP_REESTAB_REQ>
+
+
+<0x2401 OP_EMMAS_CP_REESTAB_CNF>
+    signalHeader          struct                  T_MsgHeader             
+    EMMAS_CP_REESTAB_CNF  struct                  T_EMMAS_CP_REESTAB_CNF  
+</0x2401 OP_EMMAS_CP_REESTAB_CNF>
+
+
+<sub T_EPossPlmn>
+    cellInfo                         struct         T_CellDescLte  
+    tac[2]                           array          u8             tac                              |multiedit;|
+    rsrpValue                        s16            s16            rsrpValue                        |input;|
+    plmnNum                          u8             u8             plmnNum                          |input;|
+    possiblePlmn[MAX_CELL_PLMN_NUM]  array          T_Plmn         possiblePlmn                     |multiedit;|
+</sub T_EPossPlmn>
+
+
+<sub T_ERR_ACT_REQ>
+    imsi                                      struct         T_Imsi         
+    plmnSelected                              struct         T_Plmn         
+    equivalentPlmnNum                         u8             u8             equivalentPlmnNum                         |input;|
+    nFreqNum                                  u8             u8             nFreqNum                                  |input;|
+    reserved                                  u16            u16            reserved                                  |input;|
+    equivalentPlmn[MAX_EQU_PLMNS_NUM]         array          T_Plmn         equivalentPlmn                            |multiedit;|
+    neighbourFreq[MAX_FREQ_NUM]               array          T_CellDescLte  neighbourFreq                             |multiedit;|
+    accessControlClass[MAX_UE_ACC_CLASS_LEN]  array          u8             accessControlClass                        |multiedit;|
+    actType                                   u8             u8             actType                                   |input;|
+    selectionType                             u8             u8             selectionType                             |input;|
+    nCellNum                                  u8             u8             nCellNum                                  |input;|
+    neighbourCell[MAX_BA_LIST_NUM_LTE]        array          T_CellDescLte  neighbourCell                             |multiedit;|
+</sub T_ERR_ACT_REQ>
+
+
+<sub T_ERR_ACT_IND>
+    tac[2]                               array          u8             tac                                  |multiedit;|
+    servCellPlmnNum                      u8             u8             servCellPlmnNum                      |input;|
+    reserved1                            u8             u8             reserved1                            |input;|
+    servCellPlmn[MAX_CELL_PLMN_NUM]      array          T_Plmn         servCellPlmn                         |multiedit;|
+    plmn                                 struct         T_Plmn         
+    servAttachWithoutPDN                 u8             u8             servAttachWithoutPDN                 |input;|
+    upCIoTEPSOptimisation                u8             u8             upCIoTEPSOptimisation                |input;|
+    cpCIoTEPSOptimisation                u8             u8             cpCIoTEPSOptimisation                |input;|
+    cellIdentity[4]                      array          u8             cellIdentity                         |multiedit;|
+    neighbouringFreqNum                  u8             u8             neighbouringFreqNum                  |input;|
+    neighbourFreq[MAX_FREQ_NUM]          array          T_CellDescLte  neighbourFreq                        |multiedit;|
+    cellNum                              u8             u8             cellNum                              |input;|
+    reserved2[3]                         array          u8             reserved2                            |multiedit;|
+    cellInfo[MAX_POSSIBLE_CELL_NUM]      array          T_EPossPlmn    cellInfo                             |multiedit;|
+    bHighBand                            u8             u8             bHighBand                            |input;|
+    gsmFreqNum                           u8             u8             gsmFreqNum                           |input;|
+    reserved3                            u16            u16            reserved3                            |input;|
+    gsmFreqInfo[MAX_GSM_FREQ_NUM]        array          u16            gsmFreqInfo                          |multiedit;|
+    mmtelSsac                            struct         T_MmtelSsac    
+    imsEmcSupport                        u8             u8             imsEmcSupport                        |input;|
+    attachWithoutPDN[MAX_CELL_PLMN_NUM]  array          u8             attachWithoutPDN                     |multiedit;|
+    intraNcellNum                        u8             u8             intraNcellNum                        |input;|
+    interNcellNum                        u8             u8             interNcellNum                        |input;|
+    interNeighbourCell[0]                array          T_CellDescLte  interNeighbourCell                   |multiedit;|
+    intraNeighbourCell[maxCellIntra]     array          T_CellDescLte  intraNeighbourCell                   |multiedit;|
+</sub T_ERR_ACT_IND>
+
+
+<sub T_ERR_ACT_ERR>
+    cellNum                          u8           u8           cellNum                          |input;|
+    cellInfo[MAX_POSSIBLE_CELL_NUM]  array        T_EPossPlmn  cellInfo                         |multiedit;|
+</sub T_ERR_ACT_ERR>
+
+
+<0x204f OP_ERR_ACT_ERR>
+    signalHeader  struct         T_MsgHeader    
+    ERR_ACT_ERR   struct         T_ERR_ACT_ERR  
+</0x204f OP_ERR_ACT_ERR>
+
+
+<sub T_ERR_DEACT_REQ>
+    deactCause  u8  u8  deactCause  |input;|
+</sub T_ERR_DEACT_REQ>
+
+
+<0x2046 OP_ERR_DEACT_REQ>
+    signalHeader   struct           T_MsgHeader      
+    ERR_DEACT_REQ  struct           T_ERR_DEACT_REQ  
+</0x2046 OP_ERR_DEACT_REQ>
+
+
+<0x2047 OP_ERR_ABORT_PLMN_REQ>
+    signalHeader  struct       T_MsgHeader  
+</0x2047 OP_ERR_ABORT_PLMN_REQ>
+
+
+<sub T_ERR_GET_PLMN_REQ>
+    activeMode  u8  u8  activeMode  |input;|
+    hplmnFlag   u8  u8  hplmnFlag   |input;|
+</sub T_ERR_GET_PLMN_REQ>
+
+
+<sub T_ERR_GET_PLMN_CNF>
+    cellNum                          u8           u8           cellNum                          |input;|
+    reserved[3]                      array        u8           reserved                         |multiedit;|
+    cellInfo[MAX_POSSIBLE_CELL_NUM]  array        T_EPossPlmn  cellInfo                         |multiedit;|
+</sub T_ERR_GET_PLMN_CNF>
+
+
+<sub T_ERR_NEW_PARAM_REQ>
+    equivalentPlmnNum                                      u8                                                     u8                                                     equivalentPlmnNum                                      |input;|
+    ehplmnNum                                              u8                                                     u8                                                     ehplmnNum                                              |input;|
+    k                                                      u8                                                     u8                                                     k                                                      |input;|
+    forbiddenTaiNum                                        u8                                                     u8                                                     forbiddenTaiNum                                        |input;|
+    stmsiValid                                             u8                                                     u8                                                     stmsiValid                                             |input;|
+    lteKeyValid                                            u8                                                     u8                                                     lteKeyValid                                            |input;|
+    regTai[MAX_TAI_LEN]                                    array                                                  u8                                                     regTai                                                 |multiedit;|
+    mmeid[MAX_MME_ID_LEN]                                  array                                                  u8                                                     mmeid                                                  |multiedit;|
+    stmsi[MAX_STMSI_LEN]                                   array                                                  u8                                                     stmsi                                                  |multiedit;|
+    forbiddenTaiForNationalRoam[MAX_FORBIDDEN_TAI_NUM]     array                                                  T_forbiddenTaiForNationalRoam                          forbiddenTaiForNationalRoam                            |multiedit;|
+    reserved[2]                                            array                                                  u8                                                     reserved                                               |multiedit;|
+    selectedPlmn                                           struct                                                 T_Plmn                                                 
+    simHplmn                                               struct                                                 T_Plmn                                                 
+    ehplmnList[MAX_EQU_PLMNS_NUM]                          array                                                  T_Plmn                                                 ehplmnList                                             |multiedit;|
+    equivalentPlmn[MAX_EQU_PLMNS_NUM]                      array                                                  T_Plmn                                                 equivalentPlmn                                         |multiedit;|
+    kEnb[KEY_ENB_LEN]                                      array                                                  u8                                                     kEnb                                                   |multiedit;|
+    kAsme[KEY_ASME_LEN]                                    array                                                  u8                                                     kAsme                                                  |multiedit;|
+    eDrxEnable                                             u8                                                     u8                                                     eDrxEnable                                             |input;|
+    pagingTimeWin                                          u8                                                     u8                                                     pagingTimeWin                                          |input;|
+    eDrxValue                                              u8                                                     u8                                                     eDrxValue                                              |input;|
+</sub T_ERR_NEW_PARAM_REQ>
+
+
+<sub T_forbiddenTaiForNationalRoam
+    forbiddenTaiForNationalRoam[5]                         array                                                  u8                                                     forbiddenTaiForNationalRoam                            |multiedit;|
+</sub T_forbiddenTaiForNationalRoam
+
+
+<sub T_ERR_SET_STATE_REQ>
+    stateFlag     u8      u8      stateFlag     |input;|
+    reserved[3]   array   u8      reserved      |multiedit;|
+    plmnSelected  struct  T_Plmn  
+</sub T_ERR_SET_STATE_REQ>
+
+
+<0x2041 OP_ERR_ACT_REQ>
+    signalHeader  struct         T_MsgHeader    
+    ERR_ACT_REQ   struct         T_ERR_ACT_REQ  
+</0x2041 OP_ERR_ACT_REQ>
+
+
+<0x204e OP_ERR_ACT_IND>
+    signalHeader  struct         T_MsgHeader    
+    ERR_ACT_IND   struct         T_ERR_ACT_IND  
+</0x204e OP_ERR_ACT_IND>
+
+
+<0x2042 OP_ERR_GET_PLMN_REQ>
+    signalHeader      struct              T_MsgHeader         
+    ERR_GET_PLMN_REQ  struct              T_ERR_GET_PLMN_REQ  
+</0x2042 OP_ERR_GET_PLMN_REQ>
+
+
+<0x2051 OP_ERR_GET_PLMN_CNF>
+    signalHeader      struct              T_MsgHeader         
+    ERR_GET_PLMN_CNF  struct              T_ERR_GET_PLMN_CNF  
+</0x2051 OP_ERR_GET_PLMN_CNF>
+
+
+<0x2045 OP_ERR_NEW_PARAM_REQ>
+    signalHeader       struct               T_MsgHeader          
+    ERR_NEW_PARAM_REQ  struct               T_ERR_NEW_PARAM_REQ  
+</0x2045 OP_ERR_NEW_PARAM_REQ>
+
+
+<0x2044 OP_ERR_SET_STATE_REQ>
+    signalHeader       struct               T_MsgHeader          
+    ERR_SET_STATE_REQ  struct               T_ERR_SET_STATE_REQ  
+</0x2044 OP_ERR_SET_STATE_REQ>
+
+
+<0x2043 OP_ERR_LOOP_TEST_REQ>
+</0x2043 OP_ERR_LOOP_TEST_REQ>
+
+
+<0x2050 OP_ERR_LOOP_TEST_CNF>
+</0x2050 OP_ERR_LOOP_TEST_CNF>
+
+
+<sub T_ERR_BAR_ALLEVIATE_IND>
+    barAlleviateType  u8  u8  barAlleviateType  |input;|
+</sub T_ERR_BAR_ALLEVIATE_IND>
+
+
+<0x204d OP_ERR_BAR_ALLEVIATE_IND>
+    signalHeader           struct                   T_MsgHeader              
+    ERR_BAR_ALLEVIATE_IND  struct                   T_ERR_BAR_ALLEVIATE_IND  
+</0x204d OP_ERR_BAR_ALLEVIATE_IND>
+
+
+<0x2054 OP_ERR_GET_PLMN_REJ>
+    signalHeader  struct       T_MsgHeader  
+</0x2054 OP_ERR_GET_PLMN_REJ>
+
+
+<0x2053 OP_ERR_ABORT_PLMN_CNF>
+    signalHeader  struct       T_MsgHeader  
+</0x2053 OP_ERR_ABORT_PLMN_CNF>
+
+
+<0x2055 OP_ERR_DEACT_CNF>
+    signalHeader  struct       T_MsgHeader  
+</0x2055 OP_ERR_DEACT_CNF>
+
+
+<sub T_ERR_EDRX_IND>
+    edrxSleepTime  u32  u32  edrxSleepTime  |input;|
+</sub T_ERR_EDRX_IND>
+
+
+<0x2052 OP_ERR_EDRX_IND>
+    signalHeader  struct          T_MsgHeader     
+    ERR_EDRX_IND  struct          T_ERR_EDRX_IND  
+</0x2052 OP_ERR_EDRX_IND>
+
+
+<sub T_ERR_EDRX_PARAM_REQ>
+    eDrxStatus   u8     u8     eDrxStatus   |input;|
+    reserved[3]  array  u8     reserved     |multiedit;|
+    edrxPeriod   u32    u32    edrxPeriod   |input;|
+    ptw          u32    u32    ptw          |input;|
+</sub T_ERR_EDRX_PARAM_REQ>
+
+
+<0x2048 OP_ERR_EDRX_PARAM_REQ>
+    signalHeader        struct                T_MsgHeader           
+    ERR_EDRX_PARAM_REQ  struct                T_ERR_EDRX_PARAM_REQ  
+</0x2048 OP_ERR_EDRX_PARAM_REQ>
+
+
+<sub T_ERR_IRAT_INACTIVE_REQ>
+    imsi                                      struct         T_Imsi         
+    plmnSelected                              struct         T_Plmn         
+    equivalentPlmnNum                         u8             u8             equivalentPlmnNum                         |input;|
+    reserved1[3]                              array          u8             reserved1                                 |multiedit;|
+    equivalentPlmn[MAX_EQU_PLMNS_NUM]         array          T_Plmn         equivalentPlmn                            |multiedit;|
+    nCellNum                                  u8             u8             nCellNum                                  |input;|
+    reserved2[3]                              array          u8             reserved2                                 |multiedit;|
+    neighbourCell[MAX_BA_LIST_NUM_LTE]        array          T_CellDescLte  neighbourCell                             |multiedit;|
+    accessControlClass[MAX_UE_ACC_CLASS_LEN]  array          u8             accessControlClass                        |multiedit;|
+</sub T_ERR_IRAT_INACTIVE_REQ>
+
+
+<0x204a OP_ERR_IRAT_INACTIVE_REQ>
+    signalHeader           struct                   T_MsgHeader              
+    ERR_IRAT_INACTIVE_REQ  struct                   T_ERR_IRAT_INACTIVE_REQ  
+</0x204a OP_ERR_IRAT_INACTIVE_REQ>
+
+
+<0x2056 OP_ERR_IRAT_INACTIVE_CNF>
+    signalHeader  struct       T_MsgHeader  
+</0x2056 OP_ERR_IRAT_INACTIVE_CNF>
+
+
+<sub T_ERR_IRAT_CLASSMARK_REQ>
+    Rat                 u8  u8  Rat                 |input;|
+    geranBandSupported  u8  u8  geranBandSupported  |input;|
+</sub T_ERR_IRAT_CLASSMARK_REQ>
+
+
+<0x2049 OP_ERR_IRAT_CLASSMARK_REQ>
+    signalHeader            struct                    T_MsgHeader               
+    ERR_IRAT_CLASSMARK_REQ  struct                    T_ERR_IRAT_CLASSMARK_REQ  
+</0x2049 OP_ERR_IRAT_CLASSMARK_REQ>
+
+
+<sub T_ERR_IRAT_CCO_START_IND>
+    csfbInd  u8  u8  csfbInd  |input;|
+</sub T_ERR_IRAT_CCO_START_IND>
+
+
+<0x205a OP_ERR_IRAT_CCO_START_IND>
+    signalHeader            struct                    T_MsgHeader               
+    ERR_IRAT_CCO_START_IND  struct                    T_ERR_IRAT_CCO_START_IND  
+</0x205a OP_ERR_IRAT_CCO_START_IND>
+
+
+<sub T_ERR_IRAT_CCO_FAIL_IND>
+    csfbInd  u8  u8  csfbInd  |input;|
+</sub T_ERR_IRAT_CCO_FAIL_IND>
+
+
+<0x205b OP_ERR_IRAT_CCO_FAIL_IND>
+    signalHeader           struct                   T_MsgHeader              
+    ERR_IRAT_CCO_FAIL_IND  struct                   T_ERR_IRAT_CCO_FAIL_IND  
+</0x205b OP_ERR_IRAT_CCO_FAIL_IND>
+
+
+<0x2058 OP_ERR_IRAT_RESEL_START_IND>
+    signalHeader  struct       T_MsgHeader  
+</0x2058 OP_ERR_IRAT_RESEL_START_IND>
+
+
+<0x2059 OP_ERR_IRAT_RESEL_FAIL_IND>
+    signalHeader  struct       T_MsgHeader  
+</0x2059 OP_ERR_IRAT_RESEL_FAIL_IND>
+
+
+<0x2057 OP_ERR_IRAT_RAT_CHN_IND>
+    signalHeader  struct       T_MsgHeader  
+</0x2057 OP_ERR_IRAT_RAT_CHN_IND>
+
+
+<sub T_ERR_HO_SEC_IND>
+    nonceMme[4]  array  u8     nonceMme     |multiedit;|
+    secAlg       u8     u8     secAlg       |input;|
+    eKsi         u8     u8     eKsi         |input;|
+</sub T_ERR_HO_SEC_IND>
+
+
+<0x205e OP_ERR_HO_SEC_IND>
+    signalHeader    struct            T_MsgHeader       
+    ERR_HO_SEC_IND  struct            T_ERR_HO_SEC_IND  
+</0x205e OP_ERR_HO_SEC_IND>
+
+
+<sub T_ERR_HO_SEC_RSP>
+    kenb[KEY_ENB_LEN]    array  u8     kenb                 |multiedit;|
+    kasme[KEY_ASME_LEN]  array  u8     kasme                |multiedit;|
+</sub T_ERR_HO_SEC_RSP>
+
+
+<0x204b OP_ERR_HO_SEC_RSP>
+    signalHeader    struct            T_MsgHeader       
+    ERR_HO_SEC_RSP  struct            T_ERR_HO_SEC_RSP  
+</0x204b OP_ERR_HO_SEC_RSP>
+
+

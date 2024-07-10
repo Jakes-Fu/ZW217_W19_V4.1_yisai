@@ -1,0 +1,8 @@
+//  Metrowerks Win32 x86, -si4 -sp4, lib-w32.lnt
+//  Standard lint options
+
+au-sm123.lnt
+au-ds.lnt
+adsconf.lnt
+options.lnt
+aloa.lnt

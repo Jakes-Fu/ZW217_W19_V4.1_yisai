@@ -1,0 +1,15 @@
+MENU_DEF( MENU_ASP_MSG_OPT,                     menu_asp_msg_opt,               GUIMENU_STYLE_POPUP, TXT_NULL, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_asp_msg_opt) )
+MENU_DEF( MENU_ASP_PLAY_WIN_MSG_OPT,    menu_asp_play_win_msg_opt, GUIMENU_STYLE_POPUP, TXT_NULL, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_asp_play_win_msg_opt) )
+#if defined(VT_SUPPORT)||defined(MMI_IP_CALL_SUPPORT)
+MENU_DEF( MENU_ASP_CALL_OPT,                    menu_asp_call_opt,                GUIMENU_STYLE_POPUP,TXT_CALL,IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_asp_call_opt) )
+#endif
+MENU_DEF( MENU_ASP_SEND_MSG_OPT,           menu_asp_sendmsg_opt,        GUIMENU_STYLE_POPUP,TXT_SEND_MESSAGE,IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_asp_sendmsg_opt) )
+MENU_DEF( MENU_ASP_MARK_OPT,                   menu_asp_mark_opt,             GUIMENU_STYLE_POPUP,STXT_MARK,IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_asp_mark_opt) )
+//MENU_DEF( MENU_ASP_SETTING,                   menu_asp_setting,                 GUIMENU_STYLE_POPUP,STXT_MAIN_SETTING,IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, 6 )
+MENU_DEF( MENU_ASP_SEND_OPT,                    menu_asp_send_opt,             GUIMENU_STYLE_POPUP,TXT_SEND,IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_asp_send_opt) )
+#ifdef MMI_PDA_SUPPORT
+MENU_DEF( MENU_ASP_MSGLOCALLIST_LONGOK_OPT, menu_asp_msglocallist_longok_opt,     GUIMENU_STYLE_POPUP_AUTO, TXT_COMMON_OK, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_asp_msglocallist_longok_opt) )
+MENU_DEF( MENU_SETTING_RING_SELECT_OPT, menu_asp_set_music_opt,     GUIMENU_STYLE_POPUP_AUTO,TXT_COMM_ANSWER, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_asp_set_music_opt) )
+#else
+MENU_DEF( MENU_SETTING_RING_SELECT_OPT, menu_asp_set_music_opt,     GUIMENU_STYLE_SECOND,TXT_COMM_ANSWER, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_asp_set_music_opt) )
+#endif

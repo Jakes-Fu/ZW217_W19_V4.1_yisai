@@ -1,0 +1,22 @@
+// Audio Codec Calibration
+atctst_aud_codec_get_ingain
+atctst_aud_codec_get_outgain
+atctst_aud_codec_get_sidetonegain
+atctst_aud_codec_get_recordergain
+
+// Audio NXP VOC Calibration>
+atctst_aud_nxp_get_ControlParams_Rx
+atctst_aud_nxp_get_RxEqCoefs
+atctst_aud_nxp_get_ControlParams_Tx
+atctst_aud_nxp_get_TxEqCoefs
+
+
+// Audio ZSP Pre-Processing Calibration
+atctst_aud_zsp_pre_get_drc
+atctst_aud_zsp_pre_get_eq
+
+
+// Audio ZSP Post-Processing Calibration
+atctst_aud_zsp_post_get_drc
+atctst_aud_zsp_post_get_eq
+

@@ -1,0 +1,1606 @@
+
+#define Calibration_Data_Size=15852
+
+
+// 匹配的手机代码版本
+#define PhoneCodeVer=0xcaad0103
+
+// 该脚本文件版本
+#define ScriptVer=0x20161102
+
+
+<<1. Audio Codec Calibration>>
+
+
+//    itf                 s32      0     0..5,10..15         path_mode     |select;0:Receiver;1:Ear_Piece;2:Speaker;3:BT;4:FM;5:TV;10:AUD_ITF_MUS_RECEIVER;11:Ear_Piece;12:Speaker;13:BT;14:FM;15:TV;|
+//    ctrl                s32      1     0..5                Operate_Type  |select;0:atctst_aud_codec_set_input_gain;1:atctst_aud_codec_get_input_gain;2:atctst_aud_codec_set_output_gain;3:atctst_aud_codec_get_output_gain;4:atctst_aud_codec_set_sidetone_gain;5:atctst_aud_codec_get_sidetone_gain;|
+
+<1.1.1 atctst_aud_codec_get_tx_gain>
+
+    cmd   AT+CACCP=
+    id    1
+    itf                 s32      0     0..5,10..15     path_mode     |nochange;|
+    ctrl                s32      1     0..5            Operate_Type  |nochange;|
+ 
+    param               stringArray     begin     
+    param               stringArray     end 
+          
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 1.2.1
+    SendFlag 1
+
+</1.1.1 atctst_aud_codec_get_tx_gain>
+
+
+<1.1.2 atctst_aud_codec_get_rx_gain>
+
+    cmd   AT+CACCP=
+    id    1
+    itf                 s32      0     0..5,10..15         path_mode     |nochange;|
+    ctrl                s32      3     0..5                Operate_Type  |nochange;|
+    
+    param               stringArray     begin     
+    param               stringArray     end 
+       
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 1.2.2
+    SendFlag 1
+
+</1.1.2 atctst_aud_codec_get_rx_gain>
+
+
+
+<1.1.3 atctst_aud_codec_get_sidetone_gain>
+
+    cmd   AT+CACCP=
+    id    1
+    itf                 s32      0     0..5,10..15         path_mode     |nochange;|
+    ctrl                s32      5     0..5                Operate_Type  |nochange;|
+    param               stringArray     begin     
+    param               stringArray     end 
+       
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 1.2.3
+    SendFlag 1
+
+</1.1.3 atctst_aud_codec_get_sidetone_gain>
+
+<1.1.4 atctst_aud_codec_get_recorder_gain>
+
+    cmd   AT+CACCP=
+    id    1
+    itf                 s32      0     0..5,10..15         path_mode     |nochange;|
+    ctrl                s32      7     0..5                Operate_Type  |nochange;|
+    param               stringArray     begin     
+    param               stringArray     end 
+       
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 1.2.4
+    SendFlag 1
+
+</1.1.4 atctst_aud_codec_get_recorder_gain>
+
+<1.2.1 atctst_aud_codec_set_tx_gain>
+
+    cmd   AT+CACCP=
+    id    1
+    itf                 s32      0     0..5,10..15         path_mode     |nochange;|
+    ctrl                s32      0     0..5                Operate_Type  |nochange;|
+    
+    input_gain               stringArray     begin
+       input_gain_ana    s8       0    -128..127      input_gain_ana  |select;0;3;6;9;12;15;18;21;24;|
+       input_gain_adc    s8       0    -128..127      input_gain_adc  |input;|       
+    input_gain               stringArray     end
+        
+    true  OK
+    false ERROR
+    HideFlag  1
+
+</1.2.1 atctst_aud_codec_set_tx_gain>
+
+
+
+<1.2.2 atctst_aud_codec_set_rx_gain>
+
+    cmd   AT+CACCP=
+    id    1
+    itf                 s32      0     0..5,10..15         path_mode     |nochange;|
+    ctrl                s32      2     0..5                Operate_Type  |nochange;|
+    
+    output_gain               stringArray     begin
+       output_gain_ana    s8       0    -128..127      output_gain_ana  |input;|
+       output_gain_dac    s8       0    -128..127      output_gain_adc  |input;|       
+    output_gain               stringArray     end
+        
+    true  OK
+    false ERROR
+    HideFlag  1
+</1.2.2 atctst_aud_codec_set_rx_gain>
+
+
+<1.2.3 atctst_aud_codec_set_sidetone_gain>
+
+    cmd   AT+CACCP=
+    id    1
+    itf                 s32      0     0..5,10..15         path_mode     |nochange;|
+    ctrl                s32      4     0..5                Operate_Type  |nochange;|
+    
+    sidetone               stringArray     begin
+       sidetone_gain    s8       0    -128..127      sidetone_gain  |input;|
+    sidetone               stringArray     end
+        
+    true  OK
+    false ERROR    
+    HideFlag  1
+    
+</1.2.3 atctst_aud_codec_set_sidetone_gain>
+
+<1.2.4 atctst_aud_codec_set_recorder_gain>
+
+    cmd   AT+CACCP=
+    id    1
+    itf                 s32      0     0..5,10..15         path_mode     |nochange;|
+    ctrl                s32      6     0..5                Operate_Type  |nochange;|
+    
+    gain               stringArray     begin
+       ana    s8       0    -128..127      ana  |input;|
+       dac    s8       0    -128..127      adc  |input;|
+    gain               stringArray     end
+        
+    true  OK
+    false ERROR
+    HideFlag  1
+</1.2.4 atctst_aud_codec_set_recorder_gain>
+
+
+
+<<2. Audio Voc Calibration>>
+
+<2.1.1 atctst_aud_voc_get_hpf>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      1     0..19    Operate_Type  |nochange;|
+  
+//    test[20]     u16        0x123400   array             test         |multiedit;|
+    param               stringArray     begin     
+    param               stringArray     end 
+
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 2.2.1
+    SendFlag 1
+
+</2.1.1 atctst_aud_voc_get_hpf>
+
+
+
+<2.1.2 atctst_aud_voc_get_fir_tx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      3     0..19    Operate_Type  |nochange;|
+    param               stringArray     begin     
+    param               stringArray     end 
+  
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 2.2.2
+    SendFlag 1
+
+</2.1.2 atctst_aud_voc_get_fir_tx>
+
+
+
+
+<2.1.3 atctst_aud_voc_get_fir_rx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5    path_mode     |nochange;|
+    ctrl    s32      5     0..19   Operate_Type  |nochange;|
+    param               stringArray     begin     
+    param               stringArray     end 
+  
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 2.2.3
+    SendFlag 1
+
+</2.1.3 atctst_aud_voc_get_fir_rx>
+
+
+<2.1.4 atctst_aud_voc_get_aec>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5   path_mode     |nochange;|
+    ctrl    s32      7     0..19  Operate_Type  |nochange;|
+    
+    param               stringArray     begin     
+    param               stringArray     end 
+  
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 2.2.4
+    SendFlag 1
+
+</2.1.4 atctst_aud_voc_get_aec>
+
+
+<2.1.5 atctst_aud_voc_get_speex_tx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5   path_mode     |nochange;|
+    ctrl    s32      9     0..19  Operate_Type  |nochange;|
+    
+    param               stringArray     begin     
+    param               stringArray     end 
+  
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 2.2.5
+    skipparams 2
+    SendFlag 1
+
+</2.1.5 atctst_aud_voc_get_speex_tx>
+
+
+
+<2.1.6 atctst_aud_voc_get_speex_rx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      11    0..19    Operate_Type  |nochange;|
+    
+    param               stringArray     begin     
+    param               stringArray     end 
+  
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 2.2.6
+    SendFlag 1
+
+</2.1.6 atctst_aud_voc_get_speex_rx>
+
+
+
+<2.1.7 atctst_aud_voc_get_agc_tx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      13    0..19    Operate_Type  |nochange;|
+    
+    param               stringArray     begin     
+    param               stringArray     end 
+    
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 2.2.7
+    SendFlag 1
+
+</2.1.7 atctst_aud_voc_get_agc_tx>
+
+
+<2.1.8 atctst_aud_voc_get_agc_rx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      15    0..19    Operate_Type  |nochange;|
+    
+    param               stringArray     begin     
+    param               stringArray     end 
+  
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 2.2.8
+    SendFlag 1
+
+</2.1.8 atctst_aud_voc_get_agc_rx>
+
+
+
+<2.1.9 atctst_aud_voc_get_eq>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      17    0..19    Operate_Type  |nochange;|
+    
+    param               stringArray     begin     
+    param               stringArray     end 
+  
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 2.2.9
+    SendFlag 1
+
+</2.1.9 atctst_aud_voc_get_eq>
+
+
+<2.1.10 atctst_aud_voc_get_diggain>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      19    0..19    Operate_Type  |nochange;|
+    
+    param               stringArray     begin     
+    param               stringArray     end 
+  
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 2.2.10
+    SendFlag 1
+
+</2.1.10 atctst_aud_voc_get_diggain>
+
+
+<2.1.11 atctst_aud_voc_get_vad_agc_tx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0      0..5     path_mode     |nochange;|
+    ctrl    s32      21     0..19    Operate_Type  |nochange;|
+  
+    param               stringArray     begin     
+    param               stringArray     end 
+
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 2.2.11
+    SendFlag 1
+
+</2.1.11 atctst_aud_voc_get_vad_agc_tx>
+
+
+
+<2.1.12 atctst_aud_voc_get_vad_agc_rx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0      0..5     path_mode     |nochange;|
+    ctrl    s32      23     0..19    Operate_Type  |nochange;|
+  
+    param               stringArray     begin     
+    param               stringArray     end 
+
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 2.2.12
+    SendFlag 1
+
+</2.1.12 atctst_aud_voc_get_vad_agc_rx>
+
+
+
+
+
+
+<2.2.1 atctst_aud_voc_set_hpf>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5    path_mode     |nochange;|
+    ctrl    s32      0     0..19   Operate_Type  |nochange;|
+    
+    hpf    stringArray      begin
+       hpf_en         s16        0       -32768..32767           hpf_en         |input;|
+       RESERVE         s16        0       -32768..32767          RESERVE         |input;|
+       
+       num[3]         struct    begin
+          num[0]      s16       0         -32768..32767           num[0]         |input;|
+          num[1]      s16       0         -32768..32767           num[1]         |input;|
+          num[2]      s16       0         -32768..32767           num[2]         |input;|          
+       num[3]         struct    end
+       
+       den[3]         struct    begin
+          den[0]      s16       0      -32768..32767           den[0]         |input;|
+          den[1]      s16       0      -32768..32767           den[1]         |input;|
+          den[2]      s16       0      -32768..32767           den[2]         |input;|          
+       den[3]         struct    end
+    
+       gain         s16        0     -32768..32767           gain             |input;|
+       type         s16        0     -32768..32767           type             |input;|
+       freq         s16        0     -32768..32767           freq             |select;45;90;180;238;300;|
+       param        s16        0     -32768..32767           param            |input;|       
+       reserved[2]         struct    begin
+          reserved[0]      s16       0      -32768..32767           reserved[0]         |input;|
+          reserved[1]      s16       0      -32768..32767           reserved[1]         |input;|          
+       reserved[2]         struct    end
+        
+    
+    hpf    stringArray      end
+  
+//    test[20]     u16        0x123400   array             test         |multiedit;|
+  
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</2.2.1 atctst_aud_voc_set_hpf>
+
+
+
+<2.2.2 atctst_aud_voc_set_fir_tx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      2     0..19    Operate_Type  |nochange;|
+    
+    fir    stringArray      begin
+     fir_en         s16        0       -32768..32767           fir_en         |input;|
+       
+       Filter[64]         struct    begin
+          Filter[0]      s16       0      -32768..32767           Filter[0]         |input;|
+          Filter[1]      s16       0      -32768..32767           Filter[1]         |input;|
+          Filter[2]      s16       0      -32768..32767           Filter[2]         |input;|          
+          Filter[3]      s16       0      -32768..32767           Filter[3]         |input;|
+          Filter[4]      s16       0      -32768..32767           Filter[4]         |input;|
+          Filter[5]      s16       0      -32768..32767           Filter[5]         |input;|          
+          Filter[6]      s16       0      -32768..32767           Filter[6]         |input;|
+          Filter[7]      s16       0      -32768..32767           Filter[7]         |input;|
+          Filter[8]      s16       0      -32768..32767           Filter[8]         |input;|          
+          Filter[9]      s16       0      -32768..32767           Filter[9]         |input;|          
+
+          Filter[10]      s16       0      -32768..32767           Filter[10]         |input;|
+          Filter[11]      s16       0      -32768..32767           Filter[11]         |input;|
+          Filter[12]      s16       0      -32768..32767           Filter[12]         |input;|          
+          Filter[13]      s16       0      -32768..32767           Filter[13]         |input;|
+          Filter[14]      s16       0      -32768..32767           Filter[14]         |input;|
+          Filter[15]      s16       0      -32768..32767           Filter[15]         |input;|          
+          Filter[16]      s16       0      -32768..32767           Filter[16]         |input;|
+          Filter[17]      s16       0      -32768..32767           Filter[17]         |input;|
+          Filter[18]      s16       0      -32768..32767           Filter[18]         |input;|          
+          Filter[19]      s16       0      -32768..32767           Filter[19]         |input;|          
+
+
+          Filter[20]      s16       0      -32768..32767           Filter[20]         |input;|
+          Filter[21]      s16       0      -32768..32767           Filter[21]         |input;|
+          Filter[22]      s16       0      -32768..32767           Filter[22]         |input;|          
+          Filter[23]      s16       0      -32768..32767           Filter[23]         |input;|
+          Filter[24]      s16       0      -32768..32767           Filter[24]         |input;|
+          Filter[25]      s16       0      -32768..32767           Filter[25]         |input;|          
+          Filter[26]      s16       0      -32768..32767           Filter[26]         |input;|
+          Filter[27]      s16       0      -32768..32767           Filter[27]         |input;|
+          Filter[28]      s16       0      -32768..32767           Filter[28]         |input;|          
+          Filter[29]      s16       0      -32768..32767           Filter[29]         |input;|          
+
+
+          Filter[30]      s16       0      -32768..32767           Filter[30]         |input;|
+          Filter[31]      s16       0      -32768..32767           Filter[31]         |input;|
+          Filter[32]      s16       0      -32768..32767           Filter[32]         |input;|          
+          Filter[33]      s16       0      -32768..32767           Filter[33]         |input;|
+          Filter[34]      s16       0      -32768..32767           Filter[34]         |input;|
+          Filter[35]      s16       0      -32768..32767           Filter[35]         |input;|          
+          Filter[36]      s16       0      -32768..32767           Filter[36]         |input;|
+          Filter[37]      s16       0      -32768..32767           Filter[37]         |input;|
+          Filter[38]      s16       0      -32768..32767           Filter[38]         |input;|          
+          Filter[39]      s16       0      -32768..32767           Filter[39]         |input;|          
+
+
+          Filter[40]      s16       0      -32768..32767           Filter[40]         |input;|
+          Filter[41]      s16       0      -32768..32767           Filter[41]         |input;|
+          Filter[42]      s16       0      -32768..32767           Filter[42]         |input;|          
+          Filter[43]      s16       0      -32768..32767           Filter[43]         |input;|
+          Filter[44]      s16       0      -32768..32767           Filter[44]         |input;|
+          Filter[45]      s16       0      -32768..32767           Filter[45]         |input;|          
+          Filter[46]      s16       0      -32768..32767           Filter[46]         |input;|
+          Filter[47]      s16       0      -32768..32767           Filter[47]         |input;|
+          Filter[48]      s16       0      -32768..32767           Filter[48]         |input;|          
+          Filter[49]      s16       0      -32768..32767           Filter[49]         |input;|          
+
+
+          Filter[50]      s16       0      -32768..32767           Filter[50]         |input;|
+          Filter[51]      s16       0      -32768..32767           Filter[51]         |input;|
+          Filter[52]      s16       0      -32768..32767           Filter[52]         |input;|          
+          Filter[53]      s16       0      -32768..32767           Filter[53]         |input;|
+          Filter[54]      s16       0      -32768..32767           Filter[54]         |input;|
+          Filter[55]      s16       0      -32768..32767           Filter[55]         |input;|          
+          Filter[56]      s16       0      -32768..32767           Filter[56]         |input;|
+          Filter[57]      s16       0      -32768..32767           Filter[57]         |input;|
+          Filter[58]      s16       0      -32768..32767           Filter[58]         |input;|          
+          Filter[59]      s16       0      -32768..32767           Filter[59]         |input;|          
+
+
+          Filter[60]      s16       0      -32768..32767           Filter[60]         |input;|
+          Filter[61]      s16       0      -32768..32767           Filter[61]         |input;|
+          Filter[62]      s16       0      -32768..32767           Filter[62]         |input;|          
+          Filter[63]      s16       0      -32768..32767           Filter[63]         |input;|
+ 
+       Filter[64]         struct    end
+     
+    fir    stringArray      end
+  
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</2.2.2 atctst_aud_voc_set_fir_tx>
+
+
+
+<2.2.3 atctst_aud_voc_set_fir_rx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      4     0..19    Operate_Type  |nochange;|
+    
+    fir   stringArray     begin
+    fir_en         s16        0       -32768..32767           fir_en         |input;|
+    
+       Filter[64]         struct    begin
+          Filter[0]      s16       0      -32768..32767           Filter[0]         |input;|
+          Filter[1]      s16       0      -32768..32767           Filter[1]         |input;|
+          Filter[2]      s16       0      -32768..32767           Filter[2]         |input;|          
+          Filter[3]      s16       0      -32768..32767           Filter[3]         |input;|
+          Filter[4]      s16       0      -32768..32767           Filter[4]         |input;|
+          Filter[5]      s16       0      -32768..32767           Filter[5]         |input;|          
+          Filter[6]      s16       0      -32768..32767           Filter[6]         |input;|
+          Filter[7]      s16       0      -32768..32767           Filter[7]         |input;|
+          Filter[8]      s16       0      -32768..32767           Filter[8]         |input;|          
+          Filter[9]      s16       0      -32768..32767           Filter[9]         |input;|          
+
+          Filter[10]      s16       0      -32768..32767           Filter[10]         |input;|
+          Filter[11]      s16       0      -32768..32767           Filter[11]         |input;|
+          Filter[12]      s16       0      -32768..32767           Filter[12]         |input;|          
+          Filter[13]      s16       0      -32768..32767           Filter[13]         |input;|
+          Filter[14]      s16       0      -32768..32767           Filter[14]         |input;|
+          Filter[15]      s16       0      -32768..32767           Filter[15]         |input;|          
+          Filter[16]      s16       0      -32768..32767           Filter[16]         |input;|
+          Filter[17]      s16       0      -32768..32767           Filter[17]         |input;|
+          Filter[18]      s16       0      -32768..32767           Filter[18]         |input;|          
+          Filter[19]      s16       0      -32768..32767           Filter[19]         |input;|          
+
+
+          Filter[20]      s16       0      -32768..32767           Filter[20]         |input;|
+          Filter[21]      s16       0      -32768..32767           Filter[21]         |input;|
+          Filter[22]      s16       0      -32768..32767           Filter[22]         |input;|          
+          Filter[23]      s16       0      -32768..32767           Filter[23]         |input;|
+          Filter[24]      s16       0      -32768..32767           Filter[24]         |input;|
+          Filter[25]      s16       0      -32768..32767           Filter[25]         |input;|          
+          Filter[26]      s16       0      -32768..32767           Filter[26]         |input;|
+          Filter[27]      s16       0      -32768..32767           Filter[27]         |input;|
+          Filter[28]      s16       0      -32768..32767           Filter[28]         |input;|          
+          Filter[29]      s16       0      -32768..32767           Filter[29]         |input;|          
+
+
+          Filter[30]      s16       0      -32768..32767           Filter[30]         |input;|
+          Filter[31]      s16       0      -32768..32767           Filter[31]         |input;|
+          Filter[32]      s16       0      -32768..32767           Filter[32]         |input;|          
+          Filter[33]      s16       0      -32768..32767           Filter[33]         |input;|
+          Filter[34]      s16       0      -32768..32767           Filter[34]         |input;|
+          Filter[35]      s16       0      -32768..32767           Filter[35]         |input;|          
+          Filter[36]      s16       0      -32768..32767           Filter[36]         |input;|
+          Filter[37]      s16       0      -32768..32767           Filter[37]         |input;|
+          Filter[38]      s16       0      -32768..32767           Filter[38]         |input;|          
+          Filter[39]      s16       0      -32768..32767           Filter[39]         |input;|          
+
+
+          Filter[40]      s16       0      -32768..32767           Filter[40]         |input;|
+          Filter[41]      s16       0      -32768..32767           Filter[41]         |input;|
+          Filter[42]      s16       0      -32768..32767           Filter[42]         |input;|          
+          Filter[43]      s16       0      -32768..32767           Filter[43]         |input;|
+          Filter[44]      s16       0      -32768..32767           Filter[44]         |input;|
+          Filter[45]      s16       0      -32768..32767           Filter[45]         |input;|          
+          Filter[46]      s16       0      -32768..32767           Filter[46]         |input;|
+          Filter[47]      s16       0      -32768..32767           Filter[47]         |input;|
+          Filter[48]      s16       0      -32768..32767           Filter[48]         |input;|          
+          Filter[49]      s16       0      -32768..32767           Filter[49]         |input;|          
+
+
+          Filter[50]      s16       0      -32768..32767           Filter[50]         |input;|
+          Filter[51]      s16       0      -32768..32767           Filter[51]         |input;|
+          Filter[52]      s16       0      -32768..32767           Filter[52]         |input;|          
+          Filter[53]      s16       0      -32768..32767           Filter[53]         |input;|
+          Filter[54]      s16       0      -32768..32767           Filter[54]         |input;|
+          Filter[55]      s16       0      -32768..32767           Filter[55]         |input;|          
+          Filter[56]      s16       0      -32768..32767           Filter[56]         |input;|
+          Filter[57]      s16       0      -32768..32767           Filter[57]         |input;|
+          Filter[58]      s16       0      -32768..32767           Filter[58]         |input;|          
+          Filter[59]      s16       0      -32768..32767           Filter[59]         |input;|          
+
+
+          Filter[60]      s16       0      -32768..32767           Filter[60]         |input;|
+          Filter[61]      s16       0      -32768..32767           Filter[61]         |input;|
+          Filter[62]      s16       0      -32768..32767           Filter[62]         |input;|          
+          Filter[63]      s16       0      -32768..32767           Filter[63]         |input;|
+ 
+       Filter[64]         struct    end
+       
+    fir stringArray  end
+ 
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</2.2.3 atctst_aud_voc_set_fir_rx>
+
+
+
+<2.2.4 atctst_aud_voc_set_aec>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      6     0..19    Operate_Type  |nochange;|
+         
+    aec   stringArray    begin
+          AecEnableFlag             s16       0      -32768..32767           Filter[0]          |input;|
+          AgcEnableFlag             s16       0      -32768..32767           Filter[1]          |input;|
+          ProcessMode               s16       0      -32768..32767           Filter[2]          |input;|          
+          InitRegularFactor         s16       0      -32768..32767           Filter[3]          |input;|
+          AFUpdateFactor            s16       0      -32768..32767           Filter[4]          |input;|
+          AFCtrlSpeedUpFactor       s16       0      -32768..32767           Filter[5]          |input;|          
+          AFFilterAmp               s16       0      -32768..32767           Filter[6]          |input;|
+          EchoEstMethod             s16       0      -32768..32767           Filter[7]          |input;|
+          NoiseUpdateFactor         s16       0      -32768..32767           Filter[8]          |input;|          
+          SNRUpdateFactor           s16       0      -32768..32767           Filter[9]          |input;|          
+          SNRLimit                  s16       0      -32768..32767           Filter[9]          |input;|  
+          NoiseOverEstFactor        s16       0      -32768..32767           Filter[10]         |input;|
+          NoiseGainLimit            s16       0      -32768..32767           Filter[11]         |input;|
+          EchoUpdateFactor          s16       0      -32768..32767           Filter[12]         |input;|          
+          SERUpdateFactor           s16       0      -32768..32767           Filter[13]         |input;|
+          SERLimit                  s16       0      -32768..32767           Filter[14]         |input;|
+          EchoOverEstFactor         s16       0      -32768..32767           Filter[15]         |input;|          
+          EchoGainLimit             s16       0      -32768..32767           Filter[16]         |input;|
+          CNGFactor                 s16       0      -32768..32767           Filter[17]         |input;|
+          AmpGain                   s16       0      -32768..32767           Filter[18]         |input;|          
+          NoiseMin                  s32       0      -32768..32767           Filter[19]         |input;|          
+          PFPrevEchoEstLimit        s32       0      -2147483648..2147483647           Filter[9]          |input;|  
+          PFDTEchoOverEstFactor     s16       0      -2147483648..2147483647           Filter[9]          |input;| 
+          
+          PFEchoGainLimitAmp[9]   struct    begin
+             PFEchoGainLimitAmp[0]      s16       0      -32768..32767           noise_probe_range[0]          |input;|
+             PFEchoGainLimitAmp[1]      s16       0      -32768..32767           noise_probe_range[1]          |input;|
+             PFEchoGainLimitAmp[2]      s16       0      -32768..32767           noise_probe_range[2]          |input;|
+             PFEchoGainLimitAmp[3]      s16       0      -32768..32767           noise_probe_range[3]          |input;|
+             PFEchoGainLimitAmp[4]      s16       0      -32768..32767           noise_probe_range[0]          |input;|
+             PFEchoGainLimitAmp[5]      s16       0      -32768..32767           noise_probe_range[1]          |input;|
+             PFEchoGainLimitAmp[6]      s16       0      -32768..32767           noise_probe_range[2]          |input;|
+             PFEchoGainLimitAmp[7]      s16       0      -32768..32767           noise_probe_range[3]          |input;|
+             PFEchoGainLimitAmp[8]      s16       0      -32768..32767           noise_probe_range[3]          |input;|         
+          PFEchoGainLimitAmp[9]   struct    end 
+          
+          NoiseGainLimitStep        s16       0      -32768..32767           Filter[21]         |input;|
+          AmpThr                    s16       0      -32768..32767           Filter[22]         |input;|          
+          PFCLDataSmoothFactor      s16       0      -32768..32767           Filter[23]         |input;|
+          PFCLNoiseUpdateFactor     s16       0      -32768..32767           Filter[24]         |input;|
+          PFCLThrSigDet             s16       0      -32768..32767           Filter[25]         |input;|          
+          PFCLThrDT                 s16       0      -32768..32767           Filter[26]         |input;|
+          DataSmoothFactor          s16       0      -32768..32767           Filter[27]         |input;|
+          PFCLChanlGain             s16       0      -32768..32767           Filter[28]         |input;|          
+          PFCLThrNT                 s16       0      -32768..32767           Filter[29]         |input;|          
+          PFCLThrDTDiff             s16       0      -32768..32767           Filter[9]          |input;|    
+          PFCLDTHoldTime            s16       0      -32768..32767           Filter[9]          |input;|  
+          PFCLDTStartTime           s16       0      -32768..32767           Filter[30]         |input;|
+          PFCLDTDUpdateFactor       s16       0      -32768..32767           Filter[31]         |input;|
+          PFCLDTDThreshold          s16       0      -32768..32767           Filter[32]         |input;|          
+          PFCLDTD2ndThreshold       s16       0      -32768..32767           Filter[33]         |input;|
+          StrongEchoFlag            s16       0      -32768..32767           Filter[34]         |input;|
+          PFCLDTDThrRatio           s16       0      -32768..32767           Filter[35]         |input;|
+          DelaySampleNum            s16       0      -32768..32767           Filter[36]         |input;|		  
+  
+    
+          // 2016-08-10 add By LaoTan
+          FrameCntLimitNum[3]   struct    begin
+             FrameCntLimitNum[0]         s16       0      -32768..32767      FrameCntLimitNum[0]         |input;|	
+             FrameCntLimitNum[1]         s16       0      -32768..32767      FrameCntLimitNum[1]         |input;|	
+             FrameCntLimitNum[2]         s16       0      -32768..32767      FrameCntLimitNum[2]         |input;|	          	  
+          FrameCntLimitNum[3]   struct    end
+   
+          NoiseCntLimitNum[4]   struct    begin
+             NoiseCntLimitNum[0]         s16       0      -32768..32767      NoiseCntLimitNum[0]         |input;|	
+             NoiseCntLimitNum[1]         s16       0      -32768..32767      NoiseCntLimitNum[1]         |input;|	
+             NoiseCntLimitNum[2]         s16       0      -32768..32767      NoiseCntLimitNum[2]         |input;|	 
+             NoiseCntLimitNum[3]         s16       0      -32768..32767      NoiseCntLimitNum[3]         |input;|	                    	  
+          NoiseCntLimitNum[4]   struct    end
+ 
+          NoiseWeightSNRLimitMax             s16       0      -32768..32767      NoiseGainLimitMax             |input;|	 
+          NoiseWeightSNRLimitMin             s16       0      -32768..32767      NoiseGainLimitMin             |input;|	 
+          NoiseWeightSNRTh1         s16       0      -32768..32767      NoiseGainLimit_SNRTh1         |input;|	 
+          NoiseWeightSNRTh2         s16       0      -32768..32767      NoiseGainLimit_SNRTh2         |input;|	 
+          NoiseWeightSNRLimitStep         s16       0      -32768..32767      NoiseGainLimit_SNRTh2         |input;|	 
+          NoiseWeightSub1DecayFactor         s16       0      -32768..32767      NoiseGainLimit_SNRTh2         |input;|	 
+          ResidualEchoEnable           s16       0      -32768..32767      RESIDUL_ECHO_Enable           |input;|	 
+          AGCRrrSpkRelation             s16       0      -32768..32767      AGCRrrSpkRelation             |input;|	 
+          AddAttDB                      s16       0      -32768..32767      AddAttDB                      |input;|	 
+          MinAttDB                      s16       0      -32768..32767      MinAttDB                      |input;|	 
+          MaxAttDB                      s16       0      -32768..32767      MaxAttDB                      |input;|	 
+          NPowRiseFactor                s16       0      -32768..32767      NPowRiseFactor                |input;|	 
+          WorkFactFactor                s16       0      -32768..32767      WorkFactFactor                |input;|	 
+          AttExtFactor                  s16       0      -32768..32767      AttExtFactor                  |input;|	 
+          AttRiseFactor                 s16       0      -32768..32767      AttRiseFactor                 |input;|	 
+          AttDecayFactor                s16       0      -32768..32767      AttDecayFactor                |input;|	 
+          Log2LinFactor                 s16       0      -32768..32767      Log2LinFactor                 |input;|	  
+  
+  
+    aec   stringArray    end
+       
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</2.2.4 atctst_aud_voc_set_aec>
+
+
+
+<2.2.5 atctst_aud_voc_set_speex_tx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      8     0..5     Operate_Type  |nochange;|
+         
+    speex   stringArray    begin
+    
+         speex_en                  s16       0      -32768..32767           speex_en                   |input;|
+         noise_suppress_defaul      s16       0      -32768..32767          noise_suppress_defaul      |input;|
+    
+         noise_probe_range[4]   struct    begin
+             noise_probe_range[0]      s16       0      -32768..32767           noise_probe_range[0]          |input;|
+             noise_probe_range[1]      s16       0      -32768..32767           noise_probe_range[1]          |input;|
+             noise_probe_range[2]      s16       0      -32768..32767           noise_probe_range[2]          |input;|
+             noise_probe_range[3]      s16       0      -32768..32767           noise_probe_range[3]          |input;|
+         noise_probe_range[4]   struct    end
+         
+         reserved[2]   struct    begin
+            reserved[0]      s16       0      -32768..32767           reserved[0]          |input;|
+            reserved[1]      s16       0      -32768..32767           reserved[1]          |input;|
+         reserved[2]   struct    end
+       
+    speex   stringArray    end
+       
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</2.2.5 atctst_aud_voc_set_speex_tx>
+
+
+
+
+<2.2.6 atctst_aud_voc_set_speex_rx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5      path_mode     |nochange;|
+    ctrl    s32      10    0..5      Operate_Type  |nochange;|
+         
+    speex   stringArray    begin
+    
+         speex_en                   s16       0      -32768..32767           speex_en                   |input;|
+         noise_suppress_defaul      s16       0      -32768..32767          noise_suppress_defaul      |input;|
+    
+         noise_probe_range[4]   struct    begin
+ 
+             noise_probe_range[0]      s16       0      -32768..32767           noise_probe_range[0]          |input;|
+             noise_probe_range[1]      s16       0      -32768..32767           noise_probe_range[1]          |input;|
+             noise_probe_range[2]      s16       0      -32768..32767           noise_probe_range[2]          |input;|
+             noise_probe_range[3]      s16       0      -32768..32767           noise_probe_range[3]          |input;|
+         
+         noise_probe_range[4]   struct    end
+         
+         
+         reserved[2]   struct    begin
+ 
+            reserved[0]      s16       0      -32768..32767           reserved[0]          |input;|
+            reserved[1]      s16       0      -32768..32767           reserved[1]          |input;|
+                    
+         reserved[2]   struct    end
+         
+    speex   stringArray    end
+       
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</2.2.6 atctst_aud_voc_set_speex_rx>
+
+
+<2.2.7 atctst_aud_voc_set_agc_tx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5      path_mode     |nochange;|
+    ctrl    s32      12    0..5      Operate_Type  |nochange;|
+         
+    agc   stringArray    begin
+    
+         agc_en                  s16       0      -32768..32767           agc_en                   |input;|
+         smooth_threshold        s16       0      -32768..32767           smooth_threshold         |input;|
+         noise_threshold         s16       0      -32768..32767           noise_threshold          |input;|
+         gain                    s16       0      -32768..32767           gain                   |input;|
+       
+    agc   stringArray    end
+       
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</2.2.7 atctst_aud_voc_set_agc_tx>
+
+
+<2.2.8 atctst_aud_voc_set_agc_rx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      14    0..5     Operate_Type  |nochange;|
+         
+    agc   stringArray    begin
+    
+         agc_en                  s16       0      -32768..32767           agc_en                   |input;|
+         smooth_threshold        s16       0      -32768..32767           smooth_threshold         |input;|
+         noise_threshold         s16       0      -32768..32767           noise_threshold          |input;|
+         gain                    s16       0      -32768..32767           gain                   |input;|
+       
+    agc   stringArray    end
+       
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</2.2.8 atctst_aud_voc_set_agc_rx>
+
+
+
+<2.2.9 atctst_aud_voc_set_eq>
+
+    cmd    AT+CAVCP=
+    id     1
+    itf    s32      0     0..5      path_mode     |nochange;|
+    ctrl   s32      16    0..5      Operate_Type  |nochange;|
+         
+    eq   stringArray    begin
+    
+         EQ_EN                   s16       0      -32768..32767           EQ_EN                   |input;|
+         RESERVE                 s16       0      -32768..32767         RESERVE                   |input;|
+         
+         Baud[7]       struct     begin
+ 
+            Baud[0]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end
+                                             
+            Baud[0]    struct     end
+            
+            
+            Baud[1]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[1]    struct     end            
+            
+            
+            Baud[2]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[2]    struct     end
+            
+
+            Baud[3]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[3]    struct     end
+                        
+        
+            Baud[4]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[4]    struct     end        
+        
+        
+            Baud[5]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[5]    struct     end        
+        
+            Baud[6]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[6]    struct     end        
+        
+        
+         Baud[7]       struct     end
+                  
+       
+    eq   stringArray    end
+       
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</2.2.9 atctst_aud_voc_set_eq>
+
+
+<2.2.10 atctst_aud_voc_set_diggain>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      18    0..5     Operate_Type  |nochange;|
+         
+    agc   stringArray    begin
+    
+		    in_enable                s16       0      -32768..32767           in_enable         |input;|
+		    out_enable               s16       0      -32768..32767           out_enable        |input;|
+		    
+        scal_in                  s16       0      -32768..32767           scal_in           |input;|
+        scal_out                 s16       0      -32768..32767           scal_out          |input;|
+        
+    diggain   stringArray    end
+       
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</2.2.10 atctst_aud_voc_set_diggain>
+
+
+
+
+
+<2.2.11 atctst_aud_voc_set_vad_agc_tx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      20    0..5     Operate_Type  |nochange;|
+         
+    vad_agc_tx   stringArray    begin
+
+		    enable                    s16       0      -32768..32767           AGC_Enable             |input;|
+		    target_level_dbfs         s16       0      -32768..32767           target_level_dbfs      |input;|
+		    compression_gain_db       s16       0      -32768..32767           compression_gain_db    |input;|
+		    limiter_enable            s16       0      -32768..32767           limiter_enable         |input;|
+		    
+		    upper_thr                 s16       0      -32768..32767           upper_thr              |input;|
+        lower_thr                 s16       0      -32768..32767           lower_thr              |input;|
+        decay_value               s16       0      -32768..32767           decay_value            |input;|
+        
+        capacitor_slow_factor     s16       0      -32768..32767           capacitor_slow_factor  |input;|
+        capacitor_fast_factor     s16       0      -32768..32767           capacitor_fast_factor  |input;|		    
+        
+        noise_compress_factor     s16       0      -32768..32767           noise_compress_factor  |input;|
+        
+        noise_gate_thr            s16       0      -32768..32767           noise_gate_thr         |input;|
+        noise_std_short_term_factor     s16       0      -32768..32767           noise_std_short_term_factor  |input;|
+             
+    vad_agc_tx   stringArray    end
+       
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</2.2.11 atctst_aud_voc_set_vad_agc_tx>
+
+
+
+
+<2.2.12 atctst_aud_voc_set_vad_agc_rx>
+
+    cmd     AT+CAVCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      22    0..5     Operate_Type  |nochange;|
+         
+          
+    vad_agc_xx   stringArray    begin
+
+  enable                    s16       0      -32768..32767           AGC_Enable             |input;|
+		    target_level_dbfs         s16       0      -32768..32767           target_level_dbfs      |input;|
+		    compression_gain_db       s16       0      -32768..32767           compression_gain_db    |input;|
+		    limiter_enable            s16       0      -32768..32767           limiter_enable         |input;|
+		    
+		    upper_thr                 s16       0      -32768..32767           upper_thr              |input;|
+        lower_thr                 s16       0      -32768..32767           lower_thr              |input;|
+        decay_value               s16       0      -32768..32767           decay_value            |input;|
+        
+        capacitor_slow_factor     s16       0      -32768..32767           capacitor_slow_factor  |input;|
+        capacitor_fast_factor     s16       0      -32768..32767           capacitor_fast_factor  |input;|		    
+        
+        noise_compress_factor     s16       0      -32768..32767           noise_compress_factor  |input;|
+        
+        noise_gate_thr            s16       0      -32768..32767           noise_gate_thr         |input;|
+        noise_std_short_term_factor     s16       0      -32768..32767           noise_std_short_term_factor  |input;|
+             
+    vadagc_xx   stringArray    end
+       
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</2.2.12 atctst_aud_voc_set_vad_agc_rx>
+
+
+
+
+
+
+<<3. Audio Music Play Calibration>>
+
+
+<3.1.1 atctst_aud_mus_get_eq>
+
+    cmd     AT+CAMCP=
+    id      1
+    itf     s32      0     0..5     path_mode     ||nochange;|
+    ctrl    s32      1     0..3     Operate_Type  |select;1:atctst_aud_mus_get_eq;| 
+    param               stringArray     begin     
+    param               stringArray     end 
+    
+       
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 3.2.1
+    SendFlag 1
+
+</3.1.1 atctst_aud_mus_get_eq>
+
+
+<3.1.2 atctst_aud_mus_get_drc>
+
+    cmd     AT+CAMCP=
+    id      1
+    itf     s32      0     0..5    path_mode     |nochange;|
+    ctrl    s32      3     0..3    Operate_Type  |nochange;|
+    
+    param               stringArray     begin     
+    param               stringArray     end 
+       
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 3.2.2
+    SendFlag 1
+
+</3.1.2 atctst_aud_mus_get_drc>
+
+
+<3.2.1 atctst_aud_mus_set_eq>
+
+    cmd     AT+CAMCP=
+    id      1
+    itf     s32      0     0..5     path_mode     |nochange;|
+    ctrl    s32      0     0..3     Operate_Type  |nochange;|
+    
+    eq   stringArray    begin
+    
+         EQ_EN                   s16       0      -32768..32767           EQ_EN                   |input;|
+         RESERVE                 s16       0      -32768..32767         RESERVE                   |input;|
+         
+         Baud[7]       struct     begin
+ 
+            Baud[0]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[0]    struct     end
+            
+            
+            Baud[1]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[1]    struct     end            
+            
+            
+            Baud[2]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[2]    struct     end
+            
+
+            Baud[3]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[3]    struct     end
+                        
+        
+            Baud[4]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[4]    struct     end        
+        
+        
+            Baud[5]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[5]    struct     end        
+        
+            Baud[6]    struct     begin            
+                 num[3]         struct    begin
+                    num[0]      s16       0      -32768..32767           num[0]         |input;|
+                    num[1]      s16       0      -32768..32767           num[1]         |input;|
+                    num[2]      s16       0      -32768..32767           num[2]         |input;|          
+                 num[3]         struct    end
+       
+                 den[3]         struct    begin
+                    den[0]      s16       0      -32768..32767           den[0]         |input;|
+                    den[1]      s16       0      -32768..32767           den[1]         |input;|
+                    den[2]      s16       0      -32768..32767           den[2]         |input;|          
+                 den[3]         struct    end
+    
+                 gain         s16        0     -32768..32767           gain             |input;|
+                 type         s16        0     -32768..32767           type             |input;|
+                 freq         s16        0     -32768..32767           freq             |input;|
+                 param        s16        0     -32768..32767           param            |input;|
+            
+                 reserved[2]    struct    begin                 
+                    reserved[0]   s16     0    -32768..32767          reserved[0]       |input;|
+                    reserved[1]   s16     0    -32768..32767          reserved[1]       |input;|                    
+                 reserved[2]    struct    end                                
+            Baud[6]    struct     end        
+        
+        
+         Baud[7]       struct     end
+                  
+       
+    eq   stringArray    end
+        
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</3.2.1 atctst_aud_mus_set_eq>
+
+
+
+<3.2.2 atctst_aud_mus_set_drc>
+
+     cmd     AT+CAMCP=
+    id      1
+    itf     s32      0     0..5    path_mode     |nochange;|
+    ctrl    s32      2     0..3    Operate_Type  |nochange;|
+    
+    eq      stringArray      begin
+          ALC_Enable            s16       0      -32768..32767           ALC_Enable              |input;|   
+          thres                 s16       0      -32768..32767           thres                   |input;|   
+          width                 s16       0      -32768..32767           width                   |input;|   
+          R                     s16       0      -32768..32767           R                       |input;|   
+          R1                    s16       0      -32768..32767           R1                      |input;| 
+          R2                    s16       0      -32768..32767           R2                      |input;| 
+          limit                 s16       0      -32768..32767           limit                   |input;| 
+          M                     s16       0      -32768..32767           M                       |input;|   
+          Alphal1               s16       0      -32768..32767           Alphal1                 |input;|   
+          Alphal2               s16       0      -32768..32767           Alphal2                 |input;|   
+          Noise_gate            s16       0      -32768..32767           Noise_gate              |input;|    
+          alpha_max             s16       0      -32768..32767           alpha_max                  |input;| 
+          Thr_dB                s16       0      -32768..32767           Thr_dB                  |input;| 
+          mm_gain               s16       0      -32768..32767           mm_gain                  |input;| 
+          channel               s16       0      -32768..32767           channel                  |input;| 
+          reserved              s16       0      -32768..32767           reserved                  |input;|   
+    eq      stringArray      end
+        
+    true  OK
+    false ERROR
+    //SendFlag 1
+    HideFlag  1
+
+</3.2.2 atctst_aud_mus_set_drc>
+
+
+
+
+//关闭AT回显
+<999.999.1 atctst_aud_set_echo_off>
+
+    cmd   ATE0
+    id    1
+           
+    true  OK
+    false ERROR
+    HideFlag 2
+    SendFlag 1
+
+</999.999.1 atctst_aud_set_echo_off>
+
+
+
+// 打开AT回显
+<999.999.2 atctst_aud_set_echo_on>
+
+    cmd   ATE1
+    id    1
+           
+    true  OK
+    false ERROR
+    HideFlag 2
+    SendFlag 1
+
+</999.999.2 atctst_aud_set_echo_on>
+
+
+
+// 获取手机软件代码版本
+<999.999.3 atctst_aud_get_code_ver>
+    cmd     AT+CAVCT=
+    id      1
+    itf     s32      0     0..5    path_mode     |nochange;|
+    ctrl    s32      0     0..3    Operate_Type  |nochange;|
+    
+    param      stringArray      begin
+   
+    param      stringArray      end
+           
+    true  OK
+    false ERROR
+    skipparams 2
+    ReturnAT 999.999.4
+    HideFlag 2
+    SendFlag 1
+
+</999.999.3 atctst_aud_get_code_ver>
+
+
+
+// 设置手机软件代码版本
+<999.999.4 atctst_aud_set_code_ver>
+
+    cmd   ATE1
+    id    1
+    
+    itf     s32      0     0..5    path_mode     |nochange;|
+    ctrl    s32      0     0..3    Operate_Type  |nochange;|
+    
+    param     stringarray     begin
+        codever      u32    0x00    0x00..0xFFFFFFFF    codever    |input;|
+    param     stringarray     end   
+           
+    true  OK
+    false ERROR
+    HideFlag 2
+    SendFlag 1
+
+</999.999.4 atctst_aud_set_code_ver>
+
+
+
+
+
+
+<999.999.997 atctst_aud_dump_to_tflash>
+
+    cmd   AT+CADTF=
+    id    1
+    itf                 s32      0     0     path_mode     |nochange;|
+    ctrl                s32      1     0     Operate_Type  |nochange;|
+ 
+    param               stringArray     begin     
+    param               stringArray     end 
+          
+    true  OK
+    false ERROR
+    skipparams 2
+    HideFlag   2
+    SendFlag 1
+
+</999.999.997 atctst_aud_dump_to_tflash>
+
+
+
+<999.999.998 atctst_aud_dump_to_tflash_stop>
+
+    cmd   AT+CADTF=
+    id    1
+    itf                 s32      0     0     path_mode     |nochange;|
+    ctrl                s32      0     0     Operate_Type  |nochange;|
+ 
+    param               stringArray     begin     
+    param               stringArray     end 
+          
+    true  OK
+    false ERROR
+    skipparams 2
+    HideFlag   2
+    SendFlag 1
+
+</999.999.998 atctst_aud_dump_to_tflash_stop>
+
+
+
+<999.999.999 atctst_aud_write_to_flash>
+
+    cmd   AT+CAWTF=
+    id    1
+    itf                 s32      0     0     path_mode     |nochange;|
+    ctrl                s32      0     0     Operate_Type  |nochange;|
+ 
+    param               stringArray     begin     
+    param               stringArray     end 
+          
+    true  OK
+    false ERROR
+    skipparams 2
+    HideFlag   2
+    SendFlag 1
+
+</999.999.999 atctst_aud_write_to_flash>
+

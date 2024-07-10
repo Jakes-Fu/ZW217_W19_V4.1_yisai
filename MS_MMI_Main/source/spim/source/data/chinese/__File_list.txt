@@ -1,0 +1,57 @@
+列表文件、数据文件和脚本文件需要入库，生成的资源文件不需要入库
+__File_list.txt - 本列表
+
+DATA:
+chs_vs_cht.txt - 汉字简繁对照文件，由数据文件手动编辑而成
+gb2312.txt - gb2312 数据文件，由代码生成
+SogouLabDic.dic - 主要数据文件，utf格式。用于生成联想字、词典数据
+stroke_chs.txt - 简体中文笔划数据，由数据文件手动编辑而成
+stroke_cht.txt - 繁体中文笔划数据，由数据文件手动编辑而成
+ucs_pinyin_spim.txt - 经过编辑的拼音数据
+use_frequence.txt - 由 read_book_dir.pl 生成的数据文件 _DIR_read_data_freq.dat 手动转存成 unicode 格式
+
+SCRIPT:
+gen_ch_data.pm - 通用函数及数据生成模板
+gen_ch_asso.pl - 生成联想字数据
+gen_ch_char.pl - 生成汉字的合法拼音组合、拼音数据、字符集
+gen_ch_word.pl - 生成词组数据
+gen_asso_data.pl - 生成联想字数据文件
+gen_pinyin_9k.pl - 生成9键拼音数据
+gen_stroke_data.pl - 生成笔划数据
+read_book_dir.pl - 采集汉字使用频率及汉字组合频率
+gen_ch_data.bat - 批处理生成所有的数据
+
+SRC:
+_asso.src - gen_ch_asso.pl 生成，用于 spim_asso.c 中作为联想字数据
+_chrset_chs.src - gen_ch_char.pl 生成，用于 spim_ch.c 中作为汉字数据库数据
+_chrset_cht.src - 同上
+_chrset_gb13000.src - 同上
+_chrset_gb2312.src - 同上
+_chr_py_idx.src - 同上，汉字拼音数据
+_chr_py_mp2.src - 同上，两个读音的拼音数据
+_chr_py_mp3.src - 同上，三个
+_chr_py_mp4.src - 同上，四个
+_chr_py_mp5.src - 同上，五个
+_pinyin.src -  同上，合法的拼音字母串
+_py_cnt_chs.src - 同上，和 _pinyin.src 对应的 chs 字符集中每个拼音下字符的个数
+_py_cnt_cht.src - 同上
+_py_cnt_gb13000.src - 同上
+_py_cnt_gb2312.src - 同上
+_pinyin_9k.src - gen_pinyin_9k.pl 生成，将 _pinyin.src 中字母映射成数字的串
+_word10.src - gen_ch_word.pl 生成，10个字的词，用于词数据库，实施上最多只用到了8个字的词，以上的就忽略不计了
+_word11.src - 同上
+_word12.src - 同上
+_word14.src - 同上
+_word2.src - 同上
+_word3.src - 同上
+_word4.src - 同上
+_word5.src - 同上
+_word6.src - 同上
+_word7.src - 同上
+_word8.src - 同上
+_word9.src - 同上
+_stroke_chs.src - gen_stroke_data.pl 生成，用于 spim_stroke.c 中笔划数据
+_stroke_cht.src - 同上
+
+OTHER:
+readme.txt - 关于一些文件的补充说明

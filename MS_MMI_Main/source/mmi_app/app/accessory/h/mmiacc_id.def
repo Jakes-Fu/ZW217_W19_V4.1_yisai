@@ -1,0 +1,55 @@
+	//calculater
+	WIN_ID_DEF(MMIACC_CALC_WIN_ID),
+	WIN_ID_DEF(MMIACC_CALC_POPWIN_ID),	
+
+	//world clock
+    WIN_ID_DEF(MMIACC_WCLK_WIN_ID),
+    WIN_ID_DEF(MMIACC_WCLK_OPTION2_WIN_ID),
+    WIN_ID_DEF(MMIACC_WCLK_OPTION1_WIN_ID),
+    WIN_ID_DEF(MMIACC_WCLK_ADD_CITY_WIN_ID),
+  	WIN_ID_DEF(MMIACC_WCLK_DELETE_CITY_WIN_ID),
+	WIN_ID_DEF(MMIACC_WCLK_SET_DST_WIN_ID),
+	WIN_ID_DEF(MMIACC_WCLK_CITY_LIST_OPTION_WIN_ID),
+	WIN_ID_DEF(MMIACC_WCLK_CITY_LIST_ODER_WIN_ID),
+
+	//counted time
+	WIN_ID_DEF(MMIACC_COUTIME_WIN_ID),//@zhaohui,counted time
+	WIN_ID_DEF(MMIACC_COUTIME_ARRIVE_WIN_ID),//@zhaohui,counted time
+
+	//tvout
+	WIN_ID_DEF(MMIACC_TV_OUT_SHOW_ID),
+
+	//udisk & sd card managment
+    WIN_ID_DEF(MMISDCARD_FORMATTING_WIN_ID),        // sd卡格式化时的等待窗口                                    
+    WIN_ID_DEF(MMIUDISK_WAIT_WIN_ID),               // Udisk等待窗口                                            
+    WIN_ID_DEF(MMIUDISK_IS_USING_WIN_ID),           // Udisk正在使用中动画窗口 
+    WIN_ID_DEF(MMIUDISK_USB_SERVICE_START_WIN_ID),            // 启动窗口
+    WIN_ID_DEF(MMIUDISK_USB_SERVICE_NOTIFY_WIN_ID),		//
+    WIN_ID_DEF(MMIUDISK_STOP_WAIT_WIN_ID),               //Stop Udisk等待窗口// @wancan.you udisk               
+    WIN_ID_DEF(MMIUDISK_USB_OPER_SELECT_WIN_ID),    //Usb operation select win id                               
+    WIN_ID_DEF(MMIUDISK_VUART_WAITING_WIN_ID),              //virtual uart waiting win id                       
+    WIN_ID_DEF(MMIUDISK_VUART_USING_WIN_ID),              //virtual uart using win id                           
+    WIN_ID_DEF(MMIUDISK_UPCC_USING_WIN_ID),              //pc camera using win id                               
+    WIN_ID_DEF(MMIUDISK_UPCC_MAIN_MENU_WIN_ID),              //pc camera main menu win id                       
+    WIN_ID_DEF(MMIUDISK_UPCC_SET_BRIGHTNESS_WIN_ID),              //pc camera set brightness win id
+    WIN_ID_DEF(MMIUDISK_UPCC_SET_CONTRAST_WIN_ID),              //pc camera set contrast win id
+    WIN_ID_DEF(MMIUDISK_UPCC_SET_EFFECT_WIN_ID),              //pc camera set effect win id
+    WIN_ID_DEF(MMIUDISK_UPCC_SENSOR_WIN_ID),              
+
+	//unit conversion
+    WIN_ID_DEF(MMIUNITCONV_MAIN_WIN_ID),     
+    WIN_ID_DEF(MMIUNITCONV_CHANGE_TYPE_WIN_ID), 
+    WIN_ID_DEF(MMIUNITCONV_CHANGE_CONVERSION_TYPE_WIN_ID), 
+
+    #ifdef TF_LOAD_SUPPORT
+    WIN_ID_DEF(MMI_TF_UPGRADING_WARNING_ID),  //T卡热升级前错误提示
+    #endif
+
+#if defined(ZDT_TOOLS_MENU_SUPPORT)// wuxx add.
+    WIN_ID_DEF(MMI_WATCH_TOOLS_MAIN_WIN_ID),                 // tools main win
+#endif
+    
+    #if defined(TORCH_SUPPORT)
+    WIN_ID_DEF(MMIACC_FLASHLIGHT_WIN_ID),
+    #endif
+

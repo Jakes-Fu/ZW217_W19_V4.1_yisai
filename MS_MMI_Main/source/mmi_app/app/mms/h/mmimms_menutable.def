@@ -1,0 +1,76 @@
+//begin MMS============================    
+        
+MENU_DEF(MENU_MMS_EDIT_OPTION,  menu_mms_edit_option,  GUIMENU_STYLE_THIRD, \
+         TXT_MMS_EDIT_OPTION,  IMAGE_NULL,  IMAGE_NULL, IMAGE_NULL, 9)
+
+//mms setting
+MENU_DEF(MENU_MMS_SETTING,  menu_mms_setting,  GUIMENU_STYLE_THIRD,\
+         TXT_MMS_MMSSETTING,  IMAGE_NULL,  IMAGE_NULL,  IMAGE_NULL,  GUIMENU_ITEM_NUM(menu_mms_setting)) 
+
+//mms edit
+MENU_DEF(MENU_MMS_MULTI_POP_MENU,  menu_mms_multi_pop_menu,  GUIMENU_STYLE_POPUP,\
+         STXT_OPTION,  IMAGE_NULL,  IMAGE_NULL,  IMAGE_NULL,  GUIMENU_ITEM_NUM(menu_mms_multi_pop_menu)) 
+
+//mms play opt menu item
+#ifdef STREAMING_SUPPORT_NEXTREAMING        
+MENU_DEF(     MENU_MMS_INBOX_MMSOPTION,             menu_mms_inbox_mmsoption,    GUIMENU_STYLE_POPUP,\
+            TXT_MMS_INBOX_OPTION,                        IMAGE_NULL,                    IMAGE_NULL,        IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_inbox_mmsoption))
+#else
+MENU_DEF(     MENU_MMS_INBOX_MMSOPTION,             menu_mms_inbox_mmsoption,    GUIMENU_STYLE_POPUP,\
+            TXT_MMS_INBOX_OPTION,                        IMAGE_NULL,                    IMAGE_NULL,        IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_inbox_mmsoption))
+#endif
+#if defined(MMI_IP_CALL_SUPPORT)||defined(VT_SUPPORT)
+MENU_DEF(     MENU_MMS_CALL_OPT,                 menu_mms_call_option,    GUIMENU_STYLE_POPUP,\
+            TXT_CALL,                    IMAGE_NULL,                    IMAGE_NULL,        IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_call_option))
+#endif
+MENU_DEF(     MENU_MMS_EXTRACT,                 menu_mms_extract,    GUIMENU_STYLE_POPUP_RADIO,\
+            TXT_MMS_INBOX_OPTION,                    IMAGE_NULL,                    IMAGE_NULL,        IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_extract))
+MENU_DEF(     MENU_MMS_ANSWER_OPT,             menu_mms_answer_opt,        GUIMENU_STYLE_POPUP,\
+            TXT_REPLY,                        IMAGE_NULL,                    IMAGE_NULL,        IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_answer_opt))
+MENU_DEF(     MENU_MMS_SENTBOX_OPTION,             menu_mms_sentbox_option,    GUIMENU_STYLE_POPUP,\
+            TXT_MMS_SENTBOX_OPTION,                    IMAGE_NULL,                    IMAGE_NULL,        IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_sentbox_option))
+MENU_DEF(     MENU_MMS_OUTBOX_OPTION,             menu_mms_outbox_option,        GUIMENU_STYLE_POPUP,\
+            TXT_MMS_OUTBOX_OPTION,                        IMAGE_NULL,                    IMAGE_NULL,        IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_outbox_option))
+MENU_DEF(     MENU_MMS_INBOX_MMSNOTIOPTION,         menu_mms_inbox_notioption,    GUIMENU_STYLE_POPUP,\
+            TXT_MMS_INBOX_OPTION,                        IMAGE_NULL,                    IMAGE_NULL,        IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_inbox_notioption))
+
+#ifdef MMI_PDA_SUPPORT
+MENU_DEF(MENU_MMS_NUMBER_POP_MENU,  menu_mms_number_pop_menu,  GUIMENU_STYLE_POPUP_AUTO,\
+         STXT_OPTION,  IMAGE_NULL,  IMAGE_NULL,  IMAGE_NULL,  GUIMENU_ITEM_NUM(menu_mms_number_pop_menu)) 
+MENU_DEF(MENU_MMS_URL_POP_MENU,  menu_mms_url_pop_menu,  GUIMENU_STYLE_POPUP_AUTO,\
+         STXT_OPTION,  IMAGE_NULL,  IMAGE_NULL,  IMAGE_NULL,  GUIMENU_ITEM_NUM(menu_mms_url_pop_menu))
+MENU_DEF(MENU_MMS_EMAIL_POP_MENU,  menu_mms_email_pop_menu,  GUIMENU_STYLE_POPUP_AUTO,\
+         STXT_OPTION,  IMAGE_NULL,  IMAGE_NULL,  IMAGE_NULL,  GUIMENU_ITEM_NUM(menu_mms_email_pop_menu))
+#else
+MENU_DEF(MENU_MMS_NUMBER_POP_MENU,  menu_mms_number_pop_menu,  GUIMENU_STYLE_POPUP,\
+         TXT_NULL,  IMAGE_NULL,  IMAGE_NULL,  IMAGE_NULL,  GUIMENU_ITEM_NUM(menu_mms_number_pop_menu)) 
+MENU_DEF(MENU_MMS_URL_POP_MENU,  menu_mms_url_pop_menu,  GUIMENU_STYLE_POPUP,\
+         TXT_NULL,  IMAGE_NULL,  IMAGE_NULL,  IMAGE_NULL,  GUIMENU_ITEM_NUM(menu_mms_url_pop_menu))
+MENU_DEF(MENU_MMS_EMAIL_POP_MENU,  menu_mms_email_pop_menu,  GUIMENU_STYLE_POPUP,\
+         TXT_NULL,  IMAGE_NULL,  IMAGE_NULL,  IMAGE_NULL,  GUIMENU_ITEM_NUM(menu_mms_email_pop_menu))
+#endif
+
+MENU_DEF( MENU_MMS_EXTRACT_ADDTOPB_OPT, menu_mms_extract_addtopb_opt, GUIMENU_STYLE_POPUP, STXT_OPTION, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_extract_addtopb_opt))
+
+#if defined (MMI_SMS_SECURITYBOX_SUPPORT)
+MENU_DEF( MENU_MMS_SECURITY_SELECT, menu_mms_security_select, GUIMENU_STYLE_POPUP, TXT_INBOX, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_security_select))
+#endif
+
+#ifndef MMI_GUI_STYLE_TYPICAL
+#ifdef MMIMMS_SMS_IN_1_SUPPORT
+#ifdef MMI_PDA_SUPPORT
+MENU_DEF( MENU_MMS_MAINMENU_INSERT_POP_MENU, menu_mms_insert_select, GUIMENU_STYLE_POPUP_AUTO, TXT_COMM_INSERT, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_insert_select))
+#else
+MENU_DEF( MENU_MMS_MAINMENU_INSERT_POP_MENU, menu_mms_insert_select, GUIMENU_STYLE_POPUP, TXT_COMM_INSERT, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_insert_select))
+#endif
+#else
+MENU_DEF( MENU_MMS_MAINMENU_INSERT_POP_MENU, menu_mms_insert_select, GUIMENU_STYLE_POPUP_AUTO, STXT_ADD, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_insert_select))
+#endif
+MENU_DEF( MENU_MMS_ATTACH_SUB_MENU, menu_mms_attach_subopt, GUIMENU_STYLE_POPUP, TXT_MMS_ATTACHMENT_TYPE, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_attach_subopt))
+#ifdef MMI_PDA_SUPPORT
+MENU_DEF( MENU_MMS_SAVEFILE_OPTION, menu_mms_savefile_opt, GUIMENU_STYLE_POPUP_AUTO, STXT_OPTION, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_savefile_opt))
+#else
+MENU_DEF( MENU_MMS_SAVEFILE_OPTION, menu_mms_savefile_opt, GUIMENU_STYLE_POPUP, STXT_OPTION, IMAGE_NULL, IMAGE_NULL, IMAGE_NULL, GUIMENU_ITEM_NUM(menu_mms_savefile_opt))
+#endif
+#endif
+//end MMS=================================
