@@ -2546,26 +2546,26 @@ endif
 ##zmt add start
 ifeq ($(strip $(MATH_COUNT_SUPPORT)), TRUE)
 MINCPATH += MS_MMI_Main/source/mmi_app/app/math_count/h
-#MINCPATH += Third-party/zmt_math/api/h
-MSRCPATH +=  MS_MMI_Main/source/mmi_app/app/math_count/c
-SOURCES +=  math_count_win.c
+MINCPATH += Third-party/zmt_math/api/h
+#MSRCPATH +=  MS_MMI_Main/source/mmi_app/app/math_count/c
+#SOURCES +=  math_count_win.c
 endif
 ifeq ($(strip $(FORMULA_SUPPORT)), TRUE)
 MINCPATH += MS_MMI_Main/source/mmi_app/app/formula/h
-#MINCPATH += Third-party/zmt_formula/api/h
-MSRCPATH += MS_MMI_Main/source/mmi_app/app/formula/c
-SOURCES += formula_win.c
+MINCPATH += Third-party/zmt_formula/api/h
+#MSRCPATH += MS_MMI_Main/source/mmi_app/app/formula/c
+#SOURCES += formula_win.c
 endif
 ifeq ($(strip $(WORD_CARD_SUPPORT)), TRUE)
 MINCPATH += MS_MMI_Main/source/mmi_app/app/zmt_word/h
-#MINCPATH += Third-party/zmt_word/api/h
-MSRCPATH +=  MS_MMI_Main/source/mmi_app/app/zmt_word/c
-SOURCES +=  zmt_word_main.c zmt_word_id.c zmt_word_data.c
+MINCPATH += Third-party/zmt_word/api/h
+#MSRCPATH +=  MS_MMI_Main/source/mmi_app/app/zmt_word/c
+#SOURCES +=  zmt_word_main.c zmt_word_id.c zmt_word_data.c
 endif
 ifeq ($(strip $(HANZI_CARD_SUPPORT)), TRUE)
 MINCPATH += MS_MMI_Main/source/mmi_app/app/zmt_hanzi/h
-#MINCPATH += Third-party/zmt_hanzi/api/h
-MSRCPATH +=  MS_MMI_Main/source/mmi_app/app/zmt_hanzi/c
-SOURCES +=  zmt_hanzi_main.c zmt_hanzi_data.c zmt_main_file.c
+MINCPATH += Third-party/zmt_hanzi/api/h
+#MSRCPATH +=  MS_MMI_Main/source/mmi_app/app/zmt_hanzi/c
+#SOURCES +=  zmt_hanzi_main.c zmt_hanzi_data.c zmt_main_file.c
 endif
 ##zmt add end

@@ -1399,31 +1399,63 @@ endif
 
 ##zmt add start
 ifeq ($(strip $(MATH_COUNT_SUPPORT)), TRUE)
-	ifeq ($(strip $(GPS_SUPPORT)), TRUE)
-		3RD_LIBS += Third-party/zmt_math/lib/zmt_math_gnss.a
+	ifeq ($(strip $(RELEASE_INFO)), TRUE)
+		ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+			3RD_LIBS += Third-party/zmt_math/lib/zmt_math_gnss_user.a
+		else
+			3RD_LIBS += Third-party/zmt_math/lib/zmt_math_user.a
+		endif
 	else
-		3RD_LIBS += Third-party/zmt_math/lib/zmt_math.a
+		ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+			3RD_LIBS += Third-party/zmt_math/lib/zmt_math_gnss.a
+		else
+			3RD_LIBS += Third-party/zmt_math/lib/zmt_math.a
+		endif
 	endif
 endif
 ifeq ($(strip $(FORMULA_SUPPORT)), TRUE)
-	ifeq ($(strip $(GPS_SUPPORT)), TRUE)
-		3RD_LIBS += Third-party/zmt_formula/lib/zmt_formula_gnss.a
+	ifeq ($(strip $(RELEASE_INFO)), TRUE)
+		ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+			3RD_LIBS += Third-party/zmt_formula/lib/zmt_formula_gnss_user.a
+		else
+			3RD_LIBS += Third-party/zmt_formula/lib/zmt_formula_user.a
+		endif
 	else
-		3RD_LIBS += Third-party/zmt_formula/lib/zmt_formula.a
+		ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+			3RD_LIBS += Third-party/zmt_formula/lib/zmt_formula_gnss.a
+		else
+			3RD_LIBS += Third-party/zmt_formula/lib/zmt_formula.a
+		endif
 	endif
 endif
 ifeq ($(strip $(WORD_CARD_SUPPORT)), TRUE)
-	ifeq ($(strip $(GPS_SUPPORT)), TRUE)
-		3RD_LIBS += Third-party/zmt_word/lib/zmt_word_gnss.a
+	ifeq ($(strip $(RELEASE_INFO)), TRUE)
+		ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+			3RD_LIBS += Third-party/zmt_word/lib/zmt_word_gnss_user.a
+		else
+			3RD_LIBS += Third-party/zmt_word/lib/zmt_word_user.a
+		endif
 	else
-		3RD_LIBS += Third-party/zmt_word/lib/zmt_word.a
+		ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+			3RD_LIBS += Third-party/zmt_word/lib/zmt_word_gnss.a
+		else
+			3RD_LIBS += Third-party/zmt_word/lib/zmt_word.a
+		endif
 	endif
 endif
 ifeq ($(strip $(HANZI_CARD_SUPPORT)), TRUE)
-	ifeq ($(strip $(GPS_SUPPORT)), TRUE)
-		3RD_LIBS += Third-party/zmt_hanzi/lib/zmt_hanzi_gnss.a
+	ifeq ($(strip $(RELEASE_INFO)), TRUE)
+		ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+			3RD_LIBS += Third-party/zmt_hanzi/lib/zmt_hanzi_gnss_user.a
+		else
+			3RD_LIBS += Third-party/zmt_hanzi/lib/zmt_hanzi_user.a
+		endif
 	else
-		3RD_LIBS += Third-party/zmt_hanzi/lib/zmt_hanzi.a
+		ifeq ($(strip $(GPS_SUPPORT)), TRUE)
+			3RD_LIBS += Third-party/zmt_hanzi/lib/zmt_hanzi_gnss.a
+		else
+			3RD_LIBS += Third-party/zmt_hanzi/lib/zmt_hanzi.a
+		endif
 	endif
 endif
 ##zmt add end

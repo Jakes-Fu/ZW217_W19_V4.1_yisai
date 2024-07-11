@@ -731,3 +731,10 @@ ENGPC_W217 = FALSE                                   ### Switch ENGPC_W217 Suppo
 LCD_INSTALL_ANGLE = 0    #90
 
 TRACE_INFO_SUPPORT = FALSE
+
+##zmt add start
+MATH_COUNT_SUPPORT = TRUE 			#口算达人
+FORMULA_SUPPORT = TRUE				#乘法口诀
+WORD_CARD_SUPPORT = TRUE			#单词卡
+HANZI_CARD_SUPPORT = TRUE			#汉字卡
+##zmt add end
