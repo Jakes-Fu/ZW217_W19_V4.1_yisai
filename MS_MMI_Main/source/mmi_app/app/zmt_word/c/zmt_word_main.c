@@ -47,9 +47,9 @@
 #define word_msg_tips_right_rect {3.3*WORD_CARD_LINE_WIDTH, 5.5*WORD_CARD_LINE_HIGHT, 4.8*WORD_CARD_LINE_WIDTH, 6.5*WORD_CARD_LINE_HIGHT}
 #define word_win_rect {0, 0, MMI_MAINSCREEN_WIDTH, MMI_MAINSCREEN_HEIGHT}
 
-#define word_title_rect {35, 0, 5*WORD_CARD_LINE_WIDTH-5, WORD_CARD_LINE_HIGHT}
+#define word_title_rect {25, 0, 5*WORD_CARD_LINE_WIDTH-20, WORD_CARD_LINE_HIGHT}
 
-#define word_auto_play_rect {4*WORD_CARD_LINE_WIDTH+10, 0, MMI_MAINSCREEN_WIDTH, WORD_CARD_LINE_HIGHT}
+#define word_auto_play_rect {4*WORD_CARD_LINE_WIDTH-5, 0, MMI_MAINSCREEN_WIDTH-5, WORD_CARD_LINE_HIGHT}
 #define word_list_rect {0, WORD_CARD_LINE_WIDTH, MMI_MAINSCREEN_WIDTH, MMI_MAINSCREEN_HEIGHT-5}
 #define word_dir_rect {5*WORD_CARD_LINE_WIDTH-35, 0, MMI_MAINSCREEN_WIDTH, WORD_CARD_LINE_HIGHT}
 #define word_word_rect {5, WORD_CARD_LINE_HIGHT, MMI_MAINSCREEN_WIDTH, 2*WORD_CARD_LINE_HIGHT}
@@ -116,13 +116,13 @@ LOCAL void Word_DrawWinTitle(MMI_WIN_ID_T win_id, MMI_CTRL_ID_T ctrl_id,MMI_STRI
     GUI_RECT_T title_rect = word_title_rect;
 	 GUI_RECT_T title_rect_bg = word_title_rect;
 	 title_rect_bg.left-=30;
-	 title_rect_bg.right+=50;
+	 title_rect_bg.right+=65;
     GUI_FillRect(&lcd_dev_info, win_rect, WORD_WIN_BG_COLOR);
   GUI_FillRect(&lcd_dev_info, title_rect_bg, WORD_TITLE_BG_COLOR);
     text_style.align = ALIGN_HVMIDDLE;
     text_style.font = DP_FONT_24;
     text_style.font_color = MMI_WHITE_COLOR;
-
+	title_rect.left+=20;
     if(ctrl_id != 0)
     {
         GUIBUTTON_SetText(ctrl_id, text_string.wstr_ptr, text_string.wstr_len); 
@@ -149,11 +149,10 @@ LOCAL void Word_DrawWinTips(MMI_WIN_ID_T win_id, MMI_CTRL_ID_T ctrl_id, MMI_TEXT
     MMI_STRING_T text_string = {0};
     GUI_RECT_T win_rect = word_win_rect;
     GUI_RECT_T title_rect = word_title_rect;
-
     text_style.align = ALIGN_HVMIDDLE;
-    text_style.font = DP_FONT_26;
+    text_style.font = DP_FONT_24;
     text_style.font_color = MMI_WHITE_COLOR;
-
+	title_rect.left+=50;
     MMIRES_GetText(text_id, win_id, &text_string);
     if(ctrl_id != 0)
     {
@@ -240,7 +239,7 @@ LOCAL void Word_InitTextBox(MMI_CTRL_ID_T ctrl_id, GUI_RECT_T rect)
     GUITEXT_SetClipboardEnabled(ctrl_id,FALSE);
     GUITEXT_IsSlide(ctrl_id,FALSE);
     
-    font.font = DP_FONT_20;
+    font.font = DP_FONT_18;
     font.color = MMI_WHITE_COLOR;
     GUITEXT_SetFont(ctrl_id, &font.font,&font.color);
     
@@ -279,7 +278,7 @@ LOCAL void WordPopupWin_FULL_PAINT(MMI_WIN_ID_T win_id)
     border.type =  GUI_BORDER_ROUNDED;
 
     text_style.align = ALIGN_HVMIDDLE;
-    text_style.font = DP_FONT_18;
+    text_style.font = DP_FONT_16;
     text_style.font_color = WORD_WIN_BG_COLOR;
 	
     LCD_FillRoundedRect(&lcd_dev_info,tips_rect,tips_rect,MMI_WHITE_COLOR);
@@ -333,7 +332,7 @@ LOCAL void WordPopupWin_TP_PRESS_UP(MMI_WIN_ID_T win_id, GUI_POINT_T point)
     }
     else if(GUI_PointIsInRect(point, tips_right_rect))
     {
-        MMK_CloseWin(win_id);
+      //  MMK_CloseWin(win_id);
         if(word_learn_info != NULL)
         {
             uint8 i = 0;
@@ -363,7 +362,7 @@ LOCAL void WordPopupWin_TP_PRESS_UP(MMI_WIN_ID_T win_id, GUI_POINT_T point)
 
 LOCAL void WordPopupWin_CTL_PENOK(MMI_WIN_ID_T win_id)
 {
-	  MMK_CloseWin(win_id);
+	//  MMK_CloseWin(win_id);
     if(word_learn_info != NULL)
     {
         uint8 i = 0;
@@ -412,8 +411,14 @@ LOCAL MMI_RESULT_E HandleWordPopupWinMsg(MMI_WIN_ID_T win_id, MMI_MESSAGE_ID_E m
                 WordPopupWin_CTL_PENOK(win_id);
             }
             break;
-        case MSG_KEYUP_CANCEL:
-            MMK_CloseWin(win_id);
+       case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
+            {
+                MMK_CloseWin(win_id);
+            }
             break;
         case MSG_TP_PRESS_UP:
             {
@@ -488,7 +493,7 @@ LOCAL void Word_DisplayBookList(MMI_WIN_ID_T win_id, MMI_CTRL_ID_T ctrl_id)
     }
     //²»»­·Ö¸îÏß
     GUILIST_SetListState(ctrl_id, GUILIST_STATE_SPLIT_LINE, FALSE);
-    GUILIST_SetTextFont(ctrl_id, DP_FONT_22, WORD_WIN_BG_COLOR);
+    GUILIST_SetTextFont(ctrl_id, DP_FONT_18, WORD_WIN_BG_COLOR);
     GUILIST_SetCurItemIndex(ctrl_id, word_book_info.cur_book_idx);
 }
 
@@ -531,8 +536,11 @@ LOCAL MMI_RESULT_E HandleWordBookMainWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E
                 WordBookMainWin_FULL_PAINT(win_id);
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+        case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -675,11 +683,13 @@ LOCAL MMI_RESULT_E HandleWordMainWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E msg
                 }
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+       case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
-			
             }
             break;
         case MSG_CTL_OK:
@@ -692,11 +702,10 @@ LOCAL MMI_RESULT_E HandleWordMainWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E msg
             break;
         case MSG_CLOSE_WINDOW:
             {
-				word_publish_count=0;
                 memset(&word_book_info, 0, sizeof(WORD_BOOK_INFO_T));
                 Word_ReleaseBookInfo();
                 Word_ReleaseLearnInfo();
-			
+                word_publish_count = 0;
             }
             break;
          default:
@@ -746,7 +755,7 @@ LOCAL void WordChapter_AutoDisplay_Tip_Show(uint8 type)
     LCD_FillRoundedRect(&word_chapter_tip_layer, tip_rect, tip_rect, MMI_WHITE_COLOR);
 
     text_style.align = ALIGN_HVMIDDLE;
-    text_style.font = DP_FONT_18;
+    text_style.font = DP_FONT_16;
     text_style.font_color = WORD_WIN_BG_COLOR;
 
     if(type==1)
@@ -959,6 +968,7 @@ LOCAL void WordChapterWin_CTL_PENOK(MMI_WIN_ID_T win_id, DPARAM param)
 {
     uint16 cur_idx = GUILIST_GetCurItemIndex(MMI_ZMT_WORD_CHAPTER_LIST_CTRL_ID);
     if(cur_idx == word_book_info.cur_chapter_idx){
+        is_open_new_word = FALSE;
         MMI_CreateWordDetailWin();
     }else{
         word_book_info.cur_chapter_idx = cur_idx;
@@ -986,8 +996,11 @@ LOCAL MMI_RESULT_E HandleWordChapterWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E 
                 WordChapterWin_FULL_PAINT(win_id);
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+        case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -1339,7 +1352,7 @@ LOCAL void WordDetail_ShowTip(void)
         LCD_FillRoundedRect(&word_detail_tip_layer, msg_rect, msg_rect, MMI_WHITE_COLOR);
 
         text_style.align = ALIGN_HVMIDDLE;
-        text_style.font = DP_FONT_20;
+        text_style.font = DP_FONT_18;
         text_style.font_color = WORD_WIN_BG_COLOR;
 
         if(word_is_display_tip == 1)
@@ -1410,7 +1423,7 @@ LOCAL void WordDetail_DisplayDtailInfo(
     }
     text_word.wstr_ptr = wstr_word;
     text_word.wstr_len = MMIAPICOM_Wstrlen(text_word.wstr_ptr);
-    text_width_piex = GUI_CalculateStringPiexlNum(text_word.wstr_ptr, text_word.wstr_len, DP_FONT_22, 1);
+    text_width_piex = GUI_CalculateStringPiexlNum(text_word.wstr_ptr, text_word.wstr_len, DP_FONT_20, 1);
     width_rect = word_rect.left + text_width_piex + 5;
     word_rect.right = width_rect;
     GUILABEL_SetRect(ctrl_label_word, &word_rect, FALSE);
@@ -1509,8 +1522,8 @@ LOCAL void WordDetailWin_OPEN_WINDOW(MMI_WIN_ID_T win_id)
     GUILABEL_SetFont(MMI_ZMT_WORD_DETAIL_LABEL_NUM_CTRL_ID, DP_FONT_20,MMI_WHITE_COLOR);
     GUILABEL_SetAlign(MMI_ZMT_WORD_DETAIL_LABEL_NUM_CTRL_ID, GUILABEL_ALIGN_MIDDLE);
 
-    GUILABEL_SetFont(MMI_ZMT_WORD_DETAIL_LABEL_WORD_CTRL_ID, DP_FONT_22,MMI_WHITE_COLOR);
-    GUILABEL_SetFont(MMI_ZMT_WORD_DETAIL_LABEL_PINYIN_CTRL_ID, DP_FONT_22,MMI_WHITE_COLOR);
+    GUILABEL_SetFont(MMI_ZMT_WORD_DETAIL_LABEL_WORD_CTRL_ID, DP_FONT_20,MMI_WHITE_COLOR);
+    GUILABEL_SetFont(MMI_ZMT_WORD_DETAIL_LABEL_PINYIN_CTRL_ID, DP_FONT_20,MMI_WHITE_COLOR);
 
     new_word_haved_delete = FALSE;
     word_detail_count = 0;
@@ -1658,7 +1671,7 @@ LOCAL void WordDetailWin_FULL_PAINT(MMI_WIN_ID_T win_id)
     Word_DrawWinTitle(win_id, MMI_ZMT_WORD_DETAIL_LABEL_BACK_CTRL_ID, text_string);
 
     text_style.align = ALIGN_HVMIDDLE;
-    text_style.font = DP_FONT_22;
+    text_style.font = DP_FONT_20;
     text_style.font_color = MMI_WHITE_COLOR;
 
     if(!is_open_new_word){
@@ -1774,10 +1787,12 @@ LOCAL MMI_RESULT_E HandleWordDetailWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E m
                 main_tp_down_y = MMK_GET_TP_Y(param);
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+       case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
-			
                 MMK_CloseWin(win_id);
             }
             break;
@@ -1847,8 +1862,8 @@ LOCAL void WordListenInfoWin_OPEN_WINDOW(MMI_WIN_ID_T win_id)
     GUILABEL_SetAlign(MMI_ZMT_WORD_LISTEN_INFO_LABEL_NUM_CTRL_ID, GUILABEL_ALIGN_MIDDLE);
 
     GUIBUTTON_SetCallBackFunc(MMI_ZMT_WORD_LISTEN_INFO_BUTTON_AUDIO_CTRL_ID, WordDetail_PlayPinyinAudio);
-    GUILABEL_SetFont(MMI_ZMT_WORD_LISTEN_INFO_LABEL_WORD_CTRL_ID, DP_FONT_22,MMI_WHITE_COLOR);
-    GUILABEL_SetFont(MMI_ZMT_WORD_LISTEN_INFO_LABEL_PINYIN_CTRL_ID, DP_FONT_22,MMI_WHITE_COLOR);
+    GUILABEL_SetFont(MMI_ZMT_WORD_LISTEN_INFO_LABEL_WORD_CTRL_ID, DP_FONT_20,MMI_WHITE_COLOR);
+    GUILABEL_SetFont(MMI_ZMT_WORD_LISTEN_INFO_LABEL_PINYIN_CTRL_ID, DP_FONT_20,MMI_WHITE_COLOR);
 
     Word_InitButton( MMI_ZMT_WORD_LISTEN_INFO_BUTTON_STATUS_CTRL_ID,  bottom_rect, WORD_LEARN_LISTENING_BACK, ALIGN_HVMIDDLE, TRUE, MMI_CloseWordListenInfoWin);
     Word_InitButtonBg(MMI_ZMT_WORD_LISTEN_INFO_BUTTON_STATUS_CTRL_ID);
@@ -1938,8 +1953,11 @@ LOCAL MMI_RESULT_E HandleWordListenInfoWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID
                 main_tp_down_y = MMK_GET_TP_Y(param);
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+        case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -2012,7 +2030,7 @@ LOCAL void WordListenSetWin_OPEN_WINDOW(MMI_WIN_ID_T win_id)
     word_listen_set[2] = word_listen_info.repeat = WORD_LISTEN_SET_REPEAT_1;
 
     text_style.align = ALIGN_HVMIDDLE;
-    text_style.font = DP_FONT_26;
+    text_style.font = DP_FONT_24;
     text_style.font_color = MMI_WHITE_COLOR;
 
     form_bg.color = bg_color;
@@ -2050,7 +2068,6 @@ LOCAL void WordListenSetWin_OPEN_WINDOW(MMI_WIN_ID_T win_id)
             GUILIST_SetTextFont(list_ctrl_id, DP_FONT_20, MMI_WHITE_COLOR);
             GUILIST_PermitBorder(list_ctrl_id, FALSE);
             GUILIST_SetSlideState(list_ctrl_id, FALSE);
-			   GUILIST_SetListState(list_ctrl_id,GUILIST_STATE_NEED_PRGBAR,FALSE);
             list_ctrl_height.type = GUIFORM_CHILD_HEIGHT_FIXED;
             if(j == 0){
                 list_ctrl_height.add_data = 3* WORD_CARD_LINE_HIGHT;
@@ -2135,7 +2152,7 @@ LOCAL void WordListenSetWin_FULL_PAINT(MMI_WIN_ID_T win_id)
     GUI_RECT_T right_rect = word_right_button_rect;
 
     text_style.align = ALIGN_HVMIDDLE;
-    text_style.font = DP_FONT_26;
+    text_style.font = DP_FONT_24;
     text_style.font_color = MMI_WHITE_COLOR;
     
     MMIRES_GetText(WORD_LISTENING_SETTING, win_id, &text_string);
@@ -2143,7 +2160,7 @@ LOCAL void WordListenSetWin_FULL_PAINT(MMI_WIN_ID_T win_id)
     
     WordListenSetWin_DisplayOption(win_id);
 
-    text_style.font = DP_FONT_24;
+    text_style.font = DP_FONT_22;
     GUIRES_DisplayImg(PNULL, &left_rect, PNULL, win_id, FORMULA_BOTTOM_BG_IMG, &lcd_dev_info);
     MMIRES_GetText(WORD_FALSE, win_id, &text_string);
     text_style.font_color = WORD_WIN_BG_COLOR;
@@ -2249,8 +2266,11 @@ LOCAL MMI_RESULT_E HandleWordListenSetWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_
                 WordListenSetWin_CTL_PENOK(win_id, param);
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+     case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -2465,7 +2485,7 @@ LOCAL void WordListenWin_OPEN_WINDOW(MMI_WIN_ID_T win_id)
 {
     GUI_FONT_ALL_T font = {0};
     GUI_BORDER_T btn_border = {1, MMI_BLACK_COLOR, GUI_BORDER_SOLID};
-    GUI_FONT_T text_font = DP_FONT_22;
+    GUI_FONT_T text_font = DP_FONT_20;
     GUI_COLOR_T text_color = MMI_WHITE_COLOR;
     GUI_RECT_T img_rect = {0};
     GUI_RECT_T tip_rect = {0};
@@ -2481,7 +2501,7 @@ LOCAL void WordListenWin_OPEN_WINDOW(MMI_WIN_ID_T win_id)
     dir_rect.top = dir_rect.bottom;
     dir_rect.bottom = dir_rect.top + WORD_CARD_LINE_HIGHT;
     GUILABEL_SetRect(MMI_ZMT_WORD_LISTEN_LABEL_NUM_CTRL_ID, &dir_rect, FALSE);
-    GUILABEL_SetFont(MMI_ZMT_WORD_LISTEN_LABEL_NUM_CTRL_ID, DP_FONT_22,MMI_WHITE_COLOR);
+    GUILABEL_SetFont(MMI_ZMT_WORD_LISTEN_LABEL_NUM_CTRL_ID, DP_FONT_20,MMI_WHITE_COLOR);
     GUILABEL_SetAlign(MMI_ZMT_WORD_LISTEN_LABEL_NUM_CTRL_ID, GUILABEL_ALIGN_MIDDLE);
 
     img_rect = text_rect;
@@ -2634,8 +2654,11 @@ LOCAL MMI_RESULT_E HandleWordListenWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E m
                 WordListenWin_BottomActionFunc();
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+       case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }

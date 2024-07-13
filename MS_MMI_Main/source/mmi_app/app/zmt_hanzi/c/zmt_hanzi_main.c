@@ -39,8 +39,8 @@
 #define hanzi_msg_tips_left_rect {1.2*HANZI_CARD_LINE_WIDTH, 5.5*HANZI_CARD_LINE_HIGHT, 2.7*HANZI_CARD_LINE_WIDTH, 6.5*HANZI_CARD_LINE_HIGHT}
 #define hanzi_msg_tips_right_rect {3.3*HANZI_CARD_LINE_WIDTH, 5.5*HANZI_CARD_LINE_HIGHT, 4.8*HANZI_CARD_LINE_WIDTH, 6.5*HANZI_CARD_LINE_HIGHT}
 #define hanzi_win_rect {0, 0, MMI_MAINSCREEN_WIDTH, MMI_MAINSCREEN_HEIGHT}//窗口
-#define hanzi_title_rect {23, 0, 5*HANZI_CARD_LINE_WIDTH-5, HANZI_CARD_LINE_HIGHT}//顶部
-#define hanzi_auto_play_rect {4*HANZI_CARD_LINE_WIDTH+10, 0, MMI_MAINSCREEN_WIDTH, HANZI_CARD_LINE_HIGHT}//自动播放图标
+#define hanzi_title_rect {28, 0, 5*HANZI_CARD_LINE_WIDTH-5, HANZI_CARD_LINE_HIGHT}//顶部
+#define hanzi_auto_play_rect {4*HANZI_CARD_LINE_WIDTH, 0, MMI_MAINSCREEN_WIDTH-10, HANZI_CARD_LINE_HIGHT}//自动播放图标
 #define hanzi_list_rect {0, HANZI_CARD_LINE_HIGHT, MMI_MAINSCREEN_WIDTH, MMI_MAINSCREEN_HEIGHT-5}//列表
 #define hanzi_dir_rect {5*HANZI_CARD_LINE_WIDTH-25, 0, MMI_MAINSCREEN_WIDTH, HANZI_CARD_LINE_HIGHT}
 #define hanzi_hanzi_rect {5, HANZI_CARD_LINE_HIGHT, MMI_MAINSCREEN_WIDTH, 2*HANZI_CARD_LINE_HIGHT}//汉字
@@ -362,8 +362,14 @@ LOCAL MMI_RESULT_E HandleHanziPopupWinMsg(MMI_WIN_ID_T win_id, MMI_MESSAGE_ID_E 
                 HanziPopupWin_FULL_PAINT(win_id);
             }
             break;
-        case MSG_KEYUP_CANCEL:
-            MMK_CloseWin(win_id);
+        case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
+            {
+                MMK_CloseWin(win_id);
+            }
             break;
         case MSG_TP_PRESS_UP:
             {
@@ -524,8 +530,11 @@ LOCAL MMI_RESULT_E HandleHanziWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E msg_id
                 }
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+        case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -824,6 +833,7 @@ LOCAL void HanziChapterWin_CTL_PENOK(MMI_WIN_ID_T win_id)
     SCI_TRACE_LOW("%s: cur_idx = %d", __FUNCTION__, cur_idx);
     if(cur_idx == hanzi_book_info.cur_chapter_idx)
     {
+        is_open_new_hanzi = FALSE;
         Hanzi_OpenNormalHanzi();
     }
     else
@@ -877,8 +887,11 @@ LOCAL MMI_RESULT_E HandleHanziChapterWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E
                 HanziChapterWin_FULL_PAINT(win_id);
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+        case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -1592,8 +1605,11 @@ LOCAL MMI_RESULT_E HandleHanziDetailWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E 
                 main_tp_down_y = MMK_GET_TP_Y(param);
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+       case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -1752,8 +1768,11 @@ LOCAL MMI_RESULT_E HandleHanziListenInfoWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_I
                 main_tp_down_y = MMK_GET_TP_Y(param);
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+        case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -2061,8 +2080,11 @@ LOCAL MMI_RESULT_E HandleHanziListenSetWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID
                 HanziListenSetWin_CTL_PENOK(win_id, param);
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+        case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -2433,7 +2455,7 @@ LOCAL MMI_RESULT_E HandleHanziListenWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E 
         case MSG_OPEN_WINDOW:
             {
                 HanziListenWin_OPEN_WINDOW(win_id);
-             //   WATCHCOM_Backlight(TRUE);
+           //     WATCHCOM_Backlight(TRUE);
                 Hanzi_GetOneArrayRandNum(hanzi_detail_count, 0, hanzi_detail_count-1);
             }
             break;
@@ -2451,8 +2473,11 @@ LOCAL MMI_RESULT_E HandleHanziListenWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E 
                 HanziListenWin_BottomActionFunc();
             }
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+         case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -2460,7 +2485,7 @@ LOCAL MMI_RESULT_E HandleHanziListenWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E 
         case MSG_CLOSE_WINDOW:
             {
                 HanziListenWin_CLOSE_WINDOW();
-               // WATCHCOM_Backlight(FALSE);
+              //  WATCHCOM_Backlight(FALSE);
             }
             break;
         default:

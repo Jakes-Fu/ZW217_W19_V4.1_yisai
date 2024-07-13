@@ -123,6 +123,7 @@ LOCAL BOOLEAN FormulaWin_PlayRingCallback(MMISRV_HANDLE_T handle, MMISRVMGR_NOTI
                                 MMK_SendMsg(FORMULA_WIN_ID, MSG_FULL_PAINT, PNULL);
                                 }
                                 MMI_CreateFormulaTableWin();
+								  //MMK_CreateWin(FORMULA_TABLE_WIN_TAB, NULL);
                             }else{
                                 formula_play_info.play_idx++;
                                 SCI_SLEEP(1000);
@@ -427,6 +428,7 @@ LOCAL void FormulaWin_HANDLE_UP(MMI_WIN_ID_T win_id, GUI_POINT_T point)
             formula_play_info.play_status = FORMULA_ACTION_STOP;
         }
         MMI_CreateFormulaTableWin();
+		  //MMK_CreateWin(FORMULA_TABLE_WIN_TAB, NULL);
     }
 }
 
@@ -472,10 +474,13 @@ LOCAL MMI_RESULT_E HandleFormulaWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E msg_
                 FormulaWin_KEYDOWN_FORWARD(win_id);
             }
             break;
-        case MSG_KEYDOWN_CANCEL:
+      /*  case MSG_KEYDOWN_CANCEL:
+            break;*/
+			   case MSG_KEYDOWN_RED:
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -589,10 +594,11 @@ LOCAL MMI_RESULT_E HandleFormulaTableTipWinMsg(MMI_WIN_ID_T win_id, MMI_MESSAGE_
                 FormulaTableTipWin_FULL_PAINT(win_id);
             }
             break;
-        case MSG_KEYDOWN_CANCEL:
-            break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+       /* case MSG_KEYDOWN_CANCEL:
+            break;*/
+          case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             MMK_CloseWin(win_id);
             break;
         case MSG_CLOSE_WINDOW:
@@ -826,7 +832,7 @@ LOCAL void FormulaTableWin_TP_PRESS_UP(MMI_WIN_ID_T win_id, GUI_POINT_T point)
         formula_play_info.play_status = FORMULA_ACTION_PLAY;
         formula_play_info.play_idx = 0;
         FormulaWin_PlayRing(0);
-        MMK_CloseWin(win_id);
+    //    MMK_CloseWin(win_id);
     }
 }
 
@@ -866,7 +872,11 @@ LOCAL MMI_RESULT_E HandleFormulaTableWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E
                 }
             }
             break;
-        case MSG_KEYUP_CANCEL:
+			 case MSG_KEYDOWN_RED:
+            break;
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -1014,10 +1024,13 @@ LOCAL MMI_RESULT_E HandleFormulaMnemonicWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_I
                 FormulaMnemonicWin_CTL_PENOK(win_id);
             }
             break;
-        case MSG_KEYDOWN_CANCEL:
+    /*    case MSG_KEYDOWN_CANCEL:
+            break;*/
+			   case MSG_KEYDOWN_RED:
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+          case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
