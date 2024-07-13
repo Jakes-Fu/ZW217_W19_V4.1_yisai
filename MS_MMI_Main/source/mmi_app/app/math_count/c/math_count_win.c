@@ -92,7 +92,7 @@ LOCAL GUI_RECT_T set_division_txt_rect = {5.5*MATCH_COUNT_BLANK_START+5, 8*MATCH
 LOCAL GUI_RECT_T math_count_page_rect = {MATCH_COUNT_BLANK_START, 10*MATCH_COUNT_LINE_HIGHT, MMI_MAINSCREEN_WIDTH-MATCH_COUNT_BLANK_START, MMI_MAINSCREEN_HEIGHT-10};
 LOCAL GUI_RECT_T math_count_action_rect = {8, 9.8*MATCH_COUNT_LINE_HIGHT, MMI_MAINSCREEN_WIDTH-8, 11.8*MATCH_COUNT_LINE_HIGHT};
 
-LOCAL GUI_RECT_T show_time_text_rect = {0, 0.5*MATCH_COUNT_LINE_HIGHT, MATCH_COUNT_BLANK_START, 1.2*MATCH_COUNT_LINE_HIGHT};
+LOCAL GUI_RECT_T show_time_text_rect = {20, 0.5*MATCH_COUNT_LINE_HIGHT, MATCH_COUNT_BLANK_START+25, 1.2*MATCH_COUNT_LINE_HIGHT};
 LOCAL GUI_RECT_T show_time_bar_blank_rect = {0,  MATCH_COUNT_LINE_HIGHT+5, MMI_MAINSCREEN_WIDTH,  MATCH_COUNT_LINE_HIGHT+8};
 LOCAL GUI_RECT_T show_time_bar_rect = {0,  MATCH_COUNT_LINE_HIGHT+5, 0,  MATCH_COUNT_LINE_HIGHT+8};
 LOCAL GUI_RECT_T show_index_text_rect = {MMI_MAINSCREEN_WIDTH-MATCH_COUNT_BLANK_START, MATCH_COUNT_LINE_HIGHT, MMI_MAINSCREEN_WIDTH, 2*MATCH_COUNT_LINE_HIGHT};
@@ -801,7 +801,7 @@ LOCAL void CountingWin_TimeDirTxt(MMI_WIN_ID_T win_id, GUI_LCD_DEV_INFO lcd_dev_
     GUI_FillRect(&lcd_dev_info, show_time_bar_rect, GUI_RGB2RGB565(71,235,255));
 				
     text_style.align = ALIGN_HVMIDDLE;
-    text_style.font = DP_FONT_20;
+    text_style.font = DP_FONT_22;
     text_style.font_color = MMI_WHITE_COLOR;
     text_state = GUISTR_STATE_ALIGN;
     sprintf(time_and_index_text_temp_char,"%dS",(set_question_time-counting_used_time));
