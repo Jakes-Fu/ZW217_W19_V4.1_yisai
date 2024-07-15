@@ -18,6 +18,7 @@
 #include "mmidisplay_data.h"
 #include "mmi_timer_export.h"
 #include "os_api.h"
+#include "cjson.h"
 #include "mmk_type.h"
 #include "mmi_default.h"
 #include "mmiacc_id.h"
@@ -56,6 +57,17 @@ LOCAL GUI_RECT_T formula_msg_rect = {FORMULA_LINE_WIDTH, 3*FORMULA_LINE_HIGHT, M
 LOCAL GUI_RECT_T formula_msg_tips_left_rect = {1.2*FORMULA_LINE_WIDTH, 5.5*FORMULA_LINE_HIGHT, 2.7*FORMULA_LINE_WIDTH, 7*FORMULA_LINE_HIGHT};
 LOCAL GUI_RECT_T formula_msg_tips_right_rect = {3.3*FORMULA_LINE_WIDTH, 5.5*FORMULA_LINE_HIGHT, 4.8*FORMULA_LINE_WIDTH, 7*FORMULA_LINE_HIGHT};
 
+LOCAL FORMULA_MULTI_TEXT_T formula_audio_text[FORMULA_COUNT_ITEM_MAX] = {
+    "111", "122", "133", "144", "155", "166", "177", "188", "199",
+    "224", "236", "248", "2510", "2612", "2714", "2816", "2918", 
+    "339", "3412", "3515", "3618", "3721", "3824", "3927",
+    "4416", "4520", "4624", "4728", "4832", "4936", 
+    "5525", "5630", "5735", "5840", "5945", 
+    "6636", "6742", "6848", "6954", 
+    "7749", "7856", "7963", 
+    "8864", "8972", "9981"
+};
+
 LOCAL FORMULA_MULTI_TEXT_T formula_multi_text[FORMULA_COUNT_ITEM_MAX] = {
     "1  x  1  =  1", "1  x  2  =  2", "1  x  3  =  3", "1  x  4  =  4", "1  x  5  =  5", "1  x  6  =  6", "1  x  7  =  7", "1  x  8  =  8", "1  x  9  =  9",
     "2  x  2  =  4", "2  x  3  =  6", "2  x  4  =  8", "2  x  5  =  10", "2  x  6  =  12", "2  x  7  =  14", "2  x  8  =  16", "2  x  9  =  18", 
@@ -67,15 +79,132 @@ LOCAL FORMULA_MULTI_TEXT_T formula_multi_text[FORMULA_COUNT_ITEM_MAX] = {
     "8  x  8  =  64", "8  x  9  =  72", "9  x  9  =  81"
 };
 
+LOCAL int formula_request_status = 0;
 LOCAL FORMULA_PLAY_INFO_T formula_play_info = {0};
 LOCAL MMISRV_HANDLE_T formula_player_handle = PNULL;
 LOCAL uint8 formula_table_play_status = 0;
+LOCAL FORMULA_AUDIO_INFO_T * formula_audio_info[FORMULA_COUNT_ITEM_MAX];
+LOCAL uint8 formula_tips_timer_id = 0;
 
 LOCAL void MMI_CloseFormulaTableTipWin(void);
 LOCAL void FormulaWin_StopRing(void);
 LOCAL void FormulaWin_PlayRing(uint8 idx);
+LOCAL void FormulaWin_PlayAudioData(uint8 *data,uint32 data_len);
+LOCAL void FormulaWin_PlayAudio(void);
 LOCAL void FormulaWin_ShowMultiText(MMI_WIN_ID_T win_id);
 LOCAL void FormulaTableTipWin_UpdateButton(BOOLEAN status);
+
+LOCAL void Formula_ReleaseTextInfo(void)
+{
+    uint8 i = 0;
+    for(i = 0;i < FORMULA_COUNT_ITEM_MAX;i++)
+    {
+        if(formula_audio_info[i] != NULL){
+            if(formula_audio_info[i]->audio_uri != NULL){
+                SCI_FREE(formula_audio_info[i]->audio_uri);
+                formula_audio_info[i]->audio_uri = NULL;
+            }
+            if(formula_audio_info[i]->audio_data != NULL){
+                SCI_FREE(formula_audio_info[i]->audio_data);
+                formula_audio_info[i]->audio_data = NULL;
+            }
+            SCI_FREE(formula_audio_info[i]);
+            formula_audio_info[i] = NULL;
+        }
+    }
+}
+
+LOCAL void Formula_ParseTextInfo(BOOLEAN is_ok,uint8 * pRcv,uint32 Rcv_len,uint32 err_id)
+{
+    if (is_ok && pRcv != PNULL && Rcv_len> 2)
+    {
+        uint8 i = 0;
+        uint16 size = 0;
+        cJSON *root = cJSON_Parse(pRcv);
+        if(root != NULL && root->type != cJSON_NULL)
+        {
+            cJSON * baseUrl = cJSON_GetObjectItem(root, "baseUrl");
+            for(i = 0;i < FORMULA_COUNT_ITEM_MAX;i++)
+            {
+                if(formula_audio_info[i] != NULL){
+                    SCI_FREE(formula_audio_info[i]);
+                    formula_audio_info[i] = NULL;
+                }
+                formula_audio_info[i] = (FORMULA_AUDIO_INFO_T *)SCI_ALLOC_APP(sizeof(FORMULA_AUDIO_INFO_T));
+                memset(formula_audio_info[i], 0, sizeof(FORMULA_AUDIO_INFO_T));
+
+                formula_audio_info[i]->audio_len = 0;
+                if(formula_audio_info[i]->audio_uri != NULL){
+                    SCI_FREE(formula_audio_info[i]->audio_uri);
+                    formula_audio_info[i]->audio_uri = NULL;
+                }
+                size = strlen(baseUrl->valuestring) + 10;
+                formula_audio_info[i]->audio_uri = SCI_ALLOC_APPZ(size + 1);
+                memset(formula_audio_info[i]->audio_uri, 0, size + 1);
+                sprintf(formula_audio_info[i]->audio_uri, "%s%s.mid", baseUrl->valuestring, formula_audio_text[i].text);
+                //SCI_TRACE_LOW("%s: [%d]->audio_uri = %s", __FUNCTION__, i, formula_audio_info[i]->audio_uri);
+            }
+            formula_request_status = 1;
+        }
+        else
+        {
+            formula_request_status = -1;
+        }
+    }
+    else
+    {
+        formula_request_status = -2;
+    }
+    if(MMK_IsFocusWin(FORMULA_WIN_ID)){
+        MMK_SendMsg(FORMULA_WIN_ID, MSG_FULL_PAINT, PNULL);
+    }
+}
+
+LOCAL void Formula_RequestTextInfo(void)
+{
+    char url[200] = {0};
+    char * query_str = NULL;
+#ifdef WIN32
+    char * data_buf = "{\"baseUrl\":\"http://8.130.95.8:8866/file/formulas/\"}";
+    Formula_ParseTextInfo(1, data_buf, strlen(data_buf), 0);
+#else
+    query_str = makeBaseQueryUrlString(FORMULA_APP_ID, FORMULA_APP_SECRET);
+    sprintf(url, FORMULA_BASE_TEXT_PATH, query_str);
+    SCI_FREE(query_str);
+    //SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
+    MMIZDT_HTTP_AppSend(TRUE, FORMULA_HEADER_PATH, url, strlen(url), 1000, 0, 0, 0, 0, 0, Formula_ParseTextInfo);
+#endif
+}
+
+LOCAL void Formula_StopTipsTimer(void)
+{
+    if(formula_tips_timer_id != 0){
+        MMK_StopTimer(formula_tips_timer_id);
+        formula_tips_timer_id = 0;
+    }
+}
+
+LOCAL void Formula_TipsTimerCallback(uint8 timer_id, uint32 param)
+{
+    if(timer_id == formula_tips_timer_id)
+    {
+        Formula_StopTipsTimer();
+        MMI_CloseFormulaTableTipWin();
+        if(MMK_IsFocusWin(FORMULA_WIN_ID)){
+            formula_play_info.play_idx++;
+            FormulaWin_PlayAudio();
+            MMK_SendMsg(FORMULA_WIN_ID, MSG_FULL_PAINT, PNULL);
+        }
+    }
+}
+
+LOCAL void Formula_CreateTipsTimer(void)
+{
+    Formula_StopTipsTimer();
+    formula_tips_timer_id = MMK_CreateTimerCallback(1000, Formula_TipsTimerCallback, PNULL, FALSE);
+    MMK_StartTimerCallback(formula_tips_timer_id, 1000, Formula_TipsTimerCallback, PNULL, FALSE);
+}
+
 LOCAL BOOLEAN FormulaTableTipWin_PlayRingCallback(MMISRV_HANDLE_T handle, MMISRVMGR_NOTIFY_PARAM_T *param)
 {
     MMISRVAUD_REPORT_T *report_ptr = PNULL;
@@ -120,16 +249,20 @@ LOCAL BOOLEAN FormulaWin_PlayRingCallback(MMISRV_HANDLE_T handle, MMISRVMGR_NOTI
                                 FormulaWin_StopRing();
                                 formula_play_info.play_status = FORMULA_ACTION_END;
                                 if(MMK_IsFocusWin(FORMULA_WIN_ID)){
-                                MMK_SendMsg(FORMULA_WIN_ID, MSG_FULL_PAINT, PNULL);
+                                    MMK_SendMsg(FORMULA_WIN_ID, MSG_FULL_PAINT, PNULL);
                                 }
                                 MMI_CreateFormulaTableWin();
-								  //MMK_CreateWin(FORMULA_TABLE_WIN_TAB, NULL);
                             }else{
                                 formula_play_info.play_idx++;
+                            #if FORMULA_AUDIO_USE_OFF_DATA != 0
                                 SCI_SLEEP(1000);
                                 FormulaWin_PlayRing(formula_play_info.play_idx);
+                            #else
+                                FormulaWin_PlayAudio();
+                                SCI_SLEEP(1000);
+                            #endif
                                 if(MMK_IsFocusWin(FORMULA_WIN_ID)){
-                                FormulaWin_ShowMultiText(FORMULA_WIN_ID);
+                                    FormulaWin_ShowMultiText(FORMULA_WIN_ID);
                                 }
                             }
                         }
@@ -166,7 +299,7 @@ LOCAL void FormulaWin_PlayRing(uint8 idx)
 
     FormulaWin_StopRing();
 
-    MMI_GetRingInfo(FORMULA_RING_START_ID+idx, &ring_data);
+    //MMI_GetRingInfo(FORMULA_RING_START_ID+idx, &ring_data);
     if (PNULL == ring_data.data_ptr)
     {
         SCI_TRACE_LOW("%s ring_data.data_ptr is empty!!", __FUNCTION__);
@@ -177,8 +310,8 @@ LOCAL void FormulaWin_PlayRing(uint8 idx)
         req.is_auto_free = TRUE;
         req.notify = FormulaTableTipWin_PlayRingCallback;
     }else{
-    req.is_auto_free = FALSE;
-    req.notify = FormulaWin_PlayRingCallback;
+        req.is_auto_free = FALSE;
+        req.notify = FormulaWin_PlayRingCallback;
     }
     req.pri = MMISRVAUD_PRI_NORMAL;
 
@@ -207,6 +340,118 @@ LOCAL void FormulaWin_PlayRing(uint8 idx)
     else
     {
         SCI_TRACE_LOW("%s formula_player_handle <= 0", __FUNCTION__);
+    }
+}
+
+LOCAL void FormulaWin_PlayAudioData(uint8 *data,uint32 data_len)
+{
+    MMIAUD_RING_DATA_INFO_T ring_data = {MMISRVAUD_RING_FMT_MIDI, 0, NULL};
+    MMISRVMGR_SERVICE_REQ_T req = {0};
+    MMISRVAUD_TYPE_T audio_srv = {0};
+    BOOLEAN result = FALSE;
+
+    FormulaWin_StopRing();
+
+    if(MMK_IsOpenWin(FORMULA_TABLE_TIP_WIN_ID)){
+        req.is_auto_free = TRUE;
+        req.notify = FormulaTableTipWin_PlayRingCallback;
+    }else{
+        req.is_auto_free = FALSE;
+        req.notify = FormulaWin_PlayRingCallback;
+    }
+    req.pri = MMISRVAUD_PRI_NORMAL;
+
+    audio_srv.info.type = MMISRVAUD_TYPE_RING_BUF;
+    audio_srv.info.ring_buf.fmt = MMISRVAUD_RING_FMT_MP3;
+    audio_srv.info.ring_buf.data = data;
+    audio_srv.info.ring_buf.data_len = data_len;
+    audio_srv.volume=MMIAPISET_GetMultimVolume();
+
+    audio_srv.all_support_route = MMISRVAUD_ROUTE_SPEAKER | MMISRVAUD_ROUTE_EARPHONE;
+    formula_player_handle = MMISRVMGR_Request(STR_SRV_AUD_NAME, &req, &audio_srv);
+    if(formula_player_handle > 0)
+    {
+        result = MMISRVAUD_Play(formula_player_handle, 0);
+        if(!result)
+        {
+            SCI_TRACE_LOW("%s formula_player_handle error", __FUNCTION__);
+            MMISRVMGR_Free(formula_player_handle);
+            formula_player_handle = 0;
+        }
+        if(result == MMISRVAUD_RET_OK)
+        {
+            SCI_TRACE_LOW("%s formula_player_handle = %d", __FUNCTION__, formula_player_handle);
+        }
+    }
+    else
+    {
+        SCI_TRACE_LOW("%s formula_player_handle <= 0", __FUNCTION__);
+    }
+}
+
+LOCAL void FormulaWin_ParseAudioResponse(BOOLEAN is_ok,uint8 * pRcv,uint32 Rcv_len,uint32 err_id)
+{
+    SCI_TRACE_LOW("%s: is_ok = %d, Rcv_len = %d", __FUNCTION__, is_ok, Rcv_len);
+    if (is_ok && pRcv != PNULL && Rcv_len> 2)
+    {
+        if(formula_audio_info[formula_play_info.play_idx] == NULL){
+            SCI_TRACE_LOW("%s: 01empty audio info!!", __FUNCTION__);
+            return;
+        }
+        formula_audio_info[formula_play_info.play_idx]->audio_len = Rcv_len;
+        if(formula_audio_info[formula_play_info.play_idx]->audio_data != PNULL)
+        {
+            SCI_FREE(formula_audio_info[formula_play_info.play_idx]->audio_data);
+            formula_audio_info[formula_play_info.play_idx]->audio_data = NULL;
+        }
+        formula_audio_info[formula_play_info.play_idx]->audio_data = SCI_ALLOCA(Rcv_len);
+        SCI_MEMSET(formula_audio_info[formula_play_info.play_idx]->audio_data, 0, Rcv_len);
+        SCI_MEMCPY(formula_audio_info[formula_play_info.play_idx]->audio_data, pRcv, Rcv_len);
+    }
+    else
+    {
+        if(formula_audio_info[formula_play_info.play_idx] == NULL){
+            SCI_TRACE_LOW("%s: 02empty audio info!!", __FUNCTION__);
+            return;
+        }
+        formula_audio_info[formula_play_info.play_idx]->audio_len = -2;
+    }
+    if(MMK_IsFocusWin(FORMULA_WIN_ID) || MMK_IsFocusWin(FORMULA_TABLE_TIP_WIN_ID)){
+        FormulaWin_PlayAudio();
+    }
+}
+
+LOCAL void FormulaWin_PlayAudio(void)
+{
+    if(formula_audio_info[formula_play_info.play_idx] == NULL){
+        SCI_TRACE_LOW("%s: empty audio info!!", __FUNCTION__);
+        return;
+    }
+    if(formula_audio_info[formula_play_info.play_idx]->audio_len == 0)
+    {
+        if(formula_audio_info[formula_play_info.play_idx]->audio_uri != NULL)
+        {
+            MMIZDT_HTTP_AppSend(TRUE, formula_audio_info[formula_play_info.play_idx]->audio_uri, PNULL, 0, 1000, 0, 0, 6000, 0, 0, FormulaWin_ParseAudioResponse);
+        }
+        else
+        {
+            SCI_TRACE_LOW("%s: empty audio uri!!", __FUNCTION__);
+            MMI_CreateFormulaTableTipWin(60);
+        }
+    }
+    else if(formula_audio_info[formula_play_info.play_idx]->audio_len == -1)
+    {
+        MMI_CreateFormulaTableTipWin(61);
+    }
+    else if(formula_audio_info[formula_play_info.play_idx]->audio_len == -2)
+    {
+        MMI_CreateFormulaTableTipWin(62);
+    }
+    else
+    {
+        if(formula_audio_info[formula_play_info.play_idx]->audio_data != NULL){
+            FormulaWin_PlayAudioData(formula_audio_info[formula_play_info.play_idx]->audio_data ,formula_audio_info[formula_play_info.play_idx]->audio_len);
+        }
     }
 }
 
@@ -261,6 +506,35 @@ LOCAL void FormulaWin_FULL_PAINT(MMI_WIN_ID_T win_id, GUI_LCD_DEV_INFO lcd_dev_i
         text_state,
         GUISTR_TEXT_DIR_AUTO
     );
+
+    if(formula_request_status <= 0)
+    {
+        switch(formula_request_status)
+        {
+            case 0:
+                MMIRES_GetText(TXT_FORMULA_INFO_LOADING, win_id, &text_string);
+                break;
+            case -1:
+                MMIRES_GetText(TXT_FORMULA_INFO_LOAD_FAIL, win_id, &text_string);
+                break;
+            case -2:
+                MMIRES_GetText(TXT_FORMULA_INFO_REQUESET_FAIL, win_id, &text_string);
+                break;
+            default:
+                break;
+        }
+        text_style.font = DP_FONT_24;
+        GUISTR_DrawTextToLCDInRect(
+            (const GUI_LCD_DEV_INFO *)&lcd_dev_info,
+            &formula_win_rect,
+            &formula_win_rect,
+            &text_string,
+            &text_style,
+            text_state,
+            GUISTR_TEXT_DIR_AUTO
+        );
+        return;
+    }
 
     text_style.font = DP_FONT_20;
     text_style.font_color = GUI_RGB2RGB565(80, 162, 254);
@@ -345,11 +619,19 @@ LOCAL void FormulaWin_FULL_PAINT(MMI_WIN_ID_T win_id, GUI_LCD_DEV_INFO lcd_dev_i
 }
 LOCAL void FormulaWin_CTL_PENOK(MMI_WIN_ID_T win_id)
 {
+    if(formula_request_status <= 0){
+        SCI_TRACE_LOW("%s: return, formula_request_status = %d", __FUNCTION__, formula_request_status);
+        return;
+    }
     if(formula_play_info.play_status == FORMULA_ACTION_NONE)
     {
         formula_play_info.play_status = FORMULA_ACTION_PLAY;
         formula_play_info.play_idx = 0;
+    #if FORMULA_AUDIO_USE_OFF_DATA != 0
         FormulaWin_PlayRing(0);
+    #else
+        FormulaWin_PlayAudio();
+    #endif
         MMK_SendMsg(win_id, MSG_FULL_PAINT, PNULL);
     }
     else
@@ -363,7 +645,11 @@ LOCAL void FormulaWin_CTL_PENOK(MMI_WIN_ID_T win_id)
         else
         {
             formula_play_info.play_status = FORMULA_ACTION_PLAY;
+        #if FORMULA_AUDIO_USE_OFF_DATA != 0
             FormulaWin_PlayRing(formula_play_info.play_idx);
+        #else
+            FormulaWin_PlayAudio();
+        #endif
             MMK_SendMsg(win_id, MSG_FULL_PAINT, PNULL);
         }
     }
@@ -381,11 +667,19 @@ LOCAL void FormulaWin_KEYDOWN_FORWARD(MMI_WIN_ID_T win_id)
 
 LOCAL void FormulaWin_HANDLE_UP(MMI_WIN_ID_T win_id, GUI_POINT_T point)
 {
+    if(formula_request_status <= 0){
+        SCI_TRACE_LOW("%s: return, formula_request_status = %d", __FUNCTION__, formula_request_status);
+        return;
+    }
     if(GUI_PointIsInRect(point, formula_action_play_rect) && formula_play_info.play_status == FORMULA_ACTION_NONE)
     {
         formula_play_info.play_status = FORMULA_ACTION_PLAY;
         formula_play_info.play_idx = 0;
+    #if FORMULA_AUDIO_USE_OFF_DATA != 0
         FormulaWin_PlayRing(0);
+    #else
+        FormulaWin_PlayAudio();
+    #endif
         MMK_SendMsg(win_id, MSG_FULL_PAINT, PNULL);
     }
     else if(GUI_PointIsInRect(point, formula_action_stop_rect) && 
@@ -399,7 +693,11 @@ LOCAL void FormulaWin_HANDLE_UP(MMI_WIN_ID_T win_id, GUI_POINT_T point)
         else
         {
             formula_play_info.play_status = FORMULA_ACTION_PLAY;
+        #if FORMULA_AUDIO_USE_OFF_DATA != 0
             FormulaWin_PlayRing(formula_play_info.play_idx);
+        #else
+            FormulaWin_PlayAudio();
+        #endif
         }
         MMK_SendMsg(win_id, MSG_FULL_PAINT, PNULL);
     }
@@ -428,8 +726,16 @@ LOCAL void FormulaWin_HANDLE_UP(MMI_WIN_ID_T win_id, GUI_POINT_T point)
             formula_play_info.play_status = FORMULA_ACTION_STOP;
         }
         MMI_CreateFormulaTableWin();
-		  //MMK_CreateWin(FORMULA_TABLE_WIN_TAB, NULL);
     }
+}
+
+LOCAL void FormulaWin_CLOSE_WINDOW(void)
+{
+    memset(&formula_play_info, 0, sizeof(FORMULA_PLAY_INFO_T));
+    formula_request_status = 0;
+    Formula_StopTipsTimer();
+    FormulaWin_StopRing();
+    Formula_ReleaseTextInfo();
 }
 
 LOCAL MMI_RESULT_E HandleFormulaWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E msg_id, DPARAM param)
@@ -440,6 +746,7 @@ LOCAL MMI_RESULT_E HandleFormulaWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E msg_
     {
         case MSG_OPEN_WINDOW:
             {
+                Formula_RequestTextInfo();
                 memset(&formula_play_info, 0, sizeof(FORMULA_PLAY_INFO_T));
             }
             break;
@@ -474,11 +781,9 @@ LOCAL MMI_RESULT_E HandleFormulaWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E msg_
                 FormulaWin_KEYDOWN_FORWARD(win_id);
             }
             break;
-      /*  case MSG_KEYDOWN_CANCEL:
-            break;*/
-			   case MSG_KEYDOWN_RED:
+        case MSG_KEYDOWN_RED:
             break;
-             case MSG_KEYUP_RED:
+        case MSG_KEYUP_RED:
         case MSG_CTL_CANCEL:
         case MSG_APP_CANCEL:
             {
@@ -487,8 +792,7 @@ LOCAL MMI_RESULT_E HandleFormulaWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E msg_
             break;
         case MSG_CLOSE_WINDOW:
             {
-                memset(&formula_play_info, 0, sizeof(FORMULA_PLAY_INFO_T));
-                FormulaWin_StopRing();
+                FormulaWin_CLOSE_WINDOW();
             }
             break;
         default:
@@ -533,7 +837,12 @@ LOCAL void FormulaTableTipWin_LeftButtonCallback(void)
     uint8 idx = MMK_GetWinAddDataPtr(FORMULA_TABLE_TIP_WIN_ID);
     if(formula_table_play_status == 0){
         formula_table_play_status = 1;
+        formula_play_info.play_idx = idx;
+    #if FORMULA_AUDIO_USE_OFF_DATA != 0
         FormulaWin_PlayRing(idx);
+    #else
+        FormulaWin_PlayAudio();
+    #endif
     }else{
         formula_table_play_status = 0;
         FormulaWin_StopRing();
@@ -565,10 +874,24 @@ LOCAL void FormulaTableTipWin_FULL_PAINT(MMI_WIN_ID_T win_id)
     text_style.font = DP_FONT_26;
     text_style.font_color = GUI_RGB2RGB565(80, 162, 254);
     text_rect = formula_msg_rect;
-    text_rect.bottom = formula_msg_tips_right_rect.top;
-    GUI_GBToWstr(&text_wchar, formula_multi_text[idx].text, strlen(formula_multi_text[idx].text));
-    text_string.wstr_ptr = text_wchar;
-    text_string.wstr_len = MMIAPICOM_Wstrlen(text_wchar);
+
+    if(idx < 60){
+        text_rect.bottom = formula_msg_tips_right_rect.top;
+        GUI_GBToWstr(&text_wchar, formula_multi_text[idx].text, strlen(formula_multi_text[idx].text));
+        text_string.wstr_ptr = text_wchar;
+        text_string.wstr_len = MMIAPICOM_Wstrlen(text_wchar);
+    }else{
+        text_style.font = DP_FONT_22;
+        GUIBUTTON_SetVisible(FORMULA_TABLE_TIP_LEFT_BUTTON_CTRL_ID, FALSE, FALSE);
+        GUIBUTTON_SetVisible(FORMULA_TABLE_TIP_RIGHT_BUTTON_CTRL_ID, FALSE, FALSE);
+        if(idx == 60){
+            MMIRES_GetText(TXT_FORMULA_AUDIO_NONE, win_id, &text_string);
+        }else if(idx == 61){
+            MMIRES_GetText(TXT_FORMULA_AUDIO_LOAD_FAIL, win_id, &text_string);
+        }else if(idx == 62){
+            MMIRES_GetText(TXT_FORMULA_AUDIO_REQUESET_FAIL, win_id, &text_string);
+        }
+    }
     GUISTR_DrawTextToLCDInRect(
         (const GUI_LCD_DEV_INFO *)&lcd_dev_info,
         &text_rect,
@@ -605,6 +928,7 @@ LOCAL MMI_RESULT_E HandleFormulaTableTipWinMsg(MMI_WIN_ID_T win_id, MMI_MESSAGE_
             {
                 formula_table_play_status = 0;
                 FormulaWin_StopRing();
+                Formula_StopTipsTimer();
             }
             break;
         default:
@@ -666,6 +990,7 @@ LOCAL void FormulaTableWin_OPEN_WINDOW(MMI_WIN_ID_T win_id)
     for(i = 0;i < 4;i++)
     {
         form_ctrl_id = FORMULA_FORM_CHILD_1_CTRL_ID + i;
+        form_rect.bottom = MMI_MAINSCREEN_HEIGHT - FORMULA_LINE_HIGHT;
         GUIFORM_SetBg(form_ctrl_id, &form_bg);
         GUIFORM_SetRect(form_ctrl_id, &form_rect);
         for(j = 0;j < 2;j++)
@@ -681,7 +1006,7 @@ LOCAL void FormulaTableWin_OPEN_WINDOW(MMI_WIN_ID_T win_id)
             GUILIST_PermitBorder(list_ctrl_id, FALSE);
             GUILIST_SetSlideState(list_ctrl_id, FALSE);
             list_ctrl_height.type = GUIFORM_CHILD_HEIGHT_FIXED;
-            list_ctrl_height.add_data = (formula_multi_table_rect.bottom - formula_multi_table_rect.top) - m * FORMULA_LIST_ITEM_HIGHT;
+            list_ctrl_height.add_data = (9 - m) * FORMULA_LINE_HIGHT ;
             GUIFORM_SetChildHeight(form_ctrl_id, list_ctrl_id, &list_ctrl_height);
             list_ctrl_width.type = GUIFORM_CHILD_WIDTH_FIXED;
             list_ctrl_width.add_data = (formula_multi_table_rect.right - formula_multi_table_rect.left) / 2;
@@ -831,8 +1156,12 @@ LOCAL void FormulaTableWin_TP_PRESS_UP(MMI_WIN_ID_T win_id, GUI_POINT_T point)
     {
         formula_play_info.play_status = FORMULA_ACTION_PLAY;
         formula_play_info.play_idx = 0;
-        FormulaWin_PlayRing(0);
-    //    MMK_CloseWin(win_id);
+    #if FORMULA_AUDIO_USE_OFF_DATA != 0
+        FormulaWin_PlayRing(formula_play_info.play_idx);
+    #else
+        FormulaWin_PlayAudio();
+    #endif
+        MMK_CloseWin(win_id);
     }
 }
 
