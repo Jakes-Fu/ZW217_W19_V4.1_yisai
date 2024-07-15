@@ -39,7 +39,7 @@ PUBLIC void Word_UpdateBookInfo(void)
     query_str = makeBaseQueryUrlString(WORD_BOOK_APP_ID, WORD_BOOK_APP_SECRET);
     sprintf(url, WORD_BOOK_PUBLISH_PATH, query_str);
     SCI_FREE(query_str);
-    SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
+    //SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
     word_is_load_local = FALSE;
     MMIZDT_HTTP_AppSend(TRUE, WORD_BOOK_HEADR_PATH, url, strlen(url), 1000, 0, 0, 0, 0, 0, Word_ParseBookInfo);
 }
@@ -81,18 +81,10 @@ PUBLIC void Word_WriteLearnInfo(void)
 
     out = cJSON_PrintUnformatted(root);
     strcpy(file_path, WORD_LEARN_INFO_PATH);
-#ifndef WIN32
-
-    if(zmt_tfcard_exist() && zmt_tfcard_get_free_kb() > 100 * 1024)
-#endif
-
-    {
-        if(zmt_file_exist(file_path)){
-            zmt_file_delete(file_path);
-        }
-        zmt_file_data_write(out, strlen(out), file_path);
+    if(zmt_file_exist(file_path)){
+        zmt_file_delete(file_path);
     }
-    
+    zmt_file_data_write(out, strlen(out), file_path);
     cJSON_Delete(root);
     SCI_FREE(out);
 }
@@ -326,18 +318,10 @@ PUBLIC void Word_WriteUnmasterChapterWord(uint16 book_id, uint16 chap_id, char *
 
     out = cJSON_PrintUnformatted(root);
     cJSON_Delete(root);
-#ifndef WIN32
-
-    if(zmt_tfcard_exist() && zmt_tfcard_get_free_kb() > 100 * 1024){
-        if(zmt_file_exist(file_path)){
-            zmt_file_delete(file_path);
-        }
-        zmt_file_data_write(out, strlen(out), file_path);
+    if(zmt_file_exist(file_path)){
+        zmt_file_delete(file_path);
     }
-#else
     zmt_file_data_write(out, strlen(out), file_path);
-#endif
-
     SCI_FREE(out);
 }
 
@@ -501,7 +485,7 @@ PUBLIC void Word_requestBookInfo(void)
         query_str = makeBaseQueryUrlString(WORD_BOOK_APP_ID, WORD_BOOK_APP_SECRET);
         sprintf(url, WORD_BOOK_PUBLISH_PATH, query_str);
         SCI_FREE(query_str);
-        SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
+        //SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
         word_is_load_local = FALSE;
         MMIZDT_HTTP_AppSend(TRUE, WORD_BOOK_HEADR_PATH, url, strlen(url), 1000, 0, 0, 0, 0, 0, Word_ParseBookInfo);
     }
@@ -820,7 +804,7 @@ PUBLIC void Word_requestChapterDetailInfo(uint16 book_id)
         char * query_str = makeBaseQueryUrlString(WORD_BOOK_APP_ID, WORD_BOOK_APP_SECRET);
         sprintf(url,WORD_BOOK_ID_PATH,book_id, query_str);
         SCI_FREE(query_str);
-        SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
+        //SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
         word_is_load_local = FALSE;
         MMIZDT_HTTP_AppSend(TRUE, WORD_BOOK_HEADR_PATH, url, strlen(url), 1000, 0, 0, 0, 0, 0, Word_ParseChapterInfo);
     }
@@ -1149,23 +1133,13 @@ PUBLIC void Word_SaveDeleteNewWord(uint16 book_id, uint16 chap_id, char * chap_n
         cJSON_AddItemToArray(word, word_item);
     }
     cJSON_AddItemToObject(root, "word", word);
-#ifndef WIN32
-//	#ifndef TF_CARD_SUPPORT
-    if(zmt_tfcard_exist() && zmt_tfcard_get_free_kb() > 100 * 1024)
-    {
-        if(zmt_file_exist(file_path)){
-            zmt_file_delete(file_path);
-        }
-        out = cJSON_PrintUnformatted(root);
-        zmt_file_data_write(out, strlen(out), file_path);
-        SCI_FREE(out);
+
+    if(zmt_file_exist(file_path)){
+        zmt_file_delete(file_path);
     }
-	//#endif
-#else
     out = cJSON_PrintUnformatted(root);
     zmt_file_data_write(out, strlen(out), file_path);
     SCI_FREE(out);
-#endif
     cJSON_Delete(root);
 }
 

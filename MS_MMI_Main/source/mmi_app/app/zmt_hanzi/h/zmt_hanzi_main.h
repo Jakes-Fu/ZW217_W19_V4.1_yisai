@@ -33,12 +33,12 @@ extern "C"
 #define HANZI_BOOK_CHAPTER_PATH "hanzi/get?contentId=%d&%s"
 #define HANZI_BOOK_AUDIO_PATH "%saudio/word/%s/name/%s.mp3"
 
-#define HANZI_CARD_LEARN_INFO_PATH "E:/hanzi/learn_info.json"
+#define HANZI_CARD_LEARN_INFO_PATH "D:/hanzi/learn_info.json"
 #define HANZI_CARD_BOOK_INFO_PATH "E:/hanzi/publish_name.json"
 #define HANZI_CARD_GRADE_CHAPTER_PATH "E:/hanzi/grade_%d/grade_%d.json"
 #define HANZI_CARD_CHAPTER_WORD_PATH "E:/hanzi/grade_%d/%d.json"
 #define HANZI_CARD_WORD_AUDIO_PATH "E:/hanzi/grade_%d/%s.mp3"
-#define HANZI_CARD_NEW_HANZI_PATH "E:/hanzi/grade_%d/unmaster_word_%d.json"//grade_id,//section_id
+#define HANZI_CARD_NEW_HANZI_PATH "D:/hanzi/grade_%d/unmaster_word_%d.json"//grade_id,//section_id
 
 #define HANZI_PUBLISH_BOOK_MAX 10
 #define HANZI_CONTENT_CHAPTER_MAX 20

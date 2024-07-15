@@ -30,11 +30,11 @@ extern "C"
 #define WORD_BOOK_AUDIO_BASE_PATH "%s%s.mp3"
 #define WORD_BOOK_AUDIO_BASE_URL "http://8.130.95.8:8866/file/english/"
 
-#define WORD_LEARN_INFO_PATH "E:/word/learn_info.json"
+#define WORD_LEARN_INFO_PATH "D:/word/learn_info.json"
 #define WORD_PUBLISH_NAME_PATH "E:/word/publish_name.json"
 #define WORD_BOOK_CHAPTER_PATH "E:/word/book_%d/book_%d.json"
 #define WORD_BOOK_AUDIO_PATH "E:/word/book_%d/%s.mp3"
-#define WORD_BOOK_NEW_WORD_PATH "E:/word/book_%d/unmaster_word_%d.json"
+#define WORD_BOOK_NEW_WORD_PATH "D:/word/book_%d/unmaster_word_%d.json"
 
 #define WORD_PUBLISH_MAX 20
 #define WORD_PUBLISH_BOOK_MAX 30

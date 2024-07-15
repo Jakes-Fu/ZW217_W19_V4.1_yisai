@@ -332,7 +332,7 @@ LOCAL void WordPopupWin_TP_PRESS_UP(MMI_WIN_ID_T win_id, GUI_POINT_T point)
     }
     else if(GUI_PointIsInRect(point, tips_right_rect))
     {
-      //  MMK_CloseWin(win_id);
+        MMK_CloseWin(win_id);
         if(word_learn_info != NULL)
         {
             uint8 i = 0;
@@ -362,7 +362,7 @@ LOCAL void WordPopupWin_TP_PRESS_UP(MMI_WIN_ID_T win_id, GUI_POINT_T point)
 
 LOCAL void WordPopupWin_CTL_PENOK(MMI_WIN_ID_T win_id)
 {
-	//  MMK_CloseWin(win_id);
+    MMK_CloseWin(win_id);
     if(word_learn_info != NULL)
     {
         uint8 i = 0;
