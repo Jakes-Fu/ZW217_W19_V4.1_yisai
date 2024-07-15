@@ -82,6 +82,7 @@ LOCAL uint8 hanzi_tip_timer = 0;
 LOCAL MMISRV_HANDLE_T hanzi_player_handle = PNULL;
 LOCAL uint8 cur_chapter_total_count = 0;
 LOCAL uint8 cur_chapter_unmaster_count = 0;
+LOCAL BOOLEAN new_hanzi_haved_delete = FALSE;
 uint8 cur_new_hanzi_page_idx = 0;
 int cur_chapter_unmaster_idx[HANZI_CHAPTER_WORD_MAX] = {0};
 LOCAL int16 hanzi_listen_cur_idx = 0;
@@ -974,6 +975,11 @@ LOCAL BOOLEAN Hanzi_ChatPlayMp3DataNotify(MMISRV_HANDLE_T handle, MMISRVMGR_NOTI
                             {
                                 HanziListenWin_CreateIntervalTimer();
                             }
+							 if(MMIZDT_IsClassModeWinOpen() )
+		{
+	             Hanzi_StopPlayMp3Data();
+	             MMI_CloseHanziListenWin();
+		  }
                         }
                         break;
                     default:
@@ -1033,7 +1039,11 @@ LOCAL void HanziDetail_NextChapterInfo(void)
     hanzi_book_info.cur_section_children_idx++;
     if(hanzi_book_info.cur_section_children_idx < hanzi_chapter_children_count[hanzi_book_info.cur_section_idx])
     {
-        Hanzi_WriteUnmasterHanzi(cur_chapter_unmaster_count);
+        Hanzi_WriteUnmasterHanzi(
+            hanzi_publish_info[hanzi_book_info.cur_book_idx]->id,
+            hanzi_content_info[hanzi_book_info.cur_section_idx]->content_id, 
+            cur_chapter_unmaster_count
+        );
         cur_chapter_unmaster_count = 0;
         hanzi_detail_cur_idx = 0;
         hanzi_book_info.cur_chapter_idx++;
@@ -1047,7 +1057,11 @@ LOCAL void HanziDetail_NextChapterInfo(void)
         hanzi_book_info.cur_section_idx++;
         if(hanzi_book_info.cur_section_idx < hanzi_chapter_count)
         {
-            Hanzi_WriteUnmasterHanzi(cur_chapter_unmaster_count);
+            Hanzi_WriteUnmasterHanzi(
+                hanzi_publish_info[hanzi_book_info.cur_book_idx]->id,
+                hanzi_content_info[hanzi_book_info.cur_section_idx]->content_id, 
+                cur_chapter_unmaster_count
+            );
             cur_chapter_unmaster_count = 0;
             hanzi_detail_cur_idx = 0;
             hanzi_book_info.cur_section_children_idx = 0;
@@ -1067,7 +1081,11 @@ LOCAL void HanziDetail_NextChapterInfo(void)
 LOCAL void HanziDetail_GoToListenWord(void)
 {
     if(!is_open_new_hanzi){
-        Hanzi_WriteUnmasterHanzi(cur_chapter_unmaster_count);
+        Hanzi_WriteUnmasterHanzi(
+            hanzi_publish_info[hanzi_book_info.cur_book_idx]->id,
+            hanzi_content_info[hanzi_book_info.cur_section_idx]->content_id, 
+            cur_chapter_unmaster_count
+        );
         cur_chapter_unmaster_count = 0;
     }
     MMI_CreateHanziListenWin();
@@ -1179,7 +1197,10 @@ LOCAL void HanziDetail_RightDetail(void)//未掌握/下一个
             if(hanzi_detail_cur_idx >= HANZI_CHAPTER_WORD_MAX){
                 hanzi_detail_cur_idx = 0;
                 cur_new_hanzi_page_idx++;
-                Hanzi_RequestNewWord();
+                Hanzi_RequestNewWord(
+                    hanzi_publish_info[hanzi_book_info.cur_book_idx]->id,
+                    hanzi_content_info[hanzi_book_info.cur_section_idx]->content_id
+                );
             }
             else
             {
@@ -1195,8 +1216,9 @@ LOCAL void HanziDetail_RightDetail(void)//未掌握/下一个
 LOCAL void HanziDetail_DeleteNewHanzi(void)
 {
     uint16 idx = cur_new_hanzi_page_idx * HANZI_CHAPTER_WORD_MAX + hanzi_detail_cur_idx;
+    new_hanzi_haved_delete = TRUE;
     HanziDetail_DisplayTip(4);
-    Hanzi_DeleteNewWordItem(idx);
+    Hanzi_DeleteOneNewWord(idx, hanzi_detail_count);
 }
 
 LOCAL void HanziDetail_ShowTip(void)
@@ -1355,9 +1377,13 @@ LOCAL void HanziDetailWin_OPEN_WINDOW(MMI_WIN_ID_T win_id)
     GUILABEL_SetFont(MMI_ZMT_HANZI_DETAIL_LABEL_HANZI_CTRL_ID, DP_FONT_22,MMI_WHITE_COLOR);
     GUILABEL_SetFont(MMI_ZMT_HANZI_DETAIL_LABEL_PINYIN_CTRL_ID, DP_FONT_22,MMI_WHITE_COLOR);
 
+    new_hanzi_haved_delete = FALSE;
     memset(cur_chapter_unmaster_idx, 0, sizeof(cur_chapter_unmaster_idx));
     if(is_open_new_hanzi){
-        Hanzi_RequestNewWord();
+        Hanzi_RequestNewWord(
+            hanzi_publish_info[hanzi_book_info.cur_book_idx]->id,
+            hanzi_content_info[hanzi_book_info.cur_section_idx]->content_id
+        );
         Hanzi_InitButton(MMI_ZMT_HANZI_DETAIL_DELETE_CTRL_ID, del_rect, NULL, ALIGN_HVMIDDLE, FALSE, HanziDetail_DeleteNewHanzi);
         Hanzi_InitButton(MMI_ZMT_HANZI_DETAIL_LEFT_CTRL_ID, pre_rect, NULL, ALIGN_HVMIDDLE, FALSE, HanziDetail_LeftDetail);
         Hanzi_InitButton(MMI_ZMT_HANZI_DETAIL_RIGHT_CTRL_ID, next_rect, NULL, ALIGN_HVMIDDLE, FALSE, HanziDetail_RightDetail);
@@ -1569,9 +1595,24 @@ LOCAL void HanziDetailWin_TP_PRESS_UP(MMI_WIN_ID_T win_id, DPARAM param)
 
 LOCAL void HanziDetailWin_CLOSE_WINDOW(void)
 {
+    if(is_open_new_hanzi && new_hanzi_haved_delete)
+    {
+        Hanzi_SaveDeleteNewWord(
+            hanzi_publish_info[hanzi_book_info.cur_book_idx]->id,
+            hanzi_content_info[hanzi_book_info.cur_section_idx]->content_id
+        );
+    }
+    else if(!is_open_new_hanzi && cur_chapter_unmaster_count > 0)
+    {
+        Hanzi_WriteUnmasterHanzi(
+            hanzi_publish_info[hanzi_book_info.cur_book_idx]->id,
+            hanzi_content_info[hanzi_book_info.cur_section_idx]->content_id, 
+            cur_chapter_unmaster_count
+        );
+    }
     Hanzi_StopPlayMp3Data();
-    Hanzi_WriteUnmasterHanzi(cur_chapter_unmaster_count);
     Hanzi_ReleaseDetailInfo();
+    new_hanzi_haved_delete = FALSE;
     hanzi_detail_cur_idx = 0;
     hanzi_detail_count = 0;
     cur_chapter_unmaster_count = 0;

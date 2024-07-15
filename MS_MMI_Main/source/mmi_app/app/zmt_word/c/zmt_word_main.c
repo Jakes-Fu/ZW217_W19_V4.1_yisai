@@ -1085,6 +1085,11 @@ LOCAL BOOLEAN Word_ChatPlayMp3DataNotify(MMISRV_HANDLE_T handle, MMISRVMGR_NOTIF
                             {
                                 WordListenWin_CreateIntervalTimer();
                             }
+							 if(MMIZDT_IsClassModeWinOpen() )
+		{
+	             Word_StopPlayMp3Data();
+	             MMI_CloseWordListenWin();
+		  }
                         }
                         break;
                     default:
@@ -1209,7 +1214,7 @@ PUBLIC void WordDetail_PlayPinyinAudio(void)
         }
         return;
     }
-
+         
     //Õý³£µ¥´ÊÁ·Ï°
     if(word_chapter_info[word_book_info.cur_chapter_idx] == NULL ||
         word_chapter_info[word_book_info.cur_chapter_idx]->detail[word_detail_cur_idx] == NULL)
@@ -2560,6 +2565,8 @@ LOCAL void WordListenWin_DrawListenStatus(MMI_WIN_ID_T win_id, WORD_LISTEN_STAUS
         default:
             return;
     }
+	
+	    
     GUILABEL_SetTextById(MMI_ZMT_WORD_LISTEN_LABEL_TIPS_CTRL_ID, label_text, TRUE);
     GUIBUTTON_SetTextId(MMI_ZMT_WORD_LISTEN_BUTTON_STATUS_CTRL_ID, button_text);
     GUIBUTTON_SetVisible(MMI_ZMT_WORD_LISTEN_BUTTON_STATUS_CTRL_ID, TRUE, TRUE);
