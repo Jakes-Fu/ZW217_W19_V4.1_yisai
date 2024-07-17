@@ -515,6 +515,15 @@ SOURCES	 += zmt_hanzi_mdu_def.h
 SRCPATH += $(MMI_DIR)/source/mmi_app/app/zmt_hanzi/h
 endif
 ##zmt add end
+ifeq ($(strip $(ZMT_PINYIN_SUPPORT)), TRUE)
+SOURCES	 += zmt_pinyin_mdu_def.h 
+SRCPATH += $(MMI_DIR)/source/mmi_app/app/zmt_pinyin/h
+endif
+ 
+ ifeq ($(strip $(ZMT_YINBIAO_SUPPORT)), TRUE)
+SOURCES	 += zmt_yinbiao_mdu_def.h
+SRCPATH += $(MMI_DIR)/source/mmi_app/app/zmt_yinbiao/h
+endif
  
 #
 #  make process ,don't modify

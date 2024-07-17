@@ -1394,3 +1394,9 @@ RES_ADD_MODULE(MMI_MODULE_ZMT_HANZI,"\\zmt_hanzi\\zmt_hanzi_mdu_def.h")
 #endif
 //zmt add end
 //UAL_TODO:MMI_MODULE_PDP         (0x03 << 16)
+#ifdef  ZMT_PINYIN_SUPPORT
+RES_ADD_MODULE(MMI_MODULE_ZMT_PINYIN,"\\zmt_pinyin\\zmt_pinyin_mdu_def.h")
+#endif
+#ifdef  ZMT_YINBIAO_SUPPORT
+RES_ADD_MODULE(MMI_MODULE_ZMT_YINBIAO,"\\zmt_yinbiao\\zmt_yinbiao_mdu_def.h")
+#endif

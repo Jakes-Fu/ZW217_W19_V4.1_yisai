@@ -146,6 +146,24 @@ PUBLIC void MMIAPIMENU_EnterLebao(void);
 PUBLIC void LIBXMLYAPI_CreateXysdkMainWin(void);
 #endif
 
+#ifdef FORMULA_SUPPORT
+PUBLIC void MMI_CreateMathMnemonicWin(void);
+#endif
+
+#ifdef WORD_CARD_SUPPORT
+PUBLIC void MMI_CreateWordWin(void);
+#endif
+
+#ifdef HANZI_CARD_SUPPORT
+PUBLIC void MMI_CreateHanziWin(void);
+#endif
+#ifdef ZMT_PINYIN_SUPPORT
+PUBLIC void MMI_CreatePinyinMainWin(void);
+#endif
+
+#ifdef ZMT_YINBIAO_SUPPORT
+PUBLIC void MMI_CreateYinbiaoMainWin(void);
+#endif
 #ifdef MAINMENU_STYLE_SUPPORT
 PUBLIC void WatchSET_MenuStyle_Enter( void );//菜单切换
 #endif
@@ -221,8 +239,8 @@ extern PUBLIC uint8 Video_Call_Incoming_Test();
 //****** 列表菜单***************//
 #ifdef LAUNCHER_ALL_APP_IN_PAGE
     #ifdef APP_ITEM_NAME//是否显示菜单名称
-		#define MEUN_PHONEBOOK {1, TXT_CONTACT, res_app_ic_contact,  MMI_CreateMathMnemonicWin}
-		#define MEUN_CAMERA {0, TXT_LAUNCHER_CAMERA_TITLE, res_app_ic_camera,  MMI_CreateWordWin} //相机
+		#define MEUN_PHONEBOOK {1, TXT_CONTACT, res_app_ic_contact,   MMI_CreatePinyinMainWin}
+		#define MEUN_CAMERA {0, TXT_LAUNCHER_CAMERA_TITLE, res_app_ic_camera, MMI_CreateYinbiaoMainWin} //相机
         #ifdef ZDT_PLAT_YX_SUPPORT_VOICE
             #ifdef ZDT_PLAT_YX_SUPPORT_FRIEND
 		    #define MEUN_WECHART {1, TXT_WECHART, res_app_ic_wechat,  MMIZDT_OpenChatGroupWin}//微聊
@@ -230,7 +248,7 @@ extern PUBLIC uint8 Video_Call_Incoming_Test();
             #define MEUN_WECHART {1, TXT_WECHART, res_app_ic_wechat,  MMIAPIMENU_EnterTinyChat}//微聊
             #endif      // end ZDT_PLAT_YX_SUPPORT_FRIEND
         #endif // end ZDT_PLAT_YX_SUPPORT_VOICE
-		#define MEUN_GALLERY {0, TXT_GALLERY, res_app_ic_gallery, MMI_CreateHanziWin} //相册
+		#define MEUN_GALLERY {0, TXT_GALLERY, res_app_ic_gallery,WatchGallery_MainWin_Enter} //相册
 		#define MEUN_QRCODE {0, TXT_QRCODE, res_app_ic_qrcode,MMIZDT_Open2VMSelectWin}
 
 		#define MEUN_SETTINGS {0, TXT_LAUNCHER_SETTINGS_TITLE, res_app_ic_settings,WatchSET_MainWin_Enter}
@@ -264,6 +282,15 @@ extern PUBLIC uint8 Video_Call_Incoming_Test();
         #if defined(XYSDK_SUPPORT)|| defined(XYSDK_SRC_SUPPORT)
         #define MEUN_XMLY {1,TXT_XMLY, res_xmla_icon,LIBXMLYAPI_CreateXysdkMainWin}//喜马拉雅
         #endif
+			#ifdef WORD_CARD_SUPPORT
+		#define MENU_LEARN_WORD {0,TXT_WORD_CARD  , res_app_ic_word,  MMI_CreateWordWin} 
+		#endif
+        #ifdef HANZI_CARD_SUPPORT
+		#define MENU_HANZI {0,  TXT_HANZI_CARD, res_app_ic_hanzi,MMI_CreateHanziWin}
+		#endif
+		#ifdef FORMULA_SUPPORT
+#define MENU_MNEMONICS {0, TXT_FORMULA, res_app_ic_math,  MMI_CreateMathMnemonicWin} 
+#endif
         #ifdef LEBAO_MUSIC_SUPPORT
         #define MEUN_MUSIC {1,TXT_MIGU_MUSIC, res_music_icon,MMIAPIMENU_EnterLebao}//咪咕音乐
         #endif
@@ -318,6 +345,15 @@ extern PUBLIC uint8 Video_Call_Incoming_Test();
         #ifdef TULING_AI_SUPPORT
         #define MEUN_AI_CHAT {1, res_app_ic_ai_chat, MMIAPIMENU_EnterAiChat}//图灵AI
         #endif
+		#ifdef WORD_CARD_SUPPORT
+#define MENU_LEARN_WORD {0,res_app_ic_learn_word,  MMI_CreateWordWin} 
+#endif
+        #ifdef HANZI_CARD_SUPPORT
+      #define MENU_HANZI {1, res_app_ic_hanzi,MMI_CreateHanziWin}
+#endif
+#ifdef FORMULA_SUPPORT
+#define MENU_MNEMONICS {0,  res_app_ic_math,  MMI_CreateMathMnemonicWin} 
+#endif
         #ifdef LEBAO_MUSIC_SUPPORT
         #define MEUN_MUSIC {1,res_music_icon,MMIAPIMENU_EnterLebao}//咪咕音乐
         #endif
@@ -345,6 +381,13 @@ extern PUBLIC uint8 Video_Call_Incoming_Test();
         #endif
         #define MEUN_SCHEDULE {0,res_app_ic_schedule,MMIZDT_OpenScheduleWin}//课程表
     #endif
+#ifdef ZMT_PINYIN_SUPPORT
+#define MENU_PINYIN {0, PNULL,  MMI_CreatePinyinMainWin} 
+#endif
+
+#ifdef ZMT_YINBIAO_SUPPORT
+#define MENU_YINBIAO {0, PNULL,  MMI_CreateYinbiaoMainWin} 
+#endif
 #endif
 //*******列表菜单***************//
 
