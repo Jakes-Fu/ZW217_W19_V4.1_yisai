@@ -762,10 +762,11 @@ LOCAL MMI_RESULT_E HandlePinyinTableWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E 
                 PinyinTableWin_CTL_PENOK(win_id, param);
             }
             break;
-        case MSG_KEYDOWN_CANCEL:
+         case MSG_KEYDOWN_RED:
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
@@ -1159,10 +1160,11 @@ LOCAL MMI_RESULT_E HandlePinyinReadWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E m
                 PinyinReadWin_NextCallback();
             }
             break;
-        case MSG_KEYDOWN_CANCEL:
+       case MSG_KEYDOWN_RED:
             break;
-        case MSG_KEYUP_RED:
-        case MSG_KEYUP_CANCEL:
+             case MSG_KEYUP_RED:
+        case MSG_CTL_CANCEL:
+        case MSG_APP_CANCEL:
             {
                 MMK_CloseWin(win_id);
             }
