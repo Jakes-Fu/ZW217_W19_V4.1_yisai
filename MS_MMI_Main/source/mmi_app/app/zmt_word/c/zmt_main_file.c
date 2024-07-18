@@ -231,8 +231,10 @@ PUBLIC BOOLEAN zmt_file_exist(char * file_path)
 
 	GUI_UTF8ToWstr(file_str, MMIFILE_FULL_PATH_MAX_LEN+1, file_path, strlen(file_path));
 	//MMIAPICOM_StrToWstr(file_path, file_str);
+	
 	file_length = MMIAPICOM_Wstrlen(file_str);
 	exist = MMIFILE_IsFileExist(file_str, file_length);
+
 	SCI_TRACE_LOW("dsl_file %s: exist = %d, file_str = %s, file_length = %d\n", __FUNCTION__, exist, file_path, file_length);
 	
 	return exist;
