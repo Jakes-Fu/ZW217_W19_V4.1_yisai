@@ -106,7 +106,7 @@ LOCAL BOOLEAN MMI_IsOpenWordListenWin(void);
 LOCAL void WordListenWin_PlayAudioFail(void);
 LOCAL void WordListenWin_CreateIntervalTimer(void);
 LOCAL void WordDetail_ShowTip(void);
-
+LOCAL void WordDetail_NextChapterInfo(void);
 LOCAL void Word_DrawWinTitle(MMI_WIN_ID_T win_id, MMI_CTRL_ID_T ctrl_id,MMI_STRING_T text_string)
 {
     GUI_LCD_DEV_INFO lcd_dev_info = {GUI_MAIN_LCD_ID,GUI_BLOCK_MAIN};
@@ -702,10 +702,11 @@ LOCAL MMI_RESULT_E HandleWordMainWinMsg(MMI_WIN_ID_T win_id,MMI_MESSAGE_ID_E msg
             break;
         case MSG_CLOSE_WINDOW:
             {
+			  word_publish_count = 0;
                 memset(&word_book_info, 0, sizeof(WORD_BOOK_INFO_T));
                 Word_ReleaseBookInfo();
                 Word_ReleaseLearnInfo();
-                word_publish_count = 0;
+              //  word_publish_count = 0;
             }
             break;
          default:
@@ -827,7 +828,6 @@ LOCAL void WordChapter_OpenNormalWord(void)
 LOCAL void WordChapter_OpenNewWord(void)
 {
     is_open_new_word = TRUE;
-	//WordDetail_NextChapterInfo();
     MMI_CreateWordDetailWin();
 }
 
@@ -1173,10 +1173,10 @@ PUBLIC void WordDetail_PlayPinyinAudio(void)
     if(is_open_new_word)
     {
         if(new_word_detail_info[word_detail_cur_idx] == NULL){
-            SCI_TRACE_LOW("%s: 01empty detail info!!", __FUNCTION__);
+          //  SCI_TRACE_LOW("%s: 01empty detail info!!", __FUNCTION__);
             return;
         }
-        //SCI_TRACE_LOW("%s: 01audio_len = %d", __FUNCTION__, new_word_detail_info[word_detail_cur_idx]->audio_len);
+        SCI_TRACE_LOW("%s: 01audio_len = %d", __FUNCTION__, new_word_detail_info[word_detail_cur_idx]->audio_len);
         if(new_word_detail_info[word_detail_cur_idx]->audio_len == 0)
         {
             char file_path[40] = {0};
@@ -1284,9 +1284,11 @@ LOCAL void WordDetail_LeftDetail(void)//已掌握/上一个
 LOCAL void WordDetail_RightDetail(void)//未掌握/下一个
 {
     if(!is_open_new_word){
-        chapter_unmaster_idx[chapter_unmaster_count] = word_detail_cur_idx + 1;
+
+        chapter_unmaster_idx[chapter_unmaster_count] = word_detail_cur_idx+1 ;
         chapter_unmaster_count++;
         word_detail_cur_idx++;
+		 SCI_TRACE_LOW("[chapter_unmaster_count+word_detail_cur_idx:  %d,%d ",   chapter_unmaster_count,word_detail_cur_idx);
         if(word_open_auto_play){
             WordDetail_PlayPinyinAudio();
         }
@@ -1302,10 +1304,11 @@ LOCAL void WordDetail_RightDetail(void)//未掌握/下一个
 
 LOCAL void WordDetail_NextChapterInfo(void)
 {
-    word_book_info.cur_chapter_idx++;
+ 
+	   SCI_TRACE_LOW("[ word_chapter_info[word_book_info.cur_chapter_idx]->chapter_id]+word_chapter_count:  %d,%d ",   word_book_info.cur_chapter_idx,chapter_unmaster_count);
     if(word_book_info.cur_chapter_idx < word_chapter_count)
-    {
-        Word_WriteUnmasterChapterWord(
+    { 
+	        Word_WriteUnmasterChapterWord(
             word_publish_info[word_book_info.cur_publish_idx]->item_info[word_book_info.cur_book_idx]->book_id,
             word_chapter_info[word_book_info.cur_chapter_idx]->chapter_id,
             word_chapter_info[word_book_info.cur_chapter_idx]->chapter_name,
@@ -1313,6 +1316,7 @@ LOCAL void WordDetail_NextChapterInfo(void)
         );
         chapter_unmaster_count = 0;
         word_detail_cur_idx = 0;
+		word_book_info.cur_chapter_idx++;
         MMK_SendMsg(MMI_WORD_DETAIL_WIN_ID, MSG_FULL_PAINT, PNULL);
     }
 }
@@ -1632,7 +1636,7 @@ LOCAL void WordDetailWin_NormalWordFullPaint(MMI_WIN_ID_T win_id)
     }
     else
     {
-        if(word_book_info.cur_chapter_idx + 1 < word_chapter_count)
+        if(word_book_info.cur_chapter_idx  +1< word_chapter_count)
         {
             GUIBUTTON_SetVisible(MMI_ZMT_WORD_MSG_TIPS_CTRL_ID, TRUE, TRUE);
             GUIBUTTON_SetTextId(MMI_ZMT_WORD_MSG_TIPS_CTRL_ID, WORD_FINISH);
@@ -1650,7 +1654,7 @@ LOCAL void WordDetailWin_NormalWordFullPaint(MMI_WIN_ID_T win_id)
             GUIBUTTON_SetTextId(MMI_ZMT_WORD_DETAIL_RIGHT_CTRL_ID, WORD_BACK_CH);            
             GUIBUTTON_SetCallBackFunc(MMI_ZMT_WORD_DETAIL_RIGHT_CTRL_ID, MMI_CloseWordDetailWin);
         }
-        LCD_DrawHLine(&lcd_dev_info, word_Hor_line_rect.left, word_Hor_line_rect.bottom, word_Hor_line_rect.right, MMI_WHITE_COLOR);
+       LCD_DrawHLine(&lcd_dev_info, word_Hor_line_rect.left, word_Hor_line_rect.bottom, word_Hor_line_rect.right, MMI_WHITE_COLOR);
     }
 }
 
@@ -1683,7 +1687,7 @@ LOCAL void WordDetailWin_FULL_PAINT(MMI_WIN_ID_T win_id)
         word_detail_count = word_chapter_info[word_book_info.cur_chapter_idx]->detail_count;
     }
 
-    //SCI_TRACE_LOW("%s: word_detail_count = %d", __FUNCTION__, word_detail_count);
+    SCI_TRACE_LOW("%s: word_detail_count = %d", __FUNCTION__, word_detail_count);
     if(word_detail_count <= 0){
         GUIBUTTON_SetVisible(MMI_ZMT_WORD_DETAIL_BUTTON_AUDIO_CTRL_ID, FALSE, FALSE);
     }
@@ -1711,6 +1715,7 @@ LOCAL void WordDetailWin_FULL_PAINT(MMI_WIN_ID_T win_id)
         if(is_open_new_word){
             WordDetailWin_NewWordFullPaint(win_id);
         }else{
+
             WordDetailWin_NormalWordFullPaint(win_id);
         }
     }
@@ -1756,6 +1761,7 @@ LOCAL void WordDetailWin_CLOSE_WINDOW(void)
             word_chapter_info[word_book_info.cur_chapter_idx]->chapter_name,
             chapter_unmaster_count
         );
+		
     }
     new_word_haved_delete = FALSE;
     word_detail_count = 0;

@@ -29,6 +29,7 @@ HANZI_BOOK_HANZI_INFO * hanzi_detail_info[HANZI_CHAPTER_WORD_MAX];
 int16 hanzi_detail_count = 0;
 int16 hanzi_detail_cur_idx = 0;
 BOOLEAN hanzi_is_load_local = FALSE;
+
 LOCAL uint8 * Hanzi_MakeMd5Str(char * sign)
 {
     mbedtls_md5_context md5_ctx = {0};
@@ -55,7 +56,7 @@ PUBLIC void Hanzi_UpdateBookInfo(void)
     char * query_str = makeBaseQueryUrlString(HANZI_BOOK_APP_ID, HANZI_BOOK_APP_SECRET);
     sprintf(url, HANZI_BOOK_PUBLISH_PATH, query_str);
     SCI_FREE(query_str);
-    //SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
+    SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
     hanzi_is_load_local = FALSE;
     MMIZDT_HTTP_AppSend(TRUE, HANZI_BOOK_HEADER_PATH, url, strlen(url), 1000, 0, 0, 0, 0, 0, Hanzi_ParseBookInfo);
 }
@@ -95,10 +96,16 @@ PUBLIC void Hanzi_WriteLearnInfo(void)
 
     out = cJSON_PrintUnformatted(root);
     strcpy(file_path, HANZI_CARD_LEARN_INFO_PATH);
-    if(zmt_file_exist(file_path)){
-        zmt_file_delete(file_path);
+#ifndef WIN32
+    if(zmt_tfcard_exist() && zmt_tfcard_get_free_kb() > 100 * 1024)
+ #endif
+    {
+        if(zmt_file_exist(file_path)){
+            zmt_file_delete(file_path);
+        }
+        zmt_file_data_write(out, strlen(out), file_path);
     }
-    zmt_file_data_write(out, strlen(out), file_path);
+    
     cJSON_Delete(root);
     SCI_FREE(out);
 }
@@ -189,7 +196,7 @@ PUBLIC void Hanzi_WriteExistUnmasterHanzi(uint16 book_id, uint16 chap_id,cJSON *
     cJSON * annotations;
 
     sprintf(file_path, HANZI_CARD_NEW_HANZI_PATH, book_id, chap_id);
-    if(zmt_file_exist(file_path)){
+    if(zmt_tfcard_exist() && zmt_file_exist(file_path)){
         pRcv = zmt_file_data_read(file_path, &data_size);
     }else{
         return;
@@ -342,11 +349,17 @@ PUBLIC void Hanzi_WriteUnmasterHanzi(uint16 grade_id, uint16 chap_id, uint8 writ
     cJSON_AddItemToObject(root, "hanzis", hanzis);
     out = cJSON_PrintUnformatted(root);
     cJSON_Delete(root);
-
-    if(zmt_file_exist(file_path)){
-        zmt_file_delete(file_path);
+    //SCI_TRACE_LOW("%s: out = %s", __FUNCTION__, out);
+#ifndef WIN32
+    if(zmt_tfcard_exist() && zmt_tfcard_get_free_kb() > 100 * 1024){
+        if(zmt_file_exist(file_path)){
+            zmt_file_delete(file_path);
+        }
+        zmt_file_data_write(out, strlen(out), file_path);
     }
+#else
     zmt_file_data_write(out, strlen(out), file_path);
+#endif
     SCI_FREE(out);
 }
 
@@ -476,7 +489,7 @@ PUBLIC void Hanzi_requestBookInfo(void)
         char * query_str = makeBaseQueryUrlString(HANZI_BOOK_APP_ID, HANZI_BOOK_APP_SECRET);
         sprintf(url, HANZI_BOOK_PUBLISH_PATH, query_str);
         SCI_FREE(query_str);
-        //SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
+        SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
         hanzi_is_load_local = FALSE;
         MMIZDT_HTTP_AppSend(TRUE, HANZI_BOOK_HEADER_PATH, url, strlen(url), 1000, 0, 0, 0, 0, 0, Hanzi_ParseBookInfo);
     }
@@ -574,7 +587,6 @@ PUBLIC void Hanzi_ParseChapterInfo(BOOLEAN is_ok,uint8 * pRcv,uint32 Rcv_len,uin
                 hanzi_chapter_children_count[i] = m;
             }
             hanzi_chapter_count = i;
-		//	#ifndef TF_CARD_SUPPORT
             if(zmt_tfcard_exist() && zmt_tfcard_get_free_kb() > 100 * 1024){
                 if(!hanzi_is_load_local)
                 {
@@ -589,8 +601,7 @@ PUBLIC void Hanzi_ParseChapterInfo(BOOLEAN is_ok,uint8 * pRcv,uint32 Rcv_len,uin
                     SCI_FREE(out);
                 }
             }
-	//	#endif
-		 cJSON_Delete(root);
+            cJSON_Delete(root);
         }
         else
         {
@@ -635,7 +646,7 @@ PUBLIC void Hanzi_requestChapterInfo(uint8 grade_id)
         char * query_str = makeBaseQueryUrlString(HANZI_BOOK_APP_ID, HANZI_BOOK_APP_SECRET);
         sprintf(url, HANZI_BOOK_GRADE_PATH, grade_id, query_str);
         SCI_FREE(query_str);
-        //SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
+        SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
         hanzi_is_load_local = FALSE;
         MMIZDT_HTTP_AppSend(TRUE, HANZI_BOOK_HEADER_PATH, url, strlen(url), 1000, 0, 0, 0, 0, 0, Hanzi_ParseChapterInfo);
     }
@@ -699,7 +710,6 @@ LOCAL void Hanzi_DetailMakeTermRemark(char* remark, char * similar_word, char * 
         }
     }
 }
-
 
 LOCAL BOOLEAN Hanzi_DetailMakeAudioUrl(uint8 idx, char * text, char * pinyin, char * baseUrl)
 {
@@ -849,7 +859,6 @@ PUBLIC void Hanzi_ParseDetailInfo(BOOLEAN is_ok,uint8 * pRcv,uint32 Rcv_len,uint
                         
                         Hanzi_AddDetailInfo(j, text, audio, pinyin, similar_word, annotation, baseUrl);
                     }
-				//	#ifndef TF_CARD_SUPPORT
                     if(zmt_tfcard_exist() && zmt_tfcard_get_free_kb() > 100 * 1024){
                         if(!hanzi_is_load_local)
                         {
@@ -867,7 +876,6 @@ PUBLIC void Hanzi_ParseDetailInfo(BOOLEAN is_ok,uint8 * pRcv,uint32 Rcv_len,uint
                             SCI_FREE(out);
                         }
                     }
-			//	#endif
                 }
                 else
                 {
@@ -926,7 +934,7 @@ PUBLIC void Hanzi_requestDetailInfo(uint8 grade_id, uint16 req_id)
         char * query_str = makeBaseQueryUrlString(HANZI_BOOK_APP_ID, HANZI_BOOK_APP_SECRET);
         sprintf(url, HANZI_BOOK_CHAPTER_PATH, req_id, query_str);
         SCI_FREE(query_str);
-        //SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
+        SCI_TRACE_LOW("%s: url = %s", __FUNCTION__, url);
         hanzi_is_load_local = FALSE;
         MMIZDT_HTTP_AppSend(TRUE, HANZI_BOOK_HEADER_PATH, url, strlen(url), 1000, 0, 0, 0, 0, 0, Hanzi_ParseDetailInfo);
     }
@@ -999,7 +1007,7 @@ PUBLIC void Hanzi_RequestNewWord(uint16 grade_id, uint16 chap_id)
     char * data_buf = PNULL;
     uint32 file_len = 0;
     sprintf(file_path, HANZI_CARD_NEW_HANZI_PATH, grade_id, chap_id);
-    Hanzi_ReleaseDetailInfo();
+  //  Hanzi_ReleaseDetailInfo();
     if(zmt_file_exist(file_path)){
         data_buf = zmt_file_data_read(file_path, &file_len);
         SCI_TRACE_LOW("%s: file_len = %d", __FUNCTION__, file_len);
@@ -1260,15 +1268,23 @@ PUBLIC void Hanzi_SaveDeleteNewWord(uint16 grade_id, uint16 chap_id)
     }
     cJSON_AddItemToObject(root, "hanzis", hanzis);
     
-    if(zmt_file_exist(file_path)){
-        zmt_file_delete(file_path);
+#ifndef WIN32
+    if(zmt_tfcard_exist() && zmt_tfcard_get_free_kb() > 100 * 1024)
+    {
+        if(zmt_file_exist(file_path)){
+            zmt_file_delete(file_path);
+        }
+        out = cJSON_PrintUnformatted(root);
+        zmt_file_data_write(out, strlen(out), file_path);
+        SCI_FREE(out);
     }
+#else
     out = cJSON_PrintUnformatted(root);
     zmt_file_data_write(out, strlen(out), file_path);
     SCI_FREE(out);
+#endif
     cJSON_Delete(root);
 }
-
 
 PUBLIC void Hanzi_ParseMp3Response(BOOLEAN is_ok,uint8 * pRcv,uint32 Rcv_len,uint32 err_id)
 {
@@ -1288,6 +1304,19 @@ PUBLIC void Hanzi_ParseMp3Response(BOOLEAN is_ok,uint8 * pRcv,uint32 Rcv_len,uin
         hanzi_detail_info[hanzi_detail_cur_idx]->audio_data = SCI_ALLOCA(Rcv_len);
         SCI_MEMSET(hanzi_detail_info[hanzi_detail_cur_idx]->audio_data, 0, Rcv_len);
         SCI_MEMCPY(hanzi_detail_info[hanzi_detail_cur_idx]->audio_data, pRcv, Rcv_len);
+
+        if(zmt_tfcard_exist() && zmt_tfcard_get_free_kb() > 100 * 1024){
+            char file_path[30] = {0};
+            sprintf(file_path, HANZI_CARD_WORD_AUDIO_PATH, hanzi_book_info.cur_book_idx+1, hanzi_detail_info[hanzi_detail_cur_idx]->pingy);
+            if(zmt_file_exist(file_path)){
+                zmt_file_delete(file_path);
+            }
+            zmt_file_data_write(pRcv, Rcv_len, file_path);
+        }else{
+        #ifdef LISTENING_PRATICE_SUPPORT
+            MMI_CreateListeningTipWin(PALYER_PLAY_NO_SPACE_TIP);
+        #endif
+        }
     }
     else
     {

@@ -12,7 +12,7 @@
 #include "zmt_word_main.h"
 #include "zmt_word_id.h"
 #include "zmt_word_text.h"
-//#include "zmt_main_file.h"
+#include "zmt_main_file.h"
 #include "zmt_hanzi_main.h"
 //#include "zmt_listening_export.h"
 
@@ -271,10 +271,11 @@ PUBLIC void Word_WriteUnmasterChapterWord(uint16 book_id, uint16 chap_id, char *
 
     baseUrl = cJSON_CreateString(WORD_BOOK_AUDIO_BASE_URL);
     cJSON_AddItemToObject(root, "baseUrl", baseUrl);
-
+	
     word = cJSON_CreateArray();
 
-    sprintf(file_path,WORD_BOOK_NEW_WORD_PATH, book_id, chap_id);
+    sprintf(file_path,WORD_BOOK_NEW_WORD_PATH, book_id, chap_id); 
+	SCI_TRACE_LOW("file_path_lenght = %d", strlen(file_path));
     if(zmt_file_exist(file_path)){
         Word_WriteExistUnmasterChapterWord(book_id, chap_id, word, write_count);
     }
@@ -282,7 +283,7 @@ PUBLIC void Word_WriteUnmasterChapterWord(uint16 book_id, uint16 chap_id, char *
     {
         if(chapter_unmaster_idx[i] != 0)
         {
-            index = chapter_unmaster_idx[i] - 1;
+            index = chapter_unmaster_idx[i]-1;
             word_item = cJSON_CreateObject();
             if(word_chapter_info[word_book_info.cur_chapter_idx]->detail[index]->word != NULL){
                 text = cJSON_CreateString(word_chapter_info[word_book_info.cur_chapter_idx]->detail[index]->word);
@@ -317,12 +318,17 @@ PUBLIC void Word_WriteUnmasterChapterWord(uint16 book_id, uint16 chap_id, char *
     cJSON_AddItemToObject(root, "word", word);
 
     out = cJSON_PrintUnformatted(root);
-    cJSON_Delete(root);
+
+   cJSON_Delete(root);
+	
+	  SCI_TRACE_LOW("word_exit:%s", "finish_next_page");
+
     if(zmt_file_exist(file_path)){
         zmt_file_delete(file_path);
     }
     zmt_file_data_write(out, strlen(out), file_path);
-    SCI_FREE(out);
+   
+   SCI_FREE(out);
 }
 
 PUBLIC void Word_ReleaseBookInfo(void)
@@ -906,9 +912,10 @@ PUBLIC void Word_RequestNewWord(uint16 book_id, uint16 chapter_id)
     char * data_buf = PNULL;
     uint32 file_len = 0;
     sprintf(file_path, WORD_BOOK_NEW_WORD_PATH, book_id, chapter_id);
-    Word_ReleaseNewWordInfo();
+  //  Word_ReleaseNewWordInfo();
     if(zmt_file_exist(file_path)){
         data_buf = zmt_file_data_read(file_path, &file_len);
+		 SCI_TRACE_LOW("file_path_error:%s", file_path);
         SCI_TRACE_LOW("%s: file_len = %d", __FUNCTION__, file_len);
         if(data_buf != PNULL && file_len > 0)
         {
@@ -1095,7 +1102,7 @@ PUBLIC void Word_SaveDeleteNewWord(uint16 book_id, uint16 chap_id, char * chap_n
     cJSON * translation;
 
     sprintf(file_path, WORD_BOOK_NEW_WORD_PATH, book_id, chap_id);
-    if(word_detail_count < 1)
+    if(word_detail_count < 0)
     {
         if(zmt_file_exist(file_path)){
             zmt_file_delete(file_path);
