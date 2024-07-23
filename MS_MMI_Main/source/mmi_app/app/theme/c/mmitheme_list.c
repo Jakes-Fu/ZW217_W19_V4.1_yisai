@@ -5769,8 +5769,9 @@ LOCAL THEMELIST_STYLE_TABLE_T const s_style_table[] =
     {GUIITEM_STYLE_CLASS_MAIN_LIST_MS, &s_item_style_class_main_list_ms},
     {GUIITEM_STYLE_CLASS_SECTION_LIST_MS, &s_item_style_class_section_list_ms},
 #endif
-//zmt add end
-
+#ifdef ZMT_PINYIN_SUPPORT
+    {GUIITEM_STYLE_PINYIN_TABLE_LIST_MS, &s_item_style_pinyin_table_list_ms},
+#endif
 //============================================================================//
 //                                   For watch                                //
 //============================================================================//

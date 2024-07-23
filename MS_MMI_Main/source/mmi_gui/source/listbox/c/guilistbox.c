@@ -291,8 +291,9 @@ LOCAL BOOLEAN SetItemStyle(
     case GUIITEM_STYLE_CLASS_MAIN_LIST_MS:
     case GUIITEM_STYLE_CLASS_SECTION_LIST_MS:
 #endif
-//zmt add end
-        //do nothing...
+#ifdef ZMT_PINYIN_SUPPORT
+    case GUIITEM_STYLE_PINYIN_TABLE_LIST_MS:
+#endif
         break;
         
     default:
