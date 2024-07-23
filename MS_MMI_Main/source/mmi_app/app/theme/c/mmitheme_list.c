@@ -5475,8 +5475,36 @@ LOCAL THEMELIST_ITEM_STYLE_T const s_item_style_class_section_list_ms =
     0, 2
 };
 #endif
-//zmt add end
-
+#ifdef ZMT_PINYIN_SUPPORT
+//GUIITEM_STYLE_PINYIN_TABLE_LIST_MS
+LOCAL THEMELIST_ITEM_STYLE_T const s_item_style_pinyin_table_list_ms =
+{
+    1.5*ZMT_LIST_LINE_HIGHT, 1.5*ZMT_LIST_LINE_HIGHT,
+    {
+        //icon
+        {
+            0,
+            {0, 0, MMI_MAINSCREEN_WIDTH/2, 1.5*ZMT_LIST_LINE_HIGHT},
+            {0, 0, MMI_MAINSCREEN_WIDTH/2, 1.5*ZMT_LIST_LINE_HIGHT},
+            0, 0,
+            0, 0
+        },
+        //text
+        {
+            GUIITEM_CONTENT_STATE_TEXT_M_ALIGN,
+            {0, 0, MMI_MAINSCREEN_WIDTH/2, 1.5*ZMT_LIST_LINE_HIGHT},
+            {0, 0, MMI_MAINSCREEN_WIDTH/2, 1.5*ZMT_LIST_LINE_HIGHT},
+            SONG_FONT_24, SONG_FONT_24,
+            0, 0
+        }, 
+        {0},
+        {0},
+        {0},
+        {0},
+    },
+    0, MMILIST_INVALID_ITEM_INDEX
+};
+#endif
 //============================================================================//
 //                                  End For engineer mode                     //
 //============================================================================//
