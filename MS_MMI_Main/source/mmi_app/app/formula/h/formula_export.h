@@ -50,7 +50,7 @@ typedef struct
 {
     char * audio_uri;
     char * audio_data;
-    uint16 audio_len;
+    int16 audio_len;
 }FORMULA_AUDIO_INFO_T;
 
 PUBLIC void MMI_CreateFormulaTableWin(void);

@@ -42,7 +42,7 @@ ZDT_ZFB_SUPPORT = TRUE                                  ### 支付宝 需要开启 ZDT_
 TULING_AI_SUPPORT = TRUE				### 图灵AI						     
 BAIRUI_VIDEOCHAT_SUPPORT = FALSE				### 百锐视频通话
 LEBAO_MUSIC_SUPPORT = TRUE				### 乐宝音乐
-XYSDK_SUPPORT = TRUE					### 喜马拉雅
+XYSDK_SUPPORT = FALSE					### 喜马拉雅
 XYSDK_SRC_SUPPORT = FALSE				### 喜马拉雅源码支持
 #第三方应用结束
 
@@ -154,6 +154,7 @@ ZDT_PLAT_YX_SUPPORT_YS = TRUE					      ### 易赛安康守护
 ZDT_PLAT_YX_SUPPORT_TX = FALSE					      ### 音信百合后台
 ZDT_PLAT_YX_SUPPORT_LZ = FALSE					      ### 乐智后台
 ZDT_PLAT_YX_SUPPORT_CY = FALSE					      ### 成研云南移动后台
+ZDT_PLAT_YX_SUPPORT_DJ = FALSE						  ### 大疆守护后台
 
 ifeq ($(strip $(ZDT_PLAT_YX_SUPPORT_LZ)),TRUE)
 ZDT_PLAT_YX_SUPPORT_VOICE = FALSE				### 微聊
@@ -184,7 +185,8 @@ ifeq ($(strip $(ZDT_PLAT_YX_SUPPORT_LZ)),TRUE)
 ZDT_ADD_LOCK_FEATRUE = FALSE				### 锁屏
 ZDT_MESSAGE_DELETE_FEATRUE = FALSE
 
-ZDT_ADD_FIRST_POWER_RECORD = FALSE			### 电子保卡
+#ZDT_ADD_FIRST_POWER_RECORD = FALSE			### 电子保卡
+BH_ELC_CARD_STYLE_NOT_CLEAR_WHEN_RESTORE = FALSE ### 电子保卡
 
 ZDT_ClASS_ANSWER_SUPPORT = FALSE                      ### 课堂答题
 else
@@ -192,7 +194,8 @@ ifeq ($(strip $(ZDT_PLAT_YX_SUPPORT_CY)),TRUE)
 ZDT_ADD_LOCK_FEATRUE = FALSE				### 锁屏
 ZDT_MESSAGE_DELETE_FEATRUE = FALSE
 
-ZDT_ADD_FIRST_POWER_RECORD = FALSE			### 电子保卡
+#ZDT_ADD_FIRST_POWER_RECORD = FALSE			### 电子保卡
+BH_ELC_CARD_STYLE_NOT_CLEAR_WHEN_RESTORE = FALSE ### 电子保卡
 
 ZDT_ClASS_ANSWER_SUPPORT = FALSE                      ### 课堂答题
 
@@ -200,7 +203,8 @@ ZDT_CYHEALTH_SUPPORT = FALSE                      ### 成研健康码
 else
 ZDT_ADD_LOCK_FEATRUE = FALSE				### 锁屏
 
-ZDT_ADD_FIRST_POWER_RECORD = FALSE			### 电子保卡
+#ZDT_ADD_FIRST_POWER_RECORD = FALSE			### 电子保卡
+BH_ELC_CARD_STYLE_NOT_CLEAR_WHEN_RESTORE = TRUE ### 电子保卡
 
 ZDT_ClASS_ANSWER_SUPPORT = FALSE                      ### 课堂答题
 endif
@@ -310,12 +314,14 @@ endif
 endif
 
 #5G LOGO GIF
-POWER_ONOFF_5G_STYLE = TRUE #5G开关机LOG+动画
+POWER_ONOFF_5G_STYLE = FALSE #5G开关机LOG+动画
+POWER_ONOFF_BLQ_STYLE = TRUE 
 
 # 未插卡提示图片用动画
 ZDT_NO_SIM_ICON_GIF = TRUE
 
-
+# 电子表模式
+ZDT_ELECTRONICWATCH_MODE = TRUE
 
 #w217 表盘1
 ZDT_WATCH_UI_W217_STYLE_ONE = TRUE
@@ -363,7 +369,7 @@ WATCH_PANEL_PENGUIN_SUPPORT = TRUE           #企鹅
 #############至少一个为TRUE##############
 
 POWER_OFF_CHARGE_TEXT_SHOW = FALSE  #关机充电显示电量
-BATTERY_CHARGE_FULL_REMAIN = TRUE   #电池充电98显示100%电量
+BATTERY_CHARGE_FULL_REMAIN = TRUR   #电池充电98显示100%电量
 BATTERY_PERCENT_TEXT_SHOW = FALSE   #显示电池电量百分比
 
 
@@ -737,4 +743,6 @@ MATH_COUNT_SUPPORT = TRUE 			#口算达人
 FORMULA_SUPPORT = TRUE				#乘法口诀
 WORD_CARD_SUPPORT = TRUE			#单词卡
 HANZI_CARD_SUPPORT = TRUE			#汉字卡
+ZMT_PINYIN_SUPPORT = TRUE			#拼音课堂
+ZMT_YINBIAO_SUPPORT = TRUE			#音标课堂
 ##zmt add end
